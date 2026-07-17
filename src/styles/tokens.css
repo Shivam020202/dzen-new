@@ -1,0 +1,66 @@
+/* =========================================================
+   D'Zen Derma - Global Design Tokens
+   Extracted from v2/index.html & styles.css
+   ========================================================= */
+
+:root {
+  /* Color Palette - Core */
+  --copper-brown: #8b4513;
+  --mid-brown: #a0522d;
+  --warm-gold: #daa520;
+  --accent-gold: #ffd700;
+  --off-white: #faf9f6;
+  --charcoal: #2b2b2b;
+  --cream: #f5f0e8;
+  --deep-brown: #4b2b20;
+  --tan-gold: #e0a65a;
+  
+  /* Color Palette - Semantic Roles */
+  --bg-primary: var(--off-white);
+  --bg-secondary: var(--cream);
+  --bg-surface-light: #FDF8F3;
+  --text-primary: var(--charcoal);
+  --text-secondary: #555555;
+  --text-muted: #8a8a8a;
+  --text-ink: #2B1A12;
+  --accent: var(--copper-brown);
+  --border: rgba(139, 69, 19, 0.12);
+  
+  /* Brand Gradients */
+  --brand-gradient: linear-gradient(35deg, #4b2b20 0%, #8c4a2e 60%, #8b4513 85%, #a0522d 100%);
+  --brand-gradient-alt: linear-gradient(135deg, #4b2b20 0%, #8b4513 50%, #daa520 100%);
+  --button-gradient: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
+  --button-gradient-hover: linear-gradient(135deg, #5d3628 0%, #a0522d 100%);
+  --cta-gradient: linear-gradient(170deg, #d9a054 0%, #9a6a2e 100%);
+
+  /* Typography */
+  --serif: "Belgiano Serif 2", Georgia, serif;
+  --sans: "Figtree", system-ui, sans-serif;
+
+  /* Spacing Scale (8pt Grid) */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --space-3xl: 80px;
+  --space-4xl: 96px;
+
+  /* Border Radius */
+  --radius: 4px;
+  --radius-lg: 8px;
+  --radius-pill: 999px;
+
+  /* Shadow Scale */
+  --shadow-sm: inset 0 1px 0 rgba(255,255,255,0.18), 0 2px 8px rgba(0,0,0,0.18);
+  --shadow-md: 0 4px 15px rgba(75, 43, 32, 0.15);
+  --shadow-lg: 0 8px 25px rgba(75, 43, 32, 0.25);
+  --shadow-glass: 0 0 0 1px rgba(0, 0, 0, 0.03), 0 4px 16px rgba(0, 0, 0, 0.06), 0 12px 40px rgba(0, 0, 0, 0.04);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.35s ease;
+  --transition-smooth: 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  --transition-spring: 0.4s cubic-bezier(.4, 0, .2, 1);
+}
