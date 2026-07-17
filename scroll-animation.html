@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Animation</title>
+</head>
+<body>
+<main class="flex__col">
+    <nav class="menu flex">
+        <a href="#" class="menu__left">
+            Lorem ipsum
+        </a>
+        <ul class="menu__right flex">
+            <li><a href="#">Work</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="clip" id="clip1">
+        <div class="clip__inner flex__col">
+            <h1 class="flex">Find your star</h1>
+            <div class="clip__cols flex">
+                <p>
+                    SOTD Challenge : Insprired by <a href="https://2authenticators.co/">2 Authenticators</a> website
+                    animation (SOTD, Apr 11, 2023)
+                    <br /><br />
+                    First time exploring Morph SVG.
+                </p>
+                <p>
+                    Nulla hendrerit metus lacinia magna rhoncus suscipit. Sed faucibus posuere tempor. Ut suscipit et
+                    urna a gravida.
+                    <br />
+                    Nulla hendrerit metus lacinia magna rhoncus suscipit. Sed faucibus posuere tempor. Ut suscipit et
+                    urna a gravida.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="clip__scroll flex__col" id="clip1__scroll">
+        <h2>Le glacier</h2>
+        <div class="clip__cols flex">
+            <p>
+                SOTD Challenge : Insprired by <a href="https://2authenticators.co/">2 Authenticators</a> website
+                animation (SOTD, Apr 11, 2023)
+                <br /><br />
+                First time exploring Morph SVG.
+            </p>
+            <p>
+                Nulla hendrerit metus lacinia magna rhoncus suscipit. Sed faucibus posuere tempor. Ut suscipit et urna a
+                gravida.
+                <br />
+                Nulla hendrerit metus lacinia magna rhoncus suscipit. Sed faucibus posuere tempor. Ut suscipit et urna a
+                gravida.
+            </p>
+        </div>
+    </section>
+    <section class="clip__scroll flex__col" id="clip2__scroll">
+        <h2>Le lac</h2>
+        <div class="clip__cols flex">
+            <p>
+                SOTD Challenge : Insprired by <a href="https://2authenticators.co/">2 Authenticators</a> website
+                animation (SOTD, Apr 11, 2023)
+                <br /><br />
+                First time exploring Morph SVG.
+            </p>
+            <p>
+                Nulla hendrerit metus lacinia magna rhoncus suscipit. Sed faucibus posuere tempor. Ut suscipit et urna a
+                gravida.
+                <br />
+                Nulla hendrerit metus lacinia magna rhoncus suscipit. Sed faucibus posuere tempor. Ut suscipit et urna a
+                gravida.
+            </p>
+        </div>
+    </section>
+    <section class="clip__scroll flex__col" id="clip3__scroll">
+        <h2>La montagne</h2>
+        <div class="clip__cols flex">
+            <p>
+                SOTD Challenge : Insprired by <a href="https://2authenticators.co/">2 Authenticators</a> website
+                animation (SOTD, Apr 11, 2023)
+                <br /><br />
+                First time exploring Morph SVG.
+            </p>
+            <p>
+                Nulla hendrerit metus lacinia magna rhoncus suscipit. Sed faucibus posuere tempor. Ut suscipit et urna a
+                gravida.
+                <br />
+                Nulla hendrerit metus lacinia magna rhoncus suscipit. Sed faucibus posuere tempor. Ut suscipit et urna a
+                gravida.
+            </p>
+        </div>
+    </section>
+    <section class="clip__scroll flex__col" id="clip4__scroll">
+        <h2>L'océan</h2>
+        <div class="clip__cols flex">
+            <p>
+                SOTD Challenge : Insprired by <a href="https://2authenticators.co/">2 Authenticators</a> website
+                animation (SOTD, Apr 11, 2023)
+                <br /><br />
+                First time exploring Morph SVG.
+            </p>
+            <p>
+                Nulla hendrerit metus lacinia magna rhoncus suscipit. Sed faucibus posuere tempor. Ut suscipit et urna a
+                gravida.
+                <br />
+                Nulla hendrerit metus lacinia magna rhoncus suscipit. Sed faucibus posuere tempor. Ut suscipit et urna a
+                gravida.
+            </p>
+        </div>
+    </section>
+    <figure class="starSvg" id="svg1">
+        <svg height="0" width="0">
+            <defs>
+                <clipPath id="svg__path" clipPathUnits="objectBoundingBox">
+                    <path id="svg__rec" data-name="rec" d="M0,0H1V1H0Z" />
+                    <path id="svg__star" data-name="star"
+                        d="M 0.5 0.0390625 C 0.472656 0.214844 0.449219 0.320312 0.382812 0.382812 C 0.320312 0.449219 0.214844 0.472656 0.0390625 0.5 C 0.214844 0.527344 0.320312 0.550781 0.382812 0.617188 C 0.449219 0.679688 0.472656 0.785156 0.5 0.960938 C 0.527344 0.785156 0.550781 0.679688 0.617188 0.617188 C 0.679688 0.550781 0.785156 0.527344 0.960938 0.5 C 0.785156 0.472656 0.679688 0.449219 0.617188 0.382812 C 0.550781 0.320312 0.527344 0.214844 0.5 0.0390625 Z M 0.828125 0.171875 C 0.738281 0.238281 0.667969 0.285156 0.605469 0.3125 C 0.617188 0.328125 0.628906 0.34375 0.640625 0.359375 C 0.65625 0.371094 0.671875 0.382812 0.6875 0.394531 C 0.714844 0.332031 0.761719 0.261719 0.828125 0.171875 Z M 0.175781 0.175781 C 0.238281 0.261719 0.285156 0.332031 0.3125 0.394531 C 0.328125 0.382812 0.34375 0.371094 0.359375 0.359375 C 0.371094 0.34375 0.382812 0.328125 0.394531 0.3125 C 0.332031 0.285156 0.261719 0.238281 0.175781 0.175781 Z M 0.6875 0.605469 C 0.671875 0.617188 0.65625 0.628906 0.640625 0.640625 C 0.628906 0.65625 0.617188 0.671875 0.605469 0.6875 C 0.667969 0.714844 0.738281 0.761719 0.828125 0.828125 C 0.761719 0.738281 0.714844 0.667969 0.6875 0.605469 Z M 0.3125 0.605469 C 0.285156 0.667969 0.238281 0.738281 0.171875 0.828125 C 0.261719 0.761719 0.332031 0.714844 0.394531 0.6875 C 0.382812 0.671875 0.371094 0.65625 0.359375 0.640625 C 0.34375 0.628906 0.328125 0.617188 0.3125 0.605469 Z M 0.3125 0.605469 " />
+                </clipPath>
+            </defs>
+        </svg>
+        <!--<img src="https://images.unsplash.com/photo-1681206691902-14878e9c28db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80">-->
+        <video loop autoplay muted
+            poster="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
+            <source src="http://thenewcode.com/assets/videos/glacier.mp4" type="video/mp4">
+        </video>
+    </figure>
+    <figure class="starSvg" id="svg2">
+        <svg height="0" width="0">
+            <defs>
+                <clipPath id="svg__path2" clipPathUnits="objectBoundingBox">
+                    <path id="svg__rec2" data-name="rec2" d="M0,0H1V1H0Z" />
+                    <path id="svg__star2" data-name="star2"
+                        d="M 0.5 0.0390625 C 0.472656 0.214844 0.449219 0.320312 0.382812 0.382812 C 0.320312 0.449219 0.214844 0.472656 0.0390625 0.5 C 0.214844 0.527344 0.320312 0.550781 0.382812 0.617188 C 0.449219 0.679688 0.472656 0.785156 0.5 0.960938 C 0.527344 0.785156 0.550781 0.679688 0.617188 0.617188 C 0.679688 0.550781 0.785156 0.527344 0.960938 0.5 C 0.785156 0.472656 0.679688 0.449219 0.617188 0.382812 C 0.550781 0.320312 0.527344 0.214844 0.5 0.0390625 Z M 0.828125 0.171875 C 0.738281 0.238281 0.667969 0.285156 0.605469 0.3125 C 0.617188 0.328125 0.628906 0.34375 0.640625 0.359375 C 0.65625 0.371094 0.671875 0.382812 0.6875 0.394531 C 0.714844 0.332031 0.761719 0.261719 0.828125 0.171875 Z M 0.175781 0.175781 C 0.238281 0.261719 0.285156 0.332031 0.3125 0.394531 C 0.328125 0.382812 0.34375 0.371094 0.359375 0.359375 C 0.371094 0.34375 0.382812 0.328125 0.394531 0.3125 C 0.332031 0.285156 0.261719 0.238281 0.175781 0.175781 Z M 0.6875 0.605469 C 0.671875 0.617188 0.65625 0.628906 0.640625 0.640625 C 0.628906 0.65625 0.617188 0.671875 0.605469 0.6875 C 0.667969 0.714844 0.738281 0.761719 0.828125 0.828125 C 0.761719 0.738281 0.714844 0.667969 0.6875 0.605469 Z M 0.3125 0.605469 C 0.285156 0.667969 0.238281 0.738281 0.171875 0.828125 C 0.261719 0.761719 0.332031 0.714844 0.394531 0.6875 C 0.382812 0.671875 0.371094 0.65625 0.359375 0.640625 C 0.34375 0.628906 0.328125 0.617188 0.3125 0.605469 Z M 0.3125 0.605469 " />
+                </clipPath>
+            </defs>
+        </svg>
+        <!--<img src="https://images.unsplash.com/photo-1681140348839-42def79675a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80">-->
+        <video loop autoplay muted
+            poster="https://images.unsplash.com/photo-1494253188410-ff0cdea5499e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
+            <source src="http://thenewcode.com/assets/videos/lake.mp4" type="video/mp4">
+        </video>
+    </figure>
+    <figure class="starSvg" id="svg3">
+        <svg height="0" width="0">
+            <defs>
+                <clipPath id="svg__path3" clipPathUnits="objectBoundingBox">
+                    <path id="svg__rec3" data-name="rec3" d="M0,0H1V1H0Z" />
+                    <path id="svg__star3" data-name="star3"
+                        d="M 0.5 0.0390625 C 0.472656 0.214844 0.449219 0.320312 0.382812 0.382812 C 0.320312 0.449219 0.214844 0.472656 0.0390625 0.5 C 0.214844 0.527344 0.320312 0.550781 0.382812 0.617188 C 0.449219 0.679688 0.472656 0.785156 0.5 0.960938 C 0.527344 0.785156 0.550781 0.679688 0.617188 0.617188 C 0.679688 0.550781 0.785156 0.527344 0.960938 0.5 C 0.785156 0.472656 0.679688 0.449219 0.617188 0.382812 C 0.550781 0.320312 0.527344 0.214844 0.5 0.0390625 Z M 0.828125 0.171875 C 0.738281 0.238281 0.667969 0.285156 0.605469 0.3125 C 0.617188 0.328125 0.628906 0.34375 0.640625 0.359375 C 0.65625 0.371094 0.671875 0.382812 0.6875 0.394531 C 0.714844 0.332031 0.761719 0.261719 0.828125 0.171875 Z M 0.175781 0.175781 C 0.238281 0.261719 0.285156 0.332031 0.3125 0.394531 C 0.328125 0.382812 0.34375 0.371094 0.359375 0.359375 C 0.371094 0.34375 0.382812 0.328125 0.394531 0.3125 C 0.332031 0.285156 0.261719 0.238281 0.175781 0.175781 Z M 0.6875 0.605469 C 0.671875 0.617188 0.65625 0.628906 0.640625 0.640625 C 0.628906 0.65625 0.617188 0.671875 0.605469 0.6875 C 0.667969 0.714844 0.738281 0.761719 0.828125 0.828125 C 0.761719 0.738281 0.714844 0.667969 0.6875 0.605469 Z M 0.3125 0.605469 C 0.285156 0.667969 0.238281 0.738281 0.171875 0.828125 C 0.261719 0.761719 0.332031 0.714844 0.394531 0.6875 C 0.382812 0.671875 0.371094 0.65625 0.359375 0.640625 C 0.34375 0.628906 0.328125 0.617188 0.3125 0.605469 Z M 0.3125 0.605469 " />
+                </clipPath>
+            </defs>
+        </svg>
+        <!--<img src="https://images.unsplash.com/photo-1681140348839-42def79675a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80">-->
+        <video loop autoplay muted
+            poster="https://images.unsplash.com/photo-1487715433499-93acdc0bd7c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1844&q=80">
+            <source src="http://thenewcode.com/assets/videos/mountain.mp4" type="video/mp4">
+        </video>
+    </figure>
+    <figure class="starSvg" id="svg4">
+        <svg height="0" width="0">
+            <defs>
+                <clipPath id="svg__path4" clipPathUnits="objectBoundingBox">
+                    <path id="svg__rec4" data-name="rec4" d="M0,0H1V1H0Z" />
+                    <path id="svg__star4" data-name="star4"
+                        d="M 0.5 0.0390625 C 0.472656 0.214844 0.449219 0.320312 0.382812 0.382812 C 0.320312 0.449219 0.214844 0.472656 0.0390625 0.5 C 0.214844 0.527344 0.320312 0.550781 0.382812 0.617188 C 0.449219 0.679688 0.472656 0.785156 0.5 0.960938 C 0.527344 0.785156 0.550781 0.679688 0.617188 0.617188 C 0.679688 0.550781 0.785156 0.527344 0.960938 0.5 C 0.785156 0.472656 0.679688 0.449219 0.617188 0.382812 C 0.550781 0.320312 0.527344 0.214844 0.5 0.0390625 Z M 0.828125 0.171875 C 0.738281 0.238281 0.667969 0.285156 0.605469 0.3125 C 0.617188 0.328125 0.628906 0.34375 0.640625 0.359375 C 0.65625 0.371094 0.671875 0.382812 0.6875 0.394531 C 0.714844 0.332031 0.761719 0.261719 0.828125 0.171875 Z M 0.175781 0.175781 C 0.238281 0.261719 0.285156 0.332031 0.3125 0.394531 C 0.328125 0.382812 0.34375 0.371094 0.359375 0.359375 C 0.371094 0.34375 0.382812 0.328125 0.394531 0.3125 C 0.332031 0.285156 0.261719 0.238281 0.175781 0.175781 Z M 0.6875 0.605469 C 0.671875 0.617188 0.65625 0.628906 0.640625 0.640625 C 0.628906 0.65625 0.617188 0.671875 0.605469 0.6875 C 0.667969 0.714844 0.738281 0.761719 0.828125 0.828125 C 0.761719 0.738281 0.714844 0.667969 0.6875 0.605469 Z M 0.3125 0.605469 C 0.285156 0.667969 0.238281 0.738281 0.171875 0.828125 C 0.261719 0.761719 0.332031 0.714844 0.394531 0.6875 C 0.382812 0.671875 0.371094 0.65625 0.359375 0.640625 C 0.34375 0.628906 0.328125 0.617188 0.3125 0.605469 Z M 0.3125 0.605469 " />
+                </clipPath>
+            </defs>
+        </svg>
+        <!--<img src="https://images.unsplash.com/photo-1681140348839-42def79675a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80">-->
+        <video loop autoplay muted
+            poster="https://images.unsplash.com/photo-1503264116251-35a269479413?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
+            <source src="http://thenewcode.com/assets/videos/ocean-small.mp4" type="video/mp4">
+        </video>
+    </figure>
+
+    <!-- Modern Form Section -->
+    <section class="form-section">
+        <div class="form-container">
+            <div class="form-header">
+                <h2>Join Our Journey</h2>
+                <p>Discover what makes us special</p>
+            </div>
+
+            <form class="modern-form" id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="firstName" name="firstName" required placeholder=" ">
+                        <label for="firstName">First Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="lastName" name="lastName" required placeholder=" ">
+                        <label for="lastName">Last Name</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required placeholder=" ">
+                    <label for="email">Email Address</label>
+                </div>
+
+                <div class="form-group">
+                    <select id="subject" name="subject" required>
+                        <option value="">Select Subject</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="collaboration">Partnership</option>
+                        <option value="support">Support</option>
+                        <option value="feedback">Feedback</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
+                    <label for="message">Message</label>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    :root {
+        --font1: "Poppins";
+        --fontSizeMenu: 1vw;
+        --fontSizeH1: 10vw;
+        --fontSizeP: 1.48vw;
+        --maxWidth: 1100px;
+        --dark: #000;
+    }
+
+    body {
+        margin: 0;
+        background-color: #f7f0ea;
+        font-family: var(--font1);
+        overflow-x: hidden;
+    }
+
+    .flex,
+    .flex__col {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flex__col {
+        flex-direction: column;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    main.flex__col {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .menu {
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        left: 50%;
+        width: calc(100% - 80px);
+        justify-content: space-between;
+        margin: 40px 0;
+        transform: translatex(-50%);
+    }
+
+    .menu a {
+        font-size: var(--fontSizeMenu);
+        font-weight: 600;
+        color: var(--dark);
+        text-decoration: none;
+    }
+
+    .menu ul {
+        gap: 0 60px;
+    }
+
+    .menu ul li {
+        display: flex;
+    }
+
+    .clip {
+        width: 100%;
+        height: 150vh;
+    }
+
+    .clip__inner {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .clip__inner h1 {
+        align-items: flex-end;
+        height: 40vh;
+        font-size: var(--fontSizeH1);
+        text-align: center;
+        max-width: var(--maxWidth);
+        margin: 5vw 0;
+    }
+
+    .clip__cols {
+        width: 70vw;
+        height: 45vh;
+        gap: 40px;
+        align-items: flex-start;
+        max-width: var(--maxWidth);
+    }
+
+    .clip__cols p {
+        font-size: var(--fontSizeP);
+        width: 50%;
+    }
+
+    .clip__cols a {
+        color: #000;
+    }
+
+    .clip__scroll {
+        z-index: 3;
+        width: 100vw;
+        height: 100vh;
+        padding-top: 100vh;
+    }
+
+    #clip1__scroll {
+        padding-top: 0;
+    }
+
+    .clip__scroll h2 {
+        color: #fff;
+        font-size: var(--fontSizeH1);
+        margin: 0 0 6vw 0;
+    }
+
+    .clip__scroll .clip__cols {
+        height: auto;
+    }
+
+    .clip__scroll p,
+    .clip__scroll a {
+        color: #fff;
+    }
+
+    #svg__rec,
+    #svg__rec2,
+    #svg__rec3,
+    #svg__rec4 {
+        display: none;
+    }
+
+    .starSvg {
+        position: fixed;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        margin: 0;
+        width: 200px;
+        height: auto;
+        aspect-ratio: 1/1;
+        transform: translate(-50%, -50%);
+    }
+
+    #svg1 {
+        clip-path: url(#svg__path)
+    }
+
+    #svg2 {
+        clip-path: url(#svg__path2)
+    }
+
+    #svg3 {
+        clip-path: url(#svg__path3)
+    }
+
+    #svg4 {
+        clip-path: url(#svg__path4)
+    }
+
+    .starSvg img,
+    .starSvg video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100vw;
+        height: auto;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        transform: translate(-50%, -50%);
+    }
+
+    @media (orientation: portrait) {
+
+        .starSvg img,
+        .starSvg video {
+            width: auto;
+            height: 100vh;
+        }
+    }
+
+    @media (min-width: 1550px) {
+        :root {
+            --fontSizeMenu: 16px;
+            --fontSizeH1: 140px;
+            --fontSizeP: 22px;
+        }
+
+        .clip__inner h1 {
+            height: 30vh;
+        }
+
+        .clip__cols {
+            height: 35vh;
+        }
+    }
+
+    @media (max-width: 600px) {
+        :root {
+            --fontSizeMenu: 11px;
+            --fontSizeP: 11px;
+        }
+
+        .menu {
+            width: 90vw;
+            margin: 4vw 0;
+        }
+
+        .menu ul {
+            gap: 0 2vw;
+        }
+
+        .clip__inner h1 {
+            width: 90vw;
+            justify-content: flex-start;
+            margin: 60px 0;
+        }
+
+        .clip__scroll h2 {
+            width: 90vw;
+        }
+
+        .clip__cols {
+            width: 90vw;
+            gap: 10px;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .clip__cols p {
+            width: 100%;
+        }
+
+        .starSvg {
+            width: 70px;
+        }
+    }
+
+    /* ── Modern Form Section ── */
+    .form-section {
+        width: 100%;
+        min-height: 100vh;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 20px;
+    }
+
+    .form-container {
+        width: 100%;
+        max-width: 680px;
+        background: #fff;
+    }
+
+    .form-header {
+        text-align: center;
+        margin-bottom: 48px;
+    }
+
+    .form-header h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin: 0 0 12px 0;
+        letter-spacing: -0.02em;
+    }
+
+    .form-header p {
+        font-size: 1rem;
+        color: #6b7280;
+        margin: 0;
+        font-weight: 400;
+    }
+
+    .modern-form {
+        width: 100%;
+    }
+
+    .form-row {
+        display: flex;
+        gap: 20px;
+    }
+
+    .form-group {
+        position: relative;
+        flex: 1;
+        margin-bottom: 28px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 16px 0 8px 0;
+        font-size: 1rem;
+        font-family: var(--font1);
+        color: #1a1a1a;
+        background: transparent;
+        border: none;
+        border-bottom: 1.5px solid #e5e7eb;
+        outline: none;
+        transition: border-color 0.3s ease;
+        box-sizing: border-box;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 60px;
+    }
+
+    .form-group select {
+        cursor: pointer;
+        background: transparent;
+    }
+
+    .form-group select option {
+        color: #1a1a1a;
+        background: #fff;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        border-bottom-color: #1a1a1a;
+    }
+
+    .form-group label {
+        position: absolute;
+        top: 16px;
+        left: 0;
+        font-size: 0.9rem;
+        color: #9ca3af;
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+
+    .form-group input:focus ~ label,
+    .form-group input:not(:placeholder-shown) ~ label,
+    .form-group textarea:focus ~ label,
+    .form-group textarea:not(:placeholder-shown) ~ label {
+        top: 0;
+        font-size: 0.75rem;
+        color: #1a1a1a;
+    }
+
+    .form-group select:valid ~ label,
+    .form-group select:focus ~ label {
+        top: 0;
+        font-size: 0.75rem;
+        color: #1a1a1a;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 18px 32px;
+        font-size: 1rem;
+        font-weight: 600;
+        font-family: var(--font1);
+        color: #fff;
+        background: #1a1a1a;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        letter-spacing: 0.02em;
+        margin-top: 8px;
+    }
+
+    .submit-btn:hover {
+        background: #333;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(26, 26, 26, 0.2);
+    }
+
+    .submit-btn:active {
+        transform: translateY(0);
+        box-shadow: 0 4px 12px rgba(26, 26, 26, 0.15);
+    }
+
+    @media (max-width: 600px) {
+        .form-section {
+            padding: 40px 20px;
+        }
+
+        .form-row {
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .form-header h2 {
+            font-size: 2rem;
+        }
+    }
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script>
+    // Register GSAP plugins
+    gsap.registerPlugin(ScrollTrigger);
+
+    // ── helpers ──
+    function getViewportSize() {
+        return window.innerWidth < 600 ? 70 : 200;
+    }
+    function getExpandedSize() {
+        return window.innerWidth < window.innerHeight ? window.innerHeight : window.innerWidth;
+    }
+
+    // ── reveal individual star clips on hover / at scroll ──
+    function setupStarClip(num) {
+        var fig   = "#svg" + num;
+        var path  = "#svg__star"  + (num > 1 ? num : "");
+        var rec   = "#svg__rec"   + (num > 1 ? num : "");
+
+        var tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: fig,
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+
+        // Parallax the video
+        tl.fromTo(fig + " video", { y: "30%" }, { y: 0, ease: "none" }, 0);
+
+        // Expand the star clip from small → fill viewport
+        tl.fromTo(fig,
+            { width: getViewportSize() },
+            { width: getExpandedSize(), ease: "none" },
+            0
+        );
+
+        return tl;
+    }
+
+    // Star 1 – pinned hero section
+    (function() {
+        var tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#clip1 .clip__inner",
+                scrub: 2,
+                pin: true,
+                pinSpacing: false,
+                invalidateOnRefresh: true,
+                end: () => "+=" + window.innerHeight
+            }
+        });
+
+        tl.fromTo("#svg1 video", { y: "30%" }, { y: 0, ease: "none" }, 0);
+        tl.fromTo("#svg1",
+            { width: getViewportSize() },
+            { width: getExpandedSize(), ease: "none" },
+            0
+        );
+
+        // Fade out once expanded so content underneath can be seen
+        tl.to("#svg1", { opacity: 0, ease: "none" }, 0.9);
+    })();
+
+    // Stars 2, 3, 4 – slide up from below
+    [2, 3, 4].forEach(function(n) {
+        var fig = "#svg" + n;
+
+        // Position below viewport initially
+        gsap.set(fig, { y: window.innerHeight });
+
+        // Slide up and expand
+        gsap.to(fig, {
+            y: 0,
+            x: 0,
+            scrollTrigger: {
+                trigger: "body",
+                scrub: true,
+                start: () => window.innerHeight * n + " bottom",
+                end:   () => window.innerHeight * (n + 1) + " bottom",
+                invalidateOnRefresh: true
+            },
+            ease: "none"
+        });
+
+        // Clip-path + parallax
+        setupStarClip(n);
+
+        // Fade out when fully expanded so the next star can take over
+        gsap.to(fig, {
+            opacity: 0,
+            scrollTrigger: {
+                trigger: "body",
+                scrub: true,
+                start: () => window.innerHeight * (n + 1) + " top",
+                end:   () => window.innerHeight * (n + 1) + " 40% bottom",
+                invalidateOnRefresh: true
+            },
+            ease: "none"
+        });
+    });
+
+// ── Form validation ──
+(function() {
+    'use strict';
+
+    var form = document.getElementById('contactForm');
+
+    if (!form) return;
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var firstName = document.getElementById('firstName');
+        var lastName  = document.getElementById('lastName');
+        var email     = document.getElementById('email');
+        var subject   = document.getElementById('subject');
+        var message   = document.getElementById('message');
+
+        var isValid = true;
+
+        [firstName, lastName, email, subject, message].forEach(function(field) {
+            field.style.borderBottomColor = '#e5e7eb';
+            field.style.color = '#1a1a1a';
+        });
+
+        function checkEmpty(field, label) {
+            if (!field.value || field.value.trim() === '') {
+                field.style.borderBottomColor = '#ef4444';
+                field.style.color = '#ef4444';
+                isValid = false;
+                return false;
+            }
+            return true;
+        }
+
+        function checkEmail(field) {
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(field.value)) {
+                field.style.borderBottomColor = '#ef4444';
+                field.style.color = '#ef4444';
+                isValid = false;
+                return false;
+            }
+            return true;
+        }
+
+        checkEmpty(firstName, 'First name');
+        checkEmpty(lastName, 'Last name');
+        checkEmpty(email, 'Email');
+
+        if (email.value.trim() !== '') {
+            checkEmail(email);
+        }
+
+        checkEmpty(subject, 'Subject');
+        checkEmpty(message, 'Message');
+
+        if (isValid) {
+            var btn = form.querySelector('.submit-btn');
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            setTimeout(function() {
+                btn.textContent = 'Message Sent!';
+                btn.style.background = '#10b981';
+                form.reset();
+
+                setTimeout(function() {
+                    btn.textContent = 'Send Message';
+                    btn.style.background = '#1a1a1a';
+                    btn.disabled = false;
+                }, 2500);
+            }, 800);
+        }
+    });
+
+    form.addEventListener('input', function(e) {
+        var field = e.target;
+        if (field.style.borderBottomColor === 'rgb(239, 68, 68)') {
+            field.style.borderBottomColor = '#e5e7eb';
+            field.style.color = '#1a1a1a';
+        }
+    });
+})();
+
+</script>
+</body>
+</html>

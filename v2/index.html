@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>D'Zen Derma — Beauty is in the Balance (v2 Navbar & Hero)</title>
+    <meta name="description" content="Explore D'Zen Derma's custom Liquid Glass Navbar and Premium Hero Slider Showcase - Version 2." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <!-- Base styles and variable sheets -->
+    <link rel="stylesheet" href="../styles.css" />
+    <!-- Section Specific styles -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Tailwind CSS (without preflight resets) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: { preflight: false },
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4B2B20',
+                        accent: '#e0a65a',
+                        'accent-light': '#daa520',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body style="background-color: #FDF8F3; color: #2B1A12;">
+
+    <!-- ═══════ Floating Pill Navbar v3 ═══════ -->
+    <nav id="pill-nav" class="pnav" aria-label="Main navigation">
+        <!-- Left: links -->
+        <ul class="pnav__links">
+            <li><a href="../aesthetics.html">Pillars</a></li>
+            <li><a href="../concerns.html">Concerns</a></li>
+            <li><a href="../treatments.html">Treatments</a></li>
+            <li><a href="../about.html">Who We Are</a></li>
+        </ul>
+
+        <!-- Center: logo -->
+        <a href="../newthree.html" class="pnav__logo" aria-label="Home">
+            <img src="../images/logo1.png" alt="D'Zen Derma" />
+        </a>
+
+        <!-- Right: actions -->
+        <div class="pnav__right">
+            <a href="../journal.html" class="pnav__icon" aria-label="Journal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </a>
+            <a href="../newthree.html#contact" class="pnav__icon" aria-label="Contact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.88.36 1.85.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.96.34 1.93.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+            <a href="../newthree.html#book" class="pnav__cta">
+                Book Now
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <button class="pnav__burger" id="pnav-burger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile drawer -->
+    <div class="pnav-overlay" id="pnav-overlay"></div>
+    <aside class="pnav-drawer" id="pnav-drawer" aria-label="Menu">
+        <button class="pnav-drawer__close" id="pnav-close" aria-label="Close menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <ul class="pnav-drawer__list">
+            <li><a href="../aesthetics.html">Pillars <span>→</span></a></li>
+            <li><a href="../concerns.html">Concerns <span>→</span></a></li>
+            <li><a href="../treatments.html">Treatments <span>→</span></a></li>
+            <li><a href="../about.html">Who We Are <span>→</span></a></li>
+            <li><a href="../signatures.html">D'Zen Experience <span>→</span></a></li>
+            <li><a href="../journal.html">Journal <span>→</span></a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <!-- Hero Slider -->
+        <div class="hero-wrapper" style="background-color: #FDF8F3; display: flow-root;">
+            <section class="hero hero-boxed">
+                <div class="hero-slider">
+                    <div class="hero-slide active">
+                        <div class="hero-bg">
+                            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1920&q=80" alt="Dermatology Clinic Room">
+                        </div>
+                        <div class="hero-overlay"></div>
+                        <div class="hero-content">
+                            <h1 class="hero-title">Where Science Meets Beauty</h1>
+                        </div>
+                    </div>
+                    <div class="hero-slide">
+                        <div class="hero-bg">
+                            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1920&q=80" alt="Luxury Spa Treatment">
+                        </div>
+                        <div class="hero-overlay"></div>
+                        <div class="hero-content">
+                            <h2 class="hero-title">Elevating You, Inside Out</h2>
+                        </div>
+                    </div>
+                    <div class="hero-slide">
+                        <div class="hero-bg">
+                            <img src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=1920&q=80" alt="Premium Skincare Ingredients">
+                        </div>
+                        <div class="hero-overlay"></div>
+                        <div class="hero-content">
+                            <h2 class="hero-title">Begin Your Journey</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-nav">
+                    <button class="hero-nav-btn prev-btn" aria-label="Previous slide">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18L9 12L15 6" />
+                        </svg>
+                    </button>
+                    <button class="hero-nav-btn next-btn" aria-label="Next slide">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18L15 12L9 6" />
+                        </svg>
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Us Section V2 -->
+        <section class="about-v2" id="about-us">
+            <div class="about-v2__container">
+                <div class="about-v2__intro-block text-center ">
+                    <span class="about-v2__eyebrow">Welcome to D'Zen Derma</span>
+                    <h2 class="about-v2__title">Beauty is in the <em>Balance</em></h2>
+                    <p class="about-v2__lead">
+                        D'Zen Derma is inspired by harmony, balance, and science-led beauty care. We provide
+                        personalized aesthetic and wellness treatments designed to enhance natural beauty and confidence.
+                    </p>
+                    <p class="about-v2__lead about-v2__lead--light">
+                        Our expert team of dermatologists combines advanced medical technology with holistic approaches,
+                        ensuring every treatment is tailored to your unique skin journey. Step into our sanctuary and
+                        experience the perfect blend of luxury, science, and care.
+                    </p>
+
+                    <div class="about-v2__stats">
+                        <div class="about-v2__stat">
+                            <div class="about-v2__stat-num">15+</div>
+                            <div class="about-v2__stat-label">Years of Mastery</div>
+                        </div>
+                        <div class="about-v2__stat">
+                            <div class="about-v2__stat-num">5K+</div>
+                            <div class="about-v2__stat-label">Transformations</div>
+                        </div>
+                        <div class="about-v2__stat">
+                            <div class="about-v2__stat-num">98%</div>
+                            <div class="about-v2__stat-label">Client Trust</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="about-v2__cta about-v2__reveal">
+                    <a href="../newthree.html#story" class="learn-more">
+                        <span class="circle" aria-hidden="true">
+                            <span class="icon symbol">𖤓</span>
+                        </span>
+                        <span class="button-text">Know More About Us</span>
+                    </a>
+                </div> -->
+            </div>
+        </section>
+
+        <!-- Brand Philosophy Strip Section -->
+        <section class="brand-philosophy-strip-section" id="brand-philosophy">
+            <div class="philosophy-strip-container">
+                <div class="philosophy-strip-inner">
+                    <div class="section-header text-center mb-4 mb-lg-5">
+                        <span class="section-subtitle">OUR PHILOSOPHY</span>
+                        <h2 id="service-arch-title" class="section-title">Balancing the Inside Health and Outside Beauty</h2>
+                        <p class="section-desc mx-auto" style="max-width: 760px; color: #5C4A3A;">
+                            We believe true beauty radiates from within—a perfect harmony between inner wellness and outer care. At D'Zen Derma, we bridge this balance through science-led treatments and holistic practices.
+                        </p>
+                    </div>
+                    <!-- Strip Content (Titles and Logo) -->
+                    <div class="philosophy-strip-top">
+                        <!-- Left Titles -->
+                        <div class="philosophy-titles-group left-group">
+                            <button class="philosophy-tab-btn is-active" data-index="0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tab-icon"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg> <span>The Philosophy</span></button>
+                            <button class="philosophy-tab-btn" data-index="1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tab-icon"><circle cx="12" cy="12" r="10"/><path d="m14.31 8 5.74 9.94"/><path d="M9.69 8h11.48"/><path d="m7.38 12 5.74-9.94"/><path d="M9.69 16 3.95 6.06"/><path d="M14.31 16H2.83"/><path d="m16.62 12-5.74 9.94"/></svg> <span>The Vision</span></button>
+                        </div>
+                        
+                        <!-- Center Logo -->
+                        <div class="philosophy-center-logo">
+                            <img src="../images/logo1.png" alt="D'Zen Derma Logo">
+                        </div>
+                        
+                        <!-- Right Titles -->
+                        <div class="philosophy-titles-group right-group">
+                            <button class="philosophy-tab-btn" data-index="2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tab-icon"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> <span>The Pillars</span></button>
+                            <button class="philosophy-tab-btn" data-index="3"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tab-icon"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> <span>The Sanctuary</span></button>
+                        </div>
+                    </div>
+                    
+                    <!-- Content Display Area Inside the Strip -->
+                    <div class="philosophy-display-area">
+                        <div class="philosophy-content-panel is-active" id="phil-panel-0">
+                            <p class="panel-desc">True beauty is an exquisite equilibrium found between profound internal cellular health and its vibrant external cutaneous expression. We believe that caring for the skin transcends surface-level aesthetics—it is a holistic practice of nurturing your body's intrinsic vitality. By harmonizing advanced dermatological science with mindful, intentional lifestyle choices, we create a foundation for enduring radiance that emanates from deep within.</p>
+                        </div>
+                        <div class="philosophy-content-panel" id="phil-panel-1">
+                            <p class="panel-desc">Our vision is defined by subtle, intelligent preservation. We prioritize clinical longevity over fleeting quick fixes, committing ourselves to enhancing your unique natural identity rather than masking it. Through the precise application of cutting-edge regenerative treatments and personalized care protocols, we empower you to age gracefully, maintaining skin that feels exceptionally healthy, resilient, and unmistakably yours for years to come.</p>
+                        </div>
+                        <div class="philosophy-content-panel" id="phil-panel-2">
+                            <p class="panel-desc">Our practice is built on a steadfast, science-backed precision protocol anchored by four essential cornerstones: rigorous medical expertise, state-of-the-art regenerative technology, holistic wellness integration, and deeply personalized patient education. These pillars ensure that every treatment plan is not only highly effective and meticulously safe, but also thoroughly tailored to address the nuanced complexities of your individual dermatological needs.</p>
+                        </div>
+                        <div class="philosophy-content-panel" id="phil-panel-3">
+                            <p class="panel-desc">We have intentionally designed a modern, serene space dedicated to the art of slow, purposeful care. Here, luxury is redefined by complete peace of mind, uncompromised comfort, and the undivided attention of our experts. From the moment you step through our doors, our sanctuary provides a calming retreat from the outside world, allowing your mind to relax while your skin undergoes transformative healing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Expertise Section -->
+        <section class="service-arch-section" aria-labelledby="service-arch-title">
+            <div class="container">
+                <div class="section-header text-center mb-4 mb-lg-5">
+                    <span class="section-subtitle">OUR EXPERTISE</span>
+                    <h2 id="service-arch-title" class="section-title">Advanced Care &amp; Wellness</h2>
+                    <p class="section-desc mx-auto" style="max-width: 760px; color: #5C4A3A;">
+                        Precision-led aesthetic care and restorative wellness experiences designed to elevate skin, energy, and confidence.
+                    </p>
+                    <a href="../newthree.html#book" class="service-arch-cta"
+                        style="display: inline-flex; align-items: center; gap: 0.75rem; margin-top: 1.5rem; padding: 1rem 2rem; background: #e0a65a; color: #0B0604; font-weight: 600; border-radius: 999px; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <span style="font-size: 1.1rem;">𖤓</span>
+                        <span>Book Appointment</span>
+                    </a>
+                </div>
+
+                <div class="service-arch-controls" aria-label="Carousel navigation">
+                    <button class="service-arch-btn service-arch-btn-prev" type="button" aria-label="Scroll left">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                            <path d="M15 18L9 12L15 6" />
+                        </svg>
+                    </button>
+                    <button class="service-arch-btn service-arch-btn-next" type="button" aria-label="Scroll right">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                            <path d="M9 18L15 12L9 6" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="service-arch-track" id="service-arch-track">
+                    <article class="service-arch-card">
+                        <div class="service-arch-card__media">
+                            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Aesthetics" />
+                        </div>
+                        <div class="service-arch-card__body">
+                            <h3>Aesthetics</h3>
+                            <p>Signature skin resurfacing, sculpting, and glow-enhancing protocols tailored to your goals.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-arch-card">
+                        <div class="service-arch-card__media">
+                            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80" alt="Functional Medicine" />
+                        </div>
+                        <div class="service-arch-card__body">
+                            <h3>Functional Medicine</h3>
+                            <p>Science-led support for energy, digestion, hormones, and long-term vitality.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-arch-card">
+                        <div class="service-arch-card__media">
+                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80" alt="Integrative Programmes" />
+                        </div>
+                        <div class="service-arch-card__body">
+                            <h3>Integrative Programmes</h3>
+                            <p>Holistic plans that combine clinical care, nutrition, and recovery for lasting balance.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-arch-card">
+                        <div class="service-arch-card__media">
+                            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80" alt="Regenerative Aesthetics" />
+                        </div>
+                        <div class="service-arch-card__body">
+                            <h3>Regenerative Aesthetics</h3>
+                            <p>Advanced cellular and skin-repair therapies that restore radiance from within.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-arch-card">
+                        <div class="service-arch-card__media">
+                            <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=600&q=80" alt="Fellow Doctors Training" />
+                        </div>
+                        <div class="service-arch-card__body">
+                            <h3>Fellow Doctors Training</h3>
+                            <p>Educational and expert-led programmes for clinicians seeking advanced aesthetic mastery.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Modern Section -->
+        <section class="testimonials-modern-section">
+            <div class="testimonials-card-wall-wrapper">
+                <div class="testimonials-card-wall">
+                    <!-- Column 1 -->
+                    <div class="testimonial-col t-col-1">
+                        <div class="testimonial-card" data-index="11" title="Click to read testimonial">
+                            <img src="https://images.unsplash.com/photo-1582308280652-03b96657ae28?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Aditi Rao" loading="lazy">
+                        </div>
+                        <div class="testimonial-card" data-index="5" title="Click to read testimonial">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=480&fit=crop&q=80"
+                                alt="Meera Jasmine" loading="lazy">
+                        </div>
+                        <div class="testimonial-card" data-index="1" title="Click to read testimonial">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=480&fit=crop&q=80"
+                                alt="Rohan Mehta" loading="lazy">
+                        </div>
+                    </div>
+                    <!-- Column 2 -->
+                    <div class="testimonial-col t-col-2">
+                        <div class="testimonial-card" data-index="6" title="Click to read testimonial">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=480&fit=crop&q=80"
+                                alt="Vikram Malhotra" loading="lazy">
+                        </div>
+                        <div class="testimonial-card" data-index="2" title="Click to read testimonial">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=480&fit=crop&q=80"
+                                alt="Ananya Reddy" loading="lazy">
+                        </div>
+                    </div>
+                    <!-- Column 3 -->
+                    <div class="testimonial-col t-col-3">
+                        <div class="testimonial-card" data-index="11" title="Click to read testimonial">
+                            <img src="https://images.unsplash.com/photo-1582308280652-03b96657ae28?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Aditi Rao" loading="lazy">
+                        </div>
+                        <div class="testimonial-card" data-index="7" title="Click to read testimonial">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=480&fit=crop&q=80"
+                                alt="Siddharth Roy" loading="lazy">
+                        </div>
+                    </div>
+                    <!-- Column 4 -->
+                    <div class="testimonial-col t-col-4">
+                        <div class="testimonial-card" data-index="0" title="Click to read testimonial">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=480&fit=crop&q=80"
+                                alt="Priya Sharma" loading="lazy">
+                        </div>
+                    </div>
+                    <!-- Column 5 (Center Featured Card) -->
+                    <div class="testimonial-col t-col-5">
+                        <div class="testimonial-card" data-index="11" title="Click to read testimonial">
+                            <img src="https://images.unsplash.com/photo-1582308280652-03b96657ae28?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Aditi Rao" loading="lazy">
+                        </div>
+                        <div class="testimonial-card" data-index="4" title="Click to read testimonial">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=480&fit=crop&q=80"
+                                alt="Dr. Amit Patel" loading="lazy">
+                        </div>
+                    </div>
+                    <!-- Column 6 -->
+                    <div class="testimonial-col t-col-6">
+                        <div class="testimonial-card" data-index="3" title="Click to read testimonial">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=480&fit=crop&q=80"
+                                alt="Kavya Iyer" loading="lazy">
+                        </div>
+                    </div>
+                    <!-- Column 7 -->
+                    <div class="testimonial-col t-col-7">
+                        <div class="testimonial-card" data-index="11" title="Click to read testimonial">
+                            <img src="https://images.unsplash.com/photo-1582308280652-03b96657ae28?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Aditi Rao" loading="lazy">
+                        </div>
+                        <div class="testimonial-card" data-index="8" title="Click to read testimonial">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=480&fit=crop&q=80"
+                                alt="Neha Sen" loading="lazy">
+                        </div>
+                        <div class="testimonial-card" data-index="9" title="Click to read testimonial">
+                            <img src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=400&h=480&fit=crop&q=80"
+                                alt="Aarav Kapoor" loading="lazy">
+                        </div>
+                    </div>
+                    <!-- Column 8 -->
+                    <div class="testimonial-col t-col-8">
+                        <div class="testimonial-card" data-index="10" title="Click to read testimonial">
+                            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=480&fit=crop&q=80"
+                                alt="Ritu Verma" loading="lazy">
+                        </div>
+                        <div class="testimonial-card" data-index="11" title="Click to read testimonial">
+                            <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&h=480&fit=crop&q=80"
+                                alt="Aditi Rao" loading="lazy">
+                        </div>
+                    </div>
+                    <!-- Column 9 -->
+                    <div class="testimonial-col t-col-9">
+                        <div class="testimonial-card" data-index="12" title="Click to read testimonial">
+                            <img src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Aditi Rao" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonials-content-box reveal">
+                <div class="testimonials-badge-pill">Testimonials</div>
+                <h2 class="testimonials-heading">
+                    Over 5,000 Client
+                    <span class="muted">Transformations &amp; Journeys</span>
+                </h2>
+                <p class="testimonials-desc">
+                    Learn why thousands trust our bespoke treatments to guide their skin wellness journeys.
+                </p>
+                <a href="javascript:void(0)" class="testimonials-btn" id="open-first-testimonial-btn">
+                    <span>Read Success Stories</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Glassmorphic Modal Overlay -->
+        <div id="testimonial-modal" class="testimonial-modal" aria-hidden="true">
+            <div class="testimonial-modal-overlay" id="modal-overlay-close"></div>
+            <div class="testimonial-modal-content">
+                <button class="testimonial-modal-close" id="modal-btn-close" aria-label="Close modal">&times;</button>
+                <div class="testimonial-modal-body">
+                    <div class="testimonial-modal-photo">
+                        <img id="modal-img" src="" alt="Patient Portrait">
+                    </div>
+                    <div class="testimonial-modal-info">
+                        <div class="testimonial-modal-stars">★★★★★</div>
+                        <blockquote class="testimonial-modal-quote" id="modal-quote"></blockquote>
+                        <div class="testimonial-modal-author" id="modal-author"></div>
+                        <div class="testimonial-modal-meta">
+                            <span id="modal-treatment"></span> &middot; <span id="modal-location"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Meet Our Doctors Section V2 -->
+        <section class="doctors-v2" id="doctorsNew" aria-label="Meet our doctors">
+            <div class="doctors-v2__container">
+                <div class="doctors-v2__head">
+                    <span class="doctors-v2__eyebrow">Meet The Team</span>
+                    <h2 class="doctors-v2__title">The minds <em>behind</em> the method</h2>
+                    <p class="doctors-v2__subtitle">
+                        Two visionaries united by a shared philosophy: a sanctuary where science, art, and
+                        intentional care redefine what aesthetic medicine can be.
+                    </p>
+                </div>
+
+                <!-- Tab Pills -->
+                <div class="founder-tabs" role="tablist">
+                    <div class="founder-tabs__pill">
+                        <button class="founder-tab active" role="tab" aria-selected="true" data-slide="0">
+                            <img class="founder-tab__img" src="../images/aarushi.png" alt="Dr. Aarushi Passi Bhandari">
+                            <span class="founder-tab__info">
+                                <span class="founder-tab__name">Dr. Aarushi</span>
+                                <span class="founder-tab__role">Lead Dermatologist</span>
+                            </span>
+                        </button>
+                        <button class="founder-tab" role="tab" aria-selected="false" data-slide="1">
+                            <img class="founder-tab__img" src="../images/rahul.png" alt="Rahul Bhandari">
+                            <span class="founder-tab__info">
+                                <span class="founder-tab__name">Rahul Bhandari</span>
+                                <span class="founder-tab__role">Brand &amp; Experience</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Slider -->
+                <div class="founder-slider">
+                    <div class="founder-card active">
+                        <div class="founder-card__imagewrap">
+                            <img class="founder-card__image" src="../images/aarushi.png" alt="Dr. Aarushi Passi Bhandari"
+                                loading="lazy" decoding="async" width="700" height="800">
+                        </div>
+                        <div class="founder-card__content">
+                            <span class="founder-card__meta">Founder · Medical Direction</span>
+                            <h3 class="founder-card__name">Dr. Aarushi Passi Bhandari</h3>
+                            <p class="founder-card__role">Lead Dermatologist · MD Dermatology</p>
+                            <p class="founder-card__bio">
+                                A dermatologist with global exposure and an obsessive commitment to clinical excellence.
+                                Dr. Aarushi leads every protocol with precision, safety, and a science-first approach to
+                                aesthetic medicine that feels calm, deliberate, and deeply personal.
+                            </p>
+                            <blockquote class="founder-card__quote">
+                                "The most ambitious thing a doctor can do is to leave a patient with less, not more."
+                            </blockquote>
+                            <div class="founder-card__tags">
+                                <span class="founder-card__tag">Global Fellowships</span>
+                                <span class="founder-card__tag">Senior Trainer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="founder-card">
+                        <div class="founder-card__imagewrap">
+                            <img class="founder-card__image" src="../images/rahul.png" alt="Rahul Bhandari" loading="lazy"
+                                decoding="async" width="700" height="800">
+                        </div>
+                        <div class="founder-card__content">
+                            <span class="founder-card__meta">Founder · Brand &amp; Experience</span>
+                            <h3 class="founder-card__name">Rahul Bhandari</h3>
+                            <p class="founder-card__role">Brand Strategy · Experience Design</p>
+                            <p class="founder-card__bio">
+                                Concept-driven and quietly bold, Rahul shapes the emotional architecture behind D'Zen —
+                                the narrative, the spaces, and the unhurried experience that makes intelligent
+                                transformation feel inevitable.
+                            </p>
+                            <blockquote class="founder-card__quote">
+                                "D'Zen is not a clinic. It is a philosophy that happens to operate one."
+                            </blockquote>
+                            <div class="founder-card__tags">
+                                <span class="founder-card__tag">Brand Strategy</span>
+                                <span class="founder-card__tag">Experience Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industry Trainer Section -->
+        <section class="trainer-section" id="training">
+            <div class="trainer-v2__container">
+                <div class="trainer-v2__head">
+                    <span class="trainer-v2__eyebrow trainer-v2__reveal">Fellow-Doctors &amp; Training</span>
+                    <h2 class="trainer-v2__title trainer-v2__reveal">A senior trainer <em>the industry learns from.</em></h2>
+                    <p class="trainer-v2__lead trainer-v2__reveal">Dr. Aarushi is one of India's leading medical educators in aesthetic and regenerative dermatology — invited as faculty, masterclass host and senior trainer at industry workshops and fellowship programmes across the country.</p>
+                </div>
+
+                <div class="trainer-v2__grid">
+                    <article class="trainer-v2__card--portrait trainer-v2__reveal trainer-v2__reveal--left">
+                        <div class="trainer-v2__media">
+                            <img src="../images/aarushi.png" alt="Dr. Aarushi Singh" />
+                        </div>
+                        <div class="trainer-v2__portrait-overlay">
+                            <span class="trainer-v2__portrait-chip">Invited Faculty</span>
+                            <h3 class="trainer-v2__portrait-name">Dr. Aarushi Singh</h3>
+                            <p class="trainer-v2__portrait-role">Founder · Senior Aesthetic Dermatologist</p>
+                        </div>
+                    </article>
+
+                    <div class="trainer-v2__quote-panel trainer-v2__reveal trainer-v2__reveal--right">
+                        <svg class="trainer-v2__quote-icon" viewBox="0 0 64 64" aria-hidden="true">
+                            <path d="M22 18c-7 4-11 11-11 19v9h17V32H18c0-6 4-11 10-13zm30 0c-7 4-11 11-11 19v9h17V32H48c0-6 4-11 10-13z" fill="currentColor" />
+                        </svg>
+                        <blockquote class="trainer-v2__quote-text">
+                            What I teach my fellow doctors is what I practise at D'Zen — the <span class="accent">discipline of restraint</span>, the priority of safety, and the courage to keep learning.
+                        </blockquote>
+                        <div class="trainer-v2__quote-sig">Dr. Aarushi Singh</div>
+                    </div>
+
+                    <div class="trainer-v2__stats">
+                        <div class="trainer-v2__stat trainer-v2__reveal">
+                            <span class="trainer-v2__stat-num">120<span class="suffix">+</span></span>
+                            <span class="trainer-v2__stat-label">Fellow-Doctors Trained</span>
+                        </div>
+                        <div class="trainer-v2__stat trainer-v2__reveal">
+                            <span class="trainer-v2__stat-num">35<span class="suffix">+</span></span>
+                            <span class="trainer-v2__stat-label">Masterclasses & Workshops</span>
+                        </div>
+                        <div class="trainer-v2__stat trainer-v2__reveal">
+                            <span class="trainer-v2__stat-num">14</span>
+                            <span class="trainer-v2__stat-label">Industry Fellowships</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trainer-v2__cta trainer-v2__reveal">
+                    <span class="trainer-v2__cta-text">For practitioners &amp; fellowship enquiries</span>
+                    <a href="../newthree.html#enquire" class="learn-more">
+                        <span class="circle" aria-hidden="true">
+                            <span class="icon symbol">𖤓</span>
+                        </span>
+                        <span class="button-text">Enquire About Training</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Media Coverage Section -->
+        <section class="media-coverage" style="position: relative; overflow: hidden;">
+            <div class="container">
+                <div class="section-header text-center mb-4 mb-lg-5">
+                    <span class="section-subtitle">RECOGNIZED EXCELLENCE</span>
+                    <h2 class="section-title">Featured In</h2>
+                    <p class="section-desc">We are creating a space where luxury meets healing, and science meets spirituality.</p>
+                </div>
+
+                <div class="row g-4 justify-content-center align-items-center">
+                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                        <div class="media-logo">
+                            <svg viewBox="0 0 120 50" class="logo-svg"><text x="10" y="32" font-family="Georgia, serif" font-size="22" font-weight="bold">VOGUE</text><text x="18" y="46" font-family="Arial, sans-serif" font-size="11">INDIA</text></svg>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                        <div class="media-logo">
+                            <svg viewBox="0 0 150 55" class="logo-svg"><text x="10" y="22" font-family="Arial, sans-serif" font-size="10">Condé Nast</text><text x="10" y="44" font-family="Georgia, serif" font-size="18" font-weight="bold">Traveler</text></svg>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                        <div class="media-logo">
+                            <svg viewBox="0 0 80 50" class="logo-svg"><text x="8" y="22" font-family="Georgia, serif" font-size="12" font-style="italic">the</text><text x="8" y="42" font-family="Georgia, serif" font-size="22" font-weight="bold">nod</text></svg>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                        <div class="media-logo">
+                            <svg viewBox="0 0 130 50" class="logo-svg">
+                                <circle cx="18" cy="25" r="10" fill="none" stroke="currentColor" stroke-width="2" />
+                                <path d="M18 15 L28 25 L18 35 L8 25 Z" fill="none" stroke="currentColor" stroke-width="1.5" /><text x="38" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold">CNBC TV18</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                        <div class="media-logo">
+                            <svg viewBox="0 0 140 50" class="logo-svg"><text x="10" y="24" font-family="Arial, sans-serif" font-size="10" letter-spacing="1">TRAVEL+</text><text x="10" y="44" font-family="Arial, sans-serif" font-size="14" font-weight="bold">LEISURE</text></svg>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                        <div class="media-logo">
+                            <svg viewBox="0 0 100 50" class="logo-svg"><text x="10" y="34" font-family="Arial Black, sans-serif" font-size="22" font-weight="900">HELLO!</text></svg>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                        <div class="media-logo">
+                            <svg viewBox="0 0 70 55" class="logo-svg"><text x="5" y="42" font-family="Georgia, serif" font-size="32" font-weight="bold">AD</text></svg>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                        <div class="media-logo">
+                            <svg viewBox="0 0 120 55" class="logo-svg"><text x="10" y="26" font-family="Georgia, serif" font-size="18" font-weight="400">ELLE</text><text x="22" y="46" font-family="Arial, sans-serif" font-size="10" letter-spacing="4">DECOR</text></svg>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                        <div class="media-logo">
+                            <svg viewBox="0 0 100 50" class="logo-svg">
+                                <rect x="8" y="12" width="18" height="14" fill="currentColor" /><text x="34" y="28" font-family="Georgia, serif" font-size="14" font-weight="500">ET Retail</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                        <div class="media-logo">
+                            <svg viewBox="0 0 70 55" class="logo-svg"><text x="10" y="36" font-family="Georgia, serif" font-size="26" font-weight="bold" font-style="italic">mint</text></svg>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                        <div class="media-logo">
+                            <svg viewBox="0 0 100 55" class="logo-svg"><text x="10" y="36" font-family="Georgia, serif" font-size="22" font-style="italic">Esquire</text></svg>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                        <div class="media-logo">
+                            <svg viewBox="0 0 140 50" class="logo-svg"><text x="10" y="30" font-family="Arial, sans-serif" font-size="12" letter-spacing="2">LIFESTYLE ASIA</text></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Headlines Section -->
+        <section class="headlines-section">
+            <div class="container">
+                <div class="section-header text-center mb-4 mb-lg-5">
+                    <span class="section-subtitle">IN THE NEWS</span>
+                    <h2 class="section-title">Making Headlines Worldwide</h2>
+                    <p class="section-desc">When healing happens, the world takes notice. Our commitment to excellence in aesthetic dermatology and integrative wellness has earned us consistent recognition from national and international media.</p>
+                </div>
+
+                <div class="blog-cards-grid">
+                    <!-- Card 1 -->
+                    <div class="blog-card">
+                        <div class="blog-card-image-wrapper">
+                            <span class="blog-card-badge">WELLNESS</span>
+                            <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=700&q=80" alt="Wellness" class="blog-card-img">
+                        </div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span>MAY 2026</span>
+                                <span>8 MIN READ</span>
+                            </div>
+                            <h3 class="blog-card-title">The Skin-Gut Connection: Why Your Microbiome Matters</h3>
+                            <p class="blog-card-excerpt">Your gut is often called the "second skin" &mdash; and for good reason...</p>
+                            <a href="#" class="blog-card-link">Read Article</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="blog-card">
+                        <div class="blog-card-image-wrapper">
+                            <span class="blog-card-badge">AESTHETICS</span>
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&q=80" alt="Aesthetics" class="blog-card-img">
+                        </div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span>APRIL 2026</span>
+                                <span>5 MIN READ</span>
+                            </div>
+                            <h3 class="blog-card-title">Hydrafacial vs Medipeel: Which Is Right for You?</h3>
+                            <p class="blog-card-excerpt">Both treatments promise radiance, but they work differently. Here's how...</p>
+                            <a href="#" class="blog-card-link">Read Article</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="blog-card">
+                        <div class="blog-card-image-wrapper">
+                            <span class="blog-card-badge">ANTI-AGEING</span>
+                            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=700&q=80" alt="Anti-Ageing" class="blog-card-img">
+                        </div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span>MARCH 2026</span>
+                                <span>6 MIN READ</span>
+                            </div>
+                            <h3 class="blog-card-title">Hormones and Skin Ageing: What Happens After 30</h3>
+                            <p class="blog-card-excerpt">Declining estrogen and testosterone don't just affect energy levels...</p>
+                            <a href="#" class="blog-card-link">Read Article</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="headlines-footer text-center mt-5">
+                    <a href="#" class="view-all-articles" style="display: inline-flex; align-items: center; gap: 0.75rem; color: #2B1A12; text-decoration: none; font-weight: 600; font-size: 14px;">
+                        <span>View All Articles</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2" />
+                            <path d="M12 20v2" />
+                            <path d="m4.93 4.93 1.41 1.41" />
+                            <path d="m17.66 17.66 1.41 1.41" />
+                            <path d="M2 12h2" />
+                            <path d="M20 12h2" />
+                            <path d="m6.34 17.66-1.41 1.41" />
+                            <path d="m19.07 4.93-1.41 1.41" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============= SIGNATURE SERVICES SECTION ============= -->
+        <section class="sig-services-zone" id="sigServicesZone">
+            <!-- Sticky Image Background -->
+            <div class="sig-services-bg" id="sigServicesBg">
+                <img src="https://images.unsplash.com/photo-1770954098074-da95ccdf33e7?q=80&w=2532&auto=format&fit=crop" alt="Dzen Signature Services Backdrop" id="bgImage" />
+                <div class="sig-services-overlay"></div>
+            </div>
+
+            <!-- Scrollable Services Content -->
+            <div class="sig-services-scroll" id="sigServicesScroll">
+                <!-- Intro Panel -->
+                <div class="sig-panel sig-panel--intro" id="sigPanel0">
+                    <div class="sig-panel-inner">
+                        <span class="sig-label">Our Craft</span>
+                        <h2 class="sig-intro-heading">Signature<br/>Services</h2>
+                        <p class="sig-intro-sub">Each treatment is a ritual — crafted to reveal your most luminous, confident self through the finest techniques in aesthetic medicine.</p>
+                        <div class="sig-scroll-cue">
+                            <span>Scroll to explore</span>
+                            <div class="sig-scroll-line"><div class="sig-scroll-dot"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 1: Lip Enhancement -->
+                <div class="sig-panel sig-panel--service" id="sigPanel1" data-index="1">
+                    <div class="sig-panel-inner sig-service-layout sig-service-layout--left">
+                        <div class="sig-service-visual">
+                            <div class="sig-oval-frame">
+                                <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop" alt="Lip Enhancement" class="sig-oval-img" />
+                            </div>
+                        </div>
+                        <div class="sig-service-text">
+                            <span class="sig-service-num">01</span>
+                            <h3 class="sig-service-title">Lip Enhancement</h3>
+                            <div class="sig-service-bar"></div>
+                            <p class="sig-service-desc">Precision filler artistry to sculpt natural-looking lips with defined contour, optimal volume, and effortless symmetry — no over-filled results.</p>
+                            <div class="sig-service-tags">
+                                <span>Hyaluronic Acid</span>
+                                <span>Natural Results</span>
+                                <span>30 min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2: Skin Rejuvenation -->
+                <div class="sig-panel sig-panel--service" id="sigPanel2" data-index="2">
+                    <div class="sig-panel-inner sig-service-layout sig-service-layout--right">
+                        <div class="sig-service-text">
+                            <span class="sig-service-num">02</span>
+                            <h3 class="sig-service-title">Skin Rejuvenation</h3>
+                            <div class="sig-service-bar"></div>
+                            <p class="sig-service-desc">Advanced skin renewal protocols combining bio-stimulators, collagen induction, and targeted therapies to restore youthful radiance from within.</p>
+                            <div class="sig-service-tags">
+                                <span>Collagen Boost</span>
+                                <span>Skin Glow</span>
+                                <span>60 min</span>
+                            </div>
+                        </div>
+                        <div class="sig-service-visual">
+                            <div class="sig-oval-frame sig-oval-frame--alt">
+                                <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop" alt="Skin Rejuvenation" class="sig-oval-img" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3: Facial Contouring -->
+                <div class="sig-panel sig-panel--service" id="sigPanel3" data-index="3">
+                    <div class="sig-panel-inner sig-service-layout sig-service-layout--left">
+                        <div class="sig-service-visual">
+                            <div class="sig-oval-frame sig-oval-frame--tall">
+                                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop" alt="Facial Contouring" class="sig-oval-img" />
+                            </div>
+                        </div>
+                        <div class="sig-service-text">
+                            <span class="sig-service-num">03</span>
+                            <h3 class="sig-service-title">Facial Contouring</h3>
+                            <div class="sig-service-bar"></div>
+                            <p class="sig-service-desc">Sculpt and define your natural bone structure with expert dermal filler placement along cheekbones, jawline, and chin for a harmonious profile.</p>
+                            <div class="sig-service-tags">
+                                <span>3D Sculpting</span>
+                                <span>Non-Surgical</span>
+                                <span>45 min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4: Anti-Ageing -->
+                <div class="sig-panel sig-panel--service" id="sigPanel4" data-index="4">
+                    <div class="sig-panel-inner sig-service-layout sig-service-layout--right">
+                        <div class="sig-service-text">
+                            <span class="sig-service-num">04</span>
+                            <h3 class="sig-service-title">Anti-Ageing Treatments</h3>
+                            <div class="sig-service-bar"></div>
+                            <p class="sig-service-desc">Targeted Botulinum toxin and bio-revitalisation protocols to soften dynamic lines, lift brows, and restore a refreshed, rested appearance.</p>
+                            <div class="sig-service-tags">
+                                <span>Botulinum Toxin</span>
+                                <span>Preventative</span>
+                                <span>20 min</span>
+                            </div>
+                        </div>
+                        <div class="sig-service-visual">
+                            <div class="sig-oval-frame">
+                                <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop" alt="Anti-Ageing Treatments" class="sig-oval-img" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 5: Hair Restoration -->
+                <div class="sig-panel sig-panel--service" id="sigPanel5" data-index="5">
+                    <div class="sig-panel-inner sig-service-layout sig-service-layout--left">
+                        <div class="sig-service-visual">
+                            <div class="sig-oval-frame sig-oval-frame--wide">
+                                <img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?q=80&w=800&auto=format&fit=crop" alt="Hair Restoration" class="sig-oval-img" />
+                            </div>
+                        </div>
+                        <div class="sig-service-text">
+                            <span class="sig-service-num">05</span>
+                            <h3 class="sig-service-title">Hair Restoration</h3>
+                            <div class="sig-service-bar"></div>
+                            <p class="sig-service-desc">PRP therapy and growth factor treatments to stimulate dormant follicles, strengthen existing hair, and promote dense, healthy regrowth naturally.</p>
+                            <div class="sig-service-tags">
+                                <span>PRP Therapy</span>
+                                <span>Growth Factors</span>
+                                <span>75 min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 6: Body Sculpting -->
+                <div class="sig-panel sig-panel--service" id="sigPanel6" data-index="6">
+                    <div class="sig-panel-inner sig-service-layout sig-service-layout--right">
+                        <div class="sig-service-text">
+                            <span class="sig-service-num">06</span>
+                            <h3 class="sig-service-title">Body Sculpting</h3>
+                            <div class="sig-service-bar"></div>
+                            <p class="sig-service-desc">Non-invasive body contouring using cutting-edge technologies to selectively eliminate stubborn fat cells and tighten skin for a sculpted silhouette.</p>
+                            <div class="sig-service-tags">
+                                <span>Non-Invasive</span>
+                                <span>FDA Cleared</span>
+                                <span>90 min</span>
+                            </div>
+                        </div>
+                        <div class="sig-service-visual">
+                            <div class="sig-oval-frame sig-oval-frame--tall">
+                                <img src="https://images.unsplash.com/photo-1529419412599-7bb870e11810?q=80&w=800&auto=format&fit=crop" alt="Body Sculpting" class="sig-oval-img" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Bottom Action Bar -->
+    <div class="bottom-action-bar" id="bottomActionBar" aria-label="Quick actions">
+        <a href="https://wa.me/919876543210" class="bottom-action-btn" target="_blank" rel="noopener"
+            aria-label="Chat on WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+                <path
+                    d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.967-.272-.099-.47-.149-.669.15-.197.297-.767.967-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.917-2.207-.241-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.307 1.263.49 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+            </svg>
+            <span class="btn-label">WhatsApp</span>
+        </a>
+        <a href="tel:+919876543210" class="bottom-action-btn" aria-label="Call us">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+                <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span class="btn-label">Call</span>
+        </a>
+        <a href="../newthree.html#book" class="bottom-action-btn bottom-action-btn--primary" aria-label="Book consultation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+                <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01" />
+            </svg>
+            <span class="btn-label">Book Now</span>
+        </a>
+        <a href="../newthree.html#location" class="bottom-action-btn" aria-label="View location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span class="btn-label">Map</span>
+        </a>
+    </div>
+
+    <!-- Project script controller -->
+    <script src="script.js"></script>
+</body>
+</html>

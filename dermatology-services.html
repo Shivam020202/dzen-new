@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dermatology Services Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --cream: #FAF7F2;
+            --blush: #E8D5D0;
+            --terracotta: #C4A484;
+            --forest: #7A8B7A;
+            --charcoal: #2D2D2D;
+            --gold: #B8956C;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: var(--cream);
+            color: var(--charcoal);
+            overflow-x: hidden;
+        }
+
+        /* ── Page Context ── */
+        .page-content {
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page-intro {
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .page-intro h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .page-intro p {
+            font-size: 1rem;
+            font-weight: 300;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .scroll-hint {
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--forest);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
+        }
+
+        /* ── Horizontal Scroll Section ── */
+        .services-section {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            background: var(--charcoal);
+        }
+
+        .services-track {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            display: flex;
+            will-change: transform;
+        }
+
+        .service-panel {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem;
+            overflow: hidden;
+        }
+
+        .service-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.08;
+            background-size: cover;
+            background-position: center;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .service-panel:nth-child(1)::before {
+            background-image: url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1920&q=80');
+        }
+
+        .service-panel:nth-child(2)::before {
+            background-image: url('https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=1920&q=80');
+        }
+
+        .service-panel:nth-child(3)::before {
+            background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&q=80');
+        }
+
+        .service-panel:nth-child(4)::before {
+            background-image: url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1920&q=80');
+        }
+
+        /* ── Infinity Line SVG ── */
+        .infinity-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .infinity-path {
+            fill: none;
+            stroke: var(--gold);
+            stroke-width: 2;
+            stroke-dasharray: 2000;
+            stroke-dashoffset: 2000;
+            filter: drop-shadow(0 0 8px rgba(184, 149, 108, 0.4));
+        }
+
+        /* ── Service Content ── */
+        .service-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .service-content--reverse {
+            direction: rtl;
+        }
+
+        .service-content--reverse > * {
+            direction: ltr;
+        }
+
+        .service-info {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .service-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 8rem;
+            font-weight: 300;
+            line-height: 1;
+            color: var(--gold);
+            opacity: 0.15;
+            margin-bottom: -2rem;
+        }
+
+        .service-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--terracotta);
+            margin-bottom: 1rem;
+        }
+
+        .service-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 400;
+            color: var(--cream);
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-description {
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.9;
+            color: rgba(250, 247, 242, 0.75);
+            margin-bottom: 2rem;
+        }
+
+        .service-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .feature {
+            padding: 0.5rem 1.25rem;
+            border: 1px solid rgba(184, 149, 108, 0.3);
+            font-size: 0.8rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            color: var(--cream);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* ── Service Visual ── */
+        .service-visual {
+            position: relative;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .visual-frame {
+            position: relative;
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, rgba(232, 213, 208, 0.1) 0%, rgba(122, 139, 122, 0.1) 100%);
+            border: 1px solid rgba(184, 149, 108, 0.2);
+            overflow: hidden;
+        }
+
+        .visual-frame::after {
+            content: '';
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            right: 1.5rem;
+            bottom: 1.5rem;
+            border: 1px solid rgba(184, 149, 108, 0.15);
+            pointer-events: none;
+        }
+
+        .visual-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            opacity: 0.6;
+        }
+
+        .visual-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: var(--gold);
+        }
+
+        .visual-text {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            right: 2rem;
+        }
+
+        .visual-text h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--cream);
+            margin-bottom: 0.5rem;
+        }
+
+        .visual-text span {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--terracotta);
+        }
+
+        /* ── Progress Indicator ── */
+        .section-progress {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 20;
+        }
+
+        .progress-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(250, 247, 242, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .progress-dot.active {
+            background: var(--gold);
+            transform: scale(1.3);
+        }
+
+        /* ── Mobile Styles ── */
+        @media (max-width: 900px) {
+            .service-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+
+            .service-content--reverse {
+                direction: ltr;
+            }
+
+            .service-number {
+                font-size: 5rem;
+                margin-bottom: -1rem;
+            }
+
+            .service-label {
+                justify-content: center;
+                display: block;
+            }
+
+            .service-features {
+                justify-content: center;
+            }
+
+            .service-visual {
+                order: -1;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .visual-frame {
+                aspect-ratio: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .service-panel {
+                padding: 2rem;
+            }
+
+            .service-title {
+                font-size: 2rem;
+            }
+
+            .service-description {
+                font-size: 0.9rem;
+            }
+
+            .feature {
+                padding: 0.4rem 1rem;
+                font-size: 0.75rem;
+            }
+
+            .section-progress {
+                bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Context content before the section -->
+    <div class="page-content">
+        <div class="page-intro">
+            <h1>Aesthetic Treatments</h1>
+            <p>Experience the intersection of science and artistry. Our curated collection of treatments is designed to restore, enhance, and celebrate your natural beauty.</p>
+            <p class="scroll-hint">↓ Scroll to explore</p>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section class="services-section" id="servicesSection">
+        <!-- Infinity Line SVG -->
+        <svg class="infinity-line" viewBox="0 0 1920 300" preserveAspectRatio="none">
+            <path class="infinity-path" d="M 960 150
+                C 800 150, 700 50, 550 50, 400 50, 300 150, 300 150,
+                C 300 150, 400 250, 550 250, 700 250, 800 150, 960 150,
+                C 1120 150, 1220 50, 1370 50, 1520 50, 1620 150, 1620 150,
+                C 1620 150, 1520 250, 1370 250, 1220 250, 1120 150, 960 150" />
+        </svg>
+
+        <div class="services-track" id="servicesTrack">
+            <!-- Service 1: Facial Treatments -->
+            <div class="service-panel">
+                <div class="service-content">
+                    <div class="service-info">
+                        <div class="service-number">01</div>
+                        <div class="service-label">Facial Treatments</div>
+                        <h2 class="service-title">The Art of Radiant Skin</h2>
+                        <p class="service-description">
+                            Combining advanced dermatological science with meticulous technique, our facial treatments address concerns from premature aging to hyperpigmentation. Each protocol is calibrated to your skin's unique microbiome and cellular rhythm.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature">Laser Resurfacing</span>
+                            <span class="feature">HydraFacial</span>
+                            <span class="feature">Chemical Peels</span>
+                            <span class="feature">Microneedling</span>
+                        </div>
+                    </div>
+                    <div class="service-visual">
+                        <div class="visual-frame">
+                            <div class="visual-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            </div>
+                            <div class="visual-text">
+                                <h3>Clarity & Light</h3>
+                                <span>Restoration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 2: Injectables -->
+            <div class="service-panel">
+                <div class="service-content service-content--reverse">
+                    <div class="service-info">
+                        <div class="service-number">02</div>
+                        <div class="service-label">Injectables</div>
+                        <h2 class="service-title">Subtle Refinement</h2>
+                        <p class="service-description">
+                            The intersection of anatomy and aesthetics. Our approach prioritizes conservative enhancement—preserving facial expressiveness while softening the markers of time. Results that honor your architecture.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature">Neuromodulators</span>
+                            <span class="feature">Hyaluronic Acid</span>
+                            <span class="feature">Biostimulators</span>
+                            <span class="feature">PDO Threads</span>
+                        </div>
+                    </div>
+                    <div class="service-visual">
+                        <div class="visual-frame">
+                            <div class="visual-icon">
+                                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l4.59-4.58L18 11l-6 6z"/></svg>
+                            </div>
+                            <div class="visual-text">
+                                <h3>Balance & Form</h3>
+                                <span>Enhancement</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 3: Body -->
+            <div class="service-panel">
+                <div class="service-content">
+                    <div class="service-info">
+                        <div class="service-number">03</div>
+                        <div class="service-label">Body Contouring</div>
+                        <h2 class="service-title">Sculpted Confidence</h2>
+                        <p class="service-description">
+                            Non-invasive technologies that redefine your silhouette. We target stubborn deposits and lax skin with precision energy systems, achieving results that complement your lifestyle rather than disrupt it.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature">Cryolipolysis</span>
+                            <span class="feature">Radiofrequency</span>
+                            <span class="feature">EMSCULPT NEO</span>
+                            <span class="feature">HIFU</span>
+                        </div>
+                    </div>
+                    <div class="service-visual">
+                        <div class="visual-frame">
+                            <div class="visual-icon">
+                                <svg viewBox="0 0 24 24"><path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22 14.86 20.57 16.29 22 18.43 19.86 19.86 21.29 21.29 19.86l-1.43-1.43L22 16.29z"/></svg>
+                            </div>
+                            <div class="visual-text">
+                                <h3>Form & Tone</h3>
+                                <span>Contouring</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 4: Wellness -->
+            <div class="service-panel">
+                <div class="service-content service-content--reverse">
+                    <div class="service-info">
+                        <div class="service-number">04</div>
+                        <div class="service-label">Holistic Wellness</div>
+                        <h2 class="service-title">Beauty Within</h2>
+                        <p class="service-description">
+                            Lasting radiance emerges from balance. Our integrated wellness protocols address the foundations of skin health—nutrition, hormones, stress response, and sleep architecture—to create transformation from the inside.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature">Genetic Testing</span>
+                            <span class="feature">IV Therapy</span>
+                            <span class="feature">Supplement Protocol</span>
+                            <span class="feature">Lifestyle Medicine</span>
+                        </div>
+                    </div>
+                    <div class="service-visual">
+                        <div class="visual-frame">
+                            <div class="visual-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            </div>
+                            <div class="visual-text">
+                                <h3>Harmony & Glow</h3>
+                                <span>Integration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Indicator -->
+        <div class="section-progress">
+            <div class="progress-dot active" data-index="0"></div>
+            <div class="progress-dot" data-index="1"></div>
+            <div class="progress-dot" data-index="2"></div>
+            <div class="progress-dot" data-index="3"></div>
+        </div>
+    </section>
+
+    <!-- Context content after the section -->
+    <div class="page-content">
+        <div class="page-intro">
+            <h1>Ready to Begin?</h1>
+            <p>Schedule a consultation to discover which treatments align with your aesthetic goals and skin biology.</p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const section = document.getElementById('servicesSection');
+        const track = document.getElementById('servicesTrack');
+        const panels = document.querySelectorAll('.service-panel');
+        const dots = document.querySelectorAll('.progress-dot');
+        const infinityPath = document.querySelector('.infinity-path');
+
+        // Wait for fonts and images to load
+        window.addEventListener('load', () => {
+            // Get path length after SVG is rendered
+            const pathLength = infinityPath.getTotalLength();
+
+            // Set up infinity path
+            gsap.set(infinityPath, {
+                strokeDasharray: pathLength,
+                strokeDashoffset: pathLength
+            });
+
+            // Create the horizontal scroll animation
+            const totalPanels = panels.length;
+            const scrollDistance = (totalPanels - 1) * window.innerWidth;
+
+            const mainTimeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top top",
+                    end: () => "+=" + scrollDistance,
+                    scrub: 1,
+                    pin: true,
+                    onUpdate: (self) => {
+                        // Update progress dots
+                        const progress = self.progress;
+                        const activeIndex = Math.round(progress * (totalPanels - 1));
+                        dots.forEach((dot, i) => {
+                            dot.classList.toggle('active', i === activeIndex);
+                        });
+                    }
+                }
+            });
+
+            // Horizontal scroll
+            mainTimeline.to(track, {
+                x: () => -scrollDistance,
+                ease: "none"
+            }, 0);
+
+            // Infinity line draws as you scroll
+            mainTimeline.to(infinityPath, {
+                strokeDashoffset: 0,
+                ease: "none"
+            }, 0);
+
+            // Animate first panel content on load
+            gsap.to(panels[0].querySelector('.service-info'), {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                delay: 0.3,
+                ease: 'power2.out'
+            });
+
+            gsap.to(panels[0].querySelector('.service-visual'), {
+                opacity: 1,
+                scale: 1,
+                duration: 1,
+                delay: 0.5,
+                ease: 'power2.out'
+            });
+
+            gsap.to(panels[0].querySelectorAll('.feature'), {
+                opacity: 1,
+                y: 0,
+                stagger: 0.1,
+                duration: 0.5,
+                delay: 0.7,
+                ease: 'power2.out'
+            });
+
+            // Animate each panel's content as you scroll
+            panels.forEach((panel, index) => {
+                if (index === 0) return; // Skip first panel, already animated
+
+                const info = panel.querySelector('.service-info');
+                const visual = panel.querySelector('.service-visual');
+                const features = panel.querySelectorAll('.feature');
+
+                const panelProgress = index / (totalPanels - 1);
+
+                // Info slides in
+                gsap.to(info, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.5,
+                    scrollTrigger: {
+                        trigger: section,
+                        start: () => `top+=${scrollDistance * panelProgress} top`,
+                        end: () => `top+=${scrollDistance * (panelProgress + 0.15)} top`,
+                        scrub: true
+                    }
+                });
+
+                // Visual fades and scales
+                gsap.to(visual, {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.5,
+                    scrollTrigger: {
+                        trigger: section,
+                        start: () => `top+=${scrollDistance * panelProgress} top`,
+                        end: () => `top+=${scrollDistance * (panelProgress + 0.2)} top`,
+                        scrub: true
+                    }
+                });
+
+                // Features stagger in
+                gsap.to(features, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.5,
+                    stagger: 0.1,
+                    scrollTrigger: {
+                        trigger: section,
+                        start: () => `top+=${scrollDistance * (panelProgress + 0.1)} top`,
+                        end: () => `top+=${scrollDistance * (panelProgress + 0.25)} top`,
+                        scrub: true
+                    }
+                });
+            });
+        });
+
+        // Refresh on resize
+        window.addEventListener('resize', () => {
+            ScrollTrigger.refresh();
+        });
+    </script>
+</body>
+</html>
