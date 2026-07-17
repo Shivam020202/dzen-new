@@ -497,7 +497,10 @@
 
 /* Show hero nav buttons on the new boxed hero */
 .hero.hero-boxed .hero-nav-btn {
-    display: flex;
+    display: flex !important;
+    z-index: 100 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 /* Hero Slider Structure & Animations */
@@ -4014,61 +4017,60 @@
     backdrop-filter: blur(10px);
     border-top: 1px solid rgba(139,69,19,0.1);
     z-index: 10;
-    padding: 12px 24px;
+    padding: 14px 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    overflow: hidden;
 }
-.hero-cta-strip__content {
+
+.hero-marquee {
     width: 100%;
-    max-width: 1200px;
+    overflow: hidden;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
+    white-space: nowrap;
 }
-.hero-cta-strip__text {
-    font-family: 'Figtree', sans-serif;
-    font-size: 0.95rem;
-    color: #5C4A3A;
-    font-weight: 400;
-}
-.hero-cta-strip__btn {
+
+.hero-marquee__track {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    animation: marqueeScroll 30s linear infinite;
+    /* Add will-change for performance */
+    will-change: transform;
+}
+
+.hero-marquee__item {
     font-family: 'Figtree', sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
+    color: #5C4A3A;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #8b4513;
-    text-decoration: none;
-    padding: 8px 20px;
-    border: 1px solid #e0a65a;
-    border-radius: 999px;
-    transition: all 0.3s ease;
+    letter-spacing: 0.1em;
+    padding: 0 1rem;
+    display: inline-flex;
+    align-items: center;
 }
-.hero-cta-strip__btn:hover {
-    background: #e0a65a;
-    color: #0B0604;
+
+.hero-marquee__dot {
+    color: #e0a65a; /* D'Zen gold */
+    margin-left: 2rem;
+    font-size: 1.2rem;
 }
-.hero-cta-strip__btn svg {
-    width: 16px;
-    height: 16px;
-    transition: transform 0.3s ease;
+
+@keyframes marqueeScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
-.hero-cta-strip__btn:hover svg {
-    transform: translateX(4px);
-}
+
 @media (max-width: 768px) {
-    .hero-cta-strip__content {
-        flex-direction: column;
-        text-align: center;
-        gap: 12px;
+    .hero-marquee__item {
+        font-size: 0.8rem;
     }
     .hero-cta-strip {
-        padding: 16px;
+        padding: 12px 0;
     }
 }
 
