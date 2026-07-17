@@ -145,216 +145,80 @@
             </section>
         </div>
 
-        <!-- ═══════ Bento Concerns Grid ═══════ -->
+        <!-- ═══════ Hero CTA Strip ═══════ -->
         <style>
-            .bento-card {
-                border-radius: 12px;
+            .hero-cta-bar {
+                max-width: var(--hero-max-width, 1200px);
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 16px;
+                padding: 14px 28px;
+                background: #2B1A12;
+                border-radius: 0 0 16px 16px;
+            }
+            .hero-cta-bar__text {
+                font-family: var(--sans, 'Figtree', sans-serif);
+                font-size: 13px;
+                font-weight: 400;
+                letter-spacing: 0.03em;
+                color: rgba(255,255,255,0.72);
+                white-space: nowrap;
                 overflow: hidden;
-                position: relative;
-                cursor: pointer;
+                text-overflow: ellipsis;
             }
-
-            .bento-card img {
-                transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            .hero-cta-bar__text strong {
+                color: #E8C99A;
+                font-weight: 600;
             }
-
-            .bento-card:hover img {
-                transform: scale(1.08);
+            .hero-cta-bar__btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 9px 22px;
+                background: linear-gradient(135deg, #C4924A 0%, #A97238 100%);
+                color: #fff;
+                font-family: var(--sans, 'Figtree', sans-serif);
+                font-size: 12.5px;
+                font-weight: 600;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                border-radius: 999px;
+                text-decoration: none;
+                white-space: nowrap;
+                transition: opacity 0.2s ease, transform 0.2s ease;
+                flex-shrink: 0;
             }
-
-            .bento-card-overlay {
-                background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0.3) 100%);
-                position: absolute;
-                inset: 0;
-                pointer-events: none;
+            .hero-cta-bar__btn:hover {
+                opacity: 0.88;
+                transform: translateY(-1px);
+                color: #fff;
             }
-
-            .bento-content p {
-                transition: opacity 0.3s ease;
+            .hero-cta-bar__btn svg {
+                flex-shrink: 0;
             }
-
-            @media (max-width: 767.98px) {
-                .bento-mobile-hide {
-                    display: none !important;
+            @media (max-width: 600px) {
+                .hero-cta-bar {
+                    padding: 12px 18px;
+                    border-radius: 0;
                 }
-
-                .bento-card-title {
-                    font-size: 16px !important;
-                    margin-bottom: 0 !important;
-                }
-
-                .bento-card-icon {
-                    width: 32px !important;
-                    height: 32px !important;
-                }
-
-                .bento-card-icon svg {
-                    width: 16px !important;
-                    height: 16px !important;
-                }
-
-                .bento-large-card {
-                    min-height: 280px !important;
-                }
-
-                .bento-small-card {
-                    height: 200px !important;
+                .hero-cta-bar__text {
+                    font-size: 12px;
                 }
             }
         </style>
-
-        <section class="concerns-new-section py-5" id="concerns" style="background-color: #F9F3EB;">
-            <div class="container py-4">
-                <div class="row g-4 align-items-stretch">
-                    <!-- Left Column -->
-                    <div class="col-lg-4">
-                        <div class="card border-0 h-100 bento-card bento-large-card"
-                            style="background-color: var(--cream); min-height: 500px;">
-                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80"
-                                alt="Face Concern"
-                                class="img-fluid w-100 h-100 object-fit-cover position-absolute top-0 start-0">
-                            <div class="bento-card-overlay z-0"></div>
-                            <div class="position-absolute top-0 start-0 p-4 w-100 z-1">
-                                <span class="d-inline-block border border-white rounded-pill px-4 py-2 text-white"
-                                    style="font-family: var(--sans); font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);">Face
-                                    Care</span>
-                            </div>
-                            <div
-                                class="position-absolute bottom-0 start-0 w-100 p-4 d-flex justify-content-between align-items-end z-1 bento-content">
-                                <div class="pe-3">
-                                    <h3 class="text-white bento-card-title mb-2"
-                                        style="font-family: var(--serif); font-size: 24px;">
-                                        Rejuvenate</h3>
-                                    <p class="mb-0 text-white bento-mobile-hide"
-                                        style="font-family: var(--sans); font-size: 14px; opacity: 0.9; line-height: 1.5;">
-                                        Clean,
-                                        science-backed skincare made to nourish, balance, and reveal your natural glow.
-                                    </p>
-                                </div>
-                                <div class="btn btn-light rounded-circle d-flex align-items-center justify-content-center p-0 flex-shrink-0 border-0 bento-card-icon"
-                                    style="width: 44px; height: 44px; background: rgba(255,255,255,0.25); backdrop-filter: blur(4px); color: #2B1A12;">
-                                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor"
-                                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M7 17l9.2-9.2M17 17V7H7" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Column -->
-                    <div class="col-lg-8 d-flex flex-column">
-                        <!-- Top Row -->
-                        <div class="row g-3 g-md-4 mb-4 mb-md-5">
-                            <!-- Small Card 1 -->
-                            <div class="col-6">
-                                <div class="card border-0 bento-card bento-small-card"
-                                    style="background-color: var(--tan-gold); height: 260px;">
-                                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80"
-                                        alt="Body Concern"
-                                        class="img-fluid w-100 h-100 object-fit-cover position-absolute top-0 start-0">
-                                    <div class="bento-card-overlay z-0"></div>
-                                    <div
-                                        class="position-absolute bottom-0 start-0 w-100 p-3 p-md-4 d-flex justify-content-between align-items-end z-1 bento-content">
-                                        <div class="pe-2 pe-md-3">
-                                            <h3 class="text-white bento-card-title mb-2"
-                                                style="font-family: var(--serif); font-size: 20px;">
-                                                Body</h3>
-                                            <p class="mb-0 text-white bento-mobile-hide"
-                                                style="font-family: var(--sans); font-size: 13px; opacity: 0.9; line-height: 1.5;">
-                                                Treatments
-                                                designed to tone, restore, and enhance your natural form.</p>
-                                        </div>
-                                        <div class="btn btn-light rounded-circle d-flex align-items-center justify-content-center p-0 flex-shrink-0 border-0 bento-card-icon"
-                                            style="width: 40px; height: 40px; background: rgba(255,255,255,0.25); backdrop-filter: blur(4px); color: #2B1A12;">
-                                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor"
-                                                stroke-width="2" fill="none" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path d="M7 17l9.2-9.2M17 17V7H7" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Small Card 2 -->
-                            <div class="col-6">
-                                <div class="card border-0 bento-card bento-small-card"
-                                    style="background-color: var(--mid-brown); height: 260px;">
-                                    <img src="https://images.unsplash.com/photo-1528319725582-ddc096101511?w=600&q=80"
-                                        alt="Ageing Concern"
-                                        class="img-fluid w-100 h-100 object-fit-cover position-absolute top-0 start-0">
-                                    <div class="bento-card-overlay z-0"></div>
-                                    <div
-                                        class="position-absolute bottom-0 start-0 w-100 p-3 p-md-4 d-flex justify-content-between align-items-end z-1 bento-content">
-                                        <div class="pe-2 pe-md-3">
-                                            <h3 class="text-white bento-card-title mb-2"
-                                                style="font-family: var(--serif); font-size: 20px;">
-                                                Ageing</h3>
-                                            <p class="mb-0 text-white bento-mobile-hide"
-                                                style="font-family: var(--sans); font-size: 13px; opacity: 0.9; line-height: 1.5;">
-                                                Subtle
-                                                preservation for timeless radiance and clinical longevity.</p>
-                                        </div>
-                                        <div class="btn btn-light rounded-circle d-flex align-items-center justify-content-center p-0 flex-shrink-0 border-0 bento-card-icon"
-                                            style="width: 40px; height: 40px; background: rgba(255,255,255,0.25); backdrop-filter: blur(4px); color: #2B1A12;">
-                                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor"
-                                                stroke-width="2" fill="none" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path d="M7 17l9.2-9.2M17 17V7H7" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Bottom Row: Headline + CTA -->
-                        <div class="mt-auto pb-2">
-                            <h2 class="mb-4"
-                                style="font-family: var(--serif); font-size: clamp(28px, 4vw, 42px); font-weight: 600; line-height: 1.25; color: #2B1A12; letter-spacing: -0.25px;">
-                                <span style="color: #B69E7E; opacity: 0.9;">Reveal Your Skin's</span> True
-                                Brilliance With Clean
-                                Formulas Powered by Science and Purity
-                            </h2>
-                            <p class="mb-4 mb-md-5 body-text" style="color: #5C4A3A; max-width: 90%;">
-                                Designed to nourish, protect, and restore - because real radiance begins with healthy
-                                skin.</p>
-
-                            <div class="d-flex align-items-center flex-wrap gap-4">
-                                <!-- Avatars -->
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex me-3">
-                                        <img src="https://i.pravatar.cc/100?img=5"
-                                            class="rounded-circle border border-2 border-white object-fit-cover"
-                                            width="40" height="40"
-                                            style="margin-right: -12px; position: relative; z-index: 4;" alt="User">
-                                        <img src="https://i.pravatar.cc/100?img=9"
-                                            class="rounded-circle border border-2 border-white object-fit-cover"
-                                            width="40" height="40"
-                                            style="margin-right: -12px; position: relative; z-index: 3;" alt="User">
-                                        <img src="https://i.pravatar.cc/100?img=12"
-                                            class="rounded-circle border border-2 border-white object-fit-cover"
-                                            width="40" height="40"
-                                            style="margin-right: -12px; position: relative; z-index: 2;" alt="User">
-                                        <img src="https://i.pravatar.cc/100?img=16"
-                                            class="rounded-circle border border-2 border-white object-fit-cover"
-                                            width="40" height="40" style="position: relative; z-index: 1;" alt="User">
-                                    </div>
-                                    <div>
-                                        <span class="fw-bold fs-6 mb-0 d-inline-block"
-                                            style="font-family: var(--sans); color: #2B1A12;">200K+</span> <span
-                                            style="font-size: 13px; font-family: var(--sans); color: #5C4A3A;">Client
-                                            Reviews</span>
-                                    </div>
-                                </div>
-
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="hero-wrapper" style="padding: 0 clamp(12px, 3vw, 40px);">
+            <div class="hero-cta-bar">
+                <p class="hero-cta-bar__text">
+                    <strong>D'Zen Derma</strong> &mdash; Where science meets skin. Begin your personalised journey today.
+                </p>
+                <a href="../newthree.html#book" class="hero-cta-bar__btn">
+                    Book Now
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
             </div>
-        </section>
+        </div>
 
         <section class="about-v2" id="about-us">
             <div class="about-v2__container">
@@ -609,6 +473,107 @@
                             <p>Educational and expert-led programmes for clinicians seeking advanced aesthetic mastery.</p>
                         </div>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ Bento Concerns Grid ═══════ -->
+        <style>
+            .bento-card { border-radius: 12px; overflow: hidden; position: relative; cursor: pointer; }
+            .bento-card img { transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+            .bento-card:hover img { transform: scale(1.08); }
+            .bento-card-overlay { background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.3) 100%); position: absolute; inset: 0; pointer-events: none; }
+            .bento-content p { transition: opacity 0.3s ease; }
+            @media (max-width: 767.98px) {
+                .bento-mobile-hide { display: none !important; }
+                .bento-card-title { font-size: 16px !important; margin-bottom: 0 !important; }
+                .bento-card-icon { width: 32px !important; height: 32px !important; }
+                .bento-card-icon svg { width: 16px !important; height: 16px !important; }
+                .bento-large-card { min-height: 280px !important; }
+                .bento-small-card { height: 200px !important; }
+            }
+        </style>
+        <section class="concerns-new-section py-5" id="concerns" style="background-color: #F9F3EB;">
+            <div class="container py-4">
+                <div class="row g-4 align-items-stretch">
+                    <!-- Left Column -->
+                    <div class="col-lg-4">
+                        <div class="card border-0 h-100 bento-card bento-large-card" style="background-color: var(--cream); min-height: 500px;">
+                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80" alt="Face Concern" class="img-fluid w-100 h-100 object-fit-cover position-absolute top-0 start-0">
+                            <div class="bento-card-overlay z-0"></div>
+                            <div class="position-absolute top-0 start-0 p-4 w-100 z-1">
+                                <span class="d-inline-block border border-white rounded-pill px-4 py-2 text-white" style="font-family: var(--sans); font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);">Face Care</span>
+                            </div>
+                            <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex justify-content-between align-items-end z-1 bento-content">
+                                <div class="pe-3">
+                                    <h3 class="text-white bento-card-title mb-2" style="font-family: var(--serif); font-size: 24px;">Rejuvenate</h3>
+                                    <p class="mb-0 text-white bento-mobile-hide" style="font-family: var(--sans); font-size: 14px; opacity: 0.9; line-height: 1.5;">Clean, science-backed skincare made to nourish, balance, and reveal your natural glow.</p>
+                                </div>
+                                <div class="btn btn-light rounded-circle d-flex align-items-center justify-content-center p-0 flex-shrink-0 border-0 bento-card-icon" style="width: 44px; height: 44px; background: rgba(255,255,255,0.25); backdrop-filter: blur(4px); color: #2B1A12;">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7" /></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right Column -->
+                    <div class="col-lg-8 d-flex flex-column">
+                        <div class="row g-3 g-md-4 mb-4 mb-md-5">
+                            <div class="col-6">
+                                <div class="card border-0 bento-card bento-small-card" style="height: 260px;">
+                                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80" alt="Body Concern" class="img-fluid w-100 h-100 object-fit-cover position-absolute top-0 start-0">
+                                    <div class="bento-card-overlay z-0"></div>
+                                    <div class="position-absolute bottom-0 start-0 w-100 p-3 p-md-4 d-flex justify-content-between align-items-end z-1 bento-content">
+                                        <div class="pe-2 pe-md-3">
+                                            <h3 class="text-white bento-card-title mb-2" style="font-family: var(--serif); font-size: 20px;">Body</h3>
+                                            <p class="mb-0 text-white bento-mobile-hide" style="font-family: var(--sans); font-size: 13px; opacity: 0.9; line-height: 1.5;">Treatments designed to tone, restore, and enhance your natural form.</p>
+                                        </div>
+                                        <div class="btn btn-light rounded-circle d-flex align-items-center justify-content-center p-0 flex-shrink-0 border-0 bento-card-icon" style="width: 40px; height: 40px; background: rgba(255,255,255,0.25); backdrop-filter: blur(4px); color: #2B1A12;">
+                                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7" /></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card border-0 bento-card bento-small-card" style="height: 260px;">
+                                    <img src="https://images.unsplash.com/photo-1528319725582-ddc096101511?w=600&q=80" alt="Ageing Concern" class="img-fluid w-100 h-100 object-fit-cover position-absolute top-0 start-0">
+                                    <div class="bento-card-overlay z-0"></div>
+                                    <div class="position-absolute bottom-0 start-0 w-100 p-3 p-md-4 d-flex justify-content-between align-items-end z-1 bento-content">
+                                        <div class="pe-2 pe-md-3">
+                                            <h3 class="text-white bento-card-title mb-2" style="font-family: var(--serif); font-size: 20px;">Ageing</h3>
+                                            <p class="mb-0 text-white bento-mobile-hide" style="font-family: var(--sans); font-size: 13px; opacity: 0.9; line-height: 1.5;">Subtle preservation for timeless radiance and clinical longevity.</p>
+                                        </div>
+                                        <div class="btn btn-light rounded-circle d-flex align-items-center justify-content-center p-0 flex-shrink-0 border-0 bento-card-icon" style="width: 40px; height: 40px; background: rgba(255,255,255,0.25); backdrop-filter: blur(4px); color: #2B1A12;">
+                                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7" /></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-auto pb-2">
+                            <h2 class="mb-4" style="font-family: var(--serif); font-size: clamp(28px, 4vw, 42px); font-weight: 600; line-height: 1.25; color: #2B1A12; letter-spacing: -0.25px;">
+                                <span style="color: #B69E7E; opacity: 0.9;">Reveal Your Skin's</span> True Brilliance With Clean Formulas Powered by Science and Purity
+                            </h2>
+                            <p class="mb-4 mb-md-5 body-text" style="color: #5C4A3A; max-width: 90%;">Designed to nourish, protect, and restore — because real radiance begins with healthy skin.</p>
+                            <div class="d-flex align-items-center flex-wrap gap-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex me-3">
+                                        <img src="https://i.pravatar.cc/100?img=5" class="rounded-circle border border-2 border-white object-fit-cover" width="40" height="40" style="margin-right: -12px; position: relative; z-index: 4;" alt="User">
+                                        <img src="https://i.pravatar.cc/100?img=9" class="rounded-circle border border-2 border-white object-fit-cover" width="40" height="40" style="margin-right: -12px; position: relative; z-index: 3;" alt="User">
+                                        <img src="https://i.pravatar.cc/100?img=12" class="rounded-circle border border-2 border-white object-fit-cover" width="40" height="40" style="margin-right: -12px; position: relative; z-index: 2;" alt="User">
+                                        <img src="https://i.pravatar.cc/100?img=16" class="rounded-circle border border-2 border-white object-fit-cover" width="40" height="40" style="position: relative; z-index: 1;" alt="User">
+                                    </div>
+                                    <div>
+                                        <span class="fw-bold fs-6 mb-0 d-inline-block" style="font-family: var(--sans); color: #2B1A12;">200K+</span>
+                                        <span style="font-size: 13px; font-family: var(--sans); color: #5C4A3A;"> Client Reviews</span>
+                                    </div>
+                                </div>
+                                <a href="../newthree.html#book" class="learn-more">
+                                    <span class="circle" aria-hidden="true"><span class="icon symbol">𖤓</span></span>
+                                    <span class="button-text">Book a Consultation</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
