@@ -621,4 +621,29 @@
             });
         }
     })();
+
+    /* =========================================================
+       SCRIBBLE UNDERLINE — draw-in on scroll
+       ========================================================= */
+    (function () {
+        const scribbles = document.querySelectorAll('.scribble');
+        if (!scribbles.length) return;
+
+        // No observer support → leave underlines visible (CSS default), skip animation.
+        if (!('IntersectionObserver' in window)) return;
+
+        // Flag the page as animation-capable: this hides the strokes so they can draw in.
+        document.documentElement.classList.add('scribble-anim');
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-drawn');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.6, rootMargin: '0px 0px -8% 0px' });
+
+        scribbles.forEach((el) => observer.observe(el));
+    })();
 })();

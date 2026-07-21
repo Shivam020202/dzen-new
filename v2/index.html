@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>D'Zen Derma — Beauty is in the Balance (v2 Navbar & Hero)</title>
-    <meta name="description" content="Explore D'Zen Derma's custom Liquid Glass Navbar and Premium Hero Slider Showcase - Version 2." />
+    <meta name="description"
+        content="Explore D'Zen Derma's custom Liquid Glass Navbar and Premium Hero Slider Showcase - Version 2." />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap"
+        rel="stylesheet" />
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    
+
     <!-- Base styles and variable sheets -->
     <link rel="stylesheet" href="../styles.css?v=2.1" />
     <!-- Section Specific styles -->
-    <link rel="stylesheet" href="styles.css?v=2.2" />
+    <link rel="stylesheet" href="styles.css?v=2.7" />
 
     <!-- Tailwind CSS (without preflight resets) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
@@ -58,14 +62,23 @@
         <!-- Right: actions -->
         <div class="pnav__right">
             <a href="../journal.html" class="pnav__icon" aria-label="Journal">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                </svg>
             </a>
             <a href="../newthree.html#contact" class="pnav__icon" aria-label="Contact">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.88.36 1.85.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.96.34 1.93.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.88.36 1.85.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.96.34 1.93.57 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
             </a>
             <a href="../newthree.html#book" class="pnav__cta">
                 Book Now
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
             </a>
             <button class="pnav__burger" id="pnav-burger" aria-label="Open menu">
                 <span></span><span></span><span></span>
@@ -77,7 +90,10 @@
     <div class="pnav-overlay" id="pnav-overlay"></div>
     <aside class="pnav-drawer" id="pnav-drawer" aria-label="Menu">
         <button class="pnav-drawer__close" id="pnav-close" aria-label="Close menu">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round">
+                <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
         </button>
         <ul class="pnav-drawer__list">
             <li><a href="../aesthetics.html">Pillars <span>→</span></a></li>
@@ -95,7 +111,8 @@
                 <div class="hero-slider">
                     <div class="hero-slide active">
                         <div class="hero-bg">
-                            <img src="https://images.unsplash.com/photo-1581182815808-b6eb627a8798?q=80&w=1065&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dermatology Clinic Room">
+                            <img src="https://images.unsplash.com/photo-1581182815808-b6eb627a8798?q=80&w=1065&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Dermatology Clinic Room">
                         </div>
                         <div class="hero-overlay"></div>
                         <div class="hero-content">
@@ -104,7 +121,8 @@
                     </div>
                     <div class="hero-slide">
                         <div class="hero-bg">
-                            <img src="https://images.unsplash.com/photo-1568124473866-26ad000f2831?q=80&w=1014&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Luxury Spa Treatment">
+                            <img src="https://images.unsplash.com/photo-1568124473866-26ad000f2831?q=80&w=1014&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Luxury Spa Treatment">
                         </div>
                         <div class="hero-overlay"></div>
                         <div class="hero-content">
@@ -113,7 +131,8 @@
                     </div>
                     <div class="hero-slide">
                         <div class="hero-bg">
-                            <img src="https://images.unsplash.com/photo-1643624769675-303b961d6f7c?q=80&w=1041&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Premium Skincare Ingredients">
+                            <img src="https://images.unsplash.com/photo-1643624769675-303b961d6f7c?q=80&w=1041&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Premium Skincare Ingredients">
                         </div>
                         <div class="hero-overlay"></div>
                         <div class="hero-content">
@@ -138,19 +157,31 @@
                         <div class="hero-marquee__track">
                             <span class="hero-marquee__item">HydraFacial <span class="hero-marquee__dot">•</span></span>
                             <span class="hero-marquee__item">PRP & GFC <span class="hero-marquee__dot">•</span></span>
-                            <span class="hero-marquee__item">Laser Hair Reduction <span class="hero-marquee__dot">•</span></span>
-                            <span class="hero-marquee__item">Acne Scar Treatment <span class="hero-marquee__dot">•</span></span>
-                            <span class="hero-marquee__item">Skin Rejuvenation <span class="hero-marquee__dot">•</span></span>
-                            <span class="hero-marquee__item">Botox & Fillers <span class="hero-marquee__dot">•</span></span>
-                            <span class="hero-marquee__item">Body Sculpting <span class="hero-marquee__dot">•</span></span>
+                            <span class="hero-marquee__item">Laser Hair Reduction <span
+                                    class="hero-marquee__dot">•</span></span>
+                            <span class="hero-marquee__item">Acne Scar Treatment <span
+                                    class="hero-marquee__dot">•</span></span>
+                            <span class="hero-marquee__item">Skin Rejuvenation <span
+                                    class="hero-marquee__dot">•</span></span>
+                            <span class="hero-marquee__item">Botox & Fillers <span
+                                    class="hero-marquee__dot">•</span></span>
+                            <span class="hero-marquee__item">Body Sculpting <span
+                                    class="hero-marquee__dot">•</span></span>
                             <!-- Duplicate for seamless scroll -->
-                            <span class="hero-marquee__item" aria-hidden="true">HydraFacial <span class="hero-marquee__dot">•</span></span>
-                            <span class="hero-marquee__item" aria-hidden="true">PRP & GFC <span class="hero-marquee__dot">•</span></span>
-                            <span class="hero-marquee__item" aria-hidden="true">Laser Hair Reduction <span class="hero-marquee__dot">•</span></span>
-                            <span class="hero-marquee__item" aria-hidden="true">Acne Scar Treatment <span class="hero-marquee__dot">•</span></span>
-                            <span class="hero-marquee__item" aria-hidden="true">Skin Rejuvenation <span class="hero-marquee__dot">•</span></span>
-                            <span class="hero-marquee__item" aria-hidden="true">Botox & Fillers <span class="hero-marquee__dot">•</span></span>
-                            <span class="hero-marquee__item" aria-hidden="true">Body Sculpting <span class="hero-marquee__dot">•</span></span>
+                            <span class="hero-marquee__item" aria-hidden="true">HydraFacial <span
+                                    class="hero-marquee__dot">•</span></span>
+                            <span class="hero-marquee__item" aria-hidden="true">PRP & GFC <span
+                                    class="hero-marquee__dot">•</span></span>
+                            <span class="hero-marquee__item" aria-hidden="true">Laser Hair Reduction <span
+                                    class="hero-marquee__dot">•</span></span>
+                            <span class="hero-marquee__item" aria-hidden="true">Acne Scar Treatment <span
+                                    class="hero-marquee__dot">•</span></span>
+                            <span class="hero-marquee__item" aria-hidden="true">Skin Rejuvenation <span
+                                    class="hero-marquee__dot">•</span></span>
+                            <span class="hero-marquee__item" aria-hidden="true">Botox & Fillers <span
+                                    class="hero-marquee__dot">•</span></span>
+                            <span class="hero-marquee__item" aria-hidden="true">Body Sculpting <span
+                                    class="hero-marquee__dot">•</span></span>
                         </div>
                     </div>
                 </div>
@@ -236,10 +267,11 @@
             <div class="about-v2__container">
                 <div class="about-v2__intro-block text-center ">
                     <span class="about-v2__eyebrow">Welcome to D'Zen Derma</span>
-                    <h2 class="about-v2__title">Beauty is in the <em>Balance</em></h2>
+                    <h2 class="about-v2__title">Beauty is in the <em class="scribble">Balance</em></h2>
                     <p class="about-v2__lead">
                         D'Zen Derma is inspired by harmony, balance, and science-led beauty care. We provide
-                        personalized aesthetic and wellness treatments designed to enhance natural beauty and confidence.
+                        personalized aesthetic and wellness treatments designed to enhance natural beauty and
+                        confidence.
                     </p>
                     <p class="about-v2__lead about-v2__lead--light">
                         Our expert team of dermatologists combines advanced medical technology with holistic approaches,
@@ -263,14 +295,31 @@
                     </div>
                 </div>
 
-                <!-- <div class="about-v2__cta about-v2__reveal">
-                    <a href="../newthree.html#story" class="learn-more">
-                        <span class="circle" aria-hidden="true">
-                            <span class="icon symbol">𖤓</span>
-                        </span>
-                        <span class="button-text">Know More About Us</span>
+                <div class="dz-cta-wrap">
+                    <a href="../about.html" class="dz-cta">
+                        <span>Know More About Us</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2" />
+                            <path d="M12 20v2" />
+                            <path d="m4.93 4.93 1.41 1.41" />
+                            <path d="m17.66 17.66 1.41 1.41" />
+                            <path d="M2 12h2" />
+                            <path d="M20 12h2" />
+                            <path d="m6.34 17.66-1.41 1.41" />
+                            <path d="m19.07 4.93-1.41 1.41" />
+                        </svg>
                     </a>
-                </div> -->
+                </div>
+            </div>
+
+            <!-- Curvy separator: cream about → white philosophy -->
+            <div class="section-separator mt-5 pt-5" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#ffffff" d="M0,50 C320,150 420,0 740,50 C1060,100 1280,0 1440,50 L1440,100 L0,100 Z">
+                    </path>
+                </svg>
             </div>
         </section>
 
@@ -279,47 +328,122 @@
                 <div class="philosophy-strip-inner">
                     <div class="section-header text-center mb-4 mb-lg-5">
                         <span class="section-subtitle">OUR PHILOSOPHY</span>
-                        <h2 id="service-arch-title" class="section-title">Balancing the Inside Health and Outside Beauty</h2>
+                        <h2 id="service-arch-title" class="section-title">Balancing the Inside <span
+                                class="scribble">Health</span> and Outside <span class="scribble">Beauty</span></h2>
                         <p class="section-desc mx-auto" style="max-width: 760px; color: #5C4A3A;">
-                            We believe true beauty radiates from within—a perfect harmony between inner wellness and outer care. At D'Zen Derma, we bridge this balance through science-led treatments and holistic practices.
+                            We believe true beauty radiates from within—a perfect harmony between inner wellness and
+                            outer care. At D'Zen Derma, we bridge this balance through science-led treatments and
+                            holistic practices.
                         </p>
                     </div>
                     <!-- Strip Content (Titles and Logo) -->
                     <div class="philosophy-strip-top">
                         <!-- Left Titles -->
                         <div class="philosophy-titles-group left-group">
-                            <button class="philosophy-tab-btn is-active" data-index="0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tab-icon"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg> <span>The Philosophy</span></button>
-                            <button class="philosophy-tab-btn" data-index="1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tab-icon"><circle cx="12" cy="12" r="10"/><path d="m14.31 8 5.74 9.94"/><path d="M9.69 8h11.48"/><path d="m7.38 12 5.74-9.94"/><path d="M9.69 16 3.95 6.06"/><path d="M14.31 16H2.83"/><path d="m16.62 12-5.74 9.94"/></svg> <span>The Vision</span></button>
+                            <button class="philosophy-tab-btn is-active" data-index="0"><svg width="18" height="18"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" class="tab-icon">
+                                    <path
+                                        d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                                </svg> <span>The Philosophy</span></button>
+                            <button class="philosophy-tab-btn" data-index="1"><svg width="18" height="18"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" class="tab-icon">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="m14.31 8 5.74 9.94" />
+                                    <path d="M9.69 8h11.48" />
+                                    <path d="m7.38 12 5.74-9.94" />
+                                    <path d="M9.69 16 3.95 6.06" />
+                                    <path d="M14.31 16H2.83" />
+                                    <path d="m16.62 12-5.74 9.94" />
+                                </svg> <span>The Vision</span></button>
                         </div>
-                        
+
                         <!-- Center Logo -->
                         <div class="philosophy-center-logo">
                             <img src="../images/logo1.png" alt="D'Zen Derma Logo">
                         </div>
-                        
+
                         <!-- Right Titles -->
                         <div class="philosophy-titles-group right-group">
-                            <button class="philosophy-tab-btn" data-index="2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tab-icon"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> <span>The Pillars</span></button>
-                            <button class="philosophy-tab-btn" data-index="3"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tab-icon"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> <span>The Sanctuary</span></button>
+                            <button class="philosophy-tab-btn" data-index="2"><svg width="18" height="18"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" class="tab-icon">
+                                    <path
+                                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                                    <line x1="12" y1="22.08" x2="12" y2="12" />
+                                </svg> <span>The Pillars</span></button>
+                            <button class="philosophy-tab-btn" data-index="3"><svg width="18" height="18"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" class="tab-icon">
+                                    <path
+                                        d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+                                    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+                                </svg> <span>The Sanctuary</span></button>
                         </div>
                     </div>
-                    
+
                     <!-- Content Display Area Inside the Strip -->
                     <div class="philosophy-display-area">
                         <div class="philosophy-content-panel is-active" id="phil-panel-0">
-                            <p class="panel-desc">True beauty is an exquisite equilibrium found between profound internal cellular health and its vibrant external cutaneous expression. We believe that caring for the skin transcends surface-level aesthetics—it is a holistic practice of nurturing your body's intrinsic vitality. By harmonizing advanced dermatological science with mindful, intentional lifestyle choices, we create a foundation for enduring radiance that emanates from deep within.</p>
+                            <p class="panel-desc">True beauty is an exquisite equilibrium found between profound
+                                internal cellular health and its vibrant external cutaneous expression. We believe that
+                                caring for the skin transcends surface-level aesthetics—it is a holistic practice of
+                                nurturing your body's intrinsic vitality. By harmonizing advanced dermatological science
+                                with mindful, intentional lifestyle choices, we create a foundation for enduring
+                                radiance that emanates from deep within.</p>
                         </div>
                         <div class="philosophy-content-panel" id="phil-panel-1">
-                            <p class="panel-desc">Our vision is defined by subtle, intelligent preservation. We prioritize clinical longevity over fleeting quick fixes, committing ourselves to enhancing your unique natural identity rather than masking it. Through the precise application of cutting-edge regenerative treatments and personalized care protocols, we empower you to age gracefully, maintaining skin that feels exceptionally healthy, resilient, and unmistakably yours for years to come.</p>
+                            <p class="panel-desc">Our vision is defined by subtle, intelligent preservation. We
+                                prioritize clinical longevity over fleeting quick fixes, committing ourselves to
+                                enhancing your unique natural identity rather than masking it. Through the precise
+                                application of cutting-edge regenerative treatments and personalized care protocols, we
+                                empower you to age gracefully, maintaining skin that feels exceptionally healthy,
+                                resilient, and unmistakably yours for years to come.</p>
                         </div>
                         <div class="philosophy-content-panel" id="phil-panel-2">
-                            <p class="panel-desc">Our practice is built on a steadfast, science-backed precision protocol anchored by four essential cornerstones: rigorous medical expertise, state-of-the-art regenerative technology, holistic wellness integration, and deeply personalized patient education. These pillars ensure that every treatment plan is not only highly effective and meticulously safe, but also thoroughly tailored to address the nuanced complexities of your individual dermatological needs.</p>
+                            <p class="panel-desc">Our practice is built on a steadfast, science-backed precision
+                                protocol anchored by four essential cornerstones: rigorous medical expertise,
+                                state-of-the-art regenerative technology, holistic wellness integration, and deeply
+                                personalized patient education. These pillars ensure that every treatment plan is not
+                                only highly effective and meticulously safe, but also thoroughly tailored to address the
+                                nuanced complexities of your individual dermatological needs.</p>
                         </div>
                         <div class="philosophy-content-panel" id="phil-panel-3">
-                            <p class="panel-desc">We have intentionally designed a modern, serene space dedicated to the art of slow, purposeful care. Here, luxury is redefined by complete peace of mind, uncompromised comfort, and the undivided attention of our experts. From the moment you step through our doors, our sanctuary provides a calming retreat from the outside world, allowing your mind to relax while your skin undergoes transformative healing.</p>
+                            <p class="panel-desc">We have intentionally designed a modern, serene space dedicated to the
+                                art of slow, purposeful care. Here, luxury is redefined by complete peace of mind,
+                                uncompromised comfort, and the undivided attention of our experts. From the moment you
+                                step through our doors, our sanctuary provides a calming retreat from the outside world,
+                                allowing your mind to relax while your skin undergoes transformative healing.</p>
                         </div>
                     </div>
+                    <div class="dz-cta-wrap">
+                        <a href="../aesthetics.html" class="dz-cta">
+                            <span>Discover Our Philosophy</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="4" />
+                                <path d="M12 2v2" />
+                                <path d="M12 20v2" />
+                                <path d="m4.93 4.93 1.41 1.41" />
+                                <path d="m17.66 17.66 1.41 1.41" />
+                                <path d="M2 12h2" />
+                                <path d="M20 12h2" />
+                                <path d="m6.34 17.66-1.41 1.41" />
+                                <path d="m19.07 4.93-1.41 1.41" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
+            </div>
+
+            <!-- Curvy separator: white philosophy → cream doctors -->
+            <div class="section-separator" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#FBF7F1" d="M0,50 C320,150 420,0 740,50 C1060,100 1280,0 1440,50 L1440,100 L0,100 Z">
+                    </path>
+                </svg>
             </div>
         </section>
 
@@ -327,7 +451,7 @@
             <div class="doctors-v2__container">
                 <div class="doctors-v2__head">
                     <span class="doctors-v2__eyebrow">Meet The Team</span>
-                    <h2 class="doctors-v2__title">The minds <em>behind</em> the method</h2>
+                    <h2 class="doctors-v2__title">The minds <em class="scribble">behind</em> the method</h2>
                     <p class="doctors-v2__subtitle">
                         Two visionaries united by a shared philosophy: a sanctuary where science, art, and
                         intentional care redefine what aesthetic medicine can be.
@@ -341,7 +465,7 @@
                             <img class="founder-tab__img" src="../images/aarushi.png" alt="Dr. Aarushi Passi Bhandari">
                             <span class="founder-tab__info">
                                 <span class="founder-tab__name">Dr. Aarushi</span>
-                                <span class="founder-tab__role">Lead Dermatologist</span>
+                                <span class="founder-tab__role">Aesthetic Physician</span>
                             </span>
                         </button>
                         <button class="founder-tab" role="tab" aria-selected="false" data-slide="1">
@@ -358,19 +482,20 @@
                 <div class="founder-slider">
                     <div class="founder-card active">
                         <div class="founder-card__imagewrap">
-                            <img class="founder-card__image" src="../images/aarushi.png" alt="Dr. Aarushi Passi Bhandari"
-                                loading="lazy" decoding="async" width="700" height="800">
+                            <img class="founder-card__image" src="../images/aarushi.png"
+                                alt="Dr. Aarushi Passi Bhandari" loading="lazy" decoding="async" width="700"
+                                height="800">
                         </div>
                         <div class="founder-card__content">
                             <span class="founder-card__meta">Founder · Medical Direction</span>
                             <h3 class="founder-card__name">Dr. Aarushi Passi Bhandari</h3>
-                            <p class="founder-card__role">Lead Dermatologist · MD Dermatology</p>
+                            <p class="founder-card__role">Aesthetic Physician · MD Dermatology</p>
                             <p class="founder-card__bio">
                                 A dermatologist with global exposure and an obsessive commitment to clinical excellence.
                                 Dr. Aarushi leads every protocol with precision, safety, and a science-first approach to
                                 aesthetic medicine that feels calm, deliberate, and deeply personal.
                             </p>
-                            <blockquote class="founder-card__quote">
+                            <blockquote class="founder-card__quote mt-0">
                                 "The most ambitious thing a doctor can do is to leave a patient with less, not more."
                             </blockquote>
                             <div class="founder-card__tags">
@@ -382,8 +507,8 @@
 
                     <div class="founder-card">
                         <div class="founder-card__imagewrap">
-                            <img class="founder-card__image" src="../images/rahul.png" alt="Rahul Bhandari" loading="lazy"
-                                decoding="async" width="700" height="800">
+                            <img class="founder-card__image" src="../images/rahul.png" alt="Rahul Bhandari"
+                                loading="lazy" decoding="async" width="700" height="800">
                         </div>
                         <div class="founder-card__content">
                             <span class="founder-card__meta">Founder · Brand &amp; Experience</span>
@@ -404,6 +529,31 @@
                         </div>
                     </div>
                 </div>
+                <div class="dz-cta-wrap">
+                    <a href="../about.html" class="dz-cta">
+                        <span>Meet The Full Team</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2" />
+                            <path d="M12 20v2" />
+                            <path d="m4.93 4.93 1.41 1.41" />
+                            <path d="m17.66 17.66 1.41 1.41" />
+                            <path d="M2 12h2" />
+                            <path d="M20 12h2" />
+                            <path d="m6.34 17.66-1.41 1.41" />
+                            <path d="m19.07 4.93-1.41 1.41" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Curvy Separator placed inside the section to blend properly -->
+            <div class="section-separator mt-6" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#ffffff" d="M0,50 C320,150 420,0 740,50 C1060,100 1280,0 1440,50 L1440,100 L0,100 Z">
+                    </path>
+                </svg>
             </div>
         </section>
 
@@ -411,25 +561,29 @@
             <div class="container">
                 <div class="section-header text-center mb-4 mb-lg-5">
                     <span class="section-subtitle">OUR EXPERTISE</span>
-                    <h2 id="service-arch-title" class="section-title">Advanced Care &amp; Wellness</h2>
+                    <h2 id="service-arch-title" class="section-title">Advanced Care &amp; <span
+                            class="scribble">Wellness</span></h2>
                     <p class="section-desc mx-auto" style="max-width: 760px; color: #5C4A3A;">
-                        Precision-led aesthetic care and restorative wellness experiences designed to elevate skin, energy, and confidence.
+                        Precision-led aesthetic care and restorative wellness experiences designed to elevate skin,
+                        energy, and confidence.
                     </p>
                     <a href="../newthree.html#book" class="service-arch-cta"
                         style="display: inline-flex; align-items: center; gap: 0.75rem; margin-top: 1.5rem; padding: 1rem 2rem; background: #e0a65a; color: #0B0604; font-weight: 600; border-radius: 999px; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease;">
                         <span style="font-size: 1.1rem;">𖤓</span>
-                        <span>Book Appointment</span>
+                        <span>Explore Services</span>
                     </a>
                 </div>
 
-                <div class="service-arch-controls" aria-label="Carousel navigation">
+                <div class="service-arch-controls" aria-label="Carousel navigation" style="">
                     <button class="service-arch-btn service-arch-btn-prev" type="button" aria-label="Scroll left">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"
+                            height="18">
                             <path d="M15 18L9 12L15 6" />
                         </svg>
                     </button>
                     <button class="service-arch-btn service-arch-btn-next" type="button" aria-label="Scroll right">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"
+                            height="18">
                             <path d="M9 18L15 12L9 6" />
                         </svg>
                     </button>
@@ -438,17 +592,20 @@
                 <div class="service-arch-track" id="service-arch-track">
                     <article class="service-arch-card">
                         <div class="service-arch-card__media">
-                            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Aesthetics" />
+                            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80"
+                                alt="Aesthetics" />
                         </div>
                         <div class="service-arch-card__body">
                             <h3>Aesthetics</h3>
-                            <p>Signature skin resurfacing, sculpting, and glow-enhancing protocols tailored to your goals.</p>
+                            <p>Signature skin resurfacing, sculpting, and glow-enhancing protocols tailored to your
+                                goals.</p>
                         </div>
                     </article>
 
                     <article class="service-arch-card">
                         <div class="service-arch-card__media">
-                            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80" alt="Functional Medicine" />
+                            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80"
+                                alt="Functional Medicine" />
                         </div>
                         <div class="service-arch-card__body">
                             <h3>Functional Medicine</h3>
@@ -458,17 +615,20 @@
 
                     <article class="service-arch-card">
                         <div class="service-arch-card__media">
-                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80" alt="Integrative Programmes" />
+                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80"
+                                alt="Integrative Programmes" />
                         </div>
                         <div class="service-arch-card__body">
                             <h3>Integrative Programmes</h3>
-                            <p>Holistic plans that combine clinical care, nutrition, and recovery for lasting balance.</p>
+                            <p>Holistic plans that combine clinical care, nutrition, and recovery for lasting balance.
+                            </p>
                         </div>
                     </article>
 
                     <article class="service-arch-card">
                         <div class="service-arch-card__media">
-                            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80" alt="Regenerative Aesthetics" />
+                            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80"
+                                alt="Regenerative Aesthetics" />
                         </div>
                         <div class="service-arch-card__body">
                             <h3>Regenerative Aesthetics</h3>
@@ -478,51 +638,116 @@
 
                     <article class="service-arch-card">
                         <div class="service-arch-card__media">
-                            <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=600&q=80" alt="Fellow Doctors Training" />
+                            <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=600&q=80"
+                                alt="Fellow Doctors Training" />
                         </div>
                         <div class="service-arch-card__body">
                             <h3>Fellow Doctors Training</h3>
-                            <p>Educational and expert-led programmes for clinicians seeking advanced aesthetic mastery.</p>
+                            <p>Educational and expert-led programmes for clinicians seeking advanced aesthetic mastery.
+                            </p>
                         </div>
                     </article>
                 </div>
+            </div>
+
+            <!-- Curvy separator: white expertise → cream concerns -->
+            <div class="section-separator" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#FAF9F6" d="M0,50 C320,150 420,0 740,50 C1060,100 1280,0 1440,50 L1440,100 L0,100 Z">
+                    </path>
+                </svg>
             </div>
         </section>
 
         <!-- ═══════ Bento Concerns Grid ═══════ -->
         <style>
-            .bento-card { border-radius: 12px; overflow: hidden; position: relative; cursor: pointer; }
-            .bento-card img { transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
-            .bento-card:hover img { transform: scale(1.08); }
-            .bento-card-overlay { background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.3) 100%); position: absolute; inset: 0; pointer-events: none; }
-            .bento-content p { transition: opacity 0.3s ease; }
+            .bento-card {
+                border-radius: 12px;
+                overflow: hidden;
+                position: relative;
+                cursor: pointer;
+            }
+
+            .bento-card img {
+                transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            }
+
+            .bento-card:hover img {
+                transform: scale(1.08);
+            }
+
+            .bento-card-overlay {
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0.3) 100%);
+                position: absolute;
+                inset: 0;
+                pointer-events: none;
+            }
+
+            .bento-content p {
+                transition: opacity 0.3s ease;
+            }
+
             @media (max-width: 767.98px) {
-                .bento-mobile-hide { display: none !important; }
-                .bento-card-title { font-size: 16px !important; margin-bottom: 0 !important; }
-                .bento-card-icon { width: 32px !important; height: 32px !important; }
-                .bento-card-icon svg { width: 16px !important; height: 16px !important; }
-                .bento-large-card { min-height: 280px !important; }
-                .bento-small-card { height: 200px !important; }
+                .bento-mobile-hide {
+                    display: none !important;
+                }
+
+                .bento-card-title {
+                    font-size: 16px !important;
+                    margin-bottom: 0 !important;
+                }
+
+                .bento-card-icon {
+                    width: 32px !important;
+                    height: 32px !important;
+                }
+
+                .bento-card-icon svg {
+                    width: 16px !important;
+                    height: 16px !important;
+                }
+
+                .bento-large-card {
+                    min-height: 280px !important;
+                }
+
+                .bento-small-card {
+                    height: 200px !important;
+                }
             }
         </style>
-        <section class="concerns-new-section py-5" id="concerns" style="background-color: #F9F3EB;">
+        <section class="concerns-new-section py-5" id="concerns" style="background-color: #FAF9F6;">
             <div class="container py-4">
                 <div class="row g-4 align-items-stretch">
                     <!-- Left Column -->
                     <div class="col-lg-4">
-                        <div class="card border-0 h-100 bento-card bento-large-card" style="background-color: var(--cream); min-height: 500px;">
-                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80" alt="Face Concern" class="img-fluid w-100 h-100 object-fit-cover position-absolute top-0 start-0">
+                        <div class="card border-0 h-100 bento-card bento-large-card"
+                            style="background-color: #FAF9F6; min-height: 500px;">
+                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80"
+                                alt="Face Concern"
+                                class="img-fluid w-100 h-100 object-fit-cover position-absolute top-0 start-0">
                             <div class="bento-card-overlay z-0"></div>
                             <div class="position-absolute top-0 start-0 p-4 w-100 z-1">
-                                <span class="d-inline-block border border-white rounded-pill px-4 py-2 text-white" style="font-family: var(--sans); font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);">Face Care</span>
+                                <span class="d-inline-block border border-white rounded-pill px-4 py-2 text-white"
+                                    style="font-family: var(--sans); font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);">Face
+                                    Care</span>
                             </div>
-                            <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex justify-content-between align-items-end z-1 bento-content">
+                            <div
+                                class="position-absolute bottom-0 start-0 w-100 p-4 d-flex justify-content-between align-items-end z-1 bento-content">
                                 <div class="pe-3">
-                                    <h3 class="text-white bento-card-title mb-2" style="font-family: var(--serif); font-size: 24px;">Rejuvenate</h3>
-                                    <p class="mb-0 text-white bento-mobile-hide" style="font-family: var(--sans); font-size: 14px; opacity: 0.9; line-height: 1.5;">Clean, science-backed skincare made to nourish, balance, and reveal your natural glow.</p>
+                                    <h3 class="text-white bento-card-title mb-2"
+                                        style="font-family: var(--serif); font-size: 24px;">Rejuvenate</h3>
+                                    <p class="mb-0 text-white bento-mobile-hide"
+                                        style="font-family: var(--sans); font-size: 14px; opacity: 0.9; line-height: 1.5;">
+                                        Clean, science-backed skincare made to nourish, balance, and reveal your natural
+                                        glow.</p>
                                 </div>
-                                <div class="btn btn-light rounded-circle d-flex align-items-center justify-content-center p-0 flex-shrink-0 border-0 bento-card-icon" style="width: 44px; height: 44px; background: rgba(255,255,255,0.25); backdrop-filter: blur(4px); color: #2B1A12;">
-                                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7" /></svg>
+                                <div class="btn btn-light rounded-circle d-flex align-items-center justify-content-center p-0 flex-shrink-0 border-0 bento-card-icon"
+                                    style="width: 44px; height: 44px; background: rgba(255,255,255,0.25); backdrop-filter: blur(4px); color: #2B1A12;">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor"
+                                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M7 17l9.2-9.2M17 17V7H7" />
+                                    </svg>
                                 </div>
                             </div>
                         </div>
@@ -532,56 +757,105 @@
                         <div class="row g-3 g-md-4 mb-4 mb-md-5">
                             <div class="col-6">
                                 <div class="card border-0 bento-card bento-small-card" style="height: 260px;">
-                                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80" alt="Body Concern" class="img-fluid w-100 h-100 object-fit-cover position-absolute top-0 start-0">
+                                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80"
+                                        alt="Body Concern"
+                                        class="img-fluid w-100 h-100 object-fit-cover position-absolute top-0 start-0">
                                     <div class="bento-card-overlay z-0"></div>
-                                    <div class="position-absolute bottom-0 start-0 w-100 p-3 p-md-4 d-flex justify-content-between align-items-end z-1 bento-content">
+                                    <div
+                                        class="position-absolute bottom-0 start-0 w-100 p-3 p-md-4 d-flex justify-content-between align-items-end z-1 bento-content">
                                         <div class="pe-2 pe-md-3">
-                                            <h3 class="text-white bento-card-title mb-2" style="font-family: var(--serif); font-size: 20px;">Body</h3>
-                                            <p class="mb-0 text-white bento-mobile-hide" style="font-family: var(--sans); font-size: 13px; opacity: 0.9; line-height: 1.5;">Treatments designed to tone, restore, and enhance your natural form.</p>
+                                            <h3 class="text-white bento-card-title mb-2"
+                                                style="font-family: var(--serif); font-size: 20px;">Body</h3>
+                                            <p class="mb-0 text-white bento-mobile-hide"
+                                                style="font-family: var(--sans); font-size: 13px; opacity: 0.9; line-height: 1.5;">
+                                                Treatments designed to tone, restore, and enhance your natural form.</p>
                                         </div>
-                                        <div class="btn btn-light rounded-circle d-flex align-items-center justify-content-center p-0 flex-shrink-0 border-0 bento-card-icon" style="width: 40px; height: 40px; background: rgba(255,255,255,0.25); backdrop-filter: blur(4px); color: #2B1A12;">
-                                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7" /></svg>
+                                        <div class="btn btn-light rounded-circle d-flex align-items-center justify-content-center p-0 flex-shrink-0 border-0 bento-card-icon"
+                                            style="width: 40px; height: 40px; background: rgba(255,255,255,0.25); backdrop-filter: blur(4px); color: #2B1A12;">
+                                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor"
+                                                stroke-width="2" fill="none" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path d="M7 17l9.2-9.2M17 17V7H7" />
+                                            </svg>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="card border-0 bento-card bento-small-card" style="height: 260px;">
-                                    <img src="https://images.unsplash.com/photo-1528319725582-ddc096101511?w=600&q=80" alt="Ageing Concern" class="img-fluid w-100 h-100 object-fit-cover position-absolute top-0 start-0">
+                                    <img src="https://images.unsplash.com/photo-1528319725582-ddc096101511?w=600&q=80"
+                                        alt="Ageing Concern"
+                                        class="img-fluid w-100 h-100 object-fit-cover position-absolute top-0 start-0">
                                     <div class="bento-card-overlay z-0"></div>
-                                    <div class="position-absolute bottom-0 start-0 w-100 p-3 p-md-4 d-flex justify-content-between align-items-end z-1 bento-content">
+                                    <div
+                                        class="position-absolute bottom-0 start-0 w-100 p-3 p-md-4 d-flex justify-content-between align-items-end z-1 bento-content">
                                         <div class="pe-2 pe-md-3">
-                                            <h3 class="text-white bento-card-title mb-2" style="font-family: var(--serif); font-size: 20px;">Ageing</h3>
-                                            <p class="mb-0 text-white bento-mobile-hide" style="font-family: var(--sans); font-size: 13px; opacity: 0.9; line-height: 1.5;">Subtle preservation for timeless radiance and clinical longevity.</p>
+                                            <h3 class="text-white bento-card-title mb-2"
+                                                style="font-family: var(--serif); font-size: 20px;">Ageing</h3>
+                                            <p class="mb-0 text-white bento-mobile-hide"
+                                                style="font-family: var(--sans); font-size: 13px; opacity: 0.9; line-height: 1.5;">
+                                                Subtle preservation for timeless radiance and clinical longevity.</p>
                                         </div>
-                                        <div class="btn btn-light rounded-circle d-flex align-items-center justify-content-center p-0 flex-shrink-0 border-0 bento-card-icon" style="width: 40px; height: 40px; background: rgba(255,255,255,0.25); backdrop-filter: blur(4px); color: #2B1A12;">
-                                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7" /></svg>
+                                        <div class="btn btn-light rounded-circle d-flex align-items-center justify-content-center p-0 flex-shrink-0 border-0 bento-card-icon"
+                                            style="width: 40px; height: 40px; background: rgba(255,255,255,0.25); backdrop-filter: blur(4px); color: #2B1A12;">
+                                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor"
+                                                stroke-width="2" fill="none" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path d="M7 17l9.2-9.2M17 17V7H7" />
+                                            </svg>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="mt-auto pb-2">
-                            <h2 class="mb-4" style="font-family: var(--serif); font-size: clamp(28px, 4vw, 42px); font-weight: 600; line-height: 1.25; color: #2B1A12; letter-spacing: -0.25px;">
-                                <span style="color: #B69E7E; opacity: 0.9;">Reveal Your Skin's</span> True Brilliance With Clean Formulas Powered by Science and Purity
+                            <h2 class="mb-4"
+                                style="font-family: var(--serif); font-size: clamp(28px, 4vw, 42px); font-weight: 300; line-height: 1.25; color: #2B1A12; letter-spacing: -0.25px;">
+                                <span style="color: #B69E7E; opacity: 0.9;">Reveal Your Skin's</span> True <span
+                                    class="scribble">Brilliance</span> With Clean Formulas Powered by Science and Purity
                             </h2>
-                            <p class="mb-4 mb-md-5 body-text" style="color: #5C4A3A; max-width: 90%;">Designed to nourish, protect, and restore — because real radiance begins with healthy skin.</p>
+                            <p class="mb-4 mb-md-5 body-text" style="color: #5C4A3A; max-width: 90%;">Designed to
+                                nourish, protect, and restore — because real radiance begins with healthy skin.</p>
                             <div class="d-flex align-items-center flex-wrap gap-4">
                                 <div class="d-flex align-items-center">
                                     <div class="d-flex me-3">
-                                        <img src="https://i.pravatar.cc/100?img=5" class="rounded-circle border border-2 border-white object-fit-cover" width="40" height="40" style="margin-right: -12px; position: relative; z-index: 4;" alt="User">
-                                        <img src="https://i.pravatar.cc/100?img=9" class="rounded-circle border border-2 border-white object-fit-cover" width="40" height="40" style="margin-right: -12px; position: relative; z-index: 3;" alt="User">
-                                        <img src="https://i.pravatar.cc/100?img=12" class="rounded-circle border border-2 border-white object-fit-cover" width="40" height="40" style="margin-right: -12px; position: relative; z-index: 2;" alt="User">
-                                        <img src="https://i.pravatar.cc/100?img=16" class="rounded-circle border border-2 border-white object-fit-cover" width="40" height="40" style="position: relative; z-index: 1;" alt="User">
+                                        <img src="https://i.pravatar.cc/100?img=5"
+                                            class="rounded-circle border border-2 border-white object-fit-cover"
+                                            width="40" height="40"
+                                            style="margin-right: -12px; position: relative; z-index: 4;" alt="User">
+                                        <img src="https://i.pravatar.cc/100?img=9"
+                                            class="rounded-circle border border-2 border-white object-fit-cover"
+                                            width="40" height="40"
+                                            style="margin-right: -12px; position: relative; z-index: 3;" alt="User">
+                                        <img src="https://i.pravatar.cc/100?img=12"
+                                            class="rounded-circle border border-2 border-white object-fit-cover"
+                                            width="40" height="40"
+                                            style="margin-right: -12px; position: relative; z-index: 2;" alt="User">
+                                        <img src="https://i.pravatar.cc/100?img=16"
+                                            class="rounded-circle border border-2 border-white object-fit-cover"
+                                            width="40" height="40" style="position: relative; z-index: 1;" alt="User">
                                     </div>
                                     <div>
-                                        <span class="fw-bold fs-6 mb-0 d-inline-block" style="font-family: var(--sans); color: #2B1A12;">200K+</span>
-                                        <span style="font-size: 13px; font-family: var(--sans); color: #5C4A3A;"> Client Reviews</span>
+                                        <span class="fw-bold fs-6 mb-0 d-inline-block"
+                                            style="font-family: var(--sans); color: #2B1A12;">200K+</span>
+                                        <span style="font-size: 13px; font-family: var(--sans); color: #5C4A3A;"> Client
+                                            Reviews</span>
                                     </div>
                                 </div>
-                                <a href="../newthree.html#book" class="learn-more">
-                                    <span class="circle" aria-hidden="true"><span class="icon symbol">𖤓</span></span>
-                                    <span class="button-text">Book a Consultation</span>
+                                <a href="../newthree.html#book" class="dz-cta">
+                                    <span>Book a Consultation</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="4" />
+                                        <path d="M12 2v2" />
+                                        <path d="M12 20v2" />
+                                        <path d="m4.93 4.93 1.41 1.41" />
+                                        <path d="m17.66 17.66 1.41 1.41" />
+                                        <path d="M2 12h2" />
+                                        <path d="M20 12h2" />
+                                        <path d="m6.34 17.66-1.41 1.41" />
+                                        <path d="m19.07 4.93-1.41 1.41" />
+                                    </svg>
                                 </a>
                             </div>
                         </div>
@@ -593,7 +867,8 @@
         <section class="sig-services-zone" id="sigServicesZone">
             <!-- Sticky Image Background -->
             <div class="sig-services-bg" id="sigServicesBg">
-                <img src="https://images.unsplash.com/photo-1770954098074-da95ccdf33e7?q=80&w=2532&auto=format&fit=crop" alt="Dzen Signature Services Backdrop" id="bgImage" />
+                <img src="https://images.unsplash.com/photo-1770954098074-da95ccdf33e7?q=80&w=2532&auto=format&fit=crop"
+                    alt="Dzen Signature Services Backdrop" id="bgImage" />
                 <div class="sig-services-overlay"></div>
             </div>
 
@@ -603,11 +878,14 @@
                 <div class="sig-panel sig-panel--intro" id="sigPanel0">
                     <div class="sig-panel-inner">
                         <span class="sig-label">Our Craft</span>
-                        <h2 class="sig-intro-heading">Signature<br/>Services</h2>
-                        <p class="sig-intro-sub">Each treatment is a ritual — crafted to reveal your most luminous, confident self through the finest techniques in aesthetic medicine.</p>
+                        <h2 class="sig-intro-heading">Signature<br /><span class="scribble">Services</span></h2>
+                        <p class="sig-intro-sub">Each treatment is a ritual — crafted to reveal your most luminous,
+                            confident self through the finest techniques in aesthetic medicine.</p>
                         <div class="sig-scroll-cue">
                             <span>Scroll to explore</span>
-                            <div class="sig-scroll-line"><div class="sig-scroll-dot"></div></div>
+                            <div class="sig-scroll-line">
+                                <div class="sig-scroll-dot"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -617,14 +895,16 @@
                     <div class="sig-panel-inner sig-service-layout sig-service-layout--left">
                         <div class="sig-service-visual">
                             <div class="sig-oval-frame">
-                                <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop" alt="Lip Enhancement" class="sig-oval-img" />
+                                <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop"
+                                    alt="Lip Enhancement" class="sig-oval-img" />
                             </div>
                         </div>
                         <div class="sig-service-text">
-                            <span class="sig-service-num">01</span>
+                            <!-- <span class="sig-service-num">01</span> -->
                             <h3 class="sig-service-title">Lip Enhancement</h3>
                             <div class="sig-service-bar"></div>
-                            <p class="sig-service-desc">Precision filler artistry to sculpt natural-looking lips with defined contour, optimal volume, and effortless symmetry — no over-filled results.</p>
+                            <p class="sig-service-desc">Precision filler artistry to sculpt natural-looking lips with
+                                defined contour, optimal volume, and effortless symmetry — no over-filled results.</p>
                             <div class="sig-service-tags">
                                 <span>Hyaluronic Acid</span>
                                 <span>Natural Results</span>
@@ -638,10 +918,11 @@
                 <div class="sig-panel sig-panel--service" id="sigPanel2" data-index="2">
                     <div class="sig-panel-inner sig-service-layout sig-service-layout--right">
                         <div class="sig-service-text">
-                            <span class="sig-service-num">02</span>
+                            <!-- <span class="sig-service-num">02</span> -->
                             <h3 class="sig-service-title">Skin Rejuvenation</h3>
                             <div class="sig-service-bar"></div>
-                            <p class="sig-service-desc">Advanced skin renewal protocols combining bio-stimulators, collagen induction, and targeted therapies to restore youthful radiance from within.</p>
+                            <p class="sig-service-desc">Advanced skin renewal protocols combining bio-stimulators,
+                                collagen induction, and targeted therapies to restore youthful radiance from within.</p>
                             <div class="sig-service-tags">
                                 <span>Collagen Boost</span>
                                 <span>Skin Glow</span>
@@ -650,7 +931,8 @@
                         </div>
                         <div class="sig-service-visual">
                             <div class="sig-oval-frame sig-oval-frame--alt">
-                                <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop" alt="Skin Rejuvenation" class="sig-oval-img" />
+                                <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop"
+                                    alt="Skin Rejuvenation" class="sig-oval-img" />
                             </div>
                         </div>
                     </div>
@@ -661,14 +943,16 @@
                     <div class="sig-panel-inner sig-service-layout sig-service-layout--left">
                         <div class="sig-service-visual">
                             <div class="sig-oval-frame sig-oval-frame--tall">
-                                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop" alt="Facial Contouring" class="sig-oval-img" />
+                                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop"
+                                    alt="Facial Contouring" class="sig-oval-img" />
                             </div>
                         </div>
                         <div class="sig-service-text">
-                            <span class="sig-service-num">03</span>
+                            <!-- <span class="sig-service-num">03</span> -->
                             <h3 class="sig-service-title">Facial Contouring</h3>
                             <div class="sig-service-bar"></div>
-                            <p class="sig-service-desc">Sculpt and define your natural bone structure with expert dermal filler placement along cheekbones, jawline, and chin for a harmonious profile.</p>
+                            <p class="sig-service-desc">Sculpt and define your natural bone structure with expert dermal
+                                filler placement along cheekbones, jawline, and chin for a harmonious profile.</p>
                             <div class="sig-service-tags">
                                 <span>3D Sculpting</span>
                                 <span>Non-Surgical</span>
@@ -682,10 +966,11 @@
                 <div class="sig-panel sig-panel--service" id="sigPanel4" data-index="4">
                     <div class="sig-panel-inner sig-service-layout sig-service-layout--right">
                         <div class="sig-service-text">
-                            <span class="sig-service-num">04</span>
+                            <!-- <span class="sig-service-num">04</span> -->
                             <h3 class="sig-service-title">Anti-Ageing Treatments</h3>
                             <div class="sig-service-bar"></div>
-                            <p class="sig-service-desc">Targeted Botulinum toxin and bio-revitalisation protocols to soften dynamic lines, lift brows, and restore a refreshed, rested appearance.</p>
+                            <p class="sig-service-desc">Targeted Botulinum toxin and bio-revitalisation protocols to
+                                soften dynamic lines, lift brows, and restore a refreshed, rested appearance.</p>
                             <div class="sig-service-tags">
                                 <span>Botulinum Toxin</span>
                                 <span>Preventative</span>
@@ -694,7 +979,8 @@
                         </div>
                         <div class="sig-service-visual">
                             <div class="sig-oval-frame">
-                                <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop" alt="Anti-Ageing Treatments" class="sig-oval-img" />
+                                <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop"
+                                    alt="Anti-Ageing Treatments" class="sig-oval-img" />
                             </div>
                         </div>
                     </div>
@@ -705,14 +991,16 @@
                     <div class="sig-panel-inner sig-service-layout sig-service-layout--left">
                         <div class="sig-service-visual">
                             <div class="sig-oval-frame sig-oval-frame--wide">
-                                <img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?q=80&w=800&auto=format&fit=crop" alt="Hair Restoration" class="sig-oval-img" />
+                                <img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?q=80&w=800&auto=format&fit=crop"
+                                    alt="Hair Restoration" class="sig-oval-img" />
                             </div>
                         </div>
                         <div class="sig-service-text">
                             <span class="sig-service-num">05</span>
                             <h3 class="sig-service-title">Hair Restoration</h3>
                             <div class="sig-service-bar"></div>
-                            <p class="sig-service-desc">PRP therapy and growth factor treatments to stimulate dormant follicles, strengthen existing hair, and promote dense, healthy regrowth naturally.</p>
+                            <p class="sig-service-desc">PRP therapy and growth factor treatments to stimulate dormant
+                                follicles, strengthen existing hair, and promote dense, healthy regrowth naturally.</p>
                             <div class="sig-service-tags">
                                 <span>PRP Therapy</span>
                                 <span>Growth Factors</span>
@@ -729,7 +1017,8 @@
                             <span class="sig-service-num">06</span>
                             <h3 class="sig-service-title">Body Sculpting</h3>
                             <div class="sig-service-bar"></div>
-                            <p class="sig-service-desc">Non-invasive body contouring using cutting-edge technologies to selectively eliminate stubborn fat cells and tighten skin for a sculpted silhouette.</p>
+                            <p class="sig-service-desc">Non-invasive body contouring using cutting-edge technologies to
+                                selectively eliminate stubborn fat cells and tighten skin for a sculpted silhouette.</p>
                             <div class="sig-service-tags">
                                 <span>Non-Invasive</span>
                                 <span>FDA Cleared</span>
@@ -738,7 +1027,8 @@
                         </div>
                         <div class="sig-service-visual">
                             <div class="sig-oval-frame sig-oval-frame--tall">
-                                <img src="https://images.unsplash.com/photo-1529419412599-7bb870e11810?q=80&w=800&auto=format&fit=crop" alt="Body Sculpting" class="sig-oval-img" />
+                                <img src="https://images.unsplash.com/photo-1529419412599-7bb870e11810?q=80&w=800&auto=format&fit=crop"
+                                    alt="Body Sculpting" class="sig-oval-img" />
                             </div>
                         </div>
                     </div>
@@ -750,8 +1040,11 @@
             <div class="trainer-v2__container">
                 <div class="trainer-v2__head">
                     <span class="trainer-v2__eyebrow trainer-v2__reveal">Fellow-Doctors &amp; Training</span>
-                    <h2 class="trainer-v2__title trainer-v2__reveal">A senior trainer <em>the industry learns from.</em></h2>
-                    <p class="trainer-v2__lead trainer-v2__reveal">Dr. Aarushi is one of India's leading medical educators in aesthetic and regenerative dermatology — invited as faculty, masterclass host and senior trainer at industry workshops and fellowship programmes across the country.</p>
+                    <h2 class="trainer-v2__title trainer-v2__reveal">A senior trainer <em>the industry <span
+                                class="scribble">learns from.</span></em></h2>
+                    <p class="trainer-v2__lead trainer-v2__reveal">Dr. Aarushi is one of India's leading medical
+                        educators in aesthetic and regenerative dermatology — invited as faculty, masterclass host and
+                        senior trainer at industry workshops and fellowship programmes across the country.</p>
                 </div>
 
                 <div class="trainer-v2__grid">
@@ -768,10 +1061,14 @@
 
                     <div class="trainer-v2__quote-panel trainer-v2__reveal trainer-v2__reveal--right">
                         <svg class="trainer-v2__quote-icon" viewBox="0 0 64 64" aria-hidden="true">
-                            <path d="M22 18c-7 4-11 11-11 19v9h17V32H18c0-6 4-11 10-13zm30 0c-7 4-11 11-11 19v9h17V32H48c0-6 4-11 10-13z" fill="currentColor" />
+                            <path
+                                d="M22 18c-7 4-11 11-11 19v9h17V32H18c0-6 4-11 10-13zm30 0c-7 4-11 11-11 19v9h17V32H48c0-6 4-11 10-13z"
+                                fill="currentColor" />
                         </svg>
                         <blockquote class="trainer-v2__quote-text">
-                            What I teach my fellow doctors is what I practise at D'Zen — the <span class="accent">discipline of restraint</span>, the priority of safety, and the courage to keep learning.
+                            What I teach my fellow doctors is what I practise at D'Zen — the <span
+                                class="accent">discipline of restraint</span>, the priority of safety, and the courage
+                            to keep learning.
                         </blockquote>
                         <div class="trainer-v2__quote-sig">Dr. Aarushi Singh</div>
                     </div>
@@ -792,15 +1089,23 @@
                     </div>
                 </div>
 
-                <!-- <div class="trainer-v2__cta trainer-v2__reveal">
-                    <span class="trainer-v2__cta-text">For practitioners &amp; fellowship enquiries</span>
-                    <a href="../newthree.html#enquire" class="learn-more">
-                        <span class="circle" aria-hidden="true">
-                            <span class="icon symbol">𖤓</span>
-                        </span>
-                        <span class="button-text">Enquire About Training</span>
+                <div class="dz-cta-wrap">
+                    <a href="../newthree.html#enquire" class="dz-cta">
+                        <span>Enquire About Training</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2" />
+                            <path d="M12 20v2" />
+                            <path d="m4.93 4.93 1.41 1.41" />
+                            <path d="m17.66 17.66 1.41 1.41" />
+                            <path d="M2 12h2" />
+                            <path d="M20 12h2" />
+                            <path d="m6.34 17.66-1.41 1.41" />
+                            <path d="m19.07 4.93-1.41 1.41" />
+                        </svg>
                     </a>
-                </div> -->
+                </div>
             </div>
         </section>
 
@@ -808,74 +1113,96 @@
             <div class="container">
                 <div class="section-header text-center mb-4 mb-lg-5">
                     <span class="section-subtitle">RECOGNIZED EXCELLENCE</span>
-                    <h2 class="section-title">Featured In</h2>
-                    <p class="section-desc">We are creating a space where luxury meets healing, and science meets spirituality.</p>
+                    <h2 class="section-title">Featured <span class="scribble">In</span></h2>
+                    <p class="section-desc">We are creating a space where luxury meets healing, and science meets
+                        spirituality.</p>
                 </div>
 
                 <div class="row g-4 justify-content-center align-items-center">
                     <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
                         <div class="media-logo">
-                            <svg viewBox="0 0 120 50" class="logo-svg"><text x="10" y="32" font-family="Georgia, serif" font-size="22" font-weight="bold">VOGUE</text><text x="18" y="46" font-family="Arial, sans-serif" font-size="11">INDIA</text></svg>
+                            <svg viewBox="0 0 120 50" class="logo-svg"><text x="10" y="32" font-family="Georgia, serif"
+                                    font-size="22" font-weight="bold">VOGUE</text><text x="18" y="46"
+                                    font-family="Arial, sans-serif" font-size="11">INDIA</text></svg>
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
                         <div class="media-logo">
-                            <svg viewBox="0 0 150 55" class="logo-svg"><text x="10" y="22" font-family="Arial, sans-serif" font-size="10">Condé Nast</text><text x="10" y="44" font-family="Georgia, serif" font-size="18" font-weight="bold">Traveler</text></svg>
+                            <svg viewBox="0 0 150 55" class="logo-svg"><text x="10" y="22"
+                                    font-family="Arial, sans-serif" font-size="10">Condé Nast</text><text x="10" y="44"
+                                    font-family="Georgia, serif" font-size="18" font-weight="bold">Traveler</text></svg>
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
                         <div class="media-logo">
-                            <svg viewBox="0 0 80 50" class="logo-svg"><text x="8" y="22" font-family="Georgia, serif" font-size="12" font-style="italic">the</text><text x="8" y="42" font-family="Georgia, serif" font-size="22" font-weight="bold">nod</text></svg>
+                            <svg viewBox="0 0 80 50" class="logo-svg"><text x="8" y="22" font-family="Georgia, serif"
+                                    font-size="12" font-style="italic">the</text><text x="8" y="42"
+                                    font-family="Georgia, serif" font-size="22" font-weight="bold">nod</text></svg>
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
                         <div class="media-logo">
                             <svg viewBox="0 0 130 50" class="logo-svg">
                                 <circle cx="18" cy="25" r="10" fill="none" stroke="currentColor" stroke-width="2" />
-                                <path d="M18 15 L28 25 L18 35 L8 25 Z" fill="none" stroke="currentColor" stroke-width="1.5" /><text x="38" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold">CNBC TV18</text>
+                                <path d="M18 15 L28 25 L18 35 L8 25 Z" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" /><text x="38" y="30" font-family="Arial, sans-serif"
+                                    font-size="14" font-weight="bold">CNBC TV18</text>
                             </svg>
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
                         <div class="media-logo">
-                            <svg viewBox="0 0 140 50" class="logo-svg"><text x="10" y="24" font-family="Arial, sans-serif" font-size="10" letter-spacing="1">TRAVEL+</text><text x="10" y="44" font-family="Arial, sans-serif" font-size="14" font-weight="bold">LEISURE</text></svg>
+                            <svg viewBox="0 0 140 50" class="logo-svg"><text x="10" y="24"
+                                    font-family="Arial, sans-serif" font-size="10"
+                                    letter-spacing="1">TRAVEL+</text><text x="10" y="44" font-family="Arial, sans-serif"
+                                    font-size="14" font-weight="bold">LEISURE</text></svg>
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
                         <div class="media-logo">
-                            <svg viewBox="0 0 100 50" class="logo-svg"><text x="10" y="34" font-family="Arial Black, sans-serif" font-size="22" font-weight="900">HELLO!</text></svg>
+                            <svg viewBox="0 0 100 50" class="logo-svg"><text x="10" y="34"
+                                    font-family="Arial Black, sans-serif" font-size="22"
+                                    font-weight="900">HELLO!</text></svg>
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
                         <div class="media-logo">
-                            <svg viewBox="0 0 70 55" class="logo-svg"><text x="5" y="42" font-family="Georgia, serif" font-size="32" font-weight="bold">AD</text></svg>
+                            <svg viewBox="0 0 70 55" class="logo-svg"><text x="5" y="42" font-family="Georgia, serif"
+                                    font-size="32" font-weight="bold">AD</text></svg>
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
                         <div class="media-logo">
-                            <svg viewBox="0 0 120 55" class="logo-svg"><text x="10" y="26" font-family="Georgia, serif" font-size="18" font-weight="400">ELLE</text><text x="22" y="46" font-family="Arial, sans-serif" font-size="10" letter-spacing="4">DECOR</text></svg>
+                            <svg viewBox="0 0 120 55" class="logo-svg"><text x="10" y="26" font-family="Georgia, serif"
+                                    font-size="18" font-weight="400">ELLE</text><text x="22" y="46"
+                                    font-family="Arial, sans-serif" font-size="10" letter-spacing="4">DECOR</text></svg>
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
                         <div class="media-logo">
                             <svg viewBox="0 0 100 50" class="logo-svg">
-                                <rect x="8" y="12" width="18" height="14" fill="currentColor" /><text x="34" y="28" font-family="Georgia, serif" font-size="14" font-weight="500">ET Retail</text>
+                                <rect x="8" y="12" width="18" height="14" fill="currentColor" /><text x="34" y="28"
+                                    font-family="Georgia, serif" font-size="14" font-weight="500">ET Retail</text>
                             </svg>
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
                         <div class="media-logo">
-                            <svg viewBox="0 0 70 55" class="logo-svg"><text x="10" y="36" font-family="Georgia, serif" font-size="26" font-weight="bold" font-style="italic">mint</text></svg>
+                            <svg viewBox="0 0 70 55" class="logo-svg"><text x="10" y="36" font-family="Georgia, serif"
+                                    font-size="26" font-weight="bold" font-style="italic">mint</text></svg>
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
                         <div class="media-logo">
-                            <svg viewBox="0 0 100 55" class="logo-svg"><text x="10" y="36" font-family="Georgia, serif" font-size="22" font-style="italic">Esquire</text></svg>
+                            <svg viewBox="0 0 100 55" class="logo-svg"><text x="10" y="36" font-family="Georgia, serif"
+                                    font-size="22" font-style="italic">Esquire</text></svg>
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
                         <div class="media-logo">
-                            <svg viewBox="0 0 140 50" class="logo-svg"><text x="10" y="30" font-family="Arial, sans-serif" font-size="12" letter-spacing="2">LIFESTYLE ASIA</text></svg>
+                            <svg viewBox="0 0 140 50" class="logo-svg"><text x="10" y="30"
+                                    font-family="Arial, sans-serif" font-size="12" letter-spacing="2">LIFESTYLE
+                                    ASIA</text></svg>
                         </div>
                     </div>
                 </div>
@@ -886,8 +1213,10 @@
             <div class="container">
                 <div class="section-header text-center mb-4 mb-lg-5">
                     <span class="section-subtitle">IN THE NEWS</span>
-                    <h2 class="section-title">Making Headlines Worldwide</h2>
-                    <p class="section-desc">When healing happens, the world takes notice. Our commitment to excellence in aesthetic dermatology and integrative wellness has earned us consistent recognition from national and international media.</p>
+                    <h2 class="section-title">Making <span class="scribble">Headlines</span> Worldwide</h2>
+                    <p class="section-desc">When healing happens, the world takes notice. Our commitment to excellence
+                        in aesthetic dermatology and integrative wellness has earned us consistent recognition from
+                        national and international media.</p>
                 </div>
 
                 <div class="blog-cards-grid">
@@ -895,7 +1224,8 @@
                     <div class="blog-card">
                         <div class="blog-card-image-wrapper">
                             <span class="blog-card-badge">WELLNESS</span>
-                            <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=700&q=80" alt="Wellness" class="blog-card-img">
+                            <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=700&q=80"
+                                alt="Wellness" class="blog-card-img">
                         </div>
                         <div class="blog-card-content">
                             <div class="blog-card-meta">
@@ -903,7 +1233,8 @@
                                 <span>8 MIN READ</span>
                             </div>
                             <h3 class="blog-card-title">The Skin-Gut Connection: Why Your Microbiome Matters</h3>
-                            <p class="blog-card-excerpt">Your gut is often called the "second skin" &mdash; and for good reason...</p>
+                            <p class="blog-card-excerpt">Your gut is often called the "second skin" &mdash; and for good
+                                reason...</p>
                             <a href="#" class="blog-card-link">Read Article</a>
                         </div>
                     </div>
@@ -912,7 +1243,8 @@
                     <div class="blog-card">
                         <div class="blog-card-image-wrapper">
                             <span class="blog-card-badge">AESTHETICS</span>
-                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&q=80" alt="Aesthetics" class="blog-card-img">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&q=80"
+                                alt="Aesthetics" class="blog-card-img">
                         </div>
                         <div class="blog-card-content">
                             <div class="blog-card-meta">
@@ -920,7 +1252,8 @@
                                 <span>5 MIN READ</span>
                             </div>
                             <h3 class="blog-card-title">Hydrafacial vs Medipeel: Which Is Right for You?</h3>
-                            <p class="blog-card-excerpt">Both treatments promise radiance, but they work differently. Here's how...</p>
+                            <p class="blog-card-excerpt">Both treatments promise radiance, but they work differently.
+                                Here's how...</p>
                             <a href="#" class="blog-card-link">Read Article</a>
                         </div>
                     </div>
@@ -929,7 +1262,8 @@
                     <div class="blog-card">
                         <div class="blog-card-image-wrapper">
                             <span class="blog-card-badge">ANTI-AGEING</span>
-                            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=700&q=80" alt="Anti-Ageing" class="blog-card-img">
+                            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=700&q=80"
+                                alt="Anti-Ageing" class="blog-card-img">
                         </div>
                         <div class="blog-card-content">
                             <div class="blog-card-meta">
@@ -937,16 +1271,19 @@
                                 <span>6 MIN READ</span>
                             </div>
                             <h3 class="blog-card-title">Hormones and Skin Ageing: What Happens After 30</h3>
-                            <p class="blog-card-excerpt">Declining estrogen and testosterone don't just affect energy levels...</p>
+                            <p class="blog-card-excerpt">Declining estrogen and testosterone don't just affect energy
+                                levels...</p>
                             <a href="#" class="blog-card-link">Read Article</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="headlines-footer text-center mt-5">
-                    <a href="#" class="view-all-articles" style="display: inline-flex; align-items: center; gap: 0.75rem; color: #2B1A12; text-decoration: none; font-weight: 600; font-size: 14px;">
+                    <a href="#" class="view-all-articles"
+                        style="display: inline-flex; align-items: center; gap: 0.75rem; color: #2B1A12; text-decoration: none; font-weight: 600; font-size: 14px;">
                         <span>View All Articles</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18" stroke-linecap="round" stroke-linejoin="round">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18"
+                            height="18" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="4" />
                             <path d="M12 2v2" />
                             <path d="M12 20v2" />
@@ -1066,7 +1403,7 @@
             <div class="testimonials-content-box reveal">
                 <div class="testimonials-badge-pill">Testimonials</div>
                 <h2 class="testimonials-heading">
-                    Over 5,000 Client
+                    Over <span class="scribble">5,000</span> Client
                     <span class="muted">Transformations &amp; Journeys</span>
                 </h2>
                 <p class="testimonials-desc">
@@ -1090,11 +1427,16 @@
             <div class="footer-cta-card-wrapper">
                 <div class="footer-cta-card">
                     <p class="footer-cta-eyebrow">Begin Your Journey</p>
-                    <h2 class="footer-cta-heading">Ready to reveal your<br>most radiant self?</h2>
-                    <p class="footer-cta-sub">Join thousands who've discovered the art of effortless confidence — crafted for your skin, your story.</p>
+                    <h2 class="footer-cta-heading">Ready to reveal your<br>most <span
+                            class="scribble scribble--light">radiant self?</span></h2>
+                    <p class="footer-cta-sub">Join thousands who've discovered the art of effortless confidence —
+                        crafted for your skin, your story.</p>
                     <a href="../newthree.html#book" class="footer-cta-btn">
                         Book a Consultation
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                            stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
                     </a>
                 </div>
             </div>
@@ -1110,34 +1452,60 @@
                         <div class="footer-brand">
                             <a href="../newthree.html" class="footer-logo-link" aria-label="D'Zen Derma home">
                                 <img src="../images/logo1.png" alt="D'Zen Derma" class="footer-logo-img" />
-                                <span class="footer-logo-wordmark">D'Zen Derma</span>
+
                             </a>
                             <span class="footer-brand-rule"></span>
-                            <p class="footer-tagline">Where science meets the art of skin. Every treatment at D'Zen Derma is crafted to bring out your most radiant, confident self.</p>
+                            <p class="footer-tagline">Where science meets the art of skin. Every treatment at D'Zen
+                                Derma is crafted to bring out your most radiant, confident self.</p>
                             <!-- Contact snippet -->
                             <div class="footer-contact-snippet">
                                 <a href="tel:+919876543210" class="footer-contact-line">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                                    </svg>
                                     +91 98765 43210
                                 </a>
                                 <a href="../newthree.html#location" class="footer-contact-line">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                        <circle cx="12" cy="10" r="3" />
+                                    </svg>
                                     Find our clinic
                                 </a>
                             </div>
                             <!-- Social icons -->
                             <div class="footer-socials">
-                                <a href="#" class="footer-social-icon" aria-label="Instagram" target="_blank" rel="noopener">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+                                <a href="#" class="footer-social-icon" aria-label="Instagram" target="_blank"
+                                    rel="noopener">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                        <circle cx="12" cy="12" r="4" />
+                                        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+                                    </svg>
                                 </a>
-                                <a href="#" class="footer-social-icon" aria-label="Facebook" target="_blank" rel="noopener">
-                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                                <a href="#" class="footer-social-icon" aria-label="Facebook" target="_blank"
+                                    rel="noopener">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                                    </svg>
                                 </a>
-                                <a href="#" class="footer-social-icon" aria-label="X / Twitter" target="_blank" rel="noopener">
-                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                                <a href="#" class="footer-social-icon" aria-label="X / Twitter" target="_blank"
+                                    rel="noopener">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                    </svg>
                                 </a>
-                                <a href="#" class="footer-social-icon" aria-label="WhatsApp" target="_blank" rel="noopener">
-                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.967-.272-.099-.47-.149-.669.15-.197.297-.767.967-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.917-2.207-.241-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.307 1.263.49 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437-9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                                <a href="#" class="footer-social-icon" aria-label="WhatsApp" target="_blank"
+                                    rel="noopener">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.967-.272-.099-.47-.149-.669.15-.197.297-.767.967-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.917-2.207-.241-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.307 1.263.49 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437-9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+                                    </svg>
                                 </a>
                             </div>
                         </div>
@@ -1213,7 +1581,8 @@
             </svg>
             <span class="btn-label">Call</span>
         </a>
-        <a href="../newthree.html#book" class="bottom-action-btn bottom-action-btn--primary" aria-label="Book consultation">
+        <a href="../newthree.html#book" class="bottom-action-btn bottom-action-btn--primary"
+            aria-label="Book consultation">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"
                 stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
@@ -1234,6 +1603,7 @@
     </div>
 
     <!-- Project script controller -->
-    <script src="script.js"></script>
+    <script src="script.js?v=2.3"></script>
 </body>
+
 </html>
