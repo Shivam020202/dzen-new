@@ -490,6 +490,127 @@
     }
 
     /* =========================================================
+       SIGNATURE SERVICES — Blob Hole Reveal (scroll-driven)
+       A cream curtain over the section has a blob-shaped hole that
+       grows from the centre as the section scrolls into view.
+       ========================================================= */
+    (function () {
+        const zone = document.getElementById('sigServicesZone');
+        const curtain = document.getElementById('sigReveal');
+        if (!zone || !curtain) return;
+
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReduced) { curtain.classList.add('is-done'); return; }
+
+        // Reveal completes over this fraction of a viewport of scrolling
+        // once the section top hits the top of the screen.
+        const REVEAL_DISTANCE = 0.9; // × viewport height
+
+        let ticking = false;
+
+        function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+        function updateReveal() {
+            const rect = zone.getBoundingClientRect();
+            const vh = window.innerHeight;
+            const distance = vh * REVEAL_DISTANCE;
+
+            // How far the section top has scrolled past the top of the viewport.
+            const scrolledPast = -rect.top;
+            let progress = scrolledPast / distance;
+            progress = Math.min(Math.max(progress, 0), 1);
+
+            // Section not yet reached → keep curtain closed & mounted.
+            if (rect.top > vh || rect.bottom < 0) {
+                if (progress <= 0) {
+                    curtain.classList.remove('is-done');
+                    curtain.style.setProperty('--sig-reveal', '0');
+                }
+                return;
+            }
+
+            const eased = easeOutCubic(progress);
+            curtain.style.setProperty('--sig-reveal', eased.toFixed(4));
+
+            // Fully open → unmount so it never blocks anything.
+            if (progress >= 1) {
+                curtain.classList.add('is-done');
+            } else {
+                curtain.classList.remove('is-done');
+            }
+        }
+
+        updateReveal();
+
+        window.addEventListener('scroll', function () {
+            if (!ticking) {
+                requestAnimationFrame(function () {
+                    updateReveal();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        window.addEventListener('resize', updateReveal, { passive: true });
+    })();
+
+    /* =========================================================
+       TESTIMONIALS — Tabs (Video / Google Reviews) + click-to-play
+       ========================================================= */
+    (function () {
+        const tabs = document.querySelector('.tst-tabs');
+        if (!tabs) return;
+
+        const tabBtns = tabs.querySelectorAll('.tst-tab');
+        const panelVideo = document.getElementById('tstPanelVideo');
+        const panelReviews = document.getElementById('tstPanelReviews');
+
+        function activate(name) {
+            tabs.setAttribute('data-active', name);
+            tabBtns.forEach(function (btn) {
+                const isActive = btn.getAttribute('data-tab') === name;
+                btn.classList.toggle('is-active', isActive);
+                btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
+            if (panelVideo && panelReviews) {
+                const showVideo = name === 'video';
+                panelVideo.classList.toggle('is-active', showVideo);
+                panelReviews.classList.toggle('is-active', !showVideo);
+                panelVideo.hidden = !showVideo;
+                panelReviews.hidden = showVideo;
+            }
+        }
+
+        tabBtns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                activate(btn.getAttribute('data-tab'));
+            });
+        });
+
+        // default state
+        activate('video');
+
+        // Click-to-play: swap poster for an autoplaying embed
+        document.querySelectorAll('.tst-video-card').forEach(function (card) {
+            card.addEventListener('click', function () {
+                if (card.classList.contains('is-playing')) return;
+                const src = card.getAttribute('data-video');
+                if (!src) return;
+                const iframe = document.createElement('iframe');
+                const sep = src.indexOf('?') === -1 ? '?' : '&';
+                iframe.src = src + sep + 'autoplay=1&rel=0&playsinline=1';
+                iframe.setAttribute('allow',
+                    'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                iframe.setAttribute('allowfullscreen', '');
+                iframe.setAttribute('title', 'Client testimonial video');
+                card.appendChild(iframe);
+                card.classList.add('is-playing');
+            });
+        });
+    })();
+
+    /* =========================================================
        FLOATING BOTTOM ACTION BAR — Scroll Controller
        ========================================================= */
     (function () {

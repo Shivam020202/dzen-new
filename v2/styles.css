@@ -34,8 +34,8 @@
     justify-content: space-between;
     width: 100%;
     max-width: none;
-    height: 76px;
-    padding: 0 clamp(20px, 4vw, 56px);
+    height: 80px;
+    padding: 2px clamp(20px, 4vw, 56px);
     border-radius: 0;
     box-sizing: border-box;
 
@@ -63,6 +63,14 @@
 }
 
 /* ── Left: nav links ── */
+.pnav__left {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex: 1;
+    justify-content: flex-start;
+}
+
 .pnav__links {
     display: flex;
     align-items: center;
@@ -117,8 +125,14 @@
 }
 
 .pnav__logo img {
-    height: 48px;
+    height: 64px;
     display: block;
+    filter: brightness(0) invert(1);
+    transition: filter 0.35s ease;
+}
+
+.pnav.is-scrolled .pnav__logo img {
+    filter: none;
 }
 
 /* ── Right: actions ── */
@@ -169,7 +183,7 @@
     height: 44px;
     padding: 0 22px;
     margin-left: 2px;
-    background: linear-gradient(170deg, #d9a054 0%, #9a6a2e 100%);
+    background: linear-gradient(170deg, var(--copper-brown, #8b4513) 0%, var(--deep-brown, #4b2b20) 100%);
     color: #fff;
     font-family: var(--sans, 'Figtree', system-ui, sans-serif);
     font-size: 13px;
@@ -201,9 +215,9 @@
     transform: translateX(3px);
 }
 
-/* ── Hamburger (mobile only) ── */
+/* ── Hamburger ── */
 .pnav__burger {
-    display: none;
+    display: inline-flex;
     width: 42px;
     height: 42px;
     padding: 0;
@@ -258,7 +272,7 @@
     .pnav__icon  { display: none; }
 
     .pnav__logo { padding: 0 12px; }
-    .pnav__logo img { height: 38px; }
+    .pnav__logo img { height: 56px; }
 
     .pnav__cta {
         height: 38px;
@@ -2102,214 +2116,6 @@
     font-family: 'Figtree', sans-serif;
 }
 
-@media (max-width: 768px) {
-    .testimonials-card-wall-wrapper {
-        position: relative !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        left: 0 !important;
-        transform: none !important;
-        height: auto !important;
-        margin: 0 0 32px 0 !important;
-        perspective: none !important;
-        overflow-x: auto !important;
-        display: block !important;
-        -webkit-overflow-scrolling: touch !important;
-        padding-bottom: 12px !important;
-    }
-
-    /* Hide scrollbar for wall wrapper */
-    .testimonials-card-wall-wrapper::-webkit-scrollbar {
-        display: none !important;
-    }
-    
-    .testimonials-card-wall-wrapper {
-        -ms-overflow-style: none !important;
-        scrollbar-width: none !important;
-    }
-
-    .testimonials-card-wall {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: flex-start !important;
-        gap: 16px !important;
-        width: max-content !important;
-        transform: none !important;
-        transform-style: flat !important;
-        height: auto !important;
-        padding: 0 24px !important;
-    }
-
-    .testimonial-col {
-        position: relative !important;
-        width: 140px !important;
-        flex: 0 0 140px !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 16px !important;
-        transform: none !important;
-        transform-style: flat !important;
-    }
-
-    .testimonial-col::before {
-        display: none !important;
-    }
-
-    .testimonial-card {
-        width: 100% !important;
-        height: 160px !important; /* Force exact same height for all cards */
-        aspect-ratio: auto !important; /* Disable aspect ratio conflicts */
-        border-radius: 18px !important;
-        transform: none !important;
-        box-shadow: 0 6px 15px rgba(75, 43, 32, 0.04) !important;
-    }
-
-    .testimonial-card img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-    }
-}
-
-/* Fades at top and bottom of section removed */
-.testimonials-modern-section::before,
-.testimonials-modern-section::after {
-    display: none !important;
-}
-
-/* 3D Card Wall Wrapper - Scales fluidly via CSS variable --testimonials-scale */
-.testimonials-card-wall-wrapper {
-    position: relative;
-    width: 1300px;
-    left: 50%;
-    transform: translateX(-50%) scale(var(--testimonials-scale, 1));
-    transform-origin: top center;
-    height: calc(520px * var(--testimonials-scale, 1));
-    margin-bottom: calc(50px * var(--testimonials-scale, 1));
-    perspective: 1500px;
-    z-index: 2;
-    overflow: visible;
-    transition: transform 0.1s ease, height 0.1s ease;
-}
-
-.testimonials-card-wall {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    width: 100%;
-    transform-style: preserve-3d;
-    height: 100%;
-}
-
-/* Columns & Staggering */
-.testimonial-col {
-    position: relative;
-    width: 125px;
-    flex: 0 0 125px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    transform-style: preserve-3d;
-}
-
-/* Dashed lines running down the center of each column (in 3D!) */
-.testimonial-col::before {
-    content: '';
-    position: absolute;
-    top: -200px;
-    bottom: -200px;
-    left: 50%;
-    transform: translateX(-50%) translateZ(-2px);
-    border-left: 1px dashed rgba(75, 43, 32, 0.08);
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* 3D Rotations & Translations for Panoramic Curve */
-.testimonial-col.t-col-1 {
-    transform: translateY(30px) rotateY(20deg) translateZ(-50px);
-}
-
-.testimonial-col.t-col-2 {
-    transform: translateY(-30px) rotateY(15deg) translateZ(-30px);
-}
-
-.testimonial-col.t-col-3 {
-    transform: translateY(40px) rotateY(10deg) translateZ(-15px);
-}
-
-.testimonial-col.t-col-4 {
-    transform: translateY(-70px) rotateY(5deg) translateZ(-5px);
-}
-
-.testimonial-col.t-col-5 {
-    transform: translateY(-10px) rotateY(0deg) translateZ(0);
-}
-
-.testimonial-col.t-col-6 {
-    transform: translateY(-80px) rotateY(-5deg) translateZ(-5px);
-}
-
-.testimonial-col.t-col-7 {
-    transform: translateY(50px) rotateY(-10deg) translateZ(-15px);
-}
-
-.testimonial-col.t-col-8 {
-    transform: translateY(-40px) rotateY(-15deg) translateZ(-30px);
-}
-
-.testimonial-col.t-col-9 {
-    transform: translateY(20px) rotateY(-20deg) translateZ(-50px);
-}
-
-/* Testimonial Cards */
-.testimonial-card {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 3 / 3.5;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(75, 43, 32, 0.05);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-        box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-        border-color 0.4s ease;
-    background: #ffffff;
-    border: 1px solid rgba(75, 43, 32, 0.06);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    pointer-events: auto;
-    z-index: 2;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-8px) scale(1.05) translateZ(20px);
-    box-shadow: 0 20px 40px rgba(75, 43, 32, 0.12);
-    border-color: #e0a65a;
-}
-
-.testimonial-card img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-.testimonial-card:hover img {
-    transform: scale(1.06);
-}
-
-/* Empty Outline Cards */
-.testimonial-card.empty-card {
-    background: rgba(255, 255, 255, 0.35);
-    border: 1px solid rgba(75, 43, 32, 0.08);
-    box-shadow: none;
-    cursor: default;
-    pointer-events: none;
-}
-
 /* Centered Text Overlay */
 .testimonials-content-box {
     position: relative;
@@ -2360,36 +2166,342 @@
     margin: 0 auto 32px;
 }
 
-.testimonials-btn {
+/* ─────────────────────────────────────────────
+   TABS — segmented pill switcher
+   ───────────────────────────────────────────── */
+.tst-tabs {
+    position: relative;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: 4px;
+    margin: 32px auto 44px;
+    padding: 5px;
+    background: rgba(75, 43, 32, 0.05);
+    border: 1px solid rgba(75, 43, 32, 0.08);
+    border-radius: 999px;
+}
+
+.tst-tabs__thumb {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: calc(100% - 10px);
+    width: calc(50% - 5px);
+    border-radius: 999px;
+    background: linear-gradient(170deg, var(--copper-brown, #8b4513) 0%, var(--deep-brown, #4b2b20) 100%);
+    box-shadow: 0 6px 18px rgba(75, 43, 32, 0.28);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 0;
+}
+
+.tst-tabs[data-active="reviews"] .tst-tabs__thumb {
+    transform: translateX(100%);
+}
+
+.tst-tab {
+    position: relative;
+    z-index: 1;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    padding: 14px 32px;
-    background: #2B1A12;
-    color: #FAF9F6;
+    min-width: 165px;
+    padding: 11px 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
     font-family: 'Figtree', sans-serif;
     font-size: 14px;
     font-weight: 600;
-    border-radius: 100px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 6px 20px rgba(43, 26, 18, 0.12);
+    letter-spacing: 0.01em;
+    color: #5C3A2E;
+    border-radius: 999px;
+    transition: color 0.3s ease;
 }
 
-.testimonials-btn:hover {
-    background: #4B2B20;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(43, 26, 18, 0.2);
-    color: #FAF9F6;
+.tst-tab svg {
+    width: 16px;
+    height: 16px;
 }
 
-.testimonials-btn svg {
-    transition: transform 0.3s ease;
+.tst-tab.is-active {
+    color: #fff;
 }
 
-.testimonials-btn:hover svg {
-    transform: translateX(4px);
+/* ─────────────────────────────────────────────
+   PANELS
+   ───────────────────────────────────────────── */
+.tst-panel {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4vw, 40px);
+    animation: tstFade 0.5s ease both;
+}
+
+.tst-panel[hidden] {
+    display: none;
+}
+
+@keyframes tstFade {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Vertical short-form video grid ── */
+.tst-video-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(16px, 2vw, 24px);
+}
+
+.tst-video-card {
+    position: relative;
+    aspect-ratio: 9 / 16;
+    border-radius: 22px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #2B1A12;
+    border: 1px solid rgba(75, 43, 32, 0.08);
+    box-shadow: 0 14px 34px rgba(75, 43, 32, 0.12);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.tst-video-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 48px rgba(75, 43, 32, 0.2);
+}
+
+.tst-video-card__poster {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tst-video-card:hover .tst-video-card__poster {
+    transform: scale(1.06);
+}
+
+.tst-video-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26, 13, 7, 0.72) 0%, rgba(26, 13, 7, 0.05) 45%, transparent 70%);
+    pointer-events: none;
+}
+
+.tst-video-card__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(250, 249, 246, 0.92);
+    color: var(--deep-brown, #4b2b20);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+    z-index: 2;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.tst-video-card__play svg {
+    width: 22px;
+    height: 22px;
+    margin-left: 3px;
+}
+
+.tst-video-card:hover .tst-video-card__play {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: #fff;
+}
+
+.tst-video-card__meta {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 18px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    z-index: 2;
+}
+
+.tst-video-card__name {
+    font-family: var(--serif, "Belgiano Serif 2", Georgia, serif);
+    font-size: 17px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.tst-video-card__tag {
+    font-family: 'Figtree', sans-serif;
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* When a video is playing, the iframe replaces the poster */
+.tst-video-card.is-playing .tst-video-card__poster,
+.tst-video-card.is-playing .tst-video-card__play,
+.tst-video-card.is-playing .tst-video-card__meta,
+.tst-video-card.is-playing::after {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.tst-video-card iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    z-index: 3;
+}
+
+/* ── Google reviews ── */
+.tst-reviews-summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 0 auto 36px;
+    padding: 16px 28px;
+    width: fit-content;
+    background: #fff;
+    border: 1px solid rgba(75, 43, 32, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(75, 43, 32, 0.06);
+}
+
+.tst-g-logo svg { width: 30px; height: 30px; display: block; }
+
+.tst-reviews-summary__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.2;
+}
+
+.tst-reviews-summary__score {
+    font-family: var(--serif, "Belgiano Serif 2", Georgia, serif);
+    font-size: 26px;
+    font-weight: 400;
+    color: #2B1A12;
+}
+
+.tst-reviews-summary__count {
+    font-family: 'Figtree', sans-serif;
+    font-size: 12.5px;
+    color: #7a6055;
+    margin-top: 2px;
+}
+
+.tst-stars {
+    color: #e0a65a;
+    font-size: 15px;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.tst-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(16px, 2vw, 24px);
+}
+
+.tst-review-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 26px 24px;
+    background: #fff;
+    border: 1px solid rgba(75, 43, 32, 0.07);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(75, 43, 32, 0.05);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.tst-review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(75, 43, 32, 0.1);
+    border-color: rgba(224, 166, 90, 0.35);
+}
+
+.tst-review-card__head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tst-review-card__avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.tst-review-card__id {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+    margin-right: auto;
+}
+
+.tst-review-card__name {
+    font-family: 'Figtree', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2B1A12;
+}
+
+.tst-review-card__date {
+    font-family: 'Figtree', sans-serif;
+    font-size: 12px;
+    color: #9a857a;
+}
+
+.tst-review-card__g svg { width: 20px; height: 20px; display: block; }
+
+.tst-review-card__quote {
+    font-family: 'Figtree', sans-serif;
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #4A3322;
+    margin: 0;
+}
+
+/* ── Testimonials responsive ── */
+@media (max-width: 992px) {
+    .tst-video-grid { grid-template-columns: repeat(3, 1fr); }
+    .tst-reviews-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 680px) {
+    .tst-tab { min-width: 0; flex: 1; padding: 11px 16px; font-size: 13px; }
+    .tst-tabs { display: flex; width: calc(100% - 40px); max-width: 360px; }
+
+    .tst-video-grid { grid-template-columns: repeat(2, 1fr); }
+    .tst-reviews-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 380px) {
+    .tst-tab span { font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tst-panel { animation: none; }
+    .tst-tabs__thumb { transition: none; }
 }
 
 /* Glassmorphic Modal */
@@ -2815,6 +2927,63 @@
     object-fit: cover;
     /* Light-enough for dark text */
     filter: brightness(1.05) saturate(0.75);
+}
+
+/* =========================================================
+   SIGNATURE SERVICES — Blob Reveal Curtain
+   A cream layer pinned over the section with a blob-shaped hole
+   that grows from the centre as the user scrolls in, revealing
+   the section behind it. Driven by --sig-reveal (0 → 1) from JS.
+   ========================================================= */
+.sig-reveal {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* pin without pushing the sticky bg / panels down */
+    margin-bottom: -100vh;
+    z-index: 40;
+    /* dark coffee-brown curtain — the lighter signature section emerges from it */
+    background: linear-gradient(160deg, var(--deep-brown, #4b2b20) 0%, #3a1f16 100%);
+    pointer-events: none;
+    /* progress-driven vars (set by JS) */
+    --sig-reveal: 0;
+    /* hole size in vmax so the blob keeps its shape on any aspect ratio.
+       The blob fills ~64% of the mask canvas, so mask-size must reach
+       ~370vmax for the hole to clear the viewport corners. */
+    --sig-hole: calc(14vmax + (var(--sig-reveal) * 380vmax));
+
+    /* Blob-shaped hole via TWO composited alpha-mask layers:
+         layer 1 — a solid fill covering the whole curtain (shows everything)
+         layer 2 — a solid blob, centred, that is SUBTRACTED to punch the hole.
+       Growing layer 2's mask-size enlarges the hole from the centre. */
+    --sig-blob: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201000%201000'%3E%3Cpath%20fill='%23000'%20d='M500%20250%20C%20640%20250%20760%20320%20800%20440%20C%20835%20548%20805%20660%20720%20735%20C%20648%20800%20548%20828%20452%20812%20C%20330%20792%20220%20720%20175%20600%20C%20135%20492%20155%20372%20240%20300%20C%20308%20242%20404%20250%20500%20250%20Z'/%3E%3C/svg%3E");
+    -webkit-mask-image: linear-gradient(#000 0 0), var(--sig-blob);
+    mask-image: linear-gradient(#000 0 0), var(--sig-blob);
+    -webkit-mask-repeat: no-repeat, no-repeat;
+    mask-repeat: no-repeat, no-repeat;
+    -webkit-mask-position: center, center;
+    mask-position: center, center;
+    -webkit-mask-size: 100% 100%, var(--sig-hole) var(--sig-hole);
+    mask-size: 100% 100%, var(--sig-hole) var(--sig-hole);
+    -webkit-mask-composite: destination-out;
+    mask-composite: subtract;
+
+    /* fade the whole curtain out over the last stretch of the reveal */
+    opacity: calc(1 - (max(var(--sig-reveal) - 0.82, 0) / 0.18));
+    will-change: mask-size, opacity;
+}
+
+/* Once fully revealed, drop the curtain out of the flow entirely */
+.sig-reveal.is-done {
+    display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sig-reveal {
+        display: none;
+    }
 }
 
 /* Subtle warm overlay to unify tones without darkening */
@@ -4049,18 +4218,28 @@
 
 /* Hero CTA Strip */
 .hero-cta-strip {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    position: relative;
     width: 100%;
     background: rgba(250, 249, 246, 0.95);
     backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(139,69,19,0.1);
-    z-index: 10;
+    border-top: 1px solid rgba(139, 69, 19, 0.1);
+    border-bottom: 1px solid rgba(139, 69, 19, 0.1);
     padding: 14px 0;
     display: flex;
     align-items: center;
     overflow: hidden;
+}
+
+/* On desktop the hero is inset (margin + rounded corners); align the strip
+   to the same inset and pull it up flush against the hero's bottom edge. */
+@media (min-width: 768px) {
+    .hero-cta-strip {
+        width: calc(100% - 48px);
+        margin: -24px auto 0 auto;
+        border-radius: 0 0 24px 24px;
+        border-left: 1px solid rgba(139, 69, 19, 0.1);
+        border-right: 1px solid rgba(139, 69, 19, 0.1);
+    }
 }
 
 .hero-marquee {
@@ -4114,89 +4293,37 @@
     }
 }
 
-/* ═══════ Scribble Underline — hand-drawn accent for heading keywords ═══════ */
+/* ═══════ Scribble Underline — removed from section headings ═══════ */
 .scribble {
     position: relative;
     display: inline;
-    /* keep the drawn stroke tucked close under the baseline */
-    padding-bottom: 0.12em;
     white-space: nowrap;
 }
 
-.scribble::after {
-    content: "";
-    position: absolute;
-    left: -0.05em;
-    right: -0.05em;
-    bottom: -0.06em;
-    height: 0.42em;
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: 100% 100%;
-    /* wavy, single-stroke hand-drawn line */
-    background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%2020'%20preserveAspectRatio='none'%3E%3Cpath%20d='M4%2013%20C%2040%205,%2070%2017,%20108%2010%20S%20178%204,%20214%2012%20S%20268%2016,%20296%208'%20fill='none'%20stroke='%23e0a65a'%20stroke-width='3.4'%20stroke-linecap='round'/%3E%3C/svg%3E");
-    pointer-events: none;
-    /* visible by default; animation is a progressive enhancement */
-    transform-origin: left center;
-    transform: scaleX(1);
-    transition: transform 0.7s cubic-bezier(0.65, 0, 0.35, 1);
-}
-
-/* only hide (ready to draw in) once JS has flagged the page as animation-capable */
-.scribble-anim .scribble::after,
-.scribble-anim .scribble--double::before {
-    transform: scaleX(0);
-}
-
-/* second, offset stroke for a sketchier double-scribble look */
+/* Underline accent intentionally disabled */
+.scribble::after,
 .scribble--double::before {
-    content: "";
-    position: absolute;
-    left: -0.05em;
-    right: -0.05em;
-    bottom: -0.16em;
-    height: 0.42em;
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: 100% 100%;
-    background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%2020'%20preserveAspectRatio='none'%3E%3Cpath%20d='M6%209%20C%2052%2016,%2096%206,%20150%2012%20S%20244%207,%20294%2013'%20fill='none'%20stroke='%23daa520'%20stroke-width='2.4'%20stroke-linecap='round'%20opacity='0.55'/%3E%3C/svg%3E");
-    pointer-events: none;
-    transform-origin: left center;
-    transform: scaleX(0);
-    transition: transform 0.7s cubic-bezier(0.65, 0, 0.35, 1) 0.12s;
+    content: none !important;
+    display: none !important;
 }
 
-/* light variant — for headings on dark / gold backgrounds */
-.scribble--light::after {
-    background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%2020'%20preserveAspectRatio='none'%3E%3Cpath%20d='M4%2013%20C%2040%205,%2070%2017,%20108%2010%20S%20178%204,%20214%2012%20S%20268%2016,%20296%208'%20fill='none'%20stroke='%23FDF0DA'%20stroke-width='3.4'%20stroke-linecap='round'/%3E%3C/svg%3E");
-}
-
-/* reveal — plays when the heading (or its section) becomes visible */
-.scribble-anim .scribble.is-drawn::after,
-.scribble-anim .scribble.is-drawn::before {
-    transform: scaleX(1);
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .scribble::after,
-    .scribble--double::before {
-        transition: none;
-        transform: scaleX(1);
-    }
-}
-
-/* ═══════ Reusable section CTA — matches "View All Articles" style ═══════ */
+/* ═══════ Reusable section CTA — filled coffee-brown gradient button ═══════ */
 .dz-cta {
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
-    color: #2B1A12;
+    gap: 0.6rem;
+    padding: 14px 30px;
+    border-radius: 999px;
+    background: linear-gradient(170deg, var(--copper-brown, #8b4513) 0%, var(--deep-brown, #4b2b20) 100%);
+    color: #fff;
     text-decoration: none;
     font-family: var(--sans, 'Figtree', system-ui, sans-serif);
     font-weight: 600;
     font-size: 14px;
     letter-spacing: 0.01em;
-    transition: gap 0.25s ease, color 0.25s ease;
+    border: none;
+    box-shadow: 0 6px 20px rgba(75, 43, 32, 0.28);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .dz-cta svg {
@@ -4206,8 +4333,10 @@
 }
 
 .dz-cta:hover {
-    color: #8a5815;
-    gap: 1rem;
+    color: #fff;
+    background: linear-gradient(170deg, var(--deep-brown, #4b2b20) 0%, #331d15 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(75, 43, 32, 0.36);
 }
 
 .dz-cta:hover svg {
@@ -4217,5 +4346,47 @@
 .dz-cta-wrap {
     text-align: center;
     margin-top: 2.5rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   UNIFIED HEADING THEME
+   Every section heading shares one look: the highlighted keyword is
+   italic and coffee brown (no beige, no gold, no gradient).
+   ═══════════════════════════════════════════════════════════════ */
+.about-v2__title em,
+.about-v2__title .scribble,
+.doctors-v2__title em,
+.doctors-v2__title .scribble,
+.trainer-v2__title em,
+.trainer-v2__title .scribble,
+.section-title em,
+.section-title .scribble,
+.sig-intro-heading em,
+.sig-intro-heading .scribble,
+.testimonials-heading em,
+.testimonials-heading .scribble,
+.testimonials-heading span.muted,
+h2 .scribble {
+    font-style: italic !important;
+    font-weight: 400;
+    color: var(--copper-brown, #8b4513) !important;
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    -webkit-text-fill-color: var(--copper-brown, #8b4513) !important;
+}
+
+/* Footer CTA heading sits on a dark background — use a lighter warm
+   coffee tone so the highlight reads brown while staying legible. */
+.footer-cta-heading em,
+.footer-cta-heading .scribble,
+.footer-cta-heading .scribble--light {
+    font-style: italic !important;
+    font-weight: 400;
+    color: #c88a4e !important;
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    -webkit-text-fill-color: #c88a4e !important;
 }
 
