@@ -194,8 +194,9 @@
         }
 
         function startAuto() {
-            stopAuto();
-            autoTimer = setInterval(next, INTERVAL);
+            // Auto-rotation disabled per request
+            // stopAuto();
+            // autoTimer = setInterval(next, INTERVAL);
         }
 
         function stopAuto() {

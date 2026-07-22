@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap"
         rel="stylesheet" />
 
     <!-- Bootstrap 5 CSS -->
@@ -46,11 +46,13 @@
 
     <!-- ═══════ Floating Pill Navbar v3 ═══════ -->
     <nav id="pill-nav" class="pnav" aria-label="Main navigation">
-        <!-- Left: hamburger -->
+        <!-- Left: Book Now -->
         <div class="pnav__left">
-            <button class="pnav__burger" id="pnav-burger" aria-label="Open menu">
-                <span></span><span></span><span></span>
-            </button>
+            <a href="../newthree.html#book" class="pnav__cta">
+                Book
+                <img src="nemonic.png" class="btn-icon" style="width: 18px; height: 18px; object-fit: contain;"
+                    alt="icon" />
+            </a>
         </div>
 
         <!-- Center: logo -->
@@ -58,15 +60,11 @@
             <img src="../images/logo1.png" alt="D'Zen Derma" />
         </a>
 
-        <!-- Right: Book Now -->
+        <!-- Right: hamburger -->
         <div class="pnav__right">
-            <a href="../newthree.html#book" class="pnav__cta">
-                Book Now
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-            </a>
+            <button class="pnav__burger" id="pnav-burger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
@@ -150,10 +148,8 @@
                                 class="hero-marquee__dot">•</span></span>
                         <span class="hero-marquee__item">Skin Rejuvenation <span
                                 class="hero-marquee__dot">•</span></span>
-                        <span class="hero-marquee__item">Botox & Fillers <span
-                                class="hero-marquee__dot">•</span></span>
-                        <span class="hero-marquee__item">Body Sculpting <span
-                                class="hero-marquee__dot">•</span></span>
+                        <span class="hero-marquee__item">Botox & Fillers <span class="hero-marquee__dot">•</span></span>
+                        <span class="hero-marquee__item">Body Sculpting <span class="hero-marquee__dot">•</span></span>
                         <!-- Duplicate for seamless scroll -->
                         <span class="hero-marquee__item" aria-hidden="true">HydraFacial <span
                                 class="hero-marquee__dot">•</span></span>
@@ -188,7 +184,7 @@
                 border-radius: 0 0 16px 16px;
             }
             .hero-cta-bar__text {
-                font-family: var(--sans, 'Figtree', sans-serif);
+                font-family: var(--sans, 'Inter', sans-serif);
                 font-size: 13px;
                 font-weight: 400;
                 letter-spacing: 0.03em;
@@ -208,7 +204,7 @@
                 padding: 9px 22px;
                 background: linear-gradient(135deg, #C4924A 0%, #A97238 100%);
                 color: #fff;
-                font-family: var(--sans, 'Figtree', sans-serif);
+                font-family: var(--sans, 'Inter', sans-serif);
                 font-size: 12.5px;
                 font-weight: 600;
                 letter-spacing: 0.06em;
@@ -253,6 +249,11 @@
             <div class="about-v2__container">
                 <div class="about-v2__intro-block text-center ">
                     <span class="about-v2__eyebrow">Welcome to D'Zen Derma</span>
+                    <div class="nemonic-separator">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
                     <h2 class="about-v2__title">Beauty is in the <em class="scribble">Balance</em></h2>
                     <p class="about-v2__lead">
                         D'Zen Derma is inspired by harmony, balance, and science-led beauty care. We provide
@@ -265,37 +266,13 @@
                         experience the perfect blend of luxury, science, and care.
                     </p>
 
-                    <div class="about-v2__stats">
-                        <div class="about-v2__stat">
-                            <div class="about-v2__stat-num">15+</div>
-                            <div class="about-v2__stat-label">Years of Mastery</div>
-                        </div>
-                        <div class="about-v2__stat">
-                            <div class="about-v2__stat-num">5K+</div>
-                            <div class="about-v2__stat-label">Transformations</div>
-                        </div>
-                        <div class="about-v2__stat">
-                            <div class="about-v2__stat-num">98%</div>
-                            <div class="about-v2__stat-label">Client Trust</div>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="dz-cta-wrap">
                     <a href="../about.html" class="dz-cta">
                         <span>Know More About Us</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="4" />
-                            <path d="M12 2v2" />
-                            <path d="M12 20v2" />
-                            <path d="m4.93 4.93 1.41 1.41" />
-                            <path d="m17.66 17.66 1.41 1.41" />
-                            <path d="M2 12h2" />
-                            <path d="M20 12h2" />
-                            <path d="m6.34 17.66-1.41 1.41" />
-                            <path d="m19.07 4.93-1.41 1.41" />
-                        </svg>
+                        <img src="nemonic.png" class="btn-icon" style="width: 18px; height: 18px; object-fit: contain;"
+                            alt="icon" />
                     </a>
                 </div>
             </div>
@@ -314,6 +291,11 @@
                 <div class="philosophy-strip-inner">
                     <div class="section-header text-center mb-4 mb-lg-5">
                         <span class="section-subtitle">OUR PHILOSOPHY</span>
+                        <div class="nemonic-separator">
+                            <div class="nemonic-line"></div>
+                            <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
+                            <div class="nemonic-line"></div>
+                        </div>
                         <h2 id="service-arch-title" class="section-title">Balancing the Inside <span
                                 class="scribble">Health</span> and Outside <span class="scribble">Beauty</span></h2>
                         <p class="section-desc mx-auto" style="max-width: 760px; color: #5C4A3A;">
@@ -326,23 +308,12 @@
                     <div class="philosophy-strip-top">
                         <!-- Left Titles -->
                         <div class="philosophy-titles-group left-group">
-                            <button class="philosophy-tab-btn is-active" data-index="0"><svg width="18" height="18"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" class="tab-icon">
-                                    <path
-                                        d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
-                                </svg> <span>The Philosophy</span></button>
-                            <button class="philosophy-tab-btn" data-index="1"><svg width="18" height="18"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" class="tab-icon">
-                                    <circle cx="12" cy="12" r="10" />
-                                    <path d="m14.31 8 5.74 9.94" />
-                                    <path d="M9.69 8h11.48" />
-                                    <path d="m7.38 12 5.74-9.94" />
-                                    <path d="M9.69 16 3.95 6.06" />
-                                    <path d="M14.31 16H2.83" />
-                                    <path d="m16.62 12-5.74 9.94" />
-                                </svg> <span>The Vision</span></button>
+                            <button class="philosophy-tab-btn is-active" data-index="0"><span>The Philosophy</span> <img
+                                    src="nemonic.png" class="tab-icon"
+                                    style="width: 18px; height: 18px; object-fit: contain;" alt="icon" /></button>
+                            <button class="philosophy-tab-btn" data-index="1"><span>The Vision</span> <img
+                                    src="nemonic.png" class="tab-icon"
+                                    style="width: 18px; height: 18px; object-fit: contain;" alt="icon" /></button>
                         </div>
 
                         <!-- Center Logo -->
@@ -352,21 +323,12 @@
 
                         <!-- Right Titles -->
                         <div class="philosophy-titles-group right-group">
-                            <button class="philosophy-tab-btn" data-index="2"><svg width="18" height="18"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" class="tab-icon">
-                                    <path
-                                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-                                    <line x1="12" y1="22.08" x2="12" y2="12" />
-                                </svg> <span>The Pillars</span></button>
-                            <button class="philosophy-tab-btn" data-index="3"><svg width="18" height="18"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" class="tab-icon">
-                                    <path
-                                        d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
-                                    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
-                                </svg> <span>The Sanctuary</span></button>
+                            <button class="philosophy-tab-btn" data-index="2"><span>The Pillars</span> <img
+                                    src="nemonic.png" class="tab-icon"
+                                    style="width: 18px; height: 18px; object-fit: contain;" alt="icon" /></button>
+                            <button class="philosophy-tab-btn" data-index="3"><span>The Sanctuary</span> <img
+                                    src="nemonic.png" class="tab-icon"
+                                    style="width: 18px; height: 18px; object-fit: contain;" alt="icon" /></button>
                         </div>
                     </div>
 
@@ -407,18 +369,8 @@
                     <div class="dz-cta-wrap">
                         <a href="../aesthetics.html" class="dz-cta">
                             <span>Discover Our Philosophy</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="4" />
-                                <path d="M12 2v2" />
-                                <path d="M12 20v2" />
-                                <path d="m4.93 4.93 1.41 1.41" />
-                                <path d="m17.66 17.66 1.41 1.41" />
-                                <path d="M2 12h2" />
-                                <path d="M20 12h2" />
-                                <path d="m6.34 17.66-1.41 1.41" />
-                                <path d="m19.07 4.93-1.41 1.41" />
-                            </svg>
+                            <img src="nemonic.png" class="btn-icon"
+                                style="width: 18px; height: 18px; object-fit: contain;" alt="icon" />
                         </a>
                     </div>
                 </div>
@@ -437,6 +389,11 @@
             <div class="doctors-v2__container">
                 <div class="doctors-v2__head">
                     <span class="doctors-v2__eyebrow">Meet The Team</span>
+                    <div class="nemonic-separator">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
                     <h2 class="doctors-v2__title">The minds <em class="scribble">behind</em> the method</h2>
                     <p class="doctors-v2__subtitle">
                         Two visionaries united by a shared philosophy: a sanctuary where science, art, and
@@ -476,11 +433,11 @@
                             <span class="founder-card__meta">Founder · Medical Direction</span>
                             <h3 class="founder-card__name">Dr. Aarushi Passi Bhandari</h3>
                             <p class="founder-card__role">Aesthetic Physician · MD Dermatology</p>
-                            <p class="founder-card__bio">
+                            <!-- <p class="founder-card__bio">
                                 A dermatologist with global exposure and an obsessive commitment to clinical excellence.
                                 Dr. Aarushi leads every protocol with precision, safety, and a science-first approach to
                                 aesthetic medicine that feels calm, deliberate, and deeply personal.
-                            </p>
+                            </p> -->
                             <blockquote class="founder-card__quote mt-0">
                                 "The most ambitious thing a doctor can do is to leave a patient with less, not more."
                             </blockquote>
@@ -500,11 +457,11 @@
                             <span class="founder-card__meta">Founder · Brand &amp; Experience</span>
                             <h3 class="founder-card__name">Rahul Bhandari</h3>
                             <p class="founder-card__role">Brand Strategy · Experience Design</p>
-                            <p class="founder-card__bio">
+                            <!-- <p class="founder-card__bio">
                                 Concept-driven and quietly bold, Rahul shapes the emotional architecture behind D'Zen —
                                 the narrative, the spaces, and the unhurried experience that makes intelligent
                                 transformation feel inevitable.
-                            </p>
+                            </p> -->
                             <blockquote class="founder-card__quote">
                                 "D'Zen is not a clinic. It is a philosophy that happens to operate one."
                             </blockquote>
@@ -518,18 +475,8 @@
                 <div class="dz-cta-wrap">
                     <a href="../about.html" class="dz-cta">
                         <span>Meet The Full Team</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="4" />
-                            <path d="M12 2v2" />
-                            <path d="M12 20v2" />
-                            <path d="m4.93 4.93 1.41 1.41" />
-                            <path d="m17.66 17.66 1.41 1.41" />
-                            <path d="M2 12h2" />
-                            <path d="M20 12h2" />
-                            <path d="m6.34 17.66-1.41 1.41" />
-                            <path d="m19.07 4.93-1.41 1.41" />
-                        </svg>
+                        <img src="nemonic.png" class="btn-icon" style="width: 18px; height: 18px; object-fit: contain;"
+                            alt="icon" />
                     </a>
                 </div>
             </div>
@@ -547,16 +494,17 @@
             <div class="container">
                 <div class="section-header text-center mb-4 mb-lg-5">
                     <span class="section-subtitle">OUR EXPERTISE</span>
+                    <div class="nemonic-separator">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
                     <h2 id="service-arch-title" class="section-title">Advanced Care &amp; <span
                             class="scribble">Wellness</span></h2>
                     <p class="section-desc mx-auto" style="max-width: 760px; color: #5C4A3A;">
                         Precision-led aesthetic care and restorative wellness experiences designed to elevate skin,
                         energy, and confidence.
                     </p>
-                    <a href="../newthree.html#book" class="service-arch-cta dz-cta" style="margin-top: 1.5rem;">
-                        <span style="font-size: 1.1rem;">𖤓</span>
-                        <span>Explore Services</span>
-                    </a>
                 </div>
 
                 <div class="service-arch-controls" aria-label="Carousel navigation" style="">
@@ -633,6 +581,14 @@
                         </div>
                     </article>
                 </div>
+                <div class="text-center mb-2 d-flex justify-content-center" style="margin-bottom: 1rem; width: 100%;">
+                    <a href="../newthree.html#book" class="service-arch-cta dz-cta"
+                        style="margin: 0 auto; display: inline-flex;">
+                        <span>Explore Services</span>
+                        <img src="nemonic.png" class="btn-icon" style="width: 18px; height: 18px; object-fit: contain;"
+                            alt="icon" />
+                    </a>
+                </div>
             </div>
 
             <!-- Curvy separator: white expertise → cream concerns -->
@@ -644,236 +600,317 @@
             </div>
         </section>
 
-        <!-- ═══════ Bento Concerns Grid ═══════ -->
-        <style>
-            .bento-card {
-                border-radius: 12px;
-                overflow: hidden;
-                position: relative;
-                cursor: pointer;
-            }
 
-            .bento-card img {
-                transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-            }
+        <section class="concerns-section" id="concerns">
+            <div class="concerns-wave-bg">
+                <svg viewBox="0 0 1440 300" fill="none" preserveAspectRatio="none">
+                    <path d="M-50,200 C 400,-100 200,400 720,150 C 1100,-100 1000,400 1500,100"
+                        stroke="var(--warm-gold)" stroke-width="1" stroke-opacity="0.6"
+                        vector-effect="non-scaling-stroke" />
+                </svg>
+            </div>
 
-            .bento-card:hover img {
-                transform: scale(1.08);
-            }
-
-            .bento-card-overlay {
-                background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0.3) 100%);
-                position: absolute;
-                inset: 0;
-                pointer-events: none;
-            }
-
-            .bento-content p {
-                transition: opacity 0.3s ease;
-            }
-
-            @media (max-width: 767.98px) {
-                .bento-mobile-hide {
-                    display: none !important;
-                }
-
-                .bento-card-title {
-                    font-size: 16px !important;
-                    margin-bottom: 0 !important;
-                }
-
-                .bento-card-icon {
-                    width: 32px !important;
-                    height: 32px !important;
-                }
-
-                .bento-card-icon svg {
-                    width: 16px !important;
-                    height: 16px !important;
-                }
-
-                .bento-large-card {
-                    min-height: 280px !important;
-                }
-
-                .bento-small-card {
-                    height: 200px !important;
-                }
-            }
-
-            /* Mobile / tablet: put the text block before the bento image grid.
-               Only reorder flex children; do NOT change the row's flex-direction
-               (that breaks Bootstrap's column widths and the nested 2-up grid). */
-            @media (max-width: 991.98px) {
-                /* Between columns: right column (text + small images) before large image */
-                .concerns-col-right {
-                    order: 1;
-                }
-
-                .concerns-col-image {
-                    order: 2;
-                }
-
-                /* Inside the right column (already d-flex flex-column):
-                   lift the text block above the small-image grid */
-                .concerns-textblock {
-                    order: 1;
-                    margin-top: 0 !important;
-                    margin-bottom: 1.5rem;
-                }
-
-                .concerns-imggrid {
-                    order: 2;
-                }
-            }
-        </style>
-        <section class="concerns-new-section py-5" id="concerns" style="background-color: #FAF9F6;">
-            <div class="container py-4">
-                <div class="row g-4 align-items-stretch">
-                    <!-- Left Column -->
-                    <div class="col-lg-4 concerns-col-image">
-                        <div class="card border-0 h-100 bento-card bento-large-card"
-                            style="background-color: #FAF9F6; min-height: 500px;">
-                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80"
-                                alt="Face Concern"
-                                class="img-fluid w-100 h-100 object-fit-cover position-absolute top-0 start-0">
-                            <div class="bento-card-overlay z-0"></div>
-                            <div class="position-absolute top-0 start-0 p-4 w-100 z-1">
-                                <span class="d-inline-block border border-white rounded-pill px-4 py-2 text-white"
-                                    style="font-family: var(--sans); font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);">Face
-                                    Care</span>
-                            </div>
-                            <div
-                                class="position-absolute bottom-0 start-0 w-100 p-4 d-flex justify-content-between align-items-end z-1 bento-content">
-                                <div class="pe-3">
-                                    <h3 class="text-white bento-card-title mb-2"
-                                        style="font-family: var(--serif); font-size: 24px;">Rejuvenate</h3>
-                                    <p class="mb-0 text-white bento-mobile-hide"
-                                        style="font-family: var(--sans); font-size: 14px; opacity: 0.9; line-height: 1.5;">
-                                        Clean, science-backed skincare made to nourish, balance, and reveal your natural
-                                        glow.</p>
-                                </div>
-                                <div class="btn btn-light rounded-circle d-flex align-items-center justify-content-center p-0 flex-shrink-0 border-0 bento-card-icon"
-                                    style="width: 44px; height: 44px; background: rgba(255,255,255,0.25); backdrop-filter: blur(4px); color: #2B1A12;">
-                                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor"
-                                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M7 17l9.2-9.2M17 17V7H7" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
+            <div class="container">
+                <div class="section-header text-center mb-4 mb-lg-5 reveal">
+                    <span class="section-subtitle">CONCERNS</span>
+                    <div class="nemonic-separator">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
                     </div>
-                    <!-- Right Column -->
-                    <div class="col-lg-8 d-flex flex-column concerns-col-right">
-                        <div class="row g-3 g-md-4 mb-4 mb-md-5 concerns-imggrid">
-                            <div class="col-6">
-                                <div class="card border-0 bento-card bento-small-card" style="height: 260px;">
+                    <h2 class="section-title">Wellness Tailored to You</h2>
+                </div>
+
+                <div class="concerns-tabs-wrapper">
+                    <div class="concerns-tabs">
+                        <button class="concern-tab-btn active" data-target="tab-1">FACE</button>
+                        <button class="concern-tab-btn" data-target="tab-2">BODY</button>
+                        <button class="concern-tab-btn" data-target="tab-3">AGEING</button>
+                        <button class="concern-tab-btn" data-target="tab-4">HAIR</button>
+                        <button class="concern-tab-btn" data-target="tab-5">WELLNESS</button>
+                    </div>
+                </div>
+
+                <div class="concern-tab-content active" id="tab-1">
+                    <div class="concerns-grid">
+                        <!-- Item 2 -->
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg" style="animation-delay: -2s;"></div>
+                                <div class="concern-image" style="animation-delay: -1.5s;">
                                     <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80"
-                                        alt="Body Concern"
-                                        class="img-fluid w-100 h-100 object-fit-cover position-absolute top-0 start-0">
-                                    <div class="bento-card-overlay z-0"></div>
-                                    <div
-                                        class="position-absolute bottom-0 start-0 w-100 p-3 p-md-4 d-flex justify-content-between align-items-end z-1 bento-content">
-                                        <div class="pe-2 pe-md-3">
-                                            <h3 class="text-white bento-card-title mb-2"
-                                                style="font-family: var(--serif); font-size: 20px;">Body</h3>
-                                            <p class="mb-0 text-white bento-mobile-hide"
-                                                style="font-family: var(--sans); font-size: 13px; opacity: 0.9; line-height: 1.5;">
-                                                Treatments designed to tone, restore, and enhance your natural form.</p>
-                                        </div>
-                                        <div class="btn btn-light rounded-circle d-flex align-items-center justify-content-center p-0 flex-shrink-0 border-0 bento-card-icon"
-                                            style="width: 40px; height: 40px; background: rgba(255,255,255,0.25); backdrop-filter: blur(4px); color: #2B1A12;">
-                                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor"
-                                                stroke-width="2" fill="none" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path d="M7 17l9.2-9.2M17 17V7H7" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="card border-0 bento-card bento-small-card" style="height: 260px;">
-                                    <img src="https://images.unsplash.com/photo-1528319725582-ddc096101511?w=600&q=80"
-                                        alt="Ageing Concern"
-                                        class="img-fluid w-100 h-100 object-fit-cover position-absolute top-0 start-0">
-                                    <div class="bento-card-overlay z-0"></div>
-                                    <div
-                                        class="position-absolute bottom-0 start-0 w-100 p-3 p-md-4 d-flex justify-content-between align-items-end z-1 bento-content">
-                                        <div class="pe-2 pe-md-3">
-                                            <h3 class="text-white bento-card-title mb-2"
-                                                style="font-family: var(--serif); font-size: 20px;">Ageing</h3>
-                                            <p class="mb-0 text-white bento-mobile-hide"
-                                                style="font-family: var(--sans); font-size: 13px; opacity: 0.9; line-height: 1.5;">
-                                                Subtle preservation for timeless radiance and clinical longevity.</p>
-                                        </div>
-                                        <div class="btn btn-light rounded-circle d-flex align-items-center justify-content-center p-0 flex-shrink-0 border-0 bento-card-icon"
-                                            style="width: 40px; height: 40px; background: rgba(255,255,255,0.25); backdrop-filter: blur(4px); color: #2B1A12;">
-                                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor"
-                                                stroke-width="2" fill="none" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path d="M7 17l9.2-9.2M17 17V7H7" />
-                                            </svg>
-                                        </div>
-                                    </div>
+                                        alt="Body">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Acne Scars</h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-auto pb-2 concerns-textblock">
-                            <h2 class="mb-4"
-                                style="font-family: var(--serif); font-size: clamp(28px, 4vw, 42px); font-weight: 300; line-height: 1.25; color: #2B1A12; letter-spacing: -0.25px;">
-                                <span style="color: #8b4513; opacity: 0.9;">Reveal Your Skin's</span> True <span
-                                    class="scribble">Brilliance</span> With Clean Formulas Powered by Science and Purity
-                            </h2>
-                            <p class="mb-4 mb-md-5 body-text" style="color: #5C4A3A; max-width: 90%;">Designed to
-                                nourish, protect, and restore — because real radiance begins with healthy skin.</p>
-                            <div class="d-flex align-items-center flex-wrap gap-4">
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex me-3">
-                                        <img src="https://i.pravatar.cc/100?img=5"
-                                            class="rounded-circle border border-2 border-white object-fit-cover"
-                                            width="40" height="40"
-                                            style="margin-right: -12px; position: relative; z-index: 4;" alt="User">
-                                        <img src="https://i.pravatar.cc/100?img=9"
-                                            class="rounded-circle border border-2 border-white object-fit-cover"
-                                            width="40" height="40"
-                                            style="margin-right: -12px; position: relative; z-index: 3;" alt="User">
-                                        <img src="https://i.pravatar.cc/100?img=12"
-                                            class="rounded-circle border border-2 border-white object-fit-cover"
-                                            width="40" height="40"
-                                            style="margin-right: -12px; position: relative; z-index: 2;" alt="User">
-                                        <img src="https://i.pravatar.cc/100?img=16"
-                                            class="rounded-circle border border-2 border-white object-fit-cover"
-                                            width="40" height="40" style="position: relative; z-index: 1;" alt="User">
-                                    </div>
-                                    <div>
-                                        <span class="fw-bold fs-6 mb-0 d-inline-block"
-                                            style="font-family: var(--sans); color: #2B1A12;">200K+</span>
-                                        <span style="font-size: 13px; font-family: var(--sans); color: #5C4A3A;"> Client
-                                            Reviews</span>
-                                    </div>
+
+                        <!-- Item 3 -->
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg" style="animation-delay: -4s;"></div>
+                                <div class="concern-image" style="animation-delay: -3s;">
+                                    <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80"
+                                        alt="Face">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Double Chin</h3>
                                 </div>
-                                <a href="../newthree.html#book" class="dz-cta">
-                                    <span>Book a Consultation</span>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <circle cx="12" cy="12" r="4" />
-                                        <path d="M12 2v2" />
-                                        <path d="M12 20v2" />
-                                        <path d="m4.93 4.93 1.41 1.41" />
-                                        <path d="m17.66 17.66 1.41 1.41" />
-                                        <path d="M2 12h2" />
-                                        <path d="M20 12h2" />
-                                        <path d="m6.34 17.66-1.41 1.41" />
-                                        <path d="m19.07 4.93-1.41 1.41" />
-                                    </svg>
-                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg" style="animation-delay: -6s;"></div>
+                                <div class="concern-image" style="animation-delay: -4.5s;">
+                                    <img src="https://images.unsplash.com/photo-1528319725582-ddc096101511?w=600&q=80"
+                                        alt="Mind">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Dark lips</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 1 -->
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg"></div>
+                                <div class="concern-image">
+                                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80"
+                                        alt="Recovery">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Facial Hair</h3>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="concern-tab-content" id="tab-2">
+                    <div class="concerns-grid">
+                        <!-- Duplicated for demonstration -->
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg" style="animation-delay: -2s;"></div>
+                                <div class="concern-image" style="animation-delay: -1.5s;"><img
+                                        src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&q=80"
+                                        alt="Face">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Tatoo Removal</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg" style="animation-delay: -4s;"></div>
+                                <div class="concern-image" style="animation-delay: -3s;"><img
+                                        src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80"
+                                        alt="Body">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Stretch Marks</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg" style="animation-delay: -6s;"></div>
+                                <div class="concern-image" style="animation-delay: -4.5s;"><img
+                                        src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80"
+                                        alt="Ageing">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Earlobe Repair</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg"></div>
+                                <div class="concern-image"><img
+                                        src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80"
+                                        alt="Wellness">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Tanned Skin</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concern-tab-content" id="tab-3">
+                    <div class="concerns-grid">
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg" style="animation-delay: -2s;"></div>
+                                <div class="concern-image" style="animation-delay: -1.5s;"><img
+                                        src="https://images.unsplash.com/photo-1528319725582-ddc096101511?w=600&q=80"
+                                        alt="Face">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Un-defined Jawline
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg" style="animation-delay: -4s;"></div>
+                                <div class="concern-image" style="animation-delay: -3s;"><img
+                                        src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80"
+                                        alt="Body">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Wrinkled & Ageing Hands</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg" style="animation-delay: -6s;"></div>
+                                <div class="concern-image" style="animation-delay: -4.5s;"><img
+                                        src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80"
+                                        alt="Ageing">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Fine Lines & Wrinkles</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg"></div>
+                                <div class="concern-image"><img
+                                        src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80"
+                                        alt="Wellness">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Sagging Facial Skin</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concern-tab-content" id="tab-4">
+                    <div class="concerns-grid">
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg" style="animation-delay: -2s;"></div>
+                                <div class="concern-image" style="animation-delay: -1.5s;"><img
+                                        src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&q=80"
+                                        alt="Face">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Alopecia Areata</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg" style="animation-delay: -4s;"></div>
+                                <div class="concern-image" style="animation-delay: -3s;"><img
+                                        src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80"
+                                        alt="Body">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Beard Shaping</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg" style="animation-delay: -6s;"></div>
+                                <div class="concern-image" style="animation-delay: -4.5s;"><img
+                                        src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80"
+                                        alt="Ageing">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Persistent Dandruff</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg"></div>
+                                <div class="concern-image"><img
+                                        src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80"
+                                        alt="Wellness">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Receding Hairline</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concern-tab-content" id="tab-5">
+                    <div class="concerns-grid">
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg" style="animation-delay: -2s;"></div>
+                                <div class="concern-image" style="animation-delay: -1.5s;"><img
+                                        src="https://images.unsplash.com/photo-1528319725582-ddc096101511?w=600&q=80"
+                                        alt="Face">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Anxiety & Depression</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg" style="animation-delay: -4s;"></div>
+                                <div class="concern-image" style="animation-delay: -3s;"><img
+                                        src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80"
+                                        alt="Body">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Insomnia</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg" style="animation-delay: -6s;"></div>
+                                <div class="concern-image" style="animation-delay: -4.5s;"><img
+                                        src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80"
+                                        alt="Ageing">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Menopause</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg"></div>
+                                <div class="concern-image"><img
+                                        src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80"
+                                        alt="Wellness">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Thyroid Disorders</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const tabs = document.querySelectorAll('.concern-tab-btn');
+                        const contents = document.querySelectorAll('.concern-tab-content');
+
+                        tabs.forEach(tab => {
+                            tab.addEventListener('click', () => {
+                                // Remove active from all
+                                tabs.forEach(t => t.classList.remove('active'));
+                                contents.forEach(c => c.classList.remove('active'));
+
+                                // Add active to clicked
+                                tab.classList.add('active');
+                                const targetId = tab.getAttribute('data-target');
+                                document.getElementById(targetId).classList.add('active');
+                            });
+                        });
+                    });
+                </script>
             </div>
         </section>
+
+
+
+
 
         <section class="sig-services-zone" id="sigServicesZone">
             <!-- Blob reveal curtain: cream layer with a growing blob-shaped hole -->
@@ -895,12 +932,6 @@
                         <h2 class="sig-intro-heading">Signature<br /><span class="scribble">Services</span></h2>
                         <p class="sig-intro-sub">Each treatment is a ritual — crafted to reveal your most luminous,
                             confident self through the finest techniques in aesthetic medicine.</p>
-                        <div class="sig-scroll-cue">
-                            <span>Scroll to explore</span>
-                            <div class="sig-scroll-line">
-                                <div class="sig-scroll-dot"></div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -1054,6 +1085,11 @@
             <div class="trainer-v2__container">
                 <div class="trainer-v2__head">
                     <span class="trainer-v2__eyebrow trainer-v2__reveal">Fellow-Doctors &amp; Training</span>
+                    <div class="nemonic-separator">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
                     <h2 class="trainer-v2__title trainer-v2__reveal">A senior trainer <em>the industry <span
                                 class="scribble">learns from.</span></em></h2>
                     <p class="trainer-v2__lead trainer-v2__reveal">Dr. Aarushi is one of India's leading medical
@@ -1106,18 +1142,8 @@
                 <div class="dz-cta-wrap">
                     <a href="../newthree.html#enquire" class="dz-cta">
                         <span>Enquire About Training</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="4" />
-                            <path d="M12 2v2" />
-                            <path d="M12 20v2" />
-                            <path d="m4.93 4.93 1.41 1.41" />
-                            <path d="m17.66 17.66 1.41 1.41" />
-                            <path d="M2 12h2" />
-                            <path d="M20 12h2" />
-                            <path d="m6.34 17.66-1.41 1.41" />
-                            <path d="m19.07 4.93-1.41 1.41" />
-                        </svg>
+                        <img src="nemonic.png" class="btn-icon" style="width: 18px; height: 18px; object-fit: contain;"
+                            alt="icon" />
                     </a>
                 </div>
             </div>
@@ -1127,6 +1153,11 @@
             <div class="container">
                 <div class="section-header text-center mb-4 mb-lg-5">
                     <span class="section-subtitle">RECOGNIZED EXCELLENCE</span>
+                    <div class="nemonic-separator">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
                     <h2 class="section-title">Featured <span class="scribble">In</span></h2>
                     <p class="section-desc">We are creating a space where luxury meets healing, and science meets
                         spirituality.</p>
@@ -1223,10 +1254,311 @@
             </div>
         </section>
 
+        <section class="testimonials-modern-section" id="testimonials">
+            <!-- Section header -->
+            <div class="testimonials-content-box reveal">
+                <div class="section-header text-center mb-4">
+                    <span class="section-subtitle">TESTIMONIALS</span>
+                    <div class="nemonic-separator">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                </div>
+                <h2 class="testimonials-heading">
+                    Voices of Hope and Healing
+                </h2>
+                <p class="testimonials-desc">
+                    Hear it straight from our clients — watch their journeys or read their words.
+                </p>
+            </div>
+
+            <!-- Tab switcher -->
+            <div class="tst-tabs" role="tablist" aria-label="Testimonial format">
+                <span class="tst-tabs__thumb" aria-hidden="true"></span>
+                <button class="tst-tab is-active" role="tab" aria-selected="true" data-tab="video" id="tstTabVideo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polygon points="6 4 20 12 6 20 6 4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>Video Stories</span>
+                </button>
+                <button class="tst-tab" role="tab" aria-selected="false" data-tab="reviews" id="tstTabReviews">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    </svg>
+                    <span>Google Reviews</span>
+                </button>
+            </div>
+
+            <!-- ── PANEL: Video Stories ── -->
+            <div class="tst-panel is-active" id="tstPanelVideo" role="tabpanel" aria-labelledby="tstTabVideo">
+                <div class="tst-video-grid">
+                    <!-- Each card: a vertical (9:16) short-form embed, click-to-play -->
+                    <article class="tst-video-card" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <img class="tst-video-card__poster"
+                            src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop"
+                            alt="Client story — glow-up journey" loading="lazy">
+                        <span class="tst-video-card__play" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="8 5 20 12 8 19 8 5" />
+                            </svg>
+                        </span>
+                        <div class="tst-video-card__meta">
+                            <span class="tst-video-card__name">Priya Sharma</span>
+                            <span class="tst-video-card__tag">HydraFacial Glow</span>
+                        </div>
+                    </article>
+                    <article class="tst-video-card" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <img class="tst-video-card__poster"
+                            src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=800&auto=format&fit=crop"
+                            alt="Client story — acne scar treatment" loading="lazy">
+                        <span class="tst-video-card__play" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="8 5 20 12 8 19 8 5" />
+                            </svg>
+                        </span>
+                        <div class="tst-video-card__meta">
+                            <span class="tst-video-card__name">Ananya Reddy</span>
+                            <span class="tst-video-card__tag">Acne Scar Revision</span>
+                        </div>
+                    </article>
+                    <article class="tst-video-card" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <img class="tst-video-card__poster"
+                            src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop"
+                            alt="Client story — skin rejuvenation" loading="lazy">
+                        <span class="tst-video-card__play" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="8 5 20 12 8 19 8 5" />
+                            </svg>
+                        </span>
+                        <div class="tst-video-card__meta">
+                            <span class="tst-video-card__name">Kavya Iyer</span>
+                            <span class="tst-video-card__tag">Skin Rejuvenation</span>
+                        </div>
+                    </article>
+                    <article class="tst-video-card" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <img class="tst-video-card__poster"
+                            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"
+                            alt="Client story — laser hair reduction" loading="lazy">
+                        <span class="tst-video-card__play" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="8 5 20 12 8 19 8 5" />
+                            </svg>
+                        </span>
+                        <div class="tst-video-card__meta">
+                            <span class="tst-video-card__name">Neha Sen</span>
+                            <span class="tst-video-card__tag">Laser Hair Reduction</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- ── PANEL: Google Reviews ── -->
+            <div class="tst-panel" id="tstPanelReviews" role="tabpanel" aria-labelledby="tstTabReviews" hidden>
+                <div class="tst-reviews-summary">
+                    <span class="tst-g-logo" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path fill="#4285F4"
+                                d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
+                            <path fill="#34A853"
+                                d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
+                            <path fill="#FBBC05" d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
+                            <path fill="#EA4335"
+                                d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
+                        </svg>
+                    </span>
+                    <div class="tst-reviews-summary__text">
+                        <span class="tst-reviews-summary__score">4.9</span>
+                        <span class="tst-stars" aria-label="4.9 out of 5 stars">★★★★★</span>
+                        <span class="tst-reviews-summary__count">Based on 512 Google reviews</span>
+                    </div>
+                </div>
+
+                <div class="tst-reviews-grid">
+                    <article class="tst-review-card">
+                        <header class="tst-review-card__head">
+                            <img class="tst-review-card__avatar"
+                                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&h=120&fit=crop&q=80"
+                                alt="Priya Sharma" loading="lazy">
+                            <div class="tst-review-card__id">
+                                <span class="tst-review-card__name">Priya Sharma</span>
+                                <span class="tst-review-card__date">2 weeks ago</span>
+                            </div>
+                            <span class="tst-review-card__g" aria-label="Posted on Google">
+                                <svg viewBox="0 0 24 24">
+                                    <path fill="#4285F4"
+                                        d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
+                                    <path fill="#34A853"
+                                        d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
+                                    <path fill="#FBBC05"
+                                        d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
+                                    <path fill="#EA4335"
+                                        d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
+                                </svg>
+                            </span>
+                        </header>
+                        <span class="tst-stars" aria-label="5 stars">★★★★★</span>
+                        <p class="tst-review-card__quote">Absolutely the best skin clinic I've been to. My HydraFacial
+                            results were visible from day one and the team is so warm and professional.</p>
+                    </article>
+
+                    <article class="tst-review-card">
+                        <header class="tst-review-card__head">
+                            <img class="tst-review-card__avatar"
+                                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=120&h=120&fit=crop&q=80"
+                                alt="Rohan Mehta" loading="lazy">
+                            <div class="tst-review-card__id">
+                                <span class="tst-review-card__name">Rohan Mehta</span>
+                                <span class="tst-review-card__date">1 month ago</span>
+                            </div>
+                            <span class="tst-review-card__g" aria-label="Posted on Google">
+                                <svg viewBox="0 0 24 24">
+                                    <path fill="#4285F4"
+                                        d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
+                                    <path fill="#34A853"
+                                        d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
+                                    <path fill="#FBBC05"
+                                        d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
+                                    <path fill="#EA4335"
+                                        d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
+                                </svg>
+                            </span>
+                        </header>
+                        <span class="tst-stars" aria-label="5 stars">★★★★★</span>
+                        <p class="tst-review-card__quote">My acne scars have faded dramatically after the revision
+                            treatment. Genuinely life-changing confidence boost. Highly recommend D'Zen Derma.</p>
+                    </article>
+
+                    <article class="tst-review-card">
+                        <header class="tst-review-card__head">
+                            <img class="tst-review-card__avatar"
+                                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&h=120&fit=crop&q=80"
+                                alt="Ananya Reddy" loading="lazy">
+                            <div class="tst-review-card__id">
+                                <span class="tst-review-card__name">Ananya Reddy</span>
+                                <span class="tst-review-card__date">3 weeks ago</span>
+                            </div>
+                            <span class="tst-review-card__g" aria-label="Posted on Google">
+                                <svg viewBox="0 0 24 24">
+                                    <path fill="#4285F4"
+                                        d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
+                                    <path fill="#34A853"
+                                        d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
+                                    <path fill="#FBBC05"
+                                        d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
+                                    <path fill="#EA4335"
+                                        d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
+                                </svg>
+                            </span>
+                        </header>
+                        <span class="tst-stars" aria-label="5 stars">★★★★★</span>
+                        <p class="tst-review-card__quote">The calmest, most luxurious clinic experience. Every treatment
+                            feels tailored to me. My skin has never looked healthier.</p>
+                    </article>
+
+                    <article class="tst-review-card">
+                        <header class="tst-review-card__head">
+                            <img class="tst-review-card__avatar"
+                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&h=120&fit=crop&q=80"
+                                alt="Vikram Malhotra" loading="lazy">
+                            <div class="tst-review-card__id">
+                                <span class="tst-review-card__name">Vikram Malhotra</span>
+                                <span class="tst-review-card__date">2 months ago</span>
+                            </div>
+                            <span class="tst-review-card__g" aria-label="Posted on Google">
+                                <svg viewBox="0 0 24 24">
+                                    <path fill="#4285F4"
+                                        d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
+                                    <path fill="#34A853"
+                                        d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
+                                    <path fill="#FBBC05"
+                                        d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
+                                    <path fill="#EA4335"
+                                        d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
+                                </svg>
+                            </span>
+                        </header>
+                        <span class="tst-stars" aria-label="5 stars">★★★★★</span>
+                        <p class="tst-review-card__quote">Booked a consultation on a whim and it was the best decision.
+                            Honest advice, no upselling, and stunning results.</p>
+                    </article>
+
+                    <article class="tst-review-card">
+                        <header class="tst-review-card__head">
+                            <img class="tst-review-card__avatar"
+                                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop&q=80"
+                                alt="Meera Jasmine" loading="lazy">
+                            <div class="tst-review-card__id">
+                                <span class="tst-review-card__name">Meera Jasmine</span>
+                                <span class="tst-review-card__date">5 days ago</span>
+                            </div>
+                            <span class="tst-review-card__g" aria-label="Posted on Google">
+                                <svg viewBox="0 0 24 24">
+                                    <path fill="#4285F4"
+                                        d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
+                                    <path fill="#34A853"
+                                        d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
+                                    <path fill="#FBBC05"
+                                        d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
+                                    <path fill="#EA4335"
+                                        d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
+                                </svg>
+                            </span>
+                        </header>
+                        <span class="tst-stars" aria-label="5 stars">★★★★★</span>
+                        <p class="tst-review-card__quote">Brightening peel worked wonders on my pigmentation. Skin feels
+                            fresh and renewed. The staff make you feel completely at ease.</p>
+                    </article>
+
+                    <article class="tst-review-card">
+                        <header class="tst-review-card__head">
+                            <img class="tst-review-card__avatar"
+                                src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=120&h=120&fit=crop&q=80"
+                                alt="Ritu Verma" loading="lazy">
+                            <div class="tst-review-card__id">
+                                <span class="tst-review-card__name">Ritu Verma</span>
+                                <span class="tst-review-card__date">1 week ago</span>
+                            </div>
+                            <span class="tst-review-card__g" aria-label="Posted on Google">
+                                <svg viewBox="0 0 24 24">
+                                    <path fill="#4285F4"
+                                        d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
+                                    <path fill="#34A853"
+                                        d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
+                                    <path fill="#FBBC05"
+                                        d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
+                                    <path fill="#EA4335"
+                                        d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
+                                </svg>
+                            </span>
+                        </header>
+                        <span class="tst-stars" aria-label="5 stars">★★★★★</span>
+                        <p class="tst-review-card__quote">Professional, spotless, and genuinely caring. My laser
+                            sessions were painless and the results speak for themselves. Five stars!</p>
+                    </article>
+                </div>
+
+                <div class="dz-cta-wrap">
+                    <a href="https://www.google.com/maps" target="_blank" rel="noopener" class="dz-cta">
+                        <span>Read all Google reviews</span>
+                        <img src="nemonic.png" class="btn-icon" style="width: 18px; height: 18px; object-fit: contain;"
+                            alt="icon" />
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <section class="headlines-section">
             <div class="container">
                 <div class="section-header text-center mb-4 mb-lg-5">
                     <span class="section-subtitle">IN THE NEWS</span>
+                    <div class="nemonic-separator">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
                     <h2 class="section-title">Making <span class="scribble">Headlines</span> Worldwide</h2>
                     <p class="section-desc">When healing happens, the world takes notice. Our commitment to excellence
                         in aesthetic dermatology and integrative wellness has earned us consistent recognition from
@@ -1295,236 +1627,8 @@
                 <div class="headlines-footer text-center mt-5">
                     <a href="#" class="view-all-articles dz-cta">
                         <span>View All Articles</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18"
-                            height="18" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="4" />
-                            <path d="M12 2v2" />
-                            <path d="M12 20v2" />
-                            <path d="m4.93 4.93 1.41 1.41" />
-                            <path d="m17.66 17.66 1.41 1.41" />
-                            <path d="M2 12h2" />
-                            <path d="M20 12h2" />
-                            <path d="m6.34 17.66-1.41 1.41" />
-                            <path d="m19.07 4.93-1.41 1.41" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="testimonials-modern-section" id="testimonials">
-            <!-- Section header -->
-            <div class="testimonials-content-box reveal">
-                <div class="testimonials-badge-pill">Testimonials</div>
-                <h2 class="testimonials-heading">
-                    Over <span class="scribble">5,000</span> Client
-                    <span class="muted">Transformations &amp; Journeys</span>
-                </h2>
-                <p class="testimonials-desc">
-                    Hear it straight from our clients — watch their journeys or read their words.
-                </p>
-            </div>
-
-            <!-- Tab switcher -->
-            <div class="tst-tabs" role="tablist" aria-label="Testimonial format">
-                <span class="tst-tabs__thumb" aria-hidden="true"></span>
-                <button class="tst-tab is-active" role="tab" aria-selected="true" data-tab="video"
-                    id="tstTabVideo">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <polygon points="6 4 20 12 6 20 6 4" fill="currentColor" stroke="none" />
-                    </svg>
-                    <span>Video Stories</span>
-                </button>
-                <button class="tst-tab" role="tab" aria-selected="false" data-tab="reviews" id="tstTabReviews">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                    </svg>
-                    <span>Google Reviews</span>
-                </button>
-            </div>
-
-            <!-- ── PANEL: Video Stories ── -->
-            <div class="tst-panel is-active" id="tstPanelVideo" role="tabpanel" aria-labelledby="tstTabVideo">
-                <div class="tst-video-grid">
-                    <!-- Each card: a vertical (9:16) short-form embed, click-to-play -->
-                    <article class="tst-video-card" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
-                        <img class="tst-video-card__poster"
-                            src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop"
-                            alt="Client story — glow-up journey" loading="lazy">
-                        <span class="tst-video-card__play" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="8 5 20 12 8 19 8 5" /></svg>
-                        </span>
-                        <div class="tst-video-card__meta">
-                            <span class="tst-video-card__name">Priya Sharma</span>
-                            <span class="tst-video-card__tag">HydraFacial Glow</span>
-                        </div>
-                    </article>
-                    <article class="tst-video-card" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
-                        <img class="tst-video-card__poster"
-                            src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=800&auto=format&fit=crop"
-                            alt="Client story — acne scar treatment" loading="lazy">
-                        <span class="tst-video-card__play" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="8 5 20 12 8 19 8 5" /></svg>
-                        </span>
-                        <div class="tst-video-card__meta">
-                            <span class="tst-video-card__name">Ananya Reddy</span>
-                            <span class="tst-video-card__tag">Acne Scar Revision</span>
-                        </div>
-                    </article>
-                    <article class="tst-video-card" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
-                        <img class="tst-video-card__poster"
-                            src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop"
-                            alt="Client story — skin rejuvenation" loading="lazy">
-                        <span class="tst-video-card__play" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="8 5 20 12 8 19 8 5" /></svg>
-                        </span>
-                        <div class="tst-video-card__meta">
-                            <span class="tst-video-card__name">Kavya Iyer</span>
-                            <span class="tst-video-card__tag">Skin Rejuvenation</span>
-                        </div>
-                    </article>
-                    <article class="tst-video-card" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
-                        <img class="tst-video-card__poster"
-                            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"
-                            alt="Client story — laser hair reduction" loading="lazy">
-                        <span class="tst-video-card__play" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="8 5 20 12 8 19 8 5" /></svg>
-                        </span>
-                        <div class="tst-video-card__meta">
-                            <span class="tst-video-card__name">Neha Sen</span>
-                            <span class="tst-video-card__tag">Laser Hair Reduction</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
-
-            <!-- ── PANEL: Google Reviews ── -->
-            <div class="tst-panel" id="tstPanelReviews" role="tabpanel" aria-labelledby="tstTabReviews" hidden>
-                <div class="tst-reviews-summary">
-                    <span class="tst-g-logo" aria-hidden="true">
-                        <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z"/><path fill="#34A853" d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z"/></svg>
-                    </span>
-                    <div class="tst-reviews-summary__text">
-                        <span class="tst-reviews-summary__score">4.9</span>
-                        <span class="tst-stars" aria-label="4.9 out of 5 stars">★★★★★</span>
-                        <span class="tst-reviews-summary__count">Based on 512 Google reviews</span>
-                    </div>
-                </div>
-
-                <div class="tst-reviews-grid">
-                    <article class="tst-review-card">
-                        <header class="tst-review-card__head">
-                            <img class="tst-review-card__avatar"
-                                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&h=120&fit=crop&q=80"
-                                alt="Priya Sharma" loading="lazy">
-                            <div class="tst-review-card__id">
-                                <span class="tst-review-card__name">Priya Sharma</span>
-                                <span class="tst-review-card__date">2 weeks ago</span>
-                            </div>
-                            <span class="tst-review-card__g" aria-label="Posted on Google">
-                                <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z"/><path fill="#34A853" d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z"/></svg>
-                            </span>
-                        </header>
-                        <span class="tst-stars" aria-label="5 stars">★★★★★</span>
-                        <p class="tst-review-card__quote">Absolutely the best skin clinic I've been to. My HydraFacial results were visible from day one and the team is so warm and professional.</p>
-                    </article>
-
-                    <article class="tst-review-card">
-                        <header class="tst-review-card__head">
-                            <img class="tst-review-card__avatar"
-                                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=120&h=120&fit=crop&q=80"
-                                alt="Rohan Mehta" loading="lazy">
-                            <div class="tst-review-card__id">
-                                <span class="tst-review-card__name">Rohan Mehta</span>
-                                <span class="tst-review-card__date">1 month ago</span>
-                            </div>
-                            <span class="tst-review-card__g" aria-label="Posted on Google">
-                                <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z"/><path fill="#34A853" d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z"/></svg>
-                            </span>
-                        </header>
-                        <span class="tst-stars" aria-label="5 stars">★★★★★</span>
-                        <p class="tst-review-card__quote">My acne scars have faded dramatically after the revision treatment. Genuinely life-changing confidence boost. Highly recommend D'Zen Derma.</p>
-                    </article>
-
-                    <article class="tst-review-card">
-                        <header class="tst-review-card__head">
-                            <img class="tst-review-card__avatar"
-                                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&h=120&fit=crop&q=80"
-                                alt="Ananya Reddy" loading="lazy">
-                            <div class="tst-review-card__id">
-                                <span class="tst-review-card__name">Ananya Reddy</span>
-                                <span class="tst-review-card__date">3 weeks ago</span>
-                            </div>
-                            <span class="tst-review-card__g" aria-label="Posted on Google">
-                                <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z"/><path fill="#34A853" d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z"/></svg>
-                            </span>
-                        </header>
-                        <span class="tst-stars" aria-label="5 stars">★★★★★</span>
-                        <p class="tst-review-card__quote">The calmest, most luxurious clinic experience. Every treatment feels tailored to me. My skin has never looked healthier.</p>
-                    </article>
-
-                    <article class="tst-review-card">
-                        <header class="tst-review-card__head">
-                            <img class="tst-review-card__avatar"
-                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&h=120&fit=crop&q=80"
-                                alt="Vikram Malhotra" loading="lazy">
-                            <div class="tst-review-card__id">
-                                <span class="tst-review-card__name">Vikram Malhotra</span>
-                                <span class="tst-review-card__date">2 months ago</span>
-                            </div>
-                            <span class="tst-review-card__g" aria-label="Posted on Google">
-                                <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z"/><path fill="#34A853" d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z"/></svg>
-                            </span>
-                        </header>
-                        <span class="tst-stars" aria-label="5 stars">★★★★★</span>
-                        <p class="tst-review-card__quote">Booked a consultation on a whim and it was the best decision. Honest advice, no upselling, and stunning results.</p>
-                    </article>
-
-                    <article class="tst-review-card">
-                        <header class="tst-review-card__head">
-                            <img class="tst-review-card__avatar"
-                                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop&q=80"
-                                alt="Meera Jasmine" loading="lazy">
-                            <div class="tst-review-card__id">
-                                <span class="tst-review-card__name">Meera Jasmine</span>
-                                <span class="tst-review-card__date">5 days ago</span>
-                            </div>
-                            <span class="tst-review-card__g" aria-label="Posted on Google">
-                                <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z"/><path fill="#34A853" d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z"/></svg>
-                            </span>
-                        </header>
-                        <span class="tst-stars" aria-label="5 stars">★★★★★</span>
-                        <p class="tst-review-card__quote">Brightening peel worked wonders on my pigmentation. Skin feels fresh and renewed. The staff make you feel completely at ease.</p>
-                    </article>
-
-                    <article class="tst-review-card">
-                        <header class="tst-review-card__head">
-                            <img class="tst-review-card__avatar"
-                                src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=120&h=120&fit=crop&q=80"
-                                alt="Ritu Verma" loading="lazy">
-                            <div class="tst-review-card__id">
-                                <span class="tst-review-card__name">Ritu Verma</span>
-                                <span class="tst-review-card__date">1 week ago</span>
-                            </div>
-                            <span class="tst-review-card__g" aria-label="Posted on Google">
-                                <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z"/><path fill="#34A853" d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z"/></svg>
-                            </span>
-                        </header>
-                        <span class="tst-stars" aria-label="5 stars">★★★★★</span>
-                        <p class="tst-review-card__quote">Professional, spotless, and genuinely caring. My laser sessions were painless and the results speak for themselves. Five stars!</p>
-                    </article>
-                </div>
-
-                <div class="dz-cta-wrap">
-                    <a href="https://www.google.com/maps" target="_blank" rel="noopener" class="dz-cta">
-                        <span>Read all Google reviews</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
+                        <img src="nemonic.png" class="btn-icon" style="width: 18px; height: 18px; object-fit: contain;"
+                            alt="icon" />
                     </a>
                 </div>
             </div>
@@ -1536,17 +1640,26 @@
             <!-- CTA Card (sits on top, scrolls away upward) -->
             <div class="footer-cta-card-wrapper">
                 <div class="footer-cta-card">
-                    <p class="footer-cta-eyebrow">Begin Your Journey</p>
-                    <h2 class="footer-cta-heading">Ready to reveal your<br>most <span
-                            class="scribble scribble--light">radiant self?</span></h2>
+                    <div class="section-header text-center mb-4">
+                        <span class="section-subtitle" style="color: #ffffff !important;">BEGIN YOUR JOURNEY</span>
+                        <div class="nemonic-separator">
+                            <div class="nemonic-line" style="background-color: #ffffff;"></div>
+                            <img src="nemonic.png" alt="nemonic" class="nemonic-icon"
+                                style="filter: brightness(0) invert(1);" />
+                            <div class="nemonic-line" style="background-color: #ffffff;"></div>
+                        </div>
+                    </div>
+                    <h2 class="footer-cta-heading">Ready to reveal your<br>most <span class="scribble"
+                            style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important;">radiant
+                            self?</span></h2>
                     <p class="footer-cta-sub">Join thousands who've discovered the art of effortless confidence —
                         crafted for your skin, your story.</p>
-                    <a href="../newthree.html#book" class="footer-cta-btn">
-                        Book a Consultation
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                            stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
+                    <a href="../newthree.html#book" class="dz-cta"
+                        style="margin: 0 auto; display: inline-flex; border-color: rgba(255,255,255,0.5);">
+                        <span style="color: #ffffff !important;">Book a Consultation</span>
+                        <img src="nemonic.png" class="btn-icon"
+                            style="width: 18px; height: 18px; object-fit: contain; filter: brightness(0) invert(1);"
+                            alt="icon" />
                     </a>
                 </div>
             </div>
