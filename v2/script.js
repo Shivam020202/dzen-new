@@ -498,47 +498,80 @@
     (function () {
         const zone = document.getElementById('sigServicesZone');
         const curtain = document.getElementById('sigReveal');
+        const lens = document.getElementById('sigRevealLens');
         if (!zone || !curtain) return;
 
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (prefersReduced) { curtain.classList.add('is-done'); return; }
+        if (prefersReduced) {
+            curtain.classList.add('is-done');
+            if (lens) lens.classList.add('is-done');
+            return;
+        }
 
-        // Reveal completes over this fraction of a viewport of scrolling
-        // once the section top hits the top of the screen.
-        const REVEAL_DISTANCE = 0.9; // × viewport height
+        // Reveal completes over this many viewport-heights of scrolling once the
+        // section top hits the top of the screen. Kept short so the hole finishes
+        // opening while the intro heading is still on screen — the heading is
+        // revealed early, then you scroll through the rest of the intro panel.
+        const REVEAL_DISTANCE = 0.45; // × viewport height
 
         let ticking = false;
 
-        function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+        // Two separate curves so the blur and the enlarging can be tuned apart:
+        //  • reveal  → drives the BLUR clearing (kept as-is; timing is perfect)
+        //  • grow    → drives the HOLE SIZE; gentler so the enlarging is steady
+        //              and unhurried instead of snapping open early.
+        function easeReveal(t) {
+            return 1 - Math.pow(1 - t, 3); // easeOutCubic — blur
+        }
+        function easeGrow(t) {
+            // easeInOutSine — slow, smooth growth across the whole scroll
+            return 0.5 - 0.5 * Math.cos(Math.PI * t);
+        }
+
+        function setProgress(v) {
+            const s = v.toFixed(4);
+            const blur = easeReveal(v).toFixed(4);
+            const grow = easeGrow(v).toFixed(4);
+            curtain.style.setProperty('--sig-reveal', blur);
+            curtain.style.setProperty('--sig-grow', grow);
+            if (lens) {
+                lens.style.setProperty('--sig-reveal', blur);
+                lens.style.setProperty('--sig-grow', grow);
+            }
+        }
+
+        function setDone(done) {
+            curtain.classList.toggle('is-done', done);
+            if (lens) lens.classList.toggle('is-done', done);
+        }
+
+        // Begin the reveal a little BEFORE the section fully lands, so the hole
+        // finishes opening right about when the intro heading reaches centre —
+        // the heading is then plainly visible through the open hole rather than
+        // already scrolled away.
+        const START_OFFSET = 0.35; // × vh — how early (rect.top above this → closed)
 
         function updateReveal() {
             const rect = zone.getBoundingClientRect();
             const vh = window.innerHeight;
             const distance = vh * REVEAL_DISTANCE;
 
-            // How far the section top has scrolled past the top of the viewport.
-            const scrolledPast = -rect.top;
+            // Progress from START_OFFSET·vh (section entering) to fully landed.
+            const scrolledPast = vh * START_OFFSET - rect.top;
             let progress = scrolledPast / distance;
             progress = Math.min(Math.max(progress, 0), 1);
 
-            // Section not yet reached → keep curtain closed & mounted.
+            // Section well below the viewport → keep curtain closed & mounted.
             if (rect.top > vh || rect.bottom < 0) {
-                if (progress <= 0) {
-                    curtain.classList.remove('is-done');
-                    curtain.style.setProperty('--sig-reveal', '0');
-                }
+                setDone(false);
+                setProgress(0);
                 return;
             }
 
-            const eased = easeOutCubic(progress);
-            curtain.style.setProperty('--sig-reveal', eased.toFixed(4));
+            setProgress(progress);
 
             // Fully open → unmount so it never blocks anything.
-            if (progress >= 1) {
-                curtain.classList.add('is-done');
-            } else {
-                curtain.classList.remove('is-done');
-            }
+            setDone(progress >= 1);
         }
 
         updateReveal();

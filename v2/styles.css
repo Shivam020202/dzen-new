@@ -3068,12 +3068,15 @@
     /* dark coffee-brown curtain — the lighter signature section emerges from it */
     background: linear-gradient(160deg, var(--deep-brown, #4b2b20) 0%, #3a1f16 100%);
     pointer-events: none;
-    /* progress-driven vars (set by JS) */
+    /* progress-driven vars (set by JS):
+         --sig-reveal → blur/opacity clearing   --sig-grow → hole enlarging */
     --sig-reveal: 0;
-    /* hole size in vmax so the blob keeps its shape on any aspect ratio.
-       The blob fills ~64% of the mask canvas, so mask-size must reach
-       ~370vmax for the hole to clear the viewport corners. */
-    --sig-hole: calc(14vmax + (var(--sig-reveal) * 380vmax));
+    --sig-grow: 0;
+    /* Hole size in vmax (keeps the blob shape on any aspect ratio).
+       Max is tuned so the blob just clears the viewport corners at full
+       progress — NOT wildly larger — so the enlarging stays visible across
+       the whole scroll instead of finishing in the first fraction of it. */
+    --sig-hole: calc(45vmax + (var(--sig-grow) * 205vmax));
 
     /* Blob-shaped hole via TWO composited alpha-mask layers:
          layer 1 — a solid fill covering the whole curtain (shows everything)
@@ -3092,17 +3095,52 @@
     mask-composite: subtract;
 
     /* fade the whole curtain out over the last stretch of the reveal */
-    opacity: calc(1 - (max(var(--sig-reveal) - 0.82, 0) / 0.18));
+    opacity: calc(1 - (max(var(--sig-reveal) - 0.86, 0) / 0.14));
     will-change: mask-size, opacity;
 }
 
-/* Once fully revealed, drop the curtain out of the flow entirely */
-.sig-reveal.is-done {
+/* Blur lens — occupies the SAME hole shape and blurs the section behind it.
+   Uses the positive of the curtain's mask (only the blob is visible), and its
+   backdrop blur radius eases to 0 as the hole opens. */
+.sig-reveal-lens {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    margin-bottom: -100vh;
+    z-index: 39;
+    pointer-events: none;
+    --sig-reveal: 0;
+    --sig-grow: 0;
+    --sig-hole: calc(45vmax + (var(--sig-grow) * 205vmax));
+    --sig-blob: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201000%201000'%3E%3Cpath%20fill='%23000'%20d='M500%20250%20C%20640%20250%20760%20320%20800%20440%20C%20835%20548%20805%20660%20720%20735%20C%20648%20800%20548%20828%20452%20812%20C%20330%20792%20220%20720%20175%20600%20C%20135%20492%20155%20372%20240%20300%20C%20308%20242%20404%20250%20500%20250%20Z'/%3E%3C/svg%3E");
+    /* Positive mask — only the blob region is painted (the hole) */
+    -webkit-mask-image: var(--sig-blob);
+    mask-image: var(--sig-blob);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: var(--sig-hole) var(--sig-hole);
+    mask-size: var(--sig-hole) var(--sig-hole);
+    /* Blur the section seen through the hole; clears as it opens */
+    -webkit-backdrop-filter: blur(calc((1 - var(--sig-reveal)) * 26px));
+    backdrop-filter: blur(calc((1 - var(--sig-reveal)) * 26px));
+    /* warm veil that also fades out, so the reveal feels lit from within */
+    background: rgba(59, 31, 22, calc((1 - var(--sig-reveal)) * 0.28));
+    will-change: mask-size, backdrop-filter;
+}
+
+/* Once fully revealed, drop the curtain + lens out of the flow entirely */
+.sig-reveal.is-done,
+.sig-reveal-lens.is-done {
     display: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .sig-reveal {
+    .sig-reveal,
+    .sig-reveal-lens {
         display: none;
     }
 }
