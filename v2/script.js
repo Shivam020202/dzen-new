@@ -561,10 +561,19 @@
             let progress = scrolledPast / distance;
             progress = Math.min(Math.max(progress, 0), 1);
 
-            // Section well below the viewport → keep curtain closed & mounted.
-            if (rect.top > vh || rect.bottom < 0) {
+            // Section still below the viewport (not reached) → closed & mounted.
+            if (rect.top > vh) {
                 setDone(false);
                 setProgress(0);
+                return;
+            }
+
+            // Section fully scrolled PAST (above the viewport) → stay open/hidden,
+            // never re-mount the curtain (otherwise it flashes back at the zone's
+            // bottom edge as you scroll into the next section).
+            if (rect.bottom < 0) {
+                setProgress(1);
+                setDone(true);
                 return;
             }
 
