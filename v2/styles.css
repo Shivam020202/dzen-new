@@ -1101,7 +1101,7 @@
 .doctors-v2 {
     position: relative;
     padding: clamp(50px, 5vw, 80px) 0;
-    background: linear-gradient(180deg, #FBF7F1 0%, #F4ECDF 100%) !important;
+    background: #FDF8F3 !important;
     overflow: hidden;
 }
 
