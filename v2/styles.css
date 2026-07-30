@@ -4772,7 +4772,7 @@ html body .footer-cta-card .footer-cta-sub {
 .concerns-section {
     position: relative;
     padding: 70px 0 84px;
-    background: var(--bg-primary);
+    background: #FDF8F3 !important;
     overflow: hidden;
 }
 
