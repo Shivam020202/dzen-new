@@ -21,7 +21,7 @@
     <!-- Base styles and variable sheets -->
     <link rel="stylesheet" href="../styles.css?v=2.2" />
     <!-- Section Specific styles -->
-    <link rel="stylesheet" href="styles.css?v=4.6" />
+    <link rel="stylesheet" href="styles.css?v=5.0" />
 
     <!-- Tailwind CSS (without preflight resets) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
@@ -594,13 +594,6 @@
 
 
         <section class="concerns-section" id="concerns">
-            <div class="concerns-wave-bg">
-                <svg viewBox="0 0 1440 300" fill="none" preserveAspectRatio="none" style="overflow: visible;">
-                    <path d="M-50,200 C 400,-100 200,400 720,150 C 1100,-100 1000,400 1500,100"
-                        stroke="var(--warm-gold)" stroke-width="1" stroke-opacity="0.6"
-                        vector-effect="non-scaling-stroke" />
-                </svg>
-            </div>
 
             <div class="container">
                 <div class="section-header text-center mb-4 mb-lg-5 reveal">
@@ -919,12 +912,11 @@
                  and sharpens as the hole grows -->
             <div class="sig-reveal-lens" id="sigRevealLens" aria-hidden="true"></div>
 
-            <!-- Sticky Image Background -->
-            <div class="sig-services-bg" id="sigServicesBg">
-                <img src="https://images.unsplash.com/photo-1770954098074-da95ccdf33e7?q=80&w=2532&auto=format&fit=crop"
-                    alt="Dzen Signature Services Backdrop" id="bgImage" />
+            <!-- Sticky Background (Image Removed) -->
+            <div class="sig-services-bg" id="sigServicesBg" style="background-color: var(--bg-primary, #FAF7F2);">
                 <div class="sig-services-overlay"></div>
             </div>
+
 
             <!-- Scrollable Services Content -->
             <div class="sig-services-scroll" id="sigServicesScroll">
@@ -957,12 +949,13 @@
                             <h3 class="sig-service-title">Lip Enhancement</h3>
                             <div class="sig-service-bar"></div>
                             <p class="sig-service-desc">Precision filler artistry to sculpt natural-looking lips with
-                                defined contour, optimal volume, and effortless symmetry — no over-filled results.</p>
+                                defined contour, optimal volume, and effortless symmetry — no over-filled results. Enhance your facial harmony and experience a subtle yet profound transformation.</p>
                             <div class="sig-service-tags">
                                 <span>Hyaluronic Acid</span>
                                 <span>Natural Results</span>
                                 <span>30 min</span>
                             </div>
+                            <a href="#" class="sig-service-link">Explore</a>
                         </div>
                     </div>
                 </div>
@@ -975,12 +968,13 @@
                             <h3 class="sig-service-title">Skin Rejuvenation</h3>
                             <div class="sig-service-bar"></div>
                             <p class="sig-service-desc">Advanced skin renewal protocols combining bio-stimulators,
-                                collagen induction, and targeted therapies to restore youthful radiance from within.</p>
+                                collagen induction, and targeted therapies to restore youthful radiance from within. Achieve a flawless, glowing complexion that truly reflects your inner vitality.</p>
                             <div class="sig-service-tags">
                                 <span>Collagen Boost</span>
                                 <span>Skin Glow</span>
                                 <span>60 min</span>
                             </div>
+                            <a href="#" class="sig-service-link">Explore</a>
                         </div>
                         <div class="sig-service-visual">
                             <div class="sig-oval-frame sig-oval-frame--alt">
@@ -1005,12 +999,13 @@
                             <h3 class="sig-service-title">Facial Contouring</h3>
                             <div class="sig-service-bar"></div>
                             <p class="sig-service-desc">Sculpt and define your natural bone structure with expert dermal
-                                filler placement along cheekbones, jawline, and chin for a harmonious profile.</p>
+                                filler placement along cheekbones, jawline, and chin for a harmonious profile. Elevate your features with bespoke contouring tailored to your unique anatomy.</p>
                             <div class="sig-service-tags">
                                 <span>3D Sculpting</span>
                                 <span>Non-Surgical</span>
                                 <span>45 min</span>
                             </div>
+                            <a href="#" class="sig-service-link">Explore</a>
                         </div>
                     </div>
                 </div>
@@ -1023,12 +1018,13 @@
                             <h3 class="sig-service-title">Anti-Ageing Treatments</h3>
                             <div class="sig-service-bar"></div>
                             <p class="sig-service-desc">Targeted Botulinum toxin and bio-revitalisation protocols to
-                                soften dynamic lines, lift brows, and restore a refreshed, rested appearance.</p>
+                                soften dynamic lines, lift brows, and restore a refreshed, rested appearance. Preserve your natural expressions while gently erasing the signs of time.</p>
                             <div class="sig-service-tags">
                                 <span>Botulinum Toxin</span>
                                 <span>Preventative</span>
                                 <span>20 min</span>
                             </div>
+                            <a href="#" class="sig-service-link">Explore</a>
                         </div>
                         <div class="sig-service-visual">
                             <div class="sig-oval-frame">
@@ -1061,71 +1057,47 @@
                 </svg>
             </div>
         </section>
-        <section class="trainer-section" id="training">
-            <div class="trainer-v2__container">
-                <div class="trainer-v2__head">
-                    <span class="trainer-v2__eyebrow trainer-v2__reveal">Fellow-Doctors &amp; Training</span>
-                    <div class="nemonic-separator">
-                        <div class="nemonic-line"></div>
-                        <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
-                        <div class="nemonic-line"></div>
+        <section class="trainer-v3-section" id="training">
+            <div class="trainer-v3-container">
+                <div class="trainer-v3-content">
+                    <div class="trainer-v3-eyebrow-wrap">
+                        <span class="trainer-v3-eyebrow">Fellow-Doctors &amp; Training</span>
+                        <div class="trainer-v3-line"></div>
                     </div>
-                    <h2 class="trainer-v2__title trainer-v2__reveal">A senior trainer <em>the industry <span
-                                class="scribble">learns from.</span></em></h2>
-                    <p class="trainer-v2__lead trainer-v2__reveal">Dr. Aarushi is one of India's leading medical
-                        educators in aesthetic and regenerative dermatology — invited as faculty, masterclass host and
-                        senior trainer at industry workshops and fellowship programmes across the country.</p>
-                </div>
-
-                <div class="trainer-v2__grid">
-                    <article class="trainer-v2__card--portrait trainer-v2__reveal trainer-v2__reveal--left">
-                        <div class="trainer-v2__media">
-                            <img src="../images/aarushi.png" alt="Dr. Aarushi Singh" />
-                        </div>
-                        <div class="trainer-v2__portrait-overlay">
-                            <span class="trainer-v2__portrait-chip">Invited Faculty</span>
-                            <h3 class="trainer-v2__portrait-name">Dr. Aarushi Singh</h3>
-                            <p class="trainer-v2__portrait-role">Founder · Senior Aesthetic Dermatologist</p>
-                        </div>
-                    </article>
-
-                    <div class="trainer-v2__quote-panel trainer-v2__reveal trainer-v2__reveal--right">
-                        <svg class="trainer-v2__quote-icon" viewBox="0 0 64 64" aria-hidden="true">
-                            <path
-                                d="M22 18c-7 4-11 11-11 19v9h17V32H18c0-6 4-11 10-13zm30 0c-7 4-11 11-11 19v9h17V32H48c0-6 4-11 10-13z"
-                                fill="currentColor" />
-                        </svg>
-                        <blockquote class="trainer-v2__quote-text">
-                            What I teach my fellow doctors is what I practise at D'Zen — the <span
-                                class="accent">discipline of restraint</span>, the priority of safety, and the courage
-                            to keep learning.
-                        </blockquote>
-                        <div class="trainer-v2__quote-sig">Dr. Aarushi Singh</div>
-                    </div>
-
-                    <div class="trainer-v2__stats">
-                        <div class="trainer-v2__stat trainer-v2__reveal">
-                            <span class="trainer-v2__stat-num">120<span class="suffix">+</span></span>
-                            <span class="trainer-v2__stat-label">Fellow-Doctors Trained</span>
-                        </div>
-                        <div class="trainer-v2__stat trainer-v2__reveal">
-                            <span class="trainer-v2__stat-num">35<span class="suffix">+</span></span>
-                            <span class="trainer-v2__stat-label">Masterclasses & Workshops</span>
-                        </div>
-                        <div class="trainer-v2__stat trainer-v2__reveal">
-                            <span class="trainer-v2__stat-num">14</span>
-                            <span class="trainer-v2__stat-label">Industry Fellowships</span>
+                    
+                    <h2 class="trainer-v3-title">A senior trainer the industry learns from.</h2>
+                    
+                    <div class="trainer-v3-separator"></div>
+                    
+                    <p class="trainer-v3-desc">
+                        Dr. Aarushi is one of India's leading medical educators in aesthetic and regenerative dermatology — invited as a faculty member, masterclass host and senior trainer at industry workshops and fellowship programmes across the country.
+                    </p>
+                    
+                    <div class="trainer-v3-quote">
+                        <span class="trainer-v3-quote-mark">"</span>
+                        <div class="trainer-v3-quote-text">
+                            What I teach my fellow doctors is what I practise at D'Zen — the discipline of restraint, the priority of safety, and the courage to keep learning.
                         </div>
                     </div>
+                    
+                    <div class="dz-cta-wrap" style="justify-content: flex-start;">
+                        <a href="../newthree.html#enquire" class="dz-cta">
+                            <span>Enquire About Training</span>
+                            <img src="nemonic.png" class="btn-icon" style="width: 14px; height: 14px; object-fit: contain;" alt="icon" />
+                        </a>
+                    </div>
                 </div>
+                
+                <div class="trainer-v3-image-col">
+                    <img src="../images/aarushi.png" alt="Dr. Aarushi Singh Training" />
+                </div>
+            </div>
 
-                <div class="dz-cta-wrap">
-                    <a href="../newthree.html#enquire" class="dz-cta">
-                        <span>Enquire About Training</span>
-                        <img src="nemonic.png" class="btn-icon" style="width: 14px; height: 14px; object-fit: contain;"
-                            alt="icon" />
-                    </a>
-                </div>
+            <!-- Curvy separator at bottom of cream section -->
+            <div class="section-separator" aria-hidden="true" style="position: absolute; bottom: -2px; left: 0; right: 0; z-index: 3; pointer-events: none;">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display: block; width: 100%; height: auto;">
+                    <path fill="#FDF8F3" d="M0,50 C240,120 480,-20 720,50 C960,120 1200,-20 1440,50 L1440,100 L0,100 Z"></path>
+                </svg>
             </div>
         </section>
 
@@ -1660,11 +1632,10 @@
 
                         <!-- Brand column -->
                         <div class="footer-brand">
-                            <span class="footer-eyebrow">HARMONISE AND HEAL</span>
-                            <h2 class="footer-logo-text">DHUN</h2>
+                            <span class="footer-eyebrow">AESTHETICS & WELLNESS</span>
+                            <h2 class="footer-logo-text">D'ZEN DERMA</h2>
                             <p class="footer-tagline">
-                                A sanctuary of sound, soul, renewal. Where traditional wisdom, modern comfort, and the
-                                healing power of music unite for holistic well-being.
+                                Where the finest techniques in aesthetic medicine reveal your most luminous, confident self. Crafted for your skin, your story.
                             </p>
                             <!-- Social icons -->
                             <div class="footer-socials">
@@ -1724,7 +1695,7 @@
 
                     <!-- Bottom row: copyright + legal links -->
                     <div class="footer-bottom">
-                        <p class="footer-copyright">© 2026, Dhun Wellness | All Rights Reserved | All prices are
+                        <p class="footer-copyright">© 2026, D'Zen Derma | All Rights Reserved | All prices are
                             exclusive of tax</p>
                         <div class="footer-legal-links">
                             <a href="#">Privacy Policy</a>
@@ -1741,6 +1712,20 @@
         </div><!-- /.footer-stack-root -->
 
     </main>
+
+    <!-- Embossed Brand Section -->
+    <section class="embossed-brand-section">
+        <div class="embossed-texture"></div>
+        <a href="../newthree.html#book" class="embossed-book-btn">
+            <img src="nemonic.png" alt="icon" class="btn-icon">
+            BOOK NOW
+            <img src="nemonic.png" alt="icon" class="btn-icon">
+        </a>
+        <div class="embossed-content">
+            <h3 class="embossed-eyebrow">AESTHETICS & WELLNESS</h3>
+            <h1 class="embossed-title">D'ZEN DERMA</h1>
+        </div>
+    </section>
 
     <!-- Floating Bottom Action Bar -->
     <div class="bottom-action-bar" id="bottomActionBar" aria-label="Quick actions">
@@ -1781,7 +1766,7 @@
     </div>
 
     <!-- Project script controller -->
-    <script src="script.js?v=2.9"></script>
+    <script src="script.js?v=3.0"></script>
 </body>
 
 </html>

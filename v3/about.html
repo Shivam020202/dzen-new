@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>About D'Zen Derma — Where Science Meets the Art of Skin</title>
+    <meta name="description"
+        content="Meet D'Zen Derma — a premium aesthetic dermatology & wellness clinic blending science-led skin rejuvenation, regenerative aesthetics and holistic wellness, led by expert dermatologists." />
+
+    <!-- Google Fonts (same as home) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Base variable sheet, then shared v2 styles, then page-specific -->
+    <link rel="stylesheet" href="../styles.css?v=2.1" />
+    <link rel="stylesheet" href="styles.css?v=4.0" />
+    <link rel="stylesheet" href="about.css?v=1.3" />
+</head>
+
+<body class="ab-page" style="background-color: #FDF8F3; color: #2B1A12;">
+
+    <!-- ═══════ Floating Pill Navbar v3 ═══════ -->
+    <nav id="pill-nav" class="pnav is-scrolled" aria-label="Main navigation">
+        <div class="pnav__left">
+            <a href="../newthree.html#book" class="pnav__cta">
+                Book
+                <img src="nemonic.png" class="btn-icon" style="width: 12px; height: 12px; object-fit: contain;"
+                    alt="icon" />
+            </a>
+        </div>
+        <a href="../newthree.html" class="pnav__logo" aria-label="Home">
+            <img src="../images/logo1.png" alt="D'Zen Derma" />
+        </a>
+        <div class="pnav__right">
+            <button class="pnav__burger" id="pnav-burger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile drawer -->
+    <div class="pnav-overlay" id="pnav-overlay"></div>
+    <aside class="pnav-drawer" id="pnav-drawer" aria-label="Menu">
+        <button class="pnav-drawer__close" id="pnav-close" aria-label="Close menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round">
+                <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+        </button>
+        <ul class="pnav-drawer__list">
+            <li><a href="../aesthetics.html">Pillars <span>→</span></a></li>
+            <li><a href="../concerns.html">Concerns <span>→</span></a></li>
+            <li><a href="../treatments.html">Treatments <span>→</span></a></li>
+            <li><a href="about.html">Who We Are <span>→</span></a></li>
+            <li><a href="../signatures.html">D'Zen Experience <span>→</span></a></li>
+            <li><a href="../journal.html">Journal <span>→</span></a></li>
+        </ul>
+    </aside>
+
+    <main>
+
+        <!-- ═══════ 1. BREADCRUMB (dark animated gradient — replaces banner) ═══════ -->
+        <section class="ab-crumb-section ab-crumb-section--dark">
+            <div class="ab-crumb-inner">
+                <nav class="ab-crumb" aria-label="Breadcrumb">
+                    <a href="../newthree.html">Home</a>
+                    <span class="ab-crumb__sep" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 6l6 6-6 6" />
+                        </svg>
+                    </span>
+                    <span class="ab-crumb__current" aria-current="page">About Us</span>
+                </nav>
+
+                <span class="about-v2__eyebrow ab-crumb__eyebrow">Who We Are</span>
+                <div class="nemonic-separator">
+                    <div class="nemonic-line" style="background-color: rgba(255,255,255,0.5);"></div>
+                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon"
+                        style="filter: brightness(0) invert(1);" />
+                    <div class="nemonic-line" style="background-color: rgba(255,255,255,0.5);"></div>
+                </div>
+                <h1 class="ab-crumb__title">Where Science Meets the <em class="scribble">Art of Skin</em></h1>
+                <p class="ab-crumb__lead">
+                    A sanctuary where advanced dermatology, regenerative aesthetics and holistic wellness meet — crafted
+                    to reveal your most radiant, confident self.
+                </p>
+            </div>
+
+            <!-- Curvy separator: dark crumb → white intro -->
+            <div class="section-separator" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#ffffff"
+                        d="M0,50 C320,150 420,0 740,50 C1060,100 1280,0 1440,50 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ═══════ 2. IMAGE MOSAIC + INTRO ═══════ -->
+        <section class="ab-intro">
+            <div class="ab-wrap">
+                <div class="ab-intro__grid">
+                    <!-- Image mosaic -->
+                    <div class="ab-mosaic">
+                        <div class="ab-mosaic__cell ab-mosaic__cell--tall">
+                            <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=800&q=80&auto=format&fit=crop"
+                                alt="D'Zen Derma clinic interior" loading="lazy">
+                        </div>
+                        <div class="ab-mosaic__cell">
+                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80&auto=format&fit=crop"
+                                alt="Skincare treatment in progress" loading="lazy">
+                        </div>
+                        <div class="ab-mosaic__cell">
+                            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80&auto=format&fit=crop"
+                                alt="Radiant skin close-up" loading="lazy">
+                        </div>
+                        <div class="ab-mosaic__badge">
+                            <span class="ab-mosaic__badge-num">10+</span>
+                            <span class="ab-mosaic__badge-txt">Years of<br>expertise</span>
+                        </div>
+                    </div>
+
+                    <!-- Intro copy -->
+                    <div class="ab-intro__copy">
+                        <span class="about-v2__eyebrow">Our Essence</span>
+                        <div class="nemonic-separator nemonic-separator--left">
+                            <div class="nemonic-line"></div>
+                            <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
+                            <div class="nemonic-line"></div>
+                        </div>
+                        <h2 class="ab-heading">Beauty is in the <em class="scribble">Balance</em></h2>
+                        <p class="ab-lead">
+                            D'Zen Derma is built on a single conviction — that true beauty is found in balance. We blend
+                            science-led rejuvenation with holistic wellness to create care that feels calm, deliberate
+                            and unmistakably yours.
+                        </p>
+                        <p class="ab-body">
+                            Every protocol is personalised, every result earned through evidence, artistry and genuine
+                            care for the person in the chair.
+                        </p>
+
+                        <div class="about-v2__stats">
+                            <div class="about-v2__stat">
+                                <span class="about-v2__stat-num">5,000+</span>
+                                <span class="about-v2__stat-label">Transformations</span>
+                            </div>
+                            <div class="about-v2__stat">
+                                <span class="about-v2__stat-num">50+</span>
+                                <span class="about-v2__stat-label">Signature Treatments</span>
+                            </div>
+                            <div class="about-v2__stat">
+                                <span class="about-v2__stat-num">4.9★</span>
+                                <span class="about-v2__stat-label">Client Rating</span>
+                            </div>
+                        </div>
+
+                        <div class="dz-cta-wrap" style="text-align:left;margin-top:2rem;">
+                            <a href="../newthree.html#book" class="dz-cta">
+                                <span>Book a Consultation</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curvy separator: white intro → cream philosophy -->
+            <div class="section-separator" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#FAF9F6"
+                        d="M0,50 C320,150 420,0 740,50 C1060,100 1280,0 1440,50 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ═══════ 3. PHILOSOPHY / VALUES ═══════ -->
+        <section class="ab-values">
+            <div class="ab-wrap">
+                <div class="ab-section-head text-center">
+                    <span class="about-v2__eyebrow">Our Philosophy</span>
+                    <div class="nemonic-separator">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="ab-heading">Care that is <em class="scribble">considered</em></h2>
+                </div>
+
+                <div class="ab-values__grid">
+                    <article class="ab-value-card">
+                        <div class="ab-value-card__img">
+                            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80&auto=format&fit=crop"
+                                alt="Science-led care" loading="lazy">
+                        </div>
+                        <h3 class="ab-value-card__title">Science-Led</h3>
+                        <p class="ab-value-card__text">Evidence-based protocols and medical-grade technology behind every
+                            treatment.</p>
+                    </article>
+                    <article class="ab-value-card">
+                        <div class="ab-value-card__img">
+                            <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=600&q=80&auto=format&fit=crop"
+                                alt="Personalised approach" loading="lazy">
+                        </div>
+                        <h3 class="ab-value-card__title">Personalised</h3>
+                        <p class="ab-value-card__text">No two skins are alike — every plan is tailored to your goals and
+                            biology.</p>
+                    </article>
+                    <article class="ab-value-card">
+                        <div class="ab-value-card__img">
+                            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80&auto=format&fit=crop"
+                                alt="Holistic wellness" loading="lazy">
+                        </div>
+                        <h3 class="ab-value-card__title">Holistic</h3>
+                        <p class="ab-value-card__text">We treat skin as part of whole-body wellness, inside and out.</p>
+                    </article>
+                    <article class="ab-value-card">
+                        <div class="ab-value-card__img">
+                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80&auto=format&fit=crop"
+                                alt="Natural, subtle results" loading="lazy">
+                        </div>
+                        <h3 class="ab-value-card__title">Natural Results</h3>
+                        <p class="ab-value-card__text">Subtle, refined outcomes that look like the best version of
+                            you.</p>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Curvy separator: cream values → white visionary -->
+            <div class="section-separator" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#ffffff"
+                        d="M0,50 C320,150 420,0 740,50 C1060,100 1280,0 1440,50 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ═══════ 4. THE VISIONARY — Dr. Aarushi Passi Bhandari ═══════ -->
+        <section class="ab-visionary">
+            <div class="ab-wrap">
+                <div class="ab-visionary__grid">
+                    <!-- Portrait -->
+                    <div class="ab-visionary__media">
+                        <div class="ab-visionary__frame">
+                            <img src="../images/aarushi.png" alt="Dr. Aarushi Passi Bhandari" loading="lazy">
+                        </div>
+                        <div class="ab-visionary__chip">
+                            <span class="ab-visionary__chip-num">MD</span>
+                            <span class="ab-visionary__chip-txt">Dermatology<br>& Aesthetics</span>
+                        </div>
+                    </div>
+
+                    <!-- Story -->
+                    <div class="ab-visionary__copy">
+                        <span class="about-v2__eyebrow">The Visionary</span>
+                        <div class="nemonic-separator nemonic-separator--left">
+                            <div class="nemonic-line"></div>
+                            <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
+                            <div class="nemonic-line"></div>
+                        </div>
+                        <h2 class="ab-heading">Dr. Aarushi Passi <em>Bhandari</em></h2>
+                        <p class="ab-visionary__role">Founder · Aesthetic Physician · MD Dermatology</p>
+                        <p class="ab-lead">
+                            A dermatologist with global exposure and an obsessive commitment to clinical excellence.
+                            Dr. Aarushi leads every protocol with precision, safety and a science-first approach to
+                            aesthetic medicine that feels calm, deliberate and deeply personal.
+                        </p>
+                        <blockquote class="ab-visionary__quote">
+                            "The most ambitious thing a doctor can do is to leave a patient with less, not more."
+                        </blockquote>
+                        <div class="ab-visionary__tags">
+                            <span class="ab-chip">Global Fellowships</span>
+                            <span class="ab-chip">Senior Trainer</span>
+                            <span class="ab-chip">MD Dermatology</span>
+                            <span class="ab-chip">Regenerative Aesthetics</span>
+                        </div>
+
+                        <div class="ab-visionary__stats">
+                            <div class="ab-visionary__stat">
+                                <span class="ab-visionary__stat-num">120+</span>
+                                <span class="ab-visionary__stat-label">Doctors Trained</span>
+                            </div>
+                            <div class="ab-visionary__stat">
+                                <span class="ab-visionary__stat-num">14</span>
+                                <span class="ab-visionary__stat-label">Fellowships</span>
+                            </div>
+                            <div class="ab-visionary__stat">
+                                <span class="ab-visionary__stat-num">10+</span>
+                                <span class="ab-visionary__stat-label">Years Practice</span>
+                            </div>
+                        </div>
+
+                        <div class="dz-cta-wrap" style="text-align:left;margin-top:2rem;">
+                            <a href="../newthree.html#book" class="dz-cta">
+                                <span>Consult Dr. Aarushi</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curvy separator: white visionary → cream services -->
+            <div class="section-separator" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#FAF9F6"
+                        d="M0,50 C320,150 420,0 740,50 C1060,100 1280,0 1440,50 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ═══════ 5. SERVICES SHE PROVIDES ═══════ -->
+        <section class="ab-services">
+            <div class="ab-wrap">
+                <div class="ab-section-head text-center">
+                    <span class="about-v2__eyebrow">Signature Expertise</span>
+                    <div class="nemonic-separator">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="ab-heading">Treatments led by <em class="scribble">Dr. Aarushi</em></h2>
+                    <p class="ab-body" style="max-width:560px;margin:14px auto 0;">
+                        A curated range of medical-grade, science-led treatments — each personally supervised and
+                        refined by Dr. Aarushi.
+                    </p>
+                </div>
+
+                <div class="ab-services__grid">
+                    <article class="ab-service">
+                        <div class="ab-service__img">
+                            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=700&q=80&auto=format&fit=crop"
+                                alt="HydraFacial & Glow" loading="lazy">
+                        </div>
+                        <div class="ab-service__body">
+                            <h3 class="ab-service__title">HydraFacial &amp; Glow</h3>
+                            <p class="ab-service__text">Deep cleanse, hydration and instant luminosity for radiant,
+                                healthy skin.</p>
+                        </div>
+                    </article>
+                    <article class="ab-service">
+                        <div class="ab-service__img">
+                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=700&q=80&auto=format&fit=crop"
+                                alt="Regenerative PRP & GFC" loading="lazy">
+                        </div>
+                        <div class="ab-service__body">
+                            <h3 class="ab-service__title">PRP &amp; GFC Therapy</h3>
+                            <p class="ab-service__text">Regenerative growth-factor treatments for skin renewal and hair
+                                restoration.</p>
+                        </div>
+                    </article>
+                    <article class="ab-service">
+                        <div class="ab-service__img">
+                            <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?w=700&q=80&auto=format&fit=crop"
+                                alt="Injectables & Contouring" loading="lazy">
+                        </div>
+                        <div class="ab-service__body">
+                            <h3 class="ab-service__title">Injectables &amp; Contouring</h3>
+                            <p class="ab-service__text">Subtle Botox and fillers to refine, restore and balance — never
+                                overdone.</p>
+                        </div>
+                    </article>
+                    <article class="ab-service">
+                        <div class="ab-service__img">
+                            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=700&q=80&auto=format&fit=crop"
+                                alt="Laser & Skin Resurfacing" loading="lazy">
+                        </div>
+                        <div class="ab-service__body">
+                            <h3 class="ab-service__title">Laser &amp; Resurfacing</h3>
+                            <p class="ab-service__text">Advanced laser protocols for pigmentation, scars and even skin
+                                tone.</p>
+                        </div>
+                    </article>
+                    <article class="ab-service">
+                        <div class="ab-service__img">
+                            <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=700&q=80&auto=format&fit=crop"
+                                alt="Acne & Scar Revision" loading="lazy">
+                        </div>
+                        <div class="ab-service__body">
+                            <h3 class="ab-service__title">Acne &amp; Scar Revision</h3>
+                            <p class="ab-service__text">Targeted, evidence-based programmes to clear acne and soften
+                                scarring.</p>
+                        </div>
+                    </article>
+                    <article class="ab-service">
+                        <div class="ab-service__img">
+                            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=700&q=80&auto=format&fit=crop"
+                                alt="Holistic Skin Wellness" loading="lazy">
+                        </div>
+                        <div class="ab-service__body">
+                            <h3 class="ab-service__title">Holistic Wellness</h3>
+                            <p class="ab-service__text">Nutrition-aware, whole-body protocols that support lasting skin
+                                health.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Curvy separator: cream services → white team -->
+            <div class="section-separator" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#ffffff"
+                        d="M0,50 C320,150 420,0 740,50 C1060,100 1280,0 1440,50 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ═══════ 6. FOUNDERS / TEAM ═══════ -->
+        <section class="ab-team">
+            <div class="ab-wrap">
+                <div class="ab-section-head text-center">
+                    <span class="about-v2__eyebrow">The Minds Behind the Method</span>
+                    <div class="nemonic-separator">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="ab-heading">A team you can <em class="scribble">trust</em></h2>
+                    <p class="ab-body" style="max-width:560px;margin:14px auto 0;">
+                        Behind every result is a close-knit team of specialists, united by one standard — care done
+                        right.
+                    </p>
+                </div>
+
+                <div class="ab-team__grid">
+                    <article class="ab-team-card">
+                        <div class="ab-team-card__img">
+                            <img src="../images/aarushi.png" alt="Dr. Aarushi Passi Bhandari" loading="lazy">
+                        </div>
+                        <div class="ab-team-card__body">
+                            <h3 class="ab-team-card__name">Dr. Aarushi Passi Bhandari</h3>
+                            <span class="ab-team-card__role">Founder · Medical Direction</span>
+                        </div>
+                    </article>
+                    <article class="ab-team-card">
+                        <div class="ab-team-card__img">
+                            <img src="../images/rahul.png" alt="Rahul Bhandari" loading="lazy">
+                        </div>
+                        <div class="ab-team-card__body">
+                            <h3 class="ab-team-card__name">Rahul Bhandari</h3>
+                            <span class="ab-team-card__role">Founder · Brand &amp; Experience</span>
+                        </div>
+                    </article>
+                    <article class="ab-team-card">
+                        <div class="ab-team-card__img">
+                            <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=700&q=80&auto=format&fit=crop"
+                                alt="Dr. Meera Nair" loading="lazy">
+                        </div>
+                        <div class="ab-team-card__body">
+                            <h3 class="ab-team-card__name">Dr. Meera Nair</h3>
+                            <span class="ab-team-card__role">Wellness &amp; Regenerative Lead</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Curvy separator: white team → dark stats -->
+            <div class="section-separator" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#2f1810"
+                        d="M0,50 C320,150 420,0 740,50 C1060,100 1280,0 1440,50 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ═══════ 5. WHY US — DARK STATS BAND ═══════ -->
+        <section class="ab-why">
+            <div class="ab-wrap ab-why__inner">
+                <span class="about-v2__eyebrow ab-why__eyebrow">Why D'Zen Derma</span>
+                <div class="nemonic-separator">
+                    <div class="nemonic-line" style="background-color: rgba(255,255,255,0.4);"></div>
+                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon"
+                        style="filter: brightness(0) invert(1);" />
+                    <div class="nemonic-line" style="background-color: rgba(255,255,255,0.4);"></div>
+                </div>
+                <h2 class="ab-heading ab-heading--light">Confidence, <em>crafted with care</em></h2>
+                <p class="ab-why__lead">Thousands trust us to guide their skin journeys — with results that speak
+                    quietly, and last.</p>
+                <div class="ab-why__stats">
+                    <div class="ab-why__stat">
+                        <span class="ab-why__num">98%</span>
+                        <span class="ab-why__label">Would recommend us</span>
+                    </div>
+                    <div class="ab-why__stat">
+                        <span class="ab-why__num">25+</span>
+                        <span class="ab-why__label">Expert specialists</span>
+                    </div>
+                    <div class="ab-why__stat">
+                        <span class="ab-why__num">15k+</span>
+                        <span class="ab-why__label">Treatments delivered</span>
+                    </div>
+                    <div class="ab-why__stat">
+                        <span class="ab-why__num">4.9★</span>
+                        <span class="ab-why__label">Average client rating</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ CTA + FOOTER (shared) ═══════ -->
+        <div class="footer-stack-root">
+            <div class="footer-cta-card-wrapper">
+                <div class="footer-cta-card">
+                    <div class="section-header text-center mb-4">
+                        <span class="section-subtitle" style="color: #ffffff !important;">BEGIN YOUR JOURNEY</span>
+                        <div class="nemonic-separator">
+                            <div class="nemonic-line" style="background-color: #ffffff;"></div>
+                            <img src="nemonic.png" alt="nemonic" class="nemonic-icon"
+                                style="filter: brightness(0) invert(1);" />
+                            <div class="nemonic-line" style="background-color: #ffffff;"></div>
+                        </div>
+                    </div>
+                    <h2 class="footer-cta-heading">Ready to reveal your<br>most <span class="scribble"
+                            style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important;">radiant
+                            self?</span></h2>
+                    <p class="footer-cta-sub">Join thousands who've discovered the art of effortless confidence —
+                        crafted for your skin, your story.</p>
+                    <a href="../newthree.html#book" class="dz-cta"
+                        style="margin: 0 auto; display: inline-flex; border-color: rgba(255,255,255,0.5);">
+                        <span style="color: #ffffff !important;">Book a Consultation</span>
+                        <img src="nemonic.png" class="btn-icon"
+                            style="width: 14px; height: 14px; object-fit: contain; filter: brightness(0) invert(1);"
+                            alt="icon" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-reveal-wrapper">
+                <footer class="site-footer" aria-label="Site footer">
+                    <div class="footer-top">
+                        <div class="footer-brand">
+                            <a href="../newthree.html" class="footer-logo-link" aria-label="D'Zen Derma home">
+                                <img src="../images/logo1.png" alt="D'Zen Derma" class="footer-logo-img" />
+                            </a>
+                            <span class="footer-brand-rule"></span>
+                            <p class="footer-tagline">Where science meets the art of skin. Every treatment at D'Zen
+                                Derma is crafted to bring out your most radiant, confident self.</p>
+                            <div class="footer-contact-snippet">
+                                <a href="tel:+919876543210" class="footer-contact-line">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                                    </svg>
+                                    +91 98765 43210
+                                </a>
+                                <a href="../newthree.html#location" class="footer-contact-line">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                        <circle cx="12" cy="10" r="3" />
+                                    </svg>
+                                    Find our clinic
+                                </a>
+                            </div>
+                            <div class="footer-socials">
+                                <a href="#" class="footer-social-icon" aria-label="Instagram" target="_blank"
+                                    rel="noopener">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                        <circle cx="12" cy="12" r="4" />
+                                        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+                                    </svg>
+                                </a>
+                                <a href="#" class="footer-social-icon" aria-label="Facebook" target="_blank"
+                                    rel="noopener">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                                    </svg>
+                                </a>
+                                <a href="#" class="footer-social-icon" aria-label="WhatsApp" target="_blank"
+                                    rel="noopener">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.967-.272-.099-.47-.149-.669.15-.197.297-.767.967-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.917-2.207-.241-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.307 1.263.49 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884Z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <nav class="footer-nav" aria-label="Footer navigation">
+                            <div class="footer-nav-col">
+                                <h3 class="footer-nav-heading">Treatments</h3>
+                                <ul class="footer-nav-list">
+                                    <li><a href="../treatments/face/hydrafacial.html">HydraFacial</a></li>
+                                    <li><a href="../treatments/hair/hair-prp-gfc.html">PRP &amp; GFC</a></li>
+                                    <li><a href="../treatments.html">Skin Rejuvenation</a></li>
+                                    <li><a href="../treatments.html">Facial Contouring</a></li>
+                                    <li><a href="../treatments.html">Body Sculpting</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-nav-col">
+                                <h3 class="footer-nav-heading">Explore</h3>
+                                <ul class="footer-nav-list">
+                                    <li><a href="../concerns.html">Skin Concerns</a></li>
+                                    <li><a href="../aesthetics.html">Our Pillars</a></li>
+                                    <li><a href="../signatures.html">D'Zen Experience</a></li>
+                                    <li><a href="../journal.html">Journal</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-nav-col">
+                                <h3 class="footer-nav-heading">Company</h3>
+                                <ul class="footer-nav-list">
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="../newthree.html#contact">Contact</a></li>
+                                    <li><a href="../newthree.html#book">Book Appointment</a></li>
+                                    <li><a href="../newthree.html#location">Find Us</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+
+                    <div class="footer-divider"></div>
+
+                    <div class="footer-bottom">
+                        <p class="footer-copyright">© 2025 D'Zen Derma. All rights reserved.</p>
+                        <div class="footer-legal-links">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms of Service</a>
+                            <a href="#">Cookie Settings</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div><!-- /.footer-stack-root -->
+
+    </main>
+
+    <!-- Floating Bottom Action Bar -->
+    <div class="bottom-action-bar" id="bottomActionBar" aria-label="Quick actions">
+        <a href="https://wa.me/919876543210" class="bottom-action-btn" target="_blank" rel="noopener"
+            aria-label="Chat on WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+                <path
+                    d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.967-.272-.099-.47-.149-.669.15-.197.297-.767.967-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.917-2.207-.241-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.307 1.263.49 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884Z" />
+            </svg>
+            <span class="btn-label">WhatsApp</span>
+        </a>
+        <a href="tel:+919876543210" class="bottom-action-btn" aria-label="Call us">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+                <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span class="btn-label">Call</span>
+        </a>
+        <a href="../newthree.html#book" class="bottom-action-btn bottom-action-btn--primary"
+            aria-label="Book consultation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+                <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01" />
+            </svg>
+            <span class="btn-label">Book Now</span>
+        </a>
+        <a href="../newthree.html#location" class="bottom-action-btn" aria-label="View location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span class="btn-label">Map</span>
+        </a>
+    </div>
+
+    <script src="script.js?v=2.8"></script>
+</body>
+
+</html>

@@ -1231,7 +1231,7 @@
     color: #fff;
     font-family: var(--sans, 'Figtree', system-ui, sans-serif);
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 100;
     letter-spacing: 0.02em;
     text-decoration: none;
     border-radius: 999px;
@@ -1365,14 +1365,15 @@
     -webkit-backdrop-filter: blur(28px) saturate(1.6);
     backdrop-filter: blur(28px) saturate(1.6);
     border-left: 1px solid rgba(253, 230, 138, 0.10);
-    box-shadow: -20px 0 60px rgba(0, 0, 0, 0.4);
+    box-shadow: none;
     transform: translateX(100%);
-    transition: transform 0.45s cubic-bezier(.62, .05, .2, .99);
+    transition: transform 0.45s cubic-bezier(.62, .05, .2, .99), box-shadow 0.45s;
     overflow-y: auto;
 }
 
 .pnav-drawer.is-open {
     transform: translateX(0);
+    box-shadow: -20px 0 60px rgba(0, 0, 0, 0.4);
 }
 
 .pnav-drawer__close {
