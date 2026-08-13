@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>About D'Zen Derma — Where Science Meets the Art of Skin</title>
+    <meta name="description"
+        content="Meet D'Zen Derma — a premium aesthetic dermatology & wellness clinic blending science-led skin rejuvenation, regenerative aesthetics and holistic wellness, led by expert dermatologists." />
+
+    <!-- Google Fonts (same as home) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Base variable sheet, then shared v2 styles, then page-specific -->
+    <link rel="stylesheet" href="../styles.css?v=2.1" />
+    <link rel="stylesheet" href="styles.css?v=4.0" />
+    <link rel="stylesheet" href="about.css?v=1.3" />
+
+    <!-- Tailwind CSS (without preflight resets) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: {
+                preflight: false,
+            },
+            theme: {
+                extend: {
+                    colors: {
+                        brown: {
+                            900: '#2B1A12',
+                            800: '#4B2B20',
+                            700: '#6b3a22',
+                        },
+                        gold: {
+                            500: '#C4924A',
+                            300: '#E8C99A',
+                            200: '#F4E6D1',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="ab-page" style="background-color: #FDF8F3; color: #2B1A12;">
+
+    <!-- ═══════ Floating Pill Navbar v3 ═══════ -->
+    <nav id="pill-nav" class="pnav is-scrolled" aria-label="Main navigation">
+        <div class="pnav__left">
+            <a href="../newthree.html#book" class="pnav__cta">
+                Book
+                <img src="nemonic.png" class="btn-icon" style="width: 12px; height: 12px; object-fit: contain;"
+                    alt="icon" />
+            </a>
+        </div>
+        <a href="../newthree.html" class="pnav__logo" aria-label="Home">
+            <img src="../images/logo1.png" alt="D'Zen Derma" />
+        </a>
+        <div class="pnav__right">
+            <button class="pnav__burger" id="pnav-burger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile drawer -->
+    <div class="pnav-overlay" id="pnav-overlay"></div>
+    <aside class="pnav-drawer" id="pnav-drawer" aria-label="Menu">
+        <button class="pnav-drawer__close" id="pnav-close" aria-label="Close menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round">
+                <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+        </button>
+        <ul class="pnav-drawer__list">
+            <li><a href="../aesthetics.html">Pillars <span>→</span></a></li>
+            <li><a href="../concerns.html">Concerns <span>→</span></a></li>
+            <li><a href="../treatments.html">Treatments <span>→</span></a></li>
+            <li><a href="about.html">Who We Are <span>→</span></a></li>
+            <li><a href="../signatures.html">D'Zen Experience <span>→</span></a></li>
+            <li><a href="../journal.html">Journal <span>→</span></a></li>
+        </ul>
+    </aside>
+
+    <main class="bg-[#FDF8F3] text-[#2B1A12] font-sans antialiased">
+        <!-- ═══════ 1. EDITORIAL HERO ═══════ -->
+        <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-6 overflow-hidden">
+            <div class="container mx-auto max-w-7xl">
+                <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+                    <!-- Text Side -->
+                    <div class="lg:w-1/2 relative z-10">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="h-[1px] w-16 bg-[#C4924A]"></div>
+                            <span class="text-[#8C6D4F] uppercase tracking-[0.3em] text-xs font-semibold">About D'Zen</span>
+                        </div>
+                        <h1 class="text-6xl md:text-8xl font-serif text-[#2B1A12] leading-[1.1] tracking-tight mb-8" style="font-family: 'Playfair Display', serif;">
+                            The Art of <br>
+                            <span class="italic font-light text-[#C4924A]">Skin.</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-[#2B1A12]/70 font-light max-w-md leading-relaxed mb-12">
+                            A sanctuary of clinical excellence. We blend regenerative medicine with bespoke aesthetics to reveal your most luminous self.
+                        </p>
+                        <a href="../newthree.html#book" class="inline-flex items-center gap-4 group">
+                            <span class="text-xs font-semibold uppercase tracking-widest text-[#2B1A12] border-b border-[#2B1A12] pb-1 group-hover:border-[#C4924A] group-hover:text-[#C4924A] transition-colors">Discover Our Philosophy</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-5 h-5 text-[#C4924A] transform group-hover:translate-x-2 transition-transform">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <!-- Image Side (Arch) -->
+                    <div class="lg:w-1/2 relative">
+                        <div class="absolute -top-12 -left-12 w-48 h-48 bg-[#F4E6D1] rounded-full blur-3xl opacity-60"></div>
+                        <div class="absolute -bottom-12 -right-12 w-64 h-64 bg-[#E8C99A] rounded-full blur-3xl opacity-40"></div>
+                        <div class="relative w-full max-w-md mx-auto aspect-[3/4] rounded-t-[1000px] rounded-b-sm overflow-hidden shadow-[0_20px_60px_rgba(43,26,18,0.1)] border-8 border-white/40">
+                            <img src="https://images.unsplash.com/photo-1615397329977-857e4e137b75?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-1000" alt="Dermatology Aesthetics">
+                        </div>
+                        <!-- Floating minimal stat -->
+                        <div class="absolute bottom-16 -left-8 bg-white p-6 rounded-xl shadow-xl border border-[#FDF8F3] max-w-[180px]">
+                            <span class="block text-3xl font-serif text-[#C4924A] mb-2" style="font-family: 'Playfair Display', serif;">10+</span>
+                            <span class="text-[10px] uppercase tracking-widest text-[#2B1A12] font-semibold">Years of Clinical Excellence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ 2. MINIMALIST ESSENCE ═══════ -->
+        <section class="py-24 bg-white relative">
+            <div class="container mx-auto max-w-6xl px-6 text-center">
+                <h2 class="text-3xl md:text-5xl font-serif text-[#2B1A12] leading-tight max-w-4xl mx-auto mb-10" style="font-family: 'Playfair Display', serif;">
+                    "We believe true beauty is found in <span class="italic text-[#C4924A]">balance</span>—where science leads and artistry refines."
+                </h2>
+                <div class="h-[80px] w-[1px] bg-[#C4924A]/30 mx-auto mb-16"></div>
+                
+                <div class="grid md:grid-cols-3 gap-16 md:gap-8">
+                    <!-- Column 1 -->
+                    <div class="flex flex-col items-center">
+                        <span class="text-4xl font-serif text-[#E8C99A] mb-4" style="font-family: 'Playfair Display', serif;">01</span>
+                        <h3 class="text-lg font-semibold tracking-widest uppercase mb-4 text-[#2B1A12]">Science-Led</h3>
+                        <p class="text-[#2B1A12]/60 font-light leading-relaxed text-sm max-w-xs text-center">
+                            Rooted in medical dermatology, every protocol is evidence-based, utilizing only FDA-approved technologies and gold-standard formulations.
+                        </p>
+                    </div>
+                    <!-- Column 2 -->
+                    <div class="flex flex-col items-center">
+                        <span class="text-4xl font-serif text-[#E8C99A] mb-4" style="font-family: 'Playfair Display', serif;">02</span>
+                        <h3 class="text-lg font-semibold tracking-widest uppercase mb-4 text-[#2B1A12]">Bespoke Care</h3>
+                        <p class="text-[#2B1A12]/60 font-light leading-relaxed text-sm max-w-xs text-center">
+                            No two skins are alike. We craft highly individualized treatment plans designed to honor your unique biology and aesthetic goals.
+                        </p>
+                    </div>
+                    <!-- Column 3 -->
+                    <div class="flex flex-col items-center">
+                        <span class="text-4xl font-serif text-[#E8C99A] mb-4" style="font-family: 'Playfair Display', serif;">03</span>
+                        <h3 class="text-lg font-semibold tracking-widest uppercase mb-4 text-[#2B1A12]">Natural Grace</h3>
+                        <p class="text-[#2B1A12]/60 font-light leading-relaxed text-sm max-w-xs text-center">
+                            Our philosophy is subtle refinement. The most ambitious thing a doctor can do is leave a patient looking effortlessly themselves.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ 3. EDITORIAL GALLERY (Asymmetric) ═══════ -->
+        <section class="py-32 bg-[#FDF8F3]">
+            <div class="container mx-auto max-w-7xl px-6">
+                <div class="grid lg:grid-cols-12 gap-8 items-center">
+                    <!-- Image Left (Tall) -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="aspect-[3/4] overflow-hidden rounded-sm shadow-2xl relative">
+                            <img src="https://images.unsplash.com/photo-1598440947619-2ce6fb69771e?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Treatment">
+                            <div class="absolute inset-0 border border-white/20 m-4"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Content Center -->
+                    <div class="lg:col-span-4 lg:-ml-12 lg:mr-12 relative z-10 bg-white p-12 md:p-16 shadow-[0_30px_60px_rgba(43,26,18,0.05)] rounded-sm">
+                        <h2 class="text-3xl font-serif text-[#2B1A12] mb-6" style="font-family: 'Playfair Display', serif;">The Clinic</h2>
+                        <p class="text-[#2B1A12]/70 font-light leading-relaxed text-sm mb-8">
+                            Step into a space designed to quiet the mind. From the gentle lighting to the curated aromas, every detail of our clinic is intentional. We've created an environment where medical precision meets profound relaxation.
+                        </p>
+                        <a href="../newthree.html#location" class="text-xs font-semibold uppercase tracking-widest text-[#C4924A] hover:text-[#2B1A12] transition-colors">Take a Tour →</a>
+                    </div>
+                    
+                    <!-- Image Right (Square) -->
+                    <div class="lg:col-span-3 mt-12 lg:mt-32">
+                        <div class="aspect-square overflow-hidden rounded-sm shadow-xl">
+                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Products">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ 4. THE VISIONARY (Elegant Profile) ═══════ -->
+        <section class="py-32 bg-white relative">
+            <div class="absolute right-0 top-0 w-1/3 h-full bg-[#FDF8F3] hidden lg:block"></div>
+            
+            <div class="container mx-auto max-w-7xl px-6 relative z-10">
+                <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+                    
+                    <!-- Portrait -->
+                    <div class="lg:w-1/2">
+                        <div class="relative max-w-md mx-auto lg:ml-0">
+                            <!-- Minimal border frame -->
+                            <div class="absolute -inset-4 border border-[#E8C99A] rounded-sm hidden md:block"></div>
+                            <img src="../images/aarushi.png" alt="Dr. Aarushi Passi Bhandari" class="w-full h-auto object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700 shadow-xl relative z-10">
+                        </div>
+                    </div>
+
+                    <!-- Bio -->
+                    <div class="lg:w-1/2">
+                        <span class="text-[#8C6D4F] uppercase tracking-[0.3em] text-xs font-semibold mb-6 block">Medical Director</span>
+                        <h2 class="text-4xl md:text-5xl font-serif text-[#2B1A12] mb-4" style="font-family: 'Playfair Display', serif;">
+                            Dr. Aarushi <span class="italic text-[#C4924A] font-light">Bhandari</span>
+                        </h2>
+                        <p class="text-xs tracking-widest uppercase text-[#2B1A12]/50 mb-10 font-semibold">MD Dermatology · Aesthetic Physician</p>
+                        
+                        <div class="space-y-6 text-[#2B1A12]/70 font-light leading-relaxed text-sm max-w-lg mb-10">
+                            <p>
+                                Dr. Aarushi brings a global perspective to aesthetic medicine, combining rigorous dermatological training with an innate eye for proportion and symmetry.
+                            </p>
+                            <p>
+                                Specializing in regenerative aesthetics, her approach goes beyond surface-level correction. She focuses on cellular renewal, tissue health, and long-term vitality, ensuring results that evolve beautifully over time.
+                            </p>
+                        </div>
+
+                        <div class="flex items-center gap-6 border-t border-[#F4E6D1] pt-8">
+                            <div class="text-center">
+                                <span class="block text-2xl font-serif text-[#2B1A12]" style="font-family: 'Playfair Display', serif;">Global</span>
+                                <span class="text-[9px] uppercase tracking-wider text-[#8C6D4F]">Fellowships</span>
+                            </div>
+                            <div class="w-[1px] h-8 bg-[#F4E6D1]"></div>
+                            <div class="text-center">
+                                <span class="block text-2xl font-serif text-[#2B1A12]" style="font-family: 'Playfair Display', serif;">Trainer</span>
+                                <span class="text-[9px] uppercase tracking-wider text-[#8C6D4F]">Senior Injector</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ 5. OUR TEAM ═══════ -->
+        <section class="py-24 bg-[#FDF8F3]">
+            <div class="container mx-auto max-w-7xl px-6">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-serif text-[#2B1A12] mb-4" style="font-family: 'Playfair Display', serif;">The Experts</h2>
+                        <p class="text-[#2B1A12]/60 font-light text-sm max-w-md">A collective of specialists dedicated to the highest standards of care and ethical practice.</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+                    <!-- Team 1 -->
+                    <div class="group cursor-pointer">
+                        <div class="aspect-[3/4] overflow-hidden mb-6 relative">
+                            <img src="../images/aarushi.png" alt="Dr. Aarushi" class="w-full h-full object-cover filter grayscale-[10%] group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-[#2B1A12]/0 group-hover:bg-[#2B1A12]/10 transition-colors duration-500"></div>
+                        </div>
+                        <h3 class="text-xl font-serif text-[#2B1A12] mb-1" style="font-family: 'Playfair Display', serif;">Dr. Aarushi P. Bhandari</h3>
+                        <p class="text-[#C4924A] text-[10px] uppercase tracking-widest font-semibold">Founder · Medical Direction</p>
+                    </div>
+                    <!-- Team 2 -->
+                    <div class="group cursor-pointer">
+                        <div class="aspect-[3/4] overflow-hidden mb-6 relative">
+                            <img src="../images/rahul.png" alt="Rahul Bhandari" class="w-full h-full object-cover filter grayscale-[10%] group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-[#2B1A12]/0 group-hover:bg-[#2B1A12]/10 transition-colors duration-500"></div>
+                        </div>
+                        <h3 class="text-xl font-serif text-[#2B1A12] mb-1" style="font-family: 'Playfair Display', serif;">Rahul Bhandari</h3>
+                        <p class="text-[#C4924A] text-[10px] uppercase tracking-widest font-semibold">Founder · Brand & Experience</p>
+                    </div>
+                    <!-- Team 3 -->
+                    <div class="group cursor-pointer">
+                        <div class="aspect-[3/4] overflow-hidden mb-6 relative">
+                            <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?q=80&w=800&auto=format&fit=crop" alt="Dr. Meera" class="w-full h-full object-cover filter grayscale-[10%] group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-[#2B1A12]/0 group-hover:bg-[#2B1A12]/10 transition-colors duration-500"></div>
+                        </div>
+                        <h3 class="text-xl font-serif text-[#2B1A12] mb-1" style="font-family: 'Playfair Display', serif;">Dr. Meera Nair</h3>
+                        <p class="text-[#C4924A] text-[10px] uppercase tracking-widest font-semibold">Wellness & Regenerative Lead</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ 6. STATS (Minimal text-based) ═══════ -->
+        <section class="py-20 border-t border-[#E8C99A]/30 bg-white">
+            <div class="container mx-auto max-w-6xl px-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center divide-x divide-[#F4E6D1]">
+                    <div>
+                        <span class="block text-4xl font-serif text-[#2B1A12] mb-3" style="font-family: 'Playfair Display', serif;">98%</span>
+                        <span class="text-[#8C6D4F] text-[10px] uppercase tracking-widest font-semibold">Client Retention</span>
+                    </div>
+                    <div>
+                        <span class="block text-4xl font-serif text-[#2B1A12] mb-3" style="font-family: 'Playfair Display', serif;">25+</span>
+                        <span class="text-[#8C6D4F] text-[10px] uppercase tracking-widest font-semibold">Expert Staff</span>
+                    </div>
+                    <div>
+                        <span class="block text-4xl font-serif text-[#2B1A12] mb-3" style="font-family: 'Playfair Display', serif;">15k+</span>
+                        <span class="text-[#8C6D4F] text-[10px] uppercase tracking-widest font-semibold">Procedures</span>
+                    </div>
+                    <div>
+                        <span class="block text-4xl font-serif text-[#2B1A12] mb-3" style="font-family: 'Playfair Display', serif;">4.9★</span>
+                        <span class="text-[#8C6D4F] text-[10px] uppercase tracking-widest font-semibold">Reviews</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ CTA + FOOTER (shared) ═══════ -->
+        <div class="footer-stack-root">
+            <div class="footer-cta-card-wrapper">
+                <div class="footer-cta-card">
+                    <div class="section-header text-center mb-4">
+                        <span class="section-subtitle" style="color: #ffffff !important;">BEGIN YOUR JOURNEY</span>
+                        <div class="nemonic-separator">
+                            <div class="nemonic-line" style="background-color: #ffffff;"></div>
+                            <img src="nemonic.png" alt="nemonic" class="nemonic-icon"
+                                style="filter: brightness(0) invert(1);" />
+                            <div class="nemonic-line" style="background-color: #ffffff;"></div>
+                        </div>
+                    </div>
+                    <h2 class="footer-cta-heading">Ready to reveal your<br>most <span class="scribble"
+                            style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important;">radiant
+                            self?</span></h2>
+                    <p class="footer-cta-sub">Join thousands who've discovered the art of effortless confidence —
+                        crafted for your skin, your story.</p>
+                    <a href="../newthree.html#book" class="dz-cta"
+                        style="margin: 0 auto; display: inline-flex; border-color: rgba(255,255,255,0.5);">
+                        <span style="color: #ffffff !important;">Book a Consultation</span>
+                        <img src="nemonic.png" class="btn-icon"
+                            style="width: 14px; height: 14px; object-fit: contain; filter: brightness(0) invert(1);"
+                            alt="icon" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-reveal-wrapper">
+                <footer class="site-footer" aria-label="Site footer">
+                    <div class="footer-top">
+                        <div class="footer-brand">
+                            <a href="../newthree.html" class="footer-logo-link" aria-label="D'Zen Derma home">
+                                <img src="../images/logo1.png" alt="D'Zen Derma" class="footer-logo-img" />
+                            </a>
+                            <span class="footer-brand-rule"></span>
+                            <p class="footer-tagline">Where science meets the art of skin. Every treatment at D'Zen
+                                Derma is crafted to bring out your most radiant, confident self.</p>
+                            <div class="footer-contact-snippet">
+                                <a href="tel:+919876543210" class="footer-contact-line">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                                    </svg>
+                                    +91 98765 43210
+                                </a>
+                                <a href="../newthree.html#location" class="footer-contact-line">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                        <circle cx="12" cy="10" r="3" />
+                                    </svg>
+                                    Find our clinic
+                                </a>
+                            </div>
+                            <div class="footer-socials">
+                                <a href="#" class="footer-social-icon" aria-label="Instagram" target="_blank"
+                                    rel="noopener">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                        <circle cx="12" cy="12" r="4" />
+                                        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+                                    </svg>
+                                </a>
+                                <a href="#" class="footer-social-icon" aria-label="Facebook" target="_blank"
+                                    rel="noopener">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                                    </svg>
+                                </a>
+                                <a href="#" class="footer-social-icon" aria-label="WhatsApp" target="_blank"
+                                    rel="noopener">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.967-.272-.099-.47-.149-.669.15-.197.297-.767.967-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.917-2.207-.241-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.307 1.263.49 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884Z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <nav class="footer-nav" aria-label="Footer navigation">
+                            <div class="footer-nav-col">
+                                <h3 class="footer-nav-heading">Treatments</h3>
+                                <ul class="footer-nav-list">
+                                    <li><a href="../treatments/face/hydrafacial.html">HydraFacial</a></li>
+                                    <li><a href="../treatments/hair/hair-prp-gfc.html">PRP &amp; GFC</a></li>
+                                    <li><a href="../treatments.html">Skin Rejuvenation</a></li>
+                                    <li><a href="../treatments.html">Facial Contouring</a></li>
+                                    <li><a href="../treatments.html">Body Sculpting</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-nav-col">
+                                <h3 class="footer-nav-heading">Explore</h3>
+                                <ul class="footer-nav-list">
+                                    <li><a href="../concerns.html">Skin Concerns</a></li>
+                                    <li><a href="../aesthetics.html">Our Pillars</a></li>
+                                    <li><a href="../signatures.html">D'Zen Experience</a></li>
+                                    <li><a href="../journal.html">Journal</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-nav-col">
+                                <h3 class="footer-nav-heading">Company</h3>
+                                <ul class="footer-nav-list">
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="../newthree.html#contact">Contact</a></li>
+                                    <li><a href="../newthree.html#book">Book Appointment</a></li>
+                                    <li><a href="../newthree.html#location">Find Us</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+
+                    <div class="footer-divider"></div>
+
+                    <div class="footer-bottom">
+                        <p class="footer-copyright">© 2025 D'Zen Derma. All rights reserved.</p>
+                        <div class="footer-legal-links">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms of Service</a>
+                            <a href="#">Cookie Settings</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div><!-- /.footer-stack-root -->
+
+    </main>
+
+    <!-- Floating Bottom Action Bar -->
+    <div class="bottom-action-bar" id="bottomActionBar" aria-label="Quick actions">
+        <a href="https://wa.me/919876543210" class="bottom-action-btn" target="_blank" rel="noopener"
+            aria-label="Chat on WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+                <path
+                    d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.967-.272-.099-.47-.149-.669.15-.197.297-.767.967-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.917-2.207-.241-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.307 1.263.49 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884Z" />
+            </svg>
+            <span class="btn-label">WhatsApp</span>
+        </a>
+        <a href="tel:+919876543210" class="bottom-action-btn" aria-label="Call us">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+                <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span class="btn-label">Call</span>
+        </a>
+        <a href="../newthree.html#book" class="bottom-action-btn bottom-action-btn--primary"
+            aria-label="Book consultation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+                <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01" />
+            </svg>
+            <span class="btn-label">Book Now</span>
+        </a>
+        <a href="../newthree.html#location" class="bottom-action-btn" aria-label="View location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span class="btn-label">Map</span>
+        </a>
+    </div>
+
+    <script src="script.js?v=2.8"></script>
+</body>
+
+</html>

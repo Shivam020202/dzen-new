@@ -847,8 +847,6 @@ body {
 .brand-philosophy-strip-section {
     position: relative;
     width: 100%;
-    background-color: #FDF8F3;
-    
 }
 
 .philosophy-strip-container {
@@ -858,23 +856,58 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Keeping user's Unsplash image */
-    background-image: url('https://images.unsplash.com/photo-1708465034183-7e3528d41944?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background: linear-gradient(35deg, #2f1810 0%, #8C4A2E 60%, #8a5815 85%, #8a6017 100%);
+    isolation: isolate;
+    overflow: hidden;
 }
 
-/* Background Image Overlay */
-/* .philosophy-strip-container::before {
-    content: '';
+/* Ambient light overlay glows from top */
+.philosophy-strip-container::before {
+    content: "";
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.4); 
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background:
+        radial-gradient(ellipse 65% 60% at 50% -8%, rgba(198, 119, 119, 0.16) 0%, transparent 68%),
+        radial-gradient(ellipse 40% 40% at 80% 110%, rgba(143, 113, 74, 0.15) 0%, transparent 70%);
+    pointer-events: none;
     z-index: 0;
-} */
+}
+
+/* Noise texture overlay for depth */
+.philosophy-strip-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.25;
+    mix-blend-mode: overlay;
+}
+
+/* Adjust text colors for the dark gradient background */
+#brand-philosophy .section-subtitle,
+#brand-philosophy .section-title {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+#brand-philosophy .section-title .scribble {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+#brand-philosophy .section-desc {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+#brand-philosophy .nemonic-line {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+#brand-philosophy .nemonic-icon {
+    filter: brightness(0) invert(1) !important;
+}
 
 .philosophy-strip-inner {
     position: relative;
@@ -976,7 +1009,7 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 50px auto 0;
 }
 
@@ -984,7 +1017,7 @@ body {
     grid-area: 1 / 1;
     transform: translateY(20px);
     width: 100%;
-    text-align: center;
+    text-align: left;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -994,8 +1027,44 @@ body {
     -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.9);
     border-radius: 24px;
-    padding: 35px 45px;
+    padding: 30px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.panel-image {
+    flex: 0 0 45%;
+    max-width: 45%;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+}
+
+.panel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.panel-text {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .philosophy-content-panel {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+        padding: 25px;
+    }
+    .panel-image {
+        max-width: 100%;
+        flex: none;
+        width: 100%;
+    }
 }
 
 .philosophy-content-panel.is-active {
