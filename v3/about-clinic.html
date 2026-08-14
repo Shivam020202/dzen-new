@@ -41,7 +41,7 @@
             width: 100%;
             height: clamp(320px, 38vw, 500px);
             margin: 0 0 22px;
-            border-radius: 220px 220px 20px 20px;
+            border-radius: 20px;
             overflow: hidden;
             background: rgba(196, 146, 74, .06);
             box-shadow: 0 44px 90px -40px rgba(43, 26, 18, .38);
@@ -155,7 +155,11 @@
         @media (max-width: 767.98px) {
             .ac-hero-media {
                 height: clamp(260px, 56vw, 340px);
-                border-radius: 130px 130px 14px 14px;
+                border-radius: 20px;
+            }
+
+            #clinic-locations .ac-lead {
+                padding: 0 16px;
             }
 
             .ac-hero-nav {
@@ -182,7 +186,7 @@
         .ac-arch {
             width: 100%;
             height: clamp(250px, 24vw, 320px);
-            border-radius: 500px 500px 10px 10px;
+            border-radius: 20px;
             overflow: hidden;
             background: rgba(196, 146, 74, .06);
         }
@@ -235,10 +239,8 @@
         /* ── Section 2: Our Space + Technology ── */
         #clinic-space {
             position: relative;
-            padding: 100px 0 110px;
-            background:
-                radial-gradient(50% 55% at 78% 12%, rgba(196, 146, 74, .10) 0%, transparent 70%),
-                #FDF8F3;
+            padding: clamp(60px, 8vw, 100px) 0 clamp(70px, 10vw, 110px);
+            background: linear-gradient(to top, #FDF8F3, #F4EFE8);
         }
 
         /* Image bleeds off the LEFT edge, copy sits on the container line —
@@ -305,7 +307,7 @@
             isolation: isolate;
             overflow: hidden;
             background: linear-gradient(35deg, #2f1810 0%, #8C4A2E 60%, #8a5815 85%, #8a6017 100%);
-            padding: 0 0 110px;
+            padding: 0 0 clamp(70px, 10vw, 110px);
         }
 
         #clinic-commitment::before {
@@ -350,7 +352,7 @@
         #clinic-commitment .container {
             position: relative;
             z-index: 2;
-            padding-top: clamp(140px, 14vw, 200px);
+            padding-top: clamp(90px, 12vw, 180px);
         }
 
         /* Four standards as an open editorial row — no panel, no card.
@@ -401,8 +403,8 @@
 
         /* ── Section 4: Location cards ── */
         #clinic-locations {
-            padding: 100px 0 120px;
-            background-color: #ffffff;
+            padding: clamp(60px, 8vw, 100px) 0 clamp(70px, 10vw, 120px);
+            background-color: #FDF8F3;
         }
 
         .ac-loc {
@@ -497,7 +499,7 @@
         @media (max-width: 991.98px) {
             .ac-vows {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 0 clamp(24px, 4vw, 44px);
+                gap: 40px clamp(24px, 4vw, 44px);
                 max-width: 720px;
             }
 
@@ -518,11 +520,19 @@
             .ac-vows {
                 grid-template-columns: 1fr;
                 max-width: 420px;
+                gap: 40px 0;
             }
 
-            .ac-vow:nth-child(2) {
+            .ac-vow {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .ac-vow:nth-child(n+2) {
                 border-top: 1px solid rgba(255, 255, 255, .16);
-                padding-top: 30px;
+                padding-top: 40px;
             }
         }
 
@@ -588,6 +598,17 @@
             font-family: 'Playfair Display', serif !important;
             font-size: 22px !important;
         }
+        }
+
+        /* Force opaque navbar to sit cleanly above the dark textured section */
+        .pnav {
+            background: #ffffff !important;
+            border-bottom: 1px solid rgba(180, 140, 90, 0.14) !important;
+            box-shadow: 0 2px 18px rgba(0, 0, 0, 0.06) !important;
+        }
+        .pnav .pnav__logo img { filter: none !important; }
+        .pnav .pnav__burger { background: rgba(75, 43, 32, 0.06) !important; }
+        .pnav .pnav__burger span { background: #3A2418 !important; }
     </style>
 
 </head>
@@ -636,12 +657,22 @@
 
         <!-- BREADCRUMB HEADER -->
         <section class="breadcrumb-header position-relative d-flex align-items-center justify-content-center"
-            style="background-image: linear-gradient(rgba(61, 23, 22, 0.8), rgba(61, 23, 22, 0.8)), url('../images/contour-texture.webp'); background-size: cover; background-position: center; min-height: 390px; padding-top: 80px; padding-bottom: 60px; border-bottom: none; overflow: hidden;">
+            style="background-image: linear-gradient(rgba(61, 23, 22, 0.8), rgba(61, 23, 22, 0.8)), url('../images/contour-texture.webp'); background-size: cover; background-position: center; min-height: 390px; padding-top: 130px; padding-bottom: 60px; border-bottom: none; overflow: hidden;">
 
             <div class="container position-relative text-center" style="z-index: 2;">
-                <h1
-                    style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; font-family: 'Inter', sans-serif !important; font-style: normal !important; font-weight: 400 !important; font-size: clamp(28px, 4vw, 36px) !important; letter-spacing: 8px !important; text-transform: uppercase !important; margin: 0 !important; text-shadow: 0 4px 15px rgba(0,0,0,0.5) !important; opacity: 1 !important;">
-                    About The Clinic</h1>
+                <span class="section-subtitle" style="color: rgba(255, 255, 255, 0.7) !important;">ABOUT THE
+                    CLINIC</span>
+                <div class="nemonic-separator mt-2 mb-4">
+                    <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
+                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon"
+                        style="filter: brightness(0) invert(1);" />
+                    <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
+                </div>
+                <h1 class="page-title mb-3"
+                    style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400 !important; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; font-size: clamp(22px, 3vw, 25px); margin: 0;">
+                    Welcome to D'Zen Derma
+                </h1>
+
             </div>
 
             <!-- Curvy Bottom Separator -->
@@ -654,7 +685,7 @@
         </section>
 
         <!-- 1. CLINIC IMAGERY HERO -->
-        <section class="ac position-relative" id="clinic-hero" style="padding: 90px 0 100px;">
+        <section class="ac position-relative" id="clinic-hero" style="padding: 40px 0 60px;">
             <div class="container">
 
                 <div class="section-header text-center mb-5" style="max-width: 780px; margin-inline: auto;">
@@ -713,29 +744,7 @@
                 <div class="ac-hero-dots" role="tablist" aria-label="Choose image" data-slider-dots></div>
                 <div class="ac-hero-strip">D'Zen Derma &middot; Delhi &amp; Gurgaon</div>
 
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="ac-arch">
-                            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"
-                                alt="The D'Zen Derma reception and waiting lounge">
-                        </div>
-                        <div class="ac-caption">The Arrival</div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="ac-arch">
-                            <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=800&auto=format&fit=crop"
-                                alt="A private treatment suite prepared for a procedure">
-                        </div>
-                        <div class="ac-caption">The Suites</div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="ac-arch">
-                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop"
-                                alt="Consultation and diagnostic room">
-                        </div>
-                        <div class="ac-caption">The Consult</div>
-                    </div>
-                </div>
+
             </div>
         </section>
 
@@ -979,32 +988,6 @@
 
         <div class="footer-stack-root">
 
-            <!-- CTA Card (sits on top, scrolls away upward) -->
-            <div class="footer-cta-card-wrapper">
-                <div class="footer-cta-card">
-                    <div class="section-header text-center mb-4">
-                        <span class="section-subtitle" style="color: #ffffff !important;">BEGIN YOUR JOURNEY</span>
-                        <div class="nemonic-separator">
-                            <div class="nemonic-line" style="background-color: #ffffff;"></div>
-                            <img src="nemonic.png" alt="nemonic" class="nemonic-icon"
-                                style="filter: brightness(0) invert(1);" />
-                            <div class="nemonic-line" style="background-color: #ffffff;"></div>
-                        </div>
-                    </div>
-                    <h2 class="footer-cta-heading">Ready to reveal your<br>most <span class="scribble"
-                            style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important;">radiant
-                            self?</span></h2>
-                    <p class="footer-cta-sub">Join thousands who've discovered the art of effortless confidence —
-                        crafted for your skin, your story.</p>
-                    <a href="../newthree.html#book" class="dz-cta"
-                        style="margin: 0 auto; display: inline-flex; border-color: rgba(255,255,255,0.5);">
-                        <span style="color: #ffffff !important;">Book a Consultation</span>
-                        <img src="nemonic.png" class="btn-icon"
-                            style="width: 14px; height: 14px; object-fit: contain; filter: brightness(0) invert(1);"
-                            alt="icon" />
-                    </a>
-                </div>
-            </div>
 
             <!-- Footer (sticky-pinned behind, revealed as CTA card scrolls away) -->
             <div class="footer-reveal-wrapper">
@@ -1067,7 +1050,8 @@
                             </div>
                             <div class="footer-contact-item footer-contact-item--address">
                                 <span class="footer-contact-label">Visit Us</span>
-                                <span class="footer-contact-value">18A, Ring Rd, near Havells,<br>Vikram Vihar, Lajpat Nagar 4,<br>Lajpat Nagar, South Delhi,<br>New Delhi, Delhi 110024, India</span>
+                                <span class="footer-contact-value">18A, Ring Rd, near Havells,<br>Vikram Vihar, Lajpat
+                                    Nagar 4,<br>Lajpat Nagar, South Delhi,<br>New Delhi, Delhi 110024, India</span>
                             </div>
                         </div>
                     </div>

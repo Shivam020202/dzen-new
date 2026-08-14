@@ -40,6 +40,18 @@
             }
         }
     </script>
+
+    <style>
+        /* Force opaque navbar to sit cleanly above the dark textured section */
+        .pnav {
+            background: #ffffff !important;
+            border-bottom: 1px solid rgba(180, 140, 90, 0.14) !important;
+            box-shadow: 0 2px 18px rgba(0, 0, 0, 0.06) !important;
+        }
+        .pnav .pnav__logo img { filter: none !important; }
+        .pnav .pnav__burger { background: rgba(75, 43, 32, 0.06) !important; }
+        .pnav .pnav__burger span { background: #3A2418 !important; }
+    </style>
 </head>
 
 <body style="background-color: #FDF8F3; color: #2B1A12;">
@@ -88,18 +100,32 @@
     </aside>
 
     <main>
-        
+
         <!-- Inner Page Header -->
-        <section class="inner-page-header text-center" style="padding: 140px 20px 80px; background-color: #FDF8F3;">
-            <div class="container">
-                <span class="section-subtitle">GET IN TOUCH</span>
-                <div class="nemonic-separator">
-                    <div class="nemonic-line"></div>
-                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
-                    <div class="nemonic-line"></div>
+        <section class="breadcrumb-header position-relative d-flex align-items-center justify-content-center"
+            style="background-image: linear-gradient(rgba(61, 23, 22, 0.8), rgba(61, 23, 22, 0.8)), url('../images/contour-texture.webp'); background-size: cover; background-position: center; min-height: 390px; padding-top: 130px; padding-bottom: 60px; border-bottom: none; overflow: hidden;">
+
+            <div class="container position-relative text-center" style="z-index: 2;">
+                <span class="section-subtitle" style="color: rgba(255, 255, 255, 0.7) !important;">GET IN TOUCH</span>
+                <div class="nemonic-separator mt-2 mb-4">
+                    <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
+                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon"
+                        style="filter: brightness(0) invert(1);" />
+                    <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
                 </div>
-                <h1 class="section-title">We'd Love to Hear From <span class="scribble">You</span></h1>
-                <p class="section-desc mx-auto" style="max-width: 600px;">Whether you have a question about our treatments, need assistance booking an appointment, or just want to say hello, our team is here for you.</p>
+                <h1 class="page-title mb-3"
+                    style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400 !important; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; font-size: clamp(22px, 3vw, 25px); margin: 0;">
+                    We'd Love to Hear From <span class="scribble"
+                        style="color: #E8C99A !important; -webkit-text-fill-color: #E8C99A !important;">You</span>
+                </h1>
+            </div>
+
+            <!-- Curvy Bottom Separator -->
+            <div class="position-absolute w-100" style="bottom: -1px; left: 0; z-index: 2;">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                    style="display: block; width: 100%; height: clamp(70px, 7vw, 110px);">
+                    <path fill="#FDF8F3" d="M0,26 C400,136 1040,-36 1440,52 L1440,100 L0,100 Z"></path>
+                </svg>
             </div>
         </section>
 
@@ -110,37 +136,65 @@
                     <!-- Contact Info Cards -->
                     <div class="col-lg-5">
                         <div class="contact-info-wrap pe-lg-4">
-                            <h3 class="mb-4" style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #2B1A12;">Contact Information</h3>
-                            <p class="mb-5" style="color: rgba(43, 26, 18, 0.7); font-size: 1.1rem; line-height: 1.6;">Reach out to us through any of the following channels. We aim to respond to all inquiries as swiftly as possible.</p>
+                            <h3 class="mb-4"
+                                style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #2B1A12;">
+                                Contact Information</h3>
+                            <p class="mb-5" style="color: rgba(43, 26, 18, 0.7); font-size: 1.1rem; line-height: 1.6;">
+                                Reach out to us through any of the following channels. We aim to respond to all
+                                inquiries as swiftly as possible.</p>
 
                             <div class="contact-info-card mb-4 d-flex align-items-start gap-4">
-                                <div class="icon-box" style="width: 54px; height: 54px; background: #E8C99A; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #2B1A12;">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                <div class="icon-box"
+                                    style="width: 54px; height: 54px; background: #E8C99A; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #2B1A12;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.5">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                    </svg>
                                 </div>
                                 <div>
-                                    <h5 class="mb-2" style="font-weight: 600; font-family: 'Inter', sans-serif; font-size: 1.25rem;">Phone & WhatsApp</h5>
+                                    <h5 class="mb-2"
+                                        style="font-weight: 400; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.45rem; color: #2B1A12;">
+                                        Phone & WhatsApp</h5>
                                     <p class="mb-1" style="font-size: 1rem; color: #2B1A12;">(+91) 93112 54441</p>
                                 </div>
                             </div>
 
                             <div class="contact-info-card mb-4 d-flex align-items-start gap-4">
-                                <div class="icon-box" style="width: 54px; height: 54px; background: #E8C99A; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #2B1A12;">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                <div class="icon-box"
+                                    style="width: 54px; height: 54px; background: #E8C99A; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #2B1A12;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.5">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                        <polyline points="22,6 12,13 2,6" />
+                                    </svg>
                                 </div>
                                 <div>
-                                    <h5 class="mb-2" style="font-weight: 600; font-family: 'Inter', sans-serif; font-size: 1.25rem;">Email Address</h5>
+                                    <h5 class="mb-2"
+                                        style="font-weight: 400; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.45rem; color: #2B1A12;">
+                                        Email Address</h5>
                                     <p class="mb-1" style="font-size: 1rem; color: #2B1A12;">hello@dzenderma.com</p>
                                     <p class="mb-0" style="font-size: 1rem; color: #2B1A12;">bookings@dzenderma.com</p>
                                 </div>
                             </div>
 
                             <div class="contact-info-card d-flex align-items-start gap-4">
-                                <div class="icon-box" style="width: 54px; height: 54px; background: #E8C99A; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #2B1A12;">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                <div class="icon-box"
+                                    style="width: 54px; height: 54px; background: #E8C99A; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #2B1A12;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.5">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                        <circle cx="12" cy="10" r="3" />
+                                    </svg>
                                 </div>
                                 <div>
-                                    <h5 class="mb-2" style="font-weight: 600; font-family: 'Inter', sans-serif; font-size: 1.25rem;">Clinic Location</h5>
-                                    <p class="mb-0" style="font-size: 1rem; color: #2B1A12; line-height: 1.5;">18A, Ring Rd, near Havells,<br>Vikram Vihar, Lajpat Nagar 4,<br>Lajpat Nagar, South Delhi,<br>New Delhi, Delhi 110024, India</p>
+                                    <h5 class="mb-2"
+                                        style="font-weight: 400; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.45rem; color: #2B1A12;">
+                                        Clinic Location</h5>
+                                    <p class="mb-0" style="font-size: 1rem; color: #2B1A12; line-height: 1.5;">18A, Ring
+                                        Rd, near Havells,<br>Vikram Vihar, Lajpat Nagar 4,<br>Lajpat Nagar, South
+                                        Delhi,<br>New Delhi, Delhi 110024, India</p>
                                 </div>
                             </div>
                         </div>
@@ -148,31 +202,41 @@
 
                     <!-- Contact Form -->
                     <div class="col-lg-7">
-                        <div class="contact-form-card p-4 p-md-5 rounded-4" style="background-color: #fff; box-shadow: 0 20px 50px rgba(43, 26, 18, 0.05); border: 1px solid rgba(43, 26, 18, 0.05);">
-                            <h3 class="mb-4" style="font-family: 'Playfair Display', serif; font-size: 2rem; color: #2B1A12;">Send Us A Message</h3>
+                        <div class="contact-form-card p-4 p-md-5 rounded-4"
+                            style="background-color: #fff; box-shadow: 0 20px 50px rgba(43, 26, 18, 0.05); border: 1px solid rgba(43, 26, 18, 0.05);">
+                            <h3 class="mb-4"
+                                style="font-family: 'Playfair Display', serif; font-size: 2rem; color: #2B1A12;">Send Us
+                                A Message</h3>
                             <form action="#" method="POST" id="contactForm">
                                 <div class="row g-4">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" placeholder="Your Name" required style="border-radius: 12px; border: 1px solid #e0d5cd; background: #fdfaf8; box-shadow: none;">
+                                            <input type="text" class="form-control" id="name" placeholder="Your Name"
+                                                required
+                                                style="border-radius: 12px; border: 1px solid #e0d5cd; background: #fdfaf8; box-shadow: none;">
                                             <label for="name" style="color: rgba(43, 26, 18, 0.6);">Your Name</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" placeholder="Your Email" required style="border-radius: 12px; border: 1px solid #e0d5cd; background: #fdfaf8; box-shadow: none;">
+                                            <input type="email" class="form-control" id="email" placeholder="Your Email"
+                                                required
+                                                style="border-radius: 12px; border: 1px solid #e0d5cd; background: #fdfaf8; box-shadow: none;">
                                             <label for="email" style="color: rgba(43, 26, 18, 0.6);">Your Email</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="tel" class="form-control" id="phone" placeholder="Phone Number" style="border-radius: 12px; border: 1px solid #e0d5cd; background: #fdfaf8; box-shadow: none;">
-                                            <label for="phone" style="color: rgba(43, 26, 18, 0.6);">Phone Number</label>
+                                            <input type="tel" class="form-control" id="phone" placeholder="Phone Number"
+                                                style="border-radius: 12px; border: 1px solid #e0d5cd; background: #fdfaf8; box-shadow: none;">
+                                            <label for="phone" style="color: rgba(43, 26, 18, 0.6);">Phone
+                                                Number</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <select class="form-select" id="subject" aria-label="Subject" style="border-radius: 12px; border: 1px solid #e0d5cd; background: #fdfaf8; box-shadow: none; color: #2B1A12;">
+                                            <select class="form-select" id="subject" aria-label="Subject"
+                                                style="border-radius: 12px; border: 1px solid #e0d5cd; background: #fdfaf8; box-shadow: none; color: #2B1A12;">
                                                 <option selected>General Inquiry</option>
                                                 <option value="1">Book an Appointment</option>
                                                 <option value="2">Treatment Information</option>
@@ -183,14 +247,19 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 160px; border-radius: 12px; border: 1px solid #e0d5cd; background: #fdfaf8; box-shadow: none;" required></textarea>
+                                            <textarea class="form-control" placeholder="Leave a message here"
+                                                id="message"
+                                                style="height: 160px; border-radius: 12px; border: 1px solid #e0d5cd; background: #fdfaf8; box-shadow: none;"
+                                                required></textarea>
                                             <label for="message" style="color: rgba(43, 26, 18, 0.6);">Message</label>
                                         </div>
                                     </div>
                                     <div class="col-12 mt-4 pt-2">
-                                        <button type="submit" class="dz-cta w-100 justify-content-center" style="border: none; padding: 18px 24px; border-radius: 12px;">
+                                        <button type="submit" class="dz-cta w-100 justify-content-center"
+                                            style="border: none; padding: 18px 24px; border-radius: 12px;">
                                             <span>Send Message</span>
-                                            <img src="nemonic.png" class="btn-icon" style="width: 14px; height: 14px; object-fit: contain;" alt="icon" />
+                                            <img src="nemonic.png" class="btn-icon"
+                                                style="width: 14px; height: 14px; object-fit: contain;" alt="icon" />
                                         </button>
                                     </div>
                                 </div>
@@ -201,42 +270,12 @@
             </div>
         </section>
 
-        <!-- Map Section -->
-        <section class="map-section" style="line-height: 0;">
-            <div class="container-fluid p-0">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.8030232491176!2d72.8309!3d19.0664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDAzJzU5LjAiTiA3MsKwNDknNTEuMiJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" width="100%" height="550" style="border:0; filter: grayscale(20%) contrast(100%);" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </section>
+
 
         <!-- ═══════ CTA + Footer Overlap Section ═══════ -->
         <div class="footer-stack-root">
 
-            <!-- CTA Card (sits on top, scrolls away upward) -->
-            <div class="footer-cta-card-wrapper">
-                <div class="footer-cta-card">
-                    <div class="section-header text-center mb-4">
-                        <span class="section-subtitle" style="color: #ffffff !important;">BEGIN YOUR JOURNEY</span>
-                        <div class="nemonic-separator">
-                            <div class="nemonic-line" style="background-color: #ffffff;"></div>
-                            <img src="nemonic.png" alt="nemonic" class="nemonic-icon"
-                                style="filter: brightness(0) invert(1);" />
-                            <div class="nemonic-line" style="background-color: #ffffff;"></div>
-                        </div>
-                    </div>
-                    <h2 class="footer-cta-heading">Ready to reveal your<br>most <span class="scribble"
-                            style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important;">radiant
-                            self?</span></h2>
-                    <p class="footer-cta-sub">Join thousands who've discovered the art of effortless confidence —
-                        crafted for your skin, your story.</p>
-                    <a href="../newthree.html#book" class="dz-cta"
-                        style="margin: 0 auto; display: inline-flex; border-color: rgba(255,255,255,0.5);">
-                        <span style="color: #ffffff !important;">Book a Consultation</span>
-                        <img src="nemonic.png" class="btn-icon"
-                            style="width: 14px; height: 14px; object-fit: contain; filter: brightness(0) invert(1);"
-                            alt="icon" />
-                    </a>
-                </div>
-            </div>
+
 
             <!-- Footer (sticky-pinned behind, revealed as CTA card scrolls away) -->
             <div class="footer-reveal-wrapper">
@@ -249,7 +288,8 @@
                             <span class="footer-eyebrow">AESTHETICS & WELLNESS</span>
                             <h2 class="footer-logo-text">D'ZEN DERMA</h2>
                             <p class="footer-tagline">
-                                Where the finest techniques in aesthetic medicine reveal your most luminous, confident self. Crafted for your skin, your story.
+                                Where the finest techniques in aesthetic medicine reveal your most luminous, confident
+                                self. Crafted for your skin, your story.
                             </p>
                             <!-- Social icons -->
                             <div class="footer-socials">
@@ -298,7 +338,8 @@
                             </div>
                             <div class="footer-contact-item footer-contact-item--address">
                                 <span class="footer-contact-label">Visit Us</span>
-                                <span class="footer-contact-value">18A, Ring Rd, near Havells,<br>Vikram Vihar, Lajpat Nagar 4,<br>Lajpat Nagar, South Delhi,<br>New Delhi, Delhi 110024, India</span>
+                                <span class="footer-contact-value">18A, Ring Rd, near Havells,<br>Vikram Vihar, Lajpat
+                                    Nagar 4,<br>Lajpat Nagar, South Delhi,<br>New Delhi, Delhi 110024, India</span>
                             </div>
                         </div>
                     </div>
