@@ -1437,7 +1437,7 @@ body {
 
 .founder-card__name {
     font-family: var(--serif, "Playfair Display", Georgia, serif);
-    font-size: clamp(26px, 3vw, 32px);
+    font-size: clamp(18px, 2.5vw, 22px);
     font-weight: 500;
     line-height: 1.18;
     letter-spacing: -0.02em;
@@ -1447,7 +1447,7 @@ body {
 
 .founder-card__role {
     font-family: var(--sans, "Inter", system-ui, sans-serif);
-    font-size: 12px;
+    font-size: 12px !important;
     font-weight: 600;
     line-height: 1.3;
     letter-spacing: 0.08em;
@@ -1537,7 +1537,7 @@ body {
     }
 
     .founder-card__name {
-        font-size: 24px;
+        font-size: 18px;
     }
 
     .founder-tab {
@@ -1718,7 +1718,7 @@ body {
 
 .service-arch-card h3 {
     font-family: var(--serif, 'Playfair Display', serif);
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     margin-bottom: 0.6rem;
     color: #2B1A12;
     font-weight: 500;
@@ -3041,7 +3041,7 @@ body {
 /* Editorial Title */
 .blog-card-title {
     font-family: var(--serif, "Playfair Display", Georgia, serif) !important;
-    font-size: 21px !important;
+    font-size: 18px !important;
     font-style: normal !important;
     font-weight: 400 !important;
     line-height: 1.35 !important;
@@ -3439,7 +3439,7 @@ body {
 
 .sig-service-title {
     font-family: var(--serif, "Playfair Display", Georgia, serif);
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
     font-weight: 500;
     color: #1a0e07;
     line-height: 1.15;
@@ -3677,7 +3677,7 @@ body {
     }
 
     .sig-service-title {
-        font-size: clamp(1.8rem, 6vw, 2.4rem);
+        font-size: clamp(1.2rem, 4vw, 1.5rem);
         text-align: center;
         margin-bottom: 12px;
     }
@@ -3742,7 +3742,7 @@ body {
     }
 
     .sig-service-title {
-        font-size: clamp(1.5rem, 8vw, 2rem);
+        font-size: 1.2rem;
     }
 }
 
@@ -4895,6 +4895,8 @@ html body .footer-cta-card .footer-cta-sub {
     transition:
         opacity 0.5s,
         background 0.5s;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .concern-title {
@@ -4903,7 +4905,7 @@ html body .footer-cta-card .footer-cta-sub {
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: var(--serif) !important;
-    font-size: 32px !important;
+    font-size: 22px !important;
     font-weight: 500 !important;
     font-style: italic !important;
     color: #ffffff !important;
@@ -5283,12 +5285,11 @@ html body .footer-cta-card .footer-cta-sub {
 
 .trainer-v3-title {
     font-family: var(--serif, "Playfair Display", Georgia, serif);
-    font-size: clamp(32px, 4vw, 48px);
+    font-size: clamp(25px, 4vw, 48px);
     font-weight: 400;
     font-style: italic;
     color: #4B2B20;
     line-height: 1.1;
-    margin-bottom: 32px;
 }
 
 .trainer-v3-separator {

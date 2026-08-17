@@ -149,7 +149,6 @@
             text-transform: uppercase;
             color: var(--ac-gold);
             text-align: center;
-            margin-bottom: 56px;
         }
 
         @media (max-width: 767.98px) {
@@ -239,7 +238,7 @@
         /* ── Section 2: Our Space + Technology ── */
         #clinic-space {
             position: relative;
-            padding: clamp(60px, 8vw, 100px) 0 clamp(70px, 10vw, 110px);
+            padding: 50px 0px;
             background: linear-gradient(to top, #FDF8F3, #F4EFE8);
         }
 
@@ -307,7 +306,7 @@
             isolation: isolate;
             overflow: hidden;
             background: linear-gradient(35deg, #2f1810 0%, #8C4A2E 60%, #8a5815 85%, #8a6017 100%);
-            padding: 0 0 clamp(70px, 10vw, 110px);
+            padding: 50px 0px;
         }
 
         #clinic-commitment::before {
@@ -352,7 +351,7 @@
         #clinic-commitment .container {
             position: relative;
             z-index: 2;
-            padding-top: clamp(90px, 12vw, 180px);
+            padding-top: clamp(40px, 12vw, 180px);
         }
 
         /* Four standards as an open editorial row — no panel, no card.
@@ -403,7 +402,7 @@
 
         /* ── Section 4: Location cards ── */
         #clinic-locations {
-            padding: clamp(60px, 8vw, 100px) 0 clamp(70px, 10vw, 120px);
+            padding: 50px 0px;
             background-color: #FDF8F3;
         }
 
@@ -606,9 +605,18 @@
             border-bottom: 1px solid rgba(180, 140, 90, 0.14) !important;
             box-shadow: 0 2px 18px rgba(0, 0, 0, 0.06) !important;
         }
-        .pnav .pnav__logo img { filter: none !important; }
-        .pnav .pnav__burger { background: rgba(75, 43, 32, 0.06) !important; }
-        .pnav .pnav__burger span { background: #3A2418 !important; }
+
+        .pnav .pnav__logo img {
+            filter: none !important;
+        }
+
+        .pnav .pnav__burger {
+            background: rgba(75, 43, 32, 0.06) !important;
+        }
+
+        .pnav .pnav__burger span {
+            background: #3A2418 !important;
+        }
     </style>
 
 </head>
@@ -657,7 +665,7 @@
 
         <!-- BREADCRUMB HEADER -->
         <section class="breadcrumb-header position-relative d-flex align-items-center justify-content-center"
-            style="background-image: linear-gradient(rgba(61, 23, 22, 0.8), rgba(61, 23, 22, 0.8)), url('../images/contour-texture.webp'); background-size: cover; background-position: center; min-height: 390px; padding-top: 130px; padding-bottom: 60px; border-bottom: none; overflow: hidden;">
+            style="background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%), url('../images/contour-texture.webp') repeat; background-blend-mode: multiply; padding-top: 103px; padding-bottom: 60px; border-bottom: none; overflow: hidden;">
 
             <div class="container position-relative text-center" style="z-index: 2;">
                 <span class="section-subtitle" style="color: rgba(255, 255, 255, 0.7) !important;">ABOUT THE
@@ -669,7 +677,7 @@
                     <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
                 </div>
                 <h1 class="page-title mb-3"
-                    style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400 !important; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; font-size: clamp(22px, 3vw, 25px); margin: 0;">
+                    style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400 !important; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; font-size: clamp(18px, 2.5vw, 22px); margin: 0;">
                     Welcome to D'Zen Derma
                 </h1>
 
@@ -685,7 +693,7 @@
         </section>
 
         <!-- 1. CLINIC IMAGERY HERO -->
-        <section class="ac position-relative" id="clinic-hero" style="padding: 40px 0 60px;">
+        <section class="ac position-relative" id="clinic-hero" style="padding: 50px 0px;">
             <div class="container">
 
                 <div class="section-header text-center mb-5" style="max-width: 780px; margin-inline: auto;">
@@ -725,20 +733,6 @@
                         </figure>
                     </div>
 
-                    <button type="button" class="ac-hero-nav ac-hero-nav--prev" data-slider-prev
-                        aria-label="Previous image">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="m15 18-6-6 6-6" />
-                        </svg>
-                    </button>
-                    <button type="button" class="ac-hero-nav ac-hero-nav--next" data-slider-next
-                        aria-label="Next image">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="m9 18 6-6-6-6" />
-                        </svg>
-                    </button>
                 </div>
 
                 <div class="ac-hero-dots" role="tablist" aria-label="Choose image" data-slider-dots></div>
@@ -1080,7 +1074,7 @@
     </main>
 
     <!-- Embossed Brand Section -->
-    <section class="embossed-brand-section">
+    <section class="embossed-brand-section" style="padding: 50px 0px;">
         <div class="embossed-texture"></div>
         <a href="../newthree.html#book" class="embossed-book-btn">
             <img src="nemonic.png" alt="icon" class="btn-icon">
