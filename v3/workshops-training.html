@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Workshops &amp; Training — D'Zen Derma</title>
+    <meta name="description"
+        content="Aesthetic medicine workshops and fellowship training led by Dr. Aarushi Passi Bhandari — training philosophy, upcoming dates and registration." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Base styles and variable sheets -->
+    <link rel="stylesheet" href="../styles.css?v=2.2" />
+    <!-- Section Specific styles -->
+    <link rel="stylesheet" href="styles.css?v=5.0" />
+
+    <!-- Tailwind CSS (without preflight resets) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: { preflight: false },
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4B2B20',
+                        accent: '#e0a65a',
+                        'accent-light': '#daa520',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Force opaque navbar to sit cleanly above the dark textured section */
+        .pnav {
+            background: #ffffff !important;
+            border-bottom: 1px solid rgba(180, 140, 90, 0.14) !important;
+            box-shadow: 0 2px 18px rgba(0, 0, 0, 0.06) !important;
+        }
+
+        .pnav .pnav__logo img {
+            filter: none !important;
+        }
+
+        .pnav .pnav__burger {
+            background: rgba(75, 43, 32, 0.06) !important;
+        }
+
+        .pnav .pnav__burger span {
+            background: #3A2418 !important;
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           WORKSHOPS & TRAINING — shared tokens
+           One palette and one vertical scale across all four sections.
+           ═══════════════════════════════════════════════════════════ */
+        .wt-page {
+            --wt-ink: #2B1A12;
+            --wt-body: #5C4A3A;
+            --wt-gold: #C4924A;
+            --wt-gold-light: #E8C99A;
+            --wt-cream: #FDF8F3;
+            --wt-hairline: rgba(196, 146, 74, .22);
+            --wt-y: clamp(64px, 6.5vw, 92px);
+            --wt-radius: 18px;
+            --wt-shadow: 0 18px 45px rgba(43, 26, 18, .06);
+            /* Tracks .section-separator svg's height, which steps at 768px */
+            --wt-wave-h: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .wt-page {
+                --wt-wave-h: 80px;
+            }
+        }
+
+        .wt-section {
+            position: relative;
+            padding: var(--wt-y) 0;
+        }
+
+        /* Sections that close with a .section-separator curve need it cleared */
+        .wt-section--curve {
+            padding-bottom: calc(var(--wt-wave-h) + 28px);
+        }
+
+        /* ── 1. DR. AARUSHI AS EDUCATOR ───────────────────────────── */
+        .wt-educator {
+            background: #FDF8F3;
+        }
+
+        .wt-split {
+            display: grid;
+            grid-template-columns: minmax(0, 42%) minmax(0, 1fr);
+            gap: clamp(32px, 5vw, 70px);
+            align-items: center;
+        }
+
+        .wt-portrait {
+            position: relative;
+            margin: 0;
+        }
+
+        .wt-portrait img {
+            display: block;
+            width: 100%;
+            height: clamp(380px, 46vw, 540px);
+            object-fit: cover;
+            object-position: center 20%;
+            /* Same arch silhouette used across the site's imagery */
+            border-radius: 500px 500px 12px 12px;
+        }
+
+        .wt-copy .wt-lead {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 16.5px;
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--wt-ink);
+            max-width: 52ch;
+            margin: 0 0 18px;
+        }
+
+        .wt-copy .wt-body {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.85;
+            color: var(--wt-body);
+            max-width: 52ch;
+            margin: 0 0 30px;
+        }
+
+        /* Credential counters — hairline-divided, not boxed */
+        .wt-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+            border-top: 1px solid var(--wt-hairline);
+            border-bottom: 1px solid var(--wt-hairline);
+            margin-bottom: 30px;
+        }
+
+        .wt-stat {
+            flex: 1 1 130px;
+            padding: 18px 20px 18px 0;
+        }
+
+        .wt-stat+.wt-stat {
+            padding-left: 20px;
+            border-left: 1px solid var(--wt-hairline);
+        }
+
+        .wt-stat b {
+            display: block;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(24px, 2.6vw, 32px);
+            font-weight: 400;
+            line-height: 1;
+            color: var(--wt-gold);
+            margin-bottom: 7px;
+        }
+
+        .wt-stat span {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 10.5px;
+            font-weight: 600;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            color: var(--wt-body);
+        }
+
+        .wt-quote {
+            border-left: 2px solid var(--wt-gold);
+            padding: 4px 0 4px 20px;
+            margin: 0;
+        }
+
+        .wt-quote p {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(16px, 1.7vw, 19px);
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--wt-ink);
+            margin: 0 0 8px;
+        }
+
+        .wt-quote cite {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            font-style: normal;
+            color: var(--wt-gold);
+        }
+
+        /* ── 2. TRAINING PHILOSOPHY ───────────────────────────────── */
+        .wt-philosophy {
+            background: linear-gradient(to bottom, #F4EFE8, #FDF8F3);
+        }
+
+        .wt-principle {
+            position: relative;
+            height: 100%;
+            padding: clamp(26px, 2.6vw, 34px);
+            background: #ffffff;
+            border: 1px solid rgba(43, 26, 18, .06);
+            border-radius: var(--wt-radius);
+            box-shadow: var(--wt-shadow);
+            overflow: hidden;
+            transition: transform .45s cubic-bezier(.25, .46, .45, .94),
+                box-shadow .45s ease;
+        }
+
+        /* Gold rule along the top edge that draws out on hover. Gives four
+           otherwise identical white boxes something to distinguish them and a
+           reason for the hover beyond the lift. */
+        .wt-principle::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 34px;
+            height: 3px;
+            background: linear-gradient(to right, var(--wt-gold), var(--wt-gold-light));
+            transition: width .45s cubic-bezier(.25, .46, .45, .94);
+        }
+
+        .wt-principle:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 26px 55px rgba(43, 26, 18, .10);
+        }
+
+        .wt-principle:hover::before {
+            width: 100%;
+        }
+
+        /* Numeral sits on the same baseline as the rule above it */
+        .wt-principle__num {
+            display: block;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 15px;
+            font-style: italic;
+            letter-spacing: 1.5px;
+            color: var(--wt-gold);
+            margin-bottom: 16px;
+        }
+
+        .wt-principle h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(17px, 1.7vw, 20px);
+            font-weight: 400;
+            line-height: 1.4;
+            color: var(--wt-ink);
+            margin: 0 0 12px;
+        }
+
+        .wt-principle p {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 14.5px;
+            font-weight: 300;
+            line-height: 1.75;
+            color: var(--wt-body);
+            margin: 0;
+        }
+
+        /* Training gallery — the page is about workshops, so it should show
+           some. Uses the four real training photographs already in /images,
+           with the staggered offset the homepage collage uses so the band
+           reads as one composition rather than four separate tiles. */
+        .wt-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: clamp(10px, 1.4vw, 18px);
+            margin-top: clamp(38px, 4vw, 58px);
+            /* room for the stagger to translate into */
+            padding-bottom: 28px;
+        }
+
+        .wt-gallery figure {
+            margin: 0;
+        }
+
+        .wt-gallery img {
+            display: block;
+            width: 100%;
+            height: clamp(150px, 17vw, 230px);
+            object-fit: cover;
+            border-radius: 14px;
+            box-shadow: 0 10px 32px rgba(75, 43, 32, .10);
+            transition: transform .6s cubic-bezier(.2, .7, .3, 1);
+        }
+
+        .wt-gallery figure:nth-child(even) img {
+            transform: translateY(26px);
+        }
+
+        .wt-gallery figure:hover img {
+            transform: translateY(0) scale(1.03);
+        }
+
+        .wt-gallery figure:nth-child(even):hover img {
+            transform: translateY(26px) scale(1.03);
+        }
+
+        @media (max-width: 767.98px) {
+            .wt-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ── 3. UPCOMING WORKSHOP SCHEDULE ────────────────────────── */
+        .wt-schedule {
+            background: #FDF8F3;
+        }
+
+        /* A row, not a card grid: a schedule is read down the date column, so
+           the date is given its own fixed track that all rows share. */
+        .wt-course {
+            display: grid;
+            grid-template-columns: 108px minmax(0, 1fr) auto;
+            gap: clamp(18px, 3vw, 36px);
+            align-items: center;
+            padding: 26px clamp(18px, 2.4vw, 30px);
+            background: #ffffff;
+            border: 1px solid rgba(43, 26, 18, .06);
+            border-radius: var(--wt-radius);
+            box-shadow: var(--wt-shadow);
+            transition: border-color .3s ease, transform .3s ease;
+        }
+
+        .wt-course+.wt-course {
+            margin-top: 14px;
+        }
+
+        .wt-course:hover {
+            border-color: rgba(196, 146, 74, .45);
+            transform: translateX(4px);
+        }
+
+        .wt-course__date {
+            text-align: center;
+            padding: 12px 8px;
+            border-radius: 12px;
+            background: linear-gradient(160deg, #FFFDFB 0%, #F7EDE0 100%);
+            border: 1px solid var(--wt-hairline);
+        }
+
+        .wt-course__day {
+            display: block;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 26px;
+            font-weight: 400;
+            line-height: 1;
+            color: var(--wt-ink);
+        }
+
+        .wt-course__mon {
+            display: block;
+            margin-top: 5px;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            color: var(--wt-gold);
+        }
+
+        .wt-course__body h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(17px, 1.7vw, 20px);
+            font-weight: 400;
+            line-height: 1.4;
+            color: var(--wt-ink);
+            margin: 0 0 8px;
+        }
+
+        .wt-course__body p {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--wt-body);
+            margin: 0 0 10px;
+        }
+
+        .wt-course__meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .wt-course__meta span {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 12px;
+            border-radius: 100px;
+            border: 1px solid var(--wt-hairline);
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            color: var(--wt-body);
+        }
+
+        .wt-course__status {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            padding: 8px 15px;
+            border-radius: 100px;
+        }
+
+        .wt-course__status--open {
+            background: rgba(93, 138, 96, .12);
+            color: #3F6B44;
+        }
+
+        .wt-course__status--few {
+            background: rgba(196, 146, 74, .16);
+            color: #8B5E2A;
+        }
+
+        .wt-course__status--full {
+            background: rgba(43, 26, 18, .08);
+            color: #6B5445;
+        }
+
+        @media (max-width: 767.98px) {
+            .wt-course {
+                grid-template-columns: 76px minmax(0, 1fr);
+                gap: 16px;
+            }
+
+            /* Status drops under the body rather than squeezing a third column */
+            .wt-course__status {
+                grid-column: 2;
+                justify-self: start;
+            }
+
+            .wt-course__day {
+                font-size: 21px;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .wt-split {
+                grid-template-columns: 1fr;
+                gap: 44px;
+            }
+
+            .wt-portrait img {
+                height: clamp(320px, 62vw, 460px);
+                border-radius: 300px 300px 12px 12px;
+            }
+        }
+
+        /* ── 4. REGISTRATION FORM ─────────────────────────────────── */
+        .wt-register {
+            position: relative;
+            background: #2B1A12;
+            overflow: hidden;
+            /* mix-blend-mode on the grain blends against the nearest stacking
+               context; without this it would reach past the section. */
+            isolation: isolate;
+            /* Top clears .wt-register__wave so the curve never crowds the heading */
+            padding: calc(var(--wt-y) + clamp(48px, 6vw, 100px)) 0 var(--wt-y);
+        }
+
+        /* Cream wave cutting the top edge of the dark field. Deliberately placed
+           INSIDE this section and filled cream (the path closes at L1440,0 L0,0,
+           so the fill sits ABOVE the curve) rather than sitting at the bottom of
+           the schedule section filled dark — the dark here is a 35deg gradient
+           running brown to gold, so no single flat fill could have matched it
+           across the full width. */
+        .wt-register__wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            line-height: 0;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .wt-register__wave svg {
+            display: block;
+            width: 100%;
+            height: clamp(48px, 6vw, 100px);
+        }
+
+        .wt-register::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(35deg, #2f1810 0%, #8C4A2E 60%, #8a5815 85%, #8a6017 100%);
+            z-index: 0;
+        }
+
+        /* Same fractalNoise grain the philosophy strip and footer CTA use, so
+           every dark field on the site reads as one material. */
+        .wt-register::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.25;
+            mix-blend-mode: overlay;
+        }
+
+        /* 3, above the wave at 2 — layer order is gradient 0, grain 1, wave 2,
+           content 3. */
+        .wt-register>.container {
+            position: relative;
+            z-index: 3;
+        }
+
+        .wt-form-card {
+            background: rgba(255, 255, 255, .96);
+            border-radius: var(--wt-radius);
+            box-shadow: 0 30px 70px rgba(43, 26, 18, .22);
+            padding: clamp(24px, 3.2vw, 44px);
+        }
+
+        /* styles.css forces h1-h6 to #4b2b20 + italic with !important, which is
+           unreadable on the dark field. */
+        html body .wt-register .section-title {
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }
+
+        html body .wt-register .section-title .scribble {
+            color: var(--wt-gold-light) !important;
+            -webkit-text-fill-color: var(--wt-gold-light) !important;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .wt-principle,
+            .wt-course {
+                transition: none;
+            }
+
+            .wt-principle:hover,
+            .wt-course:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="wt-page" style="background-color: #FDF8F3; color: #2B1A12;">
+
+    <!-- ═══════ Floating Pill Navbar v3 ═══════ -->
+    <nav id="pill-nav" class="pnav" aria-label="Main navigation">
+        <!-- Left: Book Now -->
+        <div class="pnav__left">
+            <a href="../newthree.html#book" class="pnav__cta">
+                Book
+                <img src="nemonic.png" class="btn-icon" style="width: 12px; height: 12px; object-fit: contain;"
+                    alt="icon" />
+            </a>
+        </div>
+
+        <!-- Center: logo -->
+        <a href="index.html" class="pnav__logo" aria-label="Home">
+            <img src="../images/logo1.png" alt="D'Zen Derma" />
+        </a>
+
+        <!-- Right: hamburger -->
+        <div class="pnav__right">
+            <button class="pnav__burger" id="pnav-burger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile drawer -->
+    <div class="pnav-overlay" id="pnav-overlay"></div>
+    <aside class="pnav-drawer" id="pnav-drawer" aria-label="Menu">
+        <button class="pnav-drawer__close" id="pnav-close" aria-label="Close menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round">
+                <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+        </button>
+        <ul class="pnav-drawer__list">
+            <li><a href="../aesthetics.html">Pillars <span>→</span></a></li>
+            <li><a href="../concerns.html">Concerns <span>→</span></a></li>
+            <li><a href="../treatments.html">Treatments <span>→</span></a></li>
+            <li><a href="about.html">Who We Are <span>→</span></a></li>
+            <li><a href="../signatures.html">D'Zen Experience <span>→</span></a></li>
+            <li><a href="../journal.html">Journal <span>→</span></a></li>
+        </ul>
+    </aside>
+
+    <main>
+
+        <!-- Inner Page Header -->
+        <section class="breadcrumb-header position-relative d-flex align-items-center justify-content-center"
+            style="background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%), url('../images/contour-texture.webp') repeat; background-blend-mode: multiply; padding-top: 103px; padding-bottom: 60px; border-bottom: none; overflow: hidden;">
+
+            <div class="container position-relative text-center" style="z-index: 2;">
+                <span class="section-subtitle" style="color: rgba(255, 255, 255, 0.7) !important;">WORKSHOPS &amp;
+                    TRAINING</span>
+                <div class="nemonic-separator mt-2 mb-4">
+                    <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
+                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon"
+                        style="filter: brightness(0) invert(1);" />
+                    <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
+                </div>
+                <h1 class="page-title mb-3"
+                    style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400 !important; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; font-size: clamp(18px, 2.5vw, 22px); margin: 0;">
+                    Teaching the Discipline of <span class="scribble"
+                        style="color: #E8C99A !important; -webkit-text-fill-color: #E8C99A !important;">Restraint</span>
+                </h1>
+            </div>
+
+            <!-- Curvy Bottom Separator -->
+            <div class="position-absolute w-100" style="bottom: -1px; left: 0; z-index: 2;">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                    style="display: block; width: 100%; height: clamp(70px, 7vw, 110px);">
+                    <path fill="#FDF8F3" d="M0,26 C400,136 1040,-36 1440,52 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ═══════ 1. DR. AARUSHI AS EDUCATOR ═══════ -->
+        <section class="wt-section wt-section--curve wt-educator" id="educator" aria-labelledby="educator-title">
+            <div class="container">
+                <div class="wt-split">
+
+                    <figure class="wt-portrait">
+                        <img src="../images/Aarushi-Passi.webp" alt="Dr. Aarushi Passi Bhandari" loading="lazy"
+                            decoding="async">
+                    </figure>
+
+                    <div class="wt-copy">
+                        <span class="section-subtitle" style="letter-spacing: 3px;">THE EDUCATOR</span>
+                        <div class="nemonic-separator mt-2">
+                            <div class="nemonic-line"></div>
+                            <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                            <div class="nemonic-line"></div>
+                        </div>
+                        <h2 class="section-title" id="educator-title">Dr. Aarushi Passi <span
+                                class="scribble">Bhandari</span></h2>
+                        <p class="wt-lead">
+                            One of India's leading medical educators in aesthetic and regenerative medicine &mdash;
+                            invited as a faculty member, masterclass host and senior trainer at workshops and
+                            fellowship programmes across the country.
+                        </p>
+                        <p class="wt-body">
+                            Her teaching carries the same starting point as her clinical work: that a good result is
+                            a balanced one. Fellows leave able to read a face as a whole, judge when not to treat,
+                            and defend both decisions to a patient.
+                        </p>
+
+                        <div class="wt-stats">
+                            <div class="wt-stat">
+                                <b>12+</b>
+                                <span>Years in practice</span>
+                            </div>
+                            <div class="wt-stat">
+                                <b>40+</b>
+                                <span>Workshops led</span>
+                            </div>
+                            <div class="wt-stat">
+                                <b>600+</b>
+                                <span>Doctors trained</span>
+                            </div>
+                        </div>
+
+                        <blockquote class="wt-quote">
+                            <p>What I teach my fellow doctors is what I practise at D'Zen &mdash; the discipline of
+                                restraint, the priority of safety, and the courage to keep learning.</p>
+                            <cite>Dr. Aarushi Passi Bhandari</cite>
+                        </blockquote>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Curvy separator into Training Philosophy. Filled #F4EFE8 to match
+                 that section's top edge — a separator carries the colour of the
+                 section it hands off to. -->
+            <div class="section-separator" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#F4EFE8" d="M0,50 C240,120 480,-20 720,50 C960,120 1200,-20 1440,50 L1440,100 L0,100 Z">
+                    </path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ═══════ 2. TRAINING PHILOSOPHY ═══════ -->
+        <section class="wt-section wt-philosophy" id="philosophy" aria-labelledby="philosophy-title">
+            <div class="container">
+
+                <div class="section-header text-center mb-5">
+                    <span class="section-subtitle" style="letter-spacing: 3px;">HOW WE TEACH</span>
+                    <div class="nemonic-separator mt-2">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="section-title" id="philosophy-title">Training <span
+                            class="scribble">Philosophy</span></h2>
+                    <p class="mx-auto"
+                        style="max-width: 62ch; color: rgba(43, 26, 18, 0.7); font-size: 1.05rem; line-height: 1.7;">
+                        Technique is the easy half. What takes longer to teach is the judgement that keeps a result
+                        in balance &mdash; and that is what these sessions are built around.
+                    </p>
+                </div>
+
+                <!-- No mt-* on the row: a margin-top utility overrides .row's own
+                     negative top margin, which cancels the first row's g-4 gutter,
+                     and leaves a gutter of dead space above the cards. -->
+                <div class="row g-4">
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="wt-principle">
+                            <span class="wt-principle__num">01</span>
+                            <h3>Diagnose Before You Treat</h3>
+                            <p>Every session starts with assessment, not injection. If you cannot explain why a face
+                                reads the way it does, no technique will fix it.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="wt-principle">
+                            <span class="wt-principle__num">02</span>
+                            <h3>Restraint Is a Skill</h3>
+                            <p>Knowing when to stop is harder than knowing how to proceed, and it is the single
+                                clearest difference between a natural result and an obvious one.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="wt-principle">
+                            <span class="wt-principle__num">03</span>
+                            <h3>Safety Is Non-Negotiable</h3>
+                            <p>Anatomy, danger zones and complication management are covered before any hands-on
+                                work &mdash; every time, regardless of the group's experience.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="wt-principle">
+                            <span class="wt-principle__num">04</span>
+                            <h3>Small Groups, Real Cases</h3>
+                            <p>Numbers are capped so every participant works on live cases under direct supervision,
+                                rather than watching from the back of a room.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Sessions in progress. Decorative, so the figures carry no
+                     captions and the images are described rather than labelled. -->
+                <div class="wt-gallery" aria-label="Scenes from recent training sessions">
+                    <figure>
+                        <img src="../images/training-1.webp" alt="Fellows observing a live demonstration"
+                            loading="lazy" decoding="async">
+                    </figure>
+                    <figure>
+                        <img src="../images/training-2.webp" alt="A supervised hands-on training session"
+                            loading="lazy" decoding="async">
+                    </figure>
+                    <figure>
+                        <img src="../images/training-3.webp" alt="Equipment set up for a workshop module"
+                            loading="lazy" decoding="async">
+                    </figure>
+                    <figure>
+                        <img src="../images/training-4.webp" alt="Case review with a small group of doctors"
+                            loading="lazy" decoding="async">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ 3. UPCOMING WORKSHOP SCHEDULE ═══════ -->
+        <section class="wt-section wt-schedule" id="schedule" aria-labelledby="schedule-title">
+            <div class="container">
+
+                <div class="section-header text-center mb-5">
+                    <span class="section-subtitle" style="letter-spacing: 3px;">DATES &amp; FORMATS</span>
+                    <div class="nemonic-separator mt-2">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="section-title" id="schedule-title">Upcoming <span class="scribble">Workshops</span>
+                    </h2>
+                    <p class="mx-auto"
+                        style="max-width: 62ch; color: rgba(43, 26, 18, 0.7); font-size: 1.05rem; line-height: 1.7;">
+                        All sessions run at the Lajpat Nagar clinic unless stated otherwise. Places are limited by
+                        design &mdash; supervised hands-on time does not scale.
+                    </p>
+                </div>
+
+                <div class="wt-courses">
+
+                    <article class="wt-course">
+                        <div class="wt-course__date">
+                            <span class="wt-course__day">14</span>
+                            <span class="wt-course__mon">Sep</span>
+                        </div>
+                        <div class="wt-course__body">
+                            <h3>Facial Assessment &amp; Treatment Planning</h3>
+                            <p>Reading proportion, volume loss and asymmetry as one picture &mdash; and building a
+                                plan that sequences correctly.</p>
+                            <div class="wt-course__meta">
+                                <span>1 Day</span>
+                                <span>Foundation</span>
+                                <span>12 Seats</span>
+                            </div>
+                        </div>
+                        <span class="wt-course__status wt-course__status--open">Open</span>
+                    </article>
+
+                    <article class="wt-course">
+                        <div class="wt-course__date">
+                            <span class="wt-course__day">05</span>
+                            <span class="wt-course__mon">Oct</span>
+                        </div>
+                        <div class="wt-course__body">
+                            <h3>Advanced Injectables: Anatomy &amp; Safety</h3>
+                            <p>Danger zones, vascular anatomy and complication management, with cadaveric reference
+                                and supervised live work.</p>
+                            <div class="wt-course__meta">
+                                <span>2 Days</span>
+                                <span>Advanced</span>
+                                <span>8 Seats</span>
+                            </div>
+                        </div>
+                        <span class="wt-course__status wt-course__status--few">Few Left</span>
+                    </article>
+
+                    <article class="wt-course">
+                        <div class="wt-course__date">
+                            <span class="wt-course__day">19</span>
+                            <span class="wt-course__mon">Oct</span>
+                        </div>
+                        <div class="wt-course__body">
+                            <h3>Regenerative Aesthetics: PRP &amp; Bio-Stimulation</h3>
+                            <p>Protocol design for collagen induction and bio-remodelling, including how to set
+                                realistic timelines with patients.</p>
+                            <div class="wt-course__meta">
+                                <span>1 Day</span>
+                                <span>Intermediate</span>
+                                <span>10 Seats</span>
+                            </div>
+                        </div>
+                        <span class="wt-course__status wt-course__status--open">Open</span>
+                    </article>
+
+                    <article class="wt-course">
+                        <div class="wt-course__date">
+                            <span class="wt-course__day">09</span>
+                            <span class="wt-course__mon">Nov</span>
+                        </div>
+                        <div class="wt-course__body">
+                            <h3>The Balanced Face: A Masterclass in Restraint</h3>
+                            <p>A full day on under-treating deliberately &mdash; case review, planning, and the
+                                conversations that make a conservative plan land well.</p>
+                            <div class="wt-course__meta">
+                                <span>1 Day</span>
+                                <span>All Levels</span>
+                                <span>14 Seats</span>
+                            </div>
+                        </div>
+                        <span class="wt-course__status wt-course__status--full">Waitlist</span>
+                    </article>
+
+                    <article class="wt-course">
+                        <div class="wt-course__date">
+                            <span class="wt-course__day">30</span>
+                            <span class="wt-course__mon">Nov</span>
+                        </div>
+                        <div class="wt-course__body">
+                            <h3>Skin Fellowship Intensive</h3>
+                            <p>Three days across diagnosis, device selection and long-term maintenance planning, at
+                                the Gurgaon clinic.</p>
+                            <div class="wt-course__meta">
+                                <span>3 Days</span>
+                                <span>Fellowship</span>
+                                <span>6 Seats</span>
+                            </div>
+                        </div>
+                        <span class="wt-course__status wt-course__status--open">Open</span>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ 4. REGISTRATION FORM ═══════ -->
+        <section class="wt-register" id="register" aria-labelledby="register-title">
+
+            <!-- Cream wave cutting the top edge of the dark field. The path closes
+                 at L1440,0 L0,0 Z, so the fill sits ABOVE the curve — the boundary
+                 itself is the wave rather than a straight line. -->
+            <div class="wt-register__wave" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#FDF8F3" d="M0,50 C240,120 480,-20 720,50 C960,120 1200,-20 1440,50 L1440,0 L0,0 Z">
+                    </path>
+                </svg>
+            </div>
+
+            <div class="container">
+
+                <div class="section-header text-center mb-5">
+                    <span class="section-subtitle"
+                        style="color: #E8C99A !important; letter-spacing: 3px;">RESERVE A PLACE</span>
+                    <div class="nemonic-separator mt-2">
+                        <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
+                        <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon"
+                            style="filter: brightness(0) invert(1);" />
+                        <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
+                    </div>
+                    <h2 class="section-title" id="register-title">Workshop <span
+                            class="scribble">Registration</span></h2>
+                    <p class="mx-auto"
+                        style="max-width: 62ch; color: rgba(255, 255, 255, 0.72) !important; font-size: 1.05rem; line-height: 1.7;">
+                        Tell us which session you are after and where you are in your practice. We will confirm
+                        availability and send joining details.
+                    </p>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                        <div class="wt-form-card">
+                            <form action="#" method="POST" id="workshopForm">
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="wtName" placeholder="Full Name"
+                                                required
+                                                style="border-radius: 12px; border: 1px solid #e0d5cd; background: #fdfaf8; box-shadow: none;">
+                                            <label for="wtName" style="color: rgba(43, 26, 18, 0.6);">Full Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" id="wtEmail"
+                                                placeholder="Email Address" required
+                                                style="border-radius: 12px; border: 1px solid #e0d5cd; background: #fdfaf8; box-shadow: none;">
+                                            <label for="wtEmail" style="color: rgba(43, 26, 18, 0.6);">Email
+                                                Address</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="tel" class="form-control" id="wtPhone"
+                                                placeholder="Phone Number" required
+                                                style="border-radius: 12px; border: 1px solid #e0d5cd; background: #fdfaf8; box-shadow: none;">
+                                            <label for="wtPhone" style="color: rgba(43, 26, 18, 0.6);">Phone
+                                                Number</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="wtPractice"
+                                                placeholder="Clinic or Practice"
+                                                style="border-radius: 12px; border: 1px solid #e0d5cd; background: #fdfaf8; box-shadow: none;">
+                                            <label for="wtPractice" style="color: rgba(43, 26, 18, 0.6);">Clinic or
+                                                Practice</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="wtWorkshop" aria-label="Workshop"
+                                                style="border-radius: 12px; border: 1px solid #e0d5cd; background: #fdfaf8; box-shadow: none; color: #2B1A12;">
+                                                <option selected>Facial Assessment &amp; Treatment Planning &mdash; 14
+                                                    Sep</option>
+                                                <option value="1">Advanced Injectables: Anatomy &amp; Safety &mdash; 05
+                                                    Oct</option>
+                                                <option value="2">Regenerative Aesthetics: PRP &amp; Bio-Stimulation
+                                                    &mdash; 19 Oct</option>
+                                                <option value="3">The Balanced Face: Masterclass &mdash; 09 Nov
+                                                    (waitlist)</option>
+                                                <option value="4">Skin Fellowship Intensive &mdash; 30 Nov</option>
+                                            </select>
+                                            <label for="wtWorkshop"
+                                                style="color: rgba(43, 26, 18, 0.6);">Workshop</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="wtLevel" aria-label="Experience level"
+                                                style="border-radius: 12px; border: 1px solid #e0d5cd; background: #fdfaf8; box-shadow: none; color: #2B1A12;">
+                                                <option selected>0 &ndash; 2 years</option>
+                                                <option value="1">3 &ndash; 5 years</option>
+                                                <option value="2">6 &ndash; 10 years</option>
+                                                <option value="3">10+ years</option>
+                                            </select>
+                                            <label for="wtLevel" style="color: rgba(43, 26, 18, 0.6);">Experience in
+                                                aesthetics</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Anything we should know"
+                                                id="wtMessage"
+                                                style="height: 140px; border-radius: 12px; border: 1px solid #e0d5cd; background: #fdfaf8; box-shadow: none;"></textarea>
+                                            <label for="wtMessage" style="color: rgba(43, 26, 18, 0.6);">Anything we
+                                                should know</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mt-4 pt-2">
+                                        <button type="submit" class="dz-cta w-100 justify-content-center"
+                                            style="border: none; padding: 18px 24px; border-radius: 12px;">
+                                            <span>Request a Place</span>
+                                            <img src="nemonic.png" class="btn-icon"
+                                                style="width: 14px; height: 14px; object-fit: contain;" alt="icon" />
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer-stack-root">
+
+
+
+            <!-- Footer (sticky-pinned behind, revealed as CTA card scrolls away) -->
+            <div class="footer-reveal-wrapper">
+                <footer class="site-footer" aria-label="Site footer">
+                    <!-- Top row: logo + nav columns -->
+                    <div class="footer-top">
+
+                        <!-- Brand column -->
+                        <div class="footer-brand">
+                            <span class="footer-eyebrow">AESTHETICS & WELLNESS</span>
+                            <h2 class="footer-logo-text">D'ZEN DERMA</h2>
+                            <p class="footer-tagline">
+                                Where the finest techniques in aesthetic medicine reveal your most luminous, confident
+                                self. Crafted for your skin, your story.
+                            </p>
+                            <!-- Social icons -->
+                            <div class="footer-socials">
+                                <a href="#" class="footer-social-icon" aria-label="Instagram" target="_blank"
+                                    rel="noopener">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                        <circle cx="12" cy="12" r="4"></circle>
+                                        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"></circle>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Nav columns -->
+                        <div class="footer-nav-col">
+                            <ul class="footer-nav-list">
+                                <li><a href="../newthree.html">HOME</a></li>
+                                <li><a href="about.html">ABOUT US</a></li>
+                                <li><a href="../treatments.html">TREATMENTS</a></li>
+                                <li><a href="#">WELLNESS PROGRAMS</a></li>
+                                <li><a href="../concerns.html">CONCERN</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-nav-col">
+                            <ul class="footer-nav-list">
+                                <li><a href="#">MEMBERSHIPS</a></li>
+                                <li><a href="#">GIFT CARD</a></li>
+                                <li><a href="#">CAREERS</a></li>
+                                <li><a href="contact.html">CONTACT</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Contact info column -->
+                        <div class="footer-contact-col">
+                            <div class="footer-contact-row">
+                                <div class="footer-contact-item">
+                                    <span class="footer-contact-label">WhatsApp</span>
+                                    <span class="footer-contact-value">(+91) 93112 54441</span>
+                                </div>
+                                <div class="footer-contact-item">
+                                    <span class="footer-contact-label">Phone Number</span>
+                                    <span class="footer-contact-value">(+91) 93112 54441</span>
+                                </div>
+                            </div>
+                            <div class="footer-contact-item footer-contact-item--address">
+                                <span class="footer-contact-label">Visit Us</span>
+                                <span class="footer-contact-value">18A, Ring Rd, near Havells,<br>Vikram Vihar, Lajpat
+                                    Nagar 4,<br>Lajpat Nagar, South Delhi,<br>New Delhi, Delhi 110024, India</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="footer-divider"></div>
+
+                    <!-- Bottom row: copyright + legal links -->
+                    <div class="footer-bottom">
+                        <p class="footer-copyright">© 2026, D'Zen Derma | All Rights Reserved | All prices are
+                            exclusive of tax</p>
+                        <div class="footer-legal-links">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms & Conditions</a>
+                            <a href="#">Booking & Cancellation Policy</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-bottom-strip"></div>
+                </footer>
+
+            </div>
+
+        </div><!-- /.footer-stack-root -->
+
+    </main>
+
+    <!-- Embossed Brand Section -->
+    <section class="embossed-brand-section" style="padding: 50px 0px;">
+        <div class="embossed-texture"></div>
+        <a href="../newthree.html#book" class="embossed-book-btn">
+            BOOK NOW
+            <img src="nemonic.png" alt="icon" class="btn-icon">
+        </a>
+        <div class="embossed-content">
+            <h3 class="embossed-eyebrow">AESTHETICS & WELLNESS</h3>
+            <h2 class="embossed-title">D'ZEN DERMA</h2>
+        </div>
+    </section>
+
+    <!-- Floating Bottom Action Bar -->
+    <div class="bottom-action-bar" id="bottomActionBar" aria-label="Quick actions">
+        <a href="https://wa.me/919876543210" class="bottom-action-btn" target="_blank" rel="noopener"
+            aria-label="Chat on WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+                <path
+                    d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.967-.272-.099-.47-.149-.669.15-.197.297-.767.967-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.917-2.207-.241-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.307 1.263.49 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+            </svg>
+            <span class="btn-label">WhatsApp</span>
+        </a>
+        <a href="tel:+919876543210" class="bottom-action-btn" aria-label="Call us">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+                <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span class="btn-label">Call</span>
+        </a>
+        <a href="../newthree.html#book" class="bottom-action-btn bottom-action-btn--primary"
+            aria-label="Book consultation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+                <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01" />
+            </svg>
+            <span class="btn-label">Book Now</span>
+        </a>
+        <a href="../newthree.html#location" class="bottom-action-btn" aria-label="View location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span class="btn-label">Map</span>
+        </a>
+    </div>
+
+    <!-- Project script controller -->
+    <script src="script.js?v=3.0"></script>
+</body>
+
+</html>
