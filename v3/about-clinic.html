@@ -305,7 +305,7 @@
             position: relative;
             isolation: isolate;
             overflow: hidden;
-            background: linear-gradient(35deg, #2f1810 0%, #8C4A2E 60%, #8a5815 85%, #8a6017 100%);
+            background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
             padding: 50px 0px;
         }
 
@@ -871,7 +871,7 @@
         <section class="ac position-relative" id="clinic-locations">
             <div class="container">
 
-                <div class="section-header text-center mb-5">
+                <div class="section-header text-center mb-3">
                     <span class="section-subtitle" style="letter-spacing: 3px;">FIND US</span>
                     <div class="nemonic-separator mt-2">
                         <div class="nemonic-line"></div>
@@ -885,7 +885,11 @@
                     </p>
                 </div>
 
-                <div class="row g-5 justify-content-center mt-2">
+                <!-- No mt-* here: a margin-top utility overrides .row's negative
+                     top margin, which is what cancels the first row's g-5 gutter,
+                     and leaves 3rem of dead column padding above the cards. Space
+                     above the row belongs on .section-header's mb-* instead. -->
+                <div class="row g-5 justify-content-center">
 
                     <!-- Delhi -->
                     <div class="col-md-6 col-lg-5">
@@ -1169,8 +1173,14 @@
             function stop() { clearInterval(timer); timer = null; }
             function restart() { stop(); start(); }
 
-            root.querySelector('[data-slider-prev]').addEventListener('click', function () { go(index - 1); restart(); });
-            root.querySelector('[data-slider-next]').addEventListener('click', function () { go(index + 1); restart(); });
+            // Guarded: the prev/next arrows are not in the markup (dots only), so
+            // calling .addEventListener on the null result threw a TypeError here
+            // and aborted this whole IIFE — which is why go(0) and start() below
+            // never ran and the carousel sat on slide 1 with no dot highlighted.
+            var prevBtn = root.querySelector('[data-slider-prev]');
+            var nextBtn = root.querySelector('[data-slider-next]');
+            if (prevBtn) prevBtn.addEventListener('click', function () { go(index - 1); restart(); });
+            if (nextBtn) nextBtn.addEventListener('click', function () { go(index + 1); restart(); });
 
             // Pause while the pointer or keyboard focus is inside
             root.addEventListener('mouseenter', stop);

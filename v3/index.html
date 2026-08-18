@@ -93,8 +93,13 @@
                 <div class="hero-slider">
                     <div class="hero-slide active">
                         <div class="hero-bg">
-                            <img src="https://images.unsplash.com/photo-1581182815808-b6eb627a8798?q=80&w=1065&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                alt="Dermatology Clinic Room">
+                            <!-- muted + playsinline are both required or mobile Safari and
+                                 Chrome refuse to autoplay. The Unsplash still this replaced
+                                 is now the poster, so the slide looks right before the first
+                                 frame paints and if autoplay is blocked. -->
+                            <video src="https://brandingpioneers.co.in/dzen/hero-video.mp4"
+                                poster="https://images.unsplash.com/photo-1581182815808-b6eb627a8798?q=80&w=1065&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                autoplay muted loop playsinline preload="metadata"></video>
                         </div>
                         <div class="hero-overlay"></div>
                         <div class="hero-content">
@@ -394,7 +399,7 @@
             <!-- Curvy separator: white philosophy → cream doctors -->
             <div class="section-separator" aria-hidden="true">
                 <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path fill="#FBF7F1" d="M0,50 C240,120 480,-20 720,50 C960,120 1200,-20 1440,50 L1440,100 L0,100 Z">
+                    <path fill="#FDF8F3" d="M0,50 C240,120 480,-20 720,50 C960,120 1200,-20 1440,50 L1440,100 L0,100 Z">
                     </path>
                 </svg>
             </div>
@@ -912,8 +917,12 @@
                 </script>
             </div>
 
-            <!-- Curvy separator: cream concerns → dark signature services -->
-            <div class="section-separator mt-6" aria-hidden="true" style="z-index: 10;">
+            <!-- Curvy separator: cream concerns → signature services. Brown to
+                 match the reveal curtain below it, and carrying the SAME growing
+                 blob mask (see .sig-wave-cut) so the circle eats through the wave
+                 as well — otherwise the brown band is left stranded above the
+                 opening once the reveal finishes. -->
+            <div class="section-separator sig-wave-cut mt-6" id="sigWaveSep" aria-hidden="true" style="z-index: 10;">
                 <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                     <path fill="#4b2b20" d="M0,50 C240,120 480,-20 720,50 C960,120 1200,-20 1440,50 L1440,100 L0,100 Z">
                     </path>
@@ -932,8 +941,11 @@
                  and sharpens as the hole grows -->
             <div class="sig-reveal-lens" id="sigRevealLens" aria-hidden="true"></div>
 
-            <!-- Sticky Background (Image Removed) -->
+            <!-- Sticky Background. The background-color stays as the fallback the
+                 image paints over — it is also what the reveal curtain's wave is
+                 colour-matched to before the image loads. -->
             <div class="sig-services-bg" id="sigServicesBg" style="background-color: var(--bg-primary, #FAF7F2);">
+                <img src="../images/signature-bg.avif" alt="" aria-hidden="true" decoding="async" loading="lazy">
                 <div class="sig-services-overlay"></div>
             </div>
 
@@ -1072,7 +1084,7 @@
             <!-- Curvy separator: signature services → cream trainer section -->
             <div class="section-separator" aria-hidden="true" style="z-index: 10;">
                 <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path fill="#FAF9F6" d="M0,50 C240,120 480,-20 720,50 C960,120 1200,-20 1440,50 L1440,100 L0,100 Z">
+                    <path fill="#FDF8F3" d="M0,50 C240,120 480,-20 720,50 C960,120 1200,-20 1440,50 L1440,100 L0,100 Z">
                     </path>
                 </svg>
             </div>

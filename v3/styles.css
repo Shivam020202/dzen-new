@@ -682,10 +682,13 @@ body {
     inset: 0 !important;
     width: 100% !important;
     height: 100% !important;
+    /* Kept light so the video reads through. The top stop still carries the white
+       logo and burger, the bottom one the slider dots; the middle is nearly clear
+       because .hero-title has its own text-shadow to sit on. */
     background: linear-gradient(180deg,
-            rgba(11, 6, 4, 0.30) 0%,
-            rgba(11, 6, 4, 0.15) 40%,
-            rgba(11, 6, 4, 0.45) 100%) !important;
+            rgba(11, 6, 4, 0.18) 0%,
+            rgba(11, 6, 4, 0.05) 40%,
+            rgba(11, 6, 4, 0.26) 100%) !important;
     z-index: 2 !important;
     pointer-events: none !important;
 }
@@ -1572,9 +1575,11 @@ body {
 
 .section-separator {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    /* -1px so subpixel rounding can't leave a hairline of the parent
+       section's background peeking out below the curve */
+    bottom: -1px;
+    left: -0.65px;
+    width: calc(100% + 1.3px);
     line-height: 0;
     z-index: 10;
 }
@@ -1582,7 +1587,7 @@ body {
 .section-separator svg {
     position: relative;
     display: block;
-    width: calc(100% + 1.3px);
+    width: 100%;
     height: 40px;
 }
 
@@ -3150,24 +3155,37 @@ body {
     z-index: 1;
 }
 
+/* Full-height backdrop for the whole signature zone.
+   NOT sticky: `html, body { overflow-x: hidden }` at the top of this file makes
+   body a scroll container (overflow-y computes to auto), which disables
+   position:sticky for every descendant. A 100vh sticky box therefore never
+   pinned — it sat at the zone's top and scrolled away after one viewport,
+   leaving the rest of the section bare. Spanning the zone with inset:0 gives
+   full coverage without depending on sticky working.
+   Paired with `.sig-services-scroll { margin-top: 0 }` — that -100vh pull only
+   existed to cancel this element's height while it was still in flow. */
 .sig-services-bg {
-    position: sticky;
-    top: 0;
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: 100vh;
-
+    height: auto;
+    /* Clips the image to this section. Without it the image spills past the
+       zone and paints over the sections above and below — and UNMUTED, since
+       .sig-services-overlay only covers inset:0 of this box. */
+    overflow: hidden;
     z-index: 0;
 }
 
 .sig-services-bg img {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
+    /* Was min-width/min-height:100% with width/height:auto and a centring
+       translate. That renders the image at its INTRINSIC size — object-fit is
+       ignored unless width and height are both resolved — so any image larger
+       than the viewport overflowed in both axes. Explicit 100%/100% lets
+       object-fit: cover actually do the fitting. */
+    inset: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     /* Light-enough for dark text */
     filter: brightness(1.05) saturate(0.75);
@@ -3184,9 +3202,15 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    /* svh, matching .sig-services-bg. With 100vh the box is as tall as the
+       LARGE viewport (toolbar retracted), so its 50% centre — and the hole with
+       it — sat well below the visible midpoint on mobile. Height and the
+       cancelling margin must use the same unit or the layout shifts. */
     height: 100vh;
+    height: 100svh;
     /* pin without pushing the sticky bg / panels down */
     margin-bottom: -100vh;
+    margin-bottom: -100svh;
     z-index: 40;
     /* dark coffee-brown curtain ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â the lighter signature section emerges from it */
     background: linear-gradient(160deg, var(--deep-brown, #4b2b20) 0%, #3a1f16 100%);
@@ -3196,10 +3220,20 @@ body {
     --sig-reveal: 0;
     --sig-grow: 0;
     /* Hole size in vmax (keeps the blob shape on any aspect ratio).
-       Max is tuned so the blob just clears the viewport corners at full
-       progress â€” NOT wildly larger â€” so the enlarging stays visible across
-       the whole scroll instead of finishing in the first fraction of it. */
-    --sig-hole: calc(45vmax + (var(--sig-grow) * 205vmax));
+       The 15vmax MINIMUM matters: the growth now starts while the section is
+       still arriving, so the curtain only covers the lower part of the screen at
+       that moment. At the old 45vmax the circle was already wider than that
+       strip of brown and there was no growth left to watch. Max still overshoots
+       enough to clear the viewport corners at full progress. */
+    --sig-hole: calc(15vmax + (var(--sig-grow) * 235vmax));
+
+    /* Where the blob's CENTRE sits, measured down from the curtain's top edge.
+       Lower this to raise the circle further. .sig-reveal-lens must match.
+       Note this is relative to the ZONE's top, which only coincides with the
+       viewport top once the curtain is pinned — during the arrival the circle
+       rides that much lower on screen. */
+    --sig-cy: 22vh;
+    --sig-cy: 22svh;
 
     /* Blob-shaped hole via TWO composited alpha-mask layers:
          layer 1 â€” a solid fill covering the whole curtain (shows everything)
@@ -3210,8 +3244,12 @@ body {
     mask-image: linear-gradient(#000 0 0), var(--sig-blob);
     -webkit-mask-repeat: no-repeat, no-repeat;
     mask-repeat: no-repeat, no-repeat;
-    -webkit-mask-position: center, center;
-    mask-position: center, center;
+    /* Offset the blob by half its own size so --sig-cy lands on its CENTRE and
+       stays put as the hole grows. A bare percentage cannot do this: it resolves
+       to (box - maskSize) x pct, which only holds the centre still at exactly
+       50% — any other value drifts as --sig-hole expands to 250vmax. */
+    -webkit-mask-position: center, 50% calc(var(--sig-cy) - (var(--sig-hole) / 2));
+    mask-position: center, 50% calc(var(--sig-cy) - (var(--sig-hole) / 2));
     -webkit-mask-size: 100% 100%, var(--sig-hole) var(--sig-hole);
     mask-size: 100% 100%, var(--sig-hole) var(--sig-hole);
     -webkit-mask-composite: destination-out;
@@ -3230,21 +3268,27 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    /* Must match .sig-reveal's box exactly, unit for unit */
     height: 100vh;
+    height: 100svh;
     margin-bottom: -100vh;
+    margin-bottom: -100svh;
     z-index: 39;
     pointer-events: none;
     --sig-reveal: 0;
     --sig-grow: 0;
-    --sig-hole: calc(45vmax + (var(--sig-grow) * 205vmax));
+    --sig-hole: calc(15vmax + (var(--sig-grow) * 235vmax));
+    /* Keep in step with .sig-reveal's --sig-cy or the blur drifts off the hole */
+    --sig-cy: 22vh;
+    --sig-cy: 22svh;
     --sig-blob: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201000%201000'%3E%3Cpath%20fill='%23000'%20d='M500%20250%20C%20640%20250%20760%20320%20800%20440%20C%20835%20548%20805%20660%20720%20735%20C%20648%20800%20548%20828%20452%20812%20C%20330%20792%20220%20720%20175%20600%20C%20135%20492%20155%20372%20240%20300%20C%20308%20242%20404%20250%20500%20250%20Z'/%3E%3C/svg%3E");
     /* Positive mask â€” only the blob region is painted (the hole) */
     -webkit-mask-image: var(--sig-blob);
     mask-image: var(--sig-blob);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
+    -webkit-mask-position: 50% calc(var(--sig-cy) - (var(--sig-hole) / 2));
+    mask-position: 50% calc(var(--sig-cy) - (var(--sig-hole) / 2));
     -webkit-mask-size: var(--sig-hole) var(--sig-hole);
     mask-size: var(--sig-hole) var(--sig-hole);
     /* Blur the section seen through the hole; clears as it opens */
@@ -3259,6 +3303,54 @@ body {
 .sig-reveal.is-done,
 .sig-reveal-lens.is-done {
     display: none;
+}
+
+/* The curvy wave at the bottom of .concerns-section sits directly above the
+   reveal curtain and is filled with the same brown, so the circle has to cut
+   through it too or a brown band survives above the opening.
+
+   It carries a copy of .sig-reveal's blob mask, fed the same --sig-grow by the
+   reveal script. Alignment works because the curtain is sticky at top:0 but only
+   pins once the zone's top reaches the viewport top — for the whole duration of
+   the reveal the curtain's box top IS the zone's top, which is the same origin
+   this element measures from. Past that the wave has scrolled off screen. */
+.sig-wave-cut {
+    --sig-grow: 0;
+    --sig-hole: calc(15vmax + (var(--sig-grow) * 235vmax));
+    /* Must equal .sig-reveal's --sig-cy */
+    --sig-cy: 22vh;
+    --sig-cy: 22svh;
+    /* Must equal .section-separator svg's height at this breakpoint — it is how
+       far the zone's top edge sits below this element's own top edge. */
+    --sig-wave-h: 40px;
+    --sig-blob: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201000%201000'%3E%3Cpath%20fill='%23000'%20d='M500%20250%20C%20640%20250%20760%20320%20800%20440%20C%20835%20548%20805%20660%20720%20735%20C%20648%20800%20548%20828%20452%20812%20C%20330%20792%20220%20720%20175%20600%20C%20135%20492%20155%20372%20240%20300%20C%20308%20242%20404%20250%20500%20250%20Z'/%3E%3C/svg%3E");
+    -webkit-mask-image: linear-gradient(#000 0 0), var(--sig-blob);
+    mask-image: linear-gradient(#000 0 0), var(--sig-blob);
+    -webkit-mask-repeat: no-repeat, no-repeat;
+    mask-repeat: no-repeat, no-repeat;
+    /* -1px because .section-separator is offset bottom:-1px past the section edge */
+    -webkit-mask-position: center, 50% calc(var(--sig-wave-h) - 1px + var(--sig-cy) - (var(--sig-hole) / 2));
+    mask-position: center, 50% calc(var(--sig-wave-h) - 1px + var(--sig-cy) - (var(--sig-hole) / 2));
+    -webkit-mask-size: 100% 100%, var(--sig-hole) var(--sig-hole);
+    mask-size: 100% 100%, var(--sig-hole) var(--sig-hole);
+    -webkit-mask-composite: destination-out;
+    mask-composite: subtract;
+    will-change: mask-size, mask-position;
+}
+
+@media (min-width: 768px) {
+    .sig-wave-cut {
+        /* tracks .section-separator svg { height: 80px } */
+        --sig-wave-h: 80px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    /* No curtain to match, so the brown wave has nothing below it */
+    .sig-wave-cut {
+        display: none;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -3283,7 +3375,11 @@ body {
 /* Content layer sits above the sticky bg */
 .sig-services-scroll {
     position: relative;
-    margin-top: -100vh;
+    /* Was -100vh, to pull the panels back up over .sig-services-bg while that
+       element still took 100vh of flow height. The backdrop is absolute now, so
+       it contributes no height and this pull would drag the panels a whole
+       viewport above the section. */
+    margin-top: 0;
     width: 100%;
     z-index: 10;
     pointer-events: none;
@@ -3600,21 +3696,24 @@ body {
         z-index: 1;
     }
 
+    /* Mirrors the desktop rules above — full-zone backdrop, no sticky.
+       Sticky is dead here anyway (body is a scroll container), and a 100svh
+       box left everything past the first viewport with no background. */
     .sig-services-bg {
-        position: sticky !important;
-        top: 0;
+        position: absolute !important;
+        inset: 0;
         width: 100%;
-        height: 100vh;
-        height: 100svh;
-
+        height: auto;
+        overflow: hidden;
         z-index: 0;
         display: block !important;
     }
 
     .sig-services-scroll {
         position: relative;
-        margin-top: -100vh;
-        margin-top: -100svh;
+        /* 0, not -100svh: the backdrop is out of flow, so there is no
+           height left to cancel. */
+        margin-top: 0;
         width: 100%;
         z-index: 10;
         pointer-events: none;

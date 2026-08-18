@@ -86,6 +86,23 @@
                     dots[index].classList.add('active');
                 }
                 currentSlide = index;
+
+                // Video backgrounds: only the visible slide should play, otherwise
+                // it keeps streaming behind the other slides. Rewind so it starts
+                // from the top whenever its slide comes round again.
+                slides.forEach(function (slide, i) {
+                    const vid = slide.querySelector('video');
+                    if (!vid) return;
+                    if (i === index) {
+                        vid.currentTime = 0;
+                        const playing = vid.play();
+                        // Rejects when the browser blocks autoplay — the poster
+                        // stays up, which is an acceptable fallback.
+                        if (playing && playing.catch) playing.catch(function () { });
+                    } else {
+                        vid.pause();
+                    }
+                });
             }
 
             function nextSlide() {
@@ -98,11 +115,15 @@
                 goToSlide(prev);
             }
 
-            let slideInterval = setInterval(nextSlide, 6000);
+            // Auto-sliding disabled per request — the hero advances only when the
+            // visitor uses the dots or arrows. resetAutoplay() stays as a no-op so
+            // the handlers below are untouched; restoring autoplay means putting
+            // the two setInterval calls back and nothing else.
+            let slideInterval = null;
 
             function resetAutoplay() {
-                clearInterval(slideInterval);
-                slideInterval = setInterval(nextSlide, 6000);
+                // clearInterval(slideInterval);
+                // slideInterval = setInterval(nextSlide, 6000);
             }
 
             if (prevBtn) {
@@ -128,16 +149,9 @@
                 });
             }
             
-            // Pause auto-sliding on hover
-            const heroSection = document.querySelector('.hero');
-            if (heroSection) {
-                heroSection.addEventListener('mouseenter', () => {
-                    clearInterval(slideInterval);
-                });
-                heroSection.addEventListener('mouseleave', () => {
-                    slideInterval = setInterval(nextSlide, 6000);
-                });
-            }
+            // Hover pause/resume removed along with autoplay — there is nothing to
+            // pause, and the mouseleave half would have restarted the interval and
+            // brought auto-sliding back the first time the cursor left the hero.
         }
     }
 
@@ -503,12 +517,17 @@
         const zone = document.getElementById('sigServicesZone');
         const curtain = document.getElementById('sigReveal');
         const lens = document.getElementById('sigRevealLens');
+        // Curvy wave above the zone — carries the same blob mask so the circle
+        // cuts through it too, instead of leaving a brown band above the opening.
+        const wave = document.getElementById('sigWaveSep');
         if (!zone || !curtain) return;
 
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (prefersReduced) {
             curtain.classList.add('is-done');
             if (lens) lens.classList.add('is-done');
+            // No curtain at all → .sig-wave-cut is hidden by its own
+            // prefers-reduced-motion rule; nothing to drive here.
             return;
         }
 
@@ -516,7 +535,10 @@
         // section top hits the top of the screen. Kept short so the hole finishes
         // opening while the intro heading is still on screen — the heading is
         // revealed early, then you scroll through the rest of the intro panel.
-        const REVEAL_DISTANCE = 0.45; // × viewport height
+        // Matched to START_OFFSET so the circle finishes opening right as the
+        // section pins (rect.top = 0). The circle therefore rises from 0.78vh to
+        // 0.22vh while it grows, instead of doing all its growing at the top.
+        const REVEAL_DISTANCE = 0.70; // × viewport height
 
         let ticking = false;
 
@@ -542,6 +564,9 @@
                 lens.style.setProperty('--sig-reveal', blur);
                 lens.style.setProperty('--sig-grow', grow);
             }
+            // The wave carries the same blob mask, so it needs --sig-grow to keep
+            // its hole exactly in step with the curtain's.
+            if (wave) wave.style.setProperty('--sig-grow', grow);
         }
 
         function setDone(done) {
@@ -549,18 +574,21 @@
             if (lens) lens.classList.toggle('is-done', done);
         }
 
-        // Begin the reveal a little BEFORE the section fully lands, so the hole
-        // finishes opening right about when the intro heading reaches centre —
-        // the heading is then plainly visible through the open hole rather than
-        // already scrolled away.
-        const START_OFFSET = 0.35; // × vh — how early (rect.top above this → closed)
+        // rect.top at which the growth begins, in vh. The circle is anchored
+        // --sig-cy (0.22vh) below the zone's top edge, so its screen position at
+        // the start is START_OFFSET + 0.22 = 0.78vh — low on the screen, which is
+        // where the growth should begin. At 0 the growth only started once the
+        // section pinned, by which point the circle had already ridden up to
+        // 0.22vh and was level with the header.
+        const START_OFFSET = 0.70; // × vh — how early (rect.top above this → closed)
 
         function updateReveal() {
             const rect = zone.getBoundingClientRect();
             const vh = window.innerHeight;
             const distance = vh * REVEAL_DISTANCE;
 
-            // Progress from START_OFFSET·vh (section entering) to fully landed.
+            // Progress from the zone's top hitting the viewport top (rect.top = 0)
+            // through REVEAL_DISTANCE·vh of further scrolling.
             const scrolledPast = vh * START_OFFSET - rect.top;
             let progress = scrolledPast / distance;
             progress = Math.min(Math.max(progress, 0), 1);

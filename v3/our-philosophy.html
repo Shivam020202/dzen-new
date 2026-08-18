@@ -804,6 +804,136 @@
         }
     </style>
 
+    <!-- ═══════════════════════════════════════════════════════════════════
+         PAGE DESIGN SYSTEM — loaded last on purpose
+         The five sections above were each authored with their own scoped
+         block, so they duplicate the palette and each picked its own
+         vertical padding. This block is the single source for both. It is
+         last in the cascade so it wins over the earlier blocks without
+         needing to edit them, and over the inline `padding` on sections 2
+         and 5 via !important.
+         ═══════════════════════════════════════════════════════════════════ -->
+    <style>
+        .ab-page {
+            /* ── Palette: one source. The per-section --mf-* / --cl-* tokens
+                  are repointed at these below, so a colour change here
+                  propagates instead of needing four edits. ── */
+            --ph-ink: #2B1A12;
+            --ph-body: #5C4A3A;
+            --ph-gold: #C4924A;
+            --ph-gold-light: #E8C99A;
+            --ph-cream: #FDF8F3;
+            --ph-hairline: rgba(196, 146, 74, .22);
+
+            /* ── Vertical rhythm. Every section gets --ph-y of air; sections
+                  interrupted by an absolutely-positioned .section-separator
+                  add --ph-curve on that edge so the curve never crowds the
+                  content. Previously: 104/134, 60/100, 110/120, 100/120 —
+                  five sections, no shared scale. ── */
+            --ph-y: clamp(64px, 6.5vw, 92px);
+            --ph-curve: 42px;
+
+            /* ── Surfaces ── */
+            --ph-radius: 18px;
+            --ph-shadow: 0 18px 45px rgba(43, 26, 18, .06);
+        }
+
+        #manifesto-hero {
+            --mf-ink: var(--ph-ink);
+            --mf-body: var(--ph-body);
+            --mf-gold: var(--ph-gold);
+            --mf-cream: var(--ph-cream);
+        }
+
+        #cellular-level {
+            --cl-ink: var(--ph-ink);
+            --cl-body: var(--ph-body);
+            --cl-gold: var(--ph-gold);
+        }
+
+        /* ── Unified section rhythm ─────────────────────────────────────
+              1, 2, 3 carry a curve on their BOTTOM edge; 5 carries one on
+              its TOP. !important is required on 2 and 5 because their
+              padding is set inline on the element. ── */
+        #manifesto-hero,
+        #cellular-level {
+            padding: var(--ph-y) 0 calc(var(--ph-y) + var(--ph-curve)) !important;
+        }
+
+        #four-balances {
+            padding: var(--ph-y) 0 calc(var(--ph-y) + var(--ph-curve)) !important;
+        }
+
+        #integrated-journey {
+            padding: calc(var(--ph-y) + var(--ph-curve)) 0 var(--ph-y) !important;
+        }
+
+        /* The dark strip has no curve of its own to clear */
+        #brand-philosophy .philosophy-strip-container {
+            padding: var(--ph-y) 0 !important;
+        }
+
+        /* ── Section index — the one motif that runs the whole page ─────
+              The five sections are a single argument, but nothing signalled
+              that they were ordered. These numerals give the page a spine
+              and read as one system across both layout modes: centred with
+              the nemonic rule (2, 5) and left-aligned editorial (1, 3, 4).
+              Alignment is inherited from the parent, so no per-section rule
+              is needed. Remove the .ph-num spans to drop the motif. ── */
+        .ph-num {
+            display: block;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 12.5px;
+            font-style: italic;
+            letter-spacing: 1.5px;
+            line-height: 1;
+            color: var(--ph-gold);
+            opacity: .8;
+            margin-bottom: 12px;
+        }
+
+        /* Lighter gold: the true gold fails against the dark strip */
+        #brand-philosophy .ph-num {
+            color: var(--ph-gold-light);
+            opacity: .9;
+        }
+
+        /* ── Unified card surface ───────────────────────────────────────
+              The Balances pillars and the Journey steps are the same kind
+              of object — an image over a title and a line of copy — but
+              only .step-arch had a tint and only .service-arch-card had a
+              hover lift. Now both behave identically. ── */
+        .step-arch,
+        .service-arch-card__media {
+            background: rgba(196, 146, 74, .06);
+        }
+
+        .step-arch {
+            box-shadow: var(--ph-shadow);
+        }
+
+        .service-arch-card,
+        .step-arch {
+            transition: transform .45s cubic-bezier(.25, .46, .45, .94),
+                box-shadow .45s ease;
+        }
+
+        .step-arch:hover {
+            transform: translateY(-8px);
+        }
+
+        /* ── Consistent measure for the intro paragraph under each title ──
+              Section 2 capped at 700px, section 5 at none, the others at
+              46ch. A ch-based cap keeps the line length readable rather
+              than tracking the viewport. ── */
+        .ab-page .section-header .section-desc,
+        .ab-page .section-header>p {
+            max-width: 62ch !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+    </style>
+
 </head>
 
 <body class="ab-page" style="background-color: #FDF8F3; color: #2B1A12;">
@@ -860,10 +990,15 @@
                         style="filter: brightness(0) invert(1);" />
                     <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
                 </div>
-                <h1 class="page-title mb-3"
+                <!-- h2, not h1: this is a breadcrumb label at 18-22px. The page's
+                     real h1 is the manifesto title below. Kept as a heading tag so
+                     styles.css's global h1-h6 colour/italic rules still apply — an
+                     h1-to-p swap would be caught by `html body p { font-size: 14px
+                     !important }` and shrink it. -->
+                <h2 class="page-title mb-3"
                     style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400 !important; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; font-size: clamp(18px, 2.5vw, 22px); margin: 0;">
                     Our Philosophy
-                </h1>
+                </h2>
             </div>
 
             <!-- Curvy Bottom Separator -->
@@ -881,6 +1016,7 @@
 
                 <!-- Left: the statement -->
                 <div class="mf__copy">
+                    <span class="ph-num" aria-hidden="true">01</span>
                     <span class="mf__eyebrow">The Manifesto</span>
                     <h1 class="section-title mf__title">
                         We don't chase trends.<br>
@@ -928,7 +1064,8 @@
         </section>
 
         <!-- 2. THE FOUR BALANCES -->
-        <section class="service-arch-section" style="background-color: #ffffff; padding: 60px 0 100px;">
+        <section class="service-arch-section" id="four-balances"
+            style="background-color: #ffffff; padding: 60px 0 100px;">
 
             <!-- Shared pencil-wobble filter for the four sketches -->
             <svg width="0" height="0" aria-hidden="true" focusable="false" style="position: absolute;">
@@ -941,6 +1078,7 @@
 
             <div class="container">
                 <div class="section-header text-center mb-5">
+                    <span class="ph-num" aria-hidden="true">02</span>
                     <span class="section-subtitle" style="letter-spacing: 3px;">THE PILLARS</span>
                     <div class="nemonic-separator mt-2">
                         <div class="nemonic-line"></div>
@@ -1087,6 +1225,7 @@
 
                 <!-- Right: the argument -->
                 <div class="cl__copy">
+                    <span class="ph-num" aria-hidden="true">03</span>
                     <span class="cl__eyebrow">The Cellular Level</span>
                     <h2 class="section-title cl__title">Why Inside-Out <em class="scribble">Elevation</em> Matters</h2>
                     <p class="cl__lead">
@@ -1127,7 +1266,8 @@
                 <div class="philosophy-strip-inner" style="padding: 140px 20px 110px;">
 
                     <header class="pv__head">
-                        <span class="pv__eyebrow">A Paradigm Shift</span>
+                        <span class="ph-num" aria-hidden="true">04</span>
+                    <span class="pv__eyebrow">A Paradigm Shift</span>
                         <h2 class="section-title pv__title">Why Isolated Treatments<br>Are <em
                                 class="scribble">Outdated.</em></h2>
                         <div class="nemonic-separator mb-4">
@@ -1236,7 +1376,7 @@
         </section>
 
         <!-- 5. THE D'ZEN INTEGRATED JOURNEY -->
-        <section class="service-arch-section position-relative"
+        <section class="service-arch-section position-relative" id="integrated-journey"
             style="background-color: #FDF8F3; background-image: url('../images/contour.webp'); background-size: cover; background-position: center; background-attachment: fixed; padding: 100px 0 120px; overflow: hidden; margin-top: -50px;">
             <!-- Top Curvy Separator -->
             <div class="position-absolute w-100" style="top: 0; left: 0; transform: rotate(180deg); z-index: 0;">
@@ -1250,6 +1390,7 @@
             <div class="container position-relative z-1 pt-4">
 
                 <div class="section-header text-center mt-4 mb-5">
+                    <span class="ph-num" aria-hidden="true">05</span>
                     <span class="section-subtitle" style="letter-spacing: 3px;">THE PROCESS</span>
                     <div class="nemonic-separator mt-2">
                         <div class="nemonic-line"></div>
@@ -1257,9 +1398,17 @@
                         <div class="nemonic-line"></div>
                     </div>
                     <h2 class="section-title">The D'Zen Integrated Journey</h2>
+                    <p class="section-desc mx-auto mt-3" style="color: #5C4A3A; font-weight: 300;">
+                        Every plan follows the same four movements — read the skin, restore its foundation,
+                        refine the surface, then hold the result. Nothing is skipped and nothing is rushed.
+                    </p>
                 </div>
 
-                <div class="row g-4 mt-4 position-relative">
+                <!-- No mt-* on the row: a margin-top utility overrides .row's own
+                     negative top margin, which is what cancels the first row's g-4
+                     gutter, leaving 1.5rem of dead column padding above the steps.
+                     Spacing above the row belongs on .section-header's mb-*. -->
+                <div class="row g-4 position-relative">
 
                     <!-- STEP 1 -->
                     <div class="col-md-6 col-lg-3">
@@ -1496,7 +1645,9 @@
         </a>
         <div class="embossed-content">
             <h3 class="embossed-eyebrow">AESTHETICS & WELLNESS</h3>
-            <h1 class="embossed-title">D'ZEN DERMA</h1>
+            <!-- h2: decorative wordmark, not the page heading. .embossed-title
+                 sets its own font-size so the tag swap changes nothing visually. -->
+            <h2 class="embossed-title">D'ZEN DERMA</h2>
         </div>
     </section>
 
