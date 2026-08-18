@@ -214,25 +214,16 @@
         }
 
         /* ── Eyebrow, reused by the non-centred sections ── */
-        .ac-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 14px;
-            font-family: 'Inter', sans-serif;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 4.5px;
-            text-transform: uppercase;
-            color: var(--ac-gold);
-            margin-bottom: 26px;
-        }
-
-        .ac-eyebrow::before {
-            content: "";
-            width: 40px;
-            height: 1px;
-            background: var(--ac-gold);
-            opacity: .7;
+        /* Replaces the old .ac-eyebrow (a gold hairline + text) — this section is
+           the only one on the page that did not use the site-standard
+           .section-subtitle + .nemonic-separator pair, so it now does.
+           .nemonic-separator is justify-content:center by default, which is right
+           for the page's centred headers but not here: this one sits in the
+           left-aligned .ac-copy column of a split layout, so it is pulled left to
+           line up with the heading and copy beneath it. */
+        .ac-split .ac-copy .nemonic-separator {
+            justify-content: flex-start;
+            margin-bottom: 18px;
         }
 
         /* ── Section 2: Our Space + Technology ── */
@@ -475,6 +466,12 @@
                 order: 1;
                 padding: 0 24px;
                 text-align: center;
+            }
+
+            /* Copy centres at this breakpoint, so the separator has to follow —
+               text-align does not move a flex container's own children. */
+            .ac-split .ac-copy .nemonic-separator {
+                justify-content: center;
             }
 
             .ac-split figure {
@@ -752,7 +749,12 @@
                 </figure>
 
                 <div class="ac-copy">
-                    <span class="ac-eyebrow">Space &amp; Technology</span>
+                    <span class="section-subtitle" style="letter-spacing: 3px;">SPACE &amp; TECHNOLOGY</span>
+                    <div class="nemonic-separator mt-2">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
                     <h2 class="section-title">Equipment Chosen for Outcomes, Not Optics</h2>
                     <p class="ac-lead">
                         A device is only as good as the hands that calibrate it. We invest in medical-grade platforms
@@ -793,11 +795,16 @@
                 <div class="section-header text-center mb-5" style="max-width: 760px; margin-inline: auto;">
                     <span class="section-subtitle" style="color: #E8C99A !important; letter-spacing: 3px;">OUR
                         COMMITMENT</span>
+                    <!-- Matches the dark-background treatment used by the breadcrumb
+                         header above and the same section on the other pages: lines at
+                         .4 and no opacity() on the filter. The mark was washing out
+                         here because it carried an extra opacity(0.5) on top of lines
+                         that were already dimmer at .2. -->
                     <div class="nemonic-separator mt-2 mb-4">
-                        <div class="nemonic-line" style="background-color: rgba(255,255,255,0.2);"></div>
+                        <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
                         <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon"
-                            style="filter: brightness(0) invert(1) opacity(0.5);" />
-                        <div class="nemonic-line" style="background-color: rgba(255,255,255,0.2);"></div>
+                            style="filter: brightness(0) invert(1);" />
+                        <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
                     </div>
                     <h2 class="section-title ac-title">What We Hold Ourselves To</h2>
                     <p class="ac-lead">
