@@ -453,6 +453,76 @@
                 transform: none;
             }
         }
+
+        /* ── Year filter ──────────────────────────────────────────────
+           The pill itself comes from styles.css (.concerns-tabs /
+           .concern-tab-btn), so this is the same control as the concerns
+           tabs on index.html. Only the spacing and the filtering behaviour
+           are page-specific. */
+        .md-year-tabs {
+            /* .concerns-tabs-wrapper ships with 70px, which is sized for the
+               homepage's full-width tab panels, not a card grid. */
+            margin-bottom: clamp(28px, 3vw, 42px) !important;
+        }
+
+        .md-year-tabs .concerns-tabs {
+            /* Flex items default to min-width:auto and refuse to shrink below
+               their content width. Without this the pill overflows the wrapper
+               and its far end is clipped rather than scrolling inside it —
+               which is the whole point of a scrolling tab row. */
+            min-width: 0;
+            flex: 0 1 auto;
+            /* .concerns-tabs already sets overflow-x:auto and hides the
+               scrollbar; these make it behave like a slider rather than a
+               plain overflow box. */
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x proximity;
+            scroll-padding-inline: 20px;
+            scroll-behavior: smooth;
+            /* Room for the pill's own 20px inline padding at both ends */
+            max-width: 100%;
+        }
+
+        .md-year-tabs .concern-tab-btn {
+            scroll-snap-align: center;
+            /* Tabs must not compress as more years are added — they scroll */
+            flex: 0 0 auto;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .md-year-tabs .concerns-tabs {
+                scroll-behavior: auto;
+            }
+        }
+
+        /* Cards filtered out. A class, not [hidden] — Bootstrap's column
+           display utilities would otherwise win over the attribute. */
+        .md-item.is-filtered {
+            display: none !important;
+        }
+
+        /* Cards entering the grid fade rather than snapping in */
+        .md-item {
+            animation: mdFade .45s ease both;
+        }
+
+        @keyframes mdFade {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .md-item {
+                animation: none;
+            }
+        }
     </style>
 </head>
 
@@ -645,7 +715,7 @@
                  absolute/bottom:-1px, so no inline positioning here. -->
             <div class="section-separator" aria-hidden="true">
                 <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path fill="#F4EFE8" d="M0,50 C240,120 480,-20 720,50 C960,120 1200,-20 1440,50 L1440,100 L0,100 Z">
+                    <path fill="#F4EFE8" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z">
                     </path>
                 </svg>
             </div>
@@ -673,9 +743,28 @@
                 <!-- No mt-* on the row: a margin-top utility overrides .row's own
                      negative top margin, which is what cancels the first row's g-4
                      gutter, and leaves a gutter of dead space above the cards. -->
+                <!-- Year filter. Reuses .concerns-tabs / .concern-tab-btn from
+                     styles.css so it is the same control as the concerns tabs on
+                     index.html rather than a second tab design. -->
+                <div class="concerns-tabs-wrapper md-year-tabs">
+                    <div class="concerns-tabs" role="tablist" aria-label="Filter coverage by year">
+                        <button type="button" class="concern-tab-btn active" data-year="all" role="tab"
+                            aria-selected="true">ALL</button>
+                        <button type="button" class="concern-tab-btn" data-year="2026" role="tab"
+                            aria-selected="false">2026</button>
+                        <button type="button" class="concern-tab-btn" data-year="2025" role="tab"
+                            aria-selected="false">2025</button>
+                        <button type="button" class="concern-tab-btn" data-year="2024" role="tab"
+                            aria-selected="false">2024</button>
+                        <button type="button" class="concern-tab-btn" data-year="2023" role="tab"
+                            aria-selected="false">2023</button>
+                        <button type="button" class="concern-tab-btn" data-year="2022" role="tab"
+                            aria-selected="false">2022</button>
+                    </div>
+                </div>
                 <div class="row g-4">
 
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 md-item" data-year="2026">
                         <article class="md-card">
                             <div class="md-card__media">
                                 <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=800&auto=format&fit=crop"
@@ -698,7 +787,7 @@
                         </article>
                     </div>
 
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 md-item" data-year="2026">
                         <article class="md-card">
                             <div class="md-card__media">
                                 <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop"
@@ -721,7 +810,7 @@
                         </article>
                     </div>
 
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 md-item" data-year="2025">
                         <article class="md-card">
                             <div class="md-card__media">
                                 <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=800&auto=format&fit=crop"
@@ -744,7 +833,7 @@
                         </article>
                     </div>
 
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 md-item" data-year="2025">
                         <article class="md-card">
                             <div class="md-card__media">
                                 <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=800&auto=format&fit=crop"
@@ -767,7 +856,7 @@
                         </article>
                     </div>
 
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 md-item" data-year="2025">
                         <article class="md-card">
                             <div class="md-card__media">
                                 <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?q=80&w=800&auto=format&fit=crop"
@@ -790,7 +879,7 @@
                         </article>
                     </div>
 
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 md-item" data-year="2025">
                         <article class="md-card">
                             <div class="md-card__media">
                                 <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=800&auto=format&fit=crop"
@@ -803,6 +892,115 @@
                                 <p>On the judgement that sits between a good device and a good outcome, and why it
                                     cannot be protocolised away.</p>
                                 <a class="md-card__link" href="#" aria-label="Read the Lifestyle Asia feature">
+                                    Read Feature
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4 md-item" data-year="2024">
+                        <article class="md-card">
+                            <div class="md-card__media">
+                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=800&auto=format&fit=crop"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                                <span class="md-card__tag">Print &middot; Cond&eacute; Nast Traveler</span>
+                            </div>
+                            <div class="md-card__body">
+                                <span class="md-card__date">October 2024</span>
+                                <h3>The Clinic as a Place to Exhale</h3>
+                                <p>On designing for calm without softening a single clinical standard &mdash; and why the two are not in tension.</p>
+                                <a class="md-card__link" href="#">
+                                    Read Feature
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 md-item" data-year="2024">
+                        <article class="md-card">
+                            <div class="md-card__media">
+                                <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                                <span class="md-card__tag">Television &middot; ET Retail</span>
+                            </div>
+                            <div class="md-card__body">
+                                <span class="md-card__date">April 2024</span>
+                                <h3>Why Patients Are Asking for Less</h3>
+                                <p>A panel on the shift away from maximal intervention, and what it means for how clinics are built and staffed.</p>
+                                <a class="md-card__link" href="#">
+                                    Watch Segment
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 md-item" data-year="2023">
+                        <article class="md-card">
+                            <div class="md-card__media">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                                <span class="md-card__tag">Print &middot; Esquire</span>
+                            </div>
+                            <div class="md-card__body">
+                                <span class="md-card__date">November 2023</span>
+                                <h3>The Doctor Who Says No</h3>
+                                <p>A profile on building a practice around the treatments declined as much as the ones performed.</p>
+                                <a class="md-card__link" href="#">
+                                    Read Feature
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 md-item" data-year="2023">
+                        <article class="md-card">
+                            <div class="md-card__media">
+                                <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=800&auto=format&fit=crop"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                                <span class="md-card__tag">Print &middot; Travel + Leisure</span>
+                            </div>
+                            <div class="md-card__body">
+                                <span class="md-card__date">March 2023</span>
+                                <h3>Where Wellness Stops Being Decorative</h3>
+                                <p>On sleep, stress and nutrition treated as clinical inputs rather than lifestyle garnish.</p>
+                                <a class="md-card__link" href="#">
+                                    Read Feature
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 md-item" data-year="2022">
+                        <article class="md-card">
+                            <div class="md-card__media">
+                                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=800&auto=format&fit=crop"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                                <span class="md-card__tag">Print &middot; Lifestyle Asia</span>
+                            </div>
+                            <div class="md-card__body">
+                                <span class="md-card__date">August 2022</span>
+                                <h3>A Quieter Definition of Results</h3>
+                                <p>The opening interview on what balance-led practice would look like, before the first clinic doors opened.</p>
+                                <a class="md-card__link" href="#">
                                     Read Feature
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -1039,6 +1237,7 @@
         <div class="embossed-content">
             <h3 class="embossed-eyebrow">AESTHETICS & WELLNESS</h3>
             <h2 class="embossed-title">D'ZEN DERMA</h2>
+            <p class="embossed-tagline">Elevating You Inside Out</p>
         </div>
     </section>
 
@@ -1081,6 +1280,54 @@
     </div>
 
     <!-- Project script controller -->
+    <!-- Coverage year filter -->
+    <script>
+        (function () {
+            var section = document.getElementById('coverage');
+            if (!section) return;
+
+            var tabs = section.querySelectorAll('.concern-tab-btn');
+            // Scoped to .md-item so the tab buttons, which also carry
+            // data-year, are never treated as filterable cards.
+            var items = section.querySelectorAll('.md-item');
+            if (!tabs.length || !items.length) return;
+
+            function apply(year) {
+                items.forEach(function (item) {
+                    var show = year === 'all' || item.getAttribute('data-year') === year;
+                    item.classList.toggle('is-filtered', !show);
+                    if (show) {
+                        // Restart the fade so re-entering cards animate again
+                        item.style.animation = 'none';
+                        void item.offsetWidth;
+                        item.style.animation = '';
+                    }
+                });
+            }
+
+            tabs.forEach(function (tab) {
+                tab.addEventListener('click', function () {
+                    tabs.forEach(function (t) {
+                        t.classList.remove('active');
+                        t.setAttribute('aria-selected', 'false');
+                    });
+                    tab.classList.add('active');
+                    tab.setAttribute('aria-selected', 'true');
+
+                    // Pull the chosen tab fully into view — with the row
+                    // scrollable, a tab at either end can be clipped when
+                    // selected. inline:'nearest' avoids yanking the row when
+                    // the tab is already visible.
+                    if (tab.scrollIntoView) {
+                        tab.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+                    }
+
+                    apply(tab.getAttribute('data-year'));
+                });
+            });
+        })();
+    </script>
+
     <script src="script.js?v=3.0"></script>
 </body>
 

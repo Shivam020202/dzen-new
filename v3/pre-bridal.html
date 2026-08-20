@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Pre-Bridal Programme — D'Zen Derma</title>
+    <meta name="description"
+        content="D'Zen Derma's pre-bridal programme — 3, 6 and 9-month timelines across skin, hair, body and wellness, planned backwards from your wedding date." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Base styles and variable sheets -->
+    <link rel="stylesheet" href="../styles.css?v=2.2" />
+    <!-- Section Specific styles -->
+    <link rel="stylesheet" href="styles.css?v=5.0" />
+
+    <!-- Tailwind CSS (without preflight resets) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: { preflight: false },
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4B2B20',
+                        accent: '#e0a65a',
+                        'accent-light': '#daa520',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Force opaque navbar to sit cleanly above the dark textured section */
+        .pnav {
+            background: #ffffff !important;
+            border-bottom: 1px solid rgba(180, 140, 90, 0.14) !important;
+            box-shadow: 0 2px 18px rgba(0, 0, 0, 0.06) !important;
+        }
+
+        .pnav .pnav__logo img {
+            filter: none !important;
+        }
+
+        .pnav .pnav__burger {
+            background: rgba(75, 43, 32, 0.06) !important;
+        }
+
+        .pnav .pnav__burger span {
+            background: #3A2418 !important;
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           PRE-BRIDAL PROGRAMME — shared tokens
+           One palette and one vertical scale across all four sections.
+           ═══════════════════════════════════════════════════════════ */
+        .pb-page {
+            --pb-ink: #2B1A12;
+            --pb-body: #5C4A3A;
+            --pb-gold: #C4924A;
+            --pb-gold-light: #E8C99A;
+            --pb-cream: #FDF8F3;
+            --pb-hairline: rgba(196, 146, 74, .22);
+            --pb-y: clamp(64px, 6.5vw, 92px);
+            --pb-radius: 18px;
+            --pb-shadow: 0 18px 45px rgba(43, 26, 18, .06);
+            /* Tracks .section-separator svg's height, which steps at 768px */
+            --pb-wave-h: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .pb-page {
+                --pb-wave-h: 80px;
+            }
+        }
+
+        .pb-section {
+            position: relative;
+            padding: var(--pb-y) 0;
+        }
+
+        /* Sections closing with a .section-separator curve need it cleared */
+        .pb-section--curve {
+            padding-bottom: calc(var(--pb-wave-h) + 28px);
+        }
+
+        /* ── 1. THE D'ZEN BRIDAL JOURNEY ──────────────────────────── */
+        .pb-journey {
+            background: #FDF8F3;
+        }
+
+        .pb-split {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 44%);
+            gap: clamp(32px, 5vw, 70px);
+            align-items: center;
+        }
+
+        .pb-figure {
+            margin: 0;
+        }
+
+        .pb-figure img {
+            display: block;
+            width: 100%;
+            height: clamp(380px, 46vw, 560px);
+            object-fit: cover;
+            object-position: center 25%;
+            /* Same arch silhouette used across the site's imagery */
+            border-radius: 500px 500px 12px 12px;
+        }
+
+        .pb-copy .pb-lead {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 16.5px;
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--pb-ink);
+            max-width: 52ch;
+            margin: 0 0 18px;
+        }
+
+        .pb-copy .pb-body {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.85;
+            color: var(--pb-body);
+            max-width: 52ch;
+            margin: 0 0 30px;
+        }
+
+        /* Three-step strip under the copy — consult, plan, hold */
+        .pb-steps {
+            border-top: 1px solid var(--pb-hairline);
+        }
+
+        .pb-step {
+            display: grid;
+            grid-template-columns: 40px 1fr;
+            gap: 16px;
+            align-items: start;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--pb-hairline);
+        }
+
+        .pb-step b {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 17px;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--pb-gold);
+            line-height: 1.5;
+        }
+
+        .pb-step span {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 14.5px;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--pb-body);
+        }
+
+        .pb-step span strong {
+            display: block;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: .4px;
+            color: var(--pb-ink);
+            margin-bottom: 3px;
+        }
+
+        /* ── 2. 3 / 6 / 9-MONTH TIMELINES ─────────────────────────── */
+        .pb-timelines {
+            background: linear-gradient(to bottom, #F4EFE8, #FDF8F3);
+        }
+
+        .pb-plan {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: clamp(24px, 2.6vw, 34px);
+            background: #ffffff;
+            border: 1px solid rgba(43, 26, 18, .06);
+            border-radius: var(--pb-radius);
+            box-shadow: var(--pb-shadow);
+            transition: transform .45s cubic-bezier(.25, .46, .45, .94),
+                box-shadow .45s ease;
+        }
+
+        .pb-plan:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 26px 55px rgba(43, 26, 18, .10);
+        }
+
+        /* The 6-month plan is the one most brides need, so it is marked rather
+           than left for the reader to work out. */
+        .pb-plan--featured {
+            border-color: rgba(196, 146, 74, .45);
+            box-shadow: 0 26px 60px rgba(43, 26, 18, .12);
+        }
+
+        .pb-plan__flag {
+            position: absolute;
+            top: -11px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 5px 15px;
+            border-radius: 100px;
+            background: var(--pb-gold);
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            color: #ffffff;
+            white-space: nowrap;
+        }
+
+        .pb-plan__term {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(30px, 3.4vw, 42px);
+            font-weight: 400;
+            line-height: 1;
+            color: var(--pb-ink);
+            margin-bottom: 6px;
+        }
+
+        .pb-plan__unit {
+            display: block;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 10.5px;
+            font-weight: 600;
+            letter-spacing: 2.2px;
+            text-transform: uppercase;
+            color: var(--pb-gold);
+            margin-bottom: 16px;
+        }
+
+        .pb-plan__note {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--pb-body);
+            padding-bottom: 20px;
+            margin: 0 0 20px;
+            border-bottom: 1px solid var(--pb-hairline);
+        }
+
+        /* Milestone list — a rail with a node per phase, so a plan reads as a
+           sequence rather than a feature list. */
+        .pb-milestones {
+            list-style: none;
+            margin: 0;
+            padding: 0 0 0 22px;
+            position: relative;
+        }
+
+        .pb-milestones::before {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 6px;
+            bottom: 6px;
+            width: 1px;
+            background: var(--pb-hairline);
+        }
+
+        .pb-milestones li {
+            position: relative;
+            padding-bottom: 16px;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.65;
+            color: var(--pb-body);
+        }
+
+        .pb-milestones li:last-child {
+            padding-bottom: 0;
+        }
+
+        .pb-milestones li::before {
+            content: "";
+            position: absolute;
+            left: -22px;
+            top: 7px;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1.5px solid var(--pb-gold);
+        }
+
+        .pb-milestones li b {
+            display: block;
+            font-weight: 600;
+            font-size: 12.5px;
+            letter-spacing: .3px;
+            text-transform: uppercase;
+            color: var(--pb-ink);
+            margin-bottom: 3px;
+        }
+
+        /* ── 3. SKIN, HAIR, BODY, WELLNESS ────────────────────────── */
+        .pb-pillars {
+            background: #FDF8F3;
+        }
+
+        .pb-pillar {
+            height: 100%;
+            padding: clamp(24px, 2.6vw, 32px);
+            background: #ffffff;
+            border: 1px solid rgba(43, 26, 18, .06);
+            border-radius: var(--pb-radius);
+            box-shadow: var(--pb-shadow);
+            transition: transform .45s cubic-bezier(.25, .46, .45, .94);
+        }
+
+        .pb-pillar:hover {
+            transform: translateY(-8px);
+        }
+
+        .pb-pillar__icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(160deg, #FFFDFB 0%, #F7EDE0 100%);
+            border: 1px solid var(--pb-hairline);
+            color: var(--pb-gold);
+            margin-bottom: 18px;
+        }
+
+        .pb-pillar__icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .pb-pillar h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(18px, 1.8vw, 21px);
+            font-weight: 400;
+            color: var(--pb-ink);
+            margin: 0 0 12px;
+        }
+
+        .pb-pillar p {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 14.5px;
+            font-weight: 300;
+            line-height: 1.75;
+            color: var(--pb-body);
+            margin: 0 0 16px;
+        }
+
+        .pb-pillar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .pb-pillar li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 8px;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 13.5px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--pb-body);
+        }
+
+        .pb-pillar li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--pb-gold);
+            opacity: .55;
+        }
+
+        /* ── 4. BRIDAL TESTIMONIALS ───────────────────────────────── */
+        .pb-testimonials {
+            position: relative;
+            background: #2B1A12;
+            overflow: hidden;
+            /* mix-blend-mode on the grain blends against the nearest stacking
+               context; without this it would reach past the section. */
+            isolation: isolate;
+            /* Top clears .pb-testimonials__wave so the curve never crowds the
+               heading. */
+            padding: calc(var(--pb-y) + clamp(48px, 6vw, 100px)) 0 var(--pb-y);
+        }
+
+        .pb-testimonials::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(35deg, #2f1810 0%, #8C4A2E 60%, #8a5815 85%, #8a6017 100%);
+            z-index: 0;
+        }
+
+        /* Same fractalNoise grain the philosophy strip and footer CTA use, so
+           every dark field on the site reads as one material. */
+        .pb-testimonials::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.25;
+            mix-blend-mode: overlay;
+        }
+
+        /* Cream wave cutting the top edge of the dark field. Placed inside this
+           section and filled cream (the path closes at L1440,0 L0,0, so the fill
+           sits ABOVE the curve) rather than as a dark wave below the previous
+           section — the dark here is a 35deg gradient running brown to gold, so
+           no single flat fill could have matched it across the full width. */
+        .pb-testimonials__wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            line-height: 0;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .pb-testimonials__wave svg {
+            display: block;
+            width: 100%;
+            height: clamp(48px, 6vw, 100px);
+        }
+
+        /* 3, above the wave at 2 — layer order is gradient 0, grain 1, wave 2,
+           content 3. */
+        .pb-testimonials>.container {
+            position: relative;
+            z-index: 3;
+        }
+
+        .pb-quote {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: clamp(24px, 2.6vw, 32px);
+            border-radius: var(--pb-radius);
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .11);
+            transition: background .3s ease, border-color .3s ease;
+        }
+
+        .pb-quote:hover {
+            background: rgba(255, 255, 255, .1);
+            border-color: rgba(232, 201, 154, .35);
+        }
+
+        .pb-quote__mark {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 44px;
+            line-height: .8;
+            color: var(--pb-gold-light);
+            opacity: .55;
+            margin-bottom: 10px;
+        }
+
+        /* html body p forces 14px Inter #5C3A2E with !important further down
+           styles.css — these quotes are paragraphs, so they need to outrank it
+           or they render in the wrong size and colour on the dark field. */
+        html body .pb-quote blockquote p {
+            font-family: 'Inter', system-ui, sans-serif !important;
+            font-size: 14.5px !important;
+            font-weight: 300;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, .82) !important;
+            margin: 0;
+        }
+
+        .pb-quote blockquote {
+            margin: 0 0 22px;
+        }
+
+        /* mt-auto pins the attribution to the bottom edge so quotes of
+           different lengths still line their names up. */
+        .pb-quote__who {
+            margin-top: auto;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, .12);
+        }
+
+        .pb-quote__name {
+            display: block;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 16px;
+            font-style: italic;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .pb-quote__meta {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 10.5px;
+            font-weight: 600;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            color: var(--pb-gold-light);
+            opacity: .8;
+        }
+
+        /* styles.css forces h1-h6 to #4b2b20 + italic with !important, which is
+           unreadable on the dark field. */
+        html body .pb-testimonials .section-title {
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }
+
+        html body .pb-testimonials .section-title .scribble {
+            color: var(--pb-gold-light) !important;
+            -webkit-text-fill-color: var(--pb-gold-light) !important;
+        }
+
+        @media (max-width: 991.98px) {
+            .pb-split {
+                grid-template-columns: 1fr;
+                gap: 44px;
+            }
+
+            /* Image drops below the copy on narrow screens */
+            .pb-figure {
+                order: 2;
+            }
+
+            .pb-figure img {
+                height: clamp(320px, 62vw, 460px);
+                border-radius: 300px 300px 12px 12px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .pb-plan,
+            .pb-pillar,
+            .pb-quote {
+                transition: none;
+            }
+
+            .pb-plan:hover,
+            .pb-pillar:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="pb-page" style="background-color: #FDF8F3; color: #2B1A12;">
+
+    <!-- ═══════ Floating Pill Navbar v3 ═══════ -->
+    <nav id="pill-nav" class="pnav" aria-label="Main navigation">
+        <!-- Left: Book Now -->
+        <div class="pnav__left">
+            <a href="../newthree.html#book" class="pnav__cta">
+                Book
+                <img src="nemonic.png" class="btn-icon" style="width: 12px; height: 12px; object-fit: contain;"
+                    alt="icon" />
+            </a>
+        </div>
+
+        <!-- Center: logo -->
+        <a href="index.html" class="pnav__logo" aria-label="Home">
+            <img src="../images/logo1.png" alt="D'Zen Derma" />
+        </a>
+
+        <!-- Right: hamburger -->
+        <div class="pnav__right">
+            <button class="pnav__burger" id="pnav-burger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile drawer -->
+    <div class="pnav-overlay" id="pnav-overlay"></div>
+    <aside class="pnav-drawer" id="pnav-drawer" aria-label="Menu">
+        <button class="pnav-drawer__close" id="pnav-close" aria-label="Close menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round">
+                <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+        </button>
+        <ul class="pnav-drawer__list">
+            <li><a href="../aesthetics.html">Pillars <span>→</span></a></li>
+            <li><a href="../concerns.html">Concerns <span>→</span></a></li>
+            <li><a href="../treatments.html">Treatments <span>→</span></a></li>
+            <li><a href="about.html">Who We Are <span>→</span></a></li>
+            <li><a href="../signatures.html">D'Zen Experience <span>→</span></a></li>
+            <li><a href="../journal.html">Journal <span>→</span></a></li>
+        </ul>
+    </aside>
+
+    <main>
+
+        <!-- Inner Page Header -->
+        <section class="breadcrumb-header position-relative d-flex align-items-center justify-content-center"
+            style="background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%), url('../images/contour-texture.webp') repeat; background-blend-mode: multiply; padding-top: 103px; padding-bottom: 60px; border-bottom: none; overflow: hidden;">
+
+            <div class="container position-relative text-center" style="z-index: 2;">
+                <span class="section-subtitle" style="color: rgba(255, 255, 255, 0.7) !important;">PRE-BRIDAL
+                    PROGRAMME</span>
+                <div class="nemonic-separator mt-2 mb-4">
+                    <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
+                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon"
+                        style="filter: brightness(0) invert(1);" />
+                    <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
+                </div>
+                <h1 class="page-title mb-3"
+                    style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400 !important; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; font-size: clamp(18px, 2.5vw, 22px); margin: 0;">
+                    Looking Like Yourself, in <span class="scribble"
+                        style="color: #E8C99A !important; -webkit-text-fill-color: #E8C99A !important;">Balance</span>
+                </h1>
+            </div>
+
+            <!-- Curvy Bottom Separator -->
+            <div class="position-absolute w-100" style="bottom: -1px; left: 0; z-index: 2;">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                    style="display: block; width: 100%; height: clamp(70px, 7vw, 110px);">
+                    <path fill="#FDF8F3" d="M0,26 C400,136 1040,-36 1440,52 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ═══════ 1. THE D'ZEN BRIDAL JOURNEY ═══════ -->
+        <section class="pb-section pb-section--curve pb-journey" id="journey" aria-labelledby="journey-title">
+            <div class="container">
+                <div class="pb-split">
+
+                    <div class="pb-copy">
+                        <span class="section-subtitle" style="letter-spacing: 3px;">THE JOURNEY</span>
+                        <div class="nemonic-separator mt-2">
+                            <div class="nemonic-line"></div>
+                            <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                            <div class="nemonic-line"></div>
+                        </div>
+                        <h2 class="section-title" id="journey-title">The D'Zen Bridal <span
+                                class="scribble">Journey</span></h2>
+                        <p class="pb-lead">
+                            A wedding is the one day you will be looked at most closely &mdash; and the worst possible
+                            time to try something new. Our programme starts early and moves slowly, so that what
+                            arrives on the day is recognisably you.
+                        </p>
+                        <p class="pb-body">
+                            Nothing here is a package bought off a menu. We read your skin, your hair and your
+                            wellbeing as one picture, then build a plan that restores balance rather than chasing a
+                            look. Everything is timed backwards from your date, with a settling window built in
+                            before every event.
+                        </p>
+
+                        <div class="pb-steps">
+                            <div class="pb-step">
+                                <b>01</b>
+                                <span>
+                                    <strong>Consultation &amp; Diagnosis</strong>
+                                    A full assessment of skin, hair and lifestyle, plus imaging so progress is
+                                    measured rather than guessed.
+                                </span>
+                            </div>
+                            <div class="pb-step">
+                                <b>02</b>
+                                <span>
+                                    <strong>A Plan Timed to Your Date</strong>
+                                    Sequenced backwards from the wedding, with recovery and settling windows placed
+                                    before every function.
+                                </span>
+                            </div>
+                            <div class="pb-step">
+                                <b>03</b>
+                                <span>
+                                    <strong>Review, Adjust, Hold</strong>
+                                    Regular reviews to adjust what is working, and a maintenance plan so the result
+                                    holds through the season.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <figure class="pb-figure">
+                        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=900&auto=format&fit=crop"
+                            alt="A bride photographed in soft natural light" loading="lazy" decoding="async">
+                    </figure>
+
+                </div>
+            </div>
+
+            <!-- Curvy separator into the timelines section. Filled #F4EFE8 to
+                 match that section's top edge — a separator carries the colour of
+                 the section it hands off to. -->
+            <div class="section-separator" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#F4EFE8" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z">
+                    </path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ═══════ 2. 3 / 6 / 9-MONTH TIMELINES ═══════ -->
+        <section class="pb-section pb-timelines" id="timelines" aria-labelledby="timelines-title">
+            <div class="container">
+
+                <div class="section-header text-center mb-5">
+                    <span class="section-subtitle" style="letter-spacing: 3px;">CHOOSE YOUR RUNWAY</span>
+                    <div class="nemonic-separator mt-2">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="section-title" id="timelines-title">Three, Six or Nine <span
+                            class="scribble">Months</span></h2>
+                    <p class="mx-auto"
+                        style="max-width: 62ch; color: rgba(43, 26, 18, 0.7); font-size: 1.05rem; line-height: 1.7;">
+                        Skin works on its own schedule. The more runway you give it, the less has to be done to it
+                        &mdash; which is why the longer plans are also the gentler ones.
+                    </p>
+                </div>
+
+                <!-- No mt-* on the row: a margin-top utility overrides .row's own
+                     negative top margin, which cancels the first row's g-4 gutter,
+                     and leaves a gutter of dead space above the cards. -->
+                <div class="row g-4 align-items-stretch">
+
+                    <div class="col-md-6 col-lg-4">
+                        <article class="pb-plan">
+                            <span class="pb-plan__term">3</span>
+                            <span class="pb-plan__unit">Months &middot; The Polish</span>
+                            <p class="pb-plan__note">
+                                For brides already in good condition who want clarity, glow and a calm finish. Focused
+                                on surface and shine, with nothing that needs long recovery.
+                            </p>
+                            <ul class="pb-milestones">
+                                <li>
+                                    <b>Month 3</b>
+                                    Diagnosis, barrier repair and a corrected home routine.
+                                </li>
+                                <li>
+                                    <b>Month 2</b>
+                                    Medifacials and gentle resurfacing, spaced three weeks apart.
+                                </li>
+                                <li>
+                                    <b>Month 1</b>
+                                    Hydration and glow protocols; hair and scalp conditioning.
+                                </li>
+                                <li>
+                                    <b>Final 2 Weeks</b>
+                                    Settling only &mdash; no new actives, no new treatments.
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <article class="pb-plan pb-plan--featured">
+                            <span class="pb-plan__flag">Most Chosen</span>
+                            <span class="pb-plan__term">6</span>
+                            <span class="pb-plan__unit">Months &middot; The Programme</span>
+                            <p class="pb-plan__note">
+                                Enough runway to correct as well as polish. Pigmentation, texture and hair fall can all
+                                be addressed properly, with room to adjust as results come through.
+                            </p>
+                            <ul class="pb-milestones">
+                                <li>
+                                    <b>Month 6</b>
+                                    Full diagnosis and imaging; barrier and routine reset.
+                                </li>
+                                <li>
+                                    <b>Months 5 &ndash; 4</b>
+                                    Active correction &mdash; pigmentation, texture, acne or scarring.
+                                </li>
+                                <li>
+                                    <b>Month 3</b>
+                                    Collagen stimulation and hair protocols begin; mid-point review.
+                                </li>
+                                <li>
+                                    <b>Month 2</b>
+                                    Refinement and body work; any injectables placed here at the latest.
+                                </li>
+                                <li>
+                                    <b>Month 1</b>
+                                    Glow, hydration and rehearsal of the final-week routine.
+                                </li>
+                                <li>
+                                    <b>Final 2 Weeks</b>
+                                    Settling only &mdash; nothing new introduced.
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <article class="pb-plan">
+                            <span class="pb-plan__term">9</span>
+                            <span class="pb-plan__unit">Months &middot; The Full Arc</span>
+                            <p class="pb-plan__note">
+                                The most conservative route, and the one we recommend where concerns are long-standing.
+                                Slower protocols, longer gaps, and time to change course without pressure.
+                            </p>
+                            <ul class="pb-milestones">
+                                <li>
+                                    <b>Months 9 &ndash; 8</b>
+                                    Diagnosis, bloodwork where indicated, and internal groundwork.
+                                </li>
+                                <li>
+                                    <b>Months 7 &ndash; 5</b>
+                                    Deep correction at an unhurried pace; hair restoration begins.
+                                </li>
+                                <li>
+                                    <b>Month 4</b>
+                                    Review against baseline imaging; plan adjusted on evidence.
+                                </li>
+                                <li>
+                                    <b>Months 3 &ndash; 2</b>
+                                    Collagen work, body protocols and refinement.
+                                </li>
+                                <li>
+                                    <b>Month 1</b>
+                                    Glow, calm and the final-week routine rehearsed.
+                                </li>
+                                <li>
+                                    <b>Final 2 Weeks</b>
+                                    Settling only &mdash; nothing new introduced.
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ 3. SKIN, HAIR, BODY, WELLNESS ═══════ -->
+        <section class="pb-section pb-pillars" id="pillars" aria-labelledby="pillars-title">
+            <div class="container">
+
+                <div class="section-header text-center mb-5">
+                    <span class="section-subtitle" style="letter-spacing: 3px;">WHAT WE WORK ON</span>
+                    <div class="nemonic-separator mt-2">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="section-title" id="pillars-title">Skin, Hair, Body, <span
+                            class="scribble">Wellness</span></h2>
+                    <p class="mx-auto"
+                        style="max-width: 62ch; color: rgba(43, 26, 18, 0.7); font-size: 1.05rem; line-height: 1.7;">
+                        Four strands of the same plan. Treating any one of them in isolation is what makes bridal
+                        results look applied rather than earned.
+                    </p>
+                </div>
+
+                <div class="row g-4">
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="pb-pillar">
+                            <div class="pb-pillar__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M12 3c3.5 3.4 5.5 6.2 5.5 9a5.5 5.5 0 0 1-11 0c0-2.8 2-5.6 5.5-9z" />
+                                    <path d="M9.5 13.5c.4 1.6 1.5 2.6 3 2.9" />
+                                </svg>
+                            </div>
+                            <h3>Skin</h3>
+                            <p>Clarity and even tone first; glow is what happens once the barrier is working
+                                properly.</p>
+                            <ul>
+                                <li>Pigmentation and melasma</li>
+                                <li>Texture, pores and scarring</li>
+                                <li>Active acne management</li>
+                                <li>Collagen stimulation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="pb-pillar">
+                            <div class="pb-pillar__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M5 20c0-6 2.5-10 7-14" />
+                                    <path d="M9 20c0-5.5 2-9 6-12.5" />
+                                    <path d="M13 20c0-4.5 1.5-7.5 4.5-10" />
+                                </svg>
+                            </div>
+                            <h3>Hair</h3>
+                            <p>Density and scalp health take months to shift, so hair work starts on day one.</p>
+                            <ul>
+                                <li>Hair fall diagnosis</li>
+                                <li>PRP and GFC protocols</li>
+                                <li>Scalp barrier and dandruff</li>
+                                <li>Pre-event conditioning</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="pb-pillar">
+                            <div class="pb-pillar__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <circle cx="12" cy="5" r="2.4" />
+                                    <path d="M12 7.4V15" />
+                                    <path d="M8 10.5h8" />
+                                    <path d="M12 15l-2.5 5M12 15l2.5 5" />
+                                </svg>
+                            </div>
+                            <h3>Body</h3>
+                            <p>The areas a lehenga or gown actually shows &mdash; back, arms, neck and décolletage.</p>
+                            <ul>
+                                <li>Back and body clarity</li>
+                                <li>Laser hair reduction</li>
+                                <li>Neck and décolletage care</li>
+                                <li>Contouring where indicated</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="pb-pillar">
+                            <div class="pb-pillar__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path
+                                        d="M12 20s-6.5-4-6.5-9A3.5 3.5 0 0 1 12 8.5 3.5 3.5 0 0 1 18.5 11c0 5-6.5 9-6.5 9z" />
+                                </svg>
+                            </div>
+                            <h3>Wellness</h3>
+                            <p>Sleep, stress and nutrition decide how much of the clinic work actually holds.</p>
+                            <ul>
+                                <li>Nutrition and gut support</li>
+                                <li>Sleep and cortisol</li>
+                                <li>Bloodwork where indicated</li>
+                                <li>Calm protocols before events</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ 4. BRIDAL TESTIMONIALS ═══════ -->
+        <section class="pb-testimonials" id="testimonials" aria-labelledby="testimonials-title">
+
+            <!-- Cream wave cutting the top edge of the dark field. The path closes
+                 at L1440,0 L0,0 Z, so the fill sits ABOVE the curve — the boundary
+                 itself is the wave rather than a straight line. -->
+            <div class="pb-testimonials__wave" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,0 L0,0 Z">
+                    </path>
+                </svg>
+            </div>
+
+            <div class="container">
+
+                <div class="section-header text-center mb-5">
+                    <span class="section-subtitle"
+                        style="color: #E8C99A !important; letter-spacing: 3px;">IN THEIR WORDS</span>
+                    <div class="nemonic-separator mt-2">
+                        <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
+                        <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon"
+                            style="filter: brightness(0) invert(1);" />
+                        <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
+                    </div>
+                    <h2 class="section-title" id="testimonials-title">Bridal <span
+                            class="scribble">Testimonials</span></h2>
+                    <p class="mx-auto"
+                        style="max-width: 62ch; color: rgba(255, 255, 255, 0.72) !important; font-size: 1.05rem; line-height: 1.7;">
+                        From brides who started early enough to let the work settle.
+                    </p>
+                </div>
+
+                <div class="row g-4">
+
+                    <div class="col-md-6 col-lg-4">
+                        <figure class="pb-quote">
+                            <div class="pb-quote__mark" aria-hidden="true">&ldquo;</div>
+                            <blockquote>
+                                <p>I came in eight months out expecting a list of treatments and left with a plan that
+                                    mostly asked me to be patient. By the wedding my skin looked like my skin, just
+                                    calmer. Nobody asked what I had done.</p>
+                            </blockquote>
+                            <figcaption class="pb-quote__who">
+                                <span class="pb-quote__name">Ananya M.</span>
+                                <span class="pb-quote__meta">9-Month Programme &middot; Delhi</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <figure class="pb-quote">
+                            <div class="pb-quote__mark" aria-hidden="true">&ldquo;</div>
+                            <blockquote>
+                                <p>My melasma had been written off as untreatable twice before. Here it was actually
+                                    diagnosed first. Six months of unglamorous, consistent work and it finally
+                                    lifted.</p>
+                            </blockquote>
+                            <figcaption class="pb-quote__who">
+                                <span class="pb-quote__name">Ritika S.</span>
+                                <span class="pb-quote__meta">6-Month Programme &middot; Gurgaon</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <figure class="pb-quote">
+                            <div class="pb-quote__mark" aria-hidden="true">&ldquo;</div>
+                            <blockquote>
+                                <p>What I valued most was being told no. I asked for filler a month before the wedding
+                                    and was talked out of it, with reasons. That restraint is the reason the photos
+                                    still look like me.</p>
+                            </blockquote>
+                            <figcaption class="pb-quote__who">
+                                <span class="pb-quote__name">Meher K.</span>
+                                <span class="pb-quote__meta">6-Month Programme &middot; Delhi</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <figure class="pb-quote">
+                            <div class="pb-quote__mark" aria-hidden="true">&ldquo;</div>
+                            <blockquote>
+                                <p>The hair protocols made the biggest difference and I nearly skipped them. Starting
+                                    them at month six is the single thing I would tell every bride to do.</p>
+                            </blockquote>
+                            <figcaption class="pb-quote__who">
+                                <span class="pb-quote__name">Sanya B.</span>
+                                <span class="pb-quote__meta">6-Month Programme &middot; Delhi</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <figure class="pb-quote">
+                            <div class="pb-quote__mark" aria-hidden="true">&ldquo;</div>
+                            <blockquote>
+                                <p>Three months was all the time I had, and they were honest about what that could and
+                                    could not achieve. No overselling. The result was small and exactly as
+                                    described.</p>
+                            </blockquote>
+                            <figcaption class="pb-quote__who">
+                                <span class="pb-quote__name">Ishita R.</span>
+                                <span class="pb-quote__meta">3-Month Programme &middot; Gurgaon</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <figure class="pb-quote">
+                            <div class="pb-quote__mark" aria-hidden="true">&ldquo;</div>
+                            <blockquote>
+                                <p>Every appointment was timed around my functions rather than their calendar. Nothing
+                                    was ever scheduled where it might still be settling on a day I had to be
+                                    photographed.</p>
+                            </blockquote>
+                            <figcaption class="pb-quote__who">
+                                <span class="pb-quote__name">Tanvi A.</span>
+                                <span class="pb-quote__meta">9-Month Programme &middot; Delhi</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                </div>
+
+                <div class="dz-cta-wrap mt-5" style="justify-content: center; display: flex;">
+                    <a href="contact.html#contactForm" class="dz-cta"
+                        style="border-color: rgba(255,255,255,0.5);">
+                        <span style="color: #ffffff !important;">Start Your Bridal Consultation</span>
+                        <img src="nemonic.png" class="btn-icon"
+                            style="width: 14px; height: 14px; object-fit: contain; filter: brightness(0) invert(1);"
+                            alt="icon" />
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer-stack-root">
+
+
+
+            <!-- Footer (sticky-pinned behind, revealed as CTA card scrolls away) -->
+            <div class="footer-reveal-wrapper">
+                <footer class="site-footer" aria-label="Site footer">
+                    <!-- Top row: logo + nav columns -->
+                    <div class="footer-top">
+
+                        <!-- Brand column -->
+                        <div class="footer-brand">
+                            <span class="footer-eyebrow">AESTHETICS & WELLNESS</span>
+                            <h2 class="footer-logo-text">D'ZEN DERMA</h2>
+                            <p class="footer-tagline">
+                                Where the finest techniques in aesthetic medicine reveal your most luminous, confident
+                                self. Crafted for your skin, your story.
+                            </p>
+                            <!-- Social icons -->
+                            <div class="footer-socials">
+                                <a href="#" class="footer-social-icon" aria-label="Instagram" target="_blank"
+                                    rel="noopener">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                        <circle cx="12" cy="12" r="4"></circle>
+                                        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"></circle>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Nav columns -->
+                        <div class="footer-nav-col">
+                            <ul class="footer-nav-list">
+                                <li><a href="../newthree.html">HOME</a></li>
+                                <li><a href="about.html">ABOUT US</a></li>
+                                <li><a href="../treatments.html">TREATMENTS</a></li>
+                                <li><a href="#">WELLNESS PROGRAMS</a></li>
+                                <li><a href="../concerns.html">CONCERN</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-nav-col">
+                            <ul class="footer-nav-list">
+                                <li><a href="#">MEMBERSHIPS</a></li>
+                                <li><a href="#">GIFT CARD</a></li>
+                                <li><a href="#">CAREERS</a></li>
+                                <li><a href="contact.html">CONTACT</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Contact info column -->
+                        <div class="footer-contact-col">
+                            <div class="footer-contact-row">
+                                <div class="footer-contact-item">
+                                    <span class="footer-contact-label">WhatsApp</span>
+                                    <span class="footer-contact-value">(+91) 93112 54441</span>
+                                </div>
+                                <div class="footer-contact-item">
+                                    <span class="footer-contact-label">Phone Number</span>
+                                    <span class="footer-contact-value">(+91) 93112 54441</span>
+                                </div>
+                            </div>
+                            <div class="footer-contact-item footer-contact-item--address">
+                                <span class="footer-contact-label">Visit Us</span>
+                                <span class="footer-contact-value">18A, Ring Rd, near Havells,<br>Vikram Vihar, Lajpat
+                                    Nagar 4,<br>Lajpat Nagar, South Delhi,<br>New Delhi, Delhi 110024, India</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="footer-divider"></div>
+
+                    <!-- Bottom row: copyright + legal links -->
+                    <div class="footer-bottom">
+                        <p class="footer-copyright">© 2026, D'Zen Derma | All Rights Reserved | All prices are
+                            exclusive of tax</p>
+                        <div class="footer-legal-links">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms & Conditions</a>
+                            <a href="#">Booking & Cancellation Policy</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-bottom-strip"></div>
+                </footer>
+
+            </div>
+
+        </div><!-- /.footer-stack-root -->
+
+    </main>
+
+    <!-- Embossed Brand Section -->
+    <section class="embossed-brand-section" style="padding: 50px 0px;">
+        <div class="embossed-texture"></div>
+        <a href="../newthree.html#book" class="embossed-book-btn">
+            BOOK NOW
+            <img src="nemonic.png" alt="icon" class="btn-icon">
+        </a>
+        <div class="embossed-content">
+            <h3 class="embossed-eyebrow">AESTHETICS & WELLNESS</h3>
+            <h2 class="embossed-title">D'ZEN DERMA</h2>
+            <p class="embossed-tagline">Elevating You Inside Out</p>
+        </div>
+    </section>
+
+    <!-- Floating Bottom Action Bar -->
+    <div class="bottom-action-bar" id="bottomActionBar" aria-label="Quick actions">
+        <a href="https://wa.me/919876543210" class="bottom-action-btn" target="_blank" rel="noopener"
+            aria-label="Chat on WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+                <path
+                    d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.967-.272-.099-.47-.149-.669.15-.197.297-.767.967-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.917-2.207-.241-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.307 1.263.49 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+            </svg>
+            <span class="btn-label">WhatsApp</span>
+        </a>
+        <a href="tel:+919876543210" class="bottom-action-btn" aria-label="Call us">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+                <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span class="btn-label">Call</span>
+        </a>
+        <a href="../newthree.html#book" class="bottom-action-btn bottom-action-btn--primary"
+            aria-label="Book consultation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+                <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01" />
+            </svg>
+            <span class="btn-label">Book Now</span>
+        </a>
+        <a href="../newthree.html#location" class="bottom-action-btn" aria-label="View location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span class="btn-label">Map</span>
+        </a>
+    </div>
+
+    <!-- Project script controller -->
+    <script src="script.js?v=3.0"></script>
+</body>
+
+</html>

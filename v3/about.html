@@ -22,6 +22,690 @@
     <link rel="stylesheet" href="../styles.css?v=2.1" />
     <link rel="stylesheet" href="styles.css?v=4.0" />
     <link rel="stylesheet" href="about.css?v=1.3" />
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         PAGE RHYTHM — loaded last so it wins over about.css
+         about.css was written around headings of up to 52px, and sized its
+         sections to match: 160px of top padding and 120px of bottom against
+         every other page's 92px. Those headings are now the site-wide 25px,
+         so that whitespace overwhelmed them and the page read as sparse.
+         This puts the vertical rhythm on the same scale as the type, using
+         the same token pattern as the other inner pages.
+         ═══════════════════════════════════════════════════════════════════ -->
+    <style>
+        .ab-page {
+            --ab-y: clamp(64px, 6.5vw, 92px);
+            /* Tracks .section-separator svg's height, which steps at 768px */
+            --ab-wave-h: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .ab-page {
+                --ab-wave-h: 80px;
+            }
+        }
+
+        /* Each of these closes with a .section-separator curve, so the bottom
+           carries the real curve height plus a gap rather than a flat guess
+           that would be wrong at one of the two breakpoints. */
+        /* Only these two still close with a curve, so only they reserve
+           clearance for one. The others met cream with cream and their
+           separators have been removed — keeping the clearance would have
+           left dead space under the content. */
+        .ab-page .ab-services,
+        .ab-page .ab-team {
+            padding: var(--ab-y) 0 calc(var(--ab-wave-h) + 28px) !important;
+        }
+
+        .ab-page .ab-intro,
+        .ab-page .ab-values,
+        .ab-page .ab-visionary {
+            padding: var(--ab-y) 0 !important;
+        }
+
+        /* No curve on this one - it hands straight to the footer CTA */
+        .ab-page .ab-why {
+            padding: var(--ab-y) 0 !important;
+        }
+
+        /* The breadcrumb trail's dark-field colours were scoped in about.css
+           to .ab-crumb-section--dark, a class the contact-style hero does not
+           carry. Without these the pill falls back to its light variant —
+           near-solid white with dark text — on a dark background. */
+        .ab-page .breadcrumb-header .ab-crumb {
+            background: rgba(255, 255, 255, .08);
+            border-color: rgba(255, 255, 255, .18);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, .2);
+        }
+
+        .ab-page .breadcrumb-header .ab-crumb a {
+            color: rgba(255, 255, 255, .7);
+        }
+
+        .ab-page .breadcrumb-header .ab-crumb a:hover {
+            color: #fff;
+        }
+
+        .ab-page .breadcrumb-header .ab-crumb__sep {
+            color: rgba(255, 255, 255, .4);
+        }
+
+        .ab-page .breadcrumb-header .ab-crumb__current {
+            color: var(--tan-gold, #e0a65a);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           NO-CARD SECTIONS
+           The page carried 13 boxed cards across three different treatments
+           (.ab-value-card, .ab-service, .ab-team-card) — all white panels
+           with a border, 22px radius, drop shadow and a hover lift. These
+           replace them with hairline-divided editorial layouts, which is the
+           language the rest of the site already uses for grouped content.
+           ═══════════════════════════════════════════════════════════════ */
+
+        /* ── Values: numbered hairline grid ── */
+        .ab-page .ab-vlist {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid rgba(196, 146, 74, .28);
+        }
+
+        .ab-page .ab-vlist__item {
+            padding: clamp(24px, 2.6vw, 34px) clamp(18px, 2vw, 28px) clamp(24px, 2.6vw, 34px) 0;
+            border-bottom: 1px solid rgba(196, 146, 74, .28);
+        }
+
+        /* Rules between columns rather than around each item — a grid of
+           dividers, never a row of boxes. */
+        .ab-page .ab-vlist__item+.ab-vlist__item {
+            padding-left: clamp(18px, 2vw, 28px);
+            border-left: 1px solid rgba(196, 146, 74, .28);
+        }
+
+        .ab-page .ab-vlist__num {
+            display: block;
+            font-family: var(--serif, "Playfair Display", Georgia, serif);
+            font-size: 13px;
+            font-style: italic;
+            letter-spacing: 1.4px;
+            color: #C4924A;
+            margin-bottom: 14px;
+        }
+
+        .ab-page .ab-vlist__title {
+            font-family: var(--serif, "Playfair Display", Georgia, serif);
+            font-size: clamp(17px, 1.8vw, 20px) !important;
+            font-weight: 400;
+            line-height: 1.3;
+            color: #2B1A12 !important;
+            -webkit-text-fill-color: #2B1A12 !important;
+            font-style: normal !important;
+            margin: 0 0 10px;
+        }
+
+        .ab-page .ab-vlist__text {
+            font-family: var(--sans, "Inter", system-ui, sans-serif) !important;
+            font-size: 14px !important;
+            font-weight: 300;
+            line-height: 1.7;
+            color: #5C4A3A !important;
+            margin: 0;
+        }
+
+        /* ── Services: treatment index ──
+           Rows, not cards. The numeral is deliberately large and ghosted so it
+           anchors each row and gives the list some editorial weight — at 13px
+           italic it read as a footnote and the section had nothing holding it
+           together. Interaction is a gold rail that grows down the left edge
+           plus a warm wash, rather than a panel lifting off the page. */
+        .ab-page .ab-index {
+            border-top: 1px solid rgba(196, 146, 74, .28);
+        }
+
+        .ab-page .ab-index__row {
+            position: relative;
+            display: grid;
+            grid-template-columns: clamp(52px, 5vw, 78px) minmax(0, 1fr) minmax(0, 1.2fr) 40px;
+            gap: clamp(10px, 2vw, 30px);
+            align-items: center;
+            padding: clamp(22px, 2.4vw, 30px) clamp(14px, 1.6vw, 22px);
+            border-bottom: 1px solid rgba(196, 146, 74, .28);
+            text-decoration: none;
+            transition: background .45s ease;
+        }
+
+        /* Gold rail down the left edge, scaled from the centre on hover */
+        .ab-page .ab-index__row::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(#C4924A, #E8C99A);
+            transform: scaleY(0);
+            transition: transform .45s cubic-bezier(.16, 1, .3, 1);
+        }
+
+        .ab-page .ab-index__row:hover {
+            background: rgba(196, 146, 74, .05);
+        }
+
+        .ab-page .ab-index__row:hover::before {
+            transform: scaleY(1);
+        }
+
+        .ab-page .ab-index__num {
+            font-family: var(--serif, "Playfair Display", Georgia, serif);
+            font-size: clamp(24px, 2.8vw, 34px);
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: 0;
+            color: rgba(196, 146, 74, .38);
+            transition: color .35s ease;
+        }
+
+        .ab-page .ab-index__row:hover .ab-index__num {
+            color: rgba(196, 146, 74, .85);
+        }
+
+        .ab-page .ab-index__name {
+            font-family: var(--serif, "Playfair Display", Georgia, serif);
+            font-size: clamp(17px, 1.9vw, 21px);
+            font-weight: 400;
+            line-height: 1.3;
+            color: #2B1A12;
+            transition: color .3s ease;
+        }
+
+        .ab-page .ab-index__row:hover .ab-index__name {
+            color: #8B5E2A;
+        }
+
+        .ab-page .ab-index__desc {
+            font-family: var(--sans, "Inter", system-ui, sans-serif);
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.7;
+            color: #6B5849;
+        }
+
+        .ab-page .ab-index__go {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            color: #C4924A;
+            opacity: 0;
+            transform: translateX(-8px);
+            transition: opacity .35s ease, transform .35s ease;
+        }
+
+        .ab-page .ab-index__go svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .ab-page .ab-index__row:hover .ab-index__go {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ── Team: bare arched portraits ── */
+        .ab-page .ab-people {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(24px, 3.4vw, 52px);
+        }
+
+        .ab-page .ab-person {
+            margin: 0;
+            text-align: center;
+        }
+
+        .ab-page .ab-person__frame {
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            /* The site's arch silhouette, with no border, panel or shadow */
+            border-radius: 500px 500px 14px 14px;
+            background: rgba(196, 146, 74, .06);
+            margin-bottom: 20px;
+        }
+
+        .ab-page .ab-person__frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 1.1s cubic-bezier(.2, .7, .3, 1);
+        }
+
+        .ab-page .ab-person:hover .ab-person__frame img {
+            transform: scale(1.05);
+        }
+
+        .ab-page .ab-person__name {
+            font-family: var(--serif, "Playfair Display", Georgia, serif);
+            font-size: clamp(16px, 1.7vw, 19px) !important;
+            font-weight: 400;
+            line-height: 1.35;
+            color: #2B1A12 !important;
+            -webkit-text-fill-color: #2B1A12 !important;
+            font-style: normal !important;
+            margin: 0 0 6px;
+        }
+
+        .ab-page .ab-person__role {
+            font-family: var(--sans, "Inter", system-ui, sans-serif);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            color: #C4924A;
+        }
+
+        @media (max-width: 991.98px) {
+            .ab-page .ab-vlist {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* Reset the every-item left rule, then re-apply per row */
+            .ab-page .ab-vlist__item+.ab-vlist__item {
+                border-left: none;
+                padding-left: 0;
+            }
+
+            .ab-page .ab-vlist__item:nth-child(even) {
+                padding-left: clamp(18px, 3vw, 28px);
+                border-left: 1px solid rgba(196, 146, 74, .28);
+            }
+
+            /* Numeral keeps its column and sits beside the name; the
+               description drops to a second row under both. */
+            .ab-page .ab-index__row {
+                grid-template-columns: 52px minmax(0, 1fr) 22px;
+                gap: 4px 14px;
+                align-items: center;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .ab-page .ab-index__num {
+                grid-row: 1 / span 2;
+                align-self: start;
+                padding-top: 2px;
+            }
+
+            .ab-page .ab-index__desc {
+                grid-column: 2;
+            }
+
+            /* There is no hover on touch, so the chevron stays visible at low
+               opacity — otherwise nothing signals these rows are links. */
+            .ab-page .ab-index__go {
+                grid-column: 3;
+                grid-row: 1 / span 2;
+                opacity: .4;
+                transform: none;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .ab-page .ab-vlist {
+                grid-template-columns: 1fr;
+            }
+
+            .ab-page .ab-vlist__item:nth-child(even) {
+                padding-left: 0;
+                border-left: none;
+            }
+
+            .ab-page .ab-people {
+                grid-template-columns: 1fr;
+                max-width: 340px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .ab-page .ab-index__row,
+            .ab-page .ab-index__row::before,
+            .ab-page .ab-index__go,
+            .ab-page .ab-person__frame img {
+                transition: none;
+            }
+
+            /* The rail is the hover affordance, so it stays — it just appears
+               rather than growing. The chevron likewise skips its slide. */
+            .ab-page .ab-index__row:hover::before {
+                transform: scaleY(1);
+            }
+
+            .ab-page .ab-index__row:hover .ab-index__go {
+                transform: none;
+            }
+
+            .ab-page .ab-person:hover .ab-person__frame img {
+                transform: none;
+            }
+        }
+
+
+        /* ═══════════════════════════════════════════════════════════════
+           TYPE RAMP
+           `html body p { font-size: 14px; color: #5C3A2E }` — both !important —
+           sits further down styles.css and applies to every paragraph here.
+           about.css sets .ab-lead and .ab-body WITHOUT !important, so both lost:
+           every paragraph on the page rendered at a flat 14px in one colour,
+           leaving no hierarchy between an opening lead and small print. The
+           other inner pages each fight that rule explicitly; this does the same,
+           on the same scale they use (lead 16.5px, body 15px).
+           ═══════════════════════════════════════════════════════════════ */
+        .ab-page .ab-lead {
+            font-size: 16.5px !important;
+            line-height: 1.8 !important;
+            color: #2B1A12 !important;
+            margin: 0 0 18px;
+        }
+
+        .ab-page .ab-body {
+            font-size: 15px !important;
+            line-height: 1.85 !important;
+            color: #5C4A3A !important;
+        }
+
+        .ab-page .ab-why .ab-why__lead {
+            font-size: 16.5px !important;
+            line-height: 1.8 !important;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           WHY D'ZEN DERMA
+           The four stat blocks were the last cards left on the page —
+           translucent panels with a border, 20px radius, backdrop-blur,
+           shadow and a hover lift, just on a dark field instead of a light
+           one. They are now hairline-divided counters, the same treatment
+           workshops-training.html uses for its credentials.
+
+           The field itself also gets the site's dark-section material: the
+           35deg brown-to-gold gradient plus the fractalNoise grain used by
+           the philosophy strip, media and pre-bridal, so every dark band on
+           the site reads the same. about.css's animated 240% gradient was
+           unique to this one section.
+           ═══════════════════════════════════════════════════════════════ */
+        .ab-page .ab-why {
+            background: linear-gradient(35deg, #2f1810 0%, #8C4A2E 60%, #8a5815 85%, #8a6017 100%) !important;
+            background-size: auto !important;
+            animation: none !important;
+            /* mix-blend-mode on the grain blends against the nearest stacking
+               context; without this it would reach past the section. */
+            isolation: isolate;
+        }
+
+        .ab-page .ab-why::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.25;
+            mix-blend-mode: overlay;
+        }
+
+        /* ── Counters: hairlines, not panels ── */
+        .ab-page .ab-why__stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            max-width: 860px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255, 255, 255, .16);
+            border-bottom: 1px solid rgba(255, 255, 255, .16);
+        }
+
+        .ab-page .ab-why__stat {
+            padding: clamp(24px, 2.8vw, 34px) clamp(10px, 1.6vw, 20px);
+            background: none;
+            border: none;
+            border-radius: 0;
+            -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+            box-shadow: none;
+            transition: none;
+        }
+
+        /* Rules BETWEEN the counters — a divided row, never four boxes */
+        .ab-page .ab-why__stat:not(:nth-child(4n+1)) {
+            border-left: 1px solid rgba(255, 255, 255, .16);
+        }
+
+        .ab-page .ab-why__stat:hover {
+            transform: none;
+            background: none;
+            border-color: rgba(255, 255, 255, .16);
+        }
+
+        .ab-page .ab-why__num {
+            color: #E8C99A;
+        }
+
+        /* styles.css forces .section-title and its .scribble to #4b2b20 with
+           !important — dark brown on a dark brown field, i.e. invisible. Same
+           override the other dark sections on the site carry. */
+        html body .ab-page .ab-why .section-title {
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }
+
+        html body .ab-page .ab-why .section-title .scribble {
+            color: #E8C99A !important;
+            -webkit-text-fill-color: #E8C99A !important;
+        }
+
+        @media (max-width: 767.98px) {
+            .ab-page .ab-why__stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* Re-cut the dividers for a two-column grid, and add a rule
+               between the two rows. */
+            .ab-page .ab-why__stat:not(:nth-child(4n+1)) {
+                border-left: none;
+            }
+
+            .ab-page .ab-why__stat:nth-child(even) {
+                border-left: 1px solid rgba(255, 255, 255, .16);
+            }
+
+            .ab-page .ab-why__stat:nth-child(n+3) {
+                border-top: 1px solid rgba(255, 255, 255, .16);
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SIGNATURE EXPERTISE — dark field
+           Same material as #clinic-commitment ("What We Hold Ourselves To")
+           on about-clinic.html: a 135deg brown gradient, two radial glows,
+           and the fractalNoise grain on overlay. Everything below it flips
+           the section's content from dark-on-light to light-on-dark, which
+           the treatment index was built for the opposite of.
+           ═══════════════════════════════════════════════════════════════ */
+        .ab-page .ab-services {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%) !important;
+        }
+
+        /* White wave at the section's own top edge. z-index 1: above the
+           gradient and glows (0), below the content (2). */
+        .ab-page .ab-wave-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            line-height: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .ab-page .ab-wave-top svg {
+            display: block;
+            width: 100%;
+            height: clamp(48px, 6vw, 100px);
+        }
+
+        /* Top padding clears the wave so it never crowds the eyebrow */
+        .ab-page .ab-services {
+            padding-top: calc(var(--ab-y) + clamp(48px, 6vw, 100px)) !important;
+        }
+
+        .ab-page .ab-services::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 65% 60% at 50% -8%, rgba(198, 119, 119, .16) 0%, transparent 68%),
+                radial-gradient(ellipse 40% 40% at 80% 110%, rgba(143, 113, 74, .15) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .ab-page .ab-services::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='abNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23abNoise)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+            opacity: .25;
+            mix-blend-mode: overlay;
+        }
+
+        /* Content above the gradient, glows and grain */
+        .ab-page .ab-services .ab-wrap {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ── Header on the dark field ── */
+        html body .ab-page .ab-services .section-title {
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }
+
+        html body .ab-page .ab-services .section-title .scribble {
+            color: #E8C99A !important;
+            -webkit-text-fill-color: #E8C99A !important;
+        }
+
+        .ab-page .ab-services .section-subtitle {
+            color: #E8C99A !important;
+        }
+
+        .ab-page .ab-services .nemonic-line {
+            background-color: rgba(255, 255, 255, .4) !important;
+        }
+
+        .ab-page .ab-services .nemonic-icon {
+            filter: brightness(0) invert(1);
+        }
+
+        /* The intro paragraph carries its ink colour inline, so this has to
+           outrank an inline declaration — hence !important. */
+        .ab-page .ab-services .section-header p {
+            color: rgba(255, 255, 255, .72) !important;
+        }
+
+        /* ── Treatment index on the dark field ── */
+        .ab-page .ab-services .ab-index {
+            border-top-color: rgba(255, 255, 255, .16);
+        }
+
+        .ab-page .ab-services .ab-index__row {
+            border-bottom-color: rgba(255, 255, 255, .16);
+        }
+
+        .ab-page .ab-services .ab-index__row:hover {
+            background: rgba(255, 255, 255, .06);
+        }
+
+        .ab-page .ab-services .ab-index__num {
+            color: rgba(232, 201, 154, .42);
+        }
+
+        .ab-page .ab-services .ab-index__row:hover .ab-index__num {
+            color: rgba(232, 201, 154, .9);
+        }
+
+        .ab-page .ab-services .ab-index__name {
+            color: #ffffff;
+        }
+
+        .ab-page .ab-services .ab-index__row:hover .ab-index__name {
+            color: #E8C99A;
+        }
+
+        .ab-page .ab-services .ab-index__desc {
+            color: rgba(255, 255, 255, .68);
+        }
+
+        .ab-page .ab-services .ab-index__go {
+            color: #E8C99A;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           INTRO IMAGE — one frame, not a mosaic
+           about.css lays this out as a 2-col / 2-row grid holding three
+           images. With a single image those tracks would leave the frame
+           squashed into the left column and an empty half beside it, so the
+           grid collapses to one track here.
+           ═══════════════════════════════════════════════════════════════ */
+        .ab-page .ab-mosaic {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            aspect-ratio: auto;
+            gap: 0;
+        }
+
+        .ab-page .ab-mosaic__cell--tall {
+            grid-row: auto;
+            aspect-ratio: 4 / 5;
+            /* The site's arch silhouette, matching .ab-person__frame in the
+               team section. No shadow — that was the card look the rest of
+               the page has already dropped. */
+            border-radius: 500px 500px 14px 14px;
+            box-shadow: none;
+        }
+
+        /* Centred on the frame now that there is no second column to offset
+           against, and lifted so it straddles the bottom edge. */
+        .ab-page .ab-mosaic__badge {
+            left: 50%;
+            bottom: -22px;
+            transform: translateX(-50%);
+        }
+
+        @media (max-width: 991.98px) {
+            .ab-page .ab-mosaic__cell--tall {
+                aspect-ratio: 3 / 4;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           BASE FIELD
+           about.css alternated the light sections between #ffffff and
+           #FAF9F6. They are all #FDF8F3 now — the cream the rest of the
+           site uses, and the colour already set on <body>.
+           ═══════════════════════════════════════════════════════════════ */
+        .ab-page .ab-intro,
+        .ab-page .ab-visionary,
+        .ab-page .ab-team {
+            background: #FDF8F3 !important;
+        }
+    </style>
 </head>
 
 <body class="ab-page" style="background-color: #FDF8F3; color: #2B1A12;">
@@ -67,38 +751,38 @@
     <main>
 
         <!-- ═══════ 1. BREADCRUMB (dark animated gradient — replaces banner) ═══════ -->
-        <section class="ab-crumb-section ab-crumb-section--dark" style="background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%); padding-top: 103px; padding-bottom: 60px; border-bottom: none; overflow: hidden;">
-            <div class="ab-crumb-inner">
-                <nav class="ab-crumb" aria-label="Breadcrumb">
-                    <a href="../newthree.html">Home</a>
-                    <span class="ab-crumb__sep" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M9 6l6 6-6 6" />
-                        </svg>
-                    </span>
-                    <span class="ab-crumb__current" aria-current="page">About Us</span>
-                </nav>
+        <!-- Inner Page Header — same treatment as contact.html and every other
+             inner page: gradient over the contour texture on multiply, compact
+             103/60 padding, small italic white title with a gold accent, and the
+             deep curvy separator. -->
+        <section class="breadcrumb-header position-relative d-flex align-items-center justify-content-center"
+            style="background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%), url('../images/contour-texture.webp') repeat; background-blend-mode: multiply; padding-top: 103px; padding-bottom: 60px; border-bottom: none; overflow: hidden;">
 
-                <span class="about-v2__eyebrow ab-crumb__eyebrow">Who We Are</span>
-                <div class="nemonic-separator">
-                    <div class="nemonic-line" style="background-color: rgba(255,255,255,0.5);"></div>
+            <div class="container position-relative text-center" style="z-index: 2;">
+
+
+
+                <span class="section-subtitle" style="color: rgba(255, 255, 255, 0.7) !important;">WHO WE ARE</span>
+                <div class="nemonic-separator mt-2 mb-4">
+                    <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
                     <img src="nemonic.png" alt="nemonic" class="nemonic-icon"
                         style="filter: brightness(0) invert(1);" />
-                    <div class="nemonic-line" style="background-color: rgba(255,255,255,0.5);"></div>
+                    <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
                 </div>
-                <h1 class="ab-crumb__title">Where Science Meets the <em class="scribble">Art of Skin</em></h1>
-                <p class="ab-crumb__lead">
-                    A sanctuary where advanced dermatology, regenerative aesthetics and holistic wellness meet — crafted
-                    to reveal your most radiant, confident self.
-                </p>
+                <h1 class="page-title mb-3"
+                    style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400 !important; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; font-size: clamp(18px, 2.5vw, 22px); margin: 0;">
+                    Where Science Meets the <span class="scribble"
+                        style="color: #E8C99A !important; -webkit-text-fill-color: #E8C99A !important;">Art of
+                        Skin</span>
+                </h1>
             </div>
 
-            <!-- Curvy separator: dark crumb → white intro -->
-            <div class="section-separator" aria-hidden="true">
-                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path fill="#ffffff"
-                        d="M0,50 C320,150 420,0 740,50 C1060,100 1280,0 1440,50 L1440,100 L0,100 Z"></path>
+            <!-- Curvy Bottom Separator. Filled #ffffff, not the #FDF8F3 the other
+                 pages use — .ab-intro below this one is white. -->
+            <div class="position-absolute w-100" style="bottom: -1px; left: 0; z-index: 2;">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                    style="display: block; width: 100%; height: clamp(70px, 7vw, 110px);">
+                    <path fill="#FDF8F3" d="M0,26 C400,136 1040,-36 1440,52 L1440,100 L0,100 Z"></path>
                 </svg>
             </div>
         </section>
@@ -113,14 +797,6 @@
                             <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=800&q=80&auto=format&fit=crop"
                                 alt="D'Zen Derma clinic interior" loading="lazy">
                         </div>
-                        <div class="ab-mosaic__cell">
-                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80&auto=format&fit=crop"
-                                alt="Skincare treatment in progress" loading="lazy">
-                        </div>
-                        <div class="ab-mosaic__cell">
-                            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80&auto=format&fit=crop"
-                                alt="Radiant skin close-up" loading="lazy">
-                        </div>
                         <div class="ab-mosaic__badge">
                             <span class="ab-mosaic__badge-num">10+</span>
                             <span class="ab-mosaic__badge-txt">Years of<br>expertise</span>
@@ -129,13 +805,13 @@
 
                     <!-- Intro copy -->
                     <div class="ab-intro__copy">
-                        <span class="about-v2__eyebrow">Our Essence</span>
+                        <span class="section-subtitle" style="letter-spacing: 3px;">OUR ESSENCE</span>
                         <div class="nemonic-separator nemonic-separator--left">
                             <div class="nemonic-line"></div>
                             <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
                             <div class="nemonic-line"></div>
                         </div>
-                        <h2 class="ab-heading">Beauty is in the <em class="scribble">Balance</em></h2>
+                        <h2 class="section-title">Beauty is in the <span class="scribble">Balance</span></h2>
                         <p class="ab-lead">
                             D'Zen Derma is built on a single conviction — that true beauty is found in balance. We blend
                             science-led rejuvenation with holistic wellness to create care that feels calm, deliberate
@@ -175,74 +851,55 @@
                 </div>
             </div>
 
-            <!-- Curvy separator: white intro → cream philosophy -->
-            <div class="section-separator" aria-hidden="true">
-                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path fill="#FAF9F6"
-                        d="M0,50 C320,150 420,0 740,50 C1060,100 1280,0 1440,50 L1440,100 L0,100 Z"></path>
-                </svg>
-            </div>
+            <!-- No separator: this section and the next are both
+                 #FDF8F3, so a curve here would be cream on cream. -->
         </section>
 
         <!-- ═══════ 3. PHILOSOPHY / VALUES ═══════ -->
-        <section class="ab-values">
+        <section class="ab-values" style="background: linear-gradient(to top, #FDF8F3, #F4EFE8);">
             <div class="ab-wrap">
-                <div class="ab-section-head text-center">
-                    <span class="about-v2__eyebrow">Our Philosophy</span>
-                    <div class="nemonic-separator">
+                <div class="section-header text-center mb-5">
+                    <span class="section-subtitle" style="letter-spacing: 3px;">OUR PHILOSOPHY</span>
+                    <div class="nemonic-separator mt-2">
                         <div class="nemonic-line"></div>
                         <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
                         <div class="nemonic-line"></div>
                     </div>
-                    <h2 class="ab-heading">Care that is <em class="scribble">considered</em></h2>
+                    <h2 class="section-title">Care that is <span class="scribble">considered</span></h2>
                 </div>
 
-                <div class="ab-values__grid">
-                    <article class="ab-value-card">
-                        <div class="ab-value-card__img">
-                            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80&auto=format&fit=crop"
-                                alt="Science-led care" loading="lazy">
-                        </div>
-                        <h3 class="ab-value-card__title">Science-Led</h3>
-                        <p class="ab-value-card__text">Evidence-based protocols and medical-grade technology behind every
+                <!-- Hairline grid, not cards. Four numbered principles divided by
+                     rules rather than boxed in white panels with shadows — the
+                     same hairline language the site uses elsewhere. -->
+                <div class="ab-vlist">
+                    <div class="ab-vlist__item">
+                        <span class="ab-vlist__num">01</span>
+                        <h3 class="ab-vlist__title">Science-Led</h3>
+                        <p class="ab-vlist__text">Evidence-based protocols and medical-grade technology behind every
                             treatment.</p>
-                    </article>
-                    <article class="ab-value-card">
-                        <div class="ab-value-card__img">
-                            <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=600&q=80&auto=format&fit=crop"
-                                alt="Personalised approach" loading="lazy">
-                        </div>
-                        <h3 class="ab-value-card__title">Personalised</h3>
-                        <p class="ab-value-card__text">No two skins are alike — every plan is tailored to your goals and
-                            biology.</p>
-                    </article>
-                    <article class="ab-value-card">
-                        <div class="ab-value-card__img">
-                            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80&auto=format&fit=crop"
-                                alt="Holistic wellness" loading="lazy">
-                        </div>
-                        <h3 class="ab-value-card__title">Holistic</h3>
-                        <p class="ab-value-card__text">We treat skin as part of whole-body wellness, inside and out.</p>
-                    </article>
-                    <article class="ab-value-card">
-                        <div class="ab-value-card__img">
-                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80&auto=format&fit=crop"
-                                alt="Natural, subtle results" loading="lazy">
-                        </div>
-                        <h3 class="ab-value-card__title">Natural Results</h3>
-                        <p class="ab-value-card__text">Subtle, refined outcomes that look like the best version of
-                            you.</p>
-                    </article>
+                    </div>
+                    <div class="ab-vlist__item">
+                        <span class="ab-vlist__num">02</span>
+                        <h3 class="ab-vlist__title">Personalised</h3>
+                        <p class="ab-vlist__text">No two skins are alike &mdash; every plan is tailored to your goals
+                            and biology.</p>
+                    </div>
+                    <div class="ab-vlist__item">
+                        <span class="ab-vlist__num">03</span>
+                        <h3 class="ab-vlist__title">Holistic</h3>
+                        <p class="ab-vlist__text">We treat skin as part of whole-body wellness, inside and out.</p>
+                    </div>
+                    <div class="ab-vlist__item">
+                        <span class="ab-vlist__num">04</span>
+                        <h3 class="ab-vlist__title">Natural Results</h3>
+                        <p class="ab-vlist__text">Subtle, refined outcomes that look like the best version of you
+                            &mdash; never like work.</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Curvy separator: cream values → white visionary -->
-            <div class="section-separator" aria-hidden="true">
-                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path fill="#ffffff"
-                        d="M0,50 C320,150 420,0 740,50 C1060,100 1280,0 1440,50 L1440,100 L0,100 Z"></path>
-                </svg>
-            </div>
+            <!-- No separator: this section and the next are both
+                 #FDF8F3, so a curve here would be cream on cream. -->
         </section>
 
         <!-- ═══════ 4. THE VISIONARY — Dr. Aarushi Passi Bhandari ═══════ -->
@@ -262,16 +919,17 @@
 
                     <!-- Story -->
                     <div class="ab-visionary__copy">
-                        <span class="about-v2__eyebrow">The Visionary</span>
+                        <span class="section-subtitle" style="letter-spacing: 3px;">THE VISIONARY</span>
                         <div class="nemonic-separator nemonic-separator--left">
                             <div class="nemonic-line"></div>
                             <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
                             <div class="nemonic-line"></div>
                         </div>
-                        <h2 class="ab-heading">Dr. Aarushi Passi <em>Bhandari</em></h2>
+                        <h2 class="section-title">Dr. Aarushi Passi <em>Bhandari</em></h2>
                         <p class="ab-visionary__role">Founder · Aesthetic Physician</p>
                         <p class="ab-lead">
-                            An aesthetic physician with global exposure and an obsessive commitment to clinical excellence.
+                            An aesthetic physician with global exposure and an obsessive commitment to clinical
+                            excellence.
                             Dr. Aarushi leads every protocol with precision, safety and a science-first approach to
                             aesthetic medicine that feels calm, deliberate and deeply personal.
                         </p>
@@ -314,230 +972,130 @@
                 </div>
             </div>
 
-            <!-- Curvy separator: white visionary → cream services -->
-            <div class="section-separator" aria-hidden="true">
-                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path fill="#FAF9F6"
-                        d="M0,50 C320,150 420,0 740,50 C1060,100 1280,0 1440,50 L1440,100 L0,100 Z"></path>
-                </svg>
-            </div>
+            <!-- No separator here. The section below is a gradient, so a flat
+                 fill could only ever match it at one point across the width;
+                 .ab-services cuts the boundary from its own top edge instead. -->
         </section>
 
         <!-- ═══════ 5. SERVICES SHE PROVIDES ═══════ -->
         <section class="ab-services">
+            <!-- White wave cutting the top edge of the gradient field. The
+                 path closes at L1440,0 L0,0 Z so the fill sits ABOVE the curve:
+                 everything below it is the section's own gradient, which is the
+                 only way a curve can match a gradient across its full width. -->
+            <div class="ab-wave-top" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,0 L0,0 Z"></path>
+                </svg>
+            </div>
             <div class="ab-wrap">
-                <div class="ab-section-head text-center">
-                    <span class="about-v2__eyebrow">Signature Expertise</span>
-                    <div class="nemonic-separator">
+                <div class="section-header text-center mb-5">
+                    <span class="section-subtitle" style="letter-spacing: 3px;">SIGNATURE EXPERTISE</span>
+                    <div class="nemonic-separator mt-2">
                         <div class="nemonic-line"></div>
                         <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
                         <div class="nemonic-line"></div>
                     </div>
-                    <h2 class="ab-heading">Treatments led by <em class="scribble">Dr. Aarushi</em></h2>
-                    <p class="ab-body" style="max-width:560px;margin:14px auto 0;">
+                    <h2 class="section-title">Treatments led by <span class="scribble">Dr. Aarushi</span></h2>
+                    <p class="mx-auto"
+                        style="max-width: 62ch; color: rgba(43, 26, 18, 0.7); font-size: 1.05rem; line-height: 1.7;">
                         A curated range of medical-grade, science-led treatments — each personally supervised and
                         refined by Dr. Aarushi.
                     </p>
                 </div>
 
-                <div class="ab-services__grid">
-                    <article class="ab-service">
-                        <div class="ab-service__img">
-                            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=700&q=80&auto=format&fit=crop"
-                                alt="HydraFacial & Glow" loading="lazy">
-                        </div>
-                        <div class="ab-service__body">
-                            <h3 class="ab-service__title">HydraFacial &amp; Glow</h3>
-                            <p class="ab-service__text">Deep cleanse, hydration and instant luminosity for radiant,
-                                healthy skin.</p>
-                        </div>
-                    </article>
-                    <article class="ab-service">
-                        <div class="ab-service__img">
-                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=700&q=80&auto=format&fit=crop"
-                                alt="Regenerative PRP & GFC" loading="lazy">
-                        </div>
-                        <div class="ab-service__body">
-                            <h3 class="ab-service__title">PRP &amp; GFC Therapy</h3>
-                            <p class="ab-service__text">Regenerative growth-factor treatments for skin renewal and hair
-                                restoration.</p>
-                        </div>
-                    </article>
-                    <article class="ab-service">
-                        <div class="ab-service__img">
-                            <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?w=700&q=80&auto=format&fit=crop"
-                                alt="Injectables & Contouring" loading="lazy">
-                        </div>
-                        <div class="ab-service__body">
-                            <h3 class="ab-service__title">Injectables &amp; Contouring</h3>
-                            <p class="ab-service__text">Subtle Botox and fillers to refine, restore and balance — never
-                                overdone.</p>
-                        </div>
-                    </article>
-                    <article class="ab-service">
-                        <div class="ab-service__img">
-                            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=700&q=80&auto=format&fit=crop"
-                                alt="Laser & Skin Resurfacing" loading="lazy">
-                        </div>
-                        <div class="ab-service__body">
-                            <h3 class="ab-service__title">Laser &amp; Resurfacing</h3>
-                            <p class="ab-service__text">Advanced laser protocols for pigmentation, scars and even skin
-                                tone.</p>
-                        </div>
-                    </article>
-                    <article class="ab-service">
-                        <div class="ab-service__img">
-                            <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=700&q=80&auto=format&fit=crop"
-                                alt="Acne & Scar Revision" loading="lazy">
-                        </div>
-                        <div class="ab-service__body">
-                            <h3 class="ab-service__title">Acne &amp; Scar Revision</h3>
-                            <p class="ab-service__text">Targeted, evidence-based programmes to clear acne and soften
-                                scarring.</p>
-                        </div>
-                    </article>
-                    <article class="ab-service">
-                        <div class="ab-service__img">
-                            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=700&q=80&auto=format&fit=crop"
-                                alt="Holistic Skin Wellness" loading="lazy">
-                        </div>
-                        <div class="ab-service__body">
-                            <h3 class="ab-service__title">Holistic Wellness</h3>
-                            <p class="ab-service__text">Nutrition-aware, whole-body protocols that support lasting skin
-                                health.</p>
-                        </div>
-                    </article>
+                <!-- Treatment index, not cards. Each row is a hairline-divided
+                     line with the name on the left and what it does on the right,
+                     with a gold rule that draws across on hover. Reads as a
+                     considered list rather than a product catalogue. -->
+                <div class="ab-index">
+                    <a class="ab-index__row" href="../treatments.html">
+                        <span class="ab-index__num">01</span>
+                        <span class="ab-index__name">HydraFacial &amp; Glow</span>
+                        <span class="ab-index__desc">Deep cleanse, hydration and instant luminosity for radiant,
+                            healthy skin.</span>
+                        <span class="ab-index__go" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </span>
+                    </a>
+                    <a class="ab-index__row" href="../treatments.html">
+                        <span class="ab-index__num">02</span>
+                        <span class="ab-index__name">PRP &amp; GFC Therapy</span>
+                        <span class="ab-index__desc">Regenerative growth-factor treatments for skin renewal and hair
+                            restoration.</span>
+                        <span class="ab-index__go" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </span>
+                    </a>
+                    <a class="ab-index__row" href="../treatments.html">
+                        <span class="ab-index__num">03</span>
+                        <span class="ab-index__name">Injectables &amp; Contouring</span>
+                        <span class="ab-index__desc">Subtle Botox and fillers to refine, restore and balance &mdash;
+                            never to alter.</span>
+                        <span class="ab-index__go" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </span>
+                    </a>
+                    <a class="ab-index__row" href="../treatments.html">
+                        <span class="ab-index__num">04</span>
+                        <span class="ab-index__name">Laser &amp; Resurfacing</span>
+                        <span class="ab-index__desc">Advanced laser protocols for pigmentation, scars and even skin
+                            tone.</span>
+                        <span class="ab-index__go" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </span>
+                    </a>
+                    <a class="ab-index__row" href="../treatments.html">
+                        <span class="ab-index__num">05</span>
+                        <span class="ab-index__name">Acne &amp; Scar Revision</span>
+                        <span class="ab-index__desc">Targeted, evidence-based programmes to clear acne and soften
+                            scarring.</span>
+                        <span class="ab-index__go" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </span>
+                    </a>
+                    <a class="ab-index__row" href="../treatments.html">
+                        <span class="ab-index__num">06</span>
+                        <span class="ab-index__name">Holistic Wellness</span>
+                        <span class="ab-index__desc">Nutrition-aware, whole-body protocols that support lasting skin
+                            health.</span>
+                        <span class="ab-index__go" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </span>
+                    </a>
                 </div>
             </div>
 
             <!-- Curvy separator: cream services → white team -->
             <div class="section-separator" aria-hidden="true">
                 <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path fill="#ffffff"
-                        d="M0,50 C320,150 420,0 740,50 C1060,100 1280,0 1440,50 L1440,100 L0,100 Z"></path>
+                    <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
                 </svg>
             </div>
         </section>
 
-        <!-- ═══════ 6. FOUNDERS / TEAM ═══════ -->
-        <section class="ab-team">
-            <div class="ab-wrap">
-                <div class="ab-section-head text-center">
-                    <span class="about-v2__eyebrow">The Minds Behind the Method</span>
-                    <div class="nemonic-separator">
-                        <div class="nemonic-line"></div>
-                        <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
-                        <div class="nemonic-line"></div>
-                    </div>
-                    <h2 class="ab-heading">A team you can <em class="scribble">trust</em></h2>
-                    <p class="ab-body" style="max-width:560px;margin:14px auto 0;">
-                        Behind every result is a close-knit team of specialists, united by one standard — care done
-                        right.
-                    </p>
-                </div>
 
-                <div class="ab-team__grid">
-                    <article class="ab-team-card">
-                        <div class="ab-team-card__img">
-                            <img src="../images/Aarushi-Passi.webp" alt="Dr. Aarushi Passi Bhandari" loading="lazy">
-                        </div>
-                        <div class="ab-team-card__body">
-                            <h3 class="ab-team-card__name">Dr. Aarushi Passi Bhandari</h3>
-                            <span class="ab-team-card__role">Founder · Medical Direction</span>
-                        </div>
-                    </article>
-                    <article class="ab-team-card">
-                        <div class="ab-team-card__img">
-                            <img src="../images/Rahul-Bhandari.png" alt="Rahul Bhandari" loading="lazy">
-                        </div>
-                        <div class="ab-team-card__body">
-                            <h3 class="ab-team-card__name">Rahul Bhandari</h3>
-                            <span class="ab-team-card__role">Founder · Brand &amp; Experience</span>
-                        </div>
-                    </article>
-                    <article class="ab-team-card">
-                        <div class="ab-team-card__img">
-                            <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=700&q=80&auto=format&fit=crop"
-                                alt="Dr. Meera Nair" loading="lazy">
-                        </div>
-                        <div class="ab-team-card__body">
-                            <h3 class="ab-team-card__name">Dr. Meera Nair</h3>
-                            <span class="ab-team-card__role">Wellness &amp; Regenerative Lead</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
-
-            <!-- Curvy separator: white team → dark stats -->
-            <div class="section-separator" aria-hidden="true">
-                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path fill="#2f1810"
-                        d="M0,50 C320,150 420,0 740,50 C1060,100 1280,0 1440,50 L1440,100 L0,100 Z"></path>
-                </svg>
-            </div>
-        </section>
-
-        <!-- ═══════ 5. WHY US — DARK STATS BAND ═══════ -->
-        <section class="ab-why">
-            <div class="ab-wrap ab-why__inner">
-                <span class="about-v2__eyebrow ab-why__eyebrow">Why D'Zen Derma</span>
-                <div class="nemonic-separator">
-                    <div class="nemonic-line" style="background-color: rgba(255,255,255,0.4);"></div>
-                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon"
-                        style="filter: brightness(0) invert(1);" />
-                    <div class="nemonic-line" style="background-color: rgba(255,255,255,0.4);"></div>
-                </div>
-                <h2 class="ab-heading ab-heading--light">Confidence, <em>crafted with care</em></h2>
-                <p class="ab-why__lead">Thousands trust us to guide their skin journeys — with results that speak
-                    quietly, and last.</p>
-                <div class="ab-why__stats">
-                    <div class="ab-why__stat">
-                        <span class="ab-why__num">98%</span>
-                        <span class="ab-why__label">Would recommend us</span>
-                    </div>
-                    <div class="ab-why__stat">
-                        <span class="ab-why__num">25+</span>
-                        <span class="ab-why__label">Expert specialists</span>
-                    </div>
-                    <div class="ab-why__stat">
-                        <span class="ab-why__num">15k+</span>
-                        <span class="ab-why__label">Treatments delivered</span>
-                    </div>
-                    <div class="ab-why__stat">
-                        <span class="ab-why__num">4.9★</span>
-                        <span class="ab-why__label">Average client rating</span>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- ═══════ CTA + FOOTER (shared) ═══════ -->
         <div class="footer-stack-root">
-            <div class="footer-cta-card-wrapper">
-                <div class="footer-cta-card">
-                    <div class="section-header text-center mb-4">
-                        <span class="section-subtitle" style="color: #ffffff !important;">BEGIN YOUR JOURNEY</span>
-                        <div class="nemonic-separator">
-                            <div class="nemonic-line" style="background-color: #ffffff;"></div>
-                            <img src="nemonic.png" alt="nemonic" class="nemonic-icon"
-                                style="filter: brightness(0) invert(1);" />
-                            <div class="nemonic-line" style="background-color: #ffffff;"></div>
-                        </div>
-                    </div>
-                    <h2 class="footer-cta-heading">Ready to reveal your<br>most <span class="scribble"
-                            style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important;">radiant
-                            self?</span></h2>
-                    <p class="footer-cta-sub">Join thousands who've discovered the art of effortless confidence —
-                        crafted for your skin, your story.</p>
-                    <a href="../newthree.html#book" class="dz-cta"
-                        style="margin: 0 auto; display: inline-flex; border-color: rgba(255,255,255,0.5);">
-                        <span style="color: #ffffff !important;">Book a Consultation</span>
-                        <img src="nemonic.png" class="btn-icon"
-                            style="width: 14px; height: 14px; object-fit: contain; filter: brightness(0) invert(1);"
-                            alt="icon" />
-                    </a>
-                </div>
-            </div>
 
             <div class="footer-reveal-wrapper">
                 <footer class="site-footer" aria-label="Site footer">
@@ -642,6 +1200,19 @@
     </main>
 
     <!-- Floating Bottom Action Bar -->
+    <section class="embossed-brand-section" style="padding: 50px 0px;">
+        <div class="embossed-texture"></div>
+        <a href="../newthree.html#book" class="embossed-book-btn">
+            BOOK NOW
+            <img src="nemonic.png" alt="icon" class="btn-icon">
+        </a>
+        <div class="embossed-content">
+            <h3 class="embossed-eyebrow">AESTHETICS &amp; WELLNESS</h3>
+            <h2 class="embossed-title">D'ZEN DERMA</h2>
+            <p class="embossed-tagline">Elevating You Inside Out</p>
+        </div>
+    </section>
+
     <div class="bottom-action-bar" id="bottomActionBar" aria-label="Quick actions">
         <a href="https://wa.me/919876543210" class="bottom-action-btn" target="_blank" rel="noopener"
             aria-label="Chat on WhatsApp">

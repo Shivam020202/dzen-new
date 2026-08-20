@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Results Gallery — D'Zen Derma</title>
+    <meta name="description"
+        content="D'Zen Derma results — a filterable before-and-after gallery by concern and treatment, video testimonials, and verified Google reviews." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Base styles and variable sheets -->
+    <link rel="stylesheet" href="../styles.css?v=2.2" />
+    <!-- Section Specific styles -->
+    <link rel="stylesheet" href="styles.css?v=5.0" />
+
+    <!-- Tailwind CSS (without preflight resets) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: { preflight: false },
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4B2B20',
+                        accent: '#e0a65a',
+                        'accent-light': '#daa520',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Force opaque navbar to sit cleanly above the dark textured section */
+        .pnav {
+            background: #ffffff !important;
+            border-bottom: 1px solid rgba(180, 140, 90, 0.14) !important;
+            box-shadow: 0 2px 18px rgba(0, 0, 0, 0.06) !important;
+        }
+
+        .pnav .pnav__logo img {
+            filter: none !important;
+        }
+
+        .pnav .pnav__burger {
+            background: rgba(75, 43, 32, 0.06) !important;
+        }
+
+        .pnav .pnav__burger span {
+            background: #3A2418 !important;
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           RESULTS GALLERY — shared tokens
+           ═══════════════════════════════════════════════════════════ */
+        .rg-page {
+            --rg-ink: #2B1A12;
+            --rg-body: #5C4A3A;
+            --rg-gold: #C4924A;
+            --rg-gold-light: #E8C99A;
+            --rg-cream: #FDF8F3;
+            --rg-hairline: rgba(196, 146, 74, .22);
+            --rg-y: clamp(64px, 6.5vw, 92px);
+            --rg-radius: 18px;
+            --rg-shadow: 0 18px 45px rgba(43, 26, 18, .06);
+            --rg-wave-h: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .rg-page {
+                --rg-wave-h: 80px;
+            }
+        }
+
+        .rg-section {
+            position: relative;
+            padding: var(--rg-y) 0;
+        }
+
+        .rg-section--curve {
+            padding-bottom: calc(var(--rg-wave-h) + 28px);
+        }
+
+        /* ── 1. FILTERS ───────────────────────────────────────────── */
+        .rg-gallery {
+            background: #FDF8F3;
+        }
+
+        .rg-filters {
+            display: grid;
+            gap: 16px;
+            /* stretch, not center: a centred grid item keeps min-width:auto and
+               sizes to its content, so the row could not shrink and the pill
+               overflowed the container instead of scrolling inside it. The row
+               centres its own contents below. */
+            justify-items: stretch;
+            margin-bottom: clamp(30px, 3.4vw, 46px);
+        }
+
+        .rg-filter-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            width: 100%;
+            min-width: 0;
+        }
+
+        .rg-filter-row__label {
+            flex: 0 0 auto;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--rg-gold);
+        }
+
+        /* Reuses .concerns-tabs / .concern-tab-btn from styles.css so this is
+           the same control as the concerns tabs on index.html. Only the
+           scrolling behaviour is set here.
+           justify-content is NOT center: once the pill overflows, centring
+           spills it both ways and a scroll container can only return to its
+           own start edge, putting the first tab out of reach. */
+        /* One row that scrolls horizontally.
+           min-width:0 is what makes it work: flex items default to
+           min-width:auto and refuse to shrink below their content width, so
+           without it the pill overflows the container and its far end is
+           clipped rather than scrolling inside it. */
+        .rg-filter-row .concerns-tabs {
+            min-width: 0;
+            max-width: 100%;
+            flex: 0 1 auto;
+            flex-wrap: nowrap;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x proximity;
+            scroll-padding-inline: 20px;
+            scroll-behavior: smooth;
+        }
+
+        .rg-filter-row .concern-tab-btn {
+            /* Tabs keep their width and scroll; without this they compress */
+            flex: 0 0 auto;
+            scroll-snap-align: center;
+        }
+
+        /* ── Before / after frames ── */
+        .rg-item.is-filtered {
+            display: none !important;
+        }
+
+        .rg-item {
+            animation: rgFade .45s ease both;
+        }
+
+        @keyframes rgFade {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .rg-ba {
+            position: relative;
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            /* Rectangular, not the site's usual arch. The arched top cropped
+               the upper part of each face and, more to the point, curved the
+               divider's travel so the two halves met along a rounded edge
+               instead of a clean vertical line. */
+            border-radius: 14px;
+            background: rgba(196, 146, 74, .06);
+            --pos: 50%;
+        }
+
+        .rg-ba img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* clip-path, not a width change: clipping the layer leaves its image at
+           full frame width, so the two halves stay in register. Narrowing a
+           wrapper would squash the image inside it instead. */
+        .rg-ba__before {
+            position: absolute;
+            inset: 0;
+            clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+        }
+
+        .rg-ba__divider {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: var(--pos);
+            width: 2px;
+            margin-left: -1px;
+            background: rgba(255, 255, 255, .9);
+            box-shadow: 0 0 12px rgba(43, 26, 18, .35);
+            pointer-events: none;
+        }
+
+        .rg-ba__knob {
+            position: absolute;
+            top: 50%;
+            left: var(--pos);
+            width: 38px;
+            height: 38px;
+            margin: -19px 0 0 -19px;
+            border-radius: 50%;
+            background: #ffffff;
+            box-shadow: 0 4px 16px rgba(43, 26, 18, .35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--rg-ink);
+            pointer-events: none;
+        }
+
+        .rg-ba__knob svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* A real range input drives it: pointer AND keyboard for free, and it
+           is announced to screen readers. Sits invisible over the frame. */
+        .rg-ba__range {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            opacity: 0;
+            cursor: ew-resize;
+            -webkit-appearance: none;
+            appearance: none;
+            background: none;
+        }
+
+        .rg-ba__range:focus-visible~.rg-ba__knob {
+            outline: 2px solid var(--rg-gold);
+            outline-offset: 3px;
+        }
+
+        .rg-ba__tag {
+            position: absolute;
+            top: 14px;
+            padding: 5px 12px;
+            border-radius: 100px;
+            background: rgba(43, 26, 18, .72);
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            color: #ffffff;
+            pointer-events: none;
+        }
+
+        .rg-ba__tag--before {
+            left: 14px;
+        }
+
+        .rg-ba__tag--after {
+            right: 14px;
+        }
+
+        .rg-item__meta {
+            padding-top: 18px;
+            text-align: center;
+        }
+
+        .rg-item__title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(16px, 1.7vw, 19px) !important;
+            font-weight: 400;
+            color: var(--rg-ink) !important;
+            -webkit-text-fill-color: var(--rg-ink) !important;
+            font-style: normal !important;
+            margin: 0 0 6px;
+        }
+
+        .rg-item__note {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 12px !important;
+            font-weight: 500;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            color: var(--rg-gold) !important;
+            margin: 0 !important;
+        }
+
+        /* Shown when a filter combination matches nothing */
+        .rg-empty {
+            display: none;
+            text-align: center;
+            padding: clamp(30px, 4vw, 56px) 0;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 15px;
+            font-weight: 300;
+            color: var(--rg-body);
+        }
+
+        .rg-empty.is-shown {
+            display: block;
+        }
+
+        /* ── 2. VIDEO TESTIMONIALS ────────────────────────────────── */
+        .rg-videos {
+            background: linear-gradient(to bottom, #F4EFE8, #FDF8F3);
+        }
+
+        /* ── 3. GOOGLE REVIEWS ────────────────────────────────────── */
+        .rg-reviews {
+            background: #FDF8F3;
+        }
+
+        .rg-reviews__cta {
+            display: flex;
+            justify-content: center;
+            margin-top: clamp(28px, 3vw, 42px);
+        }
+
+        @media (max-width: 575.98px) {
+
+            /* Label above the pill — side by side, the label eats width the
+               tabs need, and 6 concerns is already a long row. */
+            .rg-filter-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .rg-filter-row .concerns-tabs {
+                max-width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .rg-item {
+                animation: none;
+            }
+
+            .rg-filter-row .concerns-tabs {
+                scroll-behavior: auto;
+            }
+
+        }
+    </style>
+</head>
+
+<body class="rg-page" style="background-color: #FDF8F3; color: #2B1A12;">
+
+    <!-- ═══════ Floating Pill Navbar v3 ═══════ -->
+    <nav id="pill-nav" class="pnav" aria-label="Main navigation">
+        <!-- Left: Book Now -->
+        <div class="pnav__left">
+            <a href="../newthree.html#book" class="pnav__cta">
+                Book
+                <img src="nemonic.png" class="btn-icon" style="width: 12px; height: 12px; object-fit: contain;"
+                    alt="icon" />
+            </a>
+        </div>
+
+        <!-- Center: logo -->
+        <a href="index.html" class="pnav__logo" aria-label="Home">
+            <img src="../images/logo1.png" alt="D'Zen Derma" />
+        </a>
+
+        <!-- Right: hamburger -->
+        <div class="pnav__right">
+            <button class="pnav__burger" id="pnav-burger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile drawer -->
+    <div class="pnav-overlay" id="pnav-overlay"></div>
+    <aside class="pnav-drawer" id="pnav-drawer" aria-label="Menu">
+        <button class="pnav-drawer__close" id="pnav-close" aria-label="Close menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round">
+                <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+        </button>
+        <ul class="pnav-drawer__list">
+            <li><a href="../aesthetics.html">Pillars <span>→</span></a></li>
+            <li><a href="../concerns.html">Concerns <span>→</span></a></li>
+            <li><a href="../treatments.html">Treatments <span>→</span></a></li>
+            <li><a href="about.html">Who We Are <span>→</span></a></li>
+            <li><a href="../signatures.html">D'Zen Experience <span>→</span></a></li>
+            <li><a href="../journal.html">Journal <span>→</span></a></li>
+        </ul>
+    </aside>
+
+    <main>
+
+        <!-- Inner Page Header -->
+        <section class="breadcrumb-header position-relative d-flex align-items-center justify-content-center"
+            style="background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%), url('../images/contour-texture.webp') repeat; background-blend-mode: multiply; padding-top: 103px; padding-bottom: 60px; border-bottom: none; overflow: hidden;">
+
+            <div class="container position-relative text-center" style="z-index: 2;">
+                <span class="section-subtitle" style="color: rgba(255, 255, 255, 0.7) !important;">RESULTS GALLERY</span>
+                <div class="nemonic-separator mt-2 mb-4">
+                    <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
+                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon"
+                        style="filter: brightness(0) invert(1);" />
+                    <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
+                </div>
+                <h1 class="page-title mb-3"
+                    style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400 !important; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; font-size: clamp(18px, 2.5vw, 22px); margin: 0;">
+                    Results You Can <span class="scribble"
+                        style="color: #E8C99A !important; -webkit-text-fill-color: #E8C99A !important;">Verify</span>
+                </h1>
+            </div>
+
+            <!-- Curvy Bottom Separator -->
+            <div class="position-absolute w-100" style="bottom: -1px; left: 0; z-index: 2;">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                    style="display: block; width: 100%; height: clamp(70px, 7vw, 110px);">
+                    <path fill="#FDF8F3" d="M0,26 C400,136 1040,-36 1440,52 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ═══════ 1. BEFORE / AFTER BY CONCERN ═══════ -->
+        <section class="rg-section rg-gallery" id="by-concern" aria-labelledby="by-concern-title"
+            data-filter="concern">
+            <div class="container">
+
+                <div class="section-header text-center mb-5">
+                    <span class="section-subtitle" style="letter-spacing: 3px;">BEFORE &amp; AFTER</span>
+                    <div class="nemonic-separator mt-2">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="section-title" id="by-concern-title">The Work, <span class="scribble">Unretouched</span></h2>
+                    <p class="mx-auto"
+                        style="max-width: 62ch; color: rgba(43, 26, 18, 0.7); font-size: 1.05rem; line-height: 1.7;">
+                        Same lighting, same angle, same lens. Drag any frame to compare &mdash; the differences here are deliberately modest, because that is what a balanced result looks like.
+                    </p>
+                </div>
+
+                <div class="rg-filters">
+                    <div class="rg-filter-row">
+                        <span class="rg-filter-row__label">Concern</span>
+                        <div class="concerns-tabs" role="tablist" aria-label="Filter by concern">
+                        <button type="button" class="concern-tab-btn active" data-value="all"
+                            role="tab" aria-selected="true">ALL</button>
+                        <button type="button" class="concern-tab-btn" data-value="pigmentation"
+                            role="tab" aria-selected="false">PIGMENTATION</button>
+                        <button type="button" class="concern-tab-btn" data-value="acne"
+                            role="tab" aria-selected="false">ACNE</button>
+                        <button type="button" class="concern-tab-btn" data-value="ageing"
+                            role="tab" aria-selected="false">AGEING</button>
+                        <button type="button" class="concern-tab-btn" data-value="texture"
+                            role="tab" aria-selected="false">TEXTURE</button>
+                        <button type="button" class="concern-tab-btn" data-value="hair"
+                            role="tab" aria-selected="false">HAIR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- No mt-* on the row: a margin-top utility overrides .row's own
+                     negative top margin, which cancels the first row's g-4 gutter. -->
+                <div class="row g-4" data-grid>
+
+                    <div class="col-md-6 col-lg-4 rg-item" data-concern="pigmentation" data-treatment="medifacial">
+                        <figure class="rg-ba" style="margin:0;">
+                            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=700&auto=format&fit=crop"
+                                alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <div class="rg-ba__before">
+                                <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=700&auto=format&fit=crop"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            </div>
+                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
+                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
+                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
+                                aria-label="Reveal before and after for Melasma, Evened">
+                            <span class="rg-ba__divider" aria-hidden="true"></span>
+                            <span class="rg-ba__knob" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
+                                </svg>
+                            </span>
+                        </figure>
+                        <div class="rg-item__meta">
+                            <h3 class="rg-item__title">Melasma, Evened</h3>
+                            <p class="rg-item__note">6 months &middot; Medifacials + home protocol</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 rg-item" data-concern="acne" data-treatment="resurfacing">
+                        <figure class="rg-ba" style="margin:0;">
+                            <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?q=80&w=700&auto=format&fit=crop"
+                                alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <div class="rg-ba__before">
+                                <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=700&auto=format&fit=crop"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            </div>
+                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
+                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
+                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
+                                aria-label="Reveal before and after for Active Acne Cleared">
+                            <span class="rg-ba__divider" aria-hidden="true"></span>
+                            <span class="rg-ba__knob" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
+                                </svg>
+                            </span>
+                        </figure>
+                        <div class="rg-item__meta">
+                            <h3 class="rg-item__title">Active Acne Cleared</h3>
+                            <p class="rg-item__note">4 months &middot; Medipeels + barrier repair</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 rg-item" data-concern="ageing" data-treatment="injectables">
+                        <figure class="rg-ba" style="margin:0;">
+                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=700&auto=format&fit=crop"
+                                alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <div class="rg-ba__before">
+                                <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=700&auto=format&fit=crop"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            </div>
+                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
+                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
+                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
+                                aria-label="Reveal before and after for Softened Dynamic Lines">
+                            <span class="rg-ba__divider" aria-hidden="true"></span>
+                            <span class="rg-ba__knob" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
+                                </svg>
+                            </span>
+                        </figure>
+                        <div class="rg-item__meta">
+                            <h3 class="rg-item__title">Softened Dynamic Lines</h3>
+                            <p class="rg-item__note">1 session &middot; Botulinum toxin</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 rg-item" data-concern="texture" data-treatment="resurfacing">
+                        <figure class="rg-ba" style="margin:0;">
+                            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=700&auto=format&fit=crop"
+                                alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <div class="rg-ba__before">
+                                <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=700&auto=format&fit=crop"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            </div>
+                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
+                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
+                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
+                                aria-label="Reveal before and after for Refined Texture">
+                            <span class="rg-ba__divider" aria-hidden="true"></span>
+                            <span class="rg-ba__knob" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
+                                </svg>
+                            </span>
+                        </figure>
+                        <div class="rg-item__meta">
+                            <h3 class="rg-item__title">Refined Texture</h3>
+                            <p class="rg-item__note">5 months &middot; Microneedling + MNRF</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 rg-item" data-concern="hair" data-treatment="regenerative">
+                        <figure class="rg-ba" style="margin:0;">
+                            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=700&auto=format&fit=crop"
+                                alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <div class="rg-ba__before">
+                                <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=700&auto=format&fit=crop"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            </div>
+                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
+                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
+                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
+                                aria-label="Reveal before and after for Restored Density">
+                            <span class="rg-ba__divider" aria-hidden="true"></span>
+                            <span class="rg-ba__knob" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
+                                </svg>
+                            </span>
+                        </figure>
+                        <div class="rg-item__meta">
+                            <h3 class="rg-item__title">Restored Density</h3>
+                            <p class="rg-item__note">9 months &middot; PRP + GFC protocol</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 rg-item" data-concern="ageing" data-treatment="regenerative">
+                        <figure class="rg-ba" style="margin:0;">
+                            <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=700&auto=format&fit=crop"
+                                alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <div class="rg-ba__before">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=700&auto=format&fit=crop"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            </div>
+                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
+                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
+                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
+                                aria-label="Reveal before and after for Collagen Rebuilt">
+                            <span class="rg-ba__divider" aria-hidden="true"></span>
+                            <span class="rg-ba__knob" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
+                                </svg>
+                            </span>
+                        </figure>
+                        <div class="rg-item__meta">
+                            <h3 class="rg-item__title">Collagen Rebuilt</h3>
+                            <p class="rg-item__note">7 months &middot; Bio-stimulators</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 rg-item" data-concern="pigmentation" data-treatment="resurfacing">
+                        <figure class="rg-ba" style="margin:0;">
+                            <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=700&auto=format&fit=crop"
+                                alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <div class="rg-ba__before">
+                                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=700&auto=format&fit=crop"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            </div>
+                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
+                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
+                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
+                                aria-label="Reveal before and after for Post-Inflammatory Marks">
+                            <span class="rg-ba__divider" aria-hidden="true"></span>
+                            <span class="rg-ba__knob" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
+                                </svg>
+                            </span>
+                        </figure>
+                        <div class="rg-item__meta">
+                            <h3 class="rg-item__title">Post-Inflammatory Marks</h3>
+                            <p class="rg-item__note">5 months &middot; Laser toning</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 rg-item" data-concern="texture" data-treatment="medifacial">
+                        <figure class="rg-ba" style="margin:0;">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=700&auto=format&fit=crop"
+                                alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <div class="rg-ba__before">
+                                <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=700&auto=format&fit=crop"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            </div>
+                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
+                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
+                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
+                                aria-label="Reveal before and after for Pores Minimised">
+                            <span class="rg-ba__divider" aria-hidden="true"></span>
+                            <span class="rg-ba__knob" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
+                                </svg>
+                            </span>
+                        </figure>
+                        <div class="rg-item__meta">
+                            <h3 class="rg-item__title">Pores Minimised</h3>
+                            <p class="rg-item__note">3 months &middot; HydraFacial course</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 rg-item" data-concern="acne" data-treatment="medifacial">
+                        <figure class="rg-ba" style="margin:0;">
+                            <img src="https://images.unsplash.com/photo-1589903308904-1010c2294adc?q=80&w=700&auto=format&fit=crop"
+                                alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <div class="rg-ba__before">
+                                <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=700&auto=format&fit=crop"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            </div>
+                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
+                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
+                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
+                                aria-label="Reveal before and after for Scarring Softened">
+                            <span class="rg-ba__divider" aria-hidden="true"></span>
+                            <span class="rg-ba__knob" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
+                                </svg>
+                            </span>
+                        </figure>
+                        <div class="rg-item__meta">
+                            <h3 class="rg-item__title">Scarring Softened</h3>
+                            <p class="rg-item__note">8 months &middot; Combination protocol</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="rg-empty" role="status">
+                    Nothing in this category yet &mdash; try another concern.
+                </p>
+            </div>
+        </section>
+
+        <!-- ═══════ 2. BEFORE / AFTER BY TREATMENT ═══════ -->
+        <section class="rg-section rg-section--curve rg-treatments" id="by-treatment" aria-labelledby="by-treatment-title"
+            data-filter="treatment">
+            <div class="container">
+
+                <div class="section-header text-center mb-5">
+                    <span class="section-subtitle" style="letter-spacing: 3px;">BY TREATMENT</span>
+                    <div class="nemonic-separator mt-2">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="section-title" id="by-treatment-title">The Same Results, <span class="scribble">By Protocol</span></h2>
+                    <p class="mx-auto"
+                        style="max-width: 62ch; color: rgba(43, 26, 18, 0.7); font-size: 1.05rem; line-height: 1.7;">
+                        The identical cases grouped by what was actually done, so you can see which protocol produced which kind of change.
+                    </p>
+                </div>
+
+                <div class="rg-filters">
+                    <div class="rg-filter-row">
+                        <span class="rg-filter-row__label">Treatment</span>
+                        <div class="concerns-tabs" role="tablist" aria-label="Filter by treatment">
+                        <button type="button" class="concern-tab-btn active" data-value="all"
+                            role="tab" aria-selected="true">ALL</button>
+                        <button type="button" class="concern-tab-btn" data-value="medifacial"
+                            role="tab" aria-selected="false">MEDIFACIALS</button>
+                        <button type="button" class="concern-tab-btn" data-value="resurfacing"
+                            role="tab" aria-selected="false">RESURFACING</button>
+                        <button type="button" class="concern-tab-btn" data-value="regenerative"
+                            role="tab" aria-selected="false">REGENERATIVE</button>
+                        <button type="button" class="concern-tab-btn" data-value="injectables"
+                            role="tab" aria-selected="false">INJECTABLES</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- No mt-* on the row: a margin-top utility overrides .row's own
+                     negative top margin, which cancels the first row's g-4 gutter. -->
+                <div class="row g-4" data-grid>
+
+                    <div class="col-md-6 col-lg-4 rg-item" data-concern="pigmentation" data-treatment="medifacial">
+                        <figure class="rg-ba" style="margin:0;">
+                            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=700&auto=format&fit=crop"
+                                alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <div class="rg-ba__before">
+                                <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=700&auto=format&fit=crop"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            </div>
+                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
+                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
+                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
+                                aria-label="Reveal before and after for Melasma, Evened">
+                            <span class="rg-ba__divider" aria-hidden="true"></span>
+                            <span class="rg-ba__knob" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
+                                </svg>
+                            </span>
+                        </figure>
+                        <div class="rg-item__meta">
+                            <h3 class="rg-item__title">Melasma, Evened</h3>
+                            <p class="rg-item__note">6 months &middot; Medifacials + home protocol</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 rg-item" data-concern="acne" data-treatment="resurfacing">
+                        <figure class="rg-ba" style="margin:0;">
+                            <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?q=80&w=700&auto=format&fit=crop"
+                                alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <div class="rg-ba__before">
+                                <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=700&auto=format&fit=crop"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            </div>
+                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
+                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
+                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
+                                aria-label="Reveal before and after for Active Acne Cleared">
+                            <span class="rg-ba__divider" aria-hidden="true"></span>
+                            <span class="rg-ba__knob" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
+                                </svg>
+                            </span>
+                        </figure>
+                        <div class="rg-item__meta">
+                            <h3 class="rg-item__title">Active Acne Cleared</h3>
+                            <p class="rg-item__note">4 months &middot; Medipeels + barrier repair</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 rg-item" data-concern="ageing" data-treatment="injectables">
+                        <figure class="rg-ba" style="margin:0;">
+                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=700&auto=format&fit=crop"
+                                alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <div class="rg-ba__before">
+                                <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=700&auto=format&fit=crop"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            </div>
+                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
+                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
+                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
+                                aria-label="Reveal before and after for Softened Dynamic Lines">
+                            <span class="rg-ba__divider" aria-hidden="true"></span>
+                            <span class="rg-ba__knob" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
+                                </svg>
+                            </span>
+                        </figure>
+                        <div class="rg-item__meta">
+                            <h3 class="rg-item__title">Softened Dynamic Lines</h3>
+                            <p class="rg-item__note">1 session &middot; Botulinum toxin</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 rg-item" data-concern="texture" data-treatment="resurfacing">
+                        <figure class="rg-ba" style="margin:0;">
+                            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=700&auto=format&fit=crop"
+                                alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <div class="rg-ba__before">
+                                <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=700&auto=format&fit=crop"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            </div>
+                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
+                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
+                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
+                                aria-label="Reveal before and after for Refined Texture">
+                            <span class="rg-ba__divider" aria-hidden="true"></span>
+                            <span class="rg-ba__knob" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
+                                </svg>
+                            </span>
+                        </figure>
+                        <div class="rg-item__meta">
+                            <h3 class="rg-item__title">Refined Texture</h3>
+                            <p class="rg-item__note">5 months &middot; Microneedling + MNRF</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 rg-item" data-concern="hair" data-treatment="regenerative">
+                        <figure class="rg-ba" style="margin:0;">
+                            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=700&auto=format&fit=crop"
+                                alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <div class="rg-ba__before">
+                                <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=700&auto=format&fit=crop"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            </div>
+                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
+                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
+                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
+                                aria-label="Reveal before and after for Restored Density">
+                            <span class="rg-ba__divider" aria-hidden="true"></span>
+                            <span class="rg-ba__knob" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
+                                </svg>
+                            </span>
+                        </figure>
+                        <div class="rg-item__meta">
+                            <h3 class="rg-item__title">Restored Density</h3>
+                            <p class="rg-item__note">9 months &middot; PRP + GFC protocol</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 rg-item" data-concern="ageing" data-treatment="regenerative">
+                        <figure class="rg-ba" style="margin:0;">
+                            <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=700&auto=format&fit=crop"
+                                alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <div class="rg-ba__before">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=700&auto=format&fit=crop"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            </div>
+                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
+                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
+                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
+                                aria-label="Reveal before and after for Collagen Rebuilt">
+                            <span class="rg-ba__divider" aria-hidden="true"></span>
+                            <span class="rg-ba__knob" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
+                                </svg>
+                            </span>
+                        </figure>
+                        <div class="rg-item__meta">
+                            <h3 class="rg-item__title">Collagen Rebuilt</h3>
+                            <p class="rg-item__note">7 months &middot; Bio-stimulators</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 rg-item" data-concern="pigmentation" data-treatment="resurfacing">
+                        <figure class="rg-ba" style="margin:0;">
+                            <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=700&auto=format&fit=crop"
+                                alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <div class="rg-ba__before">
+                                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=700&auto=format&fit=crop"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            </div>
+                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
+                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
+                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
+                                aria-label="Reveal before and after for Post-Inflammatory Marks">
+                            <span class="rg-ba__divider" aria-hidden="true"></span>
+                            <span class="rg-ba__knob" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
+                                </svg>
+                            </span>
+                        </figure>
+                        <div class="rg-item__meta">
+                            <h3 class="rg-item__title">Post-Inflammatory Marks</h3>
+                            <p class="rg-item__note">5 months &middot; Laser toning</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 rg-item" data-concern="texture" data-treatment="medifacial">
+                        <figure class="rg-ba" style="margin:0;">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=700&auto=format&fit=crop"
+                                alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <div class="rg-ba__before">
+                                <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=700&auto=format&fit=crop"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            </div>
+                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
+                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
+                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
+                                aria-label="Reveal before and after for Pores Minimised">
+                            <span class="rg-ba__divider" aria-hidden="true"></span>
+                            <span class="rg-ba__knob" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
+                                </svg>
+                            </span>
+                        </figure>
+                        <div class="rg-item__meta">
+                            <h3 class="rg-item__title">Pores Minimised</h3>
+                            <p class="rg-item__note">3 months &middot; HydraFacial course</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 rg-item" data-concern="acne" data-treatment="medifacial">
+                        <figure class="rg-ba" style="margin:0;">
+                            <img src="https://images.unsplash.com/photo-1589903308904-1010c2294adc?q=80&w=700&auto=format&fit=crop"
+                                alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <div class="rg-ba__before">
+                                <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=700&auto=format&fit=crop"
+                                    alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            </div>
+                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
+                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
+                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
+                                aria-label="Reveal before and after for Scarring Softened">
+                            <span class="rg-ba__divider" aria-hidden="true"></span>
+                            <span class="rg-ba__knob" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
+                                </svg>
+                            </span>
+                        </figure>
+                        <div class="rg-item__meta">
+                            <h3 class="rg-item__title">Scarring Softened</h3>
+                            <p class="rg-item__note">8 months &middot; Combination protocol</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="rg-empty" role="status">
+                    Nothing in this category yet &mdash; try another treatment.
+                </p>
+            </div>
+
+            <!-- Curvy separator into the next section. Filled to match its top edge. -->
+            <div class="section-separator" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#F4EFE8" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ═══════ 3. VIDEO TESTIMONIALS ═══════ -->
+        <section class="rg-section rg-videos" id="videos" aria-labelledby="videos-title">
+            <div class="container">
+
+                <div class="section-header text-center mb-5">
+                    <span class="section-subtitle" style="letter-spacing: 3px;">IN THEIR WORDS</span>
+                    <div class="nemonic-separator mt-2">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="section-title" id="videos-title">Video <span class="scribble">Testimonials</span></h2>
+                    <p class="mx-auto"
+                        style="max-width: 62ch; color: rgba(43, 26, 18, 0.7); font-size: 1.05rem; line-height: 1.7;">
+                        Clients on what the process actually felt like, in full sentences rather than pull quotes.
+                    </p>
+                </div>
+
+                <!-- .tst-video-card comes from styles.css, shared with the
+                     homepage testimonials. Playback is wired up on this page
+                     separately — see the script at the foot of the file. -->
+                <div class="tst-video-grid">
+                    <article class="tst-video-card" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <img class="tst-video-card__poster"
+                            src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80&auto=format&fit=crop"
+                            alt="Priya Sharma" loading="lazy">
+                        <span class="tst-video-card__play" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </span>
+                        <div class="tst-video-card__meta">
+                            <span class="tst-video-card__name">Priya Sharma</span>
+                            <span class="tst-video-card__tag">Pigmentation &middot; 6 months</span>
+                        </div>
+                    </article>
+                    <article class="tst-video-card" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <img class="tst-video-card__poster"
+                            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80&auto=format&fit=crop"
+                            alt="Neha Kapoor" loading="lazy">
+                        <span class="tst-video-card__play" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </span>
+                        <div class="tst-video-card__meta">
+                            <span class="tst-video-card__name">Neha Kapoor</span>
+                            <span class="tst-video-card__tag">Acne &middot; 4 months</span>
+                        </div>
+                    </article>
+                    <article class="tst-video-card" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <img class="tst-video-card__poster"
+                            src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&q=80&auto=format&fit=crop"
+                            alt="Simran Bedi" loading="lazy">
+                        <span class="tst-video-card__play" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </span>
+                        <div class="tst-video-card__meta">
+                            <span class="tst-video-card__name">Simran Bedi</span>
+                            <span class="tst-video-card__tag">Hair restoration &middot; 9 months</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ 4. GOOGLE REVIEW INTEGRATION ═══════ -->
+        <section class="rg-section rg-reviews" id="reviews" aria-labelledby="reviews-title">
+            <div class="container">
+
+                <div class="section-header text-center mb-5">
+                    <span class="section-subtitle" style="letter-spacing: 3px;">VERIFIED ON GOOGLE</span>
+                    <div class="nemonic-separator mt-2">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="section-title" id="reviews-title">What Clients <span class="scribble">Write</span></h2>
+                    <p class="mx-auto"
+                        style="max-width: 62ch; color: rgba(43, 26, 18, 0.7); font-size: 1.05rem; line-height: 1.7;">
+                        Unedited, and posted where we cannot change them.
+                    </p>
+                </div>
+
+                <div class="tst-reviews-summary">
+                    <span class="tst-g-logo" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path fill="#4285F4"
+                                d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
+                            <path fill="#34A853"
+                                d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
+                            <path fill="#FBBC05" d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
+                            <path fill="#EA4335"
+                                d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
+                        </svg>
+                    </span>
+                    <div class="tst-reviews-summary__text">
+                        <span class="tst-reviews-summary__score">4.9</span>
+                        <span class="tst-stars" aria-label="4.9 out of 5 stars">★★★★★</span>
+                        <span class="tst-reviews-summary__count">Based on 512 Google reviews</span>
+                    </div>
+                </div>
+
+                <div class="tst-reviews-grid">
+                    <article class="tst-review-card">
+                        <header class="tst-review-card__head">
+                            <img class="tst-review-card__avatar"
+                                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&h=120&fit=crop&q=80"
+                                alt="Priya Sharma" loading="lazy">
+                            <div class="tst-review-card__id">
+                                <span class="tst-review-card__name">Priya Sharma</span>
+                                <span class="tst-review-card__date">2 weeks ago</span>
+                            </div>
+                            <span class="tst-review-card__g" aria-label="Posted on Google">
+                                <svg viewBox="0 0 24 24">
+                                    <path fill="#4285F4"
+                                        d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
+                                    <path fill="#34A853"
+                                        d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
+                                    <path fill="#FBBC05" d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
+                                    <path fill="#EA4335"
+                                        d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
+                                </svg>
+                            </span>
+                        </header>
+                        <span class="tst-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <p class="tst-review-card__text">I was told upfront that my pigmentation would take six months, not six weeks. It took six months. I have never had a clinic set expectations that honestly.</p>
+                    </article>
+                    <article class="tst-review-card">
+                        <header class="tst-review-card__head">
+                            <img class="tst-review-card__avatar"
+                                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&h=120&fit=crop&q=80"
+                                alt="Neha Kapoor" loading="lazy">
+                            <div class="tst-review-card__id">
+                                <span class="tst-review-card__name">Neha Kapoor</span>
+                                <span class="tst-review-card__date">1 month ago</span>
+                            </div>
+                            <span class="tst-review-card__g" aria-label="Posted on Google">
+                                <svg viewBox="0 0 24 24">
+                                    <path fill="#4285F4"
+                                        d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
+                                    <path fill="#34A853"
+                                        d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
+                                    <path fill="#FBBC05" d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
+                                    <path fill="#EA4335"
+                                        d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
+                                </svg>
+                            </span>
+                        </header>
+                        <span class="tst-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <p class="tst-review-card__text">They talked me out of two treatments I had asked for and explained exactly why. My skin is better for it and my bill was smaller.</p>
+                    </article>
+                    <article class="tst-review-card">
+                        <header class="tst-review-card__head">
+                            <img class="tst-review-card__avatar"
+                                src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=120&h=120&fit=crop&q=80"
+                                alt="Simran Bedi" loading="lazy">
+                            <div class="tst-review-card__id">
+                                <span class="tst-review-card__name">Simran Bedi</span>
+                                <span class="tst-review-card__date">1 month ago</span>
+                            </div>
+                            <span class="tst-review-card__g" aria-label="Posted on Google">
+                                <svg viewBox="0 0 24 24">
+                                    <path fill="#4285F4"
+                                        d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
+                                    <path fill="#34A853"
+                                        d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
+                                    <path fill="#FBBC05" d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
+                                    <path fill="#EA4335"
+                                        d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
+                                </svg>
+                            </span>
+                        </header>
+                        <span class="tst-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <p class="tst-review-card__text">The hair protocols worked when nothing else had. Slow, consistent and properly measured against my baseline photos each visit.</p>
+                    </article>
+                    <article class="tst-review-card">
+                        <header class="tst-review-card__head">
+                            <img class="tst-review-card__avatar"
+                                src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=120&h=120&fit=crop&q=80"
+                                alt="Ritu Malhotra" loading="lazy">
+                            <div class="tst-review-card__id">
+                                <span class="tst-review-card__name">Ritu Malhotra</span>
+                                <span class="tst-review-card__date">2 months ago</span>
+                            </div>
+                            <span class="tst-review-card__g" aria-label="Posted on Google">
+                                <svg viewBox="0 0 24 24">
+                                    <path fill="#4285F4"
+                                        d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
+                                    <path fill="#34A853"
+                                        d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
+                                    <path fill="#FBBC05" d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
+                                    <path fill="#EA4335"
+                                        d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
+                                </svg>
+                            </span>
+                        </header>
+                        <span class="tst-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <p class="tst-review-card__text">Genuinely calm space and genuinely clinical standards. I did not think you could have both until I came here.</p>
+                    </article>
+                    <article class="tst-review-card">
+                        <header class="tst-review-card__head">
+                            <img class="tst-review-card__avatar"
+                                src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=120&h=120&fit=crop&q=80"
+                                alt="Anjali Menon" loading="lazy">
+                            <div class="tst-review-card__id">
+                                <span class="tst-review-card__name">Anjali Menon</span>
+                                <span class="tst-review-card__date">3 months ago</span>
+                            </div>
+                            <span class="tst-review-card__g" aria-label="Posted on Google">
+                                <svg viewBox="0 0 24 24">
+                                    <path fill="#4285F4"
+                                        d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
+                                    <path fill="#34A853"
+                                        d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
+                                    <path fill="#FBBC05" d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
+                                    <path fill="#EA4335"
+                                        d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
+                                </svg>
+                            </span>
+                        </header>
+                        <span class="tst-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <p class="tst-review-card__text">Every appointment ran to time and every question got a real answer. The results are subtle in exactly the way I wanted.</p>
+                    </article>
+                    <article class="tst-review-card">
+                        <header class="tst-review-card__head">
+                            <img class="tst-review-card__avatar"
+                                src="https://images.unsplash.com/photo-1589903308904-1010c2294adc?w=120&h=120&fit=crop&q=80"
+                                alt="Kavya Reddy" loading="lazy">
+                            <div class="tst-review-card__id">
+                                <span class="tst-review-card__name">Kavya Reddy</span>
+                                <span class="tst-review-card__date">4 months ago</span>
+                            </div>
+                            <span class="tst-review-card__g" aria-label="Posted on Google">
+                                <svg viewBox="0 0 24 24">
+                                    <path fill="#4285F4"
+                                        d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
+                                    <path fill="#34A853"
+                                        d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
+                                    <path fill="#FBBC05" d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
+                                    <path fill="#EA4335"
+                                        d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
+                                </svg>
+                            </span>
+                        </header>
+                        <span class="tst-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <p class="tst-review-card__text">My acne cleared and, more importantly, stayed cleared. They treated the cause rather than selling me a facial every month.</p>
+                    </article>
+                </div>
+
+                <div class="rg-reviews__cta">
+                    <a href="https://www.google.com/maps" class="dz-cta" target="_blank" rel="noopener">
+                        <span>Read all reviews on Google</span>
+                        <img src="nemonic.png" class="btn-icon"
+                            style="width: 14px; height: 14px; object-fit: contain;" alt="icon" />
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer-stack-root">
+
+
+
+            <!-- Footer (sticky-pinned behind, revealed as CTA card scrolls away) -->
+            <div class="footer-reveal-wrapper">
+                <footer class="site-footer" aria-label="Site footer">
+                    <!-- Top row: logo + nav columns -->
+                    <div class="footer-top">
+
+                        <!-- Brand column -->
+                        <div class="footer-brand">
+                            <span class="footer-eyebrow">AESTHETICS & WELLNESS</span>
+                            <h2 class="footer-logo-text">D'ZEN DERMA</h2>
+                            <p class="footer-tagline">
+                                Where the finest techniques in aesthetic medicine reveal your most luminous, confident
+                                self. Crafted for your skin, your story.
+                            </p>
+                            <!-- Social icons -->
+                            <div class="footer-socials">
+                                <a href="#" class="footer-social-icon" aria-label="Instagram" target="_blank"
+                                    rel="noopener">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                        <circle cx="12" cy="12" r="4"></circle>
+                                        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"></circle>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Nav columns -->
+                        <div class="footer-nav-col">
+                            <ul class="footer-nav-list">
+                                <li><a href="../newthree.html">HOME</a></li>
+                                <li><a href="about.html">ABOUT US</a></li>
+                                <li><a href="../treatments.html">TREATMENTS</a></li>
+                                <li><a href="#">WELLNESS PROGRAMS</a></li>
+                                <li><a href="../concerns.html">CONCERN</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-nav-col">
+                            <ul class="footer-nav-list">
+                                <li><a href="#">MEMBERSHIPS</a></li>
+                                <li><a href="#">GIFT CARD</a></li>
+                                <li><a href="#">CAREERS</a></li>
+                                <li><a href="contact.html">CONTACT</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Contact info column -->
+                        <div class="footer-contact-col">
+                            <div class="footer-contact-row">
+                                <div class="footer-contact-item">
+                                    <span class="footer-contact-label">WhatsApp</span>
+                                    <span class="footer-contact-value">(+91) 93112 54441</span>
+                                </div>
+                                <div class="footer-contact-item">
+                                    <span class="footer-contact-label">Phone Number</span>
+                                    <span class="footer-contact-value">(+91) 93112 54441</span>
+                                </div>
+                            </div>
+                            <div class="footer-contact-item footer-contact-item--address">
+                                <span class="footer-contact-label">Visit Us</span>
+                                <span class="footer-contact-value">18A, Ring Rd, near Havells,<br>Vikram Vihar, Lajpat
+                                    Nagar 4,<br>Lajpat Nagar, South Delhi,<br>New Delhi, Delhi 110024, India</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="footer-divider"></div>
+
+                    <!-- Bottom row: copyright + legal links -->
+                    <div class="footer-bottom">
+                        <p class="footer-copyright">© 2026, D'Zen Derma | All Rights Reserved | All prices are
+                            exclusive of tax</p>
+                        <div class="footer-legal-links">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms & Conditions</a>
+                            <a href="#">Booking & Cancellation Policy</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-bottom-strip"></div>
+                </footer>
+
+            </div>
+
+        </div><!-- /.footer-stack-root -->
+
+    </main>
+
+    <!-- Embossed Brand Section -->
+    <section class="embossed-brand-section" style="padding: 50px 0px;">
+        <div class="embossed-texture"></div>
+        <a href="../newthree.html#book" class="embossed-book-btn">
+            BOOK NOW
+            <img src="nemonic.png" alt="icon" class="btn-icon">
+        </a>
+        <div class="embossed-content">
+            <h3 class="embossed-eyebrow">AESTHETICS & WELLNESS</h3>
+            <h2 class="embossed-title">D'ZEN DERMA</h2>
+            <p class="embossed-tagline">Elevating You Inside Out</p>
+        </div>
+    </section>
+
+    <!-- Floating Bottom Action Bar -->
+    <div class="bottom-action-bar" id="bottomActionBar" aria-label="Quick actions">
+        <a href="https://wa.me/919876543210" class="bottom-action-btn" target="_blank" rel="noopener"
+            aria-label="Chat on WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+                <path
+                    d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.967-.272-.099-.47-.149-.669.15-.197.297-.767.967-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.917-2.207-.241-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.307 1.263.49 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+            </svg>
+            <span class="btn-label">WhatsApp</span>
+        </a>
+        <a href="tel:+919876543210" class="bottom-action-btn" aria-label="Call us">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+                <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span class="btn-label">Call</span>
+        </a>
+        <a href="../newthree.html#book" class="bottom-action-btn bottom-action-btn--primary"
+            aria-label="Book consultation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+                <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01" />
+            </svg>
+            <span class="btn-label">Book Now</span>
+        </a>
+        <a href="../newthree.html#location" class="bottom-action-btn" aria-label="View location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span class="btn-label">Map</span>
+        </a>
+    </div>
+
+    <!-- Project script controller -->
+    <!-- Results gallery: before/after sliders + concern/treatment filter -->
+    <script>
+        (function () {
+            /* ── Before/after reveal ──────────────────────────────────
+               A range input drives --pos, so pointer drag, touch and
+               keyboard arrows all work with no custom event maths, and the
+               control is announced to screen readers. */
+            document.querySelectorAll('.rg-ba').forEach(function (frame) {
+                var range = frame.querySelector('.rg-ba__range');
+                if (!range) return;
+                var set = function () {
+                    frame.style.setProperty('--pos', range.value + '%');
+                };
+                range.addEventListener('input', set);
+                set();
+            });
+
+            /* ── Filter sets ────────────────────────────────
+               One handler drives every [data-filter] section. Each reads its
+               own attribute (data-concern, data-treatment) and filters only
+               the grid inside itself, so the two galleries stay independent. */
+            document.querySelectorAll('[data-filter]').forEach(function (section) {
+                var attr = 'data-' + section.getAttribute('data-filter');
+                var grid = section.querySelector('[data-grid]');
+                var empty = section.querySelector('.rg-empty');
+                var tabs = section.querySelectorAll('.concern-tab-btn');
+                if (!grid || !tabs.length) return;
+
+                var items = grid.querySelectorAll('.rg-item');
+
+                function apply(value) {
+                    var shown = 0;
+                    items.forEach(function (item) {
+                        var show = value === 'all' || item.getAttribute(attr) === value;
+                        item.classList.toggle('is-filtered', !show);
+                        if (show) {
+                            shown++;
+                            // Restart the fade so re-entering items animate again
+                            item.style.animation = 'none';
+                            void item.offsetWidth;
+                            item.style.animation = '';
+                        }
+                    });
+                    if (empty) empty.classList.toggle('is-shown', shown === 0);
+                }
+
+                tabs.forEach(function (btn) {
+                    btn.addEventListener('click', function () {
+                        tabs.forEach(function (b) {
+                            b.classList.remove('active');
+                            b.setAttribute('aria-selected', 'false');
+                        });
+                        btn.classList.add('active');
+                        btn.setAttribute('aria-selected', 'true');
+
+                        // Pull the chosen tab into view — with the row
+                        // scrollable, a tab at either end can sit clipped when
+                        // selected. 'nearest' avoids yanking an already-visible
+                        // tab into the middle.
+                        if (btn.scrollIntoView) {
+                            btn.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+                        }
+
+                        apply(btn.getAttribute('data-value'));
+                    });
+                });
+            });
+
+            /* ── Video click-to-play ──────────────────────────────────
+               script.js has this, but behind an early return on .tst-tabs,
+               which this page has no reason to carry. */
+            document.querySelectorAll('.tst-video-card').forEach(function (card) {
+                card.addEventListener('click', function () {
+                    if (card.classList.contains('is-playing')) return;
+                    var src = card.getAttribute('data-video');
+                    if (!src) return;
+                    var iframe = document.createElement('iframe');
+                    var sep = src.indexOf('?') === -1 ? '?' : '&';
+                    iframe.src = src + sep + 'autoplay=1&rel=0&playsinline=1';
+                    iframe.setAttribute('allow',
+                        'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                    iframe.setAttribute('allowfullscreen', '');
+                    iframe.setAttribute('title', 'Client testimonial video');
+                    card.appendChild(iframe);
+                    card.classList.add('is-playing');
+                });
+            });
+        })();
+    </script>
+
+    <script src="script.js?v=3.0"></script>
+</body>
+
+</html>

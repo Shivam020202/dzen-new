@@ -5327,6 +5327,39 @@ html body .footer-cta-card .footer-cta-sub {
     white-space: nowrap;
 }
 
+/* Tagline under the wordmark. Same debossed treatment as .embossed-title and
+   .embossed-eyebrow — colour matched to the field with the shadow pair doing
+   all the work — so it reads as pressed into the surface rather than printed
+   on top of it. Kept a shade lighter than the wordmark so the hierarchy holds. */
+/* `html body p { font-size: 14px; color: #5C3A2E; font-family: Inter }` — all
+   three !important — sits further down this file and applies to this element,
+   since the tagline is a <p>. Those three properties therefore need !important
+   here or the rule silently loses and the tagline renders at 14px in Inter.
+   The `html body` prefix matches that rule's idiom and settles specificity
+   beyond doubt. */
+html body .embossed-tagline {
+    font-family: var(--serif, 'Playfair Display', Georgia, serif) !important;
+    /* ~4.4vw against the wordmark's 11vw, so the two scale in step at every
+       width instead of drifting out of proportion. */
+    font-size: clamp(20px, 4.4vw, 58px) !important;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: 0.05em;
+    margin: clamp(14px, 1.8vw, 30px) 0 0;
+    /* Same ink as .embossed-title. The previous #40251a sat only ~11 RGB values
+       off the #4b2b20 field — too little contrast to hold an edge, which read as
+       blur rather than depth. Size alone carries the hierarchy below the
+       wordmark; the colour does not also need to be lighter. */
+    color: #3a1f16 !important;
+    /* Tight 1px blur, not 2px. Widening the blur with the type size smeared the
+       two shadows into each other; a deboss needs a hard edge, so the offsets
+       stay at 1px exactly as .embossed-title has them. */
+    text-shadow:
+        1px 1px 1px rgba(255, 255, 255, 0.12),
+        -1px -1px 1px rgba(0, 0, 0, 0.45);
+}
+
 /* =========================================================
    TRAINER SECTION V3 (Match Dzen-two Live)
    ========================================================= */
