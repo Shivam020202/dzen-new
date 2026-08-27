@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Header options — clinic.html</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=2.1" />
+    <link rel="stylesheet" href="styles.css?v=4.0" />
+
+    <style>
+        body {
+            background: #EFE7DE;
+            margin: 0;
+        }
+
+        .opt-label {
+            max-width: 1100px;
+            margin: 46px auto 14px;
+            padding: 0 20px;
+            font-family: 'Inter', system-ui, sans-serif;
+            color: #2B1A12;
+        }
+
+        .opt-label b {
+            display: block;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 4px;
+        }
+
+        .opt-label span {
+            font-size: 13.5px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #5C4A3A;
+        }
+
+        .opt-frame {
+            background: #FDF8F3;
+            overflow: hidden;
+        }
+
+        /* ═══ OPTION A — split editorial ═══ */
+        .hA {
+            display: grid;
+            grid-template-columns: 1fr 44%;
+            align-items: stretch;
+            background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%),
+                url('../images/contour-texture.webp') repeat;
+            background-blend-mode: multiply;
+            min-height: clamp(280px, 32vw, 420px);
+            padding-top: 103px;
+        }
+
+        .hA__copy {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(28px, 4vw, 60px) clamp(24px, 4vw, 64px) clamp(40px, 5vw, 70px);
+        }
+
+        .hA__rule {
+            width: 46px;
+            height: 1px;
+            background: rgba(232, 201, 154, .8);
+            margin-bottom: 20px;
+        }
+
+        .hA__eyebrow {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #E8C99A;
+            margin-bottom: 14px;
+        }
+
+        .hA h1 {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-size: clamp(26px, 3.6vw, 44px) !important;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.15;
+            color: #fff !important;
+            -webkit-text-fill-color: #fff !important;
+            margin: 0 0 16px;
+        }
+
+        .hA p {
+            font-family: 'Inter', system-ui, sans-serif !important;
+            font-size: 15px !important;
+            font-weight: 300;
+            line-height: 1.75;
+            color: rgba(255, 255, 255, .78) !important;
+            max-width: 46ch;
+            margin: 0;
+        }
+
+        .hA__media {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hA__media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ═══ OPTION B — photographic, dark scrim ═══ */
+        .hB {
+            position: relative;
+            min-height: clamp(340px, 40vw, 520px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 130px 24px 90px;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .hB__bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        /* Scrim: darkest at the base so the wave edge reads, lighter up top
+           where the photograph should still be legible. */
+        .hB::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(43, 26, 18, .58) 0%,
+                    rgba(43, 26, 18, .46) 45%,
+                    rgba(43, 26, 18, .72) 100%);
+            z-index: 1;
+        }
+
+        .hB__inner {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hB__eyebrow {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3.4px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .82);
+        }
+
+        .hB h1 {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-size: clamp(28px, 4vw, 50px) !important;
+            font-style: italic;
+            font-weight: 400;
+            color: #fff !important;
+            -webkit-text-fill-color: #fff !important;
+            margin: 16px 0 0;
+            text-shadow: 0 2px 24px rgba(0, 0, 0, .35);
+        }
+
+        /* ═══ OPTION C — light editorial, no dark block ═══ */
+        .hC {
+            background: #FDF8F3;
+            text-align: center;
+            padding: 132px 24px clamp(46px, 5vw, 74px);
+            position: relative;
+        }
+
+        .hC__eyebrow {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3.4px;
+            text-transform: uppercase;
+            color: #A9762F;
+        }
+
+        .hC h1 {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-size: clamp(30px, 4.4vw, 54px) !important;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.12;
+            color: #2B1A12 !important;
+            -webkit-text-fill-color: #2B1A12 !important;
+            margin: 18px 0 20px;
+        }
+
+        .hC p {
+            font-family: 'Inter', system-ui, sans-serif !important;
+            font-size: 16px !important;
+            font-weight: 300;
+            line-height: 1.75;
+            color: #5C4A3A !important;
+            max-width: 56ch;
+            margin: 0 auto;
+        }
+
+        /* Thin gold rule instead of a wave — the quiet option */
+        .hC__foot {
+            width: 64px;
+            height: 1px;
+            background: #C4924A;
+            margin: 30px auto 0;
+            opacity: .7;
+        }
+
+        @media (max-width: 767.98px) {
+            .hA {
+                grid-template-columns: 1fr;
+                padding-top: 90px;
+            }
+
+            .hA__media {
+                min-height: 220px;
+                order: 2;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ══════════════ OPTION A ══════════════ -->
+    <div class="opt-label">
+        <b>Option A — Split editorial</b>
+        <span>Copy left on the brown field, a clinic photograph filling the right half. Adds a supporting line so
+            the header carries some substance. No wave: the two halves meet the page on a straight edge.</span>
+    </div>
+    <div class="opt-frame">
+        <section class="hA">
+            <div class="hA__copy">
+                <div class="hA__rule"></div>
+                <span class="hA__eyebrow">About The Clinic</span>
+                <h1>Welcome to D'Zen Derma</h1>
+                <p>Two clinics, one standard — where clinical precision is held without the room ever feeling
+                    clinical.</p>
+            </div>
+            <div class="hA__media">
+                <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=900&auto=format&fit=crop"
+                    alt="D'Zen Derma clinic interior">
+            </div>
+        </section>
+    </div>
+
+    <!-- ══════════════ OPTION B ══════════════ -->
+    <div class="opt-label">
+        <b>Option B — Photographic, dark scrim</b>
+        <span>The clinic itself as the background, under a gradient scrim that deepens toward the base so the wave
+            still reads. Keeps the centred layout and the curve you have now.</span>
+    </div>
+    <div class="opt-frame">
+        <section class="hB">
+            <img class="hB__bg"
+                src="https://images.unsplash.com/photo-1580281658626-ee379f3cce93?q=80&w=1400&auto=format&fit=crop"
+                alt="Inside a D'Zen Derma treatment suite">
+            <div class="hB__inner">
+                <span class="hB__eyebrow">About The Clinic</span>
+                <div class="nemonic-separator mt-2 mb-3">
+                    <div class="nemonic-line" style="background-color: rgba(255,255,255,.5);"></div>
+                    <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon"
+                        style="filter: brightness(0) invert(1);" />
+                    <div class="nemonic-line" style="background-color: rgba(255,255,255,.5);"></div>
+                </div>
+                <h1>Welcome to D'Zen Derma</h1>
+            </div>
+            <div class="position-absolute w-100" style="bottom: -1px; left: 0; z-index: 3;">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                    style="display:block;width:100%;height:clamp(70px,7vw,110px);">
+                    <path fill="#FDF8F3" d="M0,26 C400,136 1040,-36 1440,52 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
+        </section>
+    </div>
+
+    <!-- ══════════════ OPTION C ══════════════ -->
+    <div class="opt-label">
+        <b>Option C — Light editorial</b>
+        <span>No dark block at all. The page opens on cream and the title carries it, closing on a single gold rule
+            instead of a wave. The quietest of the three, and it lets the clinic imagery below land first.</span>
+    </div>
+    <div class="opt-frame">
+        <section class="hC">
+            <span class="hC__eyebrow">About The Clinic</span>
+            <h1>Welcome to D'Zen Derma</h1>
+            <p>A sanctuary where advanced dermatology, regenerative aesthetics and holistic wellness meet — held to
+                the same standard across both clinics.</p>
+            <div class="hC__foot"></div>
+        </section>
+    </div>
+
+    <div class="opt-label" style="margin-bottom: 60px;">
+        <span><b style="font-size:15px;font-family:'Inter',sans-serif;">Current header, for comparison:</b>
+            centred eyebrow, nemonic rule and a 22px italic title on the brown field, closing on the wave.</span>
+    </div>
+
+</body>
+
+</html>

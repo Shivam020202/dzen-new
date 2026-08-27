@@ -511,6 +511,82 @@
             </div>
         </section>
 
+        <!-- Second team block — card grid, no tabs or slider.
+             Its own .tm-* classes on purpose: the founder slider script does
+             document.querySelectorAll('.founder-card') and toggles .active
+             across every match on the page. Reusing .founder-card here would
+             hand control of these cards to the FIRST section's tabs, and
+             .founder-card is display:none until .active — so they would simply
+             vanish. Different classes keep the two blocks independent. -->
+        <section class="doctors-v2 tm-section" id="teamCards" aria-label="Meet our team">
+            <div class="doctors-v2__container">
+                <div class="doctors-v2__head">
+                    <span class="doctors-v2__eyebrow">Meet The Team</span>
+                    <div class="nemonic-separator">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="doctors-v2__title">The minds <em class="scribble">behind</em> the method</h2>
+                    <p class="doctors-v2__subtitle">
+                        Two visionaries united by a shared philosophy: a sanctuary where science, art, and
+                        intentional care redefine what aesthetic medicine can be.
+                    </p>
+                </div>
+
+                <div class="tm-grid">
+
+                    <article class="tm-card">
+                        <div class="tm-card__content">
+                            <span class="tm-card__meta">Founder &middot; Brand &amp; Experience</span>
+                            <h3 class="tm-card__name">Rahul Bhandari</h3>
+                            <p class="tm-card__role">Brand Strategy &middot; Experience Design</p>
+                            <blockquote class="tm-card__quote">
+                                "D'Zen is not a clinic. It is a philosophy that happens to operate one."
+                            </blockquote>
+                        </div>
+                        <div class="tm-card__imagewrap">
+                            <img class="tm-card__image" src="../images/Rahul-Bhandari.png" alt="Rahul Bhandari"
+                                loading="lazy" decoding="async" width="700" height="800">
+                        </div>
+                    </article>
+
+                    <article class="tm-card">
+                        <div class="tm-card__content">
+                            <span class="tm-card__meta">Founder &middot; Medical Direction</span>
+                            <h3 class="tm-card__name">Dr. Aarushi Passi Bhandari</h3>
+                            <p class="tm-card__role">Aesthetic Physician</p>
+                            <blockquote class="tm-card__quote">
+                                "The most ambitious thing a doctor can do is to leave a patient with less, not more."
+                            </blockquote>
+                        </div>
+                        <div class="tm-card__imagewrap">
+                            <img class="tm-card__image" src="../images/dr-arushi-1.webp"
+                                alt="Dr. Aarushi Passi Bhandari" loading="lazy" decoding="async" width="700"
+                                height="800">
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="dz-cta-wrap">
+                    <a href="about.html" class="dz-cta">
+                        <span>Meet The Team</span>
+                        <img src="nemonic.png" class="btn-icon" style="width: 14px; height: 14px; object-fit: contain;"
+                            alt="icon" />
+                    </a>
+                </div>
+            </div>
+
+            <!-- Curvy Separator placed inside the section to blend properly -->
+            <div class="section-separator mt-6" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z">
+                    </path>
+                </svg>
+            </div>
+        </section>
+
         <section class="service-arch-section" aria-labelledby="service-arch-title">
             <div class="container">
                 <div class="section-header text-center mb-4 mb-lg-5">

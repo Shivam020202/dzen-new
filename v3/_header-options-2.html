@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Header options 2 — clinic.html</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=2.1" />
+    <link rel="stylesheet" href="styles.css?v=4.0" />
+
+    <style>
+        body {
+            background: #E7DED4;
+            margin: 0;
+        }
+
+        .lbl {
+            max-width: 1140px;
+            margin: 54px auto 16px;
+            padding: 0 20px;
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        .lbl b {
+            display: block;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 23px;
+            font-weight: 400;
+            color: #2B1A12;
+            margin-bottom: 5px;
+        }
+
+        .lbl span {
+            font-size: 13.5px;
+            font-weight: 300;
+            line-height: 1.65;
+            color: #5C4A3A;
+        }
+
+        .frame {
+            background: #FDF8F3;
+            overflow: hidden;
+        }
+
+        /* Shared grain, as used across the site's dark fields */
+        .grain::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            opacity: .22;
+            mix-blend-mode: overlay;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* ═══════════ D — ARCHED WINDOW ═══════════
+           A tall arch cut through the dark field, the clinic behind it. The
+           arch is the brand's own silhouette used at architectural scale. */
+        .hD {
+            position: relative;
+            isolation: isolate;
+            padding: 128px clamp(24px, 5vw, 80px) clamp(60px, 6vw, 96px);
+            /* Texture at the BOTTOM of the stack with the gradient multiplied
+               over it, so the grain reads through the colour rather than
+               sitting on it. background-blend-mode takes one value per
+               layer, in the order the layers are listed. */
+            background:
+                radial-gradient(90% 70% at 50% 0%, rgba(232, 201, 154, .16) 0%, transparent 62%),
+                linear-gradient(150deg, #3a1f16 0%, #4b2b20 46%, #6b3a22 100%),
+                url('../images/contour-texture.webp') repeat;
+            background-blend-mode: normal, multiply, normal;
+            overflow: hidden;
+        }
+
+        .hD__inner {
+            position: relative;
+            z-index: 2;
+            max-width: 1140px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: clamp(24px, 5vw, 70px);
+            align-items: end;
+        }
+
+        .hD__eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3.2px;
+            text-transform: uppercase;
+            color: #E8C99A;
+            margin-bottom: 18px;
+        }
+
+        .hD__eyebrow::before {
+            content: "";
+            width: 44px;
+            height: 1px;
+            background: #E8C99A;
+            opacity: .8;
+        }
+
+        .hD h1 {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-size: clamp(32px, 5.4vw, 68px) !important;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.04;
+            color: #fff !important;
+            -webkit-text-fill-color: #fff !important;
+            margin: 0 0 22px;
+        }
+
+        .hD__meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(232, 201, 154, .28);
+            max-width: 40ch;
+        }
+
+        .hD__meta span {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 10.5px;
+            font-weight: 600;
+            letter-spacing: 2.2px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .72);
+        }
+
+        /* The window itself */
+        .hD__arch {
+            width: clamp(180px, 26vw, 320px);
+            aspect-ratio: 0.66;
+            border-radius: 999px 999px 14px 14px;
+            overflow: hidden;
+            border: 1px solid rgba(232, 201, 154, .45);
+            box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .6);
+        }
+
+        .hD__arch img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ═══════════ E — INSET BOXED HERO ═══════════
+           Cream page, dark panel floated inside it with a margin all round and
+           a gold hairline frame. The photo breaks the panel's lower edge. */
+        .hE {
+            background: #FDF8F3;
+            padding: 104px clamp(16px, 3vw, 40px) clamp(70px, 7vw, 110px);
+        }
+
+        .hE__panel {
+            position: relative;
+            isolation: isolate;
+            max-width: 1160px;
+            margin: 0 auto;
+            border-radius: 30px;
+            padding: clamp(34px, 4.6vw, 72px) clamp(26px, 4vw, 64px);
+            background:
+                radial-gradient(110% 90% at 100% 0%, rgba(240, 201, 99, .5) 0%, rgba(160, 100, 30, .3) 34%, transparent 68%),
+                linear-gradient(128deg, #4a2a1d 0%, #3a1f16 60%, #2f1810 100%),
+                url('../images/contour-texture.webp') repeat;
+            background-blend-mode: normal, multiply, normal;
+            overflow: visible;
+            display: grid;
+            grid-template-columns: 1fr clamp(150px, 22vw, 260px);
+            gap: clamp(22px, 4vw, 56px);
+            align-items: center;
+        }
+
+        /* Gold hairline inset from the panel edge — a framed plate */
+        .hE__panel::before {
+            content: "";
+            position: absolute;
+            inset: 12px;
+            border: 1px solid rgba(232, 201, 154, .3);
+            border-radius: 20px;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .hE__copy {
+            position: relative;
+            z-index: 3;
+        }
+
+        .hE__eyebrow {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 10.5px;
+            font-weight: 600;
+            letter-spacing: 3.2px;
+            text-transform: uppercase;
+            color: #E8C99A;
+        }
+
+        .hE h1 {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-size: clamp(28px, 4.4vw, 54px) !important;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.08;
+            color: #fff !important;
+            -webkit-text-fill-color: #fff !important;
+            margin: 14px 0 0;
+        }
+
+        .hE__photo {
+            position: relative;
+            z-index: 3;
+            aspect-ratio: 0.72;
+            border-radius: 200px 200px 16px 16px;
+            overflow: hidden;
+            border: 3px solid;
+            border-image: linear-gradient(160deg, #F6DFA4, #C9922F 60%, #8a5815) 1;
+            margin-bottom: clamp(-56px, -5vw, -30px);
+            box-shadow: 0 30px 60px -22px rgba(0, 0, 0, .55);
+        }
+
+        .hE__photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ═══════════ F — DIAGONAL SPLIT ═══════════
+           The dark field is cut on an angle rather than a wave, the photograph
+           filling the remainder. Sharper and more contemporary. */
+        .hF {
+            position: relative;
+            min-height: clamp(340px, 40vw, 520px);
+            padding: 126px clamp(24px, 5vw, 80px) clamp(56px, 6vw, 90px);
+            background: #2B1A12;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .hF__photo {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hF__panel {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(120deg, #3a1f16 0%, #4b2b20 55%, #6b3a22 100%),
+                url('../images/contour-texture.webp') repeat;
+            background-blend-mode: multiply, normal;
+            /* The angle: full-bleed on the left, cutting away to the right */
+            clip-path: polygon(0 0, 62% 0, 44% 100%, 0 100%);
+            z-index: 1;
+        }
+
+        .hF__inner {
+            position: relative;
+            z-index: 3;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .hF__eyebrow {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3.2px;
+            text-transform: uppercase;
+            color: #E8C99A;
+        }
+
+        .hF h1 {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-size: clamp(28px, 4.6vw, 58px) !important;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.06;
+            color: #fff !important;
+            -webkit-text-fill-color: #fff !important;
+            margin: 16px 0 0;
+            max-width: 15ch;
+        }
+
+        /* ═══════════ G — OVERSIZED TYPE + MARQUEE ═══════════
+           The title at display scale with a slow marquee of service words
+           running beneath it, and the brand mark oversized behind. */
+        .hG {
+            position: relative;
+            isolation: isolate;
+            padding: 126px 0 0;
+            background:
+                radial-gradient(80% 60% at 20% 0%, rgba(232, 201, 154, .14) 0%, transparent 60%),
+                linear-gradient(160deg, #3a1f16 0%, #4b2b20 100%),
+                url('../images/contour-texture.webp') repeat;
+            background-blend-mode: normal, multiply, normal;
+            overflow: hidden;
+        }
+
+        .hG__mark {
+            position: absolute;
+            right: -4%;
+            top: 8%;
+            width: clamp(180px, 34vw, 460px);
+            opacity: .055;
+            filter: brightness(0) invert(1);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hG__inner {
+            position: relative;
+            z-index: 2;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 clamp(24px, 5vw, 60px) clamp(30px, 4vw, 52px);
+            text-align: center;
+        }
+
+        .hG__eyebrow {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3.6px;
+            text-transform: uppercase;
+            color: #E8C99A;
+        }
+
+        .hG h1 {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-size: clamp(34px, 7vw, 92px) !important;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: -0.02em;
+            color: #fff !important;
+            -webkit-text-fill-color: #fff !important;
+            margin: 18px 0 0;
+        }
+
+        /* Marquee strip sitting on the section's lower edge */
+        .hG__strip {
+            position: relative;
+            z-index: 2;
+            border-top: 1px solid rgba(232, 201, 154, .25);
+            border-bottom: 1px solid rgba(232, 201, 154, .25);
+            padding: 14px 0;
+            overflow: hidden;
+            margin-bottom: 0;
+        }
+
+        .hG__track {
+            display: flex;
+            gap: 46px;
+            width: max-content;
+            animation: hgScroll 26s linear infinite;
+        }
+
+        .hG__track span {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .55);
+            white-space: nowrap;
+        }
+
+        @keyframes hgScroll {
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hG__track {
+                animation: none;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+
+            .hD__inner,
+            .hE__panel {
+                grid-template-columns: 1fr;
+            }
+
+            .hD__arch,
+            .hE__photo {
+                width: min(58%, 220px);
+                margin: 24px auto 0;
+            }
+
+            .hE__photo {
+                margin-bottom: -30px;
+            }
+
+            .hF__panel {
+                clip-path: polygon(0 0, 100% 0, 100% 74%, 0 88%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══════════ D ═══════════ -->
+    <div class="lbl">
+        <b>Option D — Arched window</b>
+        <span>A tall arch cut into the dark field with the clinic behind it, the title set large and left, and a
+            hairline credential row beneath. Uses the brand's own arch at architectural scale rather than as a small
+            image frame.</span>
+    </div>
+    <div class="frame">
+        <section class="hD grain">
+            <div class="hD__inner">
+                <div>
+                    <span class="hD__eyebrow">About The Clinic</span>
+                    <h1>Welcome to<br>D'Zen Derma</h1>
+                    <div class="hD__meta">
+                        <span>Delhi &middot; Lajpat Nagar</span>
+                        <span>Gurgaon &middot; Golf Course Rd</span>
+                        <span>Doctor-Led</span>
+                    </div>
+                </div>
+                <div class="hD__arch">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop"
+                        alt="D'Zen Derma clinic interior">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ═══════════ E ═══════════ -->
+    <div class="lbl">
+        <b>Option E — Inset plate</b>
+        <span>The dark field floats inside the cream page with a margin all round and a gold hairline frame set in
+            from its edge. The portrait breaks the plate's lower edge, so the header has depth rather than sitting
+            flat against the page.</span>
+    </div>
+    <div class="frame">
+        <section class="hE">
+            <div class="hE__panel grain">
+                <div class="hE__copy">
+                    <span class="hE__eyebrow">About The Clinic</span>
+                    <h1>Welcome to D'Zen Derma</h1>
+                </div>
+                <div class="hE__photo">
+                    <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=700&auto=format&fit=crop"
+                        alt="A treatment being prepared at D'Zen Derma">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ═══════════ F ═══════════ -->
+    <div class="lbl">
+        <b>Option F — Diagonal split</b>
+        <span>The dark panel is cut on an angle instead of a wave, with the clinic photograph filling the remainder.
+            Sharper and more contemporary — it breaks from the curve used on every other page, which may be the point
+            or may be the objection.</span>
+    </div>
+    <div class="frame">
+        <section class="hF">
+            <img class="hF__photo"
+                src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=1400&auto=format&fit=crop"
+                alt="Inside a D'Zen Derma treatment room">
+            <div class="hF__panel grain"></div>
+            <div class="hF__inner">
+                <span class="hF__eyebrow">About The Clinic</span>
+                <h1>Welcome to D'Zen Derma</h1>
+            </div>
+        </section>
+    </div>
+
+    <!-- ═══════════ G ═══════════ -->
+    <div class="lbl">
+        <b>Option G — Display type + marquee</b>
+        <span>The title at full display scale with the brand mark oversized behind it, closing on a slow marquee of
+            what the clinic actually does. The most confident of the set, and the only one with movement.</span>
+    </div>
+    <div class="frame">
+        <section class="hG grain">
+            <img class="hG__mark" src="nemonic.png" alt="" aria-hidden="true">
+            <div class="hG__inner">
+                <span class="hG__eyebrow">About The Clinic</span>
+                <h1>Welcome to D'Zen Derma</h1>
+            </div>
+            <div class="hG__strip">
+                <div class="hG__track">
+                    <span>Aesthetic Dermatology</span><span>&middot;</span>
+                    <span>Regenerative Medicine</span><span>&middot;</span>
+                    <span>Holistic Wellness</span><span>&middot;</span>
+                    <span>Delhi &amp; Gurgaon</span><span>&middot;</span>
+                    <span>Aesthetic Dermatology</span><span>&middot;</span>
+                    <span>Regenerative Medicine</span><span>&middot;</span>
+                    <span>Holistic Wellness</span><span>&middot;</span>
+                    <span>Delhi &amp; Gurgaon</span><span>&middot;</span>
+                </div>
+            </div>
+            <div class="position-relative" style="z-index:2;">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                    style="display:block;width:100%;height:clamp(50px,5vw,80px);">
+                    <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
+        </section>
+    </div>
+
+    <div class="lbl" style="margin-bottom:70px;">
+        <span>Options A–C are in <b
+                style="font-family:'Inter',sans-serif;font-size:13.5px;">_header-options.html</b>.</span>
+    </div>
+
+</body>
+
+</html>

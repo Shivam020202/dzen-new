@@ -7,6 +7,51 @@
     <title>Men's Aesthetics — D'Zen Derma</title>
     <meta name="description"
         content="Men's aesthetic medicine at D'Zen Derma — protocols built for male anatomy, the six concerns men ask about most, and the treatments matched to each." />
+    <link rel="canonical" href="https://dzenderma.com/men" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="D'Zen Derma" />
+    <meta property="og:title" content="Men's Aesthetics — D'Zen Derma" />
+    <meta property="og:description"
+        content="Protocols built for male anatomy, not scaled down from a female plan. The six concerns men ask about most, and the treatments matched to each." />
+    <meta property="og:url" content="https://dzenderma.com/men" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Men's Aesthetics — D'Zen Derma" />
+    <meta name="twitter:description"
+        content="Protocols built for male anatomy, not scaled down from a female plan. The six concerns men ask about most, and the treatments matched to each." />
+
+    <!-- Structured data. The FAQ entries below mirror the on-page accordion
+         word for word; Google penalises schema that does not match what a
+         visitor can actually read, so the two must be edited together. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dzenderma.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Men's Aesthetics", "item": "https://dzenderma.com/men" }
+          ]
+        },
+        {
+          "@type": "MedicalWebPage",
+          "name": "Men's Aesthetics at D'Zen Derma",
+          "url": "https://dzenderma.com/men",
+          "description": "Men's aesthetic medicine at D'Zen Derma \u2014 protocols built for male anatomy, the six concerns men ask about most, and the treatments matched to each.",
+          "audience": { "@type": "PeopleAudience", "suggestedGender": "male" },
+          "about": [
+            { "@type": "MedicalCondition", "name": "Male-pattern hair loss" },
+            { "@type": "MedicalCondition", "name": "Loss of jawline definition" },
+            { "@type": "MedicalCondition", "name": "Under-eye hollowing" },
+            { "@type": "MedicalCondition", "name": "Shaving irritation and folliculitis" },
+            { "@type": "MedicalCondition", "name": "Skin texture and enlarged pores" }
+          ]
+        }
+      ]
+    }
+    </script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -165,8 +210,106 @@
         }
 
         /* ── 2. MALE CONCERNS GRID ────────────────────────────────── */
+        /* Dark field, matching the About The Clinic commitment section:
+           a flat warm gradient lit by two soft glows, finished with fine
+           grain. No contour texture — the depth comes from the glows and
+           the grain, which is what keeps the field looking like fabric
+           rather than a printed pattern. */
         .mn-concerns {
-            background: linear-gradient(to bottom, #F4EFE8, #FDF8F3);
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
+        }
+
+        /* Two glows: a warm rose wash from above, a muted gold from the
+           lower right, so the block is never one even colour. */
+        .mn-concerns::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 65% 60% at 50% -8%, rgba(198, 119, 119, .16) 0%, transparent 68%),
+                radial-gradient(ellipse 40% 40% at 80% 110%, rgba(143, 113, 74, .15) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Fine grain over the top, as on every other dark field on the site */
+        .mn-concerns::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='mnNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23mnNoise)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+            opacity: .25;
+            mix-blend-mode: overlay;
+        }
+
+        .mn-concerns > .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Waves sit above the gradient and grain, below the content */
+        .mn-wave {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            line-height: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .mn-wave--top {
+            top: 0;
+        }
+
+        .mn-wave--bottom {
+            bottom: -1px;
+        }
+
+        .mn-wave svg {
+            display: block;
+            width: 100%;
+            height: clamp(48px, 6vw, 100px);
+        }
+
+        /* Padding clears both curves so neither crowds the content */
+        .mn-concerns {
+            padding-top: calc(var(--mn-y) + clamp(48px, 6vw, 100px)) !important;
+            padding-bottom: calc(var(--mn-y) + clamp(48px, 6vw, 100px)) !important;
+        }
+
+        /* ═══ Everything below flips the section's content from dark-on-light
+               to light-on-dark. The grid was built for the opposite. ═══ */
+        html body .mn-concerns .section-title {
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }
+
+        html body .mn-concerns .section-title .scribble {
+            color: var(--mn-gold-light) !important;
+            -webkit-text-fill-color: var(--mn-gold-light) !important;
+        }
+
+        .mn-concerns .section-subtitle {
+            color: var(--mn-gold-light) !important;
+        }
+
+        .mn-concerns .nemonic-line {
+            background-color: rgba(255, 255, 255, .4) !important;
+        }
+
+        .mn-concerns .nemonic-icon {
+            filter: brightness(0) invert(1);
+        }
+
+        /* The intro paragraph carries its colour inline, so this has to
+           outrank an inline declaration — hence !important. */
+        .mn-concerns .section-header p {
+            color: rgba(255, 255, 255, .72) !important;
         }
 
         /* Hairline grid, not cards — rules BETWEEN the cells rather than a
@@ -174,17 +317,25 @@
         .mn-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            border-top: 1px solid var(--mn-hairline);
+            /* White rules: --mn-hairline is a warm gold-on-cream tint and all
+               but vanishes on the dark field. */
+            border-top: 1px solid rgba(255, 255, 255, .16);
         }
 
         .mn-cell {
             padding: clamp(24px, 2.8vw, 34px) clamp(18px, 2.2vw, 30px);
-            border-bottom: 1px solid var(--mn-hairline);
+            border-bottom: 1px solid rgba(255, 255, 255, .16);
+            transition: background .4s ease;
+        }
+
+        /* A wash rather than a lift — there is no card here to raise */
+        .mn-cell:hover {
+            background: rgba(255, 255, 255, .05);
         }
 
         /* Left rule on every cell except the first of each row */
         .mn-cell:not(:nth-child(3n+1)) {
-            border-left: 1px solid var(--mn-hairline);
+            border-left: 1px solid rgba(255, 255, 255, .16);
         }
 
         .mn-cell__icon {
@@ -194,9 +345,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(196, 146, 74, .1);
-            color: var(--mn-gold);
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(232, 201, 154, .3);
+            color: var(--mn-gold-light);
             margin-bottom: 16px;
+            transition: background .4s ease, border-color .4s ease;
+        }
+
+        .mn-cell:hover .mn-cell__icon {
+            background: rgba(232, 201, 154, .16);
+            border-color: rgba(232, 201, 154, .55);
         }
 
         .mn-cell__icon svg {
@@ -209,8 +367,8 @@
             font-size: clamp(17px, 1.8vw, 20px) !important;
             font-weight: 400;
             line-height: 1.3;
-            color: var(--mn-ink) !important;
-            -webkit-text-fill-color: var(--mn-ink) !important;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
             font-style: normal !important;
             margin: 0 0 10px;
         }
@@ -220,7 +378,7 @@
             font-size: 14px !important;
             font-weight: 300;
             line-height: 1.7;
-            color: var(--mn-body) !important;
+            color: rgba(255, 255, 255, .72) !important;
             margin: 0 0 12px;
         }
 
@@ -230,7 +388,7 @@
             font-weight: 600;
             letter-spacing: 1.6px;
             text-transform: uppercase;
-            color: var(--mn-gold);
+            color: var(--mn-gold-light);
         }
 
         /* ── 3. RECOMMENDED TREATMENTS ────────────────────────────── */
@@ -329,10 +487,133 @@
             transform: translateX(0);
         }
 
-        .mn-cta {
+        /* A gold rule before each label, so the four points read as a
+           considered set rather than a run of bold text. */
+        .mn-point span strong::before {
+            content: "";
+            display: inline-block;
+            width: 14px;
+            height: 1px;
+            background: var(--mn-gold);
+            vertical-align: middle;
+            margin-right: 9px;
+        }
+
+        /* Two up once the copy column is wide enough to carry it. Below this
+           the columns would be under 24ch and every label would wrap. */
+        @media (min-width: 1200px) {
+            .mn-points {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: clamp(22px, 2.4vw, 36px);
+            }
+        }
+
+        /* -- 4. CLOSING CTA --------------------------------------- */
+        .mn-book {
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
+            padding: calc(var(--mn-y) + clamp(48px, 6vw, 100px)) 0 var(--mn-y);
+            text-align: center;
+        }
+
+        .mn-book::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 65% 60% at 50% -8%, rgba(198, 119, 119, .16) 0%, transparent 68%),
+                radial-gradient(ellipse 40% 40% at 80% 110%, rgba(143, 113, 74, .15) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .mn-book::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='mnBookNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23mnBookNoise)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+            opacity: .25;
+            mix-blend-mode: overlay;
+        }
+
+        .mn-book__wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            line-height: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .mn-book__wave svg {
+            display: block;
+            width: 100%;
+            height: clamp(48px, 6vw, 100px);
+        }
+
+        .mn-book > .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        html body .mn-book .section-title {
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }
+
+        html body .mn-book .section-title .scribble {
+            color: var(--mn-gold-light) !important;
+            -webkit-text-fill-color: var(--mn-gold-light) !important;
+        }
+
+        .mn-book .section-subtitle {
+            color: var(--mn-gold-light) !important;
+        }
+
+        .mn-book .nemonic-line {
+            background-color: rgba(255, 255, 255, .4) !important;
+        }
+
+        .mn-book .nemonic-icon {
+            filter: brightness(0) invert(1);
+        }
+
+        .mn-page .mn-book__lead {
+            max-width: 58ch;
+            margin: 0 auto clamp(26px, 3vw, 38px);
+            font-family: 'Inter', system-ui, sans-serif !important;
+            font-size: 16px !important;
+            font-weight: 300;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, .78) !important;
+        }
+
+        /* Reassurance strip under the button - the three things men ask
+           before they book, answered without making them ask. */
+        .mn-book__assure {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            margin-top: clamp(30px, 3.4vw, 46px);
+            gap: 10px clamp(20px, 3vw, 40px);
+            max-width: 760px;
+            margin: clamp(28px, 3.2vw, 40px) auto 0;
+            padding-top: 22px;
+            border-top: 1px solid rgba(255, 255, 255, .16);
+        }
+
+        .mn-book__assure span {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 10.5px;
+            font-weight: 600;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            color: var(--mn-gold-light);
         }
 
         @media (max-width: 991.98px) {
@@ -461,7 +742,8 @@
             <li><a href="../journal.html">Journal <span>→</span></a></li>
         </ul>
     </aside>
-
+
+
     <main>
 
         <!-- Inner Page Header -->
@@ -494,19 +776,25 @@
         </section>
 
         <!-- ═══════ 1. MALE-FOCUSED POSITIONING ═══════ -->
-        <section class="mn-section mn-section--curve mn-intro" id="approach" aria-labelledby="approach-title">
+        <section class="mn-section mn-intro" id="approach" aria-labelledby="approach-title">
             <div class="container">
+                <!-- Header lifted out of the split column so it centres like
+                     sections 2 and 3. Inside .mn-copy it could only ever be
+                     left-aligned, since that column also holds the body copy. -->
+                <div class="section-header text-center mb-5">
+                    <span class="section-subtitle" style="letter-spacing: 3px;">THE APPROACH</span>
+                    <div class="nemonic-separator mt-2">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="section-title" id="approach-title">Built for Male <span class="scribble">Anatomy</span>
+                    </h2>
+                </div>
+
                 <div class="mn-split">
 
                     <div class="mn-copy">
-                        <span class="section-subtitle" style="letter-spacing: 3px;">THE APPROACH</span>
-                        <div class="nemonic-separator mt-2">
-                            <div class="nemonic-line"></div>
-                            <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon" />
-                            <div class="nemonic-line"></div>
-                        </div>
-                        <h2 class="section-title" id="approach-title">Built for Male <span
-                                class="scribble">Anatomy</span></h2>
                         <p class="mn-lead">
                             Male skin is measurably different &mdash; roughly 20% thicker, denser in collagen,
                             higher in sebum, and carrying more muscle mass under it. A plan borrowed from a female
@@ -560,15 +848,22 @@
 
             <!-- Curvy separator into the concerns grid. Filled #F4EFE8 to match
                  that section's top edge. -->
-            <div class="section-separator" aria-hidden="true">
-                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path fill="#F4EFE8" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
-                </svg>
-            </div>
+            <!-- No separator here. The section below is a gradient now, and a
+                 flat fill can only match a gradient at one point across the
+                 width — it cuts the boundary from its own top edge instead. -->
         </section>
 
         <!-- ═══════ 2. MALE CONCERNS GRID ═══════ -->
         <section class="mn-section mn-concerns" id="concerns" aria-labelledby="concerns-title">
+
+            <!-- Cream wave cutting the top edge. Closes at L1440,0 L0,0 Z so the
+                 fill sits ABOVE the curve: everything below is the section's own
+                 gradient, which no flat fill could have matched. -->
+            <div class="mn-wave mn-wave--top" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,0 L0,0 Z"></path>
+                </svg>
+            </div>
             <div class="container">
 
                 <div class="section-header text-center mb-5">
@@ -598,7 +893,8 @@
                             </svg>
                         </div>
                         <h3>Hair Thinning &amp; Recession</h3>
-                        <p>Male-pattern loss follows a predictable route, which is exactly why acting early changes the outcome so much.</p>
+                        <p>Male-pattern loss follows a predictable route, which is exactly why acting early changes the
+                            outcome so much.</p>
                         <span class="mn-cell__for">Most common under 40</span>
                     </div>
                     <div class="mn-cell">
@@ -610,7 +906,8 @@
                             </svg>
                         </div>
                         <h3>Jawline &amp; Definition</h3>
-                        <p>Structure softens with age and weight change. Restoring it is subtle work, not sculpting something new.</p>
+                        <p>Structure softens with age and weight change. Restoring it is subtle work, not sculpting
+                            something new.</p>
                         <span class="mn-cell__for">Non-surgical</span>
                     </div>
                     <div class="mn-cell">
@@ -633,7 +930,8 @@
                             </svg>
                         </div>
                         <h3>Acne &amp; Shaving Irritation</h3>
-                        <p>Ingrown hairs, folliculitis and razor burn compounding into scarring over years of daily shaving.</p>
+                        <p>Ingrown hairs, folliculitis and razor burn compounding into scarring over years of daily
+                            shaving.</p>
                         <span class="mn-cell__for">Barrier-first</span>
                     </div>
                     <div class="mn-cell">
@@ -645,7 +943,8 @@
                             </svg>
                         </div>
                         <h3>Skin Texture &amp; Pores</h3>
-                        <p>Thicker sebaceous skin means coarser texture and more visible pores &mdash; and it responds to different settings.</p>
+                        <p>Thicker sebaceous skin means coarser texture and more visible pores &mdash; and it responds
+                            to different settings.</p>
                         <span class="mn-cell__for">Protocol differs</span>
                     </div>
                     <div class="mn-cell">
@@ -659,10 +958,18 @@
                             </svg>
                         </div>
                         <h3>Body &amp; Contour</h3>
-                        <p>Stubborn deposits that hold despite training and diet, plus body hair reduction where it is wanted.</p>
+                        <p>Stubborn deposits that hold despite training and diet, plus body hair reduction where it is
+                            wanted.</p>
                         <span class="mn-cell__for">Assessed first</span>
                     </div>
                 </div>
+            </div>
+
+            <!-- Handing off to the cream treatments section below -->
+            <div class="mn-wave mn-wave--bottom" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
+                </svg>
             </div>
         </section>
 
@@ -677,8 +984,8 @@
                         <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon" />
                         <div class="nemonic-line"></div>
                     </div>
-                    <h2 class="section-title" id="treatments-title">Matched to the <span
-                            class="scribble">Concern</span></h2>
+                    <h2 class="section-title" id="treatments-title">Matched to the <span class="scribble">Concern</span>
+                    </h2>
                     <p class="mx-auto"
                         style="max-width: 62ch; color: rgba(43, 26, 18, 0.7); font-size: 1.05rem; line-height: 1.7;">
                         What each concern above actually calls for. Which one applies to you is settled in
@@ -689,7 +996,8 @@
                 <div class="mn-index">
                     <a class="mn-row" href="../treatments.html">
                         <span class="mn-row__name">PRP &amp; GFC for Hair</span>
-                        <span class="mn-row__desc">Growth-factor protocols to slow shedding and thicken what is still there. Started early, it preserves rather than rescues.
+                        <span class="mn-row__desc">Growth-factor protocols to slow shedding and thicken what is still
+                            there. Started early, it preserves rather than rescues.
                             <span class="mn-row__meta">For hair thinning &middot; 6 &ndash; 12 months</span>
                         </span>
                         <span class="mn-row__go" aria-hidden="true">
@@ -701,7 +1009,8 @@
                     </a>
                     <a class="mn-row" href="../treatments.html">
                         <span class="mn-row__name">Jawline &amp; Chin Filler</span>
-                        <span class="mn-row__desc">Structural placement along the mandible and chin to restore definition that has softened. Read across the whole face, never spot-treated.
+                        <span class="mn-row__desc">Structural placement along the mandible and chin to restore
+                            definition that has softened. Read across the whole face, never spot-treated.
                             <span class="mn-row__meta">For definition &middot; 45 min</span>
                         </span>
                         <span class="mn-row__go" aria-hidden="true">
@@ -713,7 +1022,8 @@
                     </a>
                     <a class="mn-row" href="../treatments.html">
                         <span class="mn-row__name">Under-Eye Rejuvenation</span>
-                        <span class="mn-row__desc">Bio-remodelling and cautious filler for hollowing, paired with the sleep and hydration work that caused half of it.
+                        <span class="mn-row__desc">Bio-remodelling and cautious filler for hollowing, paired with the
+                            sleep and hydration work that caused half of it.
                             <span class="mn-row__meta">For under-eye fatigue &middot; 30 min</span>
                         </span>
                         <span class="mn-row__go" aria-hidden="true">
@@ -725,7 +1035,8 @@
                     </a>
                     <a class="mn-row" href="../treatments.html">
                         <span class="mn-row__name">Laser Hair Reduction</span>
-                        <span class="mn-row__desc">Beard-line shaping and body reduction, which also ends the ingrown-hair cycle that drives most shaving scarring.
+                        <span class="mn-row__desc">Beard-line shaping and body reduction, which also ends the
+                            ingrown-hair cycle that drives most shaving scarring.
                             <span class="mn-row__meta">For irritation &middot; 6 &ndash; 8 sessions</span>
                         </span>
                         <span class="mn-row__go" aria-hidden="true">
@@ -737,7 +1048,8 @@
                     </a>
                     <a class="mn-row" href="../treatments.html">
                         <span class="mn-row__name">Medipeels &amp; Resurfacing</span>
-                        <span class="mn-row__desc">Settings calibrated for thicker, more sebaceous skin &mdash; the same protocol used on lighter skin simply underperforms.
+                        <span class="mn-row__desc">Settings calibrated for thicker, more sebaceous skin &mdash; the same
+                            protocol used on lighter skin simply underperforms.
                             <span class="mn-row__meta">For texture &amp; pores &middot; 3 &ndash; 6 months</span>
                         </span>
                         <span class="mn-row__go" aria-hidden="true">
@@ -749,7 +1061,8 @@
                     </a>
                     <a class="mn-row" href="../treatments.html">
                         <span class="mn-row__name">Botulinum Toxin</span>
-                        <span class="mn-row__desc">Higher dosing than a comparable female plan, because the muscle mass is greater. Placed to soften, never to freeze.
+                        <span class="mn-row__desc">Higher dosing than a comparable female plan, because the muscle mass
+                            is greater. Placed to soften, never to freeze.
                             <span class="mn-row__meta">For expression lines &middot; 20 min</span>
                         </span>
                         <span class="mn-row__go" aria-hidden="true">
@@ -761,12 +1074,43 @@
                     </a>
                 </div>
 
-                <div class="mn-cta">
-                    <a href="contact.html#contactForm" class="dz-cta">
-                        <span>Book a Men's Consultation</span>
+            </div>
+        </section>
+
+        <!-- ═══════ 4. CLOSING CTA ═══════ -->
+        <section class="mn-book" id="book" aria-labelledby="book-title">
+
+            <div class="mn-book__wave" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,0 L0,0 Z"></path>
+                </svg>
+            </div>
+
+            <div class="container">
+                <span class="section-subtitle" style="letter-spacing: 3px;">NEXT STEP</span>
+                <div class="nemonic-separator mt-2 mb-3">
+                    <div class="nemonic-line"></div>
+                    <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                    <div class="nemonic-line"></div>
+                </div>
+                <h2 class="section-title" id="book-title">Start With a <span class="scribble">Conversation</span></h2>
+                <p class="mn-book__lead">
+                    Come in, tell us what you are seeing in the mirror, and let us tell you what is actually causing
+                    it. Whether that ends in a treatment is a decision for afterwards.
+                </p>
+                <div class="dz-cta-wrap" style="justify-content: center; display: flex;">
+                    <a href="contact.html#contactForm" class="dz-cta" style="border-color: rgba(255,255,255,0.5);">
+                        <span style="color: #ffffff !important;">Book a Men's Consultation</span>
                         <img src="nemonic.png" class="btn-icon"
-                            style="width: 14px; height: 14px; object-fit: contain;" alt="icon" />
+                            style="width: 14px; height: 14px; object-fit: contain; filter: brightness(0) invert(1);"
+                            alt="icon" />
                     </a>
+                </div>
+
+                <div class="mn-book__assure">
+                    <span>Private Consultation Rooms</span>
+                    <span>Doctor-Led Throughout</span>
+                    <span>Delhi &amp; Gurgaon</span>
                 </div>
             </div>
         </section>

@@ -4208,11 +4208,25 @@ body {
 
 /* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Footer reveal wrapper (sticky, sits behind CTA card) ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .footer-reveal-wrapper {
-    position: sticky;
-    bottom: 0;
+    /* Static by default so the whole footer is always reachable.
+       position:sticky with bottom:0 pins the footer to the viewport's lower
+       edge; the moment the footer is TALLER than the viewport — which it is
+       as soon as the four columns stack — its upper part sits permanently
+       above the viewport and cannot be scrolled to. The content was rendering
+       fine, it just could not be reached. */
+    position: static;
     z-index: 1;
     background: #FDF8F3;
     padding: 0;
+}
+
+/* The slide-over reveal is restored only where the footer comfortably fits
+   inside the viewport, so it can never swallow its own content. */
+@media (min-width: 992px) and (min-height: 900px) {
+    .footer-reveal-wrapper {
+        position: sticky;
+        bottom: 0;
+    }
 }
 
 /* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Site footer ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â full width, no max-width cap ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
@@ -4249,7 +4263,7 @@ body {
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.3em;
-    color: #8C756C;
+    color: #7A6158;
     margin-bottom: 12px;
     text-transform: uppercase;
 }
@@ -4331,7 +4345,7 @@ body {
 }
 
 .footer-nav-list li a:hover {
-    color: #b4823c;
+    color: #8B5E2A;
 }
 
 /* Contact Info column */
@@ -4392,7 +4406,7 @@ body {
 .footer-copyright {
     font-family: var(--sans, "Inter", system-ui, sans-serif);
     font-size: 0.75rem;
-    color: #8C756C;
+    color: #7A6158;
     margin: 0;
 }
 
@@ -5559,5 +5573,153 @@ html body .embossed-tagline {
 
     .trainer-v3-collage img:nth-child(even) {
         transform: translateY(16px);
+    }
+}
+
+/* =========================================================
+   TEAM CARDS — second "Meet The Team" block on the homepage
+   Replicates the "Sharing Expertise" reference at EVERY width.
+
+   The card is a fixed composition, so it is not re-laid-out at
+   a breakpoint — it scales. aspect-ratio locks the panel to the
+   reference's proportion, container-type lets the type size in
+   cqw (% of the card's own width), and the portrait is placed
+   in percentages. So the whole card is one design shrunk or
+   grown, never a different arrangement.
+
+   Measured from the reference (719px wide):
+     panel   x 28-672, bottom y 612   -> 644 x 612  (ratio 1.052)
+     oval    x 368-620, y 272-660     -> 252 x 388
+     inset from right  52 / 644 = 8%
+     hang below bottom 48 / 612 = 8%
+     heading  ~48px / 644 = 7.4cqw
+     body     ~17px / 644 = 2.6cqw
+
+   Deliberately NOT reusing .founder-card: that class is
+   display:none until .active, and the founder slider script
+   toggles .active across every .founder-card on the page, so
+   these would end up driven by the first section's tabs.
+   ========================================================= */
+.tm-grid {
+    display: grid;
+    gap: clamp(30px, 3.6vw, 52px);
+    max-width: 1040px;
+    /* Room for the portrait hanging past the last panel */
+    margin: 0 auto clamp(48px, 6vw, 88px);
+}
+
+.tm-card {
+    position: relative;
+    /* Descendants size themselves in cqw = % of this card's width */
+    container-type: inline-size;
+    /* The reference panel's own proportion, so the composition holds at
+       any width instead of squashing */
+    aspect-ratio: 644 / 612;
+    padding: 5.5% 4%;
+    /* Brown base with a gold glow burning out of the TOP-RIGHT corner.
+       A single linear sweep spreads gold along the whole diagonal instead
+       of pooling it in the corner. */
+    background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
+    border-radius: clamp(20px, 6cqw, 40px);
+    /* visible: the portrait deliberately breaks the lower edge */
+    overflow: visible;
+    isolation: isolate;
+}
+
+/* ── Copy: top-left, stopping clear of the portrait ── */
+.tm-card__content {
+    position: relative;
+    z-index: 2;
+    /* The oval's left edge is at 57% in the reference */
+    max-width: 54%;
+}
+
+.tm-card__meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8cqw;
+    padding: 0.9cqw 2.2cqw;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .1);
+    border: 1px solid rgba(255, 255, 255, .22);
+    color: #F2DDB4;
+    font-family: var(--sans, "Inter", system-ui, sans-serif);
+    font-size: clamp(7px, 1.55cqw, 10px);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 3cqw;
+}
+
+html body .tm-card__name {
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(15px, 7.4cqw, 48px) !important;
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-style: normal !important;
+    margin: 0 0 3cqw;
+}
+
+/* html body p forces 14px Inter #5C3A2E with !important further down this
+   file — unreadable on the dark panel — so these must outrank it. */
+html body .tm-card__role {
+    font-family: var(--sans, "Inter", system-ui, sans-serif) !important;
+    font-size: clamp(9px, 2.6cqw, 17px) !important;
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: 0;
+    text-transform: none;
+    color: rgba(255, 255, 255, .88) !important;
+    margin: 0 0 3.4cqw;
+}
+
+html body .tm-card__quote {
+    font-family: var(--sans, "Inter", system-ui, sans-serif) !important;
+    font-style: normal;
+    font-size: clamp(9px, 2.6cqw, 17px) !important;
+    font-weight: 300;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, .88) !important;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* ── Portrait: absolute, so its position is exactly these three numbers ── */
+.tm-card__imagewrap {
+    position: absolute;
+    right: 8%;
+    /* Negative bottom = hangs below the panel. No padding to fight. */
+    bottom: -8%;
+    height: 70%;
+    aspect-ratio: 0.64;
+    z-index: 2;
+    /* The ring: a small gap over a gold gradient reads as a metallic edge,
+       which a flat border-color cannot. */
+    padding: 0.5cqw;
+    background: linear-gradient(150deg, #F6DFA4 0%, #D9A63F 38%, #A9761F 72%, #E3C177 100%);
+    border-radius: 999px;
+    box-shadow: 0 3cqw 6cqw -2.5cqw rgba(31, 14, 6, .6);
+}
+
+.tm-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    border-radius: 999px;
+    background: #EFE4D6;
+}
+
+/* No layout breakpoint on purpose. The card is one composition that scales;
+   re-stacking it at a narrow width is what put the portrait under the copy
+   instead of beside it. Only the grid gutter changes. */
+@media (max-width: 575.98px) {
+    .tm-grid {
+        margin-bottom: 44px;
     }
 }

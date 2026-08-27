@@ -313,7 +313,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(35deg, #2f1810 0%, #8C4A2E 60%, #8a5815 85%, #8a6017 100%);
+            background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
             z-index: 0;
         }
 
@@ -535,7 +535,8 @@
             <li><a href="../journal.html">Journal <span>→</span></a></li>
         </ul>
     </aside>
-
+
+
     <main>
 
         <!-- Inner Page Header -->
@@ -570,17 +571,23 @@
         <!-- ═══════ 1. WHAT ARE SIGNATURE PROTOCOLS ═══════ -->
         <section class="ds-section ds-section--curve ds-what" id="what" aria-labelledby="what-title">
             <div class="container">
+                <!-- Header lifted out of the split column so it centres like
+                     sections 2 and 3. Inside .ds-copy it could only ever be
+                     left-aligned, since that column also holds the body copy. -->
+                <div class="section-header text-center mb-5">
+                    <span class="section-subtitle" style="letter-spacing: 3px;">THE DEFINITION</span>
+                    <div class="nemonic-separator mt-2">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="section-title" id="what-title">What Makes a Protocol a <span
+                            class="scribble">Signature</span></h2>
+                </div>
+
                 <div class="ds-split">
 
                     <div class="ds-copy">
-                        <span class="section-subtitle" style="letter-spacing: 3px;">THE DEFINITION</span>
-                        <div class="nemonic-separator mt-2">
-                            <div class="nemonic-line"></div>
-                            <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon" />
-                            <div class="nemonic-line"></div>
-                        </div>
-                        <h2 class="section-title" id="what-title">What Makes a Protocol a <span
-                                class="scribble">Signature</span></h2>
                         <p class="ds-lead">
                             A signature is not a treatment with a name on it. It is a sequence &mdash; a defined
                             order of steps, spaced at defined intervals, chosen because that order produces a result
@@ -667,125 +674,131 @@
 
                 <div class="ds-exp-list">
 
-                <article class="ds-exp">
-                    <div class="ds-exp__media">
-                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop"
-                            alt="" aria-hidden="true" loading="lazy" decoding="async">
-                    </div>
-                    <div class="ds-exp__body">
-                        <span class="ds-exp__num">01</span>
-                        <h3>The Luminance Protocol</h3>
-                        <p>A staged programme for clarity and even tone. Barrier repair first, correction second, glow last &mdash; in that order, because reversing it is what leaves skin sensitised.</p>
-                        <div class="ds-exp__tags">
-                            <span>Pigmentation</span>
-                            <span>Bio-stimulators</span>
-                            <span>3 &ndash; 6 months</span>
+                    <article class="ds-exp">
+                        <div class="ds-exp__media">
+                            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop"
+                                alt="" aria-hidden="true" loading="lazy" decoding="async">
                         </div>
-                        <a class="ds-exp__link" href="../treatments.html">
-                            Explore This Signature
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
-                        </a>
-                    </div>
-                </article>
+                        <div class="ds-exp__body">
+                            <span class="ds-exp__num">01</span>
+                            <h3>The Luminance Protocol</h3>
+                            <p>A staged programme for clarity and even tone. Barrier repair first, correction second,
+                                glow last &mdash; in that order, because reversing it is what leaves skin sensitised.
+                            </p>
+                            <div class="ds-exp__tags">
+                                <span>Pigmentation</span>
+                                <span>Bio-stimulators</span>
+                                <span>3 &ndash; 6 months</span>
+                            </div>
+                            <a class="ds-exp__link" href="../treatments.html">
+                                Explore This Signature
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
 
-                <article class="ds-exp">
-                    <div class="ds-exp__media">
-                        <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop"
-                            alt="" aria-hidden="true" loading="lazy" decoding="async">
-                    </div>
-                    <div class="ds-exp__body">
-                        <span class="ds-exp__num">02</span>
-                        <h3>The Contour Signature</h3>
-                        <p>Structural work read across the whole face rather than feature by feature. Filler is placed to restore proportion that time has moved, never to add what was never there.</p>
-                        <div class="ds-exp__tags">
-                            <span>Dermal filler</span>
-                            <span>Full-face read</span>
-                            <span>45 min</span>
+                    <article class="ds-exp">
+                        <div class="ds-exp__media">
+                            <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop"
+                                alt="" aria-hidden="true" loading="lazy" decoding="async">
                         </div>
-                        <a class="ds-exp__link" href="../treatments.html">
-                            Explore This Signature
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
-                        </a>
-                    </div>
-                </article>
+                        <div class="ds-exp__body">
+                            <span class="ds-exp__num">02</span>
+                            <h3>The Contour Signature</h3>
+                            <p>Structural work read across the whole face rather than feature by feature. Filler is
+                                placed to restore proportion that time has moved, never to add what was never there.</p>
+                            <div class="ds-exp__tags">
+                                <span>Dermal filler</span>
+                                <span>Full-face read</span>
+                                <span>45 min</span>
+                            </div>
+                            <a class="ds-exp__link" href="../treatments.html">
+                                Explore This Signature
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
 
-                <article class="ds-exp">
-                    <div class="ds-exp__media">
-                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop"
-                            alt="" aria-hidden="true" loading="lazy" decoding="async">
-                    </div>
-                    <div class="ds-exp__body">
-                        <span class="ds-exp__num">03</span>
-                        <h3>The Renewal Signature</h3>
-                        <p>Collagen induction paced over months. Microneedling, MNRF and regenerative therapies sequenced so the skin is always rebuilding rather than recovering.</p>
-                        <div class="ds-exp__tags">
-                            <span>Microneedling</span>
-                            <span>MNRF</span>
-                            <span>4 &ndash; 8 months</span>
+                    <article class="ds-exp">
+                        <div class="ds-exp__media">
+                            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop"
+                                alt="" aria-hidden="true" loading="lazy" decoding="async">
                         </div>
-                        <a class="ds-exp__link" href="../treatments.html">
-                            Explore This Signature
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
-                        </a>
-                    </div>
-                </article>
+                        <div class="ds-exp__body">
+                            <span class="ds-exp__num">03</span>
+                            <h3>The Renewal Signature</h3>
+                            <p>Collagen induction paced over months. Microneedling, MNRF and regenerative therapies
+                                sequenced so the skin is always rebuilding rather than recovering.</p>
+                            <div class="ds-exp__tags">
+                                <span>Microneedling</span>
+                                <span>MNRF</span>
+                                <span>4 &ndash; 8 months</span>
+                            </div>
+                            <a class="ds-exp__link" href="../treatments.html">
+                                Explore This Signature
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
 
-                <article class="ds-exp">
-                    <div class="ds-exp__media">
-                        <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop"
-                            alt="" aria-hidden="true" loading="lazy" decoding="async">
-                    </div>
-                    <div class="ds-exp__body">
-                        <span class="ds-exp__num">04</span>
-                        <h3>The Preserve Signature</h3>
-                        <p>Preventative rather than corrective. Small, infrequent interventions that hold expression intact while slowing the lines that become permanent.</p>
-                        <div class="ds-exp__tags">
-                            <span>Botulinum toxin</span>
-                            <span>Preventative</span>
-                            <span>20 min</span>
+                    <article class="ds-exp">
+                        <div class="ds-exp__media">
+                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop"
+                                alt="" aria-hidden="true" loading="lazy" decoding="async">
                         </div>
-                        <a class="ds-exp__link" href="../treatments.html">
-                            Explore This Signature
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
-                        </a>
-                    </div>
-                </article>
+                        <div class="ds-exp__body">
+                            <span class="ds-exp__num">04</span>
+                            <h3>The Preserve Signature</h3>
+                            <p>Preventative rather than corrective. Small, infrequent interventions that hold expression
+                                intact while slowing the lines that become permanent.</p>
+                            <div class="ds-exp__tags">
+                                <span>Botulinum toxin</span>
+                                <span>Preventative</span>
+                                <span>20 min</span>
+                            </div>
+                            <a class="ds-exp__link" href="../treatments.html">
+                                Explore This Signature
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
 
-                <article class="ds-exp">
-                    <div class="ds-exp__media">
-                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop"
-                            alt="" aria-hidden="true" loading="lazy" decoding="async">
-                    </div>
-                    <div class="ds-exp__body">
-                        <span class="ds-exp__num">05</span>
-                        <h3>The Restore Signature</h3>
-                        <p>Hair and scalp treated as a system: diagnosis, regenerative protocols and the internal work that decides whether any of it holds.</p>
-                        <div class="ds-exp__tags">
-                            <span>PRP &amp; GFC</span>
-                            <span>Scalp health</span>
-                            <span>6 &ndash; 12 months</span>
+                    <article class="ds-exp">
+                        <div class="ds-exp__media">
+                            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop"
+                                alt="" aria-hidden="true" loading="lazy" decoding="async">
                         </div>
-                        <a class="ds-exp__link" href="../treatments.html">
-                            Explore This Signature
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
-                        </a>
-                    </div>
-                </article>
+                        <div class="ds-exp__body">
+                            <span class="ds-exp__num">05</span>
+                            <h3>The Restore Signature</h3>
+                            <p>Hair and scalp treated as a system: diagnosis, regenerative protocols and the internal
+                                work that decides whether any of it holds.</p>
+                            <div class="ds-exp__tags">
+                                <span>PRP &amp; GFC</span>
+                                <span>Scalp health</span>
+                                <span>6 &ndash; 12 months</span>
+                            </div>
+                            <a class="ds-exp__link" href="../treatments.html">
+                                Explore This Signature
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -803,8 +816,8 @@
             <div class="container">
 
                 <div class="section-header text-center mb-5">
-                    <span class="section-subtitle"
-                        style="color: #E8C99A !important; letter-spacing: 3px;">THE TWO HALVES</span>
+                    <span class="section-subtitle" style="color: #E8C99A !important; letter-spacing: 3px;">THE TWO
+                        HALVES</span>
                     <div class="nemonic-separator mt-2">
                         <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
                         <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon"

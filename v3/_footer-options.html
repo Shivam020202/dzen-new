@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Footer options — D'Zen Derma</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=2.1" />
+    <link rel="stylesheet" href="styles.css?v=4.0" />
+
+    <style>
+        body {
+            background: #E7DED4;
+            margin: 0;
+        }
+
+        .lbl {
+            max-width: 1140px;
+            margin: 56px auto 16px;
+            padding: 0 20px;
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        .lbl b {
+            display: block;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 23px;
+            font-weight: 400;
+            color: #2B1A12;
+            margin-bottom: 5px;
+        }
+
+        .lbl span {
+            font-size: 13.5px;
+            font-weight: 300;
+            line-height: 1.65;
+            color: #5C4A3A;
+        }
+
+        .frame {
+            overflow: hidden;
+        }
+
+        /* ── shared tokens ── */
+        .ft {
+            /* Two golds on purpose: --gold is decorative (rules, icons) and
+               --gold-ink is the readable one. #C4924A is only 2.63:1 on the
+               cream, which fails AA for the small uppercase column headings. */
+            --gold: #C4924A;
+            --gold-ink: #96682A;
+            --gold-lt: #E8C99A;
+            --ink: #2B1A12;
+            --body: #5C4A3A;
+            --line: rgba(196, 146, 74, .26);
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        .ft a {
+            text-decoration: none;
+        }
+
+        .ft__eyebrow {
+            font-size: 10.5px;
+            font-weight: 600;
+            letter-spacing: 3.2px;
+            text-transform: uppercase;
+            color: var(--gold-ink);
+        }
+
+        .ft__wordmark {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 400;
+            letter-spacing: .02em;
+            line-height: 1;
+            margin: 0;
+        }
+
+        .ft__col h4 {
+            font-size: 10.5px !important;
+            font-weight: 600;
+            letter-spacing: 2.4px;
+            text-transform: uppercase;
+            color: var(--gold-ink);
+            margin: 0 0 16px;
+            font-family: 'Inter', system-ui, sans-serif !important;
+            font-style: normal !important;
+        }
+
+        .ft__col ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .ft__col li {
+            margin-bottom: 11px;
+        }
+
+        .ft__col a {
+            font-size: 13.5px;
+            font-weight: 300;
+            color: var(--body);
+            transition: color .2s ease;
+        }
+
+        .ft__col a:hover {
+            color: #8B5E2A;
+        }
+
+        .ft__social {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid var(--line);
+            color: var(--body);
+            transition: background .25s ease, color .25s ease, border-color .25s ease;
+        }
+
+        .ft__social:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: #fff;
+        }
+
+        .ft__social svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* ═══════════ F1 — OVERSIZED WORDMARK ═══════════ */
+        .f1 {
+            background: #FDF8F3;
+            padding: clamp(46px, 5vw, 74px) clamp(24px, 5vw, 60px) 0;
+        }
+
+        .f1__top {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
+            gap: clamp(24px, 4vw, 56px);
+            padding-bottom: clamp(34px, 4vw, 52px);
+        }
+
+        .f1__tagline {
+            font-size: 14px !important;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--body) !important;
+            max-width: 34ch;
+            margin: 14px 0 20px;
+        }
+
+        .f1__contact dt {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold-ink);
+            margin-bottom: 4px;
+        }
+
+        .f1__contact dd {
+            font-size: 13.5px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--body);
+            margin: 0 0 16px;
+        }
+
+        /* The wordmark as a full-width rule, cropped at the baseline so it
+           reads as a device rather than a heading */
+        .f1__mark {
+            max-width: 1180px;
+            margin: 0 auto;
+            border-top: 1px solid var(--line);
+            overflow: hidden;
+        }
+
+        .f1__mark h2 {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-size: clamp(46px, 15vw, 210px) !important;
+            font-weight: 400;
+            font-style: normal !important;
+            line-height: .82;
+            letter-spacing: .01em;
+            text-align: center;
+            color: #EBDCC8 !important;
+            -webkit-text-fill-color: #EBDCC8 !important;
+            margin: 26px 0 -.12em;
+            white-space: nowrap;
+        }
+
+        .f1__bar {
+            max-width: 1180px;
+            margin: 0 auto;
+            border-top: 1px solid var(--line);
+            padding: 18px 0 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11.5px;
+            font-weight: 300;
+            color: #7A6158;
+        }
+
+        /* ═══════════ F2 — DARK, GOLD-RULED ═══════════ */
+        .f2 {
+            position: relative;
+            isolation: isolate;
+            padding: clamp(48px, 5vw, 78px) clamp(24px, 5vw, 60px) 0;
+            background:
+                radial-gradient(80% 60% at 15% 0%, rgba(232, 201, 154, .12) 0%, transparent 62%),
+                linear-gradient(160deg, #3a1f16 0%, #2f1810 100%),
+                url('../images/contour-texture.webp') repeat;
+            background-blend-mode: normal, multiply, normal;
+            overflow: hidden;
+        }
+
+        .f2::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n2)'/%3E%3C/svg%3E");
+            opacity: .2;
+            mix-blend-mode: overlay;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .f2>* {
+            position: relative;
+            z-index: 2;
+        }
+
+        .f2 .ft__col a,
+        .f2 .f1__tagline,
+        .f2 .f1__contact dd {
+            color: rgba(255, 255, 255, .74) !important;
+        }
+
+        .f2 .ft__col a:hover {
+            color: var(--gold-lt);
+        }
+
+        .f2 .ft__col h4,
+        .f2 .f1__contact dt,
+        .f2 .ft__eyebrow {
+            color: var(--gold-lt);
+        }
+
+        .f2 .ft__social {
+            border-color: rgba(232, 201, 154, .3);
+            color: rgba(255, 255, 255, .8);
+        }
+
+        .f2 .ft__social:hover {
+            background: var(--gold-lt);
+            border-color: var(--gold-lt);
+            color: #2B1A12;
+        }
+
+        .f2 .f1__mark,
+        .f2 .f1__bar {
+            border-top-color: rgba(232, 201, 154, .22);
+        }
+
+        .f2 .f1__mark h2 {
+            color: rgba(255, 255, 255, .09) !important;
+            -webkit-text-fill-color: rgba(255, 255, 255, .09) !important;
+        }
+
+        .f2 .f1__bar {
+            color: rgba(255, 255, 255, .5);
+        }
+
+        /* ═══════════ F3 — SPLIT: DARK CTA + LIGHT NAV ═══════════ */
+        .f3 {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            background: #FDF8F3;
+        }
+
+        .f3__cta {
+            position: relative;
+            isolation: isolate;
+            padding: clamp(40px, 4.6vw, 70px) clamp(26px, 3.4vw, 52px);
+            background:
+                linear-gradient(150deg, #4b2b20 0%, #2f1810 100%),
+                url('../images/contour-texture.webp') repeat;
+            background-blend-mode: multiply, normal;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .f3__cta h3 {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-size: clamp(22px, 2.6vw, 32px) !important;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.2;
+            color: #fff !important;
+            -webkit-text-fill-color: #fff !important;
+            margin: 14px 0 14px;
+        }
+
+        .f3__cta p {
+            font-size: 14px !important;
+            font-weight: 300;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, .72) !important;
+            margin: 0 0 24px;
+            max-width: 32ch;
+        }
+
+        .f3__btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            align-self: flex-start;
+            padding: 13px 26px;
+            border-radius: 999px;
+            background: #E8C99A;
+            color: #2B1A12 !important;
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: transform .25s ease;
+        }
+
+        .f3__btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .f3__nav {
+            padding: clamp(40px, 4.6vw, 70px) clamp(26px, 3.4vw, 52px);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(20px, 3vw, 40px);
+            align-content: center;
+        }
+
+        /* ═══════════ F4 — CENTRED, MINIMAL ═══════════ */
+        .f4 {
+            background: #FDF8F3;
+            text-align: center;
+            padding: clamp(46px, 5vw, 76px) clamp(24px, 5vw, 60px) 26px;
+        }
+
+        .f4__logo {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-size: clamp(26px, 3.4vw, 40px) !important;
+            font-weight: 400;
+            font-style: normal !important;
+            letter-spacing: .06em;
+            color: var(--ink) !important;
+            -webkit-text-fill-color: var(--ink) !important;
+            margin: 12px 0 14px;
+        }
+
+        .f4__tag {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-style: italic;
+            font-size: 16px !important;
+            font-weight: 400;
+            color: var(--body) !important;
+            margin: 0 0 30px;
+        }
+
+        /* One row of links, hairline-divided */
+        .f4__links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0 26px;
+            padding: 20px 0;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            margin-bottom: 26px;
+        }
+
+        .f4__links a {
+            font-size: 11.5px;
+            font-weight: 600;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            color: var(--body);
+            transition: color .2s ease;
+        }
+
+        .f4__links a:hover {
+            color: #8B5E2A;
+        }
+
+        .f4__socials {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 26px;
+        }
+
+        .f4__meta {
+            font-size: 11.5px;
+            font-weight: 300;
+            line-height: 1.8;
+            color: #7A6158;
+        }
+
+        @media (max-width: 991.98px) {
+
+            .f1__top,
+            .f3 {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .f3__nav {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 575.98px) {
+
+            .f1__top,
+            .f3,
+            .f3__nav {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══════════ F1 ═══════════ -->
+    <div class="lbl">
+        <b>F1 — Oversized wordmark</b>
+        <span>Your existing four columns, but the footer closes on D'ZEN DERMA set at full width and cropped at the
+            baseline, so the name reads as a device rather than a heading. Same content, far more presence at the
+            bottom of the page.</span>
+    </div>
+    <div class="frame">
+        <footer class="ft f1">
+            <div class="f1__top">
+                <div>
+                    <span class="ft__eyebrow">Aesthetics &amp; Wellness</span>
+                    <p class="f1__tagline">Where the finest techniques in aesthetic medicine reveal your most
+                        luminous, confident self. Crafted for your skin, your story.</p>
+                    <div style="display:flex;gap:10px;">
+                        <a href="#" class="ft__social" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.6">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <circle cx="12" cy="12" r="4" />
+                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                            </svg></a>
+                        <a href="#" class="ft__social" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.6">
+                                <path d="M15 3h-3a4 4 0 0 0-4 4v3H5v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg></a>
+                    </div>
+                </div>
+                <div class="ft__col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Treatments</a></li>
+                        <li><a href="#">Wellness Programs</a></li>
+                        <li><a href="#">Concerns</a></li>
+                    </ul>
+                </div>
+                <div class="ft__col">
+                    <h4>More</h4>
+                    <ul>
+                        <li><a href="#">Memberships</a></li>
+                        <li><a href="#">Gift Card</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <dl class="f1__contact" style="margin:0;">
+                    <dt>WhatsApp</dt>
+                    <dd>(+91) 93112 54441</dd>
+                    <dt>Visit Us</dt>
+                    <dd>18A, Ring Rd, near Havells,<br>Lajpat Nagar, South Delhi,<br>New Delhi 110024</dd>
+                </dl>
+            </div>
+            <div class="f1__mark">
+                <h2>D'ZEN DERMA</h2>
+            </div>
+            <div class="f1__bar">
+                <span>© 2026 D'Zen Derma · All Rights Reserved</span>
+                <span><a href="#" style="color:inherit;">Privacy</a> · <a href="#"
+                        style="color:inherit;">Terms</a></span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ═══════════ F2 ═══════════ -->
+    <div class="lbl">
+        <b>F2 — Dark, gold-ruled</b>
+        <span>The same structure inverted onto the brown field with the contour texture and grain, gold rules and
+            labels. Closes the page the way the dark sections inside it already read, rather than switching to cream at
+            the very end.</span>
+    </div>
+    <div class="frame">
+        <footer class="ft f1 f2">
+            <div class="f1__top">
+                <div>
+                    <span class="ft__eyebrow">Aesthetics &amp; Wellness</span>
+                    <p class="f1__tagline">Where the finest techniques in aesthetic medicine reveal your most
+                        luminous, confident self.</p>
+                    <div style="display:flex;gap:10px;">
+                        <a href="#" class="ft__social" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.6">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <circle cx="12" cy="12" r="4" />
+                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                            </svg></a>
+                        <a href="#" class="ft__social" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.6">
+                                <path d="M15 3h-3a4 4 0 0 0-4 4v3H5v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg></a>
+                    </div>
+                </div>
+                <div class="ft__col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Treatments</a></li>
+                        <li><a href="#">Concerns</a></li>
+                    </ul>
+                </div>
+                <div class="ft__col">
+                    <h4>More</h4>
+                    <ul>
+                        <li><a href="#">Memberships</a></li>
+                        <li><a href="#">Gift Card</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <dl class="f1__contact" style="margin:0;">
+                    <dt>WhatsApp</dt>
+                    <dd>(+91) 93112 54441</dd>
+                    <dt>Visit Us</dt>
+                    <dd>18A, Ring Rd, Lajpat Nagar,<br>New Delhi 110024</dd>
+                </dl>
+            </div>
+            <div class="f1__mark">
+                <h2>D'ZEN DERMA</h2>
+            </div>
+            <div class="f1__bar">
+                <span>© 2026 D'Zen Derma · All Rights Reserved</span>
+                <span><a href="#" style="color:inherit;">Privacy</a> · <a href="#"
+                        style="color:inherit;">Terms</a></span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ═══════════ F3 ═══════════ -->
+    <div class="lbl">
+        <b>F3 — Split: booking panel + nav</b>
+        <span>A dark booking panel holds the left third and the navigation sits light beside it. The footer stops
+            being a list of links and does one job — it asks for the appointment.</span>
+    </div>
+    <div class="frame">
+        <footer class="ft f3">
+            <div class="f3__cta">
+                <span class="ft__eyebrow" style="color:var(--gold-lt);">Begin Your Journey</span>
+                <h3>Ready when you are</h3>
+                <p>Consultations at both clinics, Monday to Saturday, 10:00 – 19:00.</p>
+                <a href="#" class="f3__btn">Book a Consultation</a>
+            </div>
+            <div class="f3__nav">
+                <div class="ft__col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Treatments</a></li>
+                        <li><a href="#">Concerns</a></li>
+                    </ul>
+                </div>
+                <div class="ft__col">
+                    <h4>More</h4>
+                    <ul>
+                        <li><a href="#">Memberships</a></li>
+                        <li><a href="#">Gift Card</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="ft__col">
+                    <h4>Visit</h4>
+                    <ul>
+                        <li><a href="#">Lajpat Nagar, Delhi</a></li>
+                        <li><a href="#">Golf Course Rd, Gurgaon</a></li>
+                        <li><a href="tel:+919311254441">(+91) 93112 54441</a></li>
+                    </ul>
+                    <div style="display:flex;gap:10px;margin-top:16px;">
+                        <a href="#" class="ft__social" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.6">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <circle cx="12" cy="12" r="4" />
+                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                            </svg></a>
+                        <a href="#" class="ft__social" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.6">
+                                <path d="M15 3h-3a4 4 0 0 0-4 4v3H5v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ═══════════ F4 ═══════════ -->
+    <div class="lbl">
+        <b>F4 — Centred, minimal</b>
+        <span>Everything on one axis: mark, tagline, a single hairline-divided row of links, socials, then the legal
+            line. The quietest option and the shortest — worth it if the pages above are already long.</span>
+    </div>
+    <div class="frame">
+        <footer class="ft f4">
+            <span class="ft__eyebrow">Aesthetics &amp; Wellness</span>
+            <h2 class="f4__logo">D'ZEN DERMA</h2>
+            <p class="f4__tag">Elevating You Inside Out</p>
+            <nav class="f4__links">
+                <a href="#">Home</a><a href="#">About</a><a href="#">Treatments</a><a href="#">Concerns</a>
+                <a href="#">Memberships</a><a href="#">Gift Card</a><a href="#">Careers</a><a href="#">Contact</a>
+            </nav>
+            <div class="f4__socials">
+                <a href="#" class="ft__social" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.6">
+                        <rect x="2" y="2" width="20" height="20" rx="5" />
+                        <circle cx="12" cy="12" r="4" />
+                        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                    </svg></a>
+                <a href="#" class="ft__social" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.6">
+                        <path d="M15 3h-3a4 4 0 0 0-4 4v3H5v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                    </svg></a>
+            </div>
+            <p class="f4__meta">18A, Ring Rd, Lajpat Nagar, New Delhi 110024 &middot; (+91) 93112 54441<br>
+                © 2026 D'Zen Derma · All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <div class="lbl" style="margin-bottom:70px;">
+        <span>Header options in <b style="font-family:'Inter',sans-serif;font-size:13.5px;">_header-options.html</b>,
+            <b style="font-family:'Inter',sans-serif;font-size:13.5px;">-2</b> and <b
+                style="font-family:'Inter',sans-serif;font-size:13.5px;">-3</b>.</span>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Brand block options — D'Zen Derma</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=2.1" />
+    <link rel="stylesheet" href="styles.css?v=4.0" />
+
+    <style>
+        body {
+            background: #E7DED4;
+            margin: 0;
+        }
+
+        .lbl {
+            max-width: 1140px;
+            margin: 56px auto 16px;
+            padding: 0 20px;
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        .lbl b {
+            display: block;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 23px;
+            font-weight: 400;
+            color: #2B1A12;
+            margin-bottom: 5px;
+        }
+
+        .lbl span {
+            font-size: 13.5px;
+            font-weight: 300;
+            line-height: 1.65;
+            color: #5C4A3A;
+        }
+
+        /* ══ shared ══ */
+        .bb {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            font-family: 'Inter', system-ui, sans-serif;
+            text-align: center;
+        }
+
+        .bb__eyebrow {
+            display: block;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .bb__mark {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-weight: 400;
+            font-style: normal !important;
+            letter-spacing: .02em;
+            line-height: 1;
+            margin: 0;
+        }
+
+        .bb__tag {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-style: italic;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        .bb__btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 999px;
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 2.2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .bb__btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .bb__btn img {
+            width: 13px;
+            height: 13px;
+            object-fit: contain;
+        }
+
+        /* grain */
+        .grain::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            opacity: .3;
+            mix-blend-mode: multiply;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .bb__inner {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ═══════ B1 — CROPPED WORDMARK ═══════ */
+        .b1 {
+            background: #FDF8F3;
+            padding: clamp(40px, 5vw, 70px) 20px 0;
+        }
+
+        .b1 .bb__eyebrow {
+            color: #96682A;
+        }
+
+        .b1 .bb__tag {
+            font-size: clamp(15px, 1.8vw, 20px) !important;
+            color: #5C4A3A !important;
+            margin: 10px 0 26px;
+        }
+
+        .b1 .bb__btn {
+            background: #4b2b20;
+            color: #fff !important;
+            box-shadow: 0 12px 28px -12px rgba(43, 26, 18, .55);
+        }
+
+        /* Cropped at the baseline so it reads as a device, not a heading */
+        .b1__crop {
+            overflow: hidden;
+            margin-top: clamp(24px, 3vw, 40px);
+        }
+
+        .b1__crop .bb__mark {
+            font-size: clamp(54px, 17vw, 250px) !important;
+            color: #E6D6C0 !important;
+            -webkit-text-fill-color: #E6D6C0 !important;
+            white-space: nowrap;
+            margin-bottom: -.14em;
+        }
+
+        /* ═══════ B2 — SINGLE HAIRLINE ROW ═══════ */
+        .b2 {
+            background: #FDF8F3;
+            padding: clamp(26px, 3vw, 40px) clamp(20px, 5vw, 60px);
+        }
+
+        .b2__row {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: clamp(16px, 3vw, 40px);
+            padding: clamp(22px, 3vw, 34px) 0;
+            border-top: 1px solid rgba(196, 146, 74, .3);
+            border-bottom: 1px solid rgba(196, 146, 74, .3);
+        }
+
+        .b2__left {
+            text-align: left;
+        }
+
+        .b2__right {
+            text-align: right;
+        }
+
+        .b2 .bb__eyebrow {
+            color: #96682A;
+        }
+
+        .b2 .bb__mark {
+            font-size: clamp(22px, 3.4vw, 42px) !important;
+            color: #2B1A12 !important;
+            -webkit-text-fill-color: #2B1A12 !important;
+        }
+
+        .b2 .bb__tag {
+            font-size: 14px !important;
+            color: #5C4A3A !important;
+            margin-top: 6px;
+        }
+
+        .b2 .bb__btn {
+            background: #4b2b20;
+            color: #fff !important;
+        }
+
+        /* ═══════ B3 — FRAMED PLATE ═══════ */
+        .b3 {
+            background: #FDF8F3;
+            padding: clamp(34px, 4vw, 58px) clamp(16px, 3vw, 40px);
+        }
+
+        .b3__plate {
+            position: relative;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: clamp(38px, 5vw, 72px) clamp(24px, 4vw, 56px);
+            border-radius: 26px;
+            background:
+                linear-gradient(150deg, #FFFDFB 0%, #F5EADB 100%),
+                url('../images/contour-texture.webp') repeat;
+            background-blend-mode: multiply, normal;
+            border: 1px solid rgba(196, 146, 74, .3);
+        }
+
+        /* Hairline set in from the plate edge */
+        .b3__plate::before {
+            content: "";
+            position: absolute;
+            inset: 11px;
+            border: 1px solid rgba(196, 146, 74, .32);
+            border-radius: 17px;
+            pointer-events: none;
+        }
+
+        .b3 .bb__eyebrow {
+            color: #96682A;
+        }
+
+        .b3 .bb__mark {
+            font-size: clamp(30px, 5vw, 62px) !important;
+            color: #4b2b20 !important;
+            -webkit-text-fill-color: #4b2b20 !important;
+            margin: 16px 0 10px;
+        }
+
+        .b3 .bb__tag {
+            font-size: clamp(15px, 1.8vw, 19px) !important;
+            color: #5C4A3A !important;
+            margin-bottom: 26px;
+        }
+
+        .b3 .bb__btn {
+            background: #4b2b20;
+            color: #fff !important;
+        }
+
+        /* ═══════ B4 — GOLD FOIL ON DARK ═══════ */
+        .b4 {
+            padding: clamp(46px, 5.5vw, 84px) 20px;
+            background:
+                radial-gradient(90% 70% at 50% 0%, rgba(232, 201, 154, .14) 0%, transparent 64%),
+                linear-gradient(160deg, #3a1f16 0%, #2f1810 100%),
+                url('../images/contour-texture.webp') repeat;
+            background-blend-mode: normal, multiply, normal;
+        }
+
+        .b4 .grain-o::after {
+            mix-blend-mode: overlay;
+        }
+
+        .b4 .bb__eyebrow {
+            color: #E8C99A;
+        }
+
+        /* Foil: a gradient clipped to the glyphs. -webkit-text-fill-color must
+           be transparent AND !important — styles.css forces a solid colour on
+           every h1-h6 and would paint straight over the gradient. */
+        .b4 .bb__mark {
+            font-size: clamp(34px, 6vw, 78px) !important;
+            margin: 18px 0 12px;
+            background: linear-gradient(100deg, #C9922F 0%, #F6DFA4 28%, #E3C177 48%, #A9761F 72%, #F0D08A 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent !important;
+            -webkit-text-fill-color: transparent !important;
+        }
+
+        .b4 .bb__tag {
+            font-size: clamp(15px, 1.8vw, 19px) !important;
+            color: rgba(255, 255, 255, .8) !important;
+            margin-bottom: 30px;
+        }
+
+        .b4 .bb__btn {
+            background: #E8C99A;
+            color: #2B1A12 !important;
+        }
+
+        .b4 .bb__btn img {
+            filter: none;
+        }
+
+        /* ═══════ B5 — MARK BEHIND ═══════ */
+        .b5 {
+            background: linear-gradient(180deg, #FDF8F3 0%, #F4EAD9 100%);
+            padding: clamp(46px, 5.5vw, 88px) 20px;
+        }
+
+        .b5__mark {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: clamp(220px, 34vw, 420px);
+            opacity: .07;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .b5 .bb__eyebrow {
+            color: #96682A;
+        }
+
+        .b5 .bb__mark {
+            font-size: clamp(30px, 5.2vw, 66px) !important;
+            color: #4b2b20 !important;
+            -webkit-text-fill-color: #4b2b20 !important;
+            margin: 16px 0 10px;
+        }
+
+        .b5 .bb__tag {
+            font-size: clamp(15px, 1.8vw, 20px) !important;
+            color: #5C4A3A !important;
+            margin-bottom: 28px;
+        }
+
+        .b5__rule {
+            width: 54px;
+            height: 1px;
+            background: #C4924A;
+            margin: 0 auto 26px;
+        }
+
+        .b5 .bb__btn {
+            background: #4b2b20;
+            color: #fff !important;
+        }
+
+        @media (max-width: 767.98px) {
+            .b2__row {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .b2__left,
+            .b2__right {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- B1 -->
+    <div class="lbl">
+        <b>B1 — Cropped wordmark</b>
+        <span>Button and tagline sit above; the name runs full width beneath them, cropped at the baseline so it reads
+            as a device rather than a heading. Keeps the light field you have now.</span>
+    </div>
+    <section class="bb b1 grain">
+        <div class="bb__inner">
+            <a href="#" class="bb__btn">Book Now <img src="nemonic.png" alt=""
+                    style="filter:brightness(0) invert(1);"></a>
+            <span class="bb__eyebrow" style="margin-top:30px;">Aesthetics &amp; Wellness</span>
+            <p class="bb__tag">Elevating You Inside Out</p>
+        </div>
+        <div class="b1__crop bb__inner">
+            <h2 class="bb__mark">D'ZEN DERMA</h2>
+        </div>
+    </section>
+
+    <!-- B2 -->
+    <div class="lbl">
+        <b>B2 — Single hairline row</b>
+        <span>Everything on one line between two rules: label and name left, tagline centred, button right. The
+            shortest of the set — it closes the page without taking a screen to do it.</span>
+    </div>
+    <section class="bb b2">
+        <div class="b2__row">
+            <div class="b2__left">
+                <span class="bb__eyebrow">Aesthetics &amp; Wellness</span>
+                <h2 class="bb__mark" style="margin-top:8px;">D'ZEN DERMA</h2>
+            </div>
+            <p class="bb__tag">Elevating You Inside Out</p>
+            <div class="b2__right">
+                <a href="#" class="bb__btn">Book Now <img src="nemonic.png" alt=""
+                        style="filter:brightness(0) invert(1);"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- B3 -->
+    <div class="lbl">
+        <b>B3 — Framed plate</b>
+        <span>The block floats inside the page as a textured plate with a gold hairline set in from its edge. Gives
+            the name a container instead of letting it sit loose on the background.</span>
+    </div>
+    <section class="bb b3">
+        <div class="b3__plate grain">
+            <div class="bb__inner">
+                <span class="bb__eyebrow">Aesthetics &amp; Wellness</span>
+                <h2 class="bb__mark">D'ZEN DERMA</h2>
+                <p class="bb__tag">Elevating You Inside Out</p>
+                <a href="#" class="bb__btn">Book Now <img src="nemonic.png" alt=""
+                        style="filter:brightness(0) invert(1);"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- B4 -->
+    <div class="lbl">
+        <b>B4 — Gold foil on dark</b>
+        <span>Back to the dark field, but the name is filled with a gold gradient clipped to the letterforms rather
+            than debossed into the background. Same richness, and it is actually legible.</span>
+    </div>
+    <section class="bb b4 grain grain-o">
+        <div class="bb__inner">
+            <span class="bb__eyebrow">Aesthetics &amp; Wellness</span>
+            <h2 class="bb__mark">D'ZEN DERMA</h2>
+            <p class="bb__tag">Elevating You Inside Out</p>
+            <a href="#" class="bb__btn">Book Now <img src="nemonic.png" alt=""></a>
+        </div>
+    </section>
+
+    <!-- B5 -->
+    <div class="lbl">
+        <b>B5 — Brand mark behind</b>
+        <span>The nemonic enlarged and watermarked directly behind the name, on a soft vertical wash. The quietest
+            option, and the only one that uses the mark itself as the ornament.</span>
+    </div>
+    <section class="bb b5 grain">
+        <img class="b5__mark" src="nemonic.png" alt="" aria-hidden="true">
+        <div class="bb__inner">
+            <span class="bb__eyebrow">Aesthetics &amp; Wellness</span>
+            <h2 class="bb__mark">D'ZEN DERMA</h2>
+            <p class="bb__tag">Elevating You Inside Out</p>
+            <div class="b5__rule"></div>
+            <a href="#" class="bb__btn">Book Now <img src="nemonic.png" alt=""
+                    style="filter:brightness(0) invert(1);"></a>
+        </div>
+    </section>
+
+    <div class="lbl" style="margin-bottom:70px;">
+        <span>Header options in <b style="font-family:'Inter',sans-serif;font-size:13.5px;">_header-options</b>,
+            <b style="font-family:'Inter',sans-serif;font-size:13.5px;">-2</b>, <b
+                style="font-family:'Inter',sans-serif;font-size:13.5px;">-3</b>.</span>
+    </div>
+
+</body>
+
+</html>

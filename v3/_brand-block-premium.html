@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Brand block — premium options</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=2.1" />
+    <link rel="stylesheet" href="styles.css?v=4.0" />
+
+    <style>
+        body {
+            background: #E7DED4;
+            margin: 0;
+        }
+
+        .lbl {
+            max-width: 1140px;
+            margin: 58px auto 16px;
+            padding: 0 20px;
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        .lbl b {
+            display: block;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 23px;
+            font-weight: 400;
+            color: #2B1A12;
+            margin-bottom: 5px;
+        }
+
+        .lbl span {
+            font-size: 13.5px;
+            font-weight: 300;
+            line-height: 1.65;
+            color: #5C4A3A;
+        }
+
+        /* ══ shared ══ */
+        .pb {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            font-family: 'Inter', system-ui, sans-serif;
+            text-align: center;
+        }
+
+        .pb__eyebrow {
+            display: block;
+            font-size: 10px;
+            font-weight: 600;
+            /* Wide tracking is the single strongest "premium" signal in type */
+            letter-spacing: 6px;
+            text-transform: uppercase;
+        }
+
+        .pb__mark {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-weight: 400;
+            font-style: normal !important;
+            letter-spacing: .06em;
+            line-height: 1;
+            margin: 0;
+        }
+
+        .pb__tag {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-style: italic;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        .pb__btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+            padding: 14px 34px;
+            border-radius: 999px;
+            font-size: 10.5px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
+        }
+
+        .pb__btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .pb__btn img {
+            width: 12px;
+            height: 12px;
+            object-fit: contain;
+        }
+
+        .pb__inner {
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Hairline with a diamond at its centre — a small couture detail */
+        .pb__rule {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 22px auto;
+            max-width: 220px;
+        }
+
+        .pb__rule i {
+            flex: 1;
+            height: 1px;
+            background: currentColor;
+            opacity: .45;
+        }
+
+        .pb__rule b {
+            width: 5px;
+            height: 5px;
+            transform: rotate(45deg);
+            background: currentColor;
+            opacity: .8;
+        }
+
+        .grain::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            opacity: .24;
+            mix-blend-mode: overlay;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* ═══════ P1 — FOIL WITH SHIMMER ═══════ */
+        .p1 {
+            padding: clamp(56px, 6.5vw, 104px) 20px;
+            background:
+                radial-gradient(90% 70% at 50% 0%, rgba(232, 201, 154, .13) 0%, transparent 64%),
+                linear-gradient(160deg, #3a1f16 0%, #2a1410 100%),
+                url('../images/contour-texture.webp') repeat;
+            background-blend-mode: normal, multiply, normal;
+        }
+
+        .p1 .pb__eyebrow {
+            color: #E8C99A;
+        }
+
+        .p1 .pb__rule {
+            color: #E8C99A;
+        }
+
+        /* Foil: a gradient clipped to the glyphs, animated so the highlight
+           travels across the letterforms like light on metal.
+           -webkit-text-fill-color must be transparent AND !important —
+           styles.css forces a solid colour on every h1-h6. */
+        .p1 .pb__mark {
+            font-size: clamp(34px, 6.4vw, 86px) !important;
+            margin: 4px 0 0;
+            background: linear-gradient(100deg,
+                    #8a5815 0%, #C9922F 18%, #F6DFA4 34%, #FFF6DF 42%,
+                    #F6DFA4 50%, #C9922F 66%, #8a5815 100%);
+            background-size: 260% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent !important;
+            -webkit-text-fill-color: transparent !important;
+            animation: foil 7s ease-in-out infinite;
+        }
+
+        @keyframes foil {
+
+            0%,
+            100% {
+                background-position: 130% 50%;
+            }
+
+            50% {
+                background-position: -30% 50%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .p1 .pb__mark {
+                animation: none;
+                background-position: 50% 50%;
+            }
+        }
+
+        .p1 .pb__tag {
+            font-size: clamp(15px, 1.7vw, 19px) !important;
+            color: rgba(255, 255, 255, .72) !important;
+            margin-bottom: 32px;
+        }
+
+        .p1 .pb__btn {
+            border: 1px solid rgba(232, 201, 154, .5);
+            background: transparent;
+            color: #E8C99A !important;
+        }
+
+        .p1 .pb__btn:hover {
+            background: #E8C99A;
+            color: #2B1A12 !important;
+        }
+
+        .p1 .pb__btn img {
+            filter: none;
+        }
+
+        /* ═══════ P2 — MEDALLION ═══════ */
+        .p2 {
+            padding: clamp(52px, 6vw, 96px) 20px;
+            background: linear-gradient(180deg, #FFFDFB 0%, #F6EDE0 100%);
+        }
+
+        /* Double gold ring around the mark */
+        .p2__medal {
+            width: clamp(96px, 12vw, 138px);
+            height: clamp(96px, 12vw, 138px);
+            margin: 0 auto 26px;
+            border-radius: 50%;
+            border: 1px solid rgba(196, 146, 74, .55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .p2__medal::before {
+            content: "";
+            position: absolute;
+            inset: 7px;
+            border-radius: 50%;
+            border: 1px solid rgba(196, 146, 74, .28);
+        }
+
+        .p2__medal img {
+            width: 42%;
+            height: auto;
+            opacity: .85;
+        }
+
+        .p2 .pb__eyebrow {
+            color: #96682A;
+        }
+
+        .p2 .pb__mark {
+            font-size: clamp(28px, 4.6vw, 58px) !important;
+            color: #3a1f16 !important;
+            -webkit-text-fill-color: #3a1f16 !important;
+            margin: 14px 0 0;
+        }
+
+        .p2 .pb__rule {
+            color: #C4924A;
+        }
+
+        .p2 .pb__tag {
+            font-size: clamp(15px, 1.7vw, 19px) !important;
+            color: #5C4A3A !important;
+            margin-bottom: 30px;
+        }
+
+        .p2 .pb__btn {
+            background: #3a1f16;
+            color: #fff !important;
+            box-shadow: 0 14px 30px -14px rgba(43, 26, 18, .5);
+        }
+
+        /* ═══════ P3 — ENGRAVED, LIGHT ═══════ */
+        .p3 {
+            padding: clamp(54px, 6vw, 100px) 20px;
+            background:
+                linear-gradient(160deg, #F7EFE4 0%, #EFE3D2 100%),
+                url('../images/contour-texture.webp') repeat;
+            background-blend-mode: multiply, normal;
+        }
+
+        .p3 .pb__eyebrow {
+            color: #96682A;
+        }
+
+        /* Engraved rather than debossed: real ink colour, with a light
+           highlight below and a soft shadow above, so it reads as cut INTO
+           the surface while staying fully legible. */
+        .p3 .pb__mark {
+            font-size: clamp(32px, 5.6vw, 76px) !important;
+            color: #4b2b20 !important;
+            -webkit-text-fill-color: #4b2b20 !important;
+            margin: 14px 0 0;
+            text-shadow:
+                0 1px 0 rgba(255, 255, 255, .75),
+                0 -1px 1px rgba(90, 60, 30, .28);
+        }
+
+        .p3 .pb__rule {
+            color: #C4924A;
+        }
+
+        .p3 .pb__tag {
+            font-size: clamp(15px, 1.7vw, 19px) !important;
+            color: #5C4A3A !important;
+            margin-bottom: 30px;
+        }
+
+        .p3 .pb__btn {
+            background: transparent;
+            border: 1px solid #4b2b20;
+            color: #4b2b20 !important;
+        }
+
+        .p3 .pb__btn:hover {
+            background: #4b2b20;
+            color: #fff !important;
+        }
+
+        .p3 .pb__btn img {
+            filter: none;
+        }
+
+        /* ═══════ P4 — DUOTONE BAND ═══════ */
+        .p4 {
+            padding: clamp(58px, 7vw, 110px) 20px;
+        }
+
+        .p4__bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Duotone: strip the photo to grey then tint it brown, so it reads
+               as brand material rather than a stock photograph. */
+            filter: grayscale(1) contrast(1.1);
+            z-index: 0;
+        }
+
+        .p4__wash {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(58, 31, 22, .93) 0%, rgba(42, 20, 16, .88) 100%);
+            mix-blend-mode: multiply;
+            z-index: 1;
+        }
+
+        .p4__glow {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(70% 60% at 50% 0%, rgba(232, 201, 154, .18) 0%, transparent 62%);
+            z-index: 2;
+        }
+
+        .p4 .pb__eyebrow {
+            color: #E8C99A;
+        }
+
+        .p4 .pb__rule {
+            color: #E8C99A;
+        }
+
+        .p4 .pb__mark {
+            font-size: clamp(32px, 5.8vw, 80px) !important;
+            color: #fff !important;
+            -webkit-text-fill-color: #fff !important;
+            margin: 4px 0 0;
+        }
+
+        .p4 .pb__tag {
+            font-size: clamp(15px, 1.7vw, 19px) !important;
+            color: rgba(255, 255, 255, .78) !important;
+            margin-bottom: 32px;
+        }
+
+        /* Glass button — sits on the photograph without hiding it */
+        .p4 .pb__btn {
+            background: rgba(255, 255, 255, .12);
+            border: 1px solid rgba(255, 255, 255, .35);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            color: #fff !important;
+        }
+
+        .p4 .pb__btn:hover {
+            background: rgba(255, 255, 255, .22);
+        }
+
+        /* ═══════ P5 — COUTURE COLUMNS ═══════ */
+        .p5 {
+            padding: clamp(50px, 6vw, 92px) clamp(20px, 5vw, 60px);
+            background: #FDF8F3;
+        }
+
+        .p5__frame {
+            position: relative;
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: clamp(34px, 4vw, 62px) clamp(40px, 7vw, 110px);
+        }
+
+        /* Two full-height hairlines instead of a box — the couture device */
+        .p5__frame::before,
+        .p5__frame::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(180deg, transparent, rgba(196, 146, 74, .6) 22%, rgba(196, 146, 74, .6) 78%, transparent);
+        }
+
+        .p5__frame::before {
+            left: 0;
+        }
+
+        .p5__frame::after {
+            right: 0;
+        }
+
+        .p5 .pb__eyebrow {
+            color: #96682A;
+        }
+
+        .p5 .pb__mark {
+            font-size: clamp(28px, 5vw, 66px) !important;
+            color: #3a1f16 !important;
+            -webkit-text-fill-color: #3a1f16 !important;
+            margin: 16px 0 0;
+        }
+
+        .p5 .pb__tag {
+            font-size: clamp(15px, 1.7vw, 19px) !important;
+            color: #5C4A3A !important;
+        }
+
+        .p5 .pb__rule {
+            color: #C4924A;
+        }
+
+        .p5__est {
+            display: block;
+            margin-top: 26px;
+            font-size: 9.5px;
+            font-weight: 600;
+            letter-spacing: 4.5px;
+            text-transform: uppercase;
+            color: #96682A;
+        }
+
+        .p5 .pb__btn {
+            background: #3a1f16;
+            color: #fff !important;
+            margin-top: 26px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- P1 -->
+    <div class="lbl">
+        <b>P1 — Gold foil with shimmer</b>
+        <span>The name filled with a metallic gradient that slowly travels across the letterforms, like light moving
+            over foil. Outlined button rather than filled, and a diamond-centred hairline. The most overtly
+            luxurious.</span>
+    </div>
+    <section class="pb p1 grain">
+        <div class="pb__inner">
+            <span class="pb__eyebrow">Aesthetics &amp; Wellness</span>
+            <h2 class="pb__mark">D'ZEN DERMA</h2>
+            <div class="pb__rule"><i></i><b></b><i></i></div>
+            <p class="pb__tag">Elevating You Inside Out</p>
+            <a href="#" class="pb__btn">Book Now <img src="nemonic.png" alt=""></a>
+        </div>
+    </section>
+
+    <!-- P2 -->
+    <div class="lbl">
+        <b>P2 — Medallion</b>
+        <span>The nemonic set inside a double gold ring, the name beneath it, generous air all round. Reads like a
+            maison stamp rather than a web footer.</span>
+    </div>
+    <section class="pb p2 grain">
+        <div class="pb__inner">
+            <div class="p2__medal"><img src="nemonic.png" alt="" aria-hidden="true"></div>
+            <span class="pb__eyebrow">Aesthetics &amp; Wellness</span>
+            <h2 class="pb__mark">D'ZEN DERMA</h2>
+            <div class="pb__rule"><i></i><b></b><i></i></div>
+            <p class="pb__tag">Elevating You Inside Out</p>
+            <a href="#" class="pb__btn">Book Now <img src="nemonic.png" alt=""
+                    style="filter:brightness(0) invert(1);"></a>
+        </div>
+    </section>
+
+    <!-- P3 -->
+    <div class="lbl">
+        <b>P3 — Engraved on stone</b>
+        <span>What the original was reaching for, done properly: real ink with a highlight below and a shadow above,
+            so it reads as cut into the surface while staying fully legible. The deboss failed because the ink matched
+            the background; this keeps the effect and the contrast.</span>
+    </div>
+    <section class="pb p3 grain">
+        <div class="pb__inner">
+            <span class="pb__eyebrow">Aesthetics &amp; Wellness</span>
+            <h2 class="pb__mark">D'ZEN DERMA</h2>
+            <div class="pb__rule"><i></i><b></b><i></i></div>
+            <p class="pb__tag">Elevating You Inside Out</p>
+            <a href="#" class="pb__btn">Book Now <img src="nemonic.png" alt=""></a>
+        </div>
+    </section>
+
+    <!-- P4 -->
+    <div class="lbl">
+        <b>P4 — Duotone band</b>
+        <span>A clinic photograph stripped to greyscale and tinted brown, so it becomes brand material rather than a
+            stock image. Glass button over the top. Gives the block real depth without another flat colour field.</span>
+    </div>
+    <section class="pb p4">
+        <img class="p4__bg" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1400&auto=format&fit=crop"
+            alt="" aria-hidden="true">
+        <div class="p4__wash"></div>
+        <div class="p4__glow"></div>
+        <div class="pb__inner">
+            <span class="pb__eyebrow">Aesthetics &amp; Wellness</span>
+            <h2 class="pb__mark">D'ZEN DERMA</h2>
+            <div class="pb__rule"><i></i><b></b><i></i></div>
+            <p class="pb__tag">Elevating You Inside Out</p>
+            <a href="#" class="pb__btn">Book Now <img src="nemonic.png" alt=""
+                    style="filter:brightness(0) invert(1);"></a>
+        </div>
+    </section>
+
+    <!-- P5 -->
+    <div class="lbl">
+        <b>P5 — Couture columns</b>
+        <span>Two tall hairlines fading at both ends instead of a box, with an established line beneath. Restraint as
+            the luxury signal — nothing here but type, rules and air.</span>
+    </div>
+    <section class="pb p5">
+        <div class="p5__frame">
+            <div class="pb__inner">
+                <span class="pb__eyebrow">Aesthetics &amp; Wellness</span>
+                <h2 class="pb__mark">D'ZEN DERMA</h2>
+                <div class="pb__rule"><i></i><b></b><i></i></div>
+                <p class="pb__tag">Elevating You Inside Out</p>
+                <a href="#" class="pb__btn">Book Now <img src="nemonic.png" alt=""
+                        style="filter:brightness(0) invert(1);"></a>
+                <span class="p5__est">Delhi &middot; Gurgaon</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="lbl" style="margin-bottom:70px;">
+        <span>Earlier set in <b
+                style="font-family:'Inter',sans-serif;font-size:13.5px;">_brand-block-options.html</b>.</span>
+    </div>
+
+</body>
+
+</html>
