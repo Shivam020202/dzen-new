@@ -3212,7 +3212,7 @@ body {
     margin-bottom: -100svh;
     z-index: 40;
     /* dark coffee-brown curtain ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â the lighter signature section emerges from it */
-    background: linear-gradient(160deg, var(--deep-brown, #4b2b20) 0%, #3a1f16 100%);
+    background: linear-gradient(180deg, #4b2b20 0%, #8c4a2e 50%, #8b4513 100%);
     pointer-events: none;
     /* progress-driven vars (set by JS):
          --sig-reveal ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ blur/opacity clearing   --sig-grow ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ hole enlarging */

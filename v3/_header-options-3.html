@@ -60,10 +60,9 @@
                background-blend-mode maps one value per layer, in the same
                order the layers are listed. */
             background:
-                radial-gradient(80% 60% at 20% 0%, rgba(232, 201, 154, .14) 0%, transparent 60%),
-                linear-gradient(160deg, #3a1f16 0%, #4b2b20 100%),
+                linear-gradient(135deg, #4b2b20 0%, #8b4513 100%),
                 url('../images/contour-texture.webp') repeat;
-            background-blend-mode: normal, multiply, normal;
+            background-blend-mode: multiply, normal;
         }
 
         .hh::after {
@@ -89,8 +88,6 @@
         .strip {
             position: relative;
             z-index: 2;
-            border-top: 1px solid rgba(232, 201, 154, .25);
-            border-bottom: 1px solid rgba(232, 201, 154, .25);
             padding: 13px 0;
             overflow: hidden;
         }
@@ -142,9 +139,10 @@
             }
         }
 
-        /* ═══════════ G1 — LEFT-ALIGNED DISPLAY ═══════════ */
+        /* ═══════════ G1 — CENTERED DISPLAY ═══════════ */
         .g1 {
             padding: 126px 0 0;
+            text-align: center;
         }
 
         .g1__inner {
@@ -152,6 +150,7 @@
             z-index: 2;
             max-width: 1140px;
             margin: 0 auto;
+            text-align: center;
             padding: 0 clamp(24px, 5vw, 60px) clamp(34px, 4vw, 56px);
         }
 
@@ -164,15 +163,17 @@
             letter-spacing: -0.025em;
             color: #fff !important;
             -webkit-text-fill-color: #fff !important;
-            margin: 16px 0 0;
-            max-width: 13ch;
+            margin: 16px auto 0;
+            max-width: 18ch;
+            text-align: center;
         }
 
-        /* Mark bleeding off the right edge, cropped by the section */
+        /* Mark centered as watermark behind the content */
         .g1__mark {
             position: absolute;
-            right: -8%;
-            top: 4%;
+            left: 50%;
+            top: 25%;
+            transform: translate(-50%, -50%);
             width: clamp(200px, 38vw, 520px);
             opacity: .06;
             filter: brightness(0) invert(1);
@@ -322,7 +323,7 @@
     </div>
     <div class="frame">
         <section class="hh g1">
-            <img class="g1__mark" src="nemonic.png" alt="" aria-hidden="true">
+            <img class="g1__mark" src="../images/logo-header.png" alt="" aria-hidden="true">
             <div class="g1__inner">
                 <span class="eyebrow">About The Clinic</span>
                 <h1>Welcome to D'Zen Derma</h1>
@@ -354,18 +355,6 @@
     </div>
     <div class="frame">
         <section class="hh g2">
-            <div class="strip">
-                <div class="track">
-                    <span>Delhi</span><span class="gold">&middot;</span>
-                    <span>Gurgaon</span><span class="gold">&middot;</span>
-                    <span>Doctor-Led</span><span class="gold">&middot;</span>
-                    <span>Since 2014</span><span class="gold">&middot;</span>
-                    <span>Delhi</span><span class="gold">&middot;</span>
-                    <span>Gurgaon</span><span class="gold">&middot;</span>
-                    <span>Doctor-Led</span><span class="gold">&middot;</span>
-                    <span>Since 2014</span><span class="gold">&middot;</span>
-                </div>
-            </div>
             <div class="g2__inner">
                 <span class="eyebrow">About The Clinic</span>
                 <h1>Welcome to D'Zen Derma</h1>
