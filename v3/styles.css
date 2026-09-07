@@ -1,4 +1,4 @@
-﻿/* =========================================================
+/* =========================================================
    D'Zen Derma - v2 Extract Styles
    Contains styling for Navbar and Hero Slider sections
    ========================================================= */
@@ -3612,7 +3612,6 @@ body {
     width: 100%;
 }
 
-
 /* ---- OVAL IMAGE FRAMES ---- */
 .sig-service-visual {
     display: flex;
@@ -3638,7 +3637,7 @@ body {
     overflow: hidden;
 }
 
-/* Variant: squarish pebble â€” wider aspect */
+/* Variant: squarish pebble wider aspect */
 .sig-oval-frame--wide {
     border-radius: 500px 500px 10px 10px;
     width: clamp(240px, 34vw, 460px);
@@ -3677,7 +3676,6 @@ body {
     opacity: 1;
 }
 
-/* Stagger the image vs text within a visible panel */
 .sig-panel.is-visible .sig-service-visual {
     transition-delay: 0.12s;
 }
@@ -3691,13 +3689,9 @@ body {
     .sig-services-zone {
         position: relative;
         width: 100%;
-        /* Restore full scrolling heights for mobile parallax */
         z-index: 1;
     }
 
-    /* Mirrors the desktop rules above — full-zone backdrop, no sticky.
-       Sticky is dead here anyway (body is a scroll container), and a 100svh
-       box left everything past the first viewport with no background. */
     .sig-services-bg {
         position: absolute !important;
         inset: 0;
@@ -3710,8 +3704,6 @@ body {
 
     .sig-services-scroll {
         position: relative;
-        /* 0, not -100svh: the backdrop is out of flow, so there is no
-           height left to cancel. */
         margin-top: 0;
         width: 100%;
         z-index: 10;
@@ -3740,7 +3732,6 @@ body {
         width: 100%;
         max-width: 540px;
         pointer-events: auto;
-        /* Revert card styling completely */
         background: none !important;
         border: none !important;
         box-shadow: none !important;
@@ -3757,7 +3748,6 @@ body {
         align-items: center;
     }
 
-    /* Force image to display before text content on all slides on mobile */
     .sig-service-visual {
         order: 1 !important;
     }
@@ -3807,7 +3797,6 @@ body {
         margin: 0 auto;
     }
 
-    /* Intro panel */
     .sig-panel--intro {
         min-height: auto;
         padding: 80px 16px 40px;
@@ -3845,7 +3834,6 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-
     .sig-panel,
     .sig-oval-frame,
     .sig-scroll-dot {
@@ -3858,140 +3846,149 @@ body {
     }
 }
 
-/* ===== FLOATING BOTTOM ACTION BAR (Light Mode Only) ===== */
+/* ===== FLOATING BOTTOM STICKY CTA BAR ===== */
 .bottom-action-bar {
     position: fixed;
     bottom: 24px;
     left: 50%;
     transform: translateX(-50%) translateY(120%);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 16px;
-    background: rgba(250, 249, 246, 0.9);
-    /* Warm light cream glass */
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(75, 43, 32, 0.12);
-    /* Subtle copper-brown border */
-    border-radius: 999px;
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 8px 18px;
+    background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 9999px;
     box-shadow:
-        0 10px 30px rgba(74, 51, 34, 0.08),
-        0 0 0 1px rgba(255, 255, 255, 0.6) inset;
-    z-index: 9998;
+        0 12px 36px rgba(0, 0, 0, 0.22),
+        0 4px 14px rgba(180, 125, 45, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+    z-index: 99999;
     opacity: 0;
     transition: opacity .35s cubic-bezier(.16, 1, .3, 1), transform .35s cubic-bezier(.16, 1, .3, 1);
+    box-sizing: border-box;
+    pointer-events: auto;
+    width: auto !important;
+    white-space: nowrap;
 }
 
 .bottom-action-bar.is-visible {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translateX(-50%) translateY(0) !important;
 }
 
 .bottom-action-btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
     gap: 4px;
-    padding: 8px 14px;
-    color: #4B2B20;
-    /* Primary brand dark brown */
-    text-decoration: none;
-    border-radius: 12px;
-    transition: background .25s, color .25s;
+    padding: 6px 18px;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    border-radius: 999px;
+    transition: background .25s ease, transform .25s ease;
+    cursor: pointer;
+    flex-shrink: 0;
 }
 
 .bottom-action-btn:hover {
-    background: rgba(197, 142, 69, 0.1);
-    /* Soft gold tint on hover */
-    color: #4B2B20;
+    background: rgba(255, 255, 255, 0.18) !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
 }
 
 .bottom-action-btn svg {
     flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    stroke: #ffffff;
+    color: #ffffff;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
 }
 
 .bottom-action-btn .btn-label {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 10px;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 13px;
     font-weight: 500;
-    letter-spacing: 0.04em;
+    color: #ffffff !important;
+    letter-spacing: 0.01em;
     white-space: nowrap;
+    line-height: 1.2;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
-/* Primary button (Book Now) */
-.bottom-action-btn--primary {
-    background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
-    color: #ffffff;
+/* Vertical divider between CTA items */
+.bottom-action-divider {
+    display: block !important;
+    width: 1px !important;
+    height: 28px !important;
+    background: rgba(255, 255, 255, 0.45);
+    flex-shrink: 0;
+    margin: 0 4px;
 }
 
-.bottom-action-btn--primary:hover {
-    background: linear-gradient(170deg, var(--deep-brown, #4b2b20) 0%, #331d15 100%);
-    color: #ffffff;
-}
-
-.bottom-action-btn--primary .btn-label {
-    font-weight: 600;
-}
-
-/* Mobile responsive styles: full-width dock pinned to bottom */
+/* Mobile responsive styles: floating horizontal pill maintained */
 @media (max-width: 767.98px) {
     .bottom-action-bar {
         position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        max-width: 100%;
-        transform: translateY(0) !important;
-        /* always in position */
-        border-radius: 0;
-        padding: 10px 8px;
-        gap: 2px;
-        justify-content: space-around;
-        background: rgba(250, 249, 246, 0.96);
-        /* Solid light mode bg */
-        border-left: none;
-        border-right: none;
-        border-bottom: none;
-        border-top: 1px solid rgba(75, 43, 32, 0.08);
-        padding-bottom: max(10px, env(safe-area-inset-bottom, 10px));
-        box-shadow: 0 -4px 20px rgba(74, 51, 34, 0.06);
+        bottom: 16px;
+        left: 50%;
+        right: auto;
+        width: auto !important;
+        max-width: calc(100vw - 32px);
+        transform: translateX(-50%) translateY(120%);
+        border-radius: 9999px;
+        padding: 6px 12px;
+        display: inline-flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22), 0 3px 10px rgba(180, 125, 45, 0.35);
+        z-index: 99999;
     }
 
     .bottom-action-bar.is-visible {
-        transform: translateY(0) !important;
+        transform: translateX(-50%) translateY(0) !important;
     }
 
     .bottom-action-btn {
-        padding: 8px 6px;
-        flex: 1;
-        max-width: 25%;
+        display: inline-flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 4px 10px;
+        flex: initial;
+        max-width: none;
+        gap: 3px;
     }
 
     .bottom-action-btn .btn-label {
-        display: none;
-        /* hide label to fit icons nicely */
+        display: block !important;
+        font-size: 11px;
+        font-weight: 500;
+        color: #ffffff !important;
     }
 
     .bottom-action-btn svg {
-        width: 22px;
-        height: 22px;
+        width: 18px;
+        height: 18px;
+        stroke: #ffffff;
     }
 
-    /* Book Now stays slightly larger */
-    .bottom-action-btn--primary {
-        flex: 1.15;
-        max-width: 30%;
-    }
-
-    .bottom-action-btn--primary svg {
-        width: 24px;
-        height: 24px;
+    .bottom-action-divider {
+        display: block !important;
+        width: 1px !important;
+        height: 22px !important;
+        background: rgba(255, 255, 255, 0.45);
+        margin: 0 2px;
     }
 
     body {
-        padding-bottom: 80px !important;
+        padding-bottom: 75px !important;
     }
 }
 
@@ -4072,24 +4069,24 @@ body {
 
 
 /* =========================================================
-   FOOTER + CTA ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â OVERLAPPING STICKY-REVEAL SECTION
+   FOOTER + CTA — OVERLAPPING STICKY-REVEAL SECTION
    ========================================================= */
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Root container ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* Root container */
 .footer-stack-root {
     position: relative;
     overflow-x: clip;
     background: #FAF9F6;
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ CTA card wrapper ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* CTA card wrapper */
 .footer-cta-card-wrapper {
     position: relative;
     z-index: 2;
     padding: 0 20px;
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ CTA card ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* CTA card */
 .footer-cta-card {
     background: linear-gradient(35deg, #2f1810 0%, #8C4A2E 60%, #8a5815 85%, #8a6017 100%);
     border: 1px solid rgb(255, 255, 255);
@@ -4107,7 +4104,7 @@ body {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
-/* Ambient light overlay ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â glows from top */
+/* Ambient light overlay — glows from top */
 .footer-cta-card::before {
     content: "";
     position: absolute;
@@ -4206,22 +4203,13 @@ body {
    FOOTER REVEAL WRAPPER + SITE FOOTER
    ========================================================= */
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Footer reveal wrapper (sticky, sits behind CTA card) ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .footer-reveal-wrapper {
-    /* Static by default so the whole footer is always reachable.
-       position:sticky with bottom:0 pins the footer to the viewport's lower
-       edge; the moment the footer is TALLER than the viewport — which it is
-       as soon as the four columns stack — its upper part sits permanently
-       above the viewport and cannot be scrolled to. The content was rendering
-       fine, it just could not be reached. */
     position: static;
     z-index: 1;
     background: #FDF8F3;
     padding: 0;
 }
 
-/* The slide-over reveal is restored only where the footer comfortably fits
-   inside the viewport, so it can never swallow its own content. */
 @media (min-width: 992px) and (min-height: 900px) {
     .footer-reveal-wrapper {
         position: sticky;
@@ -4229,18 +4217,16 @@ body {
     }
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Site footer ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â full width, no max-width cap ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .site-footer {
     background: #FDF8F3;
     padding: 72px 0 0 0;
     position: relative;
-
     width: 100%;
 }
 
 .footer-top {
     display: grid;
-    grid-template-columns: minmax(280px, 1.2fr) 1fr 1fr 1.2fr;
+    grid-template-columns: 1.3fr 0.9fr 0.9fr 1.3fr;
     gap: 40px;
     align-items: flex-start;
     max-width: 1220px;
@@ -4250,19 +4236,19 @@ body {
     position: relative;
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Brand column ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* Brand column */
 .footer-brand {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .footer-eyebrow {
     font-family: var(--sans, "Inter", system-ui, sans-serif);
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.25em;
     color: #7A6158;
     margin-bottom: 12px;
     text-transform: uppercase;
@@ -4270,13 +4256,12 @@ body {
 
 .footer-logo-text {
     font-family: var(--serif, "Playfair Display", Georgia, serif);
-    font-size: clamp(1.8rem, 7vw, 2.4rem);
+    font-size: clamp(1.8rem, 2.5vw, 2.2rem);
     font-weight: 400;
     color: #2B1A12;
-    letter-spacing: 0.1em;
-    margin-bottom: 24px;
+    letter-spacing: 0.08em;
+    margin: 0 0 16px 0;
     text-transform: uppercase;
-    white-space: nowrap;
 }
 
 .footer-tagline {
@@ -4285,13 +4270,13 @@ body {
     font-weight: 400;
     line-height: 1.7;
     color: #5C4A3A;
-    margin: 0 0 24px 0;
-    max-width: 280px;
+    margin: 0 0 20px 0;
+    max-width: 300px;
 }
 
 .footer-socials {
     display: flex;
-    gap: 7px;
+    gap: 8px;
     align-items: center;
 }
 
@@ -4330,17 +4315,17 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
 }
 
 .footer-nav-list li a {
     font-family: var(--sans, "Inter", system-ui, sans-serif);
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 500;
     color: #5C4A3A;
     text-decoration: none;
     text-transform: uppercase !important;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
     transition: color 0.2s ease;
 }
 
@@ -4352,13 +4337,13 @@ body {
 .footer-contact-col {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
 }
 
 .footer-contact-row {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
 }
 
 .footer-contact-item {
@@ -4370,7 +4355,7 @@ body {
 .footer-contact-label {
     font-family: var(--serif, "Playfair Display", Georgia, serif);
     font-style: italic;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: #c09a63;
     letter-spacing: 0.02em;
 }
@@ -4381,14 +4366,28 @@ body {
     font-weight: 400;
     color: #5C4A3A;
     line-height: 1.6;
+    word-break: break-word;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-contact-value:hover {
+    color: #8B5E2A;
+}
+
+.footer-contact-item--address {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 /* Divider */
 .footer-divider {
     height: 1px;
     background: rgba(43, 26, 18, 0.08);
-    margin: 60px 0 32px 0;
-    width: 100%;
+    margin: 48px auto 28px;
+    width: calc(100% - 48px);
+    max-width: 1220px;
 }
 
 /* Bottom row */
@@ -4437,23 +4436,30 @@ body {
 }
 
 /* =========================================================
-   FOOTER ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â RESPONSIVE
+   FOOTER - RESPONSIVE
    ========================================================= */
 @media (max-width: 1100px) {
     .footer-top {
         grid-template-columns: 1fr 1fr;
-        gap: 64px 40px;
+        gap: 48px 32px;
     }
 }
 
 @media (max-width: 768px) {
+    .site-footer {
+        padding: 48px 0 0 0;
+    }
+
     .footer-top {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 64px;
+        gap: 36px;
+        padding: 0 20px;
     }
 
     .footer-brand {
+        align-items: center;
+        text-align: center;
         padding-right: 0;
         border-right: none;
     }
@@ -4463,41 +4469,56 @@ body {
         margin-right: auto;
     }
 
+    .footer-socials {
+        justify-content: center;
+    }
+
     .footer-nav-col {
         align-items: center;
+        text-align: center;
     }
 
     .footer-nav-list {
-        gap: 24px;
+        gap: 16px;
         align-items: center;
     }
 
     .footer-contact-col {
         align-items: center;
         text-align: center;
-        gap: 32px;
+        gap: 24px;
     }
 
     .footer-contact-row {
-        flex-direction: row;
-        justify-content: center;
-        gap: 48px;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
     }
 
     .footer-contact-item {
-        gap: 8px;
+        align-items: center;
+        text-align: center;
+        gap: 4px;
+    }
+
+    .footer-divider {
+        margin: 36px auto 20px;
+        width: calc(100% - 40px);
     }
 
     .footer-bottom {
         flex-direction: column;
         text-align: center;
-        gap: 24px;
+        gap: 16px;
+        padding: 0 20px 24px 20px;
     }
 
     .footer-legal-links {
         justify-content: center;
-        gap: 16px;
-        flex-direction: column;
+        gap: 12px 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 }
 
@@ -5600,15 +5621,88 @@ html body .embossed-tagline {
    toggles .active across every .founder-card on the page, so
    these would end up driven by the first section's tabs.
    ========================================================= */
-.tm-grid {
-    display: grid;
-    gap: clamp(30px, 3.6vw, 52px);
+/* ============= TM TAB PILLS (Matching Upper Section) ============= */
+.tm-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: clamp(32px, 4vw, 48px);
+}
+
+.tm-tabs__pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #FFFFFF;
+    border: 1px solid #E8DAC2;
+    border-radius: 999px;
+    padding: 6px;
+    box-shadow: 0 4px 16px -4px rgba(31, 26, 20, 0.08);
+}
+
+.tm-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px 10px 10px;
+    border: none;
+    background: transparent;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tm-tab:hover {
+    background: #FBF7F1;
+}
+
+.tm-tab.active {
+    background: #F4ECDF;
+    box-shadow: 0 2px 8px -2px rgba(31, 26, 20, 0.1);
+}
+
+.tm-tab__img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #E8DAC2;
+    transition: border-color 0.3s ease;
+}
+
+.tm-tab.active .tm-tab__img {
+    border-color: #B69E7E;
+}
+
+.tm-tab__info {
+    text-align: left;
+    line-height: 1.2;
+}
+
+.tm-tab__name {
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: 14px;
+    font-weight: 500;
+    color: #1F1A14;
+    display: block;
+}
+
+.tm-tab__role {
+    font-family: var(--sans, "Inter", system-ui, sans-serif);
+    font-size: 11px;
+    font-weight: 500;
+    color: #8E7858;
+    display: block;
+    letter-spacing: 0.02em;
+}
+
+.tm-slider {
+    position: relative;
     max-width: 1040px;
-    /* Room for the portrait hanging past the last panel */
     margin: 0 auto clamp(48px, 6vw, 88px);
 }
 
 .tm-card {
+    display: none;
     position: relative;
     /* Descendants size themselves in cqw = % of this card's width */
     container-type: inline-size;
@@ -5624,6 +5718,22 @@ html body .embossed-tagline {
     /* visible: the portrait deliberately breaks the lower edge */
     overflow: visible;
     isolation: isolate;
+}
+
+.tm-card.active {
+    display: block;
+    animation: tmCardFade 0.35s ease forwards;
+}
+
+@keyframes tmCardFade {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ── Copy: top-left, stopping clear of the portrait ── */
@@ -5644,7 +5754,7 @@ html body .embossed-tagline {
     border: 1px solid rgba(255, 255, 255, .22);
     color: #F2DDB4;
     font-family: var(--sans, "Inter", system-ui, sans-serif);
-    font-size: clamp(7px, 1.55cqw, 10px);
+    font-size: clamp(8px, 1.55cqw, 11px);
     font-weight: 600;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -5653,9 +5763,9 @@ html body .embossed-tagline {
 
 html body .tm-card__name {
     font-family: var(--serif, "Playfair Display", Georgia, serif);
-    font-size: clamp(15px, 7.4cqw, 48px) !important;
+    font-size: clamp(18px, 7.4cqw, 48px) !important;
     font-weight: 400;
-    line-height: 1.08;
+    line-height: 1.12;
     letter-spacing: -0.01em;
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
@@ -5667,9 +5777,9 @@ html body .tm-card__name {
    file — unreadable on the dark panel — so these must outrank it. */
 html body .tm-card__role {
     font-family: var(--sans, "Inter", system-ui, sans-serif) !important;
-    font-size: clamp(9px, 2.6cqw, 17px) !important;
+    font-size: clamp(11px, 2.6cqw, 17px) !important;
     font-weight: 300;
-    line-height: 1.5;
+    line-height: 1.4;
     letter-spacing: 0;
     text-transform: none;
     color: rgba(255, 255, 255, .88) !important;
@@ -5679,9 +5789,9 @@ html body .tm-card__role {
 html body .tm-card__quote {
     font-family: var(--sans, "Inter", system-ui, sans-serif) !important;
     font-style: normal;
-    font-size: clamp(9px, 2.6cqw, 17px) !important;
+    font-size: clamp(10px, 2.4cqw, 16px) !important;
     font-weight: 300;
-    line-height: 1.5;
+    line-height: 1.45;
     color: rgba(255, 255, 255, .88) !important;
     margin: 0;
     padding: 0;
@@ -5691,10 +5801,10 @@ html body .tm-card__quote {
 /* ── Portrait: absolute, so its position is exactly these three numbers ── */
 .tm-card__imagewrap {
     position: absolute;
-    right: 8%;
+    right: 6%;
     /* Negative bottom = hangs below the panel. No padding to fight. */
     bottom: -8%;
-    height: 70%;
+    height: 72%;
     aspect-ratio: 0.64;
     z-index: 2;
     /* The ring: a small gap over a gold gradient reads as a metallic edge,
@@ -5715,11 +5825,26 @@ html body .tm-card__quote {
     background: #EFE4D6;
 }
 
-/* No layout breakpoint on purpose. The card is one composition that scales;
-   re-stacking it at a narrow width is what put the portrait under the copy
-   instead of beside it. Only the grid gutter changes. */
 @media (max-width: 575.98px) {
-    .tm-grid {
-        margin-bottom: 44px;
+    .tm-slider {
+        margin-bottom: 52px;
+    }
+    .tm-card {
+        aspect-ratio: 644 / 580;
+        padding: 6% 4%;
+    }
+    .tm-tab {
+        padding: 6px 14px 6px 6px;
+        gap: 8px;
+    }
+    .tm-tab__img {
+        width: 36px;
+        height: 36px;
+    }
+    .tm-tab__name {
+        font-size: 13px;
+    }
+    .tm-tab__role {
+        font-size: 10px;
     }
 }

@@ -241,6 +241,36 @@
     }
 
     /* =========================================================
+       TM TAB SLIDER — Team Cards Tabs Controller
+       ========================================================= */
+    const tmTabs = document.querySelectorAll('.tm-tab');
+    const tmCards = document.querySelectorAll('.tm-card');
+
+    if (tmTabs.length > 0 && tmCards.length > 0) {
+        tmTabs.forEach(function (tab) {
+            tab.addEventListener('click', function () {
+                const targetSlide = parseInt(this.dataset.tmSlide || this.getAttribute('data-tm-slide'), 10);
+                
+                tmTabs.forEach(function (t) {
+                    t.classList.remove('active');
+                    t.setAttribute('aria-selected', 'false');
+                });
+                tmCards.forEach(function (c) {
+                    c.classList.remove('active');
+                });
+
+                if (tmTabs[targetSlide]) {
+                    tmTabs[targetSlide].classList.add('active');
+                    tmTabs[targetSlide].setAttribute('aria-selected', 'true');
+                }
+                if (tmCards[targetSlide]) {
+                    tmCards[targetSlide].classList.add('active');
+                }
+            });
+        });
+    }
+
+    /* =========================================================
        OUR EXPERTISE (SERVICE ARCH) CAROUSEL — Scroll controls
        ========================================================= */
     const track = document.getElementById('service-arch-track');
