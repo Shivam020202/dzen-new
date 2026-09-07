@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 50" fill="none">
+  <!-- SkinCeuticals Logo -->
+  <g>
+    <!-- Clinical droplet badge -->
+    <path d="M20 7 C28 7 31 14 31 23 C31 30 25 35 20 37 C15 35 9 30 9 23 C9 14 12 7 20 7 Z" fill="none" stroke="#C58E45" stroke-width="2.2"/>
+    <path d="M20 15 v16 M12 23 h16" stroke="#4B2B20" stroke-width="2.6" stroke-linecap="round"/>
+    <!-- SKINCEUTICALS -->
+    <text x="44" y="31" font-family="'Inter', system-ui, sans-serif" font-size="16" font-weight="800" letter-spacing="2.5" fill="#4B2B20">SKINCEUTICALS</text>
+  </g>
+</svg>

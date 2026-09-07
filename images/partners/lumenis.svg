@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
+  <!-- Lumenis Logo -->
+  <g>
+    <!-- Laser / Optics rays -->
+    <circle cx="18" cy="25" r="5.5" fill="#4B2B20"/>
+    <path d="M18 10 v5 M18 35 v5 M3 25 h5 M28 25 h5 M7 14 l3.5 3.5 M24 31 l3.5 3.5 M7 36 l3.5-3.5 M24 19 l3.5-3.5" stroke="#C58E45" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- LUMENIS -->
+    <text x="42" y="32.5" font-family="'Inter', system-ui, sans-serif" font-size="19" font-weight="700" letter-spacing="3.5" fill="#4B2B20">LUMENIS</text>
+  </g>
+</svg>

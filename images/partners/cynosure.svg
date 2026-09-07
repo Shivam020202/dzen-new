@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
+  <!-- Cynosure Logo -->
+  <g>
+    <!-- Star Flare -->
+    <path d="M17 6 L20 17 L30 20 L20 23 L17 34 L14 23 L4 20 L14 17 Z" fill="#C58E45"/>
+    <circle cx="17" cy="20" r="2.5" fill="#FDF8F3"/>
+    <!-- CYNOSURE -->
+    <text x="38" y="32" font-family="'Inter', system-ui, sans-serif" font-size="19" font-weight="800" letter-spacing="3" fill="#4B2B20">CYNOSURE</text>
+  </g>
+</svg>

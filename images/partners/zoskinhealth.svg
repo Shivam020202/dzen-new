@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 50" fill="none">
+  <!-- ZO Skin Health Logo -->
+  <g>
+    <!-- ZO Seal -->
+    <circle cx="20" cy="25" r="15" fill="none" stroke="#C58E45" stroke-width="2.2"/>
+    <text x="20" y="31" font-family="'Playfair Display', Georgia, serif" font-size="16" font-weight="700" text-anchor="middle" fill="#4B2B20">ZO</text>
+    <!-- Wordmark -->
+    <text x="46" y="24" font-family="'Inter', system-ui, sans-serif" font-size="15" font-weight="800" letter-spacing="2.5" fill="#4B2B20">SKIN HEALTH</text>
+    <text x="46" y="35" font-family="'Inter', system-ui, sans-serif" font-size="8.5" font-weight="600" letter-spacing="1.8" fill="#8C7360">BY ZEIN OBAGI MD</text>
+  </g>
+</svg>

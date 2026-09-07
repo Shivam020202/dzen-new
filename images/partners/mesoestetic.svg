@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 50" fill="none">
+  <!-- Mesoestetic Logo -->
+  <g>
+    <!-- Matrix dots -->
+    <circle cx="10" cy="20" r="3" fill="#C58E45"/>
+    <circle cx="21" cy="20" r="3" fill="#4B2B20"/>
+    <circle cx="10" cy="30" r="3" fill="#4B2B20"/>
+    <circle cx="21" cy="30" r="3" fill="#C58E45"/>
+    <!-- mesoestetic -->
+    <text x="34" y="32" font-family="'Inter', system-ui, sans-serif" font-size="18.5" font-weight="600" letter-spacing="1.2" fill="#4B2B20">mesoestetic</text>
+  </g>
+</svg>

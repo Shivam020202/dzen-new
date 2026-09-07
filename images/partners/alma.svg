@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 50" fill="none">
+  <!-- Alma Lasers Logo -->
+  <g>
+    <!-- Spark Diamond -->
+    <rect x="7" y="7" width="20" height="20" rx="4.5" transform="rotate(45 17 17)" fill="none" stroke="#C58E45" stroke-width="2.2"/>
+    <circle cx="17" cy="17" r="4.2" fill="#4B2B20"/>
+    <!-- ALMA -->
+    <text x="42" y="31" font-family="'Inter', system-ui, sans-serif" font-size="20" font-weight="800" letter-spacing="4" fill="#4B2B20">ALMA</text>
+  </g>
+</svg>

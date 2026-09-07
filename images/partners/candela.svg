@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
+  <!-- Candela Medical Logo -->
+  <g>
+    <!-- Flame icon -->
+    <path d="M18 7 C18 7 27 15 27 24 C27 29 23 34 18 34 C13 34 9 29 9 24 C9 15 18 7 18 7 Z" fill="none" stroke="#C58E45" stroke-width="2.2"/>
+    <path d="M18 15 C18 15 22 20 22 25 C22 27.5 20.2 30 18 30 C15.8 30 14 27.5 14 25 C14 20 18 15 18 15 Z" fill="#4B2B20"/>
+    <!-- CANDELA -->
+    <text x="38" y="32" font-family="'Playfair Display', Georgia, serif" font-size="21" font-weight="700" letter-spacing="3" fill="#4B2B20">CANDELA</text>
+  </g>
+</svg>

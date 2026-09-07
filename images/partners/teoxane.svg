@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 50" fill="none">
+  <!-- Teoxane Logo -->
+  <g>
+    <!-- Geneva Cross -->
+    <circle cx="18" cy="25" r="14" fill="none" stroke="#C58E45" stroke-width="2.2"/>
+    <path d="M12 25 h12 M18 19 v12" stroke="#4B2B20" stroke-width="2.8" stroke-linecap="round"/>
+    <!-- TEOXANE -->
+    <text x="40" y="32" font-family="'Inter', system-ui, sans-serif" font-size="18.5" font-weight="700" letter-spacing="3.5" fill="#4B2B20">TEOXANE</text>
+  </g>
+</svg>

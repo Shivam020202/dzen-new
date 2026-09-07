@@ -1788,6 +1788,131 @@ body {
     }
 }
 
+/* =========================================================
+   OUR PARTNERS (MARQUEE SCROLL) SECTION STYLES
+   ========================================================= */
+.partners-section {
+    position: relative;
+    padding: clamp(50px, 5vw, 80px) 0 clamp(40px, 4vw, 65px);
+    background-color: #FDF8F3;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.partners-section .section-header {
+    position: relative;
+    z-index: 2;
+}
+
+.partners-marquee-container {
+    position: relative;
+    width: 100%;
+    margin-top: clamp(2rem, 3.5vw, 3.25rem);
+    overflow: hidden;
+    padding: 12px 0;
+}
+
+/* Elegant left & right gradient fade masks */
+.partners-marquee-mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: clamp(60px, 14vw, 200px);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.partners-marquee-mask--left {
+    left: 0;
+    background: linear-gradient(to right, #FDF8F3 25%, rgba(253, 248, 243, 0.8) 65%, rgba(253, 248, 243, 0) 100%);
+}
+
+.partners-marquee-mask--right {
+    right: 0;
+    background: linear-gradient(to left, #FDF8F3 25%, rgba(253, 248, 243, 0.8) 65%, rgba(253, 248, 243, 0) 100%);
+}
+
+.partners-marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.partners-marquee__track {
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(3rem, 5vw, 5.5rem);
+    width: max-content;
+    animation: partnersScrollRightToLeft 38s linear infinite;
+    will-change: transform;
+    padding: 10px 0;
+}
+
+/* Smooth pause on hover and focus */
+.partners-marquee:hover .partners-marquee__track,
+.partners-marquee:focus-within .partners-marquee__track {
+    animation-play-state: paused;
+}
+
+@keyframes partnersScrollRightToLeft {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+/* Pure Logo Item */
+.partner-logo-item {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    opacity: 0.75;
+    transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: default;
+}
+
+.partner-logo-img {
+    height: 36px;
+    width: auto;
+    max-height: 42px;
+    max-width: 220px;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.partner-logo-item:hover {
+    opacity: 1;
+    transform: scale(1.08);
+}
+
+@media (max-width: 768px) {
+    .partners-section {
+        padding: 40px 0 30px;
+    }
+
+    .partner-logo-item {
+        height: 36px;
+    }
+
+    .partner-logo-img {
+        height: 28px;
+        max-width: 170px;
+    }
+
+    .partners-marquee__track {
+        gap: 2.25rem;
+        animation-duration: 28s;
+    }
+}
+
 
 /* =========================================================
    FELLOW DOCTORS & TRAINING (TRAINER V2) STYLES
@@ -4356,23 +4481,28 @@ body {
     font-family: var(--serif, "Playfair Display", Georgia, serif);
     font-style: italic;
     font-size: 1.05rem;
-    color: #c09a63;
+    color: #B48C5A !important;
     letter-spacing: 0.02em;
+    font-weight: 500;
 }
 
-.footer-contact-value {
+.footer-contact-value,
+a.footer-contact-value,
+span.footer-contact-value {
     font-family: var(--sans, "Inter", system-ui, sans-serif);
-    font-size: 0.85rem;
-    font-weight: 400;
-    color: #5C4A3A;
+    font-size: 0.88rem;
+    font-weight: 450;
+    color: #3D2218 !important;
     line-height: 1.6;
     word-break: break-word;
-    text-decoration: none;
-    transition: color 0.2s ease;
+    text-decoration: none !important;
+    transition: color 0.2s ease, opacity 0.2s ease;
+    display: inline-block;
 }
 
-.footer-contact-value:hover {
-    color: #8B5E2A;
+.footer-contact-value:hover,
+a.footer-contact-value:hover {
+    color: #C58E45 !important;
 }
 
 .footer-contact-item--address {

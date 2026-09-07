@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 50" fill="none">
+  <!-- Galderma Logo -->
+  <g>
+    <!-- G Curve -->
+    <circle cx="18" cy="25" r="14" fill="none" stroke="#C58E45" stroke-width="2.2"/>
+    <path d="M18 14 A11 11 0 1 1 10 30" fill="none" stroke="#4B2B20" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="18" cy="25" r="3" fill="#4B2B20"/>
+    <!-- GALDERMA -->
+    <text x="42" y="32" font-family="'Inter', system-ui, sans-serif" font-size="18.5" font-weight="700" letter-spacing="3" fill="#4B2B20">GALDERMA</text>
+  </g>
+</svg>
