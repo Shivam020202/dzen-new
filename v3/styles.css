@@ -1872,16 +1872,17 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 48px;
-    opacity: 0.75;
+    height: 52px;
+    padding: 0 8px;
+    opacity: 0.85;
     transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     cursor: default;
 }
 
 .partner-logo-img {
-    height: 36px;
+    height: 40px;
     width: auto;
-    max-height: 42px;
+    max-height: 46px;
     max-width: 220px;
     object-fit: contain;
     display: block;
@@ -1899,17 +1900,19 @@ body {
     }
 
     .partner-logo-item {
-        height: 36px;
+        height: 40px;
+        padding: 0 4px;
     }
 
     .partner-logo-img {
-        height: 28px;
-        max-width: 170px;
+        height: 30px;
+        max-height: 34px;
+        max-width: 160px;
     }
 
     .partners-marquee__track {
-        gap: 2.25rem;
-        animation-duration: 28s;
+        gap: 2.5rem;
+        animation-duration: 25s;
     }
 }
 
