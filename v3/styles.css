@@ -277,7 +277,7 @@ body {
 }
 
 /* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Responsive ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
-@media (max-width: 860px) {
+@media (max-width: 1024px) {
     .pnav {
         top: 0;
         width: 100%;
@@ -457,27 +457,32 @@ body {
     display: flow-root;
 }
 
-/* Hero Boxed Layout styles */
+/* Hero Full Width Layout styles */
 .hero {
     background: #4B2B20 !important;
     /* Brand dark brown fallback */
     background: linear-gradient(35deg, #4B2B20 0%, #8C4A2E 60%, #8B4513 85%, #A0522D 100%) !important;
+    width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
 }
 
-.hero.hero-boxed {
-
-    height: calc(85vh - 24px) !important;
+.hero.hero-boxed,
+.hero {
+    height: 85vh !important;
     position: relative;
-    width: 100%;
+    width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
 }
 
 @media (min-width: 768px) {
-    .hero.hero-boxed {
-        margin: 24px auto !important;
-        width: calc(100% - 48px) !important;
-        border-radius: 32px !important;
-        height: calc(85vh - 48px) !important;
-        border-radius: 40px !important;
+    .hero.hero-boxed,
+    .hero {
+        margin: 0 !important;
+        width: 100% !important;
+        border-radius: 0 !important;
+        height: 90vh !important;
     }
 }
 
@@ -1886,11 +1891,12 @@ body {
     max-width: 220px;
     object-fit: contain;
     display: block;
-    transition: transform 0.35s ease;
+    filter: grayscale(100%) opacity(0.65);
+    transition: filter 0.35s ease, opacity 0.35s ease, transform 0.35s ease;
 }
 
-.partner-logo-item:hover {
-    opacity: 1;
+.partner-logo-item:hover .partner-logo-img {
+    filter: grayscale(0%) opacity(1);
     transform: scale(1.08);
 }
 
@@ -3974,36 +3980,9 @@ body {
     }
 }
 
-/* ===== FLOATING BOTTOM STICKY CTA BAR ===== */
+/* ===== FLOATING BOTTOM STICKY CTA BAR (Mobile Only) ===== */
 .bottom-action-bar {
-    position: fixed;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%) translateY(120%);
-    display: inline-flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 8px 18px;
-    background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: 9999px;
-    box-shadow:
-        0 12px 36px rgba(0, 0, 0, 0.22),
-        0 4px 14px rgba(180, 125, 45, 0.4),
-        0 0 0 1px rgba(255, 255, 255, 0.2) inset;
-    z-index: 99999;
-    opacity: 0;
-    transition: opacity .35s cubic-bezier(.16, 1, .3, 1), transform .35s cubic-bezier(.16, 1, .3, 1);
-    box-sizing: border-box;
-    pointer-events: auto;
-    width: auto !important;
-    white-space: nowrap;
-}
-
-.bottom-action-bar.is-visible {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0) !important;
+    display: none !important;
 }
 
 .bottom-action-btn {
@@ -4659,23 +4638,18 @@ a.footer-contact-value:hover {
 .hero-cta-strip {
     position: relative;
     width: 100%;
-    background: rgba(250, 249, 246, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 14px 0;
+    background: #4b2b20;
+    padding: 0;
     display: flex;
     align-items: center;
-
 }
 
-/* On desktop the hero is inset (margin + rounded corners); align the strip
-   to the same inset and pull it up flush against the hero's bottom edge. */
 @media (min-width: 768px) {
     .hero-cta-strip {
-        width: calc(100% - 48px);
-        margin: -24px auto 0 auto;
-        border-radius: 0 0 24px 24px;
-        border-left: 1px solid rgba(139, 69, 19, 0.1);
-        border-right: 1px solid rgba(139, 69, 19, 0.1);
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        border: none;
     }
 }
 

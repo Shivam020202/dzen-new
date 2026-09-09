@@ -271,7 +271,7 @@
                 <div class="dz-cta-wrap">
                     <a href="about.html" class="dz-cta">
                         <span>Know More About Us</span>
-                        <img src="nemonic.png" class="btn-icon" style="width: 14x; height: 14px; object-fit: contain;"
+                        <img src="nemonic.png" class="btn-icon" style="width: 14px; height: 14px; object-fit: contain;"
                             alt="icon" />
                     </a>
                 </div>
@@ -290,15 +290,15 @@
             <div class="philosophy-strip-container">
                 <div class="philosophy-strip-inner">
                     <div class="section-header text-center mb-4 mb-lg-5">
-                        <span class="section-subtitle">OUR PHILOSOPHY</span>
+                        <span class="section-subtitle" style="color: #E8C99A !important;">OUR PHILOSOPHY</span>
                         <div class="nemonic-separator">
-                            <div class="nemonic-line"></div>
-                            <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
-                            <div class="nemonic-line"></div>
+                            <div class="nemonic-line" style="background: rgba(232, 201, 154, 0.45);"></div>
+                            <img src="nemonic.png" alt="nemonic" class="nemonic-icon" style="filter: brightness(0) invert(1);" />
+                            <div class="nemonic-line" style="background: rgba(232, 201, 154, 0.45);"></div>
                         </div>
-                        <h2 id="service-arch-title" class="section-title">Balancing the Inside <span
-                                class="scribble">Health</span> and Outside <span class="scribble">Beauty</span></h2>
-                        <p class="section-desc mx-auto" style="max-width: 760px; color: #5C4A3A;">
+                        <h2 id="philosophy-section-title" class="section-title" style="color: #ffffff !important;">Balancing the Inside <span
+                                class="scribble" style="color: #E8C99A !important; -webkit-text-fill-color: #E8C99A !important;">Health</span> and Outside <span class="scribble" style="color: #E8C99A !important; -webkit-text-fill-color: #E8C99A !important;">Beauty</span></h2>
+                        <p class="section-desc mx-auto" style="max-width: 760px; color: rgba(255, 255, 255, 0.85) !important;">
                             We believe true beauty radiates from within—a perfect harmony between inner wellness and
                             outer care. At D'Zen Derma, we bridge this balance through science-led treatments and
                             holistic practices.
@@ -510,13 +510,7 @@
             </div>
         </section>
 
-        <!-- Second team block — card grid, no tabs or slider.
-             Its own .tm-* classes on purpose: the founder slider script does
-             document.querySelectorAll('.founder-card') and toggles .active
-             across every match on the page. Reusing .founder-card here would
-             hand control of these cards to the FIRST section's tabs, and
-             .founder-card is display:none until .active — so they would simply
-             vanish. Different classes keep the two blocks independent. -->
+        <!-- Second team block — card grid, no tabs or slider -->
         <section class="doctors-v2 tm-section" id="teamCards" aria-label="Meet our team">
             <div class="doctors-v2__container">
                 <div class="doctors-v2__head">
@@ -606,6 +600,8 @@
                 </svg>
             </div>
         </section>
+
+
 
         <section class="service-arch-section" aria-labelledby="service-arch-title">
             <div class="container">
