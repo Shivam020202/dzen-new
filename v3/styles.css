@@ -929,87 +929,112 @@ body {
     align-items: center;
 }
 
-.philosophy-strip-top {
+/* 3-Trinity Principle Navigation */
+.philosophy-trinity-nav {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 60px;
+    align-items: stretch;
+    gap: 14px;
     width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 6px 4px 10px 4px;
 }
 
-.philosophy-titles-group {
-    display: flex;
-    gap: 20px;
-    align-items: center;
+.philosophy-trinity-nav::-webkit-scrollbar {
+    display: none;
 }
 
-/* Pill Shaped Tab Buttons with Frosted Glass */
+/* Trinity Tab Buttons */
 .philosophy-tab-btn {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 999px;
-    font-family: var(--serif, "Playfair Display", Georgia, serif);
-    font-size: 19px;
-    color: #4B2B20;
+    flex: 1 1 0;
+    min-width: 220px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(232, 201, 154, 0.25);
+    border-radius: 18px;
+    padding: 14px 20px;
     cursor: pointer;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 12px 28px;
-    transition: all 0.4s ease;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    position: relative;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     outline: none;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    scroll-snap-align: start;
+    flex-shrink: 0;
 }
 
-.philosophy-tab-btn:after {
-    display: none;
-    /* Removing the underline from previous design */
+.philosophy-tab-btn .phil-tab-role {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #E8C99A;
+    margin-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+.philosophy-tab-btn .phil-tab-title {
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: 17px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.3;
+    transition: color 0.3s ease;
+}
+
+.philosophy-tab-btn .tab-icon {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.45;
+    transition: all 0.35s ease;
 }
 
 .philosophy-tab-btn:hover {
-    background: rgba(255, 255, 255, 0.9);
-    color: #C58E45;
-    border-color: #C58E45;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(232, 201, 154, 0.55);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(197, 142, 69, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.philosophy-tab-btn:hover .tab-icon {
+    opacity: 0.8;
+    transform: rotate(15deg);
 }
 
 .philosophy-tab-btn.is-active {
-    background: #ffffff;
-    color: #C58E45;
-    border-color: #C58E45;
-    box-shadow: 0 8px 25px rgba(197, 142, 69, 0.15);
+    background: #FAF7F2;
+    border-color: #E8C99A;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(232, 201, 154, 0.4);
 }
 
-.philosophy-center-logo {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(197, 142, 69, 0.4);
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.05),
-        inset 0 0 0 4px rgba(255, 255, 255, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    flex-shrink: 0;
-    transition: transform 0.5s ease;
+.philosophy-tab-btn.is-active .phil-tab-role {
+    color: #A86B24;
 }
 
-.philosophy-center-logo:hover {
-    transform: scale(1.05);
+.philosophy-tab-btn.is-active .phil-tab-title {
+    color: #2B1A12;
 }
 
-.philosophy-center-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.philosophy-tab-btn.is-active .tab-icon {
+    filter: none;
+    opacity: 0.9;
+    transform: rotate(45deg);
 }
 
 /* Display Area Inside Strip */
@@ -1018,63 +1043,29 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     width: 100%;
-    max-width: 1000px;
-    margin: 50px auto 0;
+    max-width: 1080px;
+    margin: 32px auto 0;
 }
 
 .philosophy-content-panel {
     grid-area: 1 / 1;
-    transform: translateY(20px);
+    transform: translateY(16px);
     width: 100%;
     text-align: left;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    background: rgba(253, 248, 243, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.9);
     border-radius: 24px;
-    padding: 30px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    padding: 34px 40px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18);
     display: flex;
     align-items: center;
     gap: 40px;
-}
-
-.panel-image {
-    flex: 0 0 45%;
-    max-width: 45%;
-    border-radius: 16px;
-    overflow: hidden;
-    aspect-ratio: 4 / 3;
-}
-
-.panel-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.panel-text {
-    flex: 1;
-}
-
-@media (max-width: 768px) {
-    .philosophy-content-panel {
-        flex-direction: column;
-        text-align: center;
-        gap: 25px;
-        padding: 25px;
-    }
-
-    .panel-image {
-        max-width: 100%;
-        flex: none;
-        width: 100%;
-    }
 }
 
 .philosophy-content-panel.is-active {
@@ -1085,100 +1076,219 @@ body {
     pointer-events: auto;
 }
 
-.panel-title {
-    display: none;
+.panel-image {
+    flex: 0 0 42%;
+    max-width: 42%;
+    border-radius: 18px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3.4;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.panel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.philosophy-content-panel:hover .panel-image img {
+    transform: scale(1.03);
+}
+
+.panel-image-badge {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    background: rgba(43, 26, 18, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #FDF8F3;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(232, 201, 154, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.panel-text {
+    flex: 1;
+}
+
+.panel-principle-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #A86B24;
+    margin-bottom: 10px;
+    background: rgba(197, 142, 69, 0.12);
+    padding: 4px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(197, 142, 69, 0.2);
+}
+
+.panel-principle-heading {
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(21px, 2vw, 26px);
+    line-height: 1.35;
+    font-weight: 600;
+    color: #2B1A12;
+    margin: 0 0 14px 0;
 }
 
 .panel-desc {
     font-family: 'Inter', system-ui, sans-serif;
-    font-size: 16.5px;
-    line-height: 1.8;
-    color: #2B1A12;
-    margin: 0 auto;
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: #4A3B32;
+    margin: 0 0 10px 0;
+}
+
+.panel-desc--sub {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #6E5A4E;
+    margin-bottom: 16px;
+}
+
+.panel-tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.panel-pill {
+    font-size: 12px;
+    font-weight: 500;
+    color: #5A3D28;
+    background: #F4EBE1;
+    border: 1px solid rgba(197, 142, 69, 0.28);
+    padding: 5px 14px;
+    border-radius: 999px;
+    letter-spacing: 0.02em;
+    transition: all 0.25s ease;
+}
+
+.panel-pill:hover {
+    background: #ECE0D0;
+    border-color: #C58E45;
+    transform: translateY(-1px);
 }
 
 /* RESPONSIVE LAYOUT */
-@media (max-width: 1100px) {
-    .philosophy-strip-top {
-        gap: 30px;
-    }
-
-    .philosophy-titles-group {
-        gap: 15px;
-        flex-direction: column;
-    }
-
-    .philosophy-tab-btn {
-        font-size: 17px;
-        padding: 10px 22px;
-        width: 100%;
-    }
-
-    .philosophy-center-logo {
-        width: 110px;
-        height: 110px;
-        padding: 15px;
-    }
-
-    .philosophy-content-panel {
-        padding: 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    .philosophy-strip-top {
-        flex-direction: column;
-        gap: 25px;
-    }
-
-    .philosophy-titles-group {
+@media (max-width: 992px) {
+    .philosophy-trinity-nav {
         flex-direction: row;
-        gap: 15px;
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .philosophy-titles-group.left-group {
-        order: 2;
-    }
-
-    .philosophy-center-logo {
-        order: 1;
-        margin-bottom: 0px;
-    }
-
-    .philosophy-titles-group.right-group {
-        order: 3;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        gap: 10px;
+        padding: 4px 4px 10px 4px;
+        margin: 0 auto;
     }
 
     .philosophy-tab-btn {
+        flex: 0 0 auto;
+        min-width: 210px;
+        max-width: 250px;
         width: auto;
-        font-size: 16px;
-        padding: 10px 20px;
+        padding: 12px 16px;
+        scroll-snap-align: start;
+    }
+
+    .philosophy-tab-btn .phil-tab-role {
+        font-size: 9px;
+        margin-bottom: 3px;
+    }
+
+    .philosophy-tab-btn .phil-tab-title {
+        font-size: 15px;
+    }
+
+    .philosophy-tab-btn .tab-icon {
+        top: 12px;
+        right: 12px;
+        width: 12px;
+        height: 12px;
     }
 
     .philosophy-display-area {
-        margin-top: 40px;
+        margin: 16px auto 0;
     }
 
     .philosophy-content-panel {
-        padding: 25px 20px;
+        flex-direction: column;
+        text-align: left;
+        gap: 18px;
+        padding: 22px 20px;
+        border-radius: 20px;
     }
 
-    .panel-desc {
-        font-size: 15px;
+    .panel-image {
+        max-width: 100%;
+        flex: none;
+        width: 100%;
+        max-height: 200px;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
     }
 }
 
-@media (max-width: 480px) {
-    .philosophy-titles-group {
-        gap: 10px;
+@media (max-width: 576px) {
+    .philosophy-trinity-nav {
+        gap: 8px;
+        padding-bottom: 8px;
     }
 
     .philosophy-tab-btn {
+        min-width: 190px;
+        max-width: 230px;
+        padding: 10px 14px;
+        border-radius: 14px;
+    }
+
+    .philosophy-tab-btn .phil-tab-role {
+        font-size: 8.5px;
+        letter-spacing: 0.1em;
+    }
+
+    .philosophy-tab-btn .phil-tab-title {
         font-size: 14px;
-        padding: 8px 14px;
+    }
+
+    .philosophy-content-panel {
+        padding: 18px 16px;
+        border-radius: 16px;
+        gap: 14px;
+    }
+
+    .panel-principle-heading {
+        font-size: 18px;
+    }
+
+    .panel-desc {
+        font-size: 13.5px;
+        line-height: 1.6;
+    }
+
+    .panel-desc--sub {
+        font-size: 12.5px;
+        line-height: 1.55;
+    }
+
+    .panel-image {
+        max-height: 160px;
+        border-radius: 14px;
     }
 }
 
@@ -4039,7 +4149,7 @@ body {
 @media (max-width: 767.98px) {
     .bottom-action-bar {
         position: fixed;
-        bottom: 16px;
+        bottom: 5px;
         left: 50%;
         right: auto;
         width: auto !important;

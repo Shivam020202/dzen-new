@@ -1,0 +1,2120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Philosophy Section Design Concepts — D'Zen Derma</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        :root {
+            --dz-espresso: #4b2b20;
+            --dz-copper: #8b4513;
+            --dz-dark-gradient: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
+            --dz-cream: #FDF8F3;
+            --dz-sand: #F4EBE1;
+            --dz-gold: #c88a4e;
+            --dz-gold-dark: #96682A;
+            --dz-champagne: #E8C99A;
+            --dz-text-main: #2B1A12;
+            --dz-text-muted: #5C4A3A;
+            --serif: 'Playfair Display', Georgia, serif;
+            --sans: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #EDE5DC;
+            font-family: var(--sans);
+            color: var(--dz-text-main);
+            -webkit-font-smoothing: antialiased;
+            padding-bottom: 120px;
+        }
+
+        /* Top sticky option selector */
+        .option-nav-bar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(75, 43, 32, 0.96);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(232, 201, 154, 0.35);
+            box-shadow: 0 6px 24px rgba(75, 43, 32, 0.35);
+            gap: 16px;
+        }
+
+        .option-nav-bar .logo-title {
+            font-family: var(--serif);
+            font-size: 17px;
+            color: #FAF7F2;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .option-nav-bar .logo-title span {
+            color: var(--dz-champagne);
+            font-size: 11.5px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-family: var(--sans);
+            font-weight: 600;
+        }
+
+        .nav-pills-wrap {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 4px 0;
+        }
+
+        .nav-pill-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: #FAF7F2;
+            border: 1px solid rgba(232, 201, 154, 0.3);
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-size: 12.5px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .nav-pill-btn:hover,
+        .nav-pill-btn.active {
+            background: #FAF7F2;
+            color: var(--dz-espresso);
+            border-color: #FAF7F2;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        .option-header-badge {
+            max-width: 1280px;
+            margin: 60px auto 20px;
+            padding: 0 24px;
+        }
+
+        .option-tag-pill {
+            display: inline-block;
+            background: var(--dz-dark-gradient);
+            color: var(--dz-champagne);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 999px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 12px rgba(75, 43, 32, 0.2);
+        }
+
+        .option-title {
+            font-family: var(--serif);
+            font-size: 30px;
+            font-weight: 600;
+            color: var(--dz-espresso);
+            margin: 0 0 8px 0;
+            line-height: 1.25;
+        }
+
+        .option-desc {
+            font-size: 15px;
+            color: var(--dz-text-muted);
+            margin: 0;
+            max-width: 800px;
+            line-height: 1.65;
+        }
+
+        .section-wrapper {
+            max-width: 1280px;
+            margin: 0 auto 90px;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(75, 43, 32, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+        }
+
+        /* Scribble Underline Effect (Site Default) */
+        .scribble {
+            font-style: italic !important;
+            font-weight: 400;
+            color: var(--dz-copper) !important;
+            -webkit-text-fill-color: var(--dz-copper) !important;
+        }
+
+        .scribble--dark {
+            color: var(--dz-champagne) !important;
+            -webkit-text-fill-color: var(--dz-champagne) !important;
+        }
+
+        /* Nemonic Separator (Exact Site Structure) */
+        .nemonic-separator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 12px 0 16px;
+        }
+
+        .nemonic-line {
+            width: 45px;
+            height: 1px;
+            background: rgba(139, 69, 19, 0.3);
+        }
+
+        .nemonic-line--dark {
+            background: rgba(232, 201, 154, 0.45);
+        }
+
+        .nemonic-icon {
+            width: 16px;
+            height: 16px;
+            object-fit: contain;
+        }
+
+        .nemonic-icon--dark {
+            filter: brightness(0) invert(1);
+        }
+
+        /* Website Standard Button (.dz-cta) */
+        .dz-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 14px 30px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
+            color: #fff !important;
+            text-decoration: none;
+            font-family: var(--sans);
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 0.01em;
+            border: none;
+            box-shadow: 0 6px 20px rgba(75, 43, 32, 0.28);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+        }
+
+        .dz-cta:hover {
+            color: #fff !important;
+            background: linear-gradient(170deg, #4b2b20 0%, #331d15 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(75, 43, 32, 0.36);
+        }
+
+        .dz-cta img.btn-icon {
+            width: 14px;
+            height: 14px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .dz-cta-wrap {
+            text-align: center;
+        }
+
+        /* Shared Header Elements */
+        .sec-eyebrow {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--dz-gold-dark);
+            display: block;
+        }
+
+        .sec-eyebrow--dark {
+            color: var(--dz-champagne) !important;
+        }
+
+        .sec-title {
+            font-family: var(--serif);
+            font-size: clamp(28px, 3.2vw, 42px);
+            font-weight: 600;
+            color: var(--dz-espresso);
+            margin-bottom: 14px;
+        }
+
+        .sec-title--dark {
+            color: #FFFFFF !important;
+        }
+
+        .sec-desc {
+            font-size: 16px;
+            line-height: 1.75;
+            color: var(--dz-text-muted);
+            margin: 0 auto;
+        }
+
+        .sec-desc--dark {
+            color: rgba(255, 255, 255, 0.85) !important;
+        }
+
+        /* =========================================================
+           OPTION 1: THE EDITORIAL 3-COLUMN TRINITY GRID (LIGHT LUXURY)
+           ========================================================= */
+        .opt1-section {
+            background: var(--dz-cream);
+            padding: clamp(50px, 6vw, 90px) clamp(24px, 4vw, 56px);
+            position: relative;
+        }
+
+        .opt1-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .opt1-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .opt1-card {
+            background: #FFFFFF;
+            border-radius: 22px;
+            border: 1px solid rgba(139, 69, 19, 0.18);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(75, 43, 32, 0.05);
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+            position: relative;
+        }
+
+        .opt1-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 22px 48px rgba(139, 69, 19, 0.16);
+            border-color: var(--dz-copper);
+        }
+
+        .opt1-card__img-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 3.2;
+            overflow: hidden;
+            background: var(--dz-sand);
+        }
+
+        .opt1-card__img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+            display: block;
+        }
+
+        .opt1-card:hover .opt1-card__img-wrap img {
+            transform: scale(1.06);
+        }
+
+        .opt1-card__badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: rgba(75, 43, 32, 0.9);
+            backdrop-filter: blur(8px);
+            color: #FAF7F2;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(232, 201, 154, 0.4);
+        }
+
+        .opt1-card__num {
+            position: absolute;
+            bottom: 14px;
+            right: 16px;
+            width: 34px;
+            height: 34px;
+            background: #FFFFFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--serif);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--dz-espresso);
+            box-shadow: 0 4px 14px rgba(75, 43, 32, 0.15);
+            border: 1px solid rgba(139, 69, 19, 0.25);
+        }
+
+        .opt1-card__body {
+            padding: 28px 26px 30px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .opt1-card__role {
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--dz-gold-dark);
+            margin-bottom: 8px;
+        }
+
+        .opt1-card__title {
+            font-family: var(--serif);
+            font-size: 23px;
+            color: var(--dz-espresso);
+            font-weight: 600;
+            line-height: 1.25;
+            margin-bottom: 12px;
+        }
+
+        .opt1-card__quote {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 15px;
+            line-height: 1.45;
+            color: var(--dz-copper);
+            font-weight: 500;
+            padding-left: 12px;
+            border-left: 3px solid var(--dz-copper);
+            margin-bottom: 14px;
+        }
+
+        .opt1-card__text {
+            font-size: 14px;
+            line-height: 1.75;
+            color: var(--dz-text-muted);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .opt1-card__tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px solid rgba(139, 69, 19, 0.15);
+        }
+
+        .opt1-pill {
+            font-size: 11.5px;
+            color: var(--dz-espresso);
+            background: var(--dz-sand);
+            border: 1px solid rgba(139, 69, 19, 0.25);
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+
+        /* =========================================================
+           OPTION 2: INTERACTIVE TRINITY ACCORDION
+           ========================================================= */
+        .opt2-section {
+            background: var(--dz-dark-gradient);
+            padding: clamp(50px, 6vw, 90px) clamp(24px, 4vw, 56px);
+            color: #FAF7F2;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .opt2-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(232, 201, 154, 0.18) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .opt2-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .opt2-accordion-wrap {
+            display: flex;
+            gap: 16px;
+            min-height: 520px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .opt2-panel {
+            position: relative;
+            flex: 1;
+            border-radius: 24px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: flex 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s ease;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(232, 201, 154, 0.25);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 32px;
+        }
+
+        .opt2-panel.is-active {
+            flex: 2.6;
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--dz-champagne);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+        }
+
+        .opt2-panel__bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.35;
+            transition: opacity 0.5s ease, transform 0.6s ease;
+            filter: saturate(0.85);
+        }
+
+        .opt2-panel.is-active .opt2-panel__bg {
+            opacity: 0.65;
+            transform: scale(1.05);
+            filter: saturate(1);
+        }
+
+        .opt2-panel__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(75, 43, 32, 0.15) 0%, rgba(75, 43, 32, 0.85) 55%, rgba(75, 43, 32, 0.98) 100%);
+            z-index: 1;
+        }
+
+        .opt2-panel__content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .opt2-panel__num {
+            font-family: var(--serif);
+            font-size: 38px;
+            font-weight: 700;
+            color: var(--dz-champagne);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .opt2-panel__role {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--dz-champagne);
+            margin-bottom: 6px;
+        }
+
+        .opt2-panel__title {
+            font-family: var(--serif);
+            font-size: 25px;
+            color: #FFFFFF;
+            margin-bottom: 12px;
+            line-height: 1.25;
+        }
+
+        .opt2-panel__full-text {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.4s ease 0.2s;
+        }
+
+        .opt2-panel.is-active .opt2-panel__full-text {
+            display: block;
+            opacity: 1;
+        }
+
+        .opt2-panel__headline {
+            font-family: var(--serif);
+            font-size: 17px;
+            color: var(--dz-champagne);
+            font-style: italic;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .opt2-panel__desc {
+            font-size: 14.5px;
+            line-height: 1.75;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 16px;
+        }
+
+        .opt2-panel__tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .opt2-tag {
+            font-size: 11.5px;
+            background: rgba(232, 201, 154, 0.18);
+            border: 1px solid rgba(232, 201, 154, 0.4);
+            color: #FAF7F2;
+            padding: 5px 14px;
+            border-radius: 999px;
+            font-weight: 500;
+        }
+
+        /* =========================================================
+           OPTION 3: MAGAZINE SHOWCASE DIAL (LIGHT MASTER)
+           ========================================================= */
+        .opt3-section {
+            background: var(--dz-cream);
+            padding: clamp(50px, 6vw, 90px) clamp(24px, 4vw, 56px);
+            position: relative;
+        }
+
+        .opt3-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .opt3-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1.35fr;
+            gap: 40px;
+            align-items: center;
+            background: #FFFFFF;
+            border-radius: 30px;
+            border: 1px solid rgba(139, 69, 19, 0.2);
+            padding: clamp(28px, 4vw, 48px);
+            box-shadow: 0 18px 50px rgba(75, 43, 32, 0.08);
+        }
+
+        .opt3-nav-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .opt3-nav-item {
+            padding: 22px 24px;
+            border-radius: 18px;
+            background: var(--dz-sand);
+            border: 1px solid rgba(139, 69, 19, 0.2);
+            cursor: pointer;
+            transition: all 0.35s ease;
+            position: relative;
+            text-align: left;
+        }
+
+        .opt3-nav-item:hover {
+            border-color: var(--dz-copper);
+            transform: translateX(4px);
+        }
+
+        .opt3-nav-item.is-active {
+            background: var(--dz-dark-gradient);
+            border-color: transparent;
+            transform: translateX(8px);
+            box-shadow: 0 12px 30px rgba(75, 43, 32, 0.25);
+        }
+
+        .opt3-nav-item.is-active .opt3-nav-role {
+            color: var(--dz-champagne);
+        }
+
+        .opt3-nav-item.is-active .opt3-nav-title {
+            color: #FFFFFF;
+        }
+
+        .opt3-nav-item.is-active .opt3-nav-sub {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .opt3-nav-role {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--dz-gold-dark);
+            margin-bottom: 6px;
+        }
+
+        .opt3-nav-title {
+            font-family: var(--serif);
+            font-size: 21px;
+            font-weight: 600;
+            color: var(--dz-espresso);
+            margin-bottom: 4px;
+        }
+
+        .opt3-nav-sub {
+            font-size: 13.5px;
+            color: var(--dz-text-muted);
+            margin: 0;
+            line-height: 1.45;
+        }
+
+        .opt3-stage {
+            position: relative;
+            min-height: 480px;
+        }
+
+        .opt3-panel {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px);
+            transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .opt3-panel.is-active {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .opt3-panel__image-box {
+            position: relative;
+            width: 100%;
+            height: 260px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(75, 43, 32, 0.1);
+        }
+
+        .opt3-panel__image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .opt3-panel__badge {
+            position: absolute;
+            bottom: 14px;
+            left: 14px;
+            background: rgba(75, 43, 32, 0.9);
+            backdrop-filter: blur(8px);
+            color: #FAF7F2;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(232, 201, 154, 0.4);
+        }
+
+        .opt3-panel__heading {
+            font-family: var(--serif);
+            font-size: 25px;
+            color: var(--dz-espresso);
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .opt3-panel__desc {
+            font-size: 15px;
+            line-height: 1.75;
+            color: var(--dz-text-muted);
+            margin: 0;
+        }
+
+        .opt3-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .opt3-pill {
+            font-size: 12px;
+            background: var(--dz-sand);
+            border: 1px solid rgba(139, 69, 19, 0.25);
+            color: var(--dz-espresso);
+            padding: 5px 14px;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+
+        /* =========================================================
+           OPTION 4: MODERN SANCTUARY SPLIT HERO
+           ========================================================= */
+        .opt4-section {
+            background: var(--dz-dark-gradient);
+            padding: clamp(50px, 6vw, 90px) clamp(24px, 4vw, 56px);
+            position: relative;
+            color: #FFFFFF;
+        }
+
+        .opt4-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 36px;
+        }
+
+        .opt4-trinity-selector {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            max-width: 1080px;
+            margin: 0 auto 36px;
+        }
+
+        .opt4-btn {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(232, 201, 154, 0.35);
+            border-radius: 18px;
+            padding: 16px 20px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            outline: none;
+            position: relative;
+        }
+
+        .opt4-btn-icon {
+            position: absolute;
+            top: 14px;
+            right: 16px;
+            width: 14px;
+            height: 14px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: 0.45;
+            transition: all 0.35s ease;
+        }
+
+        .opt4-btn:hover {
+            background: rgba(255, 255, 255, 0.16);
+            border-color: rgba(232, 201, 154, 0.65);
+            transform: translateY(-2px);
+        }
+
+        .opt4-btn:hover .opt4-btn-icon {
+            opacity: 0.8;
+            transform: rotate(15deg);
+        }
+
+        .opt4-btn.is-active {
+            background: #FAF7F2;
+            border-color: var(--dz-champagne);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .opt4-btn.is-active .opt4-btn-role {
+            color: var(--dz-gold-dark);
+        }
+
+        .opt4-btn.is-active .opt4-btn-title {
+            color: var(--dz-espresso);
+        }
+
+        .opt4-btn.is-active .opt4-btn-icon {
+            filter: none;
+            opacity: 0.9;
+            transform: rotate(45deg);
+        }
+
+        .opt4-btn-role {
+            display: block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--dz-champagne);
+            margin-bottom: 4px;
+        }
+
+        .opt4-btn-title {
+            display: block;
+            font-family: var(--serif);
+            font-size: 17px;
+            font-weight: 600;
+            color: #FFFFFF;
+        }
+
+        .opt4-display-card {
+            max-width: 1080px;
+            margin: 0 auto;
+            background: #FAF7F2;
+            border-radius: 28px;
+            padding: clamp(28px, 4vw, 48px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+            color: var(--dz-espresso);
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .opt4-card-left {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .opt4-card-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--dz-gold-dark);
+            background: var(--dz-sand);
+            padding: 5px 14px;
+            border-radius: 999px;
+            width: fit-content;
+            border: 1px solid rgba(139, 69, 19, 0.25);
+        }
+
+        .opt4-card-heading {
+            font-family: var(--serif);
+            font-size: clamp(23px, 2.4vw, 30px);
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--dz-espresso);
+            margin: 0;
+        }
+
+        .opt4-card-desc {
+            font-size: 15.5px;
+            line-height: 1.8;
+            color: var(--dz-text-muted);
+            margin: 0;
+        }
+
+        .opt4-card-sub {
+            font-size: 14.5px;
+            line-height: 1.75;
+            color: #7A6354;
+            margin: 0;
+        }
+
+        .opt4-card-img-wrap {
+            position: relative;
+            border-radius: 22px;
+            overflow: hidden;
+            aspect-ratio: 4 / 3.4;
+            box-shadow: 0 14px 34px rgba(75, 43, 32, 0.16);
+        }
+
+        .opt4-card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* =========================================================
+           OPTION 5: THE SACRED TRINITY MATRIX (GEOMETRIC EMBLEM)
+           ========================================================= */
+        .opt5-section {
+            background: var(--dz-dark-gradient);
+            padding: clamp(60px, 7vw, 100px) clamp(24px, 4vw, 56px);
+            color: #FFFFFF;
+            position: relative;
+        }
+
+        .opt5-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(232, 201, 154, 0.08) 1px, transparent 1px);
+            background-size: 32px 32px;
+            pointer-events: none;
+        }
+
+        .opt5-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .opt5-triad-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .opt5-node-card {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(232, 201, 154, 0.25);
+            border-radius: 20px;
+            padding: 24px 22px;
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            text-align: left;
+        }
+
+        .opt5-node-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(232, 201, 154, 0.6);
+            transform: translateY(-4px);
+        }
+
+        .opt5-node-card.is-active {
+            background: #FAF7F2;
+            border-color: var(--dz-champagne);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(232, 201, 154, 0.5);
+            transform: translateY(-4px);
+        }
+
+        .opt5-node-card.is-active .opt5-node-role {
+            color: var(--dz-gold-dark);
+        }
+
+        .opt5-node-card.is-active .opt5-node-title {
+            color: var(--dz-espresso);
+        }
+
+        .opt5-node-card.is-active .opt5-node-icon {
+            color: var(--dz-copper);
+        }
+
+        .opt5-node-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .opt5-node-role {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--dz-champagne);
+        }
+
+        .opt5-node-icon {
+            font-size: 16px;
+            color: rgba(232, 201, 154, 0.6);
+        }
+
+        .opt5-node-title {
+            font-family: var(--serif);
+            font-size: 21px;
+            font-weight: 600;
+            color: #FFFFFF;
+            line-height: 1.25;
+        }
+
+        .opt5-master-stage {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #FAF7F2;
+            border-radius: 28px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+            position: relative;
+            z-index: 2;
+            color: var(--dz-espresso);
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+        }
+
+        .opt5-stage-media {
+            position: relative;
+            min-height: 380px;
+        }
+
+        .opt5-stage-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .opt5-stage-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(75, 43, 32, 0.9);
+            backdrop-filter: blur(8px);
+            color: #FAF7F2;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 999px;
+            border: 1px solid rgba(232, 201, 154, 0.4);
+        }
+
+        .opt5-stage-content {
+            padding: clamp(30px, 4vw, 50px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .opt5-stage-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--dz-gold-dark);
+            margin-bottom: 10px;
+        }
+
+        .opt5-stage-quote {
+            font-family: var(--serif);
+            font-size: clamp(22px, 2.2vw, 28px);
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--dz-espresso);
+            margin-bottom: 16px;
+        }
+
+        .opt5-stage-text {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--dz-text-muted);
+            margin-bottom: 14px;
+        }
+
+        .opt5-stage-subtext {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #7A6354;
+            margin-bottom: 22px;
+        }
+
+        /* =========================================================
+           OPTION 6: HAUTE EDITORIAL LOOKBOOK (ASYMMETRIC STORYBOARDS)
+           ========================================================= */
+        .opt6-section {
+            background: var(--dz-cream);
+            padding: clamp(60px, 7vw, 100px) clamp(24px, 4vw, 56px);
+            position: relative;
+        }
+
+        .opt6-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .opt6-storyboard-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .opt6-story-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            background: #FFFFFF;
+            border-radius: 28px;
+            padding: clamp(28px, 4vw, 44px);
+            border: 1px solid rgba(139, 69, 19, 0.18);
+            box-shadow: 0 12px 36px rgba(75, 43, 32, 0.05);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .opt6-story-row:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 45px rgba(139, 69, 19, 0.12);
+        }
+
+        .opt6-story-row--reverse {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .opt6-story-row--reverse .opt6-story-media {
+            order: 2;
+        }
+
+        .opt6-story-row--reverse .opt6-story-text {
+            order: 1;
+        }
+
+        .opt6-story-media {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 4 / 3.2;
+            box-shadow: 0 10px 25px rgba(75, 43, 32, 0.08);
+        }
+
+        .opt6-story-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .opt6-story-row:hover .opt6-story-media img {
+            transform: scale(1.04);
+        }
+
+        .opt6-story-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .opt6-num-stamp {
+            font-family: var(--serif);
+            font-size: 54px;
+            font-weight: 700;
+            color: rgba(139, 69, 19, 0.18);
+            line-height: 0.9;
+            margin-bottom: 6px;
+        }
+
+        .opt6-role-eyebrow {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--dz-gold-dark);
+            margin-bottom: 8px;
+        }
+
+        .opt6-principle-name {
+            font-family: var(--serif);
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--dz-espresso);
+            margin-bottom: 12px;
+            line-height: 1.25;
+        }
+
+        .opt6-quote-box {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 16px;
+            color: var(--dz-copper);
+            margin-bottom: 14px;
+            padding-left: 14px;
+            border-left: 3px solid var(--dz-copper);
+            line-height: 1.5;
+        }
+
+        .opt6-narrative {
+            font-size: 14.5px;
+            line-height: 1.8;
+            color: var(--dz-text-muted);
+            margin-bottom: 18px;
+        }
+
+        .opt6-pills-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .opt6-pill {
+            font-size: 12px;
+            background: var(--dz-sand);
+            border: 1px solid rgba(139, 69, 19, 0.25);
+            color: var(--dz-espresso);
+            padding: 5px 14px;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .opt1-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .opt2-accordion-wrap {
+                flex-direction: column;
+                min-height: auto;
+            }
+
+            .opt2-panel {
+                min-height: 140px;
+            }
+
+            .opt2-panel.is-active {
+                min-height: 400px;
+            }
+
+            .opt3-showcase {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .opt3-nav-list {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scroll-snap-type: x mandatory;
+                scrollbar-width: none;
+                gap: 10px;
+                padding-bottom: 8px;
+            }
+
+            .opt3-nav-list::-webkit-scrollbar {
+                display: none;
+            }
+
+            .opt3-nav-item {
+                flex: 0 0 auto;
+                min-width: 210px;
+                max-width: 250px;
+                padding: 14px 18px;
+                scroll-snap-align: start;
+            }
+
+            .opt3-nav-item.is-active {
+                transform: none;
+            }
+
+            .opt4-trinity-selector {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scroll-snap-type: x mandatory;
+                scrollbar-width: none;
+                gap: 10px;
+                padding: 4px 4px 10px 4px;
+                margin-bottom: 18px;
+            }
+
+            .opt4-trinity-selector::-webkit-scrollbar {
+                display: none;
+            }
+
+            .opt4-btn {
+                flex: 0 0 auto;
+                min-width: 210px;
+                max-width: 250px;
+                padding: 12px 16px;
+                scroll-snap-align: start;
+            }
+
+            .opt4-btn-role {
+                font-size: 9px;
+                margin-bottom: 3px;
+            }
+
+            .opt4-btn-title {
+                font-size: 15px;
+            }
+
+            .opt4-btn-icon {
+                top: 12px;
+                right: 12px;
+                width: 12px;
+                height: 12px;
+            }
+
+            .opt4-display-card {
+                grid-template-columns: 1fr;
+                padding: 22px 20px;
+                border-radius: 20px;
+                gap: 20px;
+            }
+
+            .opt4-card-img-wrap {
+                aspect-ratio: 16 / 9;
+                max-height: 200px;
+            }
+
+            .opt5-triad-grid {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scroll-snap-type: x mandatory;
+                scrollbar-width: none;
+                gap: 10px;
+                padding: 4px 4px 10px 4px;
+                margin-bottom: 18px;
+            }
+
+            .opt5-triad-grid::-webkit-scrollbar {
+                display: none;
+            }
+
+            .opt5-node-card {
+                flex: 0 0 auto;
+                min-width: 210px;
+                max-width: 250px;
+                padding: 14px 18px;
+                scroll-snap-align: start;
+            }
+
+            .opt5-node-role {
+                font-size: 9px;
+            }
+
+            .opt5-node-title {
+                font-size: 15px;
+            }
+
+            .opt5-master-stage {
+                grid-template-columns: 1fr;
+                padding: 22px 20px;
+                border-radius: 20px;
+                gap: 20px;
+            }
+
+            .opt5-stage-media {
+                aspect-ratio: 16 / 9;
+                max-height: 200px;
+            }
+
+            .opt6-story-row {
+                grid-template-columns: 1fr;
+            }
+
+            .opt6-story-row--reverse .opt6-story-media {
+                order: 1;
+            }
+
+            .opt6-story-row--reverse .opt6-story-text {
+                order: 2;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sticky Navigation to preview all 6 options -->
+    <header class="option-nav-bar">
+        <div class="logo-title">
+            <strong>D'ZEN DERMA</strong> <span>/ Philosophy Design Options</span>
+        </div>
+        <div class="nav-pills-wrap">
+            <a href="#option-1" class="nav-pill-btn active">Option 1: Editorial 3-Column</a>
+            <a href="#option-2" class="nav-pill-btn">Option 2: Cinematic Accordion</a>
+            <a href="#option-3" class="nav-pill-btn">Option 3: Showcase Dial</a>
+            <a href="#option-4" class="nav-pill-btn">Option 4: Sanctuary Split Hero</a>
+            <a href="#option-5" class="nav-pill-btn">Option 5: Sacred Trinity Matrix</a>
+            <a href="#option-6" class="nav-pill-btn">Option 6: Asymmetric Lookbook</a>
+        </div>
+    </header>
+
+    <!-- =========================================================
+         OPTION 1: THE EDITORIAL 3-COLUMN TRINITY GRID
+         ========================================================= -->
+    <div class="option-header-badge" id="option-1">
+        <span class="option-tag-pill">Option 1 · Clean Editorial Grid</span>
+        <h2 class="option-title">Editorial 3-Column Trinity Grid (Light Luxury)</h2>
+        <p class="option-desc">
+            All 3 expressions of BALANCE are visible side-by-side simultaneously on a clean linen background. Zero friction, crystal-clear typography, and interactive hover elevations.
+        </p>
+    </div>
+
+    <div class="section-wrapper">
+        <section class="opt1-section">
+            <div class="opt1-header">
+                <span class="sec-eyebrow">CORE IDEOLOGY</span>
+                <div class="nemonic-separator">
+                    <div class="nemonic-line"></div>
+                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
+                    <div class="nemonic-line"></div>
+                </div>
+                <h2 class="sec-title">The Principles of <span class="scribble">Balance</span></h2>
+                <p class="sec-desc">
+                    Balance is our working principle — an intentional harmony between clinical science, inner health, and aesthetic restraint.
+                </p>
+            </div>
+
+            <div class="opt1-grid">
+                <!-- Card 1 -->
+                <div class="opt1-card">
+                    <div class="opt1-card__img-wrap">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80&auto=format&fit=crop" alt="Science & Serenity" />
+                        <span class="opt1-card__badge">Precision &amp; Patience</span>
+                        <div class="opt1-card__num">01</div>
+                    </div>
+                    <div class="opt1-card__body">
+                        <span class="opt1-card__role">01 · HOW WE CARE</span>
+                        <h3 class="opt1-card__title">Science &amp; Serenity</h3>
+                        <div class="opt1-card__quote">
+                            "Evidence-led care, delivered without haste."
+                        </div>
+                        <p class="opt1-card__text">
+                            We believe good aesthetics needs both precision and patience — the right science, thoughtful decisions and a calm experience from consultation to treatment. Every recommendation is backed by evidence — not urgency. No scare tactics, no limited slots — just the facts, and the time to think about them.
+                        </p>
+                        <div class="opt1-card__tags">
+                            <span class="opt1-pill">✦ Evidence-Backed</span>
+                            <span class="opt1-pill">✦ Thoughtful Decisions</span>
+                            <span class="opt1-pill">✦ Unhurried Consults</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="opt1-card">
+                    <div class="opt1-card__img-wrap">
+                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop" alt="Inner & Outer" />
+                        <span class="opt1-card__badge">Holistic Vitality</span>
+                        <div class="opt1-card__num">02</div>
+                    </div>
+                    <div class="opt1-card__body">
+                        <span class="opt1-card__role">02 · HOW WE UNDERSTAND BEAUTY</span>
+                        <h3 class="opt1-card__title">Inner &amp; Outer</h3>
+                        <div class="opt1-card__quote">
+                            "Radiance follows health, not the reverse."
+                        </div>
+                        <p class="opt1-card__text">
+                            We look beyond the surface, bringing inner health and outer beauty together to create results that are not just visible, but feel right for you. Because a healthy glow that lasts starts on the inside. Treat the cause, and the result takes care of itself.
+                        </p>
+                        <div class="opt1-card__tags">
+                            <span class="opt1-pill">✦ Cellular Vitality</span>
+                            <span class="opt1-pill">✦ Root-Cause Care</span>
+                            <span class="opt1-pill">✦ Lasting Radiance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="opt1-card">
+                    <div class="opt1-card__img-wrap">
+                        <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop" alt="Enhancement & Restraint" />
+                        <span class="opt1-card__badge">Natural Identity</span>
+                        <div class="opt1-card__num">03</div>
+                    </div>
+                    <div class="opt1-card__body">
+                        <span class="opt1-card__role">03 · HOW WE TRANSFORM</span>
+                        <h3 class="opt1-card__title">Enhancement &amp; Restraint</h3>
+                        <div class="opt1-card__quote">
+                            "Enhancing you, never replacing you."
+                        </div>
+                        <p class="opt1-card__text">
+                            We'll always aim for results that look like a better version of your own face, not someone else's. We believe restraint is as much a part of aesthetic practice as capability — and we'll tell you when less is the better answer. We treat only when it's right for you.
+                        </p>
+                        <div class="opt1-card__tags">
+                            <span class="opt1-pill">✦ Natural Harmony</span>
+                            <span class="opt1-pill">✦ Clinical Restraint</span>
+                            <span class="opt1-pill">✦ Subtle Preservation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dz-cta-wrap mt-5">
+                <a href="our-philosophy.html" class="dz-cta">
+                    <span>Explore Our Full Philosophy</span>
+                    <img src="nemonic.png" class="btn-icon" alt="icon" />
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- =========================================================
+         OPTION 2: INTERACTIVE TRINITY ACCORDION
+         ========================================================= -->
+    <div class="option-header-badge" id="option-2">
+        <span class="option-tag-pill">Option 2 · High Drama &amp; Cinematic Luxury</span>
+        <h2 class="option-title">Cinematic Trinity Accordion (Dark Espresso &amp; Gold)</h2>
+        <p class="option-desc">
+            3 interactive cinematic panels that expand on click/hover. Creates deep immersion with moody lighting, expansive full-bleed imagery, and gold typography.
+        </p>
+    </div>
+
+    <div class="section-wrapper">
+        <section class="opt2-section">
+            <div class="opt2-header">
+                <span class="sec-eyebrow sec-eyebrow--dark">THE TRIANGULAR PHILOSOPHY</span>
+                <div class="nemonic-separator">
+                    <div class="nemonic-line nemonic-line--dark"></div>
+                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon nemonic-icon--dark" />
+                    <div class="nemonic-line nemonic-line--dark"></div>
+                </div>
+                <h2 class="sec-title sec-title--dark">Expressions of <span class="scribble scribble--dark">Balance</span></h2>
+                <p class="sec-desc sec-desc--dark">
+                    Hover or click each panel to explore how science, health, and restraint harmonize.
+                </p>
+            </div>
+
+            <div class="opt2-accordion-wrap">
+                <!-- Panel 1 -->
+                <div class="opt2-panel is-active" onclick="selectOpt2(this)">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1000&q=80&auto=format&fit=crop" class="opt2-panel__bg" alt="Science" />
+                    <div class="opt2-panel__overlay"></div>
+                    <div class="opt2-panel__content">
+                        <div class="opt2-panel__num">01</div>
+                        <div class="opt2-panel__role">01 · HOW WE CARE</div>
+                        <h3 class="opt2-panel__title">Science &amp; Serenity</h3>
+                        <div class="opt2-panel__full-text">
+                            <div class="opt2-panel__headline">"Evidence-led care, delivered without haste."</div>
+                            <p class="opt2-panel__desc">
+                                We believe good aesthetics needs both precision and patience — the right science, thoughtful decisions and a calm experience from consultation to treatment. Every recommendation is backed by evidence — not urgency.
+                            </p>
+                            <div class="opt2-panel__tags">
+                                <span class="opt2-tag">✦ Evidence-Backed</span>
+                                <span class="opt2-tag">✦ Unhurried Consults</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 2 -->
+                <div class="opt2-panel" onclick="selectOpt2(this)">
+                    <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=1000&auto=format&fit=crop" class="opt2-panel__bg" alt="Inner Outer" />
+                    <div class="opt2-panel__overlay"></div>
+                    <div class="opt2-panel__content">
+                        <div class="opt2-panel__num">02</div>
+                        <div class="opt2-panel__role">02 · HOW WE UNDERSTAND BEAUTY</div>
+                        <h3 class="opt2-panel__title">Inner &amp; Outer</h3>
+                        <div class="opt2-panel__full-text">
+                            <div class="opt2-panel__headline">"Radiance follows health, not the reverse."</div>
+                            <p class="opt2-panel__desc">
+                                We look beyond the surface, bringing inner health and outer beauty together to create results that are not just visible, but feel right for you. Because a healthy glow that lasts starts on the inside.
+                            </p>
+                            <div class="opt2-panel__tags">
+                                <span class="opt2-tag">✦ Root-Cause Care</span>
+                                <span class="opt2-tag">✦ Cellular Vitality</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 3 -->
+                <div class="opt2-panel" onclick="selectOpt2(this)">
+                    <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=1000&auto=format&fit=crop" class="opt2-panel__bg" alt="Restraint" />
+                    <div class="opt2-panel__overlay"></div>
+                    <div class="opt2-panel__content">
+                        <div class="opt2-panel__num">03</div>
+                        <div class="opt2-panel__role">03 · HOW WE TRANSFORM</div>
+                        <h3 class="opt2-panel__title">Enhancement &amp; Restraint</h3>
+                        <div class="opt2-panel__full-text">
+                            <div class="opt2-panel__headline">"Enhancing you, never replacing you."</div>
+                            <p class="opt2-panel__desc">
+                                We'll always aim for results that look like a better version of your own face, not someone else's. We believe restraint is as much a part of aesthetic practice as capability — telling you when less is the better answer.
+                            </p>
+                            <div class="opt2-panel__tags">
+                                <span class="opt2-tag">✦ Natural Identity</span>
+                                <span class="opt2-tag">✦ Clinical Restraint</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- =========================================================
+         OPTION 3: MAGAZINE SHOWCASE DIAL (LIGHT MASTER)
+         ========================================================= -->
+    <div class="option-header-badge" id="option-3">
+        <span class="option-tag-pill">Option 3 · Interactive Editorial Master</span>
+        <h2 class="option-title">Magazine Showcase Dial (Interactive Left List &amp; Right Stage)</h2>
+        <p class="option-desc">
+            Clean interactive list on the left with prominent role titles, driving a rich spotlight stage on the right with full narrative breakdown.
+        </p>
+    </div>
+
+    <div class="section-wrapper">
+        <section class="opt3-section">
+            <div class="opt3-header">
+                <span class="sec-eyebrow">CORE IDEOLOGY</span>
+                <div class="nemonic-separator">
+                    <div class="nemonic-line"></div>
+                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
+                    <div class="nemonic-line"></div>
+                </div>
+                <h2 class="sec-title">The Principles of <span class="scribble">Balance</span></h2>
+            </div>
+
+            <div class="opt3-showcase">
+                <!-- Left Nav List -->
+                <div class="opt3-nav-list">
+                    <div class="opt3-nav-item is-active" onclick="switchOpt3(0)">
+                        <div class="opt3-nav-role">01 · HOW WE CARE</div>
+                        <div class="opt3-nav-title">Science &amp; Serenity</div>
+                        <p class="opt3-nav-sub">Evidence-led care, delivered without haste.</p>
+                    </div>
+
+                    <div class="opt3-nav-item" onclick="switchOpt3(1)">
+                        <div class="opt3-nav-role">02 · HOW WE UNDERSTAND BEAUTY</div>
+                        <div class="opt3-nav-title">Inner &amp; Outer</div>
+                        <p class="opt3-nav-sub">Radiance follows health, not the reverse.</p>
+                    </div>
+
+                    <div class="opt3-nav-item" onclick="switchOpt3(2)">
+                        <div class="opt3-nav-role">03 · HOW WE TRANSFORM</div>
+                        <div class="opt3-nav-title">Enhancement &amp; Restraint</div>
+                        <p class="opt3-nav-sub">Enhancing you, never replacing you.</p>
+                    </div>
+                </div>
+
+                <!-- Right Stage -->
+                <div class="opt3-stage">
+                    <!-- Panel 0 -->
+                    <div class="opt3-panel is-active" id="opt3-panel-0">
+                        <div class="opt3-panel__image-box">
+                            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80&auto=format&fit=crop" alt="Science" />
+                            <span class="opt3-panel__badge">Precision &amp; Patience</span>
+                        </div>
+                        <h3 class="opt3-panel__heading">Evidence-led care, delivered without haste.</h3>
+                        <p class="opt3-panel__desc">
+                            We believe good aesthetics needs both precision and patience — the right science, thoughtful decisions and a calm experience from consultation to treatment. Every recommendation is backed by evidence — not urgency. We'll tell you exactly what's happening with your skin and why, with no pressure or scare tactics.
+                        </p>
+                        <div class="opt3-pills">
+                            <span class="opt3-pill">✦ Evidence-Backed</span>
+                            <span class="opt3-pill">✦ Thoughtful Decisions</span>
+                            <span class="opt3-pill">✦ Unhurried Consultations</span>
+                        </div>
+                    </div>
+
+                    <!-- Panel 1 -->
+                    <div class="opt3-panel" id="opt3-panel-1">
+                        <div class="opt3-panel__image-box">
+                            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop" alt="Inner Outer" />
+                            <span class="opt3-panel__badge">Holistic Vitality</span>
+                        </div>
+                        <h3 class="opt3-panel__heading">Radiance follows health, not the reverse.</h3>
+                        <p class="opt3-panel__desc">
+                            We look beyond the surface, bringing inner health and outer beauty together to create results that are not just visible, but feel right for you. Because a healthy glow that lasts starts on the inside. Treat the cause, and the result takes care of itself.
+                        </p>
+                        <div class="opt3-pills">
+                            <span class="opt3-pill">✦ Cellular Vitality</span>
+                            <span class="opt3-pill">✦ Root-Cause Care</span>
+                            <span class="opt3-pill">✦ Lasting Radiance</span>
+                        </div>
+                    </div>
+
+                    <!-- Panel 2 -->
+                    <div class="opt3-panel" id="opt3-panel-2">
+                        <div class="opt3-panel__image-box">
+                            <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop" alt="Restraint" />
+                            <span class="opt3-panel__badge">Natural Identity</span>
+                        </div>
+                        <h3 class="opt3-panel__heading">Enhancing you, never replacing you.</h3>
+                        <p class="opt3-panel__desc">
+                            We'll always aim for results that look like a better version of your own face, not someone else's. We believe restraint is as much a part of aesthetic practice as capability — and we'll tell you when less is the better answer.
+                        </p>
+                        <div class="opt3-pills">
+                            <span class="opt3-pill">✦ Natural Harmony</span>
+                            <span class="opt3-pill">✦ Clinical Restraint</span>
+                            <span class="opt3-pill">✦ Identity Preservation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- =========================================================
+         OPTION 4: MODERN SANCTUARY SPLIT HERO
+         ========================================================= -->
+    <div class="option-header-badge" id="option-4">
+        <span class="option-tag-pill">Option 4 · Rich Sanctuary Floating Card</span>
+        <h2 class="option-title">Sanctuary Split Hero (Floating Cream Suite on Dark Velvet)</h2>
+        <p class="option-desc">
+            A refined dark backdrop with frosted selector tabs driving a large floating cream card with generous whitespace and clear typography.
+        </p>
+    </div>
+
+    <div class="section-wrapper">
+        <section class="opt4-section">
+            <div class="opt4-header">
+                <span class="sec-eyebrow sec-eyebrow--dark">CORE IDEOLOGY</span>
+                <div class="nemonic-separator">
+                    <div class="nemonic-line nemonic-line--dark"></div>
+                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon nemonic-icon--dark" />
+                    <div class="nemonic-line nemonic-line--dark"></div>
+                </div>
+                <h2 class="sec-title sec-title--dark">The Principles of <span class="scribble scribble--dark">Balance</span></h2>
+            </div>
+
+            <!-- Trinity Selector -->
+            <div class="opt4-trinity-selector">
+                <button class="opt4-btn is-active" onclick="switchOpt4(0, this)">
+                    <img src="nemonic.png" alt="" class="opt4-btn-icon" />
+                    <span class="opt4-btn-role">01 · HOW WE CARE</span>
+                    <span class="opt4-btn-title">Science &amp; Serenity</span>
+                </button>
+                <button class="opt4-btn" onclick="switchOpt4(1, this)">
+                    <img src="nemonic.png" alt="" class="opt4-btn-icon" />
+                    <span class="opt4-btn-role">02 · HOW WE UNDERSTAND BEAUTY</span>
+                    <span class="opt4-btn-title">Inner &amp; Outer</span>
+                </button>
+                <button class="opt4-btn" onclick="switchOpt4(2, this)">
+                    <img src="nemonic.png" alt="" class="opt4-btn-icon" />
+                    <span class="opt4-btn-role">03 · HOW WE TRANSFORM</span>
+                    <span class="opt4-btn-title">Enhancement &amp; Restraint</span>
+                </button>
+            </div>
+
+            <!-- Display Card -->
+            <div class="opt4-display-card" id="opt4-card">
+                <div class="opt4-card-left">
+                    <span class="opt4-card-tag" id="opt4-tag">01 · HOW WE CARE</span>
+                    <h3 class="opt4-card-heading" id="opt4-heading">Evidence-led care, delivered without haste.</h3>
+                    <p class="opt4-card-desc" id="opt4-desc">
+                        We believe good aesthetics needs both precision and patience — the right science, thoughtful decisions and a calm experience from consultation to treatment. Every recommendation is backed by evidence — not urgency.
+                    </p>
+                    <p class="opt4-card-sub" id="opt4-sub">
+                        We'll tell you exactly what's happening with your skin and why, but we'll never make you feel like you need to decide today. No pressure, no scare tactics, no "limited slots." Just the facts, and the time to think about them.
+                    </p>
+                </div>
+                <div class="opt4-card-img-wrap">
+                    <img id="opt4-img" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80&auto=format&fit=crop" alt="Principle Image" />
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- =========================================================
+         OPTION 5: THE SACRED TRINITY MATRIX
+         ========================================================= -->
+    <div class="option-header-badge" id="option-5">
+        <span class="option-tag-pill">Option 5 · High-Concept Trinity Geometry</span>
+        <h2 class="option-title">The Sacred Trinity Matrix (Interactive Nodes on Dark Velvet)</h2>
+        <p class="option-desc">
+            Directly expresses the 3 apex points of BALANCE (Care, Beauty, Transformation) with luminous gold node cards that spotlight a master cream luxury suite below.
+        </p>
+    </div>
+
+    <div class="section-wrapper">
+        <section class="opt5-section">
+            <div class="opt5-header">
+                <span class="sec-eyebrow sec-eyebrow--dark">THE TRIANGULAR PHILOSOPHY</span>
+                <div class="nemonic-separator">
+                    <div class="nemonic-line nemonic-line--dark"></div>
+                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon nemonic-icon--dark" />
+                    <div class="nemonic-line nemonic-line--dark"></div>
+                </div>
+                <h2 class="sec-title sec-title--dark">Expressions of <span class="scribble scribble--dark">Balance</span></h2>
+                <p class="sec-desc sec-desc--dark">
+                    Select any pillar to reveal how evidence, vitality, and natural preservation intersect.
+                </p>
+            </div>
+
+            <!-- Top 3 Nodes -->
+            <div class="opt5-triad-grid">
+                <div class="opt5-node-card is-active" onclick="switchOpt5(0, this)">
+                    <div class="opt5-node-top">
+                        <span class="opt5-node-role">01 · HOW WE CARE</span>
+                        <span class="opt5-node-icon">✦</span>
+                    </div>
+                    <h3 class="opt5-node-title">Science &amp; Serenity</h3>
+                </div>
+
+                <div class="opt5-node-card" onclick="switchOpt5(1, this)">
+                    <div class="opt5-node-top">
+                        <span class="opt5-node-role">02 · HOW WE UNDERSTAND BEAUTY</span>
+                        <span class="opt5-node-icon">✦</span>
+                    </div>
+                    <h3 class="opt5-node-title">Inner &amp; Outer</h3>
+                </div>
+
+                <div class="opt5-node-card" onclick="switchOpt5(2, this)">
+                    <div class="opt5-node-top">
+                        <span class="opt5-node-role">03 · HOW WE TRANSFORM</span>
+                        <span class="opt5-node-icon">✦</span>
+                    </div>
+                    <h3 class="opt5-node-title">Enhancement &amp; Restraint</h3>
+                </div>
+            </div>
+
+            <!-- Master Stage -->
+            <div class="opt5-master-stage">
+                <div class="opt5-stage-media">
+                    <img id="opt5-img" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80&auto=format&fit=crop" alt="Pillar Detail" />
+                    <span class="opt5-stage-badge" id="opt5-badge">Precision &amp; Patience</span>
+                </div>
+                <div class="opt5-stage-content">
+                    <span class="opt5-stage-tag" id="opt5-tag">01 · HOW WE CARE</span>
+                    <h3 class="opt5-stage-quote" id="opt5-heading">Evidence-led care, delivered without haste.</h3>
+                    <p class="opt5-stage-text" id="opt5-text">
+                        We believe good aesthetics needs both precision and patience — the right science, thoughtful decisions and a calm experience from consultation to treatment. Every recommendation is backed by evidence — not urgency.
+                    </p>
+                    <p class="opt5-stage-subtext" id="opt5-subtext">
+                        We'll tell you exactly what's happening with your skin and why, but we'll never make you feel like you need to decide today. No pressure, no scare tactics, no "limited slots." Just the facts, and the time to think about them.
+                    </p>
+                    <div class="opt3-pills" id="opt5-pills">
+                        <span class="opt3-pill">✦ Evidence-Backed</span>
+                        <span class="opt3-pill">✦ Thoughtful Decisions</span>
+                        <span class="opt3-pill">✦ Unhurried Consults</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- =========================================================
+         OPTION 6: HAUTE EDITORIAL LOOKBOOK
+         ========================================================= -->
+    <div class="option-header-badge" id="option-6">
+        <span class="option-tag-pill">Option 6 · Asymmetric Brand Storyboard</span>
+        <h2 class="option-title">Haute Editorial Lookbook (Alternating Architectural Flow)</h2>
+        <p class="option-desc">
+            Vogue &amp; Architectural Digest style layout with staggered visual frames, large serif watermark numerals, and spacious editorial prose.
+        </p>
+    </div>
+
+    <div class="section-wrapper">
+        <section class="opt6-section">
+            <div class="opt6-header">
+                <span class="sec-eyebrow">CORE IDEOLOGY</span>
+                <div class="nemonic-separator">
+                    <div class="nemonic-line"></div>
+                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
+                    <div class="nemonic-line"></div>
+                </div>
+                <h2 class="sec-title">The Principles of <span class="scribble">Balance</span></h2>
+                <p class="sec-desc">
+                    Balance is our working principle — an intentional harmony between clinical science, inner health, and aesthetic restraint.
+                </p>
+            </div>
+
+            <div class="opt6-storyboard-stack">
+                <!-- Storyboard 1: Science & Serenity -->
+                <div class="opt6-story-row">
+                    <div class="opt6-story-media">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80&auto=format&fit=crop" alt="Science & Serenity" />
+                    </div>
+                    <div class="opt6-story-text">
+                        <div class="opt6-num-stamp">01</div>
+                        <span class="opt6-role-eyebrow">HOW WE CARE</span>
+                        <h3 class="opt6-principle-name">Science &amp; Serenity</h3>
+                        <div class="opt6-quote-box">
+                            "Evidence-led care, delivered without haste."
+                        </div>
+                        <p class="opt6-narrative">
+                            We believe good aesthetics needs both precision and patience — the right science, thoughtful decisions and a calm experience from consultation to treatment. Every recommendation is backed by evidence — not urgency. No pressure, no scare tactics, no "limited slots." Just the facts, and the time to think about them.
+                        </p>
+                        <div class="opt6-pills-row">
+                            <span class="opt6-pill">✦ Precision &amp; Patience</span>
+                            <span class="opt6-pill">✦ Evidence-Backed</span>
+                            <span class="opt6-pill">✦ Unhurried Decisions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Storyboard 2: Inner & Outer -->
+                <div class="opt6-story-row opt6-story-row--reverse">
+                    <div class="opt6-story-media">
+                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop" alt="Inner & Outer Beauty" />
+                    </div>
+                    <div class="opt6-story-text">
+                        <div class="opt6-num-stamp">02</div>
+                        <span class="opt6-role-eyebrow">HOW WE UNDERSTAND BEAUTY</span>
+                        <h3 class="opt6-principle-name">Inner &amp; Outer</h3>
+                        <div class="opt6-quote-box">
+                            "Radiance follows health, not the reverse."
+                        </div>
+                        <p class="opt6-narrative">
+                            We look beyond the surface, bringing inner health and outer beauty together to create results that are not just visible, but feel right for you. Because a healthy glow that lasts starts on the inside. When you treat the biological root cause, the lasting aesthetic result takes care of itself.
+                        </p>
+                        <div class="opt6-pills-row">
+                            <span class="opt6-pill">✦ Cellular Vitality</span>
+                            <span class="opt6-pill">✦ Root-Cause Care</span>
+                            <span class="opt6-pill">✦ Lasting Radiance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Storyboard 3: Enhancement & Restraint -->
+                <div class="opt6-story-row">
+                    <div class="opt6-story-media">
+                        <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop" alt="Enhancement & Restraint" />
+                    </div>
+                    <div class="opt6-story-text">
+                        <div class="opt6-num-stamp">03</div>
+                        <span class="opt6-role-eyebrow">HOW WE APPROACH TRANSFORMATION</span>
+                        <h3 class="opt6-principle-name">Enhancement &amp; Restraint</h3>
+                        <div class="opt6-quote-box">
+                            "Enhancing you, never replacing you."
+                        </div>
+                        <p class="opt6-narrative">
+                            We'll always aim for results that look like a better version of your own face, not someone else's. We believe restraint is as much a part of aesthetic practice as capability — and we'll tell you when less is the better answer. We treat only when it's right for you — never to fill a slot.
+                        </p>
+                        <div class="opt6-pills-row">
+                            <span class="opt6-pill">✦ Natural Harmony</span>
+                            <span class="opt6-pill">✦ Clinical Restraint</span>
+                            <span class="opt6-pill">✦ Identity Preservation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dz-cta-wrap mt-5">
+                <a href="our-philosophy.html" class="dz-cta">
+                    <span>Discover Our Philosophy</span>
+                    <img src="nemonic.png" class="btn-icon" alt="icon" />
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts for interactive options -->
+    <script>
+        // Option 2 Accordion handler
+        function selectOpt2(el) {
+            document.querySelectorAll('.opt2-panel').forEach(p => p.classList.remove('is-active'));
+            el.classList.add('is-active');
+        }
+
+        // Option 3 Dial handler
+        function switchOpt3(idx) {
+            const items = document.querySelectorAll('.opt3-nav-item');
+            const panels = document.querySelectorAll('.opt3-panel');
+            items.forEach((item, i) => {
+                if (i === idx) item.classList.add('is-active');
+                else item.classList.remove('is-active');
+            });
+            panels.forEach((panel, i) => {
+                if (i === idx) panel.classList.add('is-active');
+                else panel.classList.remove('is-active');
+            });
+        }
+
+        // Option 4 Split handler
+        const opt4Data = [
+            {
+                tag: '01 · HOW WE CARE',
+                heading: 'Evidence-led care, delivered without haste.',
+                desc: 'We believe good aesthetics needs both precision and patience — the right science, thoughtful decisions and a calm experience from consultation to treatment. Every recommendation is backed by evidence — not urgency.',
+                sub: 'We\'ll tell you exactly what\'s happening with your skin and why, but we\'ll never make you feel like you need to decide today. No pressure, no scare tactics, no "limited slots." Just the facts, and the time to think about them.',
+                img: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80&auto=format&fit=crop'
+            },
+            {
+                tag: '02 · HOW WE UNDERSTAND BEAUTY',
+                heading: 'Radiance follows health, not the reverse.',
+                desc: 'We look beyond the surface, bringing inner health and outer beauty together to create results that are not just visible, but feel right for you. Because a healthy glow that lasts starts on the inside.',
+                sub: 'When you treat the root cause at the cellular and physiological level, the visible transformation takes care of itself naturally and sustainably.',
+                img: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop'
+            },
+            {
+                tag: '03 · HOW WE TRANSFORM',
+                heading: 'Enhancing you, never replacing you.',
+                desc: 'We\'ll always aim for results that look like a better version of your own face, not someone else\'s. We believe restraint is as much a part of aesthetic practice as capability — and we\'ll tell you when less is the better answer.',
+                sub: 'We treat only when it\'s right for you — not to fill a slot. Intentional preservation of your natural facial expressions and individual character.',
+                img: 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop'
+            }
+        ];
+
+        function switchOpt4(idx, btn) {
+            document.querySelectorAll('.opt4-btn').forEach(b => b.classList.remove('is-active'));
+            btn.classList.add('is-active');
+            const data = opt4Data[idx];
+            document.getElementById('opt4-tag').textContent = data.tag;
+            document.getElementById('opt4-heading').textContent = data.heading;
+            document.getElementById('opt4-desc').textContent = data.desc;
+            document.getElementById('opt4-sub').textContent = data.sub;
+            document.getElementById('opt4-img').src = data.img;
+        }
+
+        // Option 5 Triad handler
+        const opt5Data = [
+            {
+                tag: '01 · HOW WE CARE',
+                badge: 'Precision & Patience',
+                heading: 'Evidence-led care, delivered without haste.',
+                text: 'We believe good aesthetics needs both precision and patience — the right science, thoughtful decisions and a calm experience from consultation to treatment. Every recommendation is backed by evidence — not urgency.',
+                subtext: 'We\'ll tell you exactly what\'s happening with your skin and why, but we\'ll never make you feel like you need to decide today. No pressure, no scare tactics, no "limited slots." Just the facts, and the time to think about them.',
+                img: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80&auto=format&fit=crop',
+                pills: ['✦ Evidence-Backed', '✦ Thoughtful Decisions', '✦ Unhurried Consults']
+            },
+            {
+                tag: '02 · HOW WE UNDERSTAND BEAUTY',
+                badge: 'Holistic Vitality',
+                heading: 'Radiance follows health, not the reverse.',
+                text: 'We look beyond the surface, bringing inner health and outer beauty together to create results that are not just visible, but feel right for you. Because a healthy glow that lasts starts on the inside.',
+                subtext: 'When you treat the root cause at the cellular and physiological level, the visible aesthetic result takes care of itself naturally and sustainably.',
+                img: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop',
+                pills: ['✦ Cellular Vitality', '✦ Root-Cause Care', '✦ Lasting Radiance']
+            },
+            {
+                tag: '03 · HOW WE APPROACH TRANSFORMATION',
+                badge: 'Natural Identity',
+                heading: 'Enhancing you, never replacing you.',
+                text: 'We\'ll always aim for results that look like a better version of your own face, not someone else\'s. We believe restraint is as much a part of aesthetic practice as capability — and we\'ll tell you when less is the better answer.',
+                subtext: 'We treat only when it\'s genuinely right for you — not to fill a slot. Intentional preservation of your natural facial expressions and individual character.',
+                img: 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop',
+                pills: ['✦ Natural Harmony', '✦ Clinical Restraint', '✦ Identity Preservation']
+            }
+        ];
+
+        function switchOpt5(idx, card) {
+            document.querySelectorAll('.opt5-node-card').forEach(c => c.classList.remove('is-active'));
+            card.classList.add('is-active');
+            const data = opt5Data[idx];
+            document.getElementById('opt5-tag').textContent = data.tag;
+            document.getElementById('opt5-badge').textContent = data.badge;
+            document.getElementById('opt5-heading').textContent = data.heading;
+            document.getElementById('opt5-text').textContent = data.text;
+            document.getElementById('opt5-subtext').textContent = data.subtext;
+            document.getElementById('opt5-img').src = data.img;
+            
+            const pillsContainer = document.getElementById('opt5-pills');
+            pillsContainer.innerHTML = '';
+            data.pills.forEach(p => {
+                const span = document.createElement('span');
+                span.className = 'opt3-pill';
+                span.textContent = p;
+                pillsContainer.appendChild(span);
+            });
+        }
+
+        // Active nav state on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.option-header-badge');
+            const navLinks = document.querySelectorAll('.nav-pill-btn');
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
