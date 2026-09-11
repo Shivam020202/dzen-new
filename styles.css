@@ -4034,7 +4034,7 @@ h3,
    ========================================================= */
 .headlines-section {
   padding: 100px 0 120px;
-  background: var(--cream);
+  background: linear-gradient(to top, #F4EFE8, #FDF8F3);
   position: relative;
 }
 
@@ -5481,7 +5481,7 @@ h3,
 
 .headlines-section {
   padding: 40px 0 56px;
-  background: #faf6f1;
+  background: linear-gradient(to top, #F4EFE8, #FDF8F3);
 }
 
 /* ── Section Header ── */
@@ -9084,7 +9084,7 @@ a.contact-value:hover {
 .concerns-tabs-wrapper {
   display: flex;
   justify-content: center;
-  margin-bottom: 70px;
+  margin-bottom: 30px;
   width: 100%;
 }
 

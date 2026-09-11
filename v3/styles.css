@@ -477,6 +477,7 @@ body {
 }
 
 @media (min-width: 768px) {
+
     .hero.hero-boxed,
     .hero {
         margin: 0 !important;
@@ -860,7 +861,7 @@ body {
 .philosophy-strip-container {
     position: relative;
     width: 100%;
-    padding: clamp(50px, 5vw, 80px) 0;
+    padding: clamp(36px, 4vw, 54px) 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -921,8 +922,8 @@ body {
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 1100px;
-    padding: 0 20px;
+    max-width: 1280px;
+    padding: 0 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1186,9 +1187,8 @@ body {
    ========================================================= */
 .doctors-v2 {
     position: relative;
-    padding: clamp(50px, 5vw, 80px) 0;
+    padding: clamp(24px, 3vw, 40px) 0 clamp(10px, 1.5vw, 20px) 0;
     background: #FDF8F3 !important;
-
 }
 
 /* .doctors-v2::before {
@@ -1201,7 +1201,7 @@ body {
 } */
 
 .doctors-v2__container {
-    max-width: 1220px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 0 24px;
     position: relative;
@@ -1210,7 +1210,7 @@ body {
 
 .doctors-v2__head {
     text-align: center;
-    margin-bottom: clamp(48px, 5vw, 72px);
+    margin-bottom: clamp(24px, 2.5vw, 36px);
 }
 
 .doctors-v2__eyebrow {
@@ -1592,21 +1592,27 @@ body {
     position: relative;
     display: block;
     width: 100%;
-    height: 40px;
+    height: 32px;
 }
 
 @media (min-width: 768px) {
     .section-separator svg {
-        height: 80px;
+        height: 48px;
     }
 }
 
 .service-arch-section {
     position: relative;
-
-    padding: clamp(50px, 5vw, 80px) 0;
+    padding: clamp(32px, 3.5vw, 50px) 0;
     background: #ffffff;
     color: #2B1A12;
+}
+
+.service-arch-section .container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
 .service-arch-section::before {
@@ -1658,7 +1664,7 @@ body {
     gap: 2.5rem;
     overflow-x: auto;
     overflow-y: visible;
-    padding: 0.5rem 2rem 2rem;
+    padding: 0.5rem 0 2rem;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
 }
@@ -1798,8 +1804,8 @@ body {
    ========================================================= */
 .partners-section {
     position: relative;
-    padding: clamp(50px, 5vw, 80px) 0 clamp(40px, 4vw, 65px);
-    background-color: #FDF8F3;
+    padding: clamp(35px, 4vw, 60px) 0 clamp(25px, 3vw, 45px);
+    background-color: transparent;
     overflow: hidden;
     z-index: 5;
 }
@@ -1812,9 +1818,9 @@ body {
 .partners-marquee-container {
     position: relative;
     width: 100%;
-    margin-top: clamp(2rem, 3.5vw, 3.25rem);
+    margin-top: clamp(1.5rem, 2.5vw, 2.25rem);
     overflow: hidden;
-    padding: 12px 0;
+    padding: 10px 0;
 }
 
 /* Elegant left & right gradient fade masks */
@@ -1822,7 +1828,7 @@ body {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: clamp(60px, 14vw, 200px);
+    width: clamp(60px, 12vw, 180px);
     z-index: 10;
     pointer-events: none;
 }
@@ -1849,11 +1855,11 @@ body {
 .partners-marquee__track {
     display: inline-flex;
     align-items: center;
-    gap: clamp(3rem, 5vw, 5.5rem);
+    gap: clamp(2.5rem, 4.5vw, 5rem);
     width: max-content;
-    animation: partnersScrollRightToLeft 38s linear infinite;
+    animation: partnersScrollRightToLeft 35s linear infinite;
     will-change: transform;
-    padding: 10px 0;
+    padding: 6px 0;
 }
 
 /* Smooth pause on hover and focus */
@@ -1866,53 +1872,55 @@ body {
     0% {
         transform: translate3d(0, 0, 0);
     }
+
     100% {
         transform: translate3d(-50%, 0, 0);
     }
 }
 
-/* Pure Logo Item */
+/* Logo Items */
 .partner-logo-item {
     flex: 0 0 auto;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 52px;
-    padding: 0 8px;
-    opacity: 0.85;
-    transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    height: 54px;
+    padding: 0 14px;
+    opacity: 1;
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     cursor: default;
 }
 
 .partner-logo-img {
-    height: 40px;
+    height: 44px;
     width: auto;
-    max-height: 46px;
+    max-height: 48px;
     max-width: 220px;
     object-fit: contain;
     display: block;
-    filter: grayscale(100%) opacity(0.65);
-    transition: filter 0.35s ease, opacity 0.35s ease, transform 0.35s ease;
+    filter: none;
+    opacity: 1;
+    mix-blend-mode: multiply;
+    transition: transform 0.35s ease;
 }
 
 .partner-logo-item:hover .partner-logo-img {
-    filter: grayscale(0%) opacity(1);
     transform: scale(1.08);
 }
 
 @media (max-width: 768px) {
     .partners-section {
-        padding: 40px 0 30px;
+        padding: 30px 0 20px;
     }
 
     .partner-logo-item {
-        height: 40px;
-        padding: 0 4px;
+        height: 42px;
+        padding: 0 8px;
     }
 
     .partner-logo-img {
-        height: 30px;
-        max-height: 34px;
+        height: 32px;
+        max-height: 36px;
         max-width: 160px;
     }
 
@@ -3058,7 +3066,7 @@ body {
 }
 
 .headlines-section {
-    background: #FAF9F6 !important;
+    background: linear-gradient(to top, #F4EFE8, #FDF8F3);
     padding: clamp(50px, 5vw, 80px) 0;
 }
 
@@ -3301,27 +3309,17 @@ body {
     position: absolute;
     inset: 0;
     width: 100%;
-    height: auto;
-    /* Clips the image to this section. Without it the image spills past the
-       zone and paints over the sections above and below — and UNMUTED, since
-       .sig-services-overlay only covers inset:0 of this box. */
+    height: 100%;
     overflow: hidden;
     z-index: 0;
+    background-image: url("../images/signature-bg1.jpg");
+    background-repeat: repeat;
+    background-size: auto;
+    background-position: top left;
 }
 
 .sig-services-bg img {
-    position: absolute;
-    /* Was min-width/min-height:100% with width/height:auto and a centring
-       translate. That renders the image at its INTRINSIC size — object-fit is
-       ignored unless width and height are both resolved — so any image larger
-       than the viewport overflowed in both axes. Explicit 100%/100% lets
-       object-fit: cover actually do the fitting. */
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Light-enough for dark text */
-    filter: brightness(1.05) saturate(0.75);
+    display: none;
 }
 
 /* =========================================================
@@ -3968,6 +3966,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .sig-panel,
     .sig-oval-frame,
     .sig-scroll-dot {
@@ -4784,14 +4783,9 @@ a.footer-contact-value:hover {
 
 .dz-cta-wrap {
     text-align: center;
-    margin-top: 2.5rem;
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ 
-   UNIFIED HEADING THEME
-   Every section heading shares one look: the highlighted keyword is
-   italic and coffee brown (no beige, no gold, no gradient).
-   ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢Ãƒâ€šÃ‚Â */
+
 .about-v2__title em,
 .about-v2__title .scribble,
 .doctors-v2__title em,
@@ -5508,190 +5502,121 @@ html body .embossed-tagline {
 .trainer-v3-section {
     position: relative;
     background: linear-gradient(to top, #F4EFE8, #FDF8F3);
-    padding: 80px 0 0 0;
-    /* Padding top, 0 bottom because of wavy svg */
+    padding: clamp(50px, 5vw, 80px) 0 clamp(60px, 6vw, 90px);
     overflow: hidden;
-
 }
 
 .trainer-v3-container {
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 0 24px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(32px, 4vw, 64px);
     align-items: center;
     position: relative;
     z-index: 2;
 }
 
 .trainer-v3-content {
-    flex: 1 1 100%;
-}
-
-.trainer-v3-image-col {
-    flex: 1 1 50%;
-    position: relative;
-    align-self: flex-end;
-    /* Align image to the bottom */
-}
-
-.trainer-v3-eyebrow-wrap {
     display: flex;
-    align-items: center;
-    gap: 16px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.trainer-v3-content .section-header {
     margin-bottom: 24px;
-}
-
-.trainer-v3-eyebrow {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: #8C5E3C;
-}
-
-.trainer-v3-line {
-    height: 1px;
-    background-color: #D2B48C;
-    flex: 0 0 40px;
-}
-
-.trainer-v3-title {
-    font-family: var(--serif, "Playfair Display", Georgia, serif);
-    font-size: clamp(25px, 4vw, 48px);
-    font-weight: 400;
-    font-style: italic;
-    color: #4B2B20;
-    line-height: 1.1;
-}
-
-.trainer-v3-separator {
-    width: 32px;
-    height: 2px;
-    background-color: #D2B48C;
-    margin-bottom: 32px;
-}
-
-.trainer-v3-desc {
-    font-family: var(--sans, 'Inter', system-ui, sans-serif);
-    font-size: 15px;
-    line-height: 1.7;
-    color: #5A4A42;
-    margin-bottom: 40px;
-    max-width: 500px;
 }
 
 .trainer-v3-quote {
     border-left: 2px solid #8C5E3C;
     padding-left: 20px;
-    margin-bottom: 48px;
+    margin-bottom: 24px;
     position: relative;
 }
 
 .trainer-v3-quote-mark {
-    position: absolute;
-    top: -10px;
-    left: -15px;
     font-family: var(--serif, "Playfair Display", Georgia, serif);
-    font-size: 40px;
+    font-size: 36px;
     color: #C04A3B;
-    /* Reddish quote mark */
     line-height: 1;
+    display: block;
+    margin-bottom: -6px;
 }
 
 .trainer-v3-quote-text {
     font-family: var(--serif, "Playfair Display", Georgia, serif);
-    font-size: 17px;
+    font-size: 16px;
     font-style: italic;
     color: #4B2B20;
     line-height: 1.6;
-    margin-top: 10px;
 }
 
-.trainer-v3-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #5A3521;
-    color: #fff;
-    padding: 14px 28px;
-    border-radius: 999px;
-    font-family: var(--sans, 'Inter', system-ui, sans-serif);
-    font-size: 13px;
-    font-weight: 600;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    transition: background-color 0.3s ease;
-}
-
-.trainer-v3-btn:hover {
-    background-color: #412415;
-    color: #fff;
-}
-
-.trainer-v3-btn svg {
-    width: 16px;
-    height: 16px;
-}
-
-.trainer-v3-image-col img {
+.trainer-v3-collage-wrap {
     width: 100%;
-    max-width: 600px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    transform: scale(1.05);
-    transform-origin: bottom center;
-    border-radius: 2rem 2rem 0 0;
 }
 
-@media (max-width: 991px) {
-    .trainer-v3-image-col img {
-        transform: scale(1);
-    }
-}
-
-@media (max-width: 991px) {
-
-    .trainer-v3-content,
-    .trainer-v3-image-col {
-        flex: 1 1 100%;
-    }
-
-    .trainer-v3-content {
-        padding-right: 0;
-        margin-bottom: 40px;
-    }
-}
-
-/* Training Section Collage Grid */
 .trainer-v3-collage {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-    margin-top: 48px;
+    margin-top: 0;
     padding-bottom: 24px;
-    /* Space for the staggered translation */
 }
 
 .trainer-v3-collage img {
     width: 100%;
-    height: 160px;
+    height: 180px;
     object-fit: cover;
     border-radius: 16px;
     box-shadow: 0 8px 30px rgba(75, 43, 32, 0.08);
+    transition: transform 0.35s ease;
+}
+
+.trainer-v3-collage img:hover {
+    transform: scale(1.03);
 }
 
 .trainer-v3-collage img:nth-child(even) {
-    transform: translateY(24px);
+    transform: translateY(22px);
 }
 
-@media (max-width: 576px) {
+.trainer-v3-collage img:nth-child(even):hover {
+    transform: translateY(22px) scale(1.03);
+}
+
+@media (max-width: 991.98px) {
+    .trainer-v3-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .trainer-v3-content .section-header,
+    .trainer-v3-content .trainer-v3-quote,
+    .trainer-v3-content .dz-cta-wrap {
+        text-align: center !important;
+        justify-content: center !important;
+    }
+
+    .trainer-v3-content .section-header .nemonic-separator {
+        justify-content: center !important;
+    }
+
+    .trainer-v3-content .trainer-v3-quote {
+        border-left: none !important;
+        padding-left: 0 !important;
+        margin: 0 auto 24px !important;
+        max-width: 600px;
+    }
+
+    .trainer-v3-collage img {
+        height: 140px;
+    }
+}
+
+@media (max-width: 575.98px) {
     .trainer-v3-collage {
         gap: 12px;
-        margin-top: 32px;
     }
 
     .trainer-v3-collage img {
@@ -5700,7 +5625,7 @@ html body .embossed-tagline {
     }
 
     .trainer-v3-collage img:nth-child(even) {
-        transform: translateY(16px);
+        transform: translateY(14px);
     }
 }
 
@@ -5728,9 +5653,10 @@ html body .embossed-tagline {
    toggles .active across every .founder-card on the page, so
    these would end up driven by the first section's tabs.
    ========================================================= */
-/* ============= TM TAB PILLS (Matching Upper Section) ============= */
+/* ============= TM TAB PILLS (Mobile / Tablet Only) ============= */
 .tm-tabs {
-    display: flex;
+    display: none;
+    /* Hidden on laptop / desktop */
     justify-content: center;
     margin-bottom: clamp(32px, 4vw, 48px);
 }
@@ -5802,21 +5728,26 @@ html body .embossed-tagline {
     letter-spacing: 0.02em;
 }
 
+/* ============= TM SLIDER / CARDS ============= */
 .tm-slider {
     position: relative;
-    max-width: 1040px;
-    margin: 0 auto clamp(48px, 6vw, 88px);
+    max-width: 1240px;
+    margin: 0 auto clamp(20px, 2.5vw, 36px);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(24px, 3.5vw, 44px);
 }
 
 .tm-card {
-    display: none;
+    display: block;
+    /* Both cards visible on desktop */
     position: relative;
     /* Descendants size themselves in cqw = % of this card's width */
     container-type: inline-size;
     /* The reference panel's own proportion, so the composition holds at
        any width instead of squashing */
     aspect-ratio: 644 / 612;
-    padding: 5.5% 4%;
+    padding: 6% 4.5%;
     /* Brown base with a gold glow burning out of the TOP-RIGHT corner.
        A single linear sweep spreads gold along the whole diagonal instead
        of pooling it in the corner. */
@@ -5827,28 +5758,12 @@ html body .embossed-tagline {
     isolation: isolate;
 }
 
-.tm-card.active {
-    display: block;
-    animation: tmCardFade 0.35s ease forwards;
-}
-
-@keyframes tmCardFade {
-    from {
-        opacity: 0;
-        transform: translateY(6px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* ── Copy: top-left, stopping clear of the portrait ── */
 .tm-card__content {
     position: relative;
     z-index: 2;
     /* The oval's left edge is at 57% in the reference */
-    max-width: 54%;
+    max-width: 55%;
 }
 
 .tm-card__meta {
@@ -5870,33 +5785,33 @@ html body .embossed-tagline {
 
 html body .tm-card__name {
     font-family: var(--serif, "Playfair Display", Georgia, serif);
-    font-size: clamp(18px, 7.4cqw, 48px) !important;
+    font-size: clamp(18px, 6.8cqw, 44px) !important;
     font-weight: 400;
     line-height: 1.12;
     letter-spacing: -0.01em;
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
     font-style: normal !important;
-    margin: 0 0 3cqw;
+    margin: 0 0 2.5cqw;
 }
 
 /* html body p forces 14px Inter #5C3A2E with !important further down this
    file — unreadable on the dark panel — so these must outrank it. */
 html body .tm-card__role {
     font-family: var(--sans, "Inter", system-ui, sans-serif) !important;
-    font-size: clamp(11px, 2.6cqw, 17px) !important;
+    font-size: clamp(10px, 2.5cqw, 16px) !important;
     font-weight: 300;
     line-height: 1.4;
     letter-spacing: 0;
     text-transform: none;
     color: rgba(255, 255, 255, .88) !important;
-    margin: 0 0 3.4cqw;
+    margin: 0 0 3cqw;
 }
 
 html body .tm-card__quote {
     font-family: var(--sans, "Inter", system-ui, sans-serif) !important;
     font-style: normal;
-    font-size: clamp(10px, 2.4cqw, 16px) !important;
+    font-size: clamp(9px, 2.2cqw, 15px) !important;
     font-weight: 300;
     line-height: 1.45;
     color: rgba(255, 255, 255, .88) !important;
@@ -5908,9 +5823,9 @@ html body .tm-card__quote {
 /* ── Portrait: absolute, so its position is exactly these three numbers ── */
 .tm-card__imagewrap {
     position: absolute;
-    right: 6%;
+    right: 5%;
     /* Negative bottom = hangs below the panel. No padding to fight. */
-    bottom: -8%;
+    bottom: -7%;
     height: 72%;
     aspect-ratio: 0.64;
     z-index: 2;
@@ -5932,26 +5847,234 @@ html body .tm-card__quote {
     background: #EFE4D6;
 }
 
+@keyframes tmCardFade {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============= RESPONSIVE: Tablet & Mobile (< 992px) ============= */
+@media (max-width: 991.98px) {
+    .tm-tabs {
+        display: flex;
+        /* Show tabs on mobile/tablet */
+    }
+
+    .tm-slider {
+        display: block;
+        max-width: 580px;
+        margin-bottom: clamp(36px, 5vw, 64px);
+    }
+
+    .tm-card {
+        display: none !important;
+    }
+
+    .tm-card.active {
+        display: block !important;
+        animation: tmCardFade 0.35s ease forwards;
+    }
+}
+
 @media (max-width: 575.98px) {
     .tm-slider {
+        max-width: 100%;
         margin-bottom: 52px;
     }
+
     .tm-card {
         aspect-ratio: 644 / 580;
         padding: 6% 4%;
     }
+
     .tm-tab {
         padding: 6px 14px 6px 6px;
         gap: 8px;
     }
+
     .tm-tab__img {
         width: 36px;
         height: 36px;
     }
+
     .tm-tab__name {
         font-size: 13px;
     }
+
     .tm-tab__role {
         font-size: 10px;
+    }
+}
+
+/* =========================================================
+   OUR CLINICS (LOCATIONS) SECTION STYLES
+   ========================================================= */
+.clinic-locations-section {
+    position: relative;
+    padding: clamp(60px, 7vw, 100px) 0 clamp(40px, 5vw, 70px);
+    background-color: #FDF8F3;
+    z-index: 5;
+}
+
+.clinic-loc-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    border: 1px solid rgba(196, 146, 74, 0.22);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 16px 45px -12px rgba(43, 26, 18, 0.08);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+.clinic-loc-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(196, 146, 74, 0.48);
+    box-shadow: 0 24px 55px -10px rgba(43, 26, 18, 0.14);
+}
+
+.clinic-loc-card__media {
+    position: relative;
+    width: 100%;
+    height: clamp(230px, 25vw, 310px);
+    overflow: hidden;
+    background: #EFE7DE;
+}
+
+.clinic-loc-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 45%;
+    display: block;
+    transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.clinic-loc-card:hover .clinic-loc-card__img {
+    transform: scale(1.06);
+}
+
+.clinic-loc-card__badge {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    padding: 6px 15px;
+    background: rgba(43, 26, 18, 0.78);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(232, 201, 154, 0.4);
+    border-radius: 999px;
+    color: #E8C99A;
+    font-family: var(--sans, 'Inter', sans-serif);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.clinic-loc-card__body {
+    padding: clamp(24px, 3vw, 36px);
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+.clinic-loc-card__eyebrow {
+    font-family: var(--sans, 'Inter', sans-serif);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #A9762F;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.clinic-loc-card__title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(20px, 2.2vw, 25px);
+    font-weight: 500;
+    color: #2B1A12;
+    margin: 0 0 18px;
+    line-height: 1.3;
+}
+
+.clinic-loc-card__info {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+    display: grid;
+    gap: 13px;
+}
+
+.clinic-loc-card__info li {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 12px;
+    align-items: start;
+    font-family: var(--sans, 'Inter', sans-serif);
+    font-size: 14.5px;
+    font-weight: 400;
+    line-height: 1.55;
+    color: #5C4A3A;
+}
+
+.clinic-loc-card__info svg {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    color: #C4924A;
+    flex-shrink: 0;
+}
+
+.clinic-loc-card__info a {
+    color: #5C4A3A;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.clinic-loc-card__info a:hover {
+    color: #A9762F;
+}
+
+.clinic-loc-card__actions {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid rgba(196, 146, 74, 0.16);
+}
+
+.clinic-loc-card__actions .dz-cta {
+    padding: 10px 24px;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+@media (max-width: 575.98px) {
+    .clinic-loc-card__body {
+        padding: 22px 18px;
+    }
+
+    .clinic-loc-card__actions .dz-cta {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
     }
 }
