@@ -231,6 +231,7 @@
 
         .dz-cta-wrap {
             text-align: center;
+            padding-bottom: 24px;
         }
 
         /* Shared Header Elements */
@@ -432,19 +433,37 @@
            OPTION 2: INTERACTIVE TRINITY ACCORDION
            ========================================================= */
         .opt2-section {
-            background: var(--dz-dark-gradient);
+            background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
+            border-radius: 36px;
             padding: clamp(50px, 6vw, 90px) clamp(24px, 4vw, 56px);
             color: #FAF7F2;
             position: relative;
+            isolation: isolate;
             overflow: hidden;
+            border: 1px solid rgba(232, 201, 154, 0.25);
+            box-shadow: 0 30px 90px rgba(14, 5, 3, 0.7);
         }
 
         .opt2-section::before {
             content: "";
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at 50% 0%, rgba(232, 201, 154, 0.18) 0%, transparent 60%);
+            background:
+                radial-gradient(ellipse 65% 60% at 50% -8%, rgba(198, 119, 119, 0.16) 0%, transparent 68%),
+                radial-gradient(ellipse 40% 40% at 80% 110%, rgba(143, 113, 74, 0.15) 0%, transparent 70%);
             pointer-events: none;
+            z-index: 0;
+        }
+
+        .opt2-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.25;
+            mix-blend-mode: overlay;
         }
 
         .opt2-header {
@@ -581,21 +600,49 @@
             padding: 5px 14px;
             border-radius: 999px;
             font-weight: 500;
-        }
-
-        /* =========================================================
-           OPTION 3: MAGAZINE SHOWCASE DIAL (LIGHT MASTER)
+        }        /* =========================================================
+           OPTION 3: MAGAZINE SHOWCASE DIAL (DARK LUXURY)
            ========================================================= */
         .opt3-section {
-            background: var(--dz-cream);
+            background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
+            border-radius: 36px;
             padding: clamp(50px, 6vw, 90px) clamp(24px, 4vw, 56px);
+            color: #FAF7F2;
             position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            border: 1px solid rgba(232, 201, 154, 0.25);
+            box-shadow: 0 30px 90px rgba(14, 5, 3, 0.7);
+        }
+
+        .opt3-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 65% 60% at 50% -8%, rgba(198, 119, 119, 0.16) 0%, transparent 68%),
+                radial-gradient(ellipse 40% 40% at 80% 110%, rgba(143, 113, 74, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .opt3-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.25;
+            mix-blend-mode: overlay;
         }
 
         .opt3-header {
             text-align: center;
             max-width: 800px;
             margin: 0 auto 40px;
+            position: relative;
+            z-index: 2;
         }
 
         .opt3-showcase {
@@ -603,11 +650,15 @@
             grid-template-columns: 1fr 1.35fr;
             gap: 40px;
             align-items: center;
-            background: #FFFFFF;
+            background: rgba(255, 255, 255, 0.04);
             border-radius: 30px;
-            border: 1px solid rgba(139, 69, 19, 0.2);
+            border: 1px solid rgba(232, 201, 154, 0.25);
             padding: clamp(28px, 4vw, 48px);
-            box-shadow: 0 18px 50px rgba(75, 43, 32, 0.08);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 2;
         }
 
         .opt3-nav-list {
@@ -619,8 +670,8 @@
         .opt3-nav-item {
             padding: 22px 24px;
             border-radius: 18px;
-            background: var(--dz-sand);
-            border: 1px solid rgba(139, 69, 19, 0.2);
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid rgba(232, 201, 154, 0.2);
             cursor: pointer;
             transition: all 0.35s ease;
             position: relative;
@@ -628,27 +679,16 @@
         }
 
         .opt3-nav-item:hover {
-            border-color: var(--dz-copper);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(232, 201, 154, 0.5);
             transform: translateX(4px);
         }
 
         .opt3-nav-item.is-active {
-            background: var(--dz-dark-gradient);
-            border-color: transparent;
+            background: linear-gradient(135deg, #E8C99A 0%, #C58E45 100%);
+            border-color: #FAF7F2;
             transform: translateX(8px);
-            box-shadow: 0 12px 30px rgba(75, 43, 32, 0.25);
-        }
-
-        .opt3-nav-item.is-active .opt3-nav-role {
-            color: var(--dz-champagne);
-        }
-
-        .opt3-nav-item.is-active .opt3-nav-title {
-            color: #FFFFFF;
-        }
-
-        .opt3-nav-item.is-active .opt3-nav-sub {
-            color: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
         }
 
         .opt3-nav-role {
@@ -656,23 +696,39 @@
             font-weight: 700;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--dz-gold-dark);
+            color: #E8C99A;
             margin-bottom: 6px;
+            transition: color 0.3s ease;
         }
 
         .opt3-nav-title {
             font-family: var(--serif);
             font-size: 21px;
             font-weight: 600;
-            color: var(--dz-espresso);
+            color: #FAF7F2;
             margin-bottom: 4px;
+            transition: color 0.3s ease;
         }
 
         .opt3-nav-sub {
             font-size: 13.5px;
-            color: var(--dz-text-muted);
+            color: rgba(255, 255, 255, 0.78);
             margin: 0;
             line-height: 1.45;
+            transition: color 0.3s ease;
+        }
+
+        .opt3-nav-item.is-active .opt3-nav-role {
+            color: #381A10;
+            font-weight: 800;
+        }
+
+        .opt3-nav-item.is-active .opt3-nav-title {
+            color: #200F0A;
+        }
+
+        .opt3-nav-item.is-active .opt3-nav-sub {
+            color: #4A2719;
         }
 
         .opt3-stage {
@@ -705,7 +761,8 @@
             height: 260px;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(75, 43, 32, 0.1);
+            border: 1px solid rgba(232, 201, 154, 0.25);
+            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.4);
         }
 
         .opt3-panel__image-box img {
@@ -718,8 +775,8 @@
             position: absolute;
             bottom: 14px;
             left: 14px;
-            background: rgba(75, 43, 32, 0.9);
-            backdrop-filter: blur(8px);
+            background: rgba(32, 15, 10, 0.88);
+            backdrop-filter: blur(10px);
             color: #FAF7F2;
             font-size: 11px;
             font-weight: 700;
@@ -727,13 +784,13 @@
             text-transform: uppercase;
             padding: 6px 14px;
             border-radius: 999px;
-            border: 1px solid rgba(232, 201, 154, 0.4);
+            border: 1px solid rgba(232, 201, 154, 0.5);
         }
 
         .opt3-panel__heading {
             font-family: var(--serif);
             font-size: 25px;
-            color: var(--dz-espresso);
+            color: #FAF7F2;
             margin: 0;
             line-height: 1.3;
         }
@@ -741,7 +798,7 @@
         .opt3-panel__desc {
             font-size: 15px;
             line-height: 1.75;
-            color: var(--dz-text-muted);
+            color: rgba(255, 255, 255, 0.85);
             margin: 0;
         }
 
@@ -753,28 +810,57 @@
 
         .opt3-pill {
             font-size: 12px;
-            background: var(--dz-sand);
-            border: 1px solid rgba(139, 69, 19, 0.25);
-            color: var(--dz-espresso);
+            background: rgba(232, 201, 154, 0.15);
+            border: 1px solid rgba(232, 201, 154, 0.35);
+            color: #FAF7F2;
             padding: 5px 14px;
             border-radius: 999px;
             font-weight: 600;
         }
 
         /* =========================================================
-           OPTION 4: MODERN SANCTUARY SPLIT HERO
+           OPTION 4: MODERN SANCTUARY SPLIT HERO (DARK LUXURY)
            ========================================================= */
         .opt4-section {
-            background: var(--dz-dark-gradient);
+            background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
+            border-radius: 36px;
             padding: clamp(50px, 6vw, 90px) clamp(24px, 4vw, 56px);
             position: relative;
-            color: #FFFFFF;
+            isolation: isolate;
+            overflow: hidden;
+            color: #FAF7F2;
+            border: 1px solid rgba(232, 201, 154, 0.25);
+            box-shadow: 0 30px 90px rgba(14, 5, 3, 0.7);
+        }
+
+        .opt4-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 65% 60% at 50% -8%, rgba(198, 119, 119, 0.16) 0%, transparent 68%),
+                radial-gradient(ellipse 40% 40% at 80% 110%, rgba(143, 113, 74, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .opt4-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.25;
+            mix-blend-mode: overlay;
         }
 
         .opt4-header {
             text-align: center;
             max-width: 800px;
             margin: 0 auto 36px;
+            position: relative;
+            z-index: 2;
         }
 
         .opt4-trinity-selector {
@@ -783,12 +869,14 @@
             gap: 16px;
             max-width: 1080px;
             margin: 0 auto 36px;
+            position: relative;
+            z-index: 2;
         }
 
         .opt4-btn {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(232, 201, 154, 0.35);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(232, 201, 154, 0.25);
             border-radius: 18px;
             padding: 16px 20px;
             text-align: left;
@@ -806,39 +894,40 @@
             height: 14px;
             object-fit: contain;
             filter: brightness(0) invert(1);
-            opacity: 0.45;
+            opacity: 0.55;
             transition: all 0.35s ease;
         }
 
         .opt4-btn:hover {
-            background: rgba(255, 255, 255, 0.16);
-            border-color: rgba(232, 201, 154, 0.65);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(232, 201, 154, 0.6);
             transform: translateY(-2px);
         }
 
         .opt4-btn:hover .opt4-btn-icon {
-            opacity: 0.8;
+            opacity: 0.9;
             transform: rotate(15deg);
         }
 
         .opt4-btn.is-active {
-            background: #FAF7F2;
-            border-color: var(--dz-champagne);
-            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+            background: linear-gradient(135deg, #E8C99A 0%, #C58E45 100%);
+            border-color: #FAF7F2;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
             transform: translateY(-2px);
         }
 
         .opt4-btn.is-active .opt4-btn-role {
-            color: var(--dz-gold-dark);
+            color: #381A10;
+            font-weight: 800;
         }
 
         .opt4-btn.is-active .opt4-btn-title {
-            color: var(--dz-espresso);
+            color: #200F0A;
         }
 
         .opt4-btn.is-active .opt4-btn-icon {
             filter: none;
-            opacity: 0.9;
+            opacity: 1;
             transform: rotate(45deg);
         }
 
@@ -848,7 +937,7 @@
             font-weight: 700;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: var(--dz-champagne);
+            color: #E8C99A;
             margin-bottom: 4px;
         }
 
@@ -857,21 +946,26 @@
             font-family: var(--serif);
             font-size: 17px;
             font-weight: 600;
-            color: #FFFFFF;
+            color: #FAF7F2;
         }
 
         .opt4-display-card {
             max-width: 1080px;
             margin: 0 auto;
-            background: #FAF7F2;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(232, 201, 154, 0.25);
             border-radius: 28px;
             padding: clamp(28px, 4vw, 48px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-            color: var(--dz-espresso);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+            color: #FAF7F2;
             display: grid;
             grid-template-columns: 1.15fr 1fr;
             gap: 40px;
             align-items: center;
+            position: relative;
+            z-index: 2;
         }
 
         .opt4-card-left {
@@ -886,12 +980,12 @@
             font-weight: 700;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--dz-gold-dark);
-            background: var(--dz-sand);
+            color: #E8C99A;
+            background: rgba(232, 201, 154, 0.15);
             padding: 5px 14px;
             border-radius: 999px;
             width: fit-content;
-            border: 1px solid rgba(139, 69, 19, 0.25);
+            border: 1px solid rgba(232, 201, 154, 0.35);
         }
 
         .opt4-card-heading {
@@ -899,21 +993,22 @@
             font-size: clamp(23px, 2.4vw, 30px);
             font-weight: 600;
             line-height: 1.3;
-            color: var(--dz-espresso);
+            color: #FAF7F2;
             margin: 0;
         }
 
         .opt4-card-desc {
             font-size: 15.5px;
             line-height: 1.8;
-            color: var(--dz-text-muted);
+            color: rgba(255, 255, 255, 0.85);
             margin: 0;
         }
 
         .opt4-card-sub {
             font-size: 14.5px;
             line-height: 1.75;
-            color: #7A6354;
+            color: #E8C99A;
+            font-style: italic;
             margin: 0;
         }
 
@@ -922,7 +1017,8 @@
             border-radius: 22px;
             overflow: hidden;
             aspect-ratio: 4 / 3.4;
-            box-shadow: 0 14px 34px rgba(75, 43, 32, 0.16);
+            border: 1px solid rgba(232, 201, 154, 0.25);
+            box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
         }
 
         .opt4-card-img-wrap img {
@@ -933,22 +1029,40 @@
         }
 
         /* =========================================================
-           OPTION 5: THE SACRED TRINITY MATRIX (GEOMETRIC EMBLEM)
+           OPTION 5: THE SACRED TRINITY MATRIX (DARK LUXURY)
            ========================================================= */
         .opt5-section {
-            background: var(--dz-dark-gradient);
+            background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
+            border-radius: 36px;
             padding: clamp(60px, 7vw, 100px) clamp(24px, 4vw, 56px);
-            color: #FFFFFF;
+            color: #FAF7F2;
             position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            border: 1px solid rgba(232, 201, 154, 0.25);
+            box-shadow: 0 30px 90px rgba(14, 5, 3, 0.7);
         }
 
         .opt5-section::before {
             content: "";
             position: absolute;
             inset: 0;
-            background-image: radial-gradient(rgba(232, 201, 154, 0.08) 1px, transparent 1px);
-            background-size: 32px 32px;
+            background:
+                radial-gradient(ellipse 65% 60% at 50% -8%, rgba(198, 119, 119, 0.16) 0%, transparent 68%),
+                radial-gradient(ellipse 40% 40% at 80% 110%, rgba(143, 113, 74, 0.15) 0%, transparent 70%);
             pointer-events: none;
+            z-index: 0;
+        }
+
+        .opt5-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.25;
+            mix-blend-mode: overlay;
         }
 
         .opt5-header {
@@ -970,7 +1084,7 @@
         }
 
         .opt5-node-card {
-            background: rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(232, 201, 154, 0.25);
             border-radius: 20px;
@@ -982,28 +1096,29 @@
         }
 
         .opt5-node-card:hover {
-            background: rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.1);
             border-color: rgba(232, 201, 154, 0.6);
             transform: translateY(-4px);
         }
 
         .opt5-node-card.is-active {
-            background: #FAF7F2;
-            border-color: var(--dz-champagne);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(232, 201, 154, 0.5);
+            background: linear-gradient(135deg, #E8C99A 0%, #C58E45 100%);
+            border-color: #FAF7F2;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
             transform: translateY(-4px);
         }
 
         .opt5-node-card.is-active .opt5-node-role {
-            color: var(--dz-gold-dark);
+            color: #381A10;
+            font-weight: 800;
         }
 
         .opt5-node-card.is-active .opt5-node-title {
-            color: var(--dz-espresso);
+            color: #200F0A;
         }
 
         .opt5-node-card.is-active .opt5-node-icon {
-            color: var(--dz-copper);
+            color: #381A10;
         }
 
         .opt5-node-top {
@@ -1018,33 +1133,35 @@
             font-weight: 700;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--dz-champagne);
+            color: #E8C99A;
         }
 
         .opt5-node-icon {
             font-size: 16px;
-            color: rgba(232, 201, 154, 0.6);
+            color: rgba(232, 201, 154, 0.7);
         }
 
         .opt5-node-title {
             font-family: var(--serif);
             font-size: 21px;
             font-weight: 600;
-            color: #FFFFFF;
+            color: #FAF7F2;
             line-height: 1.25;
         }
 
         .opt5-master-stage {
             max-width: 1100px;
             margin: 0 auto;
-            background: #FAF7F2;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border-radius: 28px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.9);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(232, 201, 154, 0.25);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 2;
-            color: var(--dz-espresso);
+            color: #FAF7F2;
             display: grid;
             grid-template-columns: 1fr 1.15fr;
         }
@@ -1065,8 +1182,8 @@
             position: absolute;
             top: 20px;
             left: 20px;
-            background: rgba(75, 43, 32, 0.9);
-            backdrop-filter: blur(8px);
+            background: rgba(32, 15, 10, 0.88);
+            backdrop-filter: blur(10px);
             color: #FAF7F2;
             font-size: 11px;
             font-weight: 700;
@@ -1074,7 +1191,7 @@
             text-transform: uppercase;
             padding: 6px 16px;
             border-radius: 999px;
-            border: 1px solid rgba(232, 201, 154, 0.4);
+            border: 1px solid rgba(232, 201, 154, 0.5);
         }
 
         .opt5-stage-content {
@@ -1090,7 +1207,7 @@
             font-weight: 700;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--dz-gold-dark);
+            color: #E8C99A;
             margin-bottom: 10px;
         }
 
@@ -1099,37 +1216,68 @@
             font-size: clamp(22px, 2.2vw, 28px);
             font-weight: 600;
             line-height: 1.3;
-            color: var(--dz-espresso);
+            color: #FAF7F2;
             margin-bottom: 16px;
         }
 
         .opt5-stage-text {
             font-size: 15px;
             line-height: 1.8;
-            color: var(--dz-text-muted);
+            color: rgba(255, 255, 255, 0.85);
             margin-bottom: 14px;
         }
 
         .opt5-stage-subtext {
             font-size: 14px;
             line-height: 1.7;
-            color: #7A6354;
+            color: #E8C99A;
+            font-style: italic;
             margin-bottom: 22px;
         }
 
         /* =========================================================
-           OPTION 6: HAUTE EDITORIAL LOOKBOOK (ASYMMETRIC STORYBOARDS)
+           OPTION 6: HAUTE EDITORIAL LOOKBOOK (DARK LUXURY)
            ========================================================= */
         .opt6-section {
-            background: var(--dz-cream);
+            background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
+            border-radius: 36px;
             padding: clamp(60px, 7vw, 100px) clamp(24px, 4vw, 56px);
+            color: #FAF7F2;
             position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            border: 1px solid rgba(232, 201, 154, 0.25);
+            box-shadow: 0 30px 90px rgba(14, 5, 3, 0.7);
+        }
+
+        .opt6-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 65% 60% at 50% -8%, rgba(198, 119, 119, 0.16) 0%, transparent 68%),
+                radial-gradient(ellipse 40% 40% at 80% 110%, rgba(143, 113, 74, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .opt6-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.25;
+            mix-blend-mode: overlay;
         }
 
         .opt6-header {
             text-align: center;
             max-width: 800px;
             margin: 0 auto 60px;
+            position: relative;
+            z-index: 2;
         }
 
         .opt6-storyboard-stack {
@@ -1138,6 +1286,8 @@
             gap: 40px;
             max-width: 1120px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .opt6-story-row {
@@ -1145,17 +1295,21 @@
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: center;
-            background: #FFFFFF;
+            background: rgba(255, 255, 255, 0.04);
             border-radius: 28px;
             padding: clamp(28px, 4vw, 44px);
-            border: 1px solid rgba(139, 69, 19, 0.18);
-            box-shadow: 0 12px 36px rgba(75, 43, 32, 0.05);
-            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            border: 1px solid rgba(232, 201, 154, 0.22);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
         }
 
         .opt6-story-row:hover {
             transform: translateY(-4px);
-            box-shadow: 0 18px 45px rgba(139, 69, 19, 0.12);
+            background: rgba(255, 255, 255, 0.07);
+            border-color: #E8C99A;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
         }
 
         .opt6-story-row--reverse {
@@ -1175,7 +1329,8 @@
             border-radius: 20px;
             overflow: hidden;
             aspect-ratio: 4 / 3.2;
-            box-shadow: 0 10px 25px rgba(75, 43, 32, 0.08);
+            border: 1px solid rgba(232, 201, 154, 0.25);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
         }
 
         .opt6-story-media img {
@@ -1199,7 +1354,7 @@
             font-family: var(--serif);
             font-size: 54px;
             font-weight: 700;
-            color: rgba(139, 69, 19, 0.18);
+            color: rgba(232, 201, 154, 0.2);
             line-height: 0.9;
             margin-bottom: 6px;
         }
@@ -1209,7 +1364,7 @@
             font-weight: 700;
             letter-spacing: 0.16em;
             text-transform: uppercase;
-            color: var(--dz-gold-dark);
+            color: #E8C99A;
             margin-bottom: 8px;
         }
 
@@ -1217,7 +1372,7 @@
             font-family: var(--serif);
             font-size: 28px;
             font-weight: 600;
-            color: var(--dz-espresso);
+            color: #FAF7F2;
             margin-bottom: 12px;
             line-height: 1.25;
         }
@@ -1226,17 +1381,17 @@
             font-family: var(--serif);
             font-style: italic;
             font-size: 16px;
-            color: var(--dz-copper);
+            color: #E8C99A;
             margin-bottom: 14px;
             padding-left: 14px;
-            border-left: 3px solid var(--dz-copper);
+            border-left: 3px solid #E8C99A;
             line-height: 1.5;
         }
 
         .opt6-narrative {
             font-size: 14.5px;
             line-height: 1.8;
-            color: var(--dz-text-muted);
+            color: rgba(255, 255, 255, 0.85);
             margin-bottom: 18px;
         }
 
@@ -1248,9 +1403,9 @@
 
         .opt6-pill {
             font-size: 12px;
-            background: var(--dz-sand);
-            border: 1px solid rgba(139, 69, 19, 0.25);
-            color: var(--dz-espresso);
+            background: rgba(232, 201, 154, 0.15);
+            border: 1px solid rgba(232, 201, 154, 0.35);
+            color: #FAF7F2;
             padding: 5px 14px;
             border-radius: 999px;
             font-weight: 600;
@@ -1416,135 +1571,1389 @@
             .opt6-story-row--reverse .opt6-story-text {
                 order: 2;
             }
+
+            /* Responsive for Options 7, 8, 9 */
+            .opt7-grid,
+            .opt7-showcase-suite,
+            .opt8-spread-card,
+            .opt9-monolith-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .opt7-orbit-control {
+                flex-direction: row !important;
+                overflow-x: auto !important;
+                padding-bottom: 10px;
+                scroll-snap-type: x mandatory;
+            }
+
+            .opt7-orbit-node {
+                min-width: 220px;
+                flex-shrink: 0;
+                scroll-snap-align: start;
+            }
+        }
+
+        /* =========================================================
+           OPTION 7: RADIAL ORBIT BALANCE WHEEL
+           ========================================================= */
+        .opt7-section {
+            background: radial-gradient(circle at 50% 20%, #5d3527 0%, #361f17 60%, #20120d 100%);
+            border-radius: 32px;
+            padding: clamp(48px, 5vw, 80px) clamp(24px, 4vw, 56px);
+            border: 1px solid rgba(232, 201, 154, 0.25);
+            box-shadow: 0 24px 70px rgba(32, 18, 13, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .opt7-section::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(232, 201, 154, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .opt7-grid {
+            display: grid;
+            grid-template-columns: 360px 1fr;
+            gap: clamp(32px, 4vw, 56px);
+            align-items: center;
+            margin-top: 36px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .opt7-orbit-control {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .opt7-orbit-node {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 18px 22px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(232, 201, 154, 0.18);
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .opt7-orbit-node:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(232, 201, 154, 0.45);
+            transform: translateX(6px);
+        }
+
+        .opt7-orbit-node.is-active {
+            background: linear-gradient(135deg, rgba(232, 201, 154, 0.18) 0%, rgba(139, 69, 19, 0.45) 100%);
+            border-color: #E8C99A;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(232, 201, 154, 0.12);
+            transform: translateX(10px);
+        }
+
+        .opt7-node-badge {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(232, 201, 154, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--serif);
+            font-size: 17px;
+            font-weight: 600;
+            color: #E8C99A;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .opt7-orbit-node.is-active .opt7-node-badge {
+            background: #E8C99A;
+            color: #2B1A12;
+            box-shadow: 0 0 16px rgba(232, 201, 154, 0.6);
+        }
+
+        .opt7-node-text {
+            flex: 1;
+        }
+
+        .opt7-node-role {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #E8C99A;
+            margin-bottom: 3px;
+        }
+
+        .opt7-node-name {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 600;
+            color: #FAF7F2;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .opt7-showcase-suite {
+            background: rgba(253, 248, 243, 0.98);
+            border-radius: 28px;
+            padding: clamp(28px, 3.5vw, 44px);
+            display: grid;
+            grid-template-columns: 1fr 1.05fr;
+            gap: 32px;
+            align-items: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            position: relative;
+        }
+
+        .opt7-suite-img-wrap {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 4 / 4.4;
+            box-shadow: 0 12px 30px rgba(43, 26, 18, 0.18);
+        }
+
+        .opt7-suite-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .opt7-suite-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #A86B24;
+            background: rgba(197, 142, 69, 0.12);
+            padding: 4px 12px;
+            border-radius: 999px;
+            margin-bottom: 12px;
+        }
+
+        .opt7-suite-heading {
+            font-family: var(--serif);
+            font-size: clamp(22px, 2.2vw, 28px);
+            font-weight: 600;
+            color: #2B1A12;
+            line-height: 1.3;
+            margin-bottom: 14px;
+        }
+
+        .opt7-suite-desc {
+            font-size: 15px;
+            line-height: 1.75;
+            color: #4A3B32;
+            margin-bottom: 12px;
+        }
+
+        .opt7-suite-sub {
+            font-size: 14px;
+            line-height: 1.65;
+            color: #6E5A4E;
+            margin-bottom: 18px;
+        }
+
+        /* =========================================================
+           OPTION 8: THE CURATED LUXURY MAGAZINE FOLIO
+           ========================================================= */
+        .opt8-section {
+            background: #FAF7F2;
+            border-radius: 32px;
+            padding: clamp(48px, 5vw, 76px) clamp(24px, 4vw, 56px);
+            border: 1px solid #E8DAC2;
+            box-shadow: 0 20px 60px rgba(43, 26, 18, 0.07);
+        }
+
+        .opt8-folio-tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 28px;
+            border-bottom: 2px solid #E8DAC2;
+            padding-bottom: 14px;
+            overflow-x: auto;
+        }
+
+        .opt8-folio-tab {
+            background: transparent;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 999px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--sans);
+            font-size: 13px;
+            font-weight: 600;
+            color: #7D6B5A;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .opt8-folio-tab:hover {
+            color: #2B1A12;
+            background: rgba(182, 158, 126, 0.12);
+        }
+
+        .opt8-folio-tab.is-active {
+            background: var(--dz-espresso);
+            color: #FAF7F2;
+            box-shadow: 0 6px 18px rgba(75, 43, 32, 0.25);
+        }
+
+        .opt8-folio-tab.is-active .opt8-tab-num {
+            color: var(--dz-champagne);
+        }
+
+        .opt8-tab-num {
+            font-family: var(--serif);
+            font-size: 14px;
+            color: #B69E7E;
+        }
+
+        .opt8-spread-card {
+            background: #FFFFFF;
+            border: 1px solid #E8DAC2;
+            border-radius: 24px;
+            padding: clamp(32px, 4vw, 48px);
+            box-shadow: 0 16px 45px rgba(43, 26, 18, 0.06);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .opt8-spread-visual {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 4 / 3.4;
+            box-shadow: 0 14px 35px rgba(43, 26, 18, 0.12);
+        }
+
+        .opt8-spread-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .opt8-stamp {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #8E7858;
+            border: 1px solid #E8DAC2;
+        }
+
+        .opt8-editorial-text .opt8-role {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: #A86B24;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .opt8-editorial-text .opt8-title {
+            font-family: var(--serif);
+            font-size: clamp(24px, 2.6vw, 32px);
+            font-weight: 600;
+            color: #2B1A12;
+            line-height: 1.25;
+            margin-bottom: 14px;
+        }
+
+        .opt8-quote-callout {
+            border-left: 3px solid #C58E45;
+            padding-left: 16px;
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 17px;
+            color: #2B1A12;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .opt8-narrative {
+            font-size: 15px;
+            line-height: 1.75;
+            color: #4A3B32;
+            margin-bottom: 20px;
+        }
+
+        /* =========================================================
+           OPTION 9: ARCH CAPSULE MONOLITHS (TRINITY ROMAN ARCS)
+           ========================================================= */
+        .opt9-section {
+            background: linear-gradient(135deg, #44261c 0%, #2f1810 50%, #1c0e09 100%);
+            border-radius: 32px;
+            padding: clamp(48px, 5vw, 80px) clamp(24px, 4vw, 56px);
+            border: 1px solid rgba(232, 201, 154, 0.25);
+            box-shadow: 0 24px 70px rgba(28, 14, 9, 0.55);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .opt9-monolith-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(20px, 2.5vw, 32px);
+            margin-top: 40px;
+        }
+
+        .opt9-monolith-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(232, 201, 154, 0.22);
+            border-radius: 200px 200px 24px 24px;
+            padding: 16px 16px 32px;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .opt9-monolith-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.09);
+            border-color: rgba(232, 201, 154, 0.6);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4), 0 0 25px rgba(232, 201, 154, 0.15);
+        }
+
+        .opt9-arch-img-frame {
+            width: 100%;
+            aspect-ratio: 1 / 1.15;
+            border-radius: 190px 190px 18px 18px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 22px;
+            border: 1px solid rgba(232, 201, 154, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .opt9-arch-img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .opt9-monolith-card:hover .opt9-arch-img-frame img {
+            transform: scale(1.05);
+        }
+
+        .opt9-arch-num {
+            position: absolute;
+            top: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(43, 26, 18, 0.88);
+            backdrop-filter: blur(6px);
+            color: #E8C99A;
+            font-family: var(--serif);
+            font-size: 13px;
+            padding: 4px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(232, 201, 154, 0.4);
+        }
+
+        .opt9-monolith-role {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #E8C99A;
+            margin-bottom: 6px;
+        }
+
+        .opt9-monolith-title {
+            font-family: var(--serif);
+            font-size: clamp(20px, 1.8vw, 24px);
+            font-weight: 600;
+            color: #FAF7F2;
+            margin-bottom: 12px;
+            line-height: 1.25;
+        }
+
+        .opt9-monolith-quote {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 14px;
+            color: #E8C99A;
+            margin-bottom: 12px;
+            line-height: 1.45;
+            padding: 0 8px;
+        }
+
+        .opt9-monolith-desc {
+            font-size: 13.5px;
+            line-height: 1.65;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 18px;
+            padding: 0 6px;
+        }
+
+        /* =========================================================
+           OPTION 10: HAUTE HORLOGERIE KINETIC CHRONO-DIAL
+           ========================================================= */
+        .opt10-section {
+            background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
+            border-radius: 36px;
+            padding: clamp(50px, 6vw, 84px) clamp(24px, 4vw, 56px);
+            border: 1px solid rgba(232, 201, 154, 0.28);
+            box-shadow: 0 30px 90px rgba(13, 5, 3, 0.75);
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            color: #FAF7F2;
+        }
+
+        .opt10-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 65% 60% at 50% -8%, rgba(198, 119, 119, 0.16) 0%, transparent 68%),
+                radial-gradient(ellipse 40% 40% at 80% 110%, rgba(143, 113, 74, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .opt10-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.25;
+            mix-blend-mode: overlay;
+        }
+
+        .opt10-chrono-stage {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: clamp(36px, 5vw, 70px);
+            align-items: center;
+            margin-top: 48px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .opt10-astrolabe-wrap {
+            position: relative;
+            width: 100%;
+            max-width: 380px;
+            aspect-ratio: 1 / 1;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Rotating gold dial ring */
+        .opt10-astrolabe-ring {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 1.5px dashed rgba(232, 201, 154, 0.35);
+            box-shadow: 0 0 35px rgba(232, 201, 154, 0.15), inset 0 0 35px rgba(232, 201, 154, 0.1);
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .opt10-dial-marker {
+            position: absolute;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #200F0A;
+            border: 1.5px solid #E8C99A;
+            color: #FAF7F2;
+            font-family: var(--serif);
+            font-size: 13px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(232, 201, 154, 0.4);
+            transform: translate(-50%, -50%);
+        }
+
+        .opt10-marker-1 { top: 0%; left: 50%; }
+        .opt10-marker-2 { bottom: 6%; left: 10%; }
+        .opt10-marker-3 { bottom: 6%; right: 10%; }
+
+        /* Center crystal lens aperture & luxury logo emblem */
+        .opt10-crystal-aperture {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgba(232, 201, 154, 0.75);
+            background: radial-gradient(circle, #FAF7F2 0%, #F5ECE1 70%, #EBDDCF 100%);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.6), inset 0 0 25px rgba(232, 201, 154, 0.4), 0 0 35px rgba(232, 201, 154, 0.2);
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .opt10-crystal-aperture::after {
+            content: "";
+            position: absolute;
+            inset: 8px;
+            border-radius: 50%;
+            border: 1px solid rgba(139, 69, 19, 0.18);
+            pointer-events: none;
+        }
+
+        .opt10-crystal-aperture .opt10-logo-img {
+            width: 100%;
+            max-width: 175px;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+            filter: drop-shadow(0 4px 14px rgba(75, 43, 32, 0.16));
+        }
+
+        .opt10-lens-glare {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.05) 40%, transparent 60%);
+            pointer-events: none;
+            border-radius: 50%;
+        }
+
+        /* Right Editorial Selector Panels */
+        .opt10-editorial-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .opt10-chrono-bar {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(232, 201, 154, 0.18);
+            border-radius: 20px;
+            padding: 20px 24px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .opt10-chrono-bar:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(232, 201, 154, 0.4);
+            transform: translateX(6px);
+        }
+
+        .opt10-chrono-bar.is-active {
+            background: linear-gradient(135deg, rgba(75, 43, 32, 0.85) 0%, rgba(32, 15, 10, 0.95) 100%);
+            border-color: #E8C99A;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(232, 201, 154, 0.1);
+            transform: translateX(10px);
+        }
+
+        .opt10-bar-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+
+        .opt10-bar-num {
+            font-family: var(--serif);
+            font-size: 16px;
+            font-weight: 700;
+            color: #E8C99A;
+            letter-spacing: 0.05em;
+        }
+
+        .opt10-bar-role {
+            font-size: 10.5px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: rgba(232, 201, 154, 0.8);
+        }
+
+        .opt10-bar-title {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 600;
+            color: #FAF7F2;
+            margin: 0;
+            line-height: 1.25;
+        }
+
+        .opt10-bar-details {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            margin-top: 0;
+        }
+
+        .opt10-chrono-bar.is-active .opt10-bar-details {
+            max-height: 220px;
+            opacity: 1;
+            margin-top: 14px;
+        }
+
+        .opt10-bar-quote {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 14.5px;
+            color: #E8C99A;
+            margin-bottom: 8px;
+            line-height: 1.45;
+        }
+
+        .opt10-bar-desc {
+            font-size: 13px;
+            line-height: 1.65;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 12px;
+        }
+
+        /* Mobile specific elements for Option 10 (hidden on desktop) */
+        .opt10-mobile-tabs {
+            display: none;
+        }
+
+        .opt10-mobile-card {
+            display: none;
+        }
+
+        /* =========================================================
+           OPTION 11: VENETIAN EXPANDER TRIPTYCH (CINEMATIC PANELS)
+           ========================================================= */
+        .opt11-section {
+            background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
+            border-radius: 36px;
+            padding: clamp(50px, 6vw, 84px) clamp(24px, 4vw, 56px);
+            border: 1px solid rgba(232, 201, 154, 0.25);
+            box-shadow: 0 30px 90px rgba(14, 5, 3, 0.7);
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            color: #FAF7F2;
+        }
+
+        .opt11-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 65% 60% at 50% -8%, rgba(198, 119, 119, 0.16) 0%, transparent 68%),
+                radial-gradient(ellipse 40% 40% at 80% 110%, rgba(143, 113, 74, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .opt11-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.25;
+            mix-blend-mode: overlay;
+        }
+
+        .opt11-triptych-container {
+            display: flex;
+            gap: 20px;
+            height: 540px;
+            margin-top: 48px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .opt11-slab {
+            flex: 1;
+            position: relative;
+            border-radius: 28px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: flex 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(232, 201, 154, 0.3);
+            background: #200F0A;
+        }
+
+        .opt11-slab.is-active {
+            flex: 2.8;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65);
+            border-color: #E8C99A;
+        }
+
+        .opt11-slab-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease, filter 0.5s ease;
+            filter: brightness(0.65) saturate(0.9);
+        }
+
+        .opt11-slab:hover .opt11-slab-bg,
+        .opt11-slab.is-active .opt11-slab-bg {
+            transform: scale(1.05);
+            filter: brightness(0.8) saturate(1);
+        }
+
+        .opt11-slab-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(20, 10, 6, 0.2) 0%, rgba(20, 10, 6, 0.5) 50%, rgba(20, 10, 6, 0.95) 100%);
+            transition: opacity 0.4s ease;
+        }
+
+        /* Collapsed vertical marquee state */
+        .opt11-slab-collapsed {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 36px 16px;
+            z-index: 2;
+            transition: opacity 0.4s ease;
+        }
+
+        .opt11-slab.is-active .opt11-slab-collapsed {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .opt11-collapsed-roman {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(232, 201, 154, 0.2);
+            border: 1px solid #E8C99A;
+            color: #FAF7F2;
+            font-family: var(--serif);
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(8px);
+        }
+
+        .opt11-collapsed-title {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 600;
+            color: #FAF7F2;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        /* Expanded active content */
+        .opt11-slab-expanded {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: clamp(24px, 4vw, 40px);
+            z-index: 3;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease 0.2s;
+        }
+
+        .opt11-slab.is-active .opt11-slab-expanded {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .opt11-exp-tag {
+            font-size: 10.5px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #E8C99A;
+            margin-bottom: 8px;
+        }
+
+        .opt11-exp-title {
+            font-family: var(--serif);
+            font-size: clamp(24px, 2.4vw, 32px);
+            font-weight: 600;
+            color: #FAF7F2;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .opt11-exp-quote {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 16px;
+            color: #E8C99A;
+            margin-bottom: 12px;
+            line-height: 1.45;
+        }
+
+        .opt11-exp-desc {
+            font-size: 13.5px;
+            line-height: 1.65;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 580px;
+            margin-bottom: 18px;
+        }
+
+        /* =========================================================
+           OPTION 12: DYNAMIC EQUILIBRIUM SCALES (HORIZONTAL SLIDER)
+           ========================================================= */
+        .opt12-section {
+            background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
+            border-radius: 36px;
+            padding: clamp(50px, 6vw, 84px) clamp(24px, 4vw, 56px);
+            border: 1px solid rgba(232, 201, 154, 0.25);
+            box-shadow: 0 30px 90px rgba(14, 5, 3, 0.7);
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            color: #FAF7F2;
+        }
+
+        .opt12-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 65% 60% at 50% -8%, rgba(198, 119, 119, 0.16) 0%, transparent 68%),
+                radial-gradient(ellipse 40% 40% at 80% 110%, rgba(143, 113, 74, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .opt12-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.25;
+            mix-blend-mode: overlay;
+        }
+
+        .opt12-principles-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.35);
+            padding: 6px;
+            border-radius: 999px;
+            border: 1px solid rgba(232, 201, 154, 0.2);
+            margin: 32px auto 38px;
+            max-width: max-content;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .opt12-selector-pill {
+            background: transparent;
+            border: 1px solid transparent;
+            color: rgba(255, 255, 255, 0.75);
+            padding: 11px 24px;
+            border-radius: 999px;
+            font-size: 13.5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .opt12-selector-pill .pill-idx {
+            font-size: 11px;
+            opacity: 0.7;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .opt12-selector-pill:hover {
+            color: #FAF7F2;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .opt12-selector-pill.is-active {
+            background: linear-gradient(135deg, #E8C99A 0%, #C58E45 100%);
+            color: #200F0A;
+            border-color: #FAF7F2;
+            font-weight: 700;
+            box-shadow: 0 6px 20px rgba(232, 201, 154, 0.4);
+            transform: translateY(-1px);
+        }
+
+        .opt12-selector-pill.is-active .pill-idx {
+            opacity: 1;
+            color: #200F0A;
+        }
+
+        /* Slider Track Viewport */
+        .opt12-slider-viewport {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            border-radius: 28px;
+            cursor: grab;
+        }
+
+        .opt12-slider-viewport:active {
+            cursor: grabbing;
+        }
+
+        .opt12-slides-track {
+            display: flex;
+            width: 300%;
+            transform: translateX(0%);
+            transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
+        }
+
+        .opt12-slide {
+            width: 33.333333%;
+            flex-shrink: 0;
+            box-sizing: border-box;
+            padding: 6px;
+            user-select: none;
+        }
+
+        .opt12-scales-stage {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 24px;
+            align-items: center;
+            position: relative;
+            margin-top: 4px;
+        }
+
+        .opt12-scale-wing {
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(232, 201, 154, 0.2);
+            border-radius: 28px;
+            padding: 34px 28px;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .opt12-scale-wing:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: #E8C99A;
+            transform: translateY(-6px);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5);
+        }
+
+        .opt12-wing-icon {
+            font-size: 28px;
+            color: #E8C99A;
+            margin-bottom: 14px;
+            line-height: 1;
+        }
+
+        .opt12-wing-force {
+            font-size: 10.5px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #E8C99A;
+            margin-bottom: 8px;
+        }
+
+        .opt12-wing-title {
+            font-family: var(--serif);
+            font-size: 25px;
+            font-weight: 600;
+            color: #FAF7F2;
+            margin-bottom: 12px;
+            line-height: 1.25;
+        }
+
+        .opt12-wing-desc {
+            font-size: 13.5px;
+            line-height: 1.65;
+            color: rgba(255, 255, 255, 0.82);
+            margin-bottom: 0;
+        }
+
+        /* Center Fulcrum Medallion */
+        .opt12-fulcrum {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 12px;
+        }
+
+        .opt12-fulcrum-disc {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #E8C99A 0%, #A86B24 70%, #522D16 100%);
+            border: 2px solid #FAF7F2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 35px rgba(232, 201, 154, 0.65);
+            animation: opt10Pulse 4s ease-in-out infinite;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .opt12-slide:hover .opt12-fulcrum-disc {
+            transform: rotate(30deg) scale(1.05);
+        }
+
+        .opt12-fulcrum-disc img {
+            width: 34px;
+            height: 34px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .opt12-fulcrum-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #E8C99A;
+            margin-top: 10px;
+        }
+
+        .opt12-manifesto-bar {
+            margin-top: 28px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(232, 201, 154, 0.25);
+            border-radius: 24px;
+            padding: 22px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .opt12-manifesto-quote {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 17px;
+            color: #FAF7F2;
+            margin: 0;
+            line-height: 1.45;
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .opt12-manifesto-quote span {
+            color: #E8C99A;
+            font-weight: 600;
+        }
+
+        .opt2-section > *,
+        .opt3-section > *,
+        .opt4-section > *,
+        .opt5-section > *,
+        .opt6-section > *,
+        .opt10-section > *,
+        .opt11-section > *,
+        .opt12-section > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 992px) {
+            /* Option 10 Mobile Single-Frame Layout */
+            .opt10-section {
+                padding: clamp(32px, 5vw, 44px) clamp(16px, 3.5vw, 24px);
+            }
+
+            .opt10-mobile-tabs {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                background: rgba(0, 0, 0, 0.35);
+                padding: 5px;
+                border-radius: 999px;
+                border: 1px solid rgba(232, 201, 154, 0.2);
+                margin: 18px 0 20px;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                flex-wrap: nowrap;
+            }
+
+            .opt10-mobile-tabs::-webkit-scrollbar {
+                display: none;
+            }
+
+            .opt10-mob-tab {
+                background: transparent;
+                border: 1px solid transparent;
+                color: rgba(255, 255, 255, 0.75);
+                padding: 8px 16px;
+                border-radius: 999px;
+                font-size: 12px;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                white-space: nowrap;
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                flex-shrink: 0;
+            }
+
+            .opt10-mob-tab .pill-idx {
+                font-size: 10px;
+                font-weight: 700;
+                opacity: 0.7;
+            }
+
+            .opt10-mob-tab.is-active {
+                background: linear-gradient(135deg, #E8C99A 0%, #C58E45 100%);
+                color: #200F0A;
+                border-color: #FAF7F2;
+                font-weight: 700;
+                box-shadow: 0 4px 14px rgba(232, 201, 154, 0.35);
+            }
+
+            .opt10-mob-tab.is-active .pill-idx {
+                color: #200F0A;
+                opacity: 1;
+            }
+
+            .opt10-chrono-stage {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                margin-top: 10px;
+            }
+
+            .opt10-astrolabe-wrap {
+                max-width: 160px;
+                height: 160px;
+                margin: 0 auto;
+            }
+
+            .opt10-dial-marker {
+                width: 24px;
+                height: 24px;
+                font-size: 9.5px;
+            }
+
+            .opt10-crystal-aperture {
+                width: 110px;
+                height: 110px;
+                border-width: 2px;
+                padding: 14px;
+            }
+
+            .opt10-crystal-aperture .opt10-logo-img {
+                max-width: 78px;
+            }
+
+            .opt10-editorial-flow {
+                display: none;
+            }
+
+            .opt10-mobile-card {
+                display: block;
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(232, 201, 154, 0.22);
+                border-radius: 20px;
+                padding: 18px 20px;
+                text-align: left;
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+                transition: opacity 0.3s ease;
+            }
+
+            .opt10-mobile-card .opt10-bar-top {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 4px;
+            }
+
+            .opt10-mobile-card .opt10-bar-num {
+                font-family: var(--serif);
+                font-size: 15px;
+                font-weight: 700;
+                color: #E8C99A;
+            }
+
+            .opt10-mobile-card .opt10-bar-role {
+                font-size: 10px;
+                font-weight: 700;
+                letter-spacing: 0.16em;
+                text-transform: uppercase;
+                color: rgba(232, 201, 154, 0.85);
+            }
+
+            .opt10-mobile-card .opt10-bar-title {
+                font-family: var(--serif);
+                font-size: 19px;
+                font-weight: 600;
+                color: #FAF7F2;
+                margin: 2px 0 6px;
+                line-height: 1.25;
+            }
+
+            .opt10-mobile-card .opt10-bar-quote {
+                font-family: var(--serif);
+                font-style: italic;
+                font-size: 13.5px;
+                color: #E8C99A;
+                margin-bottom: 6px;
+                line-height: 1.4;
+            }
+
+            .opt10-mobile-card .opt10-bar-desc {
+                font-size: 12.5px;
+                line-height: 1.55;
+                color: rgba(255, 255, 255, 0.82);
+                margin-bottom: 12px;
+            }
+
+            .opt10-mobile-card .opt3-pills {
+                gap: 6px;
+            }
+
+            .opt10-mobile-card .opt3-pill {
+                font-size: 11px;
+                padding: 4px 10px;
+            }
+
+            .opt11-triptych-container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .opt11-slab {
+                height: 240px;
+                flex: none !important;
+            }
+
+            .opt11-slab.is-active {
+                height: 400px;
+            }
+
+            .opt11-slab-collapsed {
+                display: none;
+            }
+
+            .opt11-slab-expanded {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            .opt12-scales-stage {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .opt12-fulcrum {
+                padding: 10px 0;
+            }
+
+            .opt12-principles-selector {
+                max-width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                padding: 6px 10px;
+                margin: 24px 0 28px;
+            }
+
+            .opt12-principles-selector::-webkit-scrollbar {
+                display: none;
+            }
+
+            .opt12-selector-pill {
+                flex: 0 0 auto;
+                padding: 9px 18px;
+                font-size: 12.5px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Sticky Navigation to preview all 6 options -->
+    <!-- Sticky Navigation to preview all 12 options -->
     <header class="option-nav-bar">
         <div class="logo-title">
             <strong>D'ZEN DERMA</strong> <span>/ Philosophy Design Options</span>
         </div>
         <div class="nav-pills-wrap">
-            <a href="#option-1" class="nav-pill-btn active">Option 1: Editorial 3-Column</a>
-            <a href="#option-2" class="nav-pill-btn">Option 2: Cinematic Accordion</a>
-            <a href="#option-3" class="nav-pill-btn">Option 3: Showcase Dial</a>
-            <a href="#option-4" class="nav-pill-btn">Option 4: Sanctuary Split Hero</a>
-            <a href="#option-5" class="nav-pill-btn">Option 5: Sacred Trinity Matrix</a>
-            <a href="#option-6" class="nav-pill-btn">Option 6: Asymmetric Lookbook</a>
+            <a href="#option-2" class="nav-pill-btn active">Opt 2: Accordion</a>
+            <a href="#option-3" class="nav-pill-btn">Opt 3: Showcase Dial</a>
+            <a href="#option-4" class="nav-pill-btn">Opt 4: Sanctuary Split</a>
+            <a href="#option-5" class="nav-pill-btn">Opt 5: Sacred Matrix</a>
+            <a href="#option-6" class="nav-pill-btn">Opt 6: Lookbook</a>
+            <a href="#option-10" class="nav-pill-btn">Opt 10: Haute Horlogerie Dial</a>
+            <a href="#option-11" class="nav-pill-btn">Opt 11: Venetian Expander</a>
+            <a href="#option-12" class="nav-pill-btn">Opt 12: Balance Equilibrium</a>
         </div>
     </header>
-
-    <!-- =========================================================
-         OPTION 1: THE EDITORIAL 3-COLUMN TRINITY GRID
-         ========================================================= -->
-    <div class="option-header-badge" id="option-1">
-        <span class="option-tag-pill">Option 1 · Clean Editorial Grid</span>
-        <h2 class="option-title">Editorial 3-Column Trinity Grid (Light Luxury)</h2>
-        <p class="option-desc">
-            All 3 expressions of BALANCE are visible side-by-side simultaneously on a clean linen background. Zero friction, crystal-clear typography, and interactive hover elevations.
-        </p>
-    </div>
-
-    <div class="section-wrapper">
-        <section class="opt1-section">
-            <div class="opt1-header">
-                <span class="sec-eyebrow">CORE IDEOLOGY</span>
-                <div class="nemonic-separator">
-                    <div class="nemonic-line"></div>
-                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
-                    <div class="nemonic-line"></div>
-                </div>
-                <h2 class="sec-title">The Principles of <span class="scribble">Balance</span></h2>
-                <p class="sec-desc">
-                    Balance is our working principle — an intentional harmony between clinical science, inner health, and aesthetic restraint.
-                </p>
-            </div>
-
-            <div class="opt1-grid">
-                <!-- Card 1 -->
-                <div class="opt1-card">
-                    <div class="opt1-card__img-wrap">
-                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80&auto=format&fit=crop" alt="Science & Serenity" />
-                        <span class="opt1-card__badge">Precision &amp; Patience</span>
-                        <div class="opt1-card__num">01</div>
-                    </div>
-                    <div class="opt1-card__body">
-                        <span class="opt1-card__role">01 · HOW WE CARE</span>
-                        <h3 class="opt1-card__title">Science &amp; Serenity</h3>
-                        <div class="opt1-card__quote">
-                            "Evidence-led care, delivered without haste."
-                        </div>
-                        <p class="opt1-card__text">
-                            We believe good aesthetics needs both precision and patience — the right science, thoughtful decisions and a calm experience from consultation to treatment. Every recommendation is backed by evidence — not urgency. No scare tactics, no limited slots — just the facts, and the time to think about them.
-                        </p>
-                        <div class="opt1-card__tags">
-                            <span class="opt1-pill">✦ Evidence-Backed</span>
-                            <span class="opt1-pill">✦ Thoughtful Decisions</span>
-                            <span class="opt1-pill">✦ Unhurried Consults</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="opt1-card">
-                    <div class="opt1-card__img-wrap">
-                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop" alt="Inner & Outer" />
-                        <span class="opt1-card__badge">Holistic Vitality</span>
-                        <div class="opt1-card__num">02</div>
-                    </div>
-                    <div class="opt1-card__body">
-                        <span class="opt1-card__role">02 · HOW WE UNDERSTAND BEAUTY</span>
-                        <h3 class="opt1-card__title">Inner &amp; Outer</h3>
-                        <div class="opt1-card__quote">
-                            "Radiance follows health, not the reverse."
-                        </div>
-                        <p class="opt1-card__text">
-                            We look beyond the surface, bringing inner health and outer beauty together to create results that are not just visible, but feel right for you. Because a healthy glow that lasts starts on the inside. Treat the cause, and the result takes care of itself.
-                        </p>
-                        <div class="opt1-card__tags">
-                            <span class="opt1-pill">✦ Cellular Vitality</span>
-                            <span class="opt1-pill">✦ Root-Cause Care</span>
-                            <span class="opt1-pill">✦ Lasting Radiance</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="opt1-card">
-                    <div class="opt1-card__img-wrap">
-                        <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop" alt="Enhancement & Restraint" />
-                        <span class="opt1-card__badge">Natural Identity</span>
-                        <div class="opt1-card__num">03</div>
-                    </div>
-                    <div class="opt1-card__body">
-                        <span class="opt1-card__role">03 · HOW WE TRANSFORM</span>
-                        <h3 class="opt1-card__title">Enhancement &amp; Restraint</h3>
-                        <div class="opt1-card__quote">
-                            "Enhancing you, never replacing you."
-                        </div>
-                        <p class="opt1-card__text">
-                            We'll always aim for results that look like a better version of your own face, not someone else's. We believe restraint is as much a part of aesthetic practice as capability — and we'll tell you when less is the better answer. We treat only when it's right for you.
-                        </p>
-                        <div class="opt1-card__tags">
-                            <span class="opt1-pill">✦ Natural Harmony</span>
-                            <span class="opt1-pill">✦ Clinical Restraint</span>
-                            <span class="opt1-pill">✦ Subtle Preservation</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="dz-cta-wrap mt-5">
-                <a href="our-philosophy.html" class="dz-cta">
-                    <span>Explore Our Full Philosophy</span>
-                    <img src="nemonic.png" class="btn-icon" alt="icon" />
-                </a>
-            </div>
-        </section>
-    </div>
 
     <!-- =========================================================
          OPTION 2: INTERACTIVE TRINITY ACCORDION
@@ -1653,13 +3062,13 @@
     <div class="section-wrapper">
         <section class="opt3-section">
             <div class="opt3-header">
-                <span class="sec-eyebrow">CORE IDEOLOGY</span>
+                <span class="sec-eyebrow sec-eyebrow--dark">CORE IDEOLOGY</span>
                 <div class="nemonic-separator">
-                    <div class="nemonic-line"></div>
-                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
-                    <div class="nemonic-line"></div>
+                    <div class="nemonic-line nemonic-line--dark"></div>
+                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon nemonic-icon--dark" />
+                    <div class="nemonic-line nemonic-line--dark"></div>
                 </div>
-                <h2 class="sec-title">The Principles of <span class="scribble">Balance</span></h2>
+                <h2 class="sec-title sec-title--dark">The Principles of <span class="scribble scribble--dark">Balance</span></h2>
             </div>
 
             <div class="opt3-showcase">
@@ -1894,14 +3303,14 @@
     <div class="section-wrapper">
         <section class="opt6-section">
             <div class="opt6-header">
-                <span class="sec-eyebrow">CORE IDEOLOGY</span>
+                <span class="sec-eyebrow sec-eyebrow--dark">CORE IDEOLOGY</span>
                 <div class="nemonic-separator">
-                    <div class="nemonic-line"></div>
-                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
-                    <div class="nemonic-line"></div>
+                    <div class="nemonic-line nemonic-line--dark"></div>
+                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon nemonic-icon--dark" />
+                    <div class="nemonic-line nemonic-line--dark"></div>
                 </div>
-                <h2 class="sec-title">The Principles of <span class="scribble">Balance</span></h2>
-                <p class="sec-desc">
+                <h2 class="sec-title sec-title--dark">The Principles of <span class="scribble scribble--dark">Balance</span></h2>
+                <p class="sec-desc sec-desc--dark">
                     Balance is our working principle — an intentional harmony between clinical science, inner health, and aesthetic restraint.
                 </p>
             </div>
@@ -1986,8 +3395,617 @@
         </section>
     </div>
 
+    <!-- =========================================================
+         OPTION 10: HAUTE HORLOGERIE KINETIC CHRONO-DIAL
+         ========================================================= -->
+    <div class="option-header-badge" id="option-10">
+        <span class="option-tag-pill">Option 10 · Haute Horlogerie Kinetic Chrono-Dial</span>
+        <h2 class="option-title">Haute Horlogerie Chronometer (Kinetic Rotating Dial &amp; Crystal Lens)</h2>
+        <p class="option-desc">
+            Inspired by Swiss luxury watchmaking and high-perfumery ateliers. An interactive rotating astrolabe dial on deep midnight espresso that physically rotates between the 3 pillars, pivoting an illuminated sapphire crystal portrait lens and revealing clinical narratives.
+        </p>
+    </div>
+
+    <div class="section-wrapper">
+        <section class="opt10-section">
+            <div class="text-center mb-3">
+                <span class="sec-eyebrow sec-eyebrow--dark">HAUTE CLINICAL CHRONOLOGY</span>
+                <div class="nemonic-separator">
+                    <div class="nemonic-line nemonic-line--dark"></div>
+                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon nemonic-icon--dark" />
+                    <div class="nemonic-line nemonic-line--dark"></div>
+                </div>
+                <h2 class="sec-title sec-title--dark">The Chronometry of <span class="scribble scribble--dark">Balance</span></h2>
+                <p class="sec-desc sec-desc--dark">
+                    Select a pillar to rotate the clinical chronometer into focus.
+                </p>
+            </div>
+
+            <!-- Mobile-friendly Top Tab Selector (visible on mobile) -->
+            <div class="opt10-mobile-tabs">
+                <button class="opt10-mob-tab is-active" onclick="switchOpt10(0)">
+                    <span class="pill-idx">01</span> Science &amp; Serenity
+                </button>
+                <button class="opt10-mob-tab" onclick="switchOpt10(1)">
+                    <span class="pill-idx">02</span> Inner &amp; Outer
+                </button>
+                <button class="opt10-mob-tab" onclick="switchOpt10(2)">
+                    <span class="pill-idx">03</span> Enhancement &amp; Restraint
+                </button>
+            </div>
+
+            <div class="opt10-chrono-stage">
+                <!-- Left: Astrolabe Chronometer Ring + Crystal Lens -->
+                <div class="opt10-astrolabe-wrap">
+                    <div class="opt10-astrolabe-ring" id="opt10-ring" style="transform: rotate(0deg);">
+                        <div class="opt10-dial-marker opt10-marker-1">01</div>
+                        <div class="opt10-dial-marker opt10-marker-2">02</div>
+                        <div class="opt10-dial-marker opt10-marker-3">03</div>
+                    </div>
+
+                    <div class="opt10-crystal-aperture">
+                        <img id="opt10-img" src="../images/logo1.png" class="opt10-logo-img" alt="D'Zen Derma Logo" />
+                        <div class="opt10-lens-glare"></div>
+                    </div>
+                </div>
+
+                <!-- Right: Editorial Flow Bars (Desktop) -->
+                <div class="opt10-editorial-flow">
+                    <!-- Bar 1 -->
+                    <div class="opt10-chrono-bar is-active" onclick="switchOpt10(0)">
+                        <div class="opt10-bar-top">
+                            <span class="opt10-bar-role">HOW WE CARE</span>
+                            <span class="opt10-bar-num">01</span>
+                        </div>
+                        <h3 class="opt10-bar-title">Science &amp; Serenity</h3>
+                        <div class="opt10-bar-details">
+                            <div class="opt10-bar-quote">"Evidence-led care, delivered without haste."</div>
+                            <p class="opt10-bar-desc">
+                                We believe good aesthetics needs both precision and patience — the right science, thoughtful decisions and a calm experience from consultation to treatment. Every recommendation is backed by evidence — not urgency.
+                            </p>
+                            <div class="opt3-pills">
+                                <span class="opt3-pill">✦ Evidence-Backed</span>
+                                <span class="opt3-pill">✦ Thoughtful Decisions</span>
+                                <span class="opt3-pill">✦ Unhurried Consults</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bar 2 -->
+                    <div class="opt10-chrono-bar" onclick="switchOpt10(1)">
+                        <div class="opt10-bar-top">
+                            <span class="opt10-bar-role">HOW WE UNDERSTAND BEAUTY</span>
+                            <span class="opt10-bar-num">02</span>
+                        </div>
+                        <h3 class="opt10-bar-title">Inner &amp; Outer</h3>
+                        <div class="opt10-bar-details">
+                            <div class="opt10-bar-quote">"Radiance follows health, not the reverse."</div>
+                            <p class="opt10-bar-desc">
+                                We look beyond the surface, bringing inner health and outer beauty together to create results that are not just visible, but feel right for you. When you treat the biological root cause, the lasting aesthetic result takes care of itself.
+                            </p>
+                            <div class="opt3-pills">
+                                <span class="opt3-pill">✦ Cellular Vitality</span>
+                                <span class="opt3-pill">✦ Root-Cause Care</span>
+                                <span class="opt3-pill">✦ Lasting Radiance</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bar 3 -->
+                    <div class="opt10-chrono-bar" onclick="switchOpt10(2)">
+                        <div class="opt10-bar-top">
+                            <span class="opt10-bar-role">HOW WE TRANSFORM</span>
+                            <span class="opt10-bar-num">03</span>
+                        </div>
+                        <h3 class="opt10-bar-title">Enhancement &amp; Restraint</h3>
+                        <div class="opt10-bar-details">
+                            <div class="opt10-bar-quote">"Enhancing you, never replacing you."</div>
+                            <p class="opt10-bar-desc">
+                                We'll always aim for results that look like a better version of your own face, not someone else's. We believe restraint is as much a part of aesthetic practice as capability — and we'll tell you when less is the better answer.
+                            </p>
+                            <div class="opt3-pills">
+                                <span class="opt3-pill">✦ Natural Harmony</span>
+                                <span class="opt3-pill">✦ Clinical Restraint</span>
+                                <span class="opt3-pill">✦ Identity Preservation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile: Single-Frame Active Narrative Card -->
+                <div class="opt10-mobile-card" id="opt10-mob-card">
+                    <div class="opt10-bar-top">
+                        <span class="opt10-bar-role" id="opt10-mob-role">HOW WE CARE</span>
+                        <span class="opt10-bar-num" id="opt10-mob-num">01</span>
+                    </div>
+                    <h3 class="opt10-bar-title" id="opt10-mob-title">Science &amp; Serenity</h3>
+                    <div class="opt10-bar-quote" id="opt10-mob-quote">"Evidence-led care, delivered without haste."</div>
+                    <p class="opt10-bar-desc" id="opt10-mob-desc">
+                        We believe good aesthetics needs both precision and patience — the right science, thoughtful decisions and a calm experience from consultation to treatment. Every recommendation is backed by evidence — not urgency.
+                    </p>
+                    <div class="opt3-pills" id="opt10-mob-pills">
+                        <span class="opt3-pill">✦ Evidence-Backed</span>
+                        <span class="opt3-pill">✦ Thoughtful Decisions</span>
+                        <span class="opt3-pill">✦ Unhurried Consults</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dz-cta-wrap mt-4">
+                <a href="our-philosophy.html" class="dz-cta">
+                    <span>Discover Our Philosophy</span>
+                    <img src="nemonic.png" class="btn-icon" alt="icon" />
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- =========================================================
+         OPTION 11: VENETIAN EXPANDER TRIPTYCH
+         ========================================================= -->
+    <div class="option-header-badge" id="option-11">
+        <span class="option-tag-pill">Option 11 · Venetian Expander Triptych</span>
+        <h2 class="option-title">Venetian Polyptych (Expanding Full-Height Cinematic Slabs)</h2>
+        <p class="option-desc">
+            A high-fashion lookbook layout. Three monumental vertical slabs that dynamically spring expand on hover or click, shifting seamlessly between moody editorial vertical marquee titles and widescreen cinematic clinical narratives.
+        </p>
+    </div>
+
+    <div class="section-wrapper">
+        <section class="opt11-section">
+            <div class="text-center mb-4">
+                <span class="sec-eyebrow sec-eyebrow--dark">CINEMATIC TRIPTYCH</span>
+                <div class="nemonic-separator">
+                    <div class="nemonic-line nemonic-line--dark"></div>
+                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon nemonic-icon--dark" />
+                    <div class="nemonic-line nemonic-line--dark"></div>
+                </div>
+                <h2 class="sec-title sec-title--dark">The Three <span class="scribble scribble--dark">Canvases</span></h2>
+                <p class="sec-desc sec-desc--dark">
+                    Hover or click any canvas to expand its full editorial depth.
+                </p>
+            </div>
+
+            <div class="opt11-triptych-container">
+                <!-- Slab 1 (Active by default) -->
+                <div class="opt11-slab is-active" onmouseenter="switchOpt11(this)" onclick="switchOpt11(this)">
+                    <img class="opt11-slab-bg" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80&auto=format&fit=crop" alt="Science & Serenity" />
+                    <div class="opt11-slab-overlay"></div>
+
+                    <!-- Collapsed state -->
+                    <div class="opt11-slab-collapsed">
+                        <div class="opt11-collapsed-roman">I</div>
+                        <div class="opt11-collapsed-title">SCIENCE &amp; SERENITY</div>
+                    </div>
+
+                    <!-- Expanded state -->
+                    <div class="opt11-slab-expanded">
+                        <span class="opt11-exp-tag">01 · HOW WE CARE</span>
+                        <h3 class="opt11-exp-title">Science &amp; Serenity</h3>
+                        <div class="opt11-exp-quote">"Evidence-led care, delivered without haste."</div>
+                        <p class="opt11-exp-desc">
+                            We believe good aesthetics needs both precision and patience — the right science, thoughtful decisions and a calm experience from consultation to treatment. Every recommendation is backed by evidence — not urgency.
+                        </p>
+                        <div class="opt3-pills">
+                            <span class="opt3-pill">✦ Precision</span>
+                            <span class="opt3-pill">✦ Patience</span>
+                            <span class="opt3-pill">✦ Evidence-Backed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slab 2 -->
+                <div class="opt11-slab" onmouseenter="switchOpt11(this)" onclick="switchOpt11(this)">
+                    <img class="opt11-slab-bg" src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop" alt="Inner & Outer" />
+                    <div class="opt11-slab-overlay"></div>
+
+                    <!-- Collapsed state -->
+                    <div class="opt11-slab-collapsed">
+                        <div class="opt11-collapsed-roman">II</div>
+                        <div class="opt11-collapsed-title">INNER &amp; OUTER</div>
+                    </div>
+
+                    <!-- Expanded state -->
+                    <div class="opt11-slab-expanded">
+                        <span class="opt11-exp-tag">02 · HOW WE UNDERSTAND BEAUTY</span>
+                        <h3 class="opt11-exp-title">Inner &amp; Outer</h3>
+                        <div class="opt11-exp-quote">"Radiance follows health, not the reverse."</div>
+                        <p class="opt11-exp-desc">
+                            We look beyond the surface, bringing inner health and outer beauty together to create results that are not just visible, but feel right for you. A healthy glow starts on the inside.
+                        </p>
+                        <div class="opt3-pills">
+                            <span class="opt3-pill">✦ Cellular Vitality</span>
+                            <span class="opt3-pill">✦ Root-Cause</span>
+                            <span class="opt3-pill">✦ Lasting Radiance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slab 3 -->
+                <div class="opt11-slab" onmouseenter="switchOpt11(this)" onclick="switchOpt11(this)">
+                    <img class="opt11-slab-bg" src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop" alt="Enhancement & Restraint" />
+                    <div class="opt11-slab-overlay"></div>
+
+                    <!-- Collapsed state -->
+                    <div class="opt11-slab-collapsed">
+                        <div class="opt11-collapsed-roman">III</div>
+                        <div class="opt11-collapsed-title">ENHANCEMENT &amp; RESTRAINT</div>
+                    </div>
+
+                    <!-- Expanded state -->
+                    <div class="opt11-slab-expanded">
+                        <span class="opt11-exp-tag">03 · HOW WE TRANSFORM</span>
+                        <h3 class="opt11-exp-title">Enhancement &amp; Restraint</h3>
+                        <div class="opt11-exp-quote">"Enhancing you, never replacing you."</div>
+                        <p class="opt11-exp-desc">
+                            We'll always aim for results that look like a better version of your own face, not someone else's. Restraint is as much a part of aesthetic practice as capability — less is often the better answer.
+                        </p>
+                        <div class="opt3-pills">
+                            <span class="opt3-pill">✦ Restraint</span>
+                            <span class="opt3-pill">✦ Identity</span>
+                            <span class="opt3-pill">✦ Harmony</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dz-cta-wrap mt-5">
+                <a href="our-philosophy.html" class="dz-cta">
+                    <span>Discover Our Philosophy</span>
+                    <img src="nemonic.png" class="btn-icon" alt="icon" />
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- =========================================================
+         OPTION 12: DYNAMIC EQUILIBRIUM SCALES
+         ========================================================= -->
+    <div class="option-header-badge" id="option-12">
+        <span class="option-tag-pill">Option 12 · Dynamic Equilibrium Scales</span>
+        <h2 class="option-title">The Scales of Balance (Dualistic Yin-Yang Equilibrium)</h2>
+        <p class="option-desc">
+            A philosophical dual-wing layout exploring the opposing clinical forces of each principle. A central golden nemonic fulcrum balances both dimensions into effortless harmony.
+        </p>
+    </div>
+
+    <div class="section-wrapper">
+        <section class="opt12-section">
+            <div class="text-center mb-2">
+                <span class="sec-eyebrow sec-eyebrow--dark">DYNAMIC HARMONY</span>
+                <div class="nemonic-separator">
+                    <div class="nemonic-line nemonic-line--dark"></div>
+                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon nemonic-icon--dark" />
+                    <div class="nemonic-line nemonic-line--dark"></div>
+                </div>
+                <h2 class="sec-title sec-title--dark">The Scales of <span class="scribble scribble--dark">Equilibrium</span></h2>
+                <p class="sec-desc sec-desc--dark">
+                    True balance is never choosing one side — it is the deliberate mastery of both.
+                </p>
+            </div>
+
+            <!-- Top Principle Tabs (Horizontally slideable on mobile) -->
+            <div class="opt12-principles-selector">
+                <button class="opt12-selector-pill is-active" onclick="switchOpt12(0)">
+                    <span class="pill-idx">01</span> Science &amp; Serenity
+                </button>
+                <button class="opt12-selector-pill" onclick="switchOpt12(1)">
+                    <span class="pill-idx">02</span> Inner &amp; Outer
+                </button>
+                <button class="opt12-selector-pill" onclick="switchOpt12(2)">
+                    <span class="pill-idx">03</span> Enhancement &amp; Restraint
+                </button>
+            </div>
+
+            <!-- Horizontal Slider Viewport -->
+            <div class="opt12-slider-viewport" id="opt12-viewport">
+                <div class="opt12-slides-track" id="opt12-track">
+                    
+                    <!-- Slide 01 -->
+                    <div class="opt12-slide">
+                        <div class="opt12-scales-stage">
+                            <!-- Wing A: Left Force -->
+                            <div class="opt12-scale-wing">
+                                <div class="opt12-wing-force">THE CLINICAL FORCE</div>
+                                <h3 class="opt12-wing-title">Rigorous Science</h3>
+                                <p class="opt12-wing-desc">
+                                    Evidence-led diagnostics, board-certified clinical accuracy, and advanced skin biometrics.
+                                </p>
+                            </div>
+
+                            <!-- Center Fulcrum -->
+                            <div class="opt12-fulcrum">
+                                <div class="opt12-fulcrum-disc">
+                                    <img src="nemonic.png" alt="Nemonic Fulcrum" />
+                                </div>
+                                <span class="opt12-fulcrum-label">EQUILIBRIUM · 01</span>
+                            </div>
+
+                            <!-- Wing B: Right Force -->
+                            <div class="opt12-scale-wing">
+                                <div class="opt12-wing-force">THE PATIENT EXPERIENCE</div>
+                                <h3 class="opt12-wing-title">Unhurried Serenity</h3>
+                                <p class="opt12-wing-desc">
+                                    Patience, calm consultation spaces, zero pressure, and the time to think without haste.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Harmonized Manifesto Bar -->
+                        <div class="opt12-manifesto-bar">
+                            <div class="opt12-manifesto-quote">
+                                "We believe good aesthetics needs both <span>precision and patience</span> — the right science and a calm experience from consultation to treatment."
+                            </div>
+                            <div class="opt3-pills">
+                                <span class="opt3-pill">✦ Precision</span>
+                                <span class="opt3-pill">✦ Patience</span>
+                                <span class="opt3-pill">✦ Evidence-Backed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 02 -->
+                    <div class="opt12-slide">
+                        <div class="opt12-scales-stage">
+                            <!-- Wing A: Left Force -->
+                            <div class="opt12-scale-wing">
+                                <div class="opt12-wing-force">THE BIOLOGICAL FOUNDATION</div>
+                                <h3 class="opt12-wing-title">Inner Cellular Health</h3>
+                                <p class="opt12-wing-desc">
+                                    Root-cause medicine, cellular nourishment, skin barrier integrity, and metabolic vitality.
+                                </p>
+                            </div>
+
+                            <!-- Center Fulcrum -->
+                            <div class="opt12-fulcrum">
+                                <div class="opt12-fulcrum-disc">
+                                    <img src="nemonic.png" alt="Nemonic Fulcrum" />
+                                </div>
+                                <span class="opt12-fulcrum-label">EQUILIBRIUM · 02</span>
+                            </div>
+
+                            <!-- Wing B: Right Force -->
+                            <div class="opt12-scale-wing">
+                                <div class="opt12-wing-force">THE VISIBLE OUTCOME</div>
+                                <h3 class="opt12-wing-title">Outer Radiance</h3>
+                                <p class="opt12-wing-desc">
+                                    Luminous skin tone, balanced texture, and healthy natural glow that lasts organically.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Harmonized Manifesto Bar -->
+                        <div class="opt12-manifesto-bar">
+                            <div class="opt12-manifesto-quote">
+                                "Radiance follows health, <span>not the reverse</span>. When you treat the biological root cause, lasting beauty takes care of itself."
+                            </div>
+                            <div class="opt3-pills">
+                                <span class="opt3-pill">✦ Cellular Vitality</span>
+                                <span class="opt3-pill">✦ Root-Cause Care</span>
+                                <span class="opt3-pill">✦ Lasting Radiance</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 03 -->
+                    <div class="opt12-slide">
+                        <div class="opt12-scales-stage">
+                            <!-- Wing A: Left Force -->
+                            <div class="opt12-scale-wing">
+                                <div class="opt12-wing-force">THE REFINEMENT</div>
+                                <h3 class="opt12-wing-title">Subtle Enhancement</h3>
+                                <p class="opt12-wing-desc">
+                                    Precision artistry that highlights your best features while preserving your innate facial architecture.
+                                </p>
+                            </div>
+
+                            <!-- Center Fulcrum -->
+                            <div class="opt12-fulcrum">
+                                <div class="opt12-fulcrum-disc">
+                                    <img src="nemonic.png" alt="Nemonic Fulcrum" />
+                                </div>
+                                <span class="opt12-fulcrum-label">EQUILIBRIUM · 03</span>
+                            </div>
+
+                            <!-- Wing B: Right Force -->
+                            <div class="opt12-scale-wing">
+                                <div class="opt12-wing-force">THE ETHOS</div>
+                                <h3 class="opt12-wing-title">Clinical Restraint</h3>
+                                <p class="opt12-wing-desc">
+                                    Knowing when less is the better answer, protecting identity, and never overtreating to fill slots.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Harmonized Manifesto Bar -->
+                        <div class="opt12-manifesto-bar">
+                            <div class="opt12-manifesto-quote">
+                                "Enhancing you, <span>never replacing you</span>. We believe restraint is as much a part of aesthetic mastery as capability."
+                            </div>
+                            <div class="opt3-pills">
+                                <span class="opt3-pill">✦ Natural Harmony</span>
+                                <span class="opt3-pill">✦ Clinical Restraint</span>
+                                <span class="opt3-pill">✦ Identity Protection</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="dz-cta-wrap mt-5">
+                <a href="our-philosophy.html" class="dz-cta">
+                    <span>Discover Our Philosophy</span>
+                    <img src="nemonic.png" class="btn-icon" alt="icon" />
+                </a>
+            </div>
+        </section>
+    </div>
+
     <!-- Scripts for interactive options -->
     <script>
+        // Option 10 Chrono-Dial Handler
+        const opt10Data = [
+            {
+                num: '01',
+                role: 'HOW WE CARE',
+                title: 'Science & Serenity',
+                quote: '"Evidence-led care, delivered without haste."',
+                desc: 'We believe good aesthetics needs both precision and patience — the right science, thoughtful decisions and a calm experience from consultation to treatment. Every recommendation is backed by evidence — not urgency.',
+                pills: ['✦ Evidence-Backed', '✦ Thoughtful Decisions', '✦ Unhurried Consults'],
+                img: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80&auto=format&fit=crop'
+            },
+            {
+                num: '02',
+                role: 'HOW WE UNDERSTAND BEAUTY',
+                title: 'Inner & Outer',
+                quote: '"Radiance follows health, not the reverse."',
+                desc: 'We look beyond the surface, bringing inner health and outer beauty together to create results that are not just visible, but feel right for you. When you treat the biological root cause, lasting beauty takes care of itself.',
+                pills: ['✦ Cellular Vitality', '✦ Root-Cause Care', '✦ Lasting Radiance'],
+                img: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop'
+            },
+            {
+                num: '03',
+                role: 'HOW WE TRANSFORM',
+                title: 'Enhancement & Restraint',
+                quote: '"Enhancing you, never replacing you."',
+                desc: 'We\'ll always aim for results that look like a better version of your own face, not someone else\'s. We believe restraint is as much a part of aesthetic mastery as capability — less is often the better answer.',
+                pills: ['✦ Natural Harmony', '✦ Clinical Restraint', '✦ Identity Preservation'],
+                img: 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop'
+            }
+        ];
+
+        function switchOpt10(idx) {
+            // Update desktop bars
+            const bars = document.querySelectorAll('.opt10-chrono-bar');
+            bars.forEach((b, i) => {
+                if (i === idx) b.classList.add('is-active');
+                else b.classList.remove('is-active');
+            });
+
+            // Update mobile tabs
+            const tabs = document.querySelectorAll('.opt10-mob-tab');
+            tabs.forEach((t, i) => {
+                if (i === idx) {
+                    t.classList.add('is-active');
+                    if (window.innerWidth <= 992) {
+                        t.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                    }
+                } else {
+                    t.classList.remove('is-active');
+                }
+            });
+
+            // Rotate astrolabe ring (0deg, 120deg, 240deg)
+            const ring = document.getElementById('opt10-ring');
+            if (ring) {
+                ring.style.transform = `rotate(${idx * 120}deg)`;
+            }
+
+            // Subtle interactive pulse on logo emblem
+            const img = document.getElementById('opt10-img');
+            if (img) {
+                img.style.transform = 'scale(0.92)';
+                img.style.opacity = '0.85';
+                setTimeout(() => {
+                    img.style.transform = 'scale(1)';
+                    img.style.opacity = '1';
+                }, 220);
+            }
+
+            // Update mobile card content with subtle animation
+            const card = document.getElementById('opt10-mob-card');
+            if (card) {
+                card.style.opacity = '0.5';
+                setTimeout(() => {
+                    const data = opt10Data[idx];
+                    document.getElementById('opt10-mob-role').textContent = data.role;
+                    document.getElementById('opt10-mob-num').textContent = data.num;
+                    document.getElementById('opt10-mob-title').textContent = data.title;
+                    document.getElementById('opt10-mob-quote').textContent = data.quote;
+                    document.getElementById('opt10-mob-desc').textContent = data.desc;
+                    
+                    const pillsWrap = document.getElementById('opt10-mob-pills');
+                    if (pillsWrap) {
+                        pillsWrap.innerHTML = '';
+                        data.pills.forEach(p => {
+                            const span = document.createElement('span');
+                            span.className = 'opt3-pill';
+                            span.textContent = p;
+                            pillsWrap.appendChild(span);
+                        });
+                    }
+                    card.style.opacity = '1';
+                }, 180);
+            }
+        }
+
+        // Option 11 Venetian Triptych Handler
+        function switchOpt11(slab) {
+            document.querySelectorAll('.opt11-slab').forEach(s => s.classList.remove('is-active'));
+            slab.classList.add('is-active');
+        }
+
+        // Option 12 Dynamic Equilibrium Scales Slider Handler
+        let currentOpt12Slide = 0;
+        const totalOpt12Slides = 3;
+
+        function switchOpt12(idx) {
+            currentOpt12Slide = (idx + totalOpt12Slides) % totalOpt12Slides;
+            
+            // Update tabs
+            const pills = document.querySelectorAll('.opt12-selector-pill');
+            pills.forEach((p, i) => {
+                if (i === currentOpt12Slide) {
+                    p.classList.add('is-active');
+                    // Ensure active tab is scrolled into view on mobile
+                    if (window.innerWidth <= 992) {
+                        p.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                    }
+                } else {
+                    p.classList.remove('is-active');
+                }
+            });
+
+            // Slide the track
+            const track = document.getElementById('opt12-track');
+            if (track) {
+                track.style.transform = `translateX(-${currentOpt12Slide * 33.333333}%)`;
+            }
+        }
+
+        // Add touch / drag swipe support for Option 12 slider
+        (function() {
+            const viewport = document.getElementById('opt12-viewport');
+            if (!viewport) return;
+            let startX = 0;
+            let isDown = false;
+
+            viewport.addEventListener('mousedown', (e) => {
+                isDown = true;
+                startX = e.pageX;
+            });
+            window.addEventListener('mouseup', (e) => {
+                if (!isDown) return;
+                isDown = false;
+                const endX = e.pageX;
+                const diff = endX - startX;
+                if (diff > 50) switchOpt12(currentOpt12Slide - 1);
+                else if (diff < -50) switchOpt12(currentOpt12Slide + 1);
+            });
+
+            viewport.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+            }, { passive: true });
+
+            viewport.addEventListener('touchend', (e) => {
+                const endX = e.changedTouches[0].clientX;
+                const diff = endX - startX;
+                if (diff > 45) switchOpt12(currentOpt12Slide - 1);
+                else if (diff < -45) switchOpt12(currentOpt12Slide + 1);
+            }, { passive: true });
+        })();
+
         // Option 2 Accordion handler
         function selectOpt2(el) {
             document.querySelectorAll('.opt2-panel').forEach(p => p.classList.remove('is-active'));

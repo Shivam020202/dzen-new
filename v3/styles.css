@@ -861,7 +861,7 @@ body {
 .philosophy-strip-container {
     position: relative;
     width: 100%;
-    padding: clamp(36px, 4vw, 54px) 0;
+    padding: clamp(50px, 5.5vw, 80px) 0 clamp(70px, 10vw, 140px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1297,8 +1297,8 @@ body {
    ========================================================= */
 .doctors-v2 {
     position: relative;
-    padding: clamp(24px, 3vw, 40px) 0 clamp(10px, 1.5vw, 20px) 0;
-    background: #FDF8F3 !important;
+    padding: clamp(36px, 4vw, 54px) 0 clamp(75px, 8vw, 105px) 0;
+    background: linear-gradient(to top, #F4EFE8, #FDF8F3) !important;
 }
 
 /* .doctors-v2::before {
@@ -1945,12 +1945,12 @@ body {
 
 .partners-marquee-mask--left {
     left: 0;
-    background: linear-gradient(to right, #FDF8F3 25%, rgba(253, 248, 243, 0.8) 65%, rgba(253, 248, 243, 0) 100%);
+    background: linear-gradient(to right, #ffffff 25%, rgba(255, 255, 255, 0.8) 65%, rgba(255, 255, 255, 0) 100%);
 }
 
 .partners-marquee-mask--right {
     right: 0;
-    background: linear-gradient(to left, #FDF8F3 25%, rgba(253, 248, 243, 0.8) 65%, rgba(253, 248, 243, 0) 100%);
+    background: linear-gradient(to left, #ffffff 25%, rgba(255, 255, 255, 0.8) 65%, rgba(255, 255, 255, 0) 100%);
 }
 
 .partners-marquee {
@@ -3177,7 +3177,7 @@ body {
 
 .headlines-section {
     background: linear-gradient(to top, #F4EFE8, #FDF8F3);
-    padding: clamp(50px, 5vw, 80px) 0;
+    padding: 0px 0px 50px;
 }
 
 /* Base Cards Grid (Desktop: 3 columns) */
@@ -5612,7 +5612,7 @@ html body .embossed-tagline {
 .trainer-v3-section {
     position: relative;
     background: linear-gradient(to top, #F4EFE8, #FDF8F3);
-    padding: clamp(50px, 5vw, 80px) 0 clamp(60px, 6vw, 90px);
+    padding: clamp(50px, 5vw, 80px) 0 clamp(50px, 6vw, 90px);
     overflow: hidden;
 }
 
@@ -5842,7 +5842,7 @@ html body .embossed-tagline {
 .tm-slider {
     position: relative;
     max-width: 1240px;
-    margin: 0 auto clamp(20px, 2.5vw, 36px);
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: clamp(24px, 3.5vw, 44px);
@@ -5979,7 +5979,7 @@ html body .tm-card__quote {
     .tm-slider {
         display: block;
         max-width: 580px;
-        margin-bottom: clamp(36px, 5vw, 64px);
+        margin: 0 auto;
     }
 
     .tm-card {
@@ -5995,7 +5995,7 @@ html body .tm-card__quote {
 @media (max-width: 575.98px) {
     .tm-slider {
         max-width: 100%;
-        margin-bottom: 52px;
+        margin: 0 auto;
     }
 
     .tm-card {
