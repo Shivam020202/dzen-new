@@ -440,6 +440,251 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* ═══════════ F5, F6, F7 — BACKGROUND IMAGE FOOTERS ═══════════ */
+        .ft-bg {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            color: #FFFDFB;
+            border-top: 1px solid rgba(232, 201, 154, 0.25);
+        }
+
+        .ft-bg a {
+            text-decoration: none;
+        }
+
+        .ft-bg__img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .ft-bg .ft__eyebrow {
+            color: var(--gold-lt);
+        }
+
+        .ft-bg .ft__col h4 {
+            color: var(--gold-lt);
+        }
+
+        .ft-bg .ft__col a {
+            color: rgba(255, 255, 255, 0.76);
+        }
+
+        .ft-bg .ft__col a:hover {
+            color: #FFFDFB;
+        }
+
+        .ft-bg .ft__social {
+            border-color: rgba(232, 201, 154, 0.35);
+            color: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .ft-bg .ft__social:hover {
+            background: var(--gold-lt);
+            border-color: var(--gold-lt);
+            color: #2B1A12;
+            transform: translateY(-2px);
+        }
+
+        /* F5: Architectural Duotone */
+        .f5 {
+            padding: clamp(56px, 6vw, 84px) clamp(24px, 5vw, 60px) 0;
+        }
+
+        .f5 .ft-bg__img {
+            filter: grayscale(100%) contrast(1.15);
+        }
+
+        .f5__wash {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(48, 25, 17, 0.94) 0%, rgba(28, 14, 8, 0.96) 100%);
+            mix-blend-mode: multiply;
+            z-index: 1;
+        }
+
+        .f5__glow {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(70% 50% at 20% 0%, rgba(232, 201, 154, 0.16) 0%, transparent 60%);
+            z-index: 2;
+        }
+
+        .f5__top {
+            position: relative;
+            z-index: 3;
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
+            gap: clamp(24px, 4vw, 56px);
+            padding-bottom: clamp(34px, 4vw, 52px);
+        }
+
+        .f5 .f1__tagline,
+        .f5 .f1__contact dd {
+            color: rgba(255, 255, 255, 0.74) !important;
+        }
+
+        .f5 .f1__contact dt {
+            color: var(--gold-lt);
+        }
+
+        .f5 .f1__bar {
+            position: relative;
+            z-index: 3;
+            border-top: 1px solid rgba(232, 201, 154, 0.2);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* F6: Floating Glass Card Footer */
+        .f6 {
+            padding: clamp(50px, 6vw, 80px) clamp(20px, 4vw, 50px);
+        }
+
+        .f6 .ft-bg__img {
+            filter: grayscale(70%) sepia(20%) contrast(1.1);
+        }
+
+        .f6__wash {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(38, 20, 13, 0.85) 0%, rgba(18, 8, 4, 0.92) 100%);
+            mix-blend-mode: multiply;
+            z-index: 1;
+        }
+
+        .f6__card {
+            position: relative;
+            z-index: 3;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: clamp(40px, 4.5vw, 64px) clamp(24px, 4.5vw, 60px) clamp(24px, 3vw, 36px);
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(232, 201, 154, 0.28);
+            box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+        }
+
+        .f6__grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr 1.3fr;
+            gap: clamp(24px, 4vw, 50px);
+            padding-bottom: clamp(30px, 3.5vw, 44px);
+        }
+
+        .f6__newsletter {
+            display: flex;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .f6__newsletter input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(232, 201, 154, 0.3);
+            border-radius: 999px;
+            padding: 10px 18px;
+            font-size: 13px;
+            color: #FFFDFB;
+            outline: none;
+        }
+
+        .f6__newsletter input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .f6__newsletter button {
+            border: none;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #E8C99A 0%, #C9922F 100%);
+            color: #24120B;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 10px 22px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        /* F7: Unified Brand Block + Footer */
+        .f7 {
+            padding: clamp(60px, 7vw, 100px) clamp(24px, 5vw, 60px) 0;
+        }
+
+        .f7 .ft-bg__img {
+            filter: grayscale(85%) sepia(20%) brightness(0.9) contrast(1.15);
+        }
+
+        .f7__wash {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(50, 26, 17, 0.92) 0%, rgba(28, 12, 6, 0.97) 100%);
+            mix-blend-mode: multiply;
+            z-index: 1;
+        }
+
+        .f7__banner {
+            position: relative;
+            z-index: 3;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            padding-bottom: clamp(50px, 6vw, 84px);
+            border-bottom: 1px solid rgba(232, 201, 154, 0.22);
+        }
+
+        .f7__mark {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(36px, 6.5vw, 86px);
+            color: #FFFDFB;
+            letter-spacing: 0.05em;
+            margin: 0 0 8px;
+        }
+
+        .f7__btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+            padding: 14px 34px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2.8px;
+            text-transform: uppercase;
+            background: #FFFDFB;
+            color: #2B1A12 !important;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.25s ease;
+            margin-top: 24px;
+        }
+
+        .f7__btn:hover {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 991.98px) {
+            .f5__top,
+            .f6__grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .f5__top,
+            .f6__grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -661,7 +906,178 @@
         </footer>
     </div>
 
-    <div class="lbl" style="margin-bottom:70px;">
+    <!-- ═══════════ F5 — ARCHITECTURAL DUOTONE BACKGROUND ═══════════ -->
+    <div class="lbl">
+        <b>F5 — Architectural Duotone Background (Full-Bleed Sanctuary)</b>
+        <span>High-resolution clinic interior stripped to monochrome with an espresso multiply wash, subtle amber radial glow, 4-column layout, and social pills.</span>
+    </div>
+    <div class="frame">
+        <footer class="ft ft-bg f5">
+            <img class="ft-bg__img" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop" alt="" aria-hidden="true">
+            <div class="f5__wash"></div>
+            <div class="f5__glow"></div>
+            <div class="f5__top">
+                <div>
+                    <span class="ft__eyebrow">Aesthetics &amp; Wellness</span>
+                    <p class="f1__tagline">Where the finest techniques in aesthetic medicine reveal your most radiant, timeless self.</p>
+                    <div style="display:flex;">
+                        <a href="#" class="ft__social" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" /></svg></a>
+                        <a href="#" class="ft__social" aria-label="Facebook" style="margin-left:8px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 3h-3a4 4 0 0 0-4 4v3H5v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg></a>
+                    </div>
+                </div>
+                <div class="ft__col">
+                    <h4>Clinical Treatments</h4>
+                    <ul>
+                        <li><a href="#">Laser Dermatology</a></li>
+                        <li><a href="#">Anti-Ageing &amp; Sculpt</a></li>
+                        <li><a href="#">Bridal Radiance</a></li>
+                        <li><a href="#">Hair Restoration</a></li>
+                    </ul>
+                </div>
+                <div class="ft__col">
+                    <h4>The Sanctuary</h4>
+                    <ul>
+                        <li><a href="#">Our Philosophy</a></li>
+                        <li><a href="#">Medical Team</a></li>
+                        <li><a href="#">Delhi Clinic Suite</a></li>
+                        <li><a href="#">Gurgaon Center</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <dl class="f1__contact">
+                        <dt>New Delhi</dt>
+                        <dd>Greater Kailash I &middot; (+91) 93112 54441</dd>
+                        <dt>Gurgaon Center</dt>
+                        <dd>Golf Course Road &middot; (+91) 98765 43210</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="f1__bar">
+                <span>© 2026 D'Zen Derma · All Rights Reserved</span>
+                <span>Privacy Policy · Terms of Service</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ═══════════ F6 — FLOATING FROSTED GLASS CARD ═══════════ -->
+    <div class="lbl">
+        <b>F6 — Floating Frosted Glass Card Footer</b>
+        <span>A serene clinic interior background with a floating translucent glass card container, backdrop blur, newsletter subscription, and gold borders.</span>
+    </div>
+    <div class="frame">
+        <footer class="ft ft-bg f6">
+            <img class="ft-bg__img" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1600&auto=format&fit=crop" alt="" aria-hidden="true">
+            <div class="f6__wash"></div>
+            <div class="f6__card">
+                <div class="f6__grid">
+                    <div>
+                        <span class="ft__eyebrow">Medical Aesthetics</span>
+                        <h3 style="font-family:'Playfair Display',serif; font-size:24px; color:#FFFDFB; margin:8px 0 10px;">D'ZEN DERMA</h3>
+                        <p class="f1__tagline" style="color:rgba(255,255,255,0.76) !important;">Stay updated with our curated aesthetic journals and seasonal wellness offerings.</p>
+                        <div class="f6__newsletter">
+                            <input type="email" placeholder="Your email address" aria-label="Email">
+                            <button type="button">Subscribe</button>
+                        </div>
+                    </div>
+                    <div class="ft__col">
+                        <h4>Expertise</h4>
+                        <ul>
+                            <li><a href="#">Laser Skin Clinic</a></li>
+                            <li><a href="#">Injectables &amp; Contouring</a></li>
+                            <li><a href="#">Cellular Therapy</a></li>
+                            <li><a href="#">Acne Recovery</a></li>
+                        </ul>
+                    </div>
+                    <div class="ft__col">
+                        <h4>Locations</h4>
+                        <ul>
+                            <li><a href="#">New Delhi Sanctuary</a></li>
+                            <li><a href="#">Gurgaon Flagship</a></li>
+                            <li><a href="#">Virtual Concierge</a></li>
+                            <li><a href="#">Book Consultation</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <dl class="f1__contact">
+                            <dt>Appointments</dt>
+                            <dd style="color:rgba(255,255,255,0.76);">Mon – Sat: 10:00 AM – 7:30 PM<br>care@dzenderma.com</dd>
+                        </dl>
+                        <div style="display:flex;">
+                            <a href="#" class="ft__social" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" /></svg></a>
+                            <a href="#" class="ft__social" aria-label="Facebook" style="margin-left:8px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 3h-3a4 4 0 0 0-4 4v3H5v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="f1__bar" style="border-top-color:rgba(232,201,154,0.2); padding-bottom:0; color:rgba(255,255,255,0.6);">
+                    <span>© 2026 D'Zen Derma · Bespoke Dermatology</span>
+                    <span>Privacy · Terms</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ═══════════ F7 — UNIFIED HERO BRAND BLOCK + COMPLETE FOOTER ═══════════ -->
+    <div class="lbl">
+        <b>F7 — Unified Brand Statement + Complete Footer (Seamless Journey)</b>
+        <span>Continuous background image where the grand closing brand block seamlessly flows into the comprehensive multi-column footer navigation.</span>
+    </div>
+    <div class="frame">
+        <footer class="ft ft-bg f7">
+            <img class="ft-bg__img" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1600&auto=format&fit=crop" alt="" aria-hidden="true">
+            <div class="f7__wash"></div>
+            
+            <div class="f7__banner">
+                <span class="ft__eyebrow" style="letter-spacing:4px;">Experience The Transformation</span>
+                <h2 class="f7__mark">D'ZEN DERMA</h2>
+                <p style="font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(16px, 1.8vw, 20px); color:rgba(255,255,255,0.85); margin:0;">Elevating You Inside Out</p>
+                <a href="#" class="f7__btn">Book An Appointment &rarr;</a>
+            </div>
+
+            <div class="f5__top" style="padding-top:clamp(40px, 5vw, 60px);">
+                <div>
+                    <h4 style="font-size:11px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold-lt); margin-bottom:12px;">Flagship Sanctuaries</h4>
+                    <p style="font-size:13.5px; line-height:1.7; color:rgba(255,255,255,0.76); margin:0;">
+                        <b>New Delhi:</b> Greater Kailash I<br>
+                        <b>Gurgaon:</b> Golf Course Road<br>
+                        <b>Call:</b> +91 93112 54441
+                    </p>
+                </div>
+                <div class="ft__col">
+                    <h4>Treatments</h4>
+                    <ul>
+                        <li><a href="#">Laser Aesthetics</a></li>
+                        <li><a href="#">Facial Sculpting</a></li>
+                        <li><a href="#">Skin Radiance</a></li>
+                        <li><a href="#">Hair Restoration</a></li>
+                    </ul>
+                </div>
+                <div class="ft__col">
+                    <h4>Sanctuary</h4>
+                    <ul>
+                        <li><a href="#">Our Philosophy</a></li>
+                        <li><a href="#">Clinical Standards</a></li>
+                        <li><a href="#">Client Journeys</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="font-size:11px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold-lt); margin-bottom:12px;">Concierge</h4>
+                    <p style="font-size:13.5px; color:rgba(255,255,255,0.76); margin-bottom:16px;">Private consultations arranged by appointment.</p>
+                    <div style="display:flex;">
+                        <a href="#" class="ft__social" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" /></svg></a>
+                        <a href="#" class="ft__social" aria-label="Facebook" style="margin-left:8px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 3h-3a4 4 0 0 0-4 4v3H5v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="f1__bar" style="border-top-color:rgba(232,201,154,0.2); color:rgba(255,255,255,0.6);">
+                <span>© 2026 D'Zen Derma · All Rights Reserved</span>
+                <span>Delhi &middot; Gurgaon</span>
+            </div>
+        </footer>
+    </div>
+
+    <div class="lbl" style="margin-bottom:70px; margin-top:50px;">
         <span>Header options in <b style="font-family:'Inter',sans-serif;font-size:13.5px;">_header-options.html</b>,
             <b style="font-family:'Inter',sans-serif;font-size:13.5px;">-2</b> and <b
                 style="font-family:'Inter',sans-serif;font-size:13.5px;">-3</b>.</span>
@@ -670,3 +1086,4 @@
 </body>
 
 </html>
+

@@ -2718,6 +2718,32 @@
             z-index: 2;
         }
 
+        /* Universal Section Background Logo Watermark (logo-header.png) */
+        .opt-watermark-bg {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: clamp(320px, 48vw, 660px);
+            height: auto;
+            opacity: 0.10;
+            pointer-events: none;
+            z-index: 1 !important;
+            filter: brightness(0) invert(1) drop-shadow(0 0 35px rgba(232, 201, 154, 0.35));
+        }
+
+        .opt-watermark-bg--top {
+            top: 24%;
+        }
+
+        .opt-watermark-bg--bottom {
+            top: auto;
+            bottom: -6%;
+            transform: translateX(-50%);
+            mask-image: linear-gradient(to top, transparent 0%, black 70%);
+            -webkit-mask-image: linear-gradient(to top, transparent 0%, black 70%);
+        }
+
         @media (max-width: 992px) {
             /* Option 10 Mobile Single-Frame Layout */
             .opt10-section {
@@ -2968,6 +2994,7 @@
 
     <div class="section-wrapper">
         <section class="opt2-section">
+            <img class="opt-watermark-bg" src="../images/logo-header.png" alt="" aria-hidden="true" />
             <div class="opt2-header">
                 <span class="sec-eyebrow sec-eyebrow--dark">THE TRIANGULAR PHILOSOPHY</span>
                 <div class="nemonic-separator">
@@ -3061,6 +3088,7 @@
 
     <div class="section-wrapper">
         <section class="opt3-section">
+            <img class="opt-watermark-bg" src="../images/logo-header.png" alt="" aria-hidden="true" />
             <div class="opt3-header">
                 <span class="sec-eyebrow sec-eyebrow--dark">CORE IDEOLOGY</span>
                 <div class="nemonic-separator">
@@ -3163,6 +3191,7 @@
 
     <div class="section-wrapper">
         <section class="opt4-section">
+            <img class="opt-watermark-bg" src="../images/logo-header.png" alt="" aria-hidden="true" />
             <div class="opt4-header">
                 <span class="sec-eyebrow sec-eyebrow--dark">CORE IDEOLOGY</span>
                 <div class="nemonic-separator">
@@ -3224,6 +3253,7 @@
 
     <div class="section-wrapper">
         <section class="opt5-section">
+            <img class="opt-watermark-bg" src="../images/logo-header.png" alt="" aria-hidden="true" />
             <div class="opt5-header">
                 <span class="sec-eyebrow sec-eyebrow--dark">THE TRIANGULAR PHILOSOPHY</span>
                 <div class="nemonic-separator">
@@ -3302,6 +3332,7 @@
 
     <div class="section-wrapper">
         <section class="opt6-section">
+            <img class="opt-watermark-bg opt-watermark-bg--top" src="../images/logo-header.png" alt="" aria-hidden="true" />
             <div class="opt6-header">
                 <span class="sec-eyebrow sec-eyebrow--dark">CORE IDEOLOGY</span>
                 <div class="nemonic-separator">
@@ -3408,6 +3439,7 @@
 
     <div class="section-wrapper">
         <section class="opt10-section">
+            <img class="opt-watermark-bg" src="../images/logo-header.png" alt="" aria-hidden="true" />
             <div class="text-center mb-3">
                 <span class="sec-eyebrow sec-eyebrow--dark">HAUTE CLINICAL CHRONOLOGY</span>
                 <div class="nemonic-separator">
@@ -3553,6 +3585,7 @@
 
     <div class="section-wrapper">
         <section class="opt11-section">
+            <img class="opt-watermark-bg" src="../images/logo-header.png" alt="" aria-hidden="true" />
             <div class="text-center mb-4">
                 <span class="sec-eyebrow sec-eyebrow--dark">CINEMATIC TRIPTYCH</span>
                 <div class="nemonic-separator">
@@ -3671,6 +3704,7 @@
 
     <div class="section-wrapper">
         <section class="opt12-section">
+            <img class="opt-watermark-bg" src="../images/logo-header.png" alt="" aria-hidden="true" />
             <div class="text-center mb-2">
                 <span class="sec-eyebrow sec-eyebrow--dark">DYNAMIC HARMONY</span>
                 <div class="nemonic-separator">

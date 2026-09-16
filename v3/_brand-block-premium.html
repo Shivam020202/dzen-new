@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Brand block — premium options</title>
+    <title>Brand Block — Philosophy Background & Watermark Options</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,54 +16,479 @@
     <link rel="stylesheet" href="styles.css?v=4.0" />
 
     <style>
+        :root {
+            /* Philosophy Page Design Tokens */
+            --dz-espresso: #4b2b20;
+            --dz-copper: #8b4513;
+            --dz-dark-gradient: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
+            --dz-cream: #FDF8F3;
+            --dz-sand: #F4EBE1;
+            --dz-gold: #c88a4e;
+            --dz-gold-dark: #96682A;
+            --dz-champagne: #E8C99A;
+            --dz-text-main: #2B1A12;
+            --dz-text-muted: #5C4A3A;
+            --serif: 'Playfair Display', Georgia, serif;
+            --sans: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
         body {
-            background: #E7DED4;
+            background: #EDE5DC;
             margin: 0;
+            font-family: var(--sans);
+            color: var(--dz-text-main);
+            -webkit-font-smoothing: antialiased;
         }
 
         .lbl {
-            max-width: 1140px;
-            margin: 58px auto 16px;
-            padding: 0 20px;
-            font-family: 'Inter', system-ui, sans-serif;
+            max-width: 1180px;
+            margin: 58px auto 18px;
+            padding: 0 24px;
         }
 
         .lbl b {
             display: block;
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 23px;
-            font-weight: 400;
+            font-family: var(--serif);
+            font-size: 24px;
+            font-weight: 500;
             color: #2B1A12;
             margin-bottom: 5px;
+            letter-spacing: 0.02em;
         }
 
         .lbl span {
-            font-size: 13.5px;
+            font-size: 14px;
             font-weight: 300;
             line-height: 1.65;
             color: #5C4A3A;
         }
 
-        /* ══ shared ══ */
+        .section-separator {
+            max-width: 1180px;
+            margin: 70px auto 30px;
+            padding: 0 24px;
+            border-top: 2px dashed rgba(75, 43, 32, 0.25);
+            padding-top: 30px;
+        }
+
+        .section-separator h3 {
+            font-family: var(--serif);
+            font-size: 26px;
+            color: #4B2B20;
+            margin-bottom: 6px;
+        }
+
+        .section-separator p {
+            font-size: 14px;
+            color: #7A5726;
+            margin: 0;
+        }
+
+        /* ════════════════════════════════════════════════════════════════
+           EXACT PHILOSOPHY SECTION BACKGROUND ARCHITECTURE (FULL WIDTH)
+           (From _philosophy-options.html Options 3, 6, 10, 12)
+           ════════════════════════════════════════════════════════════════ */
+        .ph-block {
+            background: var(--dz-dark-gradient);
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            border-radius: 0;
+            padding: clamp(60px, 7.5vw, 115px) 24px;
+            border-top: 1px solid rgba(232, 201, 154, 0.2);
+            border-bottom: 1px solid rgba(232, 201, 154, 0.2);
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            color: #FAF7F2;
+            text-align: center;
+        }
+
+        /* Dual-radial ambient atmosphere from philosophy page */
+        .ph-block::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 65% 60% at 50% -8%, rgba(198, 119, 119, 0.16) 0%, transparent 68%),
+                radial-gradient(ellipse 40% 40% at 80% 110%, rgba(143, 113, 74, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Micro noise texture from philosophy page */
+        .ph-block::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.25;
+            mix-blend-mode: overlay;
+        }
+
+        .ph-block>* {
+            position: relative;
+            z-index: 2;
+        }
+
+        .ph-inner {
+            position: relative;
+            z-index: 3;
+            max-width: 1040px;
+            margin: 0 auto;
+        }
+
+        .ph-mark {
+            font-family: var(--serif) !important;
+            font-weight: 400;
+            font-style: normal !important;
+            letter-spacing: .06em;
+            line-height: 1.05;
+            margin: 0;
+            color: #FFFDFB !important;
+            -webkit-text-fill-color: #FFFDFB !important;
+            font-size: clamp(34px, 6.2vw, 84px) !important;
+            text-shadow: 0 4px 24px rgba(0, 0, 0, .45);
+        }
+
+        .ph-tag {
+            font-family: var(--serif) !important;
+            font-style: italic;
+            font-weight: 400;
+            margin: 0;
+            font-size: clamp(15px, 1.8vw, 20px) !important;
+            color: rgba(255, 255, 255, .84) !important;
+        }
+
+        .ph-rule {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin: 22px auto;
+            max-width: 240px;
+            color: var(--dz-champagne);
+        }
+
+        .ph-rule i {
+            flex: 1;
+            height: 1px;
+            background: currentColor;
+            opacity: .45;
+        }
+
+        .ph-rule b {
+            width: 5px;
+            height: 5px;
+            transform: rotate(45deg);
+            background: currentColor;
+            opacity: .85;
+        }
+
+        .ph-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+            padding: 13px 36px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2.8px;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: #ffffff;
+            color: #2B1A12 !important;
+            box-shadow: 0 10px 28px -8px rgba(0, 0, 0, .45);
+            transition: transform .3s ease, box-shadow .3s ease, background .3s ease, color .3s ease;
+            margin-top: 26px;
+        }
+
+        .ph-btn:hover {
+            transform: translateY(-2px);
+            background: #F8EFE4;
+            color: #2B1A12 !important;
+            box-shadow: 0 14px 34px -6px rgba(0, 0, 0, .55);
+        }
+
+        .ph-btn img {
+            width: 13px;
+            height: 13px;
+            object-fit: contain;
+            filter: none;
+        }
+
+        /* ── PH1: Pure Philosophy Monogram Sanctuary ── */
+        .ph1__watermark {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: clamp(280px, 45vw, 560px);
+            height: auto;
+            opacity: .13;
+            pointer-events: none;
+            z-index: 1;
+            filter: brightness(0) invert(1) drop-shadow(0 0 35px rgba(218, 165, 32, .35));
+        }
+
+        /* ── PH2: Philosophy Liquid Ripple ── */
+        .ph2__stage {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: clamp(320px, 50vw, 620px);
+            height: clamp(320px, 50vw, 620px);
+            pointer-events: none;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ph2__watermark {
+            position: relative;
+            width: 65%;
+            height: auto;
+            opacity: .15;
+            filter: brightness(0) invert(1) drop-shadow(0 0 25px rgba(232, 201, 154, .5));
+            z-index: 2;
+        }
+
+        .ph2__ripple {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 1px solid rgba(232, 201, 154, .25);
+            animation: ph-ripple 6s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+        }
+
+        .ph2__ripple:nth-child(2) {
+            animation-delay: 2s;
+        }
+
+        .ph2__ripple:nth-child(3) {
+            animation-delay: 4s;
+        }
+
+        @keyframes ph-ripple {
+            0% {
+                transform: scale(0.4);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1.35);
+                opacity: 0;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .ph2__ripple {
+                animation: none;
+                transform: scale(1);
+                opacity: 0.2;
+            }
+        }
+
+        /* ── PH3: Philosophy Horizon Crest ── */
+        .ph3__watermark {
+            position: absolute;
+            left: 50%;
+            bottom: -12%;
+            transform: translateX(-50%);
+            width: clamp(360px, 56vw, 700px);
+            height: auto;
+            opacity: .14;
+            pointer-events: none;
+            z-index: 1;
+            filter: brightness(0) invert(1) drop-shadow(0 -10px 30px rgba(218, 165, 32, .25));
+            mask-image: linear-gradient(to top, transparent 0%, black 60%);
+            -webkit-mask-image: linear-gradient(to top, transparent 0%, black 60%);
+        }
+
+        .ph3 .ph-mark {
+            background: linear-gradient(110deg, #FFFFFF 0%, #F6DFA4 50%, #FFFFFF 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent !important;
+            -webkit-text-fill-color: transparent !important;
+        }
+
+        /* ── PH4: Philosophy Frosted Glass Capsule ── */
+        .ph4__watermark {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: clamp(340px, 52vw, 650px);
+            opacity: .14;
+            pointer-events: none;
+            z-index: 1;
+            filter: brightness(0) invert(1) drop-shadow(0 0 35px rgba(232, 201, 154, .3));
+        }
+
+        .ph4__capsule {
+            position: relative;
+            z-index: 3;
+            max-width: 880px;
+            margin: 0 auto;
+            padding: clamp(44px, 5.5vw, 76px) clamp(24px, 5vw, 60px);
+            border-radius: 36px;
+            background: rgba(255, 255, 255, .05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(232, 201, 154, .3);
+            box-shadow:
+                0 30px 60px -15px rgba(0, 0, 0, .45),
+                inset 0 1px 0 rgba(255, 255, 255, .25);
+        }
+
+        .ph4__capsule::before {
+            content: "";
+            position: absolute;
+            inset: 8px;
+            border-radius: 28px;
+            border: 1px solid rgba(232, 201, 154, .14);
+            pointer-events: none;
+        }
+
+        .ph4 .ph-btn {
+            background: linear-gradient(135deg, #E8C99A 0%, #C9922F 100%);
+            color: #24120B !important;
+            box-shadow: 0 12px 28px -6px rgba(201, 146, 47, .5);
+        }
+
+        .ph4 .ph-btn:hover {
+            background: #FFFDFB;
+            color: #24120B !important;
+            box-shadow: 0 16px 34px -4px rgba(232, 201, 154, .6);
+        }
+
+        /* ── PH5: Philosophy Flowing Gold Streams ── */
+        .ph5__frame {
+            position: relative;
+            max-width: 1060px;
+            margin: 0 auto;
+            padding: clamp(38px, 5vw, 70px) clamp(20px, 4vw, 50px);
+        }
+
+        .ph5__watermark {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: clamp(280px, 42vw, 520px);
+            opacity: .13;
+            pointer-events: none;
+            z-index: 1;
+            filter: brightness(0) invert(1) drop-shadow(0 0 30px rgba(218, 165, 32, .3));
+        }
+
+        .ph5__stream-top,
+        .ph5__stream-bottom {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(232, 201, 154, .65) 50%, transparent 100%);
+        }
+
+        .ph5__stream-top {
+            top: 0;
+        }
+
+        .ph5__stream-bottom {
+            bottom: 0;
+        }
+
+        .ph5__est {
+            display: inline-block;
+            margin-top: 24px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--dz-champagne);
+            opacity: .85;
+        }
+
+        /* ── PH6: Philosophy Liquid Light Reflection ── */
+        .ph6__watermark-wrap {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: clamp(300px, 48vw, 600px);
+            height: clamp(140px, 25vw, 280px);
+            pointer-events: none;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ph6__watermark-sheen {
+            width: 100%;
+            height: 100%;
+            mask-image: url('../images/logo-header.png');
+            -webkit-mask-image: url('../images/logo-header.png');
+            mask-size: contain;
+            -webkit-mask-size: contain;
+            mask-repeat: no-repeat;
+            -webkit-mask-repeat: no-repeat;
+            mask-position: center;
+            -webkit-mask-position: center;
+            opacity: .2;
+            background: linear-gradient(120deg,
+                rgba(232, 201, 154, .3) 0%,
+                rgba(255, 255, 255, .85) 50%,
+                rgba(232, 201, 154, .3) 100%);
+            background-size: 250% 100%;
+            animation: ph-sheen 6s ease-in-out infinite;
+        }
+
+        @keyframes ph-sheen {
+            0%, 100% {
+                background-position: 150% 0;
+            }
+            50% {
+                background-position: -50% 0;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .ph6__watermark-sheen {
+                animation: none;
+                background-position: 50% 0;
+            }
+        }
+
+        /* ════════════════════════════════════════════════════════════════
+           ORIGINAL PREMIUM OPTIONS (P1 - P5) (FULL WIDTH)
+           ════════════════════════════════════════════════════════════════ */
         .pb {
             position: relative;
             isolation: isolate;
             overflow: hidden;
-            font-family: 'Inter', system-ui, sans-serif;
+            font-family: var(--sans);
             text-align: center;
-        }
-
-        .pb__eyebrow {
-            display: block;
-            font-size: 10px;
-            font-weight: 600;
-            /* Wide tracking is the single strongest "premium" signal in type */
-            letter-spacing: 6px;
-            text-transform: uppercase;
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            border-radius: 0;
+            border-top: 1px solid rgba(196, 146, 74, 0.2);
+            border-bottom: 1px solid rgba(196, 146, 74, 0.2);
         }
 
         .pb__mark {
-            font-family: 'Playfair Display', Georgia, serif !important;
+            font-family: var(--serif) !important;
             font-weight: 400;
             font-style: normal !important;
             letter-spacing: .06em;
@@ -72,7 +497,7 @@
         }
 
         .pb__tag {
-            font-family: 'Playfair Display', Georgia, serif !important;
+            font-family: var(--serif) !important;
             font-style: italic;
             font-weight: 400;
             margin: 0;
@@ -97,8 +522,8 @@
         }
 
         .pb__btn img {
-            width: 12px;
-            height: 12px;
+            width: 13px;
+            height: 13px;
             object-fit: contain;
         }
 
@@ -107,7 +532,6 @@
             z-index: 3;
         }
 
-        /* Hairline with a diamond at its centre — a small couture detail */
         .pb__rule {
             display: flex;
             align-items: center;
@@ -143,9 +567,8 @@
             z-index: 1;
         }
 
-        /* ═══════ P1 — FOIL WITH SHIMMER ═══════ */
         .p1 {
-            padding: clamp(56px, 6.5vw, 104px) 20px;
+            padding: clamp(60px, 7.5vw, 110px) 24px;
             background:
                 radial-gradient(90% 70% at 50% 0%, rgba(232, 201, 154, .13) 0%, transparent 64%),
                 linear-gradient(160deg, #3a1f16 0%, #2a1410 100%),
@@ -153,18 +576,10 @@
             background-blend-mode: normal, multiply, normal;
         }
 
-        .p1 .pb__eyebrow {
-            color: #E8C99A;
-        }
-
         .p1 .pb__rule {
             color: #E8C99A;
         }
 
-        /* Foil: a gradient clipped to the glyphs, animated so the highlight
-           travels across the letterforms like light on metal.
-           -webkit-text-fill-color must be transparent AND !important —
-           styles.css forces a solid colour on every h1-h6. */
         .p1 .pb__mark {
             font-size: clamp(34px, 6.4vw, 86px) !important;
             margin: 4px 0 0;
@@ -180,12 +595,9 @@
         }
 
         @keyframes foil {
-
-            0%,
-            100% {
+            0%, 100% {
                 background-position: 130% 50%;
             }
-
             50% {
                 background-position: -30% 50%;
             }
@@ -215,269 +627,421 @@
             color: #2B1A12 !important;
         }
 
-        .p1 .pb__btn img {
-            filter: none;
-        }
 
-        /* ═══════ P2 — MEDALLION ═══════ */
-        .p2 {
-            padding: clamp(52px, 6vw, 96px) 20px;
-            background: linear-gradient(180deg, #FFFDFB 0%, #F6EDE0 100%);
-        }
-
-        /* Double gold ring around the mark */
-        .p2__medal {
-            width: clamp(96px, 12vw, 138px);
-            height: clamp(96px, 12vw, 138px);
-            margin: 0 auto 26px;
-            border-radius: 50%;
-            border: 1px solid rgba(196, 146, 74, .55);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* ════════════════════════════════════════════════════════════════
+           P4 DUOTONE & BACKGROUND IMAGE BRAND BLOCK VARIANTS
+           ════════════════════════════════════════════════════════════════ */
+        .p4-wrap {
             position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100%;
+            font-family: var(--sans);
+            text-align: center;
         }
 
-        .p2__medal::before {
-            content: "";
-            position: absolute;
-            inset: 7px;
-            border-radius: 50%;
-            border: 1px solid rgba(196, 146, 74, .28);
-        }
-
-        .p2__medal img {
-            width: 42%;
-            height: auto;
-            opacity: .85;
-        }
-
-        .p2 .pb__eyebrow {
-            color: #96682A;
-        }
-
-        .p2 .pb__mark {
-            font-size: clamp(28px, 4.6vw, 58px) !important;
-            color: #3a1f16 !important;
-            -webkit-text-fill-color: #3a1f16 !important;
-            margin: 14px 0 0;
-        }
-
-        .p2 .pb__rule {
-            color: #C4924A;
-        }
-
-        .p2 .pb__tag {
-            font-size: clamp(15px, 1.7vw, 19px) !important;
-            color: #5C4A3A !important;
-            margin-bottom: 30px;
-        }
-
-        .p2 .pb__btn {
-            background: #3a1f16;
-            color: #fff !important;
-            box-shadow: 0 14px 30px -14px rgba(43, 26, 18, .5);
-        }
-
-        /* ═══════ P3 — ENGRAVED, LIGHT ═══════ */
-        .p3 {
-            padding: clamp(54px, 6vw, 100px) 20px;
-            background:
-                linear-gradient(160deg, #F7EFE4 0%, #EFE3D2 100%),
-                url('../images/contour-texture.webp') repeat;
-            background-blend-mode: multiply, normal;
-        }
-
-        .p3 .pb__eyebrow {
-            color: #96682A;
-        }
-
-        /* Engraved rather than debossed: real ink colour, with a light
-           highlight below and a soft shadow above, so it reads as cut INTO
-           the surface while staying fully legible. */
-        .p3 .pb__mark {
-            font-size: clamp(32px, 5.6vw, 76px) !important;
-            color: #4b2b20 !important;
-            -webkit-text-fill-color: #4b2b20 !important;
-            margin: 14px 0 0;
-            text-shadow:
-                0 1px 0 rgba(255, 255, 255, .75),
-                0 -1px 1px rgba(90, 60, 30, .28);
-        }
-
-        .p3 .pb__rule {
-            color: #C4924A;
-        }
-
-        .p3 .pb__tag {
-            font-size: clamp(15px, 1.7vw, 19px) !important;
-            color: #5C4A3A !important;
-            margin-bottom: 30px;
-        }
-
-        .p3 .pb__btn {
-            background: transparent;
-            border: 1px solid #4b2b20;
-            color: #4b2b20 !important;
-        }
-
-        .p3 .pb__btn:hover {
-            background: #4b2b20;
-            color: #fff !important;
-        }
-
-        .p3 .pb__btn img {
-            filter: none;
-        }
-
-        /* ═══════ P4 — DUOTONE BAND ═══════ */
-        .p4 {
-            padding: clamp(58px, 7vw, 110px) 20px;
-        }
-
-        .p4__bg {
+        .p4__bg-img {
             position: absolute;
             inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* Duotone: strip the photo to grey then tint it brown, so it reads
-               as brand material rather than a stock photograph. */
-            filter: grayscale(1) contrast(1.1);
             z-index: 0;
+            transform: scale(1.02);
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .p4__wash {
+        .p4-wrap:hover .p4__bg-img {
+            transform: scale(1.06);
+        }
+
+        /* ── P4-A: Espresso Velvet Duotone ── */
+        .p4a {
+            padding: clamp(64px, 8vw, 120px) 24px;
+        }
+
+        .p4a .p4__bg-img {
+            filter: grayscale(100%) contrast(1.15);
+        }
+
+        .p4a__wash {
             position: absolute;
             inset: 0;
-            background: linear-gradient(160deg, rgba(58, 31, 22, .93) 0%, rgba(42, 20, 16, .88) 100%);
+            background: linear-gradient(160deg, rgba(58, 31, 22, 0.94) 0%, rgba(36, 18, 11, 0.92) 100%);
             mix-blend-mode: multiply;
             z-index: 1;
         }
 
-        .p4__glow {
+        .p4a__glow {
             position: absolute;
             inset: 0;
-            background: radial-gradient(70% 60% at 50% 0%, rgba(232, 201, 154, .18) 0%, transparent 62%);
+            background: radial-gradient(75% 65% at 50% 0%, rgba(232, 201, 154, 0.22) 0%, transparent 68%);
             z-index: 2;
         }
 
-        .p4 .pb__eyebrow {
-            color: #E8C99A;
-        }
-
-        .p4 .pb__rule {
-            color: #E8C99A;
-        }
-
-        .p4 .pb__mark {
-            font-size: clamp(32px, 5.8vw, 80px) !important;
-            color: #fff !important;
-            -webkit-text-fill-color: #fff !important;
+        .p4a .pb__mark {
+            font-size: clamp(34px, 6.2vw, 84px) !important;
+            color: #FFFDFB !important;
+            -webkit-text-fill-color: #FFFDFB !important;
             margin: 4px 0 0;
+            text-shadow: 0 4px 28px rgba(0, 0, 0, 0.6);
         }
 
-        .p4 .pb__tag {
-            font-size: clamp(15px, 1.7vw, 19px) !important;
-            color: rgba(255, 255, 255, .78) !important;
-            margin-bottom: 32px;
+        .p4a .pb__tag {
+            font-size: clamp(15px, 1.8vw, 20px) !important;
+            color: rgba(255, 255, 255, 0.82) !important;
+            margin-bottom: 30px;
         }
 
-        /* Glass button — sits on the photograph without hiding it */
-        .p4 .pb__btn {
-            background: rgba(255, 255, 255, .12);
-            border: 1px solid rgba(255, 255, 255, .35);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            color: #fff !important;
+        .p4a .pb__rule {
+            color: #E8C99A;
         }
 
-        .p4 .pb__btn:hover {
-            background: rgba(255, 255, 255, .22);
+        .p4a .pb__btn {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: #FFFDFB !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         }
 
-        /* ═══════ P5 — COUTURE COLUMNS ═══════ */
-        .p5 {
-            padding: clamp(50px, 6vw, 92px) clamp(20px, 5vw, 60px);
-            background: #FDF8F3;
+        .p4a .pb__btn:hover {
+            background: #FFFDFB;
+            color: #2B1A12 !important;
+            box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
         }
 
-        .p5__frame {
-            position: relative;
-            max-width: 1080px;
-            margin: 0 auto;
-            padding: clamp(34px, 4vw, 62px) clamp(40px, 7vw, 110px);
+        /* ── P4-B: Parallax Architectural Sanctuary with Frosted Card ── */
+        .p4b {
+            padding: clamp(60px, 7.5vw, 110px) 24px;
         }
 
-        /* Two full-height hairlines instead of a box — the couture device */
-        .p5__frame::before,
-        .p5__frame::after {
-            content: "";
+        .p4b .p4__bg-img {
+            filter: grayscale(85%) sepia(25%) contrast(1.1);
+        }
+
+        .p4b__wash {
             position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background: linear-gradient(180deg, transparent, rgba(196, 146, 74, .6) 22%, rgba(196, 146, 74, .6) 78%, transparent);
+            inset: 0;
+            background: linear-gradient(135deg, rgba(43, 26, 18, 0.88) 0%, rgba(20, 10, 6, 0.94) 100%);
+            mix-blend-mode: multiply;
+            z-index: 1;
         }
 
-        .p5__frame::before {
-            left: 0;
+        .p4b__card {
+            position: relative;
+            z-index: 3;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: clamp(40px, 5vw, 70px) clamp(24px, 5vw, 56px);
+            border-radius: 28px;
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(232, 201, 154, 0.32);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3);
         }
 
-        .p5__frame::after {
-            right: 0;
-        }
-
-        .p5 .pb__eyebrow {
-            color: #96682A;
-        }
-
-        .p5 .pb__mark {
-            font-size: clamp(28px, 5vw, 66px) !important;
-            color: #3a1f16 !important;
-            -webkit-text-fill-color: #3a1f16 !important;
-            margin: 16px 0 0;
-        }
-
-        .p5 .pb__tag {
-            font-size: clamp(15px, 1.7vw, 19px) !important;
-            color: #5C4A3A !important;
-        }
-
-        .p5 .pb__rule {
-            color: #C4924A;
-        }
-
-        .p5__est {
-            display: block;
-            margin-top: 26px;
-            font-size: 9.5px;
+        .p4b__eyebrow {
+            display: inline-block;
+            font-size: 10px;
             font-weight: 600;
-            letter-spacing: 4.5px;
+            letter-spacing: 3.5px;
             text-transform: uppercase;
-            color: #96682A;
+            color: var(--dz-champagne);
+            margin-bottom: 12px;
         }
 
-        .p5 .pb__btn {
-            background: #3a1f16;
-            color: #fff !important;
-            margin-top: 26px;
+        .p4b .pb__mark {
+            font-size: clamp(30px, 5.5vw, 72px) !important;
+            color: #FFFFFF !important;
+            -webkit-text-fill-color: #FFFFFF !important;
+            margin: 0;
         }
+
+        .p4b .pb__rule {
+            color: var(--dz-champagne);
+        }
+
+        .p4b .pb__tag {
+            font-size: clamp(14.5px, 1.7vw, 19px) !important;
+            color: rgba(255, 255, 255, 0.84) !important;
+            margin-bottom: 26px;
+        }
+
+        .p4b .pb__btn {
+            background: linear-gradient(135deg, #E8C99A 0%, #C9922F 100%);
+            color: #24120B !important;
+            box-shadow: 0 12px 28px -6px rgba(201, 146, 47, 0.5);
+        }
+
+        .p4b .pb__btn:hover {
+            background: #FFFFFF;
+            color: #24120B !important;
+            box-shadow: 0 16px 36px rgba(232, 201, 154, 0.6);
+        }
+
+        /* ── P4-C: Travertine Clinic Duotone with Integrated Watermark ── */
+        .p4c {
+            padding: clamp(65px, 8vw, 125px) 24px;
+        }
+
+        .p4c .p4__bg-img {
+            filter: grayscale(70%) sepia(35%) brightness(0.9) contrast(1.05);
+        }
+
+        .p4c__wash {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(65, 36, 25, 0.86) 0%, rgba(45, 22, 14, 0.94) 100%);
+            mix-blend-mode: multiply;
+            z-index: 1;
+        }
+
+        .p4c__watermark {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: clamp(280px, 46vw, 580px);
+            opacity: 0.16;
+            pointer-events: none;
+            z-index: 2;
+            filter: brightness(0) invert(1) drop-shadow(0 0 35px rgba(232, 201, 154, 0.4));
+        }
+
+        .p4c .pb__mark {
+            font-size: clamp(34px, 6.4vw, 86px) !important;
+            background: linear-gradient(110deg, #FFFFFF 0%, #F6DFA4 50%, #FFFFFF 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent !important;
+            -webkit-text-fill-color: transparent !important;
+            margin: 0;
+        }
+
+        .p4c .pb__rule {
+            color: #E8C99A;
+        }
+
+        .p4c .pb__tag {
+            font-size: clamp(15px, 1.8vw, 20px) !important;
+            color: rgba(255, 255, 255, 0.8) !important;
+            margin-bottom: 28px;
+        }
+
+        .p4c .pb__btn {
+            background: transparent;
+            border: 1px solid rgba(232, 201, 154, 0.6);
+            color: #E8C99A !important;
+        }
+
+        .p4c .pb__btn:hover {
+            background: #E8C99A;
+            color: #2B1A12 !important;
+            box-shadow: 0 10px 30px rgba(232, 201, 154, 0.35);
+        }
+
+        /* ── P4-D: Cinematic Wide Horizon Glow ── */
+        .p4d {
+            padding: clamp(70px, 8.5vw, 130px) 24px;
+        }
+
+        .p4d .p4__bg-img {
+            filter: grayscale(100%) contrast(1.2);
+        }
+
+        .p4d__wash {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(40, 18, 12, 0.95) 0%, rgba(20, 8, 4, 0.96) 100%);
+            mix-blend-mode: multiply;
+            z-index: 1;
+        }
+
+        .p4d__horizon {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(232, 201, 154, 0.5) 50%, transparent 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .p4d .pb__mark {
+            font-size: clamp(36px, 6.8vw, 90px) !important;
+            margin: 0;
+            background: linear-gradient(100deg, #8a5815 0%, #C9922F 18%, #F6DFA4 34%, #FFF6DF 42%, #F6DFA4 50%, #C9922F 66%, #8a5815 100%);
+            background-size: 260% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent !important;
+            -webkit-text-fill-color: transparent !important;
+            animation: foil 7s ease-in-out infinite;
+        }
+
+        .p4d .pb__rule {
+            color: #E8C99A;
+        }
+
+        .p4d .pb__tag {
+            font-size: clamp(15px, 1.8vw, 20px) !important;
+            color: rgba(255, 255, 255, 0.8) !important;
+            margin-bottom: 28px;
+        }
+
+        .p4d .pb__btn {
+            background: #FFFFFF;
+            color: #2B1A12 !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .p4d .pb__btn:hover {
+            background: #F8EFE4;
+            transform: translateY(-2px);
+        }
+
+
+
     </style>
 </head>
 
 <body>
 
+    <!-- ═══════════════════════════════════════════════════════════════
+         PART 1: EXACT PHILOSOPHY BACKGROUND & LOGO WATERMARK (FULL WIDTH)
+         ═══════════════════════════════════════════════════════════════ -->
+
+    <div class="section-separator" style="margin-top:40px; border-top:none; padding-top:0;">
+        <h3>✦ Part 1: Philosophy Section Background &amp; Texture (Full Width)</h3>
+        <p>Full-width edge-to-edge layout using the exact background styling from <code>_philosophy-options.html</code>: <code>linear-gradient(135deg, #4b2b20 0%, #8b4513 100%)</code> with dual ambient radial glows (amber &amp; rose-gold), micro-noise grain overlay, and the official <code>logo-header.png</code> website logo watermark.</p>
+    </div>
+
+    <!-- PH1 -->
+    <div class="lbl">
+        <b>Option PH1 — Philosophy Monogram Sanctuary (Full Width)</b>
+        <span>Full-bleed philosophy section gradient, dual-radial ambient atmosphere, and subtle noise grain texture with <code>logo-header.png</code> rendered as a quiet, luminous 560px watermark.</span>
+    </div>
+    <section class="ph-block">
+        <img class="ph1__watermark" src="../images/logo-header.png" alt="" aria-hidden="true">
+        <div class="ph-inner">
+            <h2 class="ph-mark">D'ZEN DERMA</h2>
+            <div class="ph-rule"><i></i><b></b><i></i></div>
+            <p class="ph-tag">Elevating You Inside Out</p>
+            <a href="#" class="ph-btn">Book Now <img src="nemonic.png" alt=""></a>
+        </div>
+    </section>
+
+    <!-- PH2 -->
+    <div class="lbl">
+        <b>Option PH2 — Philosophy Liquid Caustic Ripple (Full Width)</b>
+        <span>Concentric water-ripple wave rings gently expanding across the full-width philosophy background atmosphere with the centered <code>logo-header.png</code> watermark.</span>
+    </div>
+    <section class="ph-block">
+        <div class="ph2__stage" aria-hidden="true">
+            <div class="ph2__ripple"></div>
+            <div class="ph2__ripple"></div>
+            <div class="ph2__ripple"></div>
+            <img class="ph2__watermark" src="../images/logo-header.png" alt="">
+        </div>
+        <div class="ph-inner">
+            <h2 class="ph-mark">D'ZEN DERMA</h2>
+            <div class="ph-rule"><i></i><b></b><i></i></div>
+            <p class="ph-tag">Elevating You Inside Out</p>
+            <a href="#" class="ph-btn">Book Now <img src="nemonic.png" alt=""></a>
+        </div>
+    </section>
+
+    <!-- PH3 -->
+    <div class="lbl">
+        <b>Option PH3 — Philosophy Rising Horizon Crest (Full Width)</b>
+        <span>An oversized <code>logo-header.png</code> rising upward from the lower baseline with a soft vertical gradient fade, creating a reflective horizon effect on the full-width philosophy background.</span>
+    </div>
+    <section class="ph-block">
+        <img class="ph3__watermark" src="../images/logo-header.png" alt="" aria-hidden="true">
+        <div class="ph-inner">
+            <h2 class="ph-mark">D'ZEN DERMA</h2>
+            <div class="ph-rule"><i></i><b></b><i></i></div>
+            <p class="ph-tag">Elevating You Inside Out</p>
+            <a href="#" class="ph-btn">Book Now <img src="nemonic.png" alt=""></a>
+        </div>
+    </section>
+
+    <!-- PH4 -->
+    <div class="lbl">
+        <b>Option PH4 — Philosophy Frosted Glass Capsule (Full Width)</b>
+        <span>The <code>logo-header.png</code> spans the full-width philosophy background behind a floating translucent frosted glass capsule with champagne gold bevels and ambient depth.</span>
+    </div>
+    <section class="ph-block">
+        <img class="ph4__watermark" src="../images/logo-header.png" alt="" aria-hidden="true">
+        <div class="ph4__capsule">
+            <h2 class="ph-mark">D'ZEN DERMA</h2>
+            <div class="ph-rule"><i></i><b></b><i></i></div>
+            <p class="ph-tag">Elevating You Inside Out</p>
+            <a href="#" class="ph-btn">Book Now <img src="nemonic.png" alt="" style="filter:brightness(0) invert(1);"></a>
+        </div>
+    </section>
+
+    <!-- PH5 -->
+    <div class="lbl">
+        <b>Option PH5 — Philosophy Flowing Gold Streams (Full Width)</b>
+        <span>Delicate gold stream hairlines flow horizontally above and below the <code>logo-header.png</code> watermark across the full-width philosophy background, anchored with an establishment provenance badge.</span>
+    </div>
+    <section class="ph-block">
+        <div class="ph5__frame">
+            <div class="ph5__stream-top"></div>
+            <img class="ph5__watermark" src="../images/logo-header.png" alt="" aria-hidden="true">
+            <div class="ph-inner">
+                <h2 class="ph-mark">D'ZEN DERMA</h2>
+                <div class="ph-rule"><i></i><b></b><i></i></div>
+                <p class="ph-tag">Elevating You Inside Out</p>
+                <a href="#" class="ph-btn">Book Now <img src="nemonic.png" alt=""></a>
+                <br>
+                <span class="ph5__est">Delhi &middot; Gurgaon</span>
+            </div>
+            <div class="ph5__stream-bottom"></div>
+        </div>
+    </section>
+
+    <!-- PH6 -->
+    <div class="lbl">
+        <b>Option PH6 — Philosophy Liquid Light Reflection (Full Width)</b>
+        <span>Full-width philosophy background with an animated specular sheen sweeping smoothly across the <code>logo-header.png</code> mask, mimicking gentle sunlight glinting across water.</span>
+    </div>
+    <section class="ph-block">
+        <div class="ph6__watermark-wrap" aria-hidden="true">
+            <div class="ph6__watermark-sheen"></div>
+        </div>
+        <div class="ph-inner">
+            <h2 class="ph-mark">D'ZEN DERMA</h2>
+            <div class="ph-rule"><i></i><b></b><i></i></div>
+            <p class="ph-tag">Elevating You Inside Out</p>
+            <a href="#" class="ph-btn">Book Now <img src="nemonic.png" alt=""></a>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         PART 2: DUOTONE & BACKGROUND IMAGE BRAND BLOCKS (P1, P4-A TO P4-D)
+         ═══════════════════════════════════════════════════════════════ -->
+
+    <div class="section-separator">
+        <h3>✦ Part 2: Background Image &amp; Duotone Brand Block Variants</h3>
+        <p>Curated architectural and luxury clinic photography tinted in espresso, copper, and champagne tones with ambient overlays and glassmorphism.</p>
+    </div>
+
     <!-- P1 -->
     <div class="lbl">
-        <b>P1 — Gold foil with shimmer</b>
-        <span>The name filled with a metallic gradient that slowly travels across the letterforms, like light moving
-            over foil. Outlined button rather than filled, and a diamond-centred hairline. The most overtly
-            luxurious.</span>
+        <b>P1 — Gold Foil with Shimmer (Metallic Baseline)</b>
+        <span>The name filled with a metallic gradient that slowly travels across the letterforms, like light moving over foil. Outlined button and a diamond-centred hairline.</span>
     </div>
     <section class="pb p1 grain">
+        <img class="ph1__watermark" src="../images/logo-header.png" alt="" aria-hidden="true">
         <div class="pb__inner">
-            <span class="pb__eyebrow">Aesthetics &amp; Wellness</span>
             <h2 class="pb__mark">D'ZEN DERMA</h2>
             <div class="pb__rule"><i></i><b></b><i></i></div>
             <p class="pb__tag">Elevating You Inside Out</p>
@@ -485,34 +1049,53 @@
         </div>
     </section>
 
-    <!-- P2 -->
+
+    <!-- P4-A -->
     <div class="lbl">
-        <b>P2 — Medallion</b>
-        <span>The nemonic set inside a double gold ring, the name beneath it, generous air all round. Reads like a
-            maison stamp rather than a web footer.</span>
+        <b>Option P4-A — Espresso Velvet Duotone (The Classic Aesthetic)</b>
+        <span>Architectural interior stripped to monochrome and bathed in deep espresso velvet with an ambient amber radial glow and frosted glass pill button.</span>
     </div>
-    <section class="pb p2 grain">
+    <section class="p4-wrap p4a">
+        <img class="p4__bg-img" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop" alt="" aria-hidden="true">
+        <div class="p4a__wash"></div>
+        <div class="p4a__glow"></div>
         <div class="pb__inner">
-            <div class="p2__medal"><img src="nemonic.png" alt="" aria-hidden="true"></div>
-            <span class="pb__eyebrow">Aesthetics &amp; Wellness</span>
             <h2 class="pb__mark">D'ZEN DERMA</h2>
             <div class="pb__rule"><i></i><b></b><i></i></div>
             <p class="pb__tag">Elevating You Inside Out</p>
-            <a href="#" class="pb__btn">Book Now <img src="nemonic.png" alt=""
-                    style="filter:brightness(0) invert(1);"></a>
+            <a href="#" class="pb__btn">Book Now <img src="nemonic.png" alt="" style="filter:brightness(0) invert(1);"></a>
         </div>
     </section>
 
-    <!-- P3 -->
+
+    <!-- P4-B -->
     <div class="lbl">
-        <b>P3 — Engraved on stone</b>
-        <span>What the original was reaching for, done properly: real ink with a highlight below and a shadow above,
-            so it reads as cut into the surface while staying fully legible. The deboss failed because the ink matched
-            the background; this keeps the effect and the contrast.</span>
+        <b>Option P4-B — Parallax Sanctuary with Floating Frosted Card</b>
+        <span>A serene clinic interior background supporting a central floating frosted-glass card with champagne bevels, micro-eyebrow label, and gold button.</span>
     </div>
-    <section class="pb p3 grain">
+    <section class="p4-wrap p4b">
+        <img class="p4__bg-img" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1600&auto=format&fit=crop" alt="" aria-hidden="true">
+        <div class="p4b__wash"></div>
+        <div class="p4b__card">
+            <span class="p4b__eyebrow">Medical Aesthetics &middot; Wellness</span>
+            <h2 class="pb__mark">D'ZEN DERMA</h2>
+            <div class="pb__rule"><i></i><b></b><i></i></div>
+            <p class="pb__tag">Elevating You Inside Out</p>
+            <a href="#" class="pb__btn">Book Consultation <img src="nemonic.png" alt="" style="filter:brightness(0) invert(1);"></a>
+        </div>
+    </section>
+
+
+    <!-- P4-C -->
+    <div class="lbl">
+        <b>Option P4-C — Travertine Clinic Duotone with Integrated Watermark</b>
+        <span>Warm travertine architectural photography layered with a luminous 580px website logo watermark and reflective champagne typography.</span>
+    </div>
+    <section class="p4-wrap p4c">
+        <img class="p4__bg-img" src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1600&auto=format&fit=crop" alt="" aria-hidden="true">
+        <div class="p4c__wash"></div>
+        <img class="p4c__watermark" src="../images/logo-header.png" alt="" aria-hidden="true">
         <div class="pb__inner">
-            <span class="pb__eyebrow">Aesthetics &amp; Wellness</span>
             <h2 class="pb__mark">D'ZEN DERMA</h2>
             <div class="pb__rule"><i></i><b></b><i></i></div>
             <p class="pb__tag">Elevating You Inside Out</p>
@@ -520,52 +1103,29 @@
         </div>
     </section>
 
-    <!-- P4 -->
+
+    <!-- P4-D -->
     <div class="lbl">
-        <b>P4 — Duotone band</b>
-        <span>A clinic photograph stripped to greyscale and tinted brown, so it becomes brand material rather than a
-            stock image. Glass button over the top. Gives the block real depth without another flat colour field.</span>
+        <b>Option P4-D — Cinematic Wide Horizon Glow</b>
+        <span>High-contrast clinic atmosphere with an illuminated horizon gold streak and continuous metallic foil shimmer across the brand wordmark.</span>
     </div>
-    <section class="pb p4">
-        <img class="p4__bg" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1400&auto=format&fit=crop"
-            alt="" aria-hidden="true">
-        <div class="p4__wash"></div>
-        <div class="p4__glow"></div>
+    <section class="p4-wrap p4d">
+        <img class="p4__bg-img" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1600&auto=format&fit=crop" alt="" aria-hidden="true">
+        <div class="p4d__wash"></div>
+        <div class="p4d__horizon"></div>
         <div class="pb__inner">
-            <span class="pb__eyebrow">Aesthetics &amp; Wellness</span>
             <h2 class="pb__mark">D'ZEN DERMA</h2>
             <div class="pb__rule"><i></i><b></b><i></i></div>
             <p class="pb__tag">Elevating You Inside Out</p>
-            <a href="#" class="pb__btn">Book Now <img src="nemonic.png" alt=""
-                    style="filter:brightness(0) invert(1);"></a>
+            <a href="#" class="pb__btn">Book Now <img src="nemonic.png" alt=""></a>
         </div>
     </section>
 
-    <!-- P5 -->
-    <div class="lbl">
-        <b>P5 — Couture columns</b>
-        <span>Two tall hairlines fading at both ends instead of a box, with an established line beneath. Restraint as
-            the luxury signal — nothing here but type, rules and air.</span>
-    </div>
-    <section class="pb p5">
-        <div class="p5__frame">
-            <div class="pb__inner">
-                <span class="pb__eyebrow">Aesthetics &amp; Wellness</span>
-                <h2 class="pb__mark">D'ZEN DERMA</h2>
-                <div class="pb__rule"><i></i><b></b><i></i></div>
-                <p class="pb__tag">Elevating You Inside Out</p>
-                <a href="#" class="pb__btn">Book Now <img src="nemonic.png" alt=""
-                        style="filter:brightness(0) invert(1);"></a>
-                <span class="p5__est">Delhi &middot; Gurgaon</span>
-            </div>
-        </div>
-    </section>
-
-    <div class="lbl" style="margin-bottom:70px;">
-        <span>Earlier set in <b
-                style="font-family:'Inter',sans-serif;font-size:13.5px;">_brand-block-options.html</b>.</span>
+    <div class="lbl" style="margin-bottom:80px; margin-top:60px;">
+        <span>All baseline variations live in <b style="font-family:'Inter',sans-serif;font-size:13.5px;">_brand-block-options.html</b> and <b style="font-family:'Inter',sans-serif;font-size:13.5px;">_footer-options.html</b>.</span>
     </div>
 
 </body>
 
 </html>
+
