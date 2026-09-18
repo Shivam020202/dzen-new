@@ -376,7 +376,7 @@ h3,
 
 .header-btn {
   padding: 12px 32px;
-  background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
+  background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%);
   color: white;
   font-family: var(--sans);
   font-size: 11px;
@@ -608,7 +608,7 @@ h3,
   align-items: center;
   gap: 12px;
   padding: 16px 40px;
-  background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
+  background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%);
   color: white;
   font-family: var(--sans);
   font-size: 12px;
@@ -4232,7 +4232,7 @@ h3,
   font-size: 13px;
   font-weight: 600;
   color: white !important;
-  background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
+  background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%);
   padding: 16px 40px;
   border-radius: 50px;
   text-decoration: none;

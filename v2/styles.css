@@ -184,7 +184,7 @@ body {
     height: 44px;
     padding: 0 22px;
     margin-left: 2px;
-    background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
+    background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%);
     color: #fff;
     font-family: var(--sans, 'Inter', system-ui, sans-serif);
     font-size: 13px;
@@ -4435,7 +4435,7 @@ body {
     gap: 0.6rem;
     padding: 14px 30px;
     border-radius: 999px;
-    background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
+    background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%);
     color: #fff;
     text-decoration: none;
     font-family: var(--sans, 'Inter', system-ui, sans-serif);

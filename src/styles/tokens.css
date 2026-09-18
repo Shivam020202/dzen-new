@@ -29,7 +29,7 @@
   /* Brand Gradients */
   --brand-gradient: linear-gradient(35deg, #4b2b20 0%, #8c4a2e 60%, #8b4513 85%, #a0522d 100%);
   --brand-gradient-alt: linear-gradient(135deg, #4b2b20 0%, #8b4513 50%, #daa520 100%);
-  --button-gradient: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
+  --button-gradient: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%);
   --button-gradient-hover: linear-gradient(135deg, #5d3628 0%, #a0522d 100%);
   --cta-gradient: linear-gradient(170deg, #d9a054 0%, #9a6a2e 100%);
 
