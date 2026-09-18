@@ -126,7 +126,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 130px 24px 90px;
+            padding: 49px 24px 90px;
             overflow: hidden;
             isolation: isolate;
         }
@@ -150,6 +150,27 @@
                     rgba(43, 26, 18, .58) 0%,
                     rgba(43, 26, 18, .46) 45%,
                     rgba(43, 26, 18, .72) 100%);
+            z-index: 1;
+        }
+
+        .hB--gradient {
+            background:
+                linear-gradient(35deg, #4b2b20 0%, #8b4513 100%);
+            background-blend-mode: multiply, normal;
+        }
+
+        .hB--gradient::before {
+            display: none;
+        }
+
+        .hB--gradient::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            opacity: .22;
+            mix-blend-mode: overlay;
+            pointer-events: none;
             z-index: 1;
         }
 
@@ -274,6 +295,33 @@
             <img class="hB__bg"
                 src="https://images.unsplash.com/photo-1580281658626-ee379f3cce93?q=80&w=1400&auto=format&fit=crop"
                 alt="Inside a D'Zen Derma treatment suite">
+            <div class="hB__inner">
+                <span class="hB__eyebrow">About The Clinic</span>
+                <div class="nemonic-separator mt-2 mb-3">
+                    <div class="nemonic-line" style="background-color: rgba(255,255,255,.5);"></div>
+                    <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon"
+                        style="filter: brightness(0) invert(1);" />
+                    <div class="nemonic-line" style="background-color: rgba(255,255,255,.5);"></div>
+                </div>
+                <h1>Welcome to D'Zen Derma</h1>
+            </div>
+            <div class="position-absolute w-100" style="bottom: -1px; left: 0; z-index: 3;">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                    style="display:block;width:100%;height:clamp(70px,7vw,110px);">
+                    <path fill="#FDF8F3" d="M0,26 C400,136 1040,-36 1440,52 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
+        </section>
+    </div>
+
+    <!-- ══════════════ OPTION B (COPY) ══════════════ -->
+    <div class="opt-label">
+        <b>Option B (Linear Gradient) — Linear gradient & contour texture</b>
+        <span>Centred layout with the signature linear-gradient (#4b2b20 to #8b4513) and contour texture background
+            instead of a photograph.</span>
+    </div>
+    <div class="opt-frame">
+        <section class="hB hB--gradient">
             <div class="hB__inner">
                 <span class="hB__eyebrow">About The Clinic</span>
                 <div class="nemonic-separator mt-2 mb-3">
