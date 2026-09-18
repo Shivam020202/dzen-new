@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Embossed Brand Section — D'Zen Derma</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Inter:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        :root {
+            /* Exact Client Specified Colors */
+            --bg-mid-brown: #A0522D;
+            /* Mid Brown for background */
+            --font-copper-deep: #8B4513;
+            /* Copper Brown Deep for font */
+
+            /* Lighting accents for 3D carved deboss */
+            --carve-deep-shadow: #8B4513;
+            --carve-highlight: rgba(255, 235, 215, 0.45);
+            --carve-ambient: rgba(255, 215, 180, 0.25);
+
+            /* Typography */
+            --sans: 'Inter', system-ui, -apple-system, sans-serif;
+            --serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100vh;
+            background-color: var(--bg-mid-brown);
+            font-family: var(--sans);
+            color: #FAF6F0;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ════════════════════════════════════════════════════════════════
+           MAIN EMBOSSED SECTION
+           ════════════════════════════════════════════════════════════════ */
+        .embossed-section {
+            position: relative;
+            min-height: 100vh;
+            width: 100%;
+            background-color: var(--bg-mid-brown);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: clamp(80px, 9vw, 140px) 24px;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        /* Subtle fine leather / paper tactile grain */
+        .embossed-grain {
+            position: absolute;
+            inset: 0;
+            opacity: 0.22;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+            mix-blend-mode: overlay;
+        }
+
+        /* Ambient soft directional light */
+        .embossed-lighting {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 85% 60% at 50% 20%, rgba(255, 235, 210, 0.12) 0%, transparent 70%),
+                linear-gradient(180deg, rgba(160, 82, 45, 0) 0%, rgba(110, 48, 12, 0.35) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* "BOOK NOW" Pill Button */
+        .book-pill-btn {
+            position: relative;
+            z-index: 10;
+            background: #ffffff;
+            color: var(--font-copper-deep);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 34px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-family: var(--sans);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2.2px;
+            text-transform: uppercase;
+            margin-bottom: clamp(48px, 6vw, 80px);
+            box-shadow:
+                0 6px 20px rgba(92, 42, 8, 0.35),
+                0 2px 6px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .book-pill-btn:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 12px 28px rgba(92, 42, 8, 0.45),
+                0 4px 10px rgba(0, 0, 0, 0.25);
+            color: #8B4513;
+        }
+
+        .book-pill-btn .btn-icon {
+            width: 14px;
+            height: 14px;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* Typography Container */
+        .typography-stage {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            width: 100%;
+            max-width: 1400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* ════════════════════════════════════════════════════════════════
+           SUBTITLE: "AESTHETICS & WELLNESS"
+           ════════════════════════════════════════════════════════════════ */
+        .deboss-eyebrow {
+            display: block;
+            font-family: var(--sans);
+            font-size: clamp(13px, 1.6vw, 22px);
+            font-weight: 600;
+            letter-spacing: clamp(0.45em, 0.65vw, 0.75em);
+            text-transform: uppercase;
+            margin-bottom: clamp(24px, 3.5vw, 44px);
+            padding-left: clamp(0.45em, 0.65vw, 0.75em);
+            /* Optical balance for letter-spacing */
+            user-select: none;
+
+            /* Crisp 3D Deboss with Copper Brown Deep */
+            color: var(--font-copper-deep);
+            text-shadow:
+                -1px -1.5px 0.5px rgba(92, 42, 8, 0.9),
+                -0.5px -0.5px 0px rgba(60, 24, 4, 1),
+                1px 1.5px 0.5px var(--carve-highlight),
+                0 2px 3px var(--carve-ambient);
+        }
+
+        /* ════════════════════════════════════════════════════════════════
+           MAIN WORDMARK: "D'ZEN DERMA"
+           Exact Color: Copper Brown Deep (#8B4513) on Mid Brown (#A0522D)
+           ════════════════════════════════════════════════════════════════ */
+        .deboss-wordmark {
+            display: inline-block;
+            font-family: var(--serif);
+            font-weight: 500;
+            font-size: clamp(52px, 14vw, 215px);
+            line-height: 0.92;
+            margin: 0;
+            letter-spacing: 0.06em;
+            text-align: center;
+            white-space: nowrap;
+            user-select: none;
+            position: relative;
+
+            /* Deep, highly visible, perfectly legible carved letters */
+            color: var(--font-copper-deep);
+            -webkit-text-fill-color: var(--font-copper-deep);
+
+            /* Photorealistic 3D carving text-shadow on #A0522D */
+            text-shadow:
+                /* Sharp top-left undercut shadow inside the groove */
+                -1.5px -2.5px 1px rgba(92, 42, 8, 0.98),
+                -3px -4.5px 4px rgba(60, 24, 4, 0.8),
+                -4px -6px 10px rgba(45, 18, 2, 0.5),
+                /* Crisp bottom-right light ridge catching highlight */
+                1.5px 2px 0px var(--carve-highlight),
+                2.5px 3.5px 2px rgba(255, 235, 215, 0.35),
+                1px 4px 6px var(--carve-ambient);
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .embossed-section {
+                padding: 70px 16px;
+                min-height: 85vh;
+            }
+
+            .book-pill-btn {
+                padding: 10px 28px;
+                font-size: 11px;
+                margin-bottom: 38px;
+            }
+
+            .deboss-wordmark {
+                white-space: normal;
+                word-break: break-word;
+                line-height: 1.05;
+                font-size: clamp(38px, 12.5vw, 72px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Main Embossed Section with Exact Color Palette -->
+    <main class="embossed-section" id="brandSection">
+        <div class="embossed-grain"></div>
+        <div class="embossed-lighting"></div>
+
+        <!-- Book Now Pill Button -->
+        <a href="../newthree.html#book" class="book-pill-btn" aria-label="Book appointment">
+            BOOK NOW
+            <img src="nemonic.png" alt="icon" class="btn-icon">
+        </a>
+
+        <!-- Debossed Typography Block -->
+        <div class="typography-stage">
+            <span class="deboss-eyebrow">AESTHETICS &amp; WELLNESS</span>
+            <h1 class="deboss-wordmark" id="wordmark">D'ZEN DERMA</h1>
+        </div>
+    </main>
+
+</body>
+
+</html>

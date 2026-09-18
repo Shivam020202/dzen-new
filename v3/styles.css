@@ -1914,8 +1914,8 @@ body {
    ========================================================= */
 .partners-section {
     position: relative;
-    padding: clamp(35px, 4vw, 60px) 0 clamp(25px, 3vw, 45px);
-    background-color: transparent;
+    padding: clamp(45px, 5vw, 70px) 0 clamp(65px, 7vw, 100px);
+    background: linear-gradient(to top, #F4EFE8, #FDF8F3);
     overflow: hidden;
     z-index: 5;
 }
@@ -1933,7 +1933,7 @@ body {
     padding: 10px 0;
 }
 
-/* Elegant left & right gradient fade masks */
+/* Elegant left & right gradient fade masks matching #F4EFE8 bottom tone */
 .partners-marquee-mask {
     position: absolute;
     top: 0;
@@ -1945,12 +1945,12 @@ body {
 
 .partners-marquee-mask--left {
     left: 0;
-    background: linear-gradient(to right, #ffffff 25%, rgba(255, 255, 255, 0.8) 65%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, #F4EFE8 25%, rgba(244, 239, 232, 0.8) 65%, rgba(244, 239, 232, 0) 100%);
 }
 
 .partners-marquee-mask--right {
     right: 0;
-    background: linear-gradient(to left, #ffffff 25%, rgba(255, 255, 255, 0.8) 65%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to left, #F4EFE8 25%, rgba(244, 239, 232, 0.8) 65%, rgba(244, 239, 232, 0) 100%);
 }
 
 .partners-marquee {
@@ -2020,7 +2020,7 @@ body {
 
 @media (max-width: 768px) {
     .partners-section {
-        padding: 30px 0 20px;
+        padding: 30px 0 40px;
     }
 
     .partner-logo-item {
