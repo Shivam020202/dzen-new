@@ -872,4 +872,95 @@
 
         scribbles.forEach((el) => observer.observe(el));
     })();
+
+    /* =========================================================
+       INSTAGRAM REEL / VIDEO MODAL LIGHTBOX CONTROLLER
+       ========================================================= */
+    (function () {
+        const modal = document.getElementById('instaVideoModal');
+        if (!modal) return;
+
+        const videoEl = document.getElementById('instaModalVideo');
+        const titleEl = document.getElementById('instaModalTitle');
+        const captionEl = document.getElementById('instaModalCaption');
+        const tagEl = document.getElementById('instaModalTag');
+        const linkEl = document.getElementById('instaModalLink');
+        const closeBtn = document.getElementById('instaModalClose');
+        const soundBtn = document.getElementById('instaModalSound');
+        const cards = document.querySelectorAll('.insta-card[data-video-src]');
+
+        if (!cards.length) return;
+
+        function openModal(card) {
+            const videoSrc = card.getAttribute('data-video-src');
+            const title = card.getAttribute('data-video-title') || 'D\'Zen Derma';
+            const caption = card.getAttribute('data-video-caption') || '';
+            const tag = card.getAttribute('data-video-tag') || 'REEL';
+            const instaUrl = card.getAttribute('data-insta-url') || 'https://www.instagram.com/dzenderma/';
+
+            if (videoEl && videoSrc) {
+                videoEl.src = videoSrc;
+                videoEl.muted = false;
+                videoEl.play().catch(() => {
+                    videoEl.muted = true;
+                    videoEl.play();
+                });
+            }
+
+            if (titleEl) titleEl.textContent = title;
+            if (captionEl) captionEl.textContent = caption;
+            if (tagEl) tagEl.textContent = tag;
+            if (linkEl) linkEl.href = instaUrl;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            if (videoEl) {
+                videoEl.pause();
+                videoEl.currentTime = 0;
+            }
+            document.body.style.overflow = '';
+        }
+
+        cards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal(card);
+            });
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openModal(card);
+                }
+            });
+        });
+
+        closeBtn?.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // Sound toggle
+        soundBtn?.addEventListener('click', () => {
+            if (!videoEl) return;
+            videoEl.muted = !videoEl.muted;
+            soundBtn.innerHTML = videoEl.muted ? '🔇' : '🔊';
+        });
+
+        // Click on video to toggle play/pause
+        videoEl?.addEventListener('click', () => {
+            if (videoEl.paused) videoEl.play();
+            else videoEl.pause();
+        });
+    })();
 })();
+
