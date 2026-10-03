@@ -1820,7 +1820,6 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 500px 500px 10px 10px;
 }
 
 .service-arch-card__body {
@@ -1905,7 +1904,7 @@ body {
 
     .service-arch-card__media {
         height: 260px;
-        border-radius: 100px 100px 10px 10px;
+        border-radius: 160px 160px 12px 12px;
     }
 }
 
@@ -5054,7 +5053,7 @@ html body .section-subtitle:not(#brand-philosophy .section-subtitle):not(.text-l
 html body .about-v2__eyebrow,
 html body .doctors-v2__eyebrow,
 html body .trainer-v2__eyebrow,
-html body .hf-eyebrow:not(.hf-hero .hf-eyebrow):not(.hf-section--dark .hf-eyebrow):not(.hf-protocol-section .hf-eyebrow),
+html body .hf-eyebrow:not(.hf-hero .hf-eyebrow):not(.hf-section--dark .hf-eyebrow):not(.hf-protocol-section .hf-eyebrow):not(.hf-why-section .hf-eyebrow):not(.hf-event-section .hf-eyebrow),
 html body .lhr-eyebrow:not(.lhr-hero .lhr-eyebrow):not(.lhr-section--dark .lhr-eyebrow),
 html body .service-arch-card__eyebrow,
 html body .clinic-loc-card__eyebrow,
@@ -5064,7 +5063,7 @@ html body .subtitle {
     -webkit-text-fill-color: #8B5A1A !important;
 }
 
-html body .hf-eyebrow:not(.hf-hero .hf-eyebrow):not(.hf-section--dark .hf-eyebrow):not(.hf-protocol-section .hf-eyebrow)::before,
+html body .hf-eyebrow:not(.hf-hero .hf-eyebrow):not(.hf-section--dark .hf-eyebrow):not(.hf-protocol-section .hf-eyebrow):not(.hf-why-section .hf-eyebrow):not(.hf-event-section .hf-eyebrow)::before,
 html body .lhr-eyebrow:not(.lhr-hero .lhr-eyebrow):not(.lhr-section--dark .lhr-eyebrow)::before {
     background: #8B5A1A !important;
 }
