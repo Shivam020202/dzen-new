@@ -54,26 +54,10 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is a Hydrafacial?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Hydrafacial is a non-invasive facial treatment that combines cleansing, exfoliation, extraction and hydration to refresh and improve the appearance of the skin."
-          }
-        },
-        {
-          "@type": "Question",
           "name": "Is Hydrafacial suitable for all skin types?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Hydrafacial can be customised according to individual skin requirements. A skin assessment is recommended to determine the most suitable approach for you. Serum strength and peel formulation are adjusted for sensitive skin at consultation, and the treatment is well tolerated across most skin types, including reactive and rosacea-prone skin."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What does a Hydrafacial do for the skin?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "It helps cleanse the skin, remove dead surface cells and impurities, support hydration and improve the overall appearance and texture of the skin."
           }
         },
         {
@@ -89,7 +73,7 @@
           "name": "Is there downtime after Hydrafacial?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Hydrafacial is a non-invasive treatment and is generally associated with minimal disruption to your routine. Your skin professional can provide specific aftercare recommendations based on your skin."
+            "text": "Hydrafacial is a non-invasive treatment and is generally associated with minimal disruption to your routine."
           }
         },
         {
@@ -113,7 +97,7 @@
           "name": "How often should I get a Hydrafacial?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The ideal frequency depends on your skin type, concerns and skincare goals. Your doctor or skincare professional can recommend a suitable treatment schedule. Once a month is the standard recommendation for maintaining skin health. Your dermatologist may suggest more frequent sessions for active acne or specific concerns, based on your consultation."
+            "text": "Once a month is the standard recommendation for maintaining skin health. Your dermatologist may suggest more frequent sessions for active acne or specific concerns, based on your consultation."
           }
         },
         {
@@ -256,6 +240,40 @@
 
         .hf-section--dark .hf-lead {
             color: rgba(253, 248, 243, 0.85);
+        }
+
+        /* ── Breadcrumb Navigation Trail ── */
+        .mp-crumb {
+            display: inline-flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 4px 8px;
+            margin-bottom: 14px;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 11.5px;
+            font-weight: 500;
+            letter-spacing: .4px;
+        }
+
+        .mp-crumb a {
+            color: rgba(255, 255, 255, .78);
+            text-decoration: none;
+            transition: color .25s ease;
+        }
+
+        .mp-crumb a:hover {
+            color: #ffffff;
+        }
+
+        .mp-crumb span[aria-current] {
+            color: #E8C99A;
+        }
+
+        .mp-crumb svg {
+            width: 13px;
+            height: 13px;
+            color: rgba(255, 255, 255, .45);
         }
 
         /* ═══════════════════════════════════════════════════════════
@@ -781,7 +799,7 @@
         .hf-step-flow-title {
             font-family: 'Playfair Display', Georgia, serif;
             font-size: 1.25rem;
-            font-weight: 600;
+            font-weight: 400;
             color: #2B1A12;
             margin-bottom: 10px;
             line-height: 1.3;
@@ -809,9 +827,9 @@
         /* ── Non-Box Tailored Experience Ribbon ── */
         .hf-tailored-ribbon {
             position: relative;
-            padding: 36px 20px;
+            padding: 40px 20px 0px 20px;
             border-top: 1px solid rgba(196, 146, 74, 0.25);
-            border-bottom: 1px solid rgba(196, 146, 74, 0.25);
+
         }
 
         .hf-tailored-ribbon::before {
@@ -862,7 +880,6 @@
             border-radius: 18px;
             padding: 22px 24px;
             box-shadow: 0 10px 30px rgba(43, 26, 18, 0.04);
-            margin-top: 24px;
         }
 
         .hf-why-quote-mark {
@@ -1033,11 +1050,12 @@
             background: var(--hf-gold);
         }
 
-        /* ── SECTION 6: CONCERNS ADDRESSED (LUXURY TARGETED SOLUTIONS) ── */
+        /* ── SECTION 5: CONCERNS ADDRESSED (LUXURY TARGETED SOLUTIONS) ── */
         .hf-concerns-section {
             position: relative;
-            background: #FAF7F2;
+            background: linear-gradient(to top, #F4EFE8, #FAF7F2) !important;
             overflow: hidden;
+            padding-bottom: clamp(65px, 7vw, 95px) !important;
         }
 
         .hf-concerns-glow {
@@ -1160,17 +1178,6 @@
             margin-top: 28px;
             overflow: hidden;
             z-index: 1;
-        }
-
-        .hf-maintenance-banner::before {
-            content: '';
-            position: absolute;
-            top: -40px;
-            right: -40px;
-            width: 220px;
-            height: 220px;
-            background: radial-gradient(circle, rgba(196, 146, 74, 0.18) 0%, transparent 70%);
-            pointer-events: none;
         }
 
         .hf-maintenance-badge {
@@ -1398,13 +1405,25 @@
             isolation: isolate;
         }
 
-        .hf-event-box p {
-            color: #FFFFFF !important;
-            -webkit-text-fill-color: #FFFFFF !important;
-            opacity: 0.95 !important;
+        html body .hf-event-box .hf-eyebrow {
+            color: #F8E2C8 !important;
+            -webkit-text-fill-color: #F8E2C8 !important;
+            font-weight: 700;
+            letter-spacing: 0.18em;
         }
 
-        .hf-event-box .hf-event-lead {
+        html body .hf-event-box h2,
+        html body .hf-event-box h2 *,
+        html body .hf-event-box .hf-heading,
+        html body .hf-event-box .hf-heading * {
+            color: #FFFFFF !important;
+            -webkit-text-fill-color: #FFFFFF !important;
+            font-style: normal !important;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35) !important;
+        }
+
+        html body .hf-event-box .hf-event-lead,
+        html body .hf-event-box .hf-event-lead * {
             color: #F8E2C8 !important;
             -webkit-text-fill-color: #F8E2C8 !important;
             font-family: 'Playfair Display', Georgia, serif !important;
@@ -1412,13 +1431,22 @@
             font-style: italic !important;
             margin-bottom: 18px !important;
             line-height: 1.45 !important;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35) !important;
         }
 
-        .hf-event-box .hf-event-desc {
+        html body .hf-event-box p,
+        html body .hf-event-box .hf-event-desc {
             color: #FFFFFF !important;
             -webkit-text-fill-color: #FFFFFF !important;
-            font-size: 0.98rem !important;
+            font-size: 1rem !important;
             line-height: 1.75 !important;
+            opacity: 0.95 !important;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) !important;
+        }
+
+        html body .hf-event-box .dz-cta {
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
         }
 
         .hf-event-box::before {
@@ -1512,10 +1540,11 @@
         }
 
         .hf-faq-summary {
-            padding: 22px 26px;
+            padding: 18px 22px;
             font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.18rem;
-            font-weight: 600;
+            font-size: 1.02rem;
+            font-weight: 400;
+            line-height: 1.4;
             color: var(--hf-ink);
             cursor: pointer;
             list-style: none;
@@ -1530,15 +1559,15 @@
         }
 
         .hf-faq-icon {
-            width: 28px;
-            height: 28px;
+            width: 26px;
+            height: 26px;
             border-radius: 50%;
             background: rgba(196, 146, 74, 0.12);
             color: #8B5E2A;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             flex-shrink: 0;
             transition: transform 0.3s ease;
         }
@@ -1550,10 +1579,22 @@
         }
 
         .hf-faq-body {
-            padding: 0 26px 22px 26px;
-            font-size: 0.96rem;
-            line-height: 1.72;
+            padding: 0 22px 18px 22px;
+            font-size: 0.92rem;
+            line-height: 1.68;
             color: var(--hf-body);
+        }
+
+        @media (max-width: 767px) {
+            .hf-faq-summary {
+                padding: 16px 18px;
+                font-size: 0.96rem;
+            }
+
+            .hf-faq-body {
+                padding: 0 18px 16px 18px;
+                font-size: 0.88rem;
+            }
         }
     </style>
 </head>
@@ -1608,71 +1649,46 @@
     <main>
 
         <!-- ═══════════════════════════════════════════════════════════
-             1. HERO SECTION
+             1. BREADCRUMB HEADER (Signature Inner Page Hero)
              ═══════════════════════════════════════════════════════════ -->
-        <section class="hf-hero">
-            <div class="hf-hero__glow"></div>
-            <div class="container position-relative">
-                <div class="row align-items-center g-5">
-                    <div class="col-lg-7">
-                        <span class="hf-eyebrow">Aesthetic Dermatology · Gurgaon Clinic</span>
-                        <h1 class="hf-heading">Hydrafacial in Gurgaon</h1>
-                        <div class="hf-tagline-badge">
-                            A deeper cleanse. Smoother skin. A fresher glow.
-                        </div>
-                        <p class="hf-lead mb-4">
-                            Hydrafacial is a non-invasive skin treatment designed to cleanse, exfoliate and hydrate the
-                            skin in a single session. It combines multiple skincare steps to help remove surface
-                            impurities while supporting hydration and a smoother, fresher-looking complexion.
-                        </p>
-                        <div class="d-flex flex-wrap gap-3 align-items-center mb-4">
-                            <a href="../newthree.html#book" class="dz-cta">
-                                <span>Book Consultation</span>
-                                <img src="nemonic.png" class="btn-icon"
-                                    style="width: 14px; height: 14px; object-fit: contain;" alt="icon" />
-                            </a>
-                            <a href="https://wa.me/919878885046?text=Hi%20D%27Zen%20Derma%2C%20I%20would%20like%20to%20know%20more%20about%20Hydrafacial%20in%20Gurgaon"
-                                class="dz-cta dz-cta--outline" target="_blank" rel="noopener">
-                                <span>WhatsApp Doctor</span>
-                                <img src="nemonic.png" class="btn-icon"
-                                    style="width: 14px; height: 14px; object-fit: contain;" alt="icon" />
-                            </a>
-                        </div>
+        <section class="breadcrumb-header position-relative d-flex align-items-center justify-content-center"
+            style="background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%), url('../images/contour-texture.webp') repeat; background-blend-mode: multiply; padding-top: 103px; padding-bottom: 60px; border-bottom: none; overflow: hidden;">
 
-                        <!-- Quick metrics -->
-                        <div class="hf-stat-grid">
-                            <div class="hf-stat-item">
-                                <div class="hf-stat-val">45 Min</div>
-                                <div class="hf-stat-lbl">Session Time</div>
-                            </div>
-                            <div class="hf-stat-item">
-                                <div class="hf-stat-val">Zero</div>
-                                <div class="hf-stat-lbl">Downtime</div>
-                            </div>
-                            <div class="hf-stat-item">
-                                <div class="hf-stat-val">Instant</div>
-                                <div class="hf-stat-lbl">Visible Glow</div>
-                            </div>
-                            <div class="hf-stat-item">
-                                <div class="hf-stat-val">Custom</div>
-                                <div class="hf-stat-lbl">Skin Protocols</div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="container position-relative text-center" style="z-index: 2;">
+                <!-- Breadcrumb trail -->
+                <nav class="mp-crumb" aria-label="Breadcrumb">
+                    <a href="index.html">Home</a>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <path d="M9 6l6 6-6 6" />
+                    </svg>
+                    <a href="../treatments.html">Treatments</a>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <path d="M9 6l6 6-6 6" />
+                    </svg>
+                    <span aria-current="page">Hydrafacial in Gurgaon</span>
+                </nav>
 
-                    <div class="col-lg-5">
-                        <div class="hf-hero-media-wrap">
-                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=1200&auto=format&fit=crop"
-                                alt="Hydrafacial Treatment at D'Zen Derma Gurgaon" loading="eager" />
-                        </div>
-                    </div>
+                <div class="nemonic-separator mt-2 mb-4">
+                    <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
+                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon"
+                        style="filter: brightness(0) invert(1);" />
+                    <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
                 </div>
+
+                <h1 class="page-title mb-3"
+                    style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400 !important; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; font-size: clamp(18px, 2.5vw, 22px); margin: 0;">
+                    Hydrafacial in <span class="scribble"
+                        style="color: #E8C99A !important; -webkit-text-fill-color: #E8C99A !important;">Gurgaon</span>
+                </h1>
             </div>
 
-            <!-- Curvy separator: Hero → cream understanding section -->
-            <div class="section-separator" aria-hidden="true">
-                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
+            <!-- Curvy Bottom Separator -->
+            <div class="position-absolute w-100" style="bottom: -1px; left: 0; z-index: 2;">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                    style="display: block; width: 100%; height: clamp(70px, 7vw, 110px);">
+                    <path fill="#FDF8F3" d="M0,26 C400,136 1040,-36 1440,52 L1440,100 L0,100 Z"></path>
                 </svg>
             </div>
         </section>
@@ -1680,7 +1696,7 @@
         <!-- ═══════════════════════════════════════════════════════════
              2. UNDERSTANDING HYDRAFACIAL
              ═══════════════════════════════════════════════════════════ -->
-        <section class="hf-section" id="understanding" style="background: #FDF8F3;">
+        <section class="hf-section" id="understanding" style="background: #FDF8F3;padding-top:30px">
             <div class="container">
                 <div class="text-center max-w-3xl mx-auto mb-3">
                     <span class="hf-eyebrow mb-2">CLINICAL OVERVIEW</span>
@@ -1694,7 +1710,7 @@
                     </h2>
                 </div>
 
-                <div class="row align-items-center g-5">
+                <div class="row align-items-center g-2">
                     <!-- Left: Luxury Framed Visual with Ambient Glow -->
                     <div class="col-lg-6 order-lg-1">
                         <div class="hf-overview-visual-wrap">
@@ -1741,7 +1757,7 @@
             style="padding-top: 0px !important; padding-bottom: clamp(65px, 7vw, 95px) !important; background: linear-gradient(to top, #F4EFE8, #FDF8F3); position: relative; overflow: hidden;">
             <div class="container">
                 <!-- Section Header -->
-                <div class="text-center max-w-3xl mx-auto mb-5">
+                <div class="text-center max-w-3xl mx-auto mb-2">
                     <span class="hf-eyebrow mb-2">CLINICAL MECHANISM</span>
                     <h2 class="hf-heading mb-3">
                         How Does <span class="scribble">Hydrafacial</span> Work?
@@ -1856,7 +1872,7 @@
         <section class="hf-section hf-why-section" id="why-dzen"
             style="background: #FDF8F3 !important; padding-top: clamp(40px, 4.5vw, 60px) !important;">
             <div class="container">
-                <div class="text-center max-w-3xl mx-auto mb-5">
+                <div class="text-center max-w-3xl mx-auto mb-2">
                     <span class="hf-eyebrow mb-2">THE D'ZEN ETHOS</span>
                     <div class="nemonic-separator mx-auto mb-3">
                         <div class="nemonic-line"></div>
@@ -1871,9 +1887,9 @@
                     </p>
                 </div>
 
-                <div class="row align-items-center g-5">
+                <div class="row align-items-center g-2">
                     <!-- Left Column: Editorial Ethos, Philosophy & Doctor Quote -->
-                    <div class="col-lg-5">
+                    <div class="col-lg-5" style="margin: 20px 0px;">
                         <!-- Doctor Quote Card -->
                         <div class="hf-why-quote-card">
                             <span class="hf-why-quote-mark">“</span>
@@ -1968,75 +1984,10 @@
         </section>
 
         <!-- ═══════════════════════════════════════════════════════════
-             5. WHO IS HYDRAFACIAL FOR?
+             5. WHAT SKIN CONCERNS CAN HYDRAFACIAL ADDRESS?
              ═══════════════════════════════════════════════════════════ -->
-        <section class="hf-section hf-section--alt" id="who-is-it-for" style="padding-top:0px !important">
-            <div class="container">
-                <div class="text-center max-w-3xl mx-auto mb-5">
-                    <span class="hf-eyebrow mb-2">SUITABILITY &amp; CANDIDATES</span>
-                    <div class="nemonic-separator mx-auto mb-3">
-                        <div class="nemonic-line"></div>
-                        <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
-                        <div class="nemonic-line"></div>
-                    </div>
-                    <h2 class="hf-heading mb-3">Who is <span class="scribble">Hydrafacial</span> For?</h2>
-                </div>
-
-                <div class="row align-items-center g-5">
-                    <div class="col-lg-5">
-                        <p class="hf-lead mb-3">
-                            Hydrafacial can be considered by individuals who want to improve the overall appearance and
-                            feel of their skin without undergoing an invasive procedure.
-                        </p>
-                        <p style="color: var(--hf-body); font-size: 0.98rem; line-height: 1.7;">
-                            It can be incorporated into a skincare routine for both men and women. Your skin type and
-                            concerns can be assessed before treatment so that the procedure can be appropriately
-                            customised.
-                        </p>
-                        <div class="mt-4">
-                            <a href="../newthree.html#book" class="dz-cta">
-                                <span>Schedule Assessment</span>
-                                <img src="nemonic.png" class="btn-icon"
-                                    style="width: 14px; height: 14px; object-fit: contain;" alt="icon" />
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-7">
-                        <div class="p-4 p-md-5 bg-white rounded-4"
-                            style="border: 1px solid var(--hf-border); box-shadow: var(--hf-shadow);">
-                            <h3
-                                style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.35rem; font-weight: 600; color: #2B1A12; margin-bottom: 20px;">
-                                It may be suitable for people experiencing:
-                            </h3>
-                            <div class="d-flex flex-wrap gap-2">
-                                <div class="hf-chip"><span class="hf-chip-dot"></span> Dull or tired-looking skin</div>
-                                <div class="hf-chip"><span class="hf-chip-dot"></span> Uneven skin texture</div>
-                                <div class="hf-chip"><span class="hf-chip-dot"></span> Dehydrated or dry-feeling skin
-                                </div>
-                                <div class="hf-chip"><span class="hf-chip-dot"></span> Congested-looking pores</div>
-                                <div class="hf-chip"><span class="hf-chip-dot"></span> Excess surface oil</div>
-                                <div class="hf-chip"><span class="hf-chip-dot"></span> Rough skin</div>
-                                <div class="hf-chip"><span class="hf-chip-dot"></span> Lack of radiance</div>
-                                <div class="hf-chip"><span class="hf-chip-dot"></span> Mild signs of skin ageing</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Curvy separator: Who is it for → Concerns Addressed (#FAF7F2) -->
-            <div class="section-separator" aria-hidden="true">
-                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path fill="#FAF7F2" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
-                </svg>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════════════════════════════════════════
-             6. WHAT SKIN CONCERNS CAN HYDRAFACIAL ADDRESS?
-             ═══════════════════════════════════════════════════════════ -->
-        <section class="hf-section hf-concerns-section" id="concerns-addressed">
+        <section class="hf-section hf-concerns-section hf-section--alt" id="concerns-addressed"
+            style="padding-bottom: clamp(65px, 7vw, 95px) !important;padding-top:0px; background: linear-gradient(to top, #F4EFE8, #FAF7F2) !important; position: relative; overflow: hidden;">
             <div class="hf-concerns-glow"></div>
             <div class="container position-relative" style="z-index: 1;">
                 <div class="text-center max-w-3xl mx-auto mb-5">
@@ -2051,7 +2002,7 @@
                     </h2>
                 </div>
 
-                <div class="row g-4">
+                <div class="row g-4 justify-content-center">
                     <!-- Concern 1: Dull-Looking Skin -->
                     <div class="col-md-6 col-lg-4">
                         <div class="hf-concern-item">
@@ -2130,22 +2081,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Concern 6: Lack of Radiance -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="hf-concern-item">
-                            <div>
-                                <div class="hf-concern-top">
-                                    <div class="hf-concern-icon-wrap">✨</div>
-                                </div>
-                                <h3 class="hf-concern-title">Lack of Radiance</h3>
-                                <p class="hf-concern-desc">
-                                    By combining exfoliation with hydration, Hydrafacial can help restore a
-                                    fresher-looking glow to dull skin.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Feature Highlight: Skin Maintenance -->
@@ -2171,121 +2106,8 @@
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- ═══════════════════════════════════════════════════════════
-             7. THE D'ZEN PROTOCOL
-             ═══════════════════════════════════════════════════════════ -->
-        <section class="hf-section hf-protocol-section" id="dzen-protocol">
-            <div class="container position-relative">
-                <div class="text-center max-w-3xl mx-auto mb-5">
-                    <span class="hf-eyebrow mb-2">CLINICAL METHODOLOGY</span>
-                    <div class="nemonic-separator mx-auto mb-3">
-                        <div class="nemonic-line" style="background: rgba(232, 201, 154, 0.4);"></div>
-                        <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
-                        <div class="nemonic-line" style="background: rgba(232, 201, 154, 0.4);"></div>
-                    </div>
-                    <h2 class="hf-heading mb-3">
-                        The D’Zen <span class="scribble" style="color: #E8C99A;">Protocol</span>
-                    </h2>
-                    <p class="hf-lead">
-                        At D’Zen Derma, the Hydrafacial experience is designed around your individual skin
-                        requirements.
-                    </p>
-                </div>
-
-                <div class="row g-5">
-                    <div class="col-lg-5">
-                        <div class="sticky-top" style="top: 110px;">
-                            <div class="hf-protocol-objective-box mb-4">
-                                <div
-                                    style="font-size: 0.95rem; font-weight: 700; color: #E8C99A; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">
-                                    The Core Objective
-                                </div>
-                                <p class="mb-0"
-                                    style="color: rgba(255, 255, 255, 0.92); font-size: 1.05rem; font-weight: 500; line-height: 1.6;">
-                                    The objective is simple: cleaner, smoother, hydrated and revitalised-looking skin
-                                    without an invasive procedure.
-                                </p>
-                            </div>
-                            <a href="../newthree.html#book" class="dz-cta w-100 text-center justify-content-center">
-                                <span>Book Your Protocol</span>
-                                <img src="nemonic.png" class="btn-icon"
-                                    style="width: 14px; height: 14px; object-fit: contain;" alt="icon" />
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-7">
-                        <div class="hf-protocol-step">
-                            <div class="hf-protocol-badge">1</div>
-                            <div class="hf-protocol-card">
-                                <h3 class="hf-protocol-title">Skin Assessment</h3>
-                                <p class="hf-protocol-text">
-                                    Your skin is assessed to understand its current condition, concerns and treatment
-                                    requirements.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="hf-protocol-step">
-                            <div class="hf-protocol-badge">2</div>
-                            <div class="hf-protocol-card">
-                                <h3 class="hf-protocol-title">Deep Cleansing</h3>
-                                <p class="hf-protocol-text">
-                                    The treatment begins by cleansing the skin and removing surface impurities.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="hf-protocol-step">
-                            <div class="hf-protocol-badge">3</div>
-                            <div class="hf-protocol-card">
-                                <h3 class="hf-protocol-title">Gentle Exfoliation</h3>
-                                <p class="hf-protocol-text">
-                                    A controlled exfoliation removes dead skin cells and prepares the skin for the next
-                                    stages.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="hf-protocol-step">
-                            <div class="hf-protocol-badge">4</div>
-                            <div class="hf-protocol-card">
-                                <h3 class="hf-protocol-title">Extraction</h3>
-                                <p class="hf-protocol-text">
-                                    Impurities from congested pores are gently extracted to help improve the appearance
-                                    of the skin.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="hf-protocol-step">
-                            <div class="hf-protocol-badge">5</div>
-                            <div class="hf-protocol-card">
-                                <h3 class="hf-protocol-title">Hydration</h3>
-                                <p class="hf-protocol-text">
-                                    Hydrating solutions are applied to replenish moisture and leave the skin feeling
-                                    refreshed.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="hf-protocol-step">
-                            <div class="hf-protocol-badge">6</div>
-                            <div class="hf-protocol-card">
-                                <h3 class="hf-protocol-title">Customised Finishing Care</h3>
-                                <p class="hf-protocol-text">
-                                    The final steps can be adjusted according to your skin's needs, helping complete the
-                                    treatment with a comfortable, refreshed finish.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Curvy separator: Protocol (Dark) → Results (#FDF8F3) -->
+            <!-- Curvy separator: Concerns Addressed (#FAF7F2) → Results (#FDF8F3) -->
             <div class="section-separator" aria-hidden="true">
                 <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                     <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
@@ -2294,9 +2116,9 @@
         </section>
 
         <!-- ═══════════════════════════════════════════════════════════
-             8. WHAT RESULTS CAN YOU EXPECT?
+             6. WHAT RESULTS CAN YOU EXPECT?
              ═══════════════════════════════════════════════════════════ -->
-        <section class="hf-section" id="results">
+        <section class="hf-section" id="results" style="background: #FDF8F3;">
             <div class="container">
                 <div class="text-center max-w-3xl mx-auto mb-5">
                     <span class="hf-eyebrow mb-2">OUTCOMES &amp; BENEFITS</span>
@@ -2368,15 +2190,10 @@
                     style="border: 1px solid var(--hf-border); box-shadow: var(--hf-shadow);">
                     <div class="row g-4 align-items-center">
                         <div class="col-lg-8">
-                            <p
-                                style="color: var(--hf-body); font-size: 0.98rem; line-height: 1.7; margin-bottom: 12px;">
+                            <p style="color: var(--hf-body); font-size: 0.98rem; line-height: 1.7; margin-bottom: 0;">
                                 The treatment can be particularly useful when your skin looks dull, feels dehydrated or
                                 appears congested. Results can vary depending on your skin condition, concerns and
                                 skincare routine.
-                            </p>
-                            <p style="color: var(--hf-body); font-size: 0.98rem; line-height: 1.7; margin-bottom: 0;">
-                                For ongoing skin maintenance, your doctor or skincare professional can recommend whether
-                                repeat treatments are appropriate and how frequently they should be performed.
                             </p>
                         </div>
                         <div class="col-lg-4 text-center text-lg-end">
@@ -2392,17 +2209,19 @@
         </section>
 
         <!-- ═══════════════════════════════════════════════════════════
-             9. HYDRAFACIAL BEFORE AN EVENT / WEDDING
+             7. HYDRAFACIAL BEFORE AN EVENT / WEDDING
              ═══════════════════════════════════════════════════════════ -->
         <section class="hf-section pt-0" id="event-preparation">
             <div class="container">
                 <div class="hf-event-box">
-                    <div class="row align-items-center g-5 position-relative z-1">
+                    <div class="row align-items-center g-2 position-relative z-1">
                         <div class="col-lg-7">
-                            <span class="hf-eyebrow" style="color: #E8C99A !important; margin-bottom: 12px;">EVENT &amp;
+                            <span class="hf-eyebrow"
+                                style="color: #E8C99A !important; -webkit-text-fill-color: #E8C99A !important; margin-bottom: 12px;">EVENT
+                                &amp;
                                 WEDDING READINESS</span>
                             <h2 class="hf-heading"
-                                style="color: #FFFFFF !important; font-size: 25px !important; margin-bottom: 16px; line-height: 1.25;">
+                                style="color: #FFFFFF !important; -webkit-text-fill-color: #FFFFFF !important; font-size: 25px !important; margin-bottom: 16px; line-height: 1.25;">
                                 Hydrafacial Before an Event
                             </h2>
                             <div class="hf-event-lead">
@@ -2471,7 +2290,7 @@
         </section>
 
         <!-- ═══════════════════════════════════════════════════════════
-             10. FREQUENTLY ASKED QUESTIONS (FAQ)
+             8. FREQUENTLY ASKED QUESTIONS (FAQ)
              ═══════════════════════════════════════════════════════════ -->
         <section class="hf-section hf-section--alt" id="faq">
             <div class="container">
@@ -2492,18 +2311,6 @@
                     <!-- Q1 -->
                     <details class="hf-faq-item" open>
                         <summary class="hf-faq-summary">
-                            <span>What is a Hydrafacial?</span>
-                            <div class="hf-faq-icon">+</div>
-                        </summary>
-                        <div class="hf-faq-body">
-                            Hydrafacial is a non-invasive facial treatment that combines cleansing, exfoliation,
-                            extraction and hydration to refresh and improve the appearance of the skin.
-                        </div>
-                    </details>
-
-                    <!-- Q2 -->
-                    <details class="hf-faq-item">
-                        <summary class="hf-faq-summary">
                             <span>Is Hydrafacial suitable for all skin types?</span>
                             <div class="hf-faq-icon">+</div>
                         </summary>
@@ -2515,19 +2322,7 @@
                         </div>
                     </details>
 
-                    <!-- Q3 -->
-                    <details class="hf-faq-item">
-                        <summary class="hf-faq-summary">
-                            <span>What does a Hydrafacial do for the skin?</span>
-                            <div class="hf-faq-icon">+</div>
-                        </summary>
-                        <div class="hf-faq-body">
-                            It helps cleanse the skin, remove dead surface cells and impurities, support hydration and
-                            improve the overall appearance and texture of the skin.
-                        </div>
-                    </details>
-
-                    <!-- Q4 -->
+                    <!-- Q2 -->
                     <details class="hf-faq-item">
                         <summary class="hf-faq-summary">
                             <span>Is Hydrafacial painful?</span>
@@ -2539,7 +2334,7 @@
                         </div>
                     </details>
 
-                    <!-- Q5 -->
+                    <!-- Q3 -->
                     <details class="hf-faq-item">
                         <summary class="hf-faq-summary">
                             <span>Is there downtime after Hydrafacial?</span>
@@ -2547,12 +2342,11 @@
                         </summary>
                         <div class="hf-faq-body">
                             Hydrafacial is a non-invasive treatment and is generally associated with minimal disruption
-                            to your routine. Your skin professional can provide specific aftercare recommendations based
-                            on your skin.
+                            to your routine.
                         </div>
                     </details>
 
-                    <!-- Q6 -->
+                    <!-- Q4 -->
                     <details class="hf-faq-item">
                         <summary class="hf-faq-summary">
                             <span>Can Hydrafacial help with dull skin?</span>
@@ -2564,7 +2358,7 @@
                         </div>
                     </details>
 
-                    <!-- Q7 -->
+                    <!-- Q5 -->
                     <details class="hf-faq-item">
                         <summary class="hf-faq-summary">
                             <span>Can I get a Hydrafacial before an event or Marriage?</span>
@@ -2577,21 +2371,20 @@
                         </div>
                     </details>
 
-                    <!-- Q8 -->
+                    <!-- Q6 -->
                     <details class="hf-faq-item">
                         <summary class="hf-faq-summary">
                             <span>How often should I get a Hydrafacial?</span>
                             <div class="hf-faq-icon">+</div>
                         </summary>
                         <div class="hf-faq-body">
-                            The ideal frequency depends on your skin type, concerns and skincare goals. Your doctor or
-                            skincare professional can recommend a suitable treatment schedule. Once a month is the
-                            standard recommendation for maintaining skin health. Your dermatologist may suggest more
-                            frequent sessions for active acne or specific concerns, based on your consultation.
+                            Once a month is the standard recommendation for maintaining skin health. Your dermatologist
+                            may suggest more frequent sessions for active acne or specific concerns, based on your
+                            consultation.
                         </div>
                     </details>
 
-                    <!-- Q9 -->
+                    <!-- Q7 -->
                     <details class="hf-faq-item">
                         <summary class="hf-faq-summary">
                             <span>What skin concerns does HydraFacial address?</span>
@@ -2607,7 +2400,7 @@
         </section>
 
         <!-- ═══════════════════════════════════════════════════════════
-             11. FOOTER WRAPPER & STACK
+             9. FOOTER WRAPPER & STACK
              ═══════════════════════════════════════════════════════════ -->
         <div class="footer-stack-root">
             <div class="footer-reveal-wrapper">
