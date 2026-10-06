@@ -829,33 +829,14 @@
             }
         }
 
-        /* ── SECTION 4: TREATMENT AREAS FOR WOMEN & MEN (Refined Luxury Editorial) ── */
-        .lhr-area-column-card {
-            background: #FFFFFF;
-            border: 1px solid var(--lhr-border);
-            border-top: 4px solid var(--lhr-gold);
-            box-shadow: var(--lhr-shadow);
-            border-radius: 24px;
-            padding: clamp(28px, 4vw, 42px);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .lhr-area-column-card:hover {
-            box-shadow: 0 20px 50px rgba(43, 26, 18, 0.09);
-        }
-
-        /* ── SECTION 4: TREATMENT AREAS FOR WOMEN & MEN (Philosophy Background) ── */
+        /* ── SECTION 4: TREATMENT AREAS FOR WOMEN & MEN (Philosophy Background & Full Contrast) ── */
         #treatment-areas {
             background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%) !important;
             isolation: isolate;
             overflow: hidden;
             color: #FFFFFF !important;
             position: relative;
-            padding: clamp(70px, 8vw, 105px) 0;
+            padding: clamp(70px, 8vw, 105px) 0 clamp(110px, 11vw, 150px) 0 !important;
         }
 
         #treatment-areas::before {
@@ -885,8 +866,10 @@
             z-index: 2;
         }
 
-        #treatment-areas .lhr-eyebrow {
+        #treatment-areas .lhr-eyebrow,
+        #treatment-areas .lhr-area-column-card .lhr-eyebrow {
             color: #E8C99A !important;
+            -webkit-text-fill-color: #E8C99A !important;
         }
 
         #treatment-areas .nemonic-line {
@@ -897,16 +880,27 @@
             filter: brightness(0) invert(1) !important;
         }
 
-        #treatment-areas .lhr-heading {
+        #treatment-areas .lhr-heading,
+        #treatment-areas h2 {
             color: #FFFFFF !important;
+            -webkit-text-fill-color: #FFFFFF !important;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+        }
+
+        #treatment-areas .lhr-heading .scribble {
+            color: #E8C99A !important;
+            -webkit-text-fill-color: #E8C99A !important;
         }
 
         #treatment-areas .lhr-lead {
-            color: rgba(255, 255, 255, 0.88) !important;
+            color: rgba(255, 255, 255, 0.9) !important;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.9) !important;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
         }
 
         #treatment-areas .lhr-lead strong {
             color: #E8C99A !important;
+            -webkit-text-fill-color: #E8C99A !important;
         }
 
         .lhr-area-column-card {
@@ -939,33 +933,40 @@
             justify-content: space-between;
         }
 
-        .lhr-area-column-title {
+        .lhr-area-column-title,
+        #treatment-areas h3.lhr-area-column-title {
             font-family: 'Playfair Display', Georgia, serif;
             font-size: clamp(1.4rem, 2vw, 1.7rem);
             font-weight: 600;
             color: #FFFFFF !important;
+            -webkit-text-fill-color: #FFFFFF !important;
             margin-bottom: 0;
             line-height: 1.25;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
-        .lhr-area-intro {
+        .lhr-area-intro,
+        #treatment-areas p.lhr-area-intro {
             font-size: 0.94rem;
-            color: rgba(255, 255, 255, 0.85) !important;
+            color: rgba(255, 255, 255, 0.88) !important;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.88) !important;
             line-height: 1.7;
             margin-bottom: 24px;
         }
 
         .lhr-area-doctor-callout {
             border-left: 3px solid #E8C99A !important;
-            background: rgba(232, 201, 154, 0.1) !important;
+            background: rgba(232, 201, 154, 0.12) !important;
             padding: 14px 18px;
             border-radius: 0 14px 14px 0;
             margin-bottom: 24px;
         }
 
-        .lhr-area-doctor-callout p {
+        .lhr-area-doctor-callout p,
+        .lhr-area-doctor-callout em {
             font-size: 0.88rem;
-            color: rgba(255, 255, 255, 0.9) !important;
+            color: rgba(255, 255, 255, 0.95) !important;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.95) !important;
             line-height: 1.6;
             margin-bottom: 0;
             font-style: italic;
@@ -1004,8 +1005,10 @@
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            background: rgba(232, 201, 154, 0.15);
-            color: #E8C99A;
+            background: rgba(232, 201, 154, 0.15) !important;
+            border: 1px solid rgba(232, 201, 154, 0.3) !important;
+            color: #E8C99A !important;
+            -webkit-text-fill-color: #E8C99A !important;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1016,39 +1019,46 @@
         }
 
         .lhr-area-item:hover .lhr-area-item__glyph {
-            background: #E8C99A;
-            color: #1F1511;
+            background: #E8C99A !important;
+            color: #1F1511 !important;
+            -webkit-text-fill-color: #1F1511 !important;
         }
 
         .lhr-area-item__content {
             flex: 1;
         }
 
-        .lhr-area-item__title {
+        .lhr-area-item__title,
+        #treatment-areas h4.lhr-area-item__title {
             font-family: 'Playfair Display', Georgia, serif;
             font-size: 1.08rem;
             font-weight: 600;
             color: #FFFFFF !important;
+            -webkit-text-fill-color: #FFFFFF !important;
             margin-bottom: 4px;
             line-height: 1.35;
             transition: color 0.2s ease;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
         }
 
         .lhr-area-item:hover .lhr-area-item__title {
             color: #E8C99A !important;
+            -webkit-text-fill-color: #E8C99A !important;
         }
 
-        .lhr-area-item__desc {
+        .lhr-area-item__desc,
+        #treatment-areas p.lhr-area-item__desc {
             font-size: 0.88rem;
             line-height: 1.55;
-            color: rgba(255, 255, 255, 0.8) !important;
+            color: rgba(255, 255, 255, 0.85) !important;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.85) !important;
             margin-bottom: 0;
         }
 
         /* ── SECTION 6: CONCERNS ADDRESSED (Editorial Split-Panel) ── */
         .lhr-concerns-section {
             position: relative;
-            background: #FDF8F3 !important;
+            background: linear-gradient(to top, #F4EFE8, #FDF8F3) !important;
             overflow: hidden;
             padding-top: clamp(30px, 3.5vw, 50px) !important;
             padding-bottom: clamp(70px, 8vw, 105px) !important;
@@ -1368,105 +1378,397 @@
             margin-bottom: 0;
         }
 
-        /* ── SECTION 8: COMPARISON TABLE (LHR VS WAXING VS SHAVING VS THREADING) ── */
-        .lhr-compare-table-wrap {
-            background: #FFFFFF;
-            border-radius: 20px;
-            border: 1px solid rgba(196, 146, 74, 0.28);
-            box-shadow: 0 16px 45px rgba(43, 26, 18, 0.05);
+        /* ── SECTION 8: COMPARISON TABLE (Philosophy Background Matching #treatment-areas) ── */
+        #comparison-table {
+            background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%) !important;
+            isolation: isolate;
+            overflow: hidden;
+            color: #FFFFFF !important;
+            position: relative;
+            padding: clamp(90px, 9vw, 130px) 0 clamp(85px, 8vw, 120px) 0 !important;
+        }
+
+        #comparison-table::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 65% 60% at 50% -8%, rgba(198, 119, 119, 0.16) 0%, transparent 68%),
+                radial-gradient(ellipse 40% 40% at 80% 110%, rgba(143, 113, 74, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        #comparison-table::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.25;
+            mix-blend-mode: overlay;
+        }
+
+        #comparison-table .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        #comparison-table .lhr-eyebrow {
+            color: #E8C99A !important;
+            -webkit-text-fill-color: #E8C99A !important;
+        }
+
+        #comparison-table .nemonic-line {
+            background-color: rgba(232, 201, 154, 0.45) !important;
+        }
+
+        #comparison-table .nemonic-icon {
+            filter: brightness(0) invert(1) !important;
+        }
+
+        #comparison-table .lhr-heading,
+        #comparison-table h2 {
+            color: #FFFFFF !important;
+            -webkit-text-fill-color: #FFFFFF !important;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+        }
+
+        #comparison-table .lhr-heading .scribble {
+            color: #E8C99A !important;
+            -webkit-text-fill-color: #E8C99A !important;
+        }
+
+        #comparison-table .lhr-lead {
+            color: rgba(255, 255, 255, 0.9) !important;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.9) !important;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        #comparison-table .lhr-compare-table-wrap {
+            background: rgba(255, 255, 255, 0.08) !important;
+            border-radius: 22px;
+            border: 1px solid rgba(232, 201, 154, 0.3) !important;
+            border-top: 4px solid #E8C99A !important;
+            backdrop-filter: blur(14px) !important;
+            -webkit-backdrop-filter: blur(14px) !important;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35) !important;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
             margin-top: 32px;
         }
 
-        .lhr-compare-table-wrap::-webkit-scrollbar {
+        #comparison-table .lhr-compare-table-wrap::-webkit-scrollbar {
             height: 6px;
         }
 
-        .lhr-compare-table-wrap::-webkit-scrollbar-track {
-            background: #FAF3EC;
+        #comparison-table .lhr-compare-table-wrap::-webkit-scrollbar-track {
+            background: rgba(43, 26, 18, 0.4);
             border-radius: 4px;
         }
 
-        .lhr-compare-table-wrap::-webkit-scrollbar-thumb {
-            background: rgba(196, 146, 74, 0.35);
+        #comparison-table .lhr-compare-table-wrap::-webkit-scrollbar-thumb {
+            background: rgba(232, 201, 154, 0.45);
             border-radius: 4px;
         }
 
-        .lhr-compare-table-wrap::-webkit-scrollbar-thumb:hover {
-            background: rgba(196, 146, 74, 0.6);
+        #comparison-table .lhr-compare-table-wrap::-webkit-scrollbar-thumb:hover {
+            background: rgba(232, 201, 154, 0.7);
         }
 
-        .lhr-table {
+        #comparison-table .lhr-table {
             width: 100%;
             min-width: 680px;
             margin-bottom: 0;
             border-collapse: collapse;
         }
 
-        .lhr-table th {
-            background: #FAF3EC;
+        #comparison-table .lhr-table th {
+            background: rgba(0, 0, 0, 0.25) !important;
             padding: 18px 20px;
             font-family: 'Playfair Display', Georgia, serif;
             font-size: 1.05rem;
             font-weight: 600;
-            color: #2B1A12;
-            border-bottom: 2px solid rgba(196, 146, 74, 0.3);
+            color: #FFFFFF !important;
+            -webkit-text-fill-color: #FFFFFF !important;
+            border-bottom: 2px solid rgba(232, 201, 154, 0.35);
             text-align: left;
         }
 
-        .lhr-table th.highlight-col {
-            background: rgba(196, 146, 74, 0.15);
-            color: #8B5E2A;
+        #comparison-table .lhr-table th.highlight-col {
+            background: rgba(232, 201, 154, 0.18) !important;
+            color: #E8C99A !important;
+            -webkit-text-fill-color: #E8C99A !important;
             font-weight: 700;
-            border-bottom: 2px solid #C4924A;
+            border-bottom: 2px solid #E8C99A;
         }
 
-        .lhr-table td {
+        #comparison-table .lhr-table td {
             padding: 16px 20px;
-            font-size: 0.9rem;
-            color: #5C4A3A;
-            border-bottom: 1px solid rgba(196, 146, 74, 0.14);
+            font-size: 0.92rem;
+            color: rgba(255, 255, 255, 0.86) !important;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.86) !important;
+            border-bottom: 1px solid rgba(232, 201, 154, 0.15);
             vertical-align: middle;
         }
 
-        .lhr-table td.highlight-col {
-            background: rgba(196, 146, 74, 0.04);
-            font-weight: 500;
-            color: #2B1A12;
+        #comparison-table .lhr-table td strong {
+            color: #FFFFFF !important;
+            -webkit-text-fill-color: #FFFFFF !important;
         }
 
-        .lhr-table tr:last-child td {
+        #comparison-table .lhr-table td.highlight-col {
+            background: rgba(232, 201, 154, 0.08) !important;
+            font-weight: 500;
+            color: #FFFFFF !important;
+            -webkit-text-fill-color: #FFFFFF !important;
+        }
+
+        #comparison-table .lhr-table tr:last-child td {
             border-bottom: none;
         }
 
-        .badge-win {
+        #comparison-table .lhr-table tr:hover td {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        #comparison-table .lhr-table tr:hover td.highlight-col {
+            background: rgba(232, 201, 154, 0.12) !important;
+        }
+
+        #comparison-table .badge-win {
             display: inline-flex;
             align-items: center;
             gap: 4px;
-            background: #EBF7EE;
-            color: #1E7E34;
+            background: rgba(40, 167, 69, 0.25);
+            color: #A3E6B5 !important;
+            -webkit-text-fill-color: #A3E6B5 !important;
+            border: 1px solid rgba(163, 230, 181, 0.4);
             font-size: 11px;
             font-weight: 700;
-            padding: 3px 8px;
+            padding: 4px 10px;
             border-radius: 999px;
         }
 
-        .badge-temp {
+        #comparison-table .badge-temp {
             display: inline-flex;
             align-items: center;
             gap: 4px;
-            background: #FDF2E9;
-            color: #B9770E;
+            background: rgba(232, 201, 154, 0.15);
+            color: #F8E2C8 !important;
+            -webkit-text-fill-color: #F8E2C8 !important;
+            border: 1px solid rgba(232, 201, 154, 0.3);
             font-size: 11px;
             font-weight: 500;
-            padding: 3px 8px;
+            padding: 4px 10px;
             border-radius: 999px;
+        }
+
+        /* ── SECTION 9.5: BEFORE & AFTER RESULTS GALLERY STYLES ── */
+        .rg-item {
+            animation: rgFade .45s ease both;
+        }
+
+        @keyframes rgFade {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .rg-ba {
+            position: relative;
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            border-radius: 20px;
+            background: rgba(196, 146, 74, .06);
+            border: 1px solid rgba(196, 146, 74, 0.28);
+            box-shadow: 0 12px 35px rgba(43, 26, 18, 0.08);
+            --pos: 50%;
+            margin: 0;
+            isolation: isolate;
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
+        }
+
+        .rg-ba img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .rg-ba__before {
+            position: absolute;
+            inset: 0;
+            clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+        }
+
+        .rg-ba__divider {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: var(--pos);
+            width: 2px;
+            margin-left: -1px;
+            background: rgba(255, 255, 255, .95);
+            box-shadow: 0 0 12px rgba(43, 26, 18, .35);
+            pointer-events: none;
+        }
+
+        .rg-ba__knob {
+            position: absolute;
+            top: 50%;
+            left: var(--pos);
+            width: 38px;
+            height: 38px;
+            margin: -19px 0 0 -19px;
+            border-radius: 50%;
+            background: #ffffff;
+            box-shadow: 0 4px 16px rgba(43, 26, 18, .35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2B1A12;
+            pointer-events: none;
+        }
+
+        .rg-ba__knob svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .rg-ba__range {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            opacity: 0;
+            cursor: ew-resize;
+            -webkit-appearance: none;
+            appearance: none;
+            background: none;
+            z-index: 5;
+        }
+
+        .rg-ba__tag {
+            position: absolute;
+            top: 14px;
+            padding: 5px 14px;
+            border-radius: 999px;
+            background: rgba(43, 26, 18, .75);
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            color: #ffffff;
+            pointer-events: none;
+            z-index: 4;
+        }
+
+        .rg-ba__tag--before {
+            left: 14px;
+        }
+
+        .rg-ba__tag--after {
+            right: 14px;
+        }
+
+        .rg-item__meta {
+            padding-top: 16px;
+            text-align: center;
+        }
+
+        .rg-item__title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.18rem;
+            font-weight: 600;
+            color: #2B1A12;
+            margin: 0 0 4px;
+        }
+
+        .rg-item__note {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: #8B5E2A;
+            margin: 0;
+        }
+
+        .rg-filters-wrap {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 32px;
+        }
+
+        .rg-tab-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 20px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            border: 1px solid rgba(196, 146, 74, 0.28);
+            background: #FFFFFF;
+            color: #5C4A3A;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 8px rgba(43, 26, 18, 0.04);
+        }
+
+        .rg-tab-btn.active,
+        .rg-tab-btn:hover {
+            background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%);
+            color: #FFFFFF !important;
+            border-color: #E8C99A;
+            box-shadow: 0 4px 14px rgba(43, 26, 18, 0.16);
+        }
+
+        .clinic-locations-section .container {
+            max-width: 1200px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        .footer-cta-card-wrapper {
+            max-width: 100% !important;
+            width: 100% !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .footer-cta-card {
+            border-radius: 0 !important;
+            border-left: none !important;
+            border-right: none !important;
+            border-top: 1px solid rgba(232, 201, 154, 0.35) !important;
+            border-bottom: 1px solid rgba(232, 201, 154, 0.25) !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            padding: clamp(80px, 8vw, 130px) 24px !important;
+            box-shadow: none !important;
         }
 
         /* ── SECTION 10: VIDEO & INSTAGRAM REELS SHOWCASE ── */
-        .hf-video-section {
-            background: #FAF7F2;
+        .hf-video-section,
+        #video-showcase {
+            background: linear-gradient(to top, #F4EFE8, #FDF8F3) !important;
             padding: clamp(60px, 7vw, 100px) 0;
             position: relative;
             overflow: hidden;
@@ -1535,67 +1837,125 @@
             color: #FFFFFF;
         }
 
+        #video-showcase .hf-video-grid,
         .hf-video-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-bottom: 40px;
+            display: grid !important;
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            gap: 28px !important;
+            row-gap: 32px !important;
+            column-gap: 28px !important;
+            width: 100% !important;
+            margin-bottom: 40px !important;
         }
 
         @media (max-width: 991px) {
+
+            #video-showcase .hf-video-grid,
             .hf-video-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 18px;
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+                gap: 22px !important;
             }
         }
 
-        @media (max-width: 575px) {
+        @media (max-width: 600px) {
+
+            #video-showcase .hf-video-grid,
             .hf-video-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
+                gap: 24px !important;
+            }
+
+            #video-showcase .hf-vcard,
+            .hf-vcard {
+                max-width: 360px !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                min-height: 420px !important;
+            }
+
+            #video-showcase .hf-vcard[data-type="youtube"],
+            #video-showcase .hf-vcard--youtube,
+            .hf-vcard[data-type="youtube"],
+            .hf-vcard--youtube {
+                max-width: 100% !important;
+                min-height: 200px !important;
             }
         }
 
+        #video-showcase .hf-vcard,
         .hf-vcard {
-            position: relative;
-            background: #140B07;
-            border-radius: 22px;
-            overflow: hidden;
-            border: 1px solid rgba(196, 146, 74, 0.3);
-            box-shadow: 0 12px 35px rgba(43, 26, 18, 0.08);
-            cursor: pointer;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+            position: relative !important;
+            width: 100% !important;
+            min-width: 0 !important;
+            background: #140B07 !important;
+            border-radius: 20px !important;
+            overflow: hidden !important;
+            border: 1.5px solid rgba(196, 146, 74, 0.35) !important;
+            box-shadow: 0 12px 35px rgba(43, 26, 18, 0.1) !important;
+            cursor: pointer !important;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease !important;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            aspect-ratio: 9 / 13;
-            min-height: 380px;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            aspect-ratio: 9 / 14 !important;
+            min-height: 360px !important;
+            isolation: isolate !important;
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
+        }
+
+        #video-showcase .hf-vcard[data-type="youtube"],
+        #video-showcase .hf-vcard--youtube,
+        .hf-vcard[data-type="youtube"],
+        .hf-vcard--youtube {
+            aspect-ratio: 16 / 9 !important;
+            min-height: 220px !important;
+            border-radius: 20px !important;
+        }
+
+        .hf-vcard[data-type="youtube"] .hf-vcard__play,
+        .hf-vcard--youtube .hf-vcard__play {
+            width: 58px;
+            height: 40px;
+            border-radius: 12px;
+            background: rgba(255, 0, 0, 0.92);
+            color: #FFFFFF;
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .hf-vcard[data-type="youtube"]:hover .hf-vcard__play,
+        .hf-vcard--youtube:hover .hf-vcard__play {
+            background: #FF0000;
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.5);
         }
 
         .hf-vcard:hover {
-            transform: translateY(-8px);
+            transform: translateY(-6px);
             border-color: #E8C99A;
             box-shadow: 0 20px 50px rgba(43, 26, 18, 0.18);
         }
 
+        #video-showcase .hf-vcard__poster,
         .hf-vcard__poster {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 0 !important;
-            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            position: absolute !important;
+            inset: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            border-radius: 20px !important;
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
         }
 
         .hf-vcard:hover .hf-vcard__poster {
-            transform: scale(1.08);
+            transform: scale(1.06);
         }
 
         .hf-vcard::after {
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(20, 11, 7, 0.4) 0%, rgba(20, 11, 7, 0.05) 35%, rgba(20, 11, 7, 0.88) 100%);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, transparent 50%, rgba(0, 0, 0, 0.2) 100%);
             pointer-events: none;
             z-index: 1;
         }
@@ -1603,10 +1963,10 @@
         .hf-vcard__top {
             position: relative;
             z-index: 2;
-            padding: 16px 18px;
+            padding: 14px 16px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-end;
         }
 
         .hf-vbadge {
@@ -2148,10 +2508,9 @@
             </div>
 
             <!-- Curvy Bottom Separator -->
-            <div class="position-absolute w-100" style="bottom: -1px; left: 0; z-index: 2;">
-                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
-                    style="display: block; width: 100%; height: clamp(70px, 7vw, 110px);">
-                    <path fill="#FDF8F3" d="M0,26 C400,136 1040,-36 1440,52 L1440,100 L0,100 Z"></path>
+            <div class="section-separator" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
                 </svg>
             </div>
         </section>
@@ -2159,9 +2518,10 @@
         <!-- ═══════════════════════════════════════════════════════════
              2. UNDERSTANDING LASER HAIR REMOVAL
              ═══════════════════════════════════════════════════════════ -->
-        <section class="lhr-section" id="understanding-lhr" style="padding-top:40px">
+        <section class="lhr-section" id="understanding-lhr"
+            style="padding-top:40px;    background: linear-gradient(to top, #F4EFE8, #FDF8F3) !important;">
             <div class="container">
-                <div class="text-center max-w-3xl mx-auto mb-5">
+                <div class="text-center max-w-3xl mx-auto mb-3">
                     <span class="lhr-eyebrow mb-2">Less Hair, Less Maintenance. More Freedom</span>
                     <div class="nemonic-separator mx-auto mb-3">
                         <div class="nemonic-line"></div>
@@ -2173,23 +2533,21 @@
                     </h2>
                 </div>
 
-                <div class="row align-items-center g-5">
-                    <!-- Left: Editorial Roman Arch Visual Frame -->
-                    <div class="col-lg-5">
+                <div class="row align-items-center g-3">
+                    <!-- Left: Editorial Roman Arch Visual Frame (Order 1 on mobile & Desktop) -->
+                    <div class="col-lg-5 order-1 order-lg-1 mb-4 mb-lg-0">
                         <div class="sig-arch-wrap">
                             <div class="sig-arch-glow"></div>
                             <div class="sig-oval-frame">
                                 <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?q=80&w=800&auto=format&fit=crop"
                                     alt="Laser Hair Removal Consultation at D'Zen Derma" class="sig-oval-img" />
                             </div>
-                            <div class="sig-arch-badge">
-                                <span class="dot">✦</span> Quad-Wavelength Diode LHR
-                            </div>
+
                         </div>
                     </div>
 
-                    <!-- Right: Narrative & Mechanism Pillars -->
-                    <div class="col-lg-7">
+                    <!-- Right: Narrative & Mechanism Pillars (Order 2 on mobile & Desktop) -->
+                    <div class="col-lg-7 order-2 order-lg-2">
                         <p class="lhr-lead mb-3">
                             Laser Hair Removal, also known as <strong>Laser Hair Reduction (LHR)</strong>, is an
                             advanced treatment designed to reduce unwanted facial and body hair. The procedure uses
@@ -2224,7 +2582,7 @@
         <section class="lhr-section lhr-section--alt" id="working-principle">
             <div class="container">
                 <!-- Section Header -->
-                <div class="text-center max-w-3xl mx-auto mb-5">
+                <div class="text-center max-w-3xl mx-auto mb-3">
                     <span class="lhr-eyebrow mb-2">BIOLOGICAL MECHANISM &amp; TECHNOLOGY</span>
                     <div class="nemonic-separator mx-auto mb-3">
                         <div class="nemonic-line"></div>
@@ -2237,15 +2595,13 @@
                 </div>
 
                 <div class="row align-items-center g-4 g-lg-5">
-                    <!-- Left: Signature Arch Visual Frame & CTA with text below -->
-                    <div class="col-lg-5">
+                    <!-- Left: Signature Arch Visual Frame & CTA with text below (Order 2 on mobile, Order 1 on Desktop) -->
+                    <div class="col-lg-5 order-2 order-lg-1">
                         <div class="sig-arch-wrap">
                             <div class="sig-arch-glow"></div>
                             <div class="sig-oval-frame">
-                                <img src="../images/dr-arushi-1.webp" alt="Dr. Aarushi Passi Bhandari - D'Zen Derma" class="sig-oval-img" />
-                            </div>
-                            <div class="sig-arch-badge">
-                                <span class="dot">✦</span> Quad-Wavelength Diode LHR
+                                <img src="../images/dr-arushi-1.webp" alt="Dr. Aarushi Passi Bhandari - D'Zen Derma"
+                                    class="sig-oval-img" />
                             </div>
                         </div>
 
@@ -2261,8 +2617,8 @@
                         </div>
                     </div>
 
-                    <!-- Right: Pure Editorial Narrative & Quad-Wavelength Technology (No Box Design) -->
-                    <div class="col-lg-7">
+                    <!-- Right: Pure Editorial Narrative & Quad-Wavelength Technology (Order 1 on mobile, Order 2 on Desktop) -->
+                    <div class="col-lg-7 order-1 order-lg-2">
                         <p class="lhr-lead mb-3" style="color: #2B1A12;">
                             Laser Hair Reduction uses focused laser energy to target the pigment present in the hair
                             follicle. The energy is absorbed by the hair and converted into controlled thermal energy,
@@ -2303,7 +2659,7 @@
              ═══════════════════════════════════════════════════════════ -->
         <section class="lhr-section" id="treatment-areas">
             <div class="container">
-                <div class="text-center max-w-3xl mx-auto mb-5">
+                <div class="text-center max-w-3xl mx-auto mb-3">
                     <span class="lhr-eyebrow mb-2">TREATMENT AREAS</span>
                     <div class="nemonic-separator mx-auto mb-3">
                         <div class="nemonic-line"></div>
@@ -2311,7 +2667,7 @@
                         <div class="nemonic-line"></div>
                     </div>
                     <h2 class="lhr-heading mb-3">
-                        What areas can Laser Hair Reduction for cover?
+                        What Areas Can Laser Hair Reduction <span class="scribble">Cover?</span>
                     </h2>
                     <p class="lhr-lead">
                         Laser Hair Reduction can be considered by <strong>men and women</strong> who want to reduce
@@ -2332,7 +2688,6 @@
                                         Laser Hair Reduction for Women
                                     </h3>
                                 </div>
-                                <div style="font-size: 1.5rem; color: #E8C99A;">✦</div>
                             </div>
                             <p class="lhr-area-intro">
                                 It can be used for a variety of areas across facial and body zones according to
@@ -2342,7 +2697,6 @@
                             <div class="lhr-area-list">
                                 <!-- Area 1 -->
                                 <div class="lhr-area-item">
-                                    <div class="lhr-area-item__glyph">✦</div>
                                     <div class="lhr-area-item__content">
                                         <h4 class="lhr-area-item__title">Face &amp; Facial Hair</h4>
                                         <p class="lhr-area-item__desc">Upper lip, chin, hairline &amp; sideburns.</p>
@@ -2351,7 +2705,6 @@
 
                                 <!-- Area 2 -->
                                 <div class="lhr-area-item">
-                                    <div class="lhr-area-item__glyph">✦</div>
                                     <div class="lhr-area-item__content">
                                         <h4 class="lhr-area-item__title">Underarms</h4>
                                         <p class="lhr-area-item__desc">Smooth, shadow-free, bump-free finish.</p>
@@ -2360,7 +2713,6 @@
 
                                 <!-- Area 3 -->
                                 <div class="lhr-area-item">
-                                    <div class="lhr-area-item__glyph">✦</div>
                                     <div class="lhr-area-item__content">
                                         <h4 class="lhr-area-item__title">Arms &amp; Legs</h4>
                                         <p class="lhr-area-item__desc">Full arms and legs progressive reduction.</p>
@@ -2369,7 +2721,6 @@
 
                                 <!-- Area 4 -->
                                 <div class="lhr-area-item">
-                                    <div class="lhr-area-item__glyph">✦</div>
                                     <div class="lhr-area-item__content">
                                         <h4 class="lhr-area-item__title">Bikini &amp; Intimate Areas</h4>
                                         <p class="lhr-area-item__desc">Bikini line or selected intimate areas.</p>
@@ -2378,10 +2729,10 @@
 
                                 <!-- Area 5 -->
                                 <div class="lhr-area-item">
-                                    <div class="lhr-area-item__glyph">✦</div>
                                     <div class="lhr-area-item__content">
                                         <h4 class="lhr-area-item__title">Neck, Hairline &amp; Body Areas</h4>
-                                        <p class="lhr-area-item__desc">Customised for abdomen, back, neck, and other selected areas.</p>
+                                        <p class="lhr-area-item__desc">Customised for abdomen, back, neck, and other
+                                            selected areas.</p>
                                     </div>
                                 </div>
                             </div>
@@ -2398,7 +2749,6 @@
                                         Laser Hair Reduction for Men
                                     </h3>
                                 </div>
-                                <div style="font-size: 1.5rem; color: #E8C99A;">𖤓</div>
                             </div>
                             <p class="lhr-area-intro">
                                 Men can also undergo Laser Hair Reduction for unwanted hair on the beard, neck, chest,
@@ -2408,7 +2758,7 @@
 
                             <div class="lhr-area-doctor-callout">
                                 <p>
-                                    ✦ <em>A consultation with the doctor helps assess your hair growth, skin
+                                    <em>A consultation with the doctor helps assess your hair growth, skin
                                         characteristics, treatment area and individual requirements before starting the
                                         treatment.</em>
                                 </p>
@@ -2417,16 +2767,15 @@
                             <div class="lhr-area-list">
                                 <!-- Area 1 -->
                                 <div class="lhr-area-item">
-                                    <div class="lhr-area-item__glyph">✦</div>
                                     <div class="lhr-area-item__content">
                                         <h4 class="lhr-area-item__title">Beard &amp; Brow Shaping</h4>
-                                        <p class="lhr-area-item__desc">Permanent cheek contours &amp; brow definition.</p>
+                                        <p class="lhr-area-item__desc">Permanent cheek contours &amp; brow definition.
+                                        </p>
                                     </div>
                                 </div>
 
                                 <!-- Area 2 -->
                                 <div class="lhr-area-item">
-                                    <div class="lhr-area-item__glyph">✦</div>
                                     <div class="lhr-area-item__content">
                                         <h4 class="lhr-area-item__title">Neck &amp; Collar Line</h4>
                                         <p class="lhr-area-item__desc">Eliminate shirt-collar friction &amp; bumps.</p>
@@ -2435,7 +2784,6 @@
 
                                 <!-- Area 3 -->
                                 <div class="lhr-area-item">
-                                    <div class="lhr-area-item__glyph">✦</div>
                                     <div class="lhr-area-item__content">
                                         <h4 class="lhr-area-item__title">Chest &amp; Abdomen</h4>
                                         <p class="lhr-area-item__desc">Density thinning or complete clearance.</p>
@@ -2444,7 +2792,6 @@
 
                                 <!-- Area 4 -->
                                 <div class="lhr-area-item">
-                                    <div class="lhr-area-item__glyph">✦</div>
                                     <div class="lhr-area-item__content">
                                         <h4 class="lhr-area-item__title">Back &amp; Shoulders</h4>
                                         <p class="lhr-area-item__desc">Hassle-free grooming for larger body areas.</p>
@@ -2453,16 +2800,23 @@
 
                                 <!-- Area 5 -->
                                 <div class="lhr-area-item">
-                                    <div class="lhr-area-item__glyph">✦</div>
                                     <div class="lhr-area-item__content">
                                         <h4 class="lhr-area-item__title">Ears &amp; Hairline Detail</h4>
-                                        <p class="lhr-area-item__desc">Subtle micro-laser targeting for crisp, polished grooming.</p>
+                                        <p class="lhr-area-item__desc">Subtle micro-laser targeting for crisp, polished
+                                            grooming.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Curvy Wavy Bottom Separator -->
+            <div class="section-separator" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
+                </svg>
             </div>
         </section>
 
@@ -2488,13 +2842,12 @@
                 </div>
 
                 <div class="row g-4 g-lg-5 align-items-center lhr-concerns-showcase">
-                    <!-- Left Column: Editorial Visual Card -->
-                    <div class="col-lg-5">
+                    <!-- Left Column: Editorial Visual Card (Order 2 on mobile, Order 1 on Desktop) -->
+                    <div class="col-lg-5 order-2 order-lg-1">
                         <div class="lhr-concerns-visual">
                             <div class="lhr-concerns-visual__imgwrap">
                                 <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80"
                                     alt="Laser Precision Treatment" loading="lazy" />
-                                <div class="lhr-concerns-visual__badge">✦ Doctor-Administered Protocol</div>
                             </div>
                             <div class="lhr-concerns-visual__body">
                                 <div class="lhr-concerns-visual__quote">
@@ -2510,8 +2863,8 @@
                         </div>
                     </div>
 
-                    <!-- Right Column: Interactive Concerns List -->
-                    <div class="col-lg-7">
+                    <!-- Right Column: Interactive Concerns List (Order 1 on mobile, Order 2 on Desktop) -->
+                    <div class="col-lg-7 order-1 order-lg-2">
                         <div class="lhr-concerns-list">
                             <!-- Concern 1 -->
                             <div class="lhr-concern-row">
@@ -2598,7 +2951,7 @@
              ═══════════════════════════════════════════════════════════ -->
         <section class="lhr-section lhr-section--alt" id="treatment-journey">
             <div class="container">
-                <div class="text-center max-w-3xl mx-auto mb-5">
+                <div class="text-center max-w-3xl mx-auto mb-3">
                     <span class="lhr-eyebrow mb-2">THE D'ZEN PROTOCOL</span>
                     <div class="nemonic-separator mx-auto mb-3">
                         <div class="nemonic-line"></div>
@@ -2725,6 +3078,7 @@
              8. COMPARISON: LHR VS WAXING VS SHAVING VS THREADING
              ═══════════════════════════════════════════════════════════ -->
         <section class="lhr-section" id="comparison-table">
+
             <div class="container">
                 <div class="text-center max-w-3xl mx-auto mb-4">
                     <span class="lhr-eyebrow mb-2">METHOD COMPARISON</span>
@@ -2794,13 +3148,25 @@
                 </div>
 
                 <div class="p-4 rounded-4 mt-4"
-                    style="background: rgba(196, 146, 74, 0.08); border: 1px solid rgba(196, 146, 74, 0.25);">
-                    <p class="mb-0 text-center" style="font-size: 0.98rem; font-weight: 500; color: #2B1A12;">
-                        ✦ <strong>Note:</strong> Laser Hair Reduction is therefore not simply another method of removing
-                        visible hair. It is an approach designed to <strong>progressively reduce hair growth at the
+                    style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(232, 201, 154, 0.3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+                    <p class="mb-0 text-center"
+                        style="font-size: 0.98rem; font-weight: 500; color: rgba(255, 255, 255, 0.95); -webkit-text-fill-color: rgba(255, 255, 255, 0.95);">
+                        <span style="color: #E8C99A; -webkit-text-fill-color: #E8C99A;">✦</span> <strong
+                            style="color: #FFFFFF; -webkit-text-fill-color: #FFFFFF;">Note:</strong> Laser Hair
+                        Reduction is therefore not simply another method of removing
+                        visible hair. It is an approach designed to <strong
+                            style="color: #E8C99A; -webkit-text-fill-color: #E8C99A;">progressively reduce hair growth
+                            at the
                             follicular level</strong>.
                     </p>
                 </div>
+            </div>
+
+            <!-- Curvy Separator: Comparison Table (Dark Brown) ➔ Results Section (Warm Cream #FAF7F2) -->
+            <div class="section-separator" aria-hidden="true" style="z-index: 10;">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#FAF7F2" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
+                </svg>
             </div>
         </section>
 
@@ -2809,7 +3175,7 @@
              ═══════════════════════════════════════════════════════════ -->
         <section class="lhr-section lhr-section--alt" id="expected-results">
             <div class="container">
-                <div class="text-center max-w-3xl mx-auto mb-5">
+                <div class="text-center max-w-3xl mx-auto mb-3">
                     <span class="lhr-eyebrow mb-2">CLINICAL RESULTS</span>
                     <div class="nemonic-separator mx-auto mb-3">
                         <div class="nemonic-line"></div>
@@ -2888,9 +3254,142 @@
         </section>
 
         <!-- ═══════════════════════════════════════════════════════════
+             9.5. BEFORE & AFTER RESULTS GALLERY (Interactive Sliders)
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="hf-section rg-gallery" id="before-after" data-filter="area"
+            style="background: linear-gradient(to top, #F4EFE8, #FDF8F3); padding-top: clamp(60px, 6vw, 90px); padding-bottom: clamp(105px, 11vw, 155px); position: relative; overflow: hidden;">
+            <div class="container">
+                <div class="text-center max-w-3xl mx-auto mb-4 mb-lg-5">
+                    <span class="lhr-eyebrow mb-2">CLINICAL RESULTS</span>
+                    <div class="nemonic-separator mx-auto mb-3">
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="lhr-heading mb-3">
+                        Real Results, <span class="scribble">Unretouched</span>
+                    </h2>
+                    <p class="lhr-lead">
+                        Same lighting, same clinical parameters, authentic laser hair reduction transformations. Drag
+                        the
+                        slider to reveal the before &amp; after results.
+                    </p>
+                </div>
+
+                <!-- Area Filter Tabs -->
+                <div class="rg-filters-wrap d-flex justify-content-center gap-2 mb-4 flex-wrap">
+                    <button type="button" class="rg-tab-btn active" data-target="all">All Results</button>
+                    <button type="button" class="rg-tab-btn" data-target="underarms">Underarms &amp; Arms</button>
+                    <button type="button" class="rg-tab-btn" data-target="beard">Men's Beard Shaping</button>
+                    <button type="button" class="rg-tab-btn" data-target="legs">Legs &amp; Body</button>
+                </div>
+
+                <!-- 3 Interactive Before & After Cards Grid -->
+                <div class="row g-4 justify-content-center" data-grid>
+                    <!-- Case 1: Underarms & Arms -->
+                    <div class="col-md-6 col-lg-4 rg-item" data-area="underarms">
+                        <figure class="rg-ba">
+                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=700&auto=format&fit=crop"
+                                alt="Laser Hair Reduction After - Smooth Underarms" loading="lazy">
+                            <div class="rg-ba__before">
+                                <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=700&auto=format&fit=crop"
+                                    alt="Laser Hair Reduction Before - Underarm Hair Growth" loading="lazy">
+                            </div>
+                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
+                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
+                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
+                                aria-label="Reveal before and after for Underarms & Arms Laser Hair Reduction">
+                            <span class="rg-ba__divider" aria-hidden="true"></span>
+                            <span class="rg-ba__knob" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
+                                </svg>
+                            </span>
+                        </figure>
+                        <div class="rg-item__meta">
+                            <h3 class="rg-item__title">Underarm Hair Reduction</h3>
+                            <p class="rg-item__note">6 Sessions · Quad-Wavelength Diode</p>
+                        </div>
+                    </div>
+
+                    <!-- Case 2: Men's Beard Contouring -->
+                    <div class="col-md-6 col-lg-4 rg-item" data-area="beard">
+                        <figure class="rg-ba">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=700&auto=format&fit=crop"
+                                alt="Men's Beard Line Laser After - Contoured Beard" loading="lazy">
+                            <div class="rg-ba__before">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=700&auto=format&fit=crop"
+                                    alt="Men's Beard Line Laser Before - Unruly Neck Hair" loading="lazy">
+                            </div>
+                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
+                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
+                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
+                                aria-label="Reveal before and after for Men's Beard Line Laser Contouring">
+                            <span class="rg-ba__divider" aria-hidden="true"></span>
+                            <span class="rg-ba__knob" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
+                                </svg>
+                            </span>
+                        </figure>
+                        <div class="rg-item__meta">
+                            <h3 class="rg-item__title">Beard Line &amp; Neck Contouring</h3>
+                            <p class="rg-item__note">5 Sessions · Precision Razor-Free Edge</p>
+                        </div>
+                    </div>
+
+                    <!-- Case 3: Full Legs & Body -->
+                    <div class="col-md-6 col-lg-4 rg-item" data-area="legs">
+                        <figure class="rg-ba">
+                            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=700&auto=format&fit=crop"
+                                alt="Laser Hair Reduction After - Smooth Legs" loading="lazy">
+                            <div class="rg-ba__before">
+                                <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?q=80&w=700&auto=format&fit=crop"
+                                    alt="Laser Hair Reduction Before - Follicular Regrowth" loading="lazy">
+                            </div>
+                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
+                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
+                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
+                                aria-label="Reveal before and after for Full Legs Smooth Laser Hair Reduction">
+                            <span class="rg-ba__divider" aria-hidden="true"></span>
+                            <span class="rg-ba__knob" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
+                                </svg>
+                            </span>
+                        </figure>
+                        <div class="rg-item__meta">
+                            <h3 class="rg-item__title">Full Legs Smooth Reduction</h3>
+                            <p class="rg-item__note">7 Sessions · Flawless Hair-Free Finish</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results CTA Strip -->
+                <div class="text-center mt-5">
+                    <a href="../newthree.html#book" class="dz-cta" style="margin: 0 auto; display: inline-flex;">
+                        <span>Experience Your Laser Transformation</span>
+                        <img src="nemonic.png" class="btn-icon" alt="icon" />
+                    </a>
+                </div>
+            </div>
+
+            <!-- Curvy Wavy Bottom Separator -->
+            <div class="section-separator" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════
              10. VIDEO & INSTAGRAM REELS SHOWCASE (Matching Hydrafacial page)
              ═══════════════════════════════════════════════════════════ -->
-        <section class="hf-video-section" id="video-showcase">
+        <section class="hf-video-section" id="video-showcase"
+            style="background: linear-gradient(to top, #F4EFE8, #FDF8F3) !important;">
             <div class="container">
                 <div class="text-center max-w-3xl mx-auto mb-4 mb-lg-5">
                     <span class="lhr-eyebrow mb-2">LIVE EXPERIENCES &amp; REELS</span>
@@ -2908,14 +3407,9 @@
                     </p>
                 </div>
 
-                <!-- Video Filter Tabs -->
+                <!-- Video Filter Tabs: Instagram & YouTube Only -->
                 <div class="hf-video-filter-bar">
-                    <button type="button" class="hf-vtab-btn active" data-vfilter="all"
-                        onclick="filterVideos('all', this)">
-                        <span>All Videos</span>
-                        <span class="hf-vtab-count">6</span>
-                    </button>
-                    <button type="button" class="hf-vtab-btn" data-vfilter="insta"
+                    <button type="button" class="hf-vtab-btn active" data-vfilter="insta"
                         onclick="filterVideos('insta', this)">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #E1306C;">
@@ -2932,12 +3426,12 @@
                             <path
                                 d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                         </svg>
-                        <span>YouTube Clinical</span>
+                        <span>YouTube Videos</span>
                         <span class="hf-vtab-count">3</span>
                     </button>
                 </div>
 
-                <!-- 6 Curated Video & Reel Cards Grid -->
+                <!-- 6 Curated Video Cards: Row 1 Instagram Reels (9:14), Row 2 YouTube Videos (16:9) -->
                 <div class="hf-video-grid">
                     <!-- Video 1: Instagram Reel -->
                     <article class="hf-vcard" data-type="insta" data-title="Painless Contact Cooling Laser Session"
@@ -2946,15 +3440,6 @@
                         <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?q=80&w=800&auto=format&fit=crop"
                             alt="Painless Contact Cooling Laser Session" class="hf-vcard__poster" loading="lazy" />
                         <div class="hf-vcard__top">
-                            <span class="hf-vbadge hf-vbadge--insta">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                                </svg>
-                                Instagram Reel
-                            </span>
                             <span class="hf-vcard__duration">0:45</span>
                         </div>
                         <div class="hf-vcard__play-wrap">
@@ -2964,66 +3449,15 @@
                                 </svg>
                             </span>
                         </div>
-                        <div class="hf-vcard__bottom">
-                            <h3 class="hf-vcard__title">Painless Contact Cooling Laser Session</h3>
-                            <div class="hf-vcard__meta">
-                                <span>@dzenderma</span>
-                                <span>•</span>
-                                <span>142K Views</span>
-                            </div>
-                        </div>
                     </article>
 
-                    <!-- Video 2: YouTube Video -->
-                    <article class="hf-vcard" data-type="youtube"
-                        data-title="Quad-Wavelength Diode vs Regular Laser: Dermatologist Breakdown"
-                        data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                        data-external="https://www.youtube.com/@dzenderma">
-                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"
-                            alt="Quad-Wavelength Diode vs Regular Laser" class="hf-vcard__poster" loading="lazy" />
-                        <div class="hf-vcard__top">
-                            <span class="hf-vbadge hf-vbadge--yt">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                                </svg>
-                                YouTube Clinical
-                            </span>
-                            <span class="hf-vcard__duration">4:30</span>
-                        </div>
-                        <div class="hf-vcard__play-wrap">
-                            <span class="hf-vcard__play" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <polygon points="8 5 20 12 8 19 8 5" />
-                                </svg>
-                            </span>
-                        </div>
-                        <div class="hf-vcard__bottom">
-                            <h3 class="hf-vcard__title">Quad-Wavelength vs Regular Laser</h3>
-                            <div class="hf-vcard__meta">
-                                <span>Dr. Aarushi Passi</span>
-                                <span>•</span>
-                                <span>Clinical Breakdown</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Video 3: Instagram Reel -->
+                    <!-- Video 2: Instagram Reel -->
                     <article class="hf-vcard" data-type="insta" data-title="Underarms &amp; Legs Transformation Journey"
                         data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"
                         data-external="https://www.instagram.com/dzenderma/">
                         <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&q=80"
                             alt="Underarms &amp; Legs Transformation Journey" class="hf-vcard__poster" loading="lazy" />
                         <div class="hf-vcard__top">
-                            <span class="hf-vbadge hf-vbadge--insta">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                                </svg>
-                                Instagram Reel
-                            </span>
                             <span class="hf-vcard__duration">0:35</span>
                         </div>
                         <div class="hf-vcard__play-wrap">
@@ -3033,67 +3467,15 @@
                                 </svg>
                             </span>
                         </div>
-                        <div class="hf-vcard__bottom">
-                            <h3 class="hf-vcard__title">Underarms &amp; Legs Journey — 3 Sessions</h3>
-                            <div class="hf-vcard__meta">
-                                <span>@dzenderma</span>
-                                <span>•</span>
-                                <span>Client Progress</span>
-                            </div>
-                        </div>
                     </article>
 
-                    <!-- Video 4: YouTube Video -->
-                    <article class="hf-vcard" data-type="youtube"
-                        data-title="Laser for Indian Skin: Fitzpatrick Scale Guide"
-                        data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                        data-external="https://www.youtube.com/@dzenderma">
-                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80"
-                            alt="Laser for Indian Skin: Fitzpatrick Scale Guide" class="hf-vcard__poster"
-                            loading="lazy" />
-                        <div class="hf-vcard__top">
-                            <span class="hf-vbadge hf-vbadge--yt">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                                </svg>
-                                YouTube Clinical
-                            </span>
-                            <span class="hf-vcard__duration">5:15</span>
-                        </div>
-                        <div class="hf-vcard__play-wrap">
-                            <span class="hf-vcard__play" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <polygon points="8 5 20 12 8 19 8 5" />
-                                </svg>
-                            </span>
-                        </div>
-                        <div class="hf-vcard__bottom">
-                            <h3 class="hf-vcard__title">Laser for Indian Skin: Safety &amp; Efficacy</h3>
-                            <div class="hf-vcard__meta">
-                                <span>D'Zen Clinical Masterclass</span>
-                                <span>•</span>
-                                <span>Expert Insight</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Video 5: Instagram Reel -->
+                    <!-- Video 3: Instagram Reel -->
                     <article class="hf-vcard" data-type="insta" data-title="Men's Beard Line Contouring with Laser"
                         data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"
                         data-external="https://www.instagram.com/dzenderma/">
                         <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop"
                             alt="Men's Beard Line Contouring with Laser" class="hf-vcard__poster" loading="lazy" />
                         <div class="hf-vcard__top">
-                            <span class="hf-vbadge hf-vbadge--insta">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                                </svg>
-                                Instagram Reel
-                            </span>
                             <span class="hf-vcard__duration">0:48</span>
                         </div>
                         <div class="hf-vcard__play-wrap">
@@ -3103,33 +3485,17 @@
                                 </svg>
                             </span>
                         </div>
-                        <div class="hf-vcard__bottom">
-                            <h3 class="hf-vcard__title">Men's Beard Line Contouring with Laser</h3>
-                            <div class="hf-vcard__meta">
-                                <span>@dzenderma</span>
-                                <span>•</span>
-                                <span>Beard Sculpting</span>
-                            </div>
-                        </div>
                     </article>
 
-                    <!-- Video 6: YouTube Video -->
-                    <article class="hf-vcard" data-type="youtube"
-                        data-title="Why Spa Lasers Fail vs Doctor-Administered Clinics"
+                    <!-- Video 4: YouTube Video (16:9 Landscape) -->
+                    <article class="hf-vcard hf-vcard--youtube is-hidden" data-type="youtube" style="display: none;"
+                        data-title="Quad-Wavelength Diode vs Regular Laser: Dermatologist Breakdown"
                         data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"
                         data-external="https://www.youtube.com/@dzenderma">
-                        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=800&auto=format&fit=crop"
-                            alt="Why Spa Lasers Fail vs Doctor-Administered Clinics" class="hf-vcard__poster"
-                            loading="lazy" />
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1200&auto=format&fit=crop"
+                            alt="Quad-Wavelength Diode vs Regular Laser" class="hf-vcard__poster" loading="lazy" />
                         <div class="hf-vcard__top">
-                            <span class="hf-vbadge hf-vbadge--yt">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                                </svg>
-                                YouTube Clinical
-                            </span>
-                            <span class="hf-vcard__duration">4:50</span>
+                            <span class="hf-vcard__duration">4:30</span>
                         </div>
                         <div class="hf-vcard__play-wrap">
                             <span class="hf-vcard__play" aria-hidden="true">
@@ -3138,13 +3504,45 @@
                                 </svg>
                             </span>
                         </div>
-                        <div class="hf-vcard__bottom">
-                            <h3 class="hf-vcard__title">Spa Lasers vs Medical Clinic Protocols</h3>
-                            <div class="hf-vcard__meta">
-                                <span>Dr. Aarushi Passi</span>
-                                <span>•</span>
-                                <span>Patient Education</span>
-                            </div>
+                    </article>
+
+                    <!-- Video 5: YouTube Video (16:9 Landscape) -->
+                    <article class="hf-vcard hf-vcard--youtube is-hidden" data-type="youtube" style="display: none;"
+                        data-title="Laser for Indian Skin: Fitzpatrick Scale Guide"
+                        data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        data-external="https://www.youtube.com/@dzenderma">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&q=80"
+                            alt="Laser for Indian Skin: Fitzpatrick Scale Guide" class="hf-vcard__poster"
+                            loading="lazy" />
+                        <div class="hf-vcard__top">
+                            <span class="hf-vcard__duration">5:15</span>
+                        </div>
+                        <div class="hf-vcard__play-wrap">
+                            <span class="hf-vcard__play" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="8 5 20 12 8 19 8 5" />
+                                </svg>
+                            </span>
+                        </div>
+                    </article>
+
+                    <!-- Video 6: YouTube Video (16:9 Landscape) -->
+                    <article class="hf-vcard hf-vcard--youtube is-hidden" data-type="youtube" style="display: none;"
+                        data-title="Why Spa Lasers Fail vs Doctor-Administered Clinics"
+                        data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        data-external="https://www.youtube.com/@dzenderma">
+                        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=1200&auto=format&fit=crop"
+                            alt="Why Spa Lasers Fail vs Doctor-Administered Clinics" class="hf-vcard__poster"
+                            loading="lazy" />
+                        <div class="hf-vcard__top">
+                            <span class="hf-vcard__duration">4:50</span>
+                        </div>
+                        <div class="hf-vcard__play-wrap">
+                            <span class="hf-vcard__play" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="8 5 20 12 8 19 8 5" />
+                                </svg>
+                            </span>
                         </div>
                     </article>
                 </div>
@@ -3185,7 +3583,7 @@
              ═══════════════════════════════════════════════════════════ -->
         <section class="lhr-section" id="faqs">
             <div class="container">
-                <div class="text-center max-w-3xl mx-auto mb-5">
+                <div class="text-center max-w-3xl mx-auto mb-3">
                     <span class="lhr-eyebrow mb-2">CLEAR ANSWERS</span>
                     <div class="nemonic-separator mx-auto mb-3">
                         <div class="nemonic-line"></div>
@@ -3371,83 +3769,156 @@
         </section>
 
         <!-- ═══════════════════════════════════════════════════════════
-             12. CONSULTATION & CLINIC SANCTUARY LOCATIONS
+             12. CLINIC LOCATIONS (Two Sanctuaries, One Standard)
              ═══════════════════════════════════════════════════════════ -->
-        <section class="lhr-consult-banner" id="consultation">
-            <div class="container text-center">
-                <div class="max-w-3xl mx-auto mb-5">
-                    <span class="lhr-eyebrow mb-2">BEGIN YOUR JOURNEY</span>
+        <section class="clinic-locations-section" id="locations" style="background: #FDF8F3; padding-top: 20px;"
+            aria-labelledby="locations-heading">
+            <div class="container">
+                <div class="section-header text-center mb-4 mb-lg-5">
+                    <span class="lhr-eyebrow">OUR CLINICS</span>
                     <div class="nemonic-separator mx-auto mb-3">
-                        <div class="nemonic-line" style="background: rgba(232, 201, 154, 0.45);"></div>
-                        <img src="nemonic.png" alt="nemonic" class="nemonic-icon"
-                            style="filter: brightness(0) invert(1);" />
-                        <div class="nemonic-line" style="background: rgba(232, 201, 154, 0.45);"></div>
+                        <div class="nemonic-line"></div>
+                        <img src="nemonic.png" alt="nemonic" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
                     </div>
-                    <h2 class="lhr-heading mb-3">
-                        Experience Physician-Led <span class="scribble" style="color: #E8C99A !important;">Laser Hair
-                            Reduction</span>
-                    </h2>
-                    <p class="lhr-lead mb-4">
-                        Schedule an in-depth skin assessment with our aesthetic physicians in Gurgaon or Delhi.
+                    <h2 id="locations-heading" class="lhr-heading">Two Sanctuaries, One <span
+                            class="scribble">Standard</span></h2>
+                    <p class="section-desc mx-auto" style="max-width: 760px; color: #5C4A3A;">
+                        Visit our state-of-the-art aesthetic clinics in South Delhi and Gurgaon. Experience personalized
+                        medical care, advanced regenerative technologies, and serene luxury.
                     </p>
-                    <div class="d-flex flex-wrap gap-3 justify-content-center">
-                        <a href="../newthree.html#book" class="dz-cta">
-                            <span>Book Consultation</span>
-                            <img src="nemonic.png" class="btn-icon" alt="icon"
-                                style="filter: brightness(0) invert(1);" />
-                        </a>
-                        <a href="https://wa.me/919878885046?text=Hi%20D%27Zen%20Derma%2C%20I%20would%20like%20to%20book%20a%20Laser%20Hair%20Removal%20consultation"
-                            target="_blank" rel="noopener" class="dz-cta dz-cta--glass">
-                            <span>Chat on WhatsApp</span>
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-                            </svg>
-                        </a>
-                    </div>
                 </div>
 
-                <div class="row g-4 justify-content-center text-start">
-                    <!-- Gurgaon Clinic Card -->
-                    <div class="col-md-6 col-lg-5">
-                        <div class="lhr-consult-card">
-                            <div class="lhr-glyph">⚜</div>
-                            <h4>Gurgaon Sanctuary</h4>
-                            <p>Golf Course Road, Near DLF Phase 1, Sector 28, Gurugram, Haryana 122002</p>
-                            <div class="mt-3 pt-3 border-top"
-                                style="border-color: rgba(232, 201, 154, 0.2) !important;">
-                                <a href="tel:+919878885046"
-                                    style="color: #E8C99A; text-decoration: none; font-size: 0.9rem; font-weight: 500;">
-                                    📞 +91-9878885046
-                                </a>
+                <div class="row g-4 justify-content-center">
+                    <!-- Delhi Clinic -->
+                    <div class="col-lg-6 col-md-6">
+                        <article class="clinic-loc-card">
+                            <div class="clinic-loc-card__media">
+                                <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=800&auto=format&fit=crop"
+                                    alt="D'Zen Derma Clinic, Lajpat Nagar, New Delhi" class="clinic-loc-card__img" />
                             </div>
-                        </div>
+                            <div class="clinic-loc-card__body">
+                                <span class="clinic-loc-card__eyebrow">NEW DELHI</span>
+                                <h3 class="clinic-loc-card__title">D'Zen Derma, Lajpat Nagar</h3>
+                                <ul class="clinic-loc-card__info">
+                                    <li>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                            <circle cx="12" cy="10" r="3" />
+                                        </svg>
+                                        <span>18A, Ring Rd, Near Havells, Vikram Vihar, Lajpat Nagar 4, New Delhi</span>
+                                    </li>
+                                    <li>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <circle cx="12" cy="12" r="9" />
+                                            <path d="M12 7v5l3 2" />
+                                        </svg>
+                                        <span>Mon – Sat · 10:00 AM – 7:00 PM</span>
+                                    </li>
+                                    <li>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <path
+                                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                                        </svg>
+                                        <a href="tel:+919311254441">+91 93112 54441</a>
+                                    </li>
+                                </ul>
+                                <div class="clinic-loc-card__actions">
+                                    <a href="https://maps.google.com/?q=18A+Ring+Rd+Near+Havells+Vikram+Vihar+Lajpat+Nagar+4+New+Delhi"
+                                        target="_blank" rel="noopener" class="dz-cta">
+                                        <span>Get Directions</span>
+                                        <img src="nemonic.png" class="btn-icon" alt="icon" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
                     </div>
 
-                    <!-- Delhi Clinic Card -->
-                    <div class="col-md-6 col-lg-5">
-                        <div class="lhr-consult-card">
-                            <div class="lhr-glyph">◈</div>
-                            <h4>South Delhi Sanctuary</h4>
-                            <p>Vikram Vihar, Lajpat Nagar 4, New Delhi, Delhi 110024</p>
-                            <div class="mt-3 pt-3 border-top"
-                                style="border-color: rgba(232, 201, 154, 0.2) !important;">
-                                <a href="tel:+919878885046"
-                                    style="color: #E8C99A; text-decoration: none; font-size: 0.9rem; font-weight: 500;">
-                                    📞 +91-9878885046
-                                </a>
+                    <!-- Gurgaon Clinic -->
+                    <div class="col-lg-6 col-md-6">
+                        <article class="clinic-loc-card">
+                            <div class="clinic-loc-card__media">
+                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop"
+                                    alt="D'Zen Derma Clinic, Golf Course Road, Gurgaon" class="clinic-loc-card__img" />
                             </div>
-                        </div>
+                            <div class="clinic-loc-card__body">
+                                <span class="clinic-loc-card__eyebrow">GURUGRAM</span>
+                                <h3 class="clinic-loc-card__title">D'Zen Derma, Golf Course Road</h3>
+                                <ul class="clinic-loc-card__info">
+                                    <li>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                            <circle cx="12" cy="10" r="3" />
+                                        </svg>
+                                        <span>Golf Course Road, Near DLF Phase 1, Sector 28, Gurugram, Haryana</span>
+                                    </li>
+                                    <li>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <circle cx="12" cy="12" r="9" />
+                                            <path d="M12 7v5l3 2" />
+                                        </svg>
+                                        <span>Mon – Sat · 10:00 AM – 7:00 PM</span>
+                                    </li>
+                                    <li>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <path
+                                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                                        </svg>
+                                        <a href="tel:+919311254441">+91 93112 54441</a>
+                                    </li>
+                                </ul>
+                                <div class="clinic-loc-card__actions">
+                                    <a href="https://maps.google.com/?q=Golf+Course+Road+Near+DLF+Phase+1+Sector+28+Gurugram+Haryana"
+                                        target="_blank" rel="noopener" class="dz-cta">
+                                        <span>Get Directions</span>
+                                        <img src="nemonic.png" class="btn-icon" alt="icon" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ═══════════════════════════════════════════════════════════
-             13. FOOTER WRAPPER & STACK
+             13. CTA + FOOTER OVERLAP STACK (From hydrafacial-new.html)
              ═══════════════════════════════════════════════════════════ -->
         <div class="footer-stack-root">
+            <!-- CTA Card -->
+            <div class="footer-cta-card-wrapper">
+                <div class="footer-cta-card">
+                    <div class="section-header text-center mb-4">
+                        <span class="section-subtitle" style="color: #ffffff !important;">BEGIN YOUR JOURNEY</span>
+                        <div class="nemonic-separator mx-auto mb-3">
+                            <div class="nemonic-line" style="background-color: #ffffff;"></div>
+                            <img src="nemonic.png" alt="nemonic" class="nemonic-icon"
+                                style="filter: brightness(0) invert(1);" />
+                            <div class="nemonic-line" style="background-color: #ffffff;"></div>
+                        </div>
+                    </div>
+                    <h2 class="footer-cta-heading">Ready to reveal your<br>most <span class="scribble"
+                            style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important;">radiant
+                            self?</span></h2>
+                    <p class="footer-cta-sub">Join thousands who've discovered the art of effortless confidence —
+                        crafted for your skin, your story.</p>
+                    <a href="../newthree.html#book" class="dz-cta"
+                        style="margin: 0 auto; display: inline-flex; border-color: rgba(255,255,255,0.5);">
+                        <span style="color: #ffffff !important;">Book a Consultation</span>
+                        <img src="nemonic.png" class="btn-icon"
+                            style="width: 14px; height: 14px; object-fit: contain; filter: brightness(0) invert(1);"
+                            alt="icon" />
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer Reveal Wrapper -->
             <div class="footer-reveal-wrapper">
                 <footer class="site-footer" aria-label="Site footer">
                     <div class="footer-top">
@@ -3726,6 +4197,42 @@
         };
 
         function setupLHRComponents() {
+            // Before & After Interactive Slider Range Dragging
+            document.querySelectorAll('.rg-ba').forEach(function (frame) {
+                var range = frame.querySelector('.rg-ba__range');
+                if (!range) return;
+                var set = function () {
+                    frame.style.setProperty('--pos', range.value + '%');
+                };
+                range.addEventListener('input', set);
+                range.addEventListener('change', set);
+                set();
+            });
+
+            // Before & After Filter Tabs
+            document.querySelectorAll('[data-filter]').forEach(function (section) {
+                var attr = 'data-' + section.getAttribute('data-filter');
+                var grid = section.querySelector('[data-grid]');
+                var tabs = section.querySelectorAll('.rg-tab-btn');
+                if (!grid || !tabs.length) return;
+                var items = grid.querySelectorAll('.rg-item');
+
+                tabs.forEach(function (btn) {
+                    btn.addEventListener('click', function () {
+                        tabs.forEach(function (b) { b.classList.remove('active'); });
+                        btn.classList.add('active');
+                        var val = btn.getAttribute('data-target');
+                        items.forEach(function (it) {
+                            if (val === 'all' || it.getAttribute(attr) === val) {
+                                it.style.display = '';
+                            } else {
+                                it.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            });
+
             // Video Cards Click
             document.querySelectorAll('.hf-vcard').forEach(function (card) {
                 card.addEventListener('click', function () {

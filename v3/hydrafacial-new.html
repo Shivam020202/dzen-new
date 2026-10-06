@@ -1772,19 +1772,21 @@
         /* ═══════════════════════════════════════════════════════════
            VIDEO SHOWCASE & INSTAGRAM REELS
            ═══════════════════════════════════════════════════════════ */
-        .hf-video-section {
-            background: #FAF7F2;
-            padding: clamp(65px, 7vw, 100px) 0;
+        .hf-video-section,
+        #video-showcase {
+            background: linear-gradient(to top, #F4EFE8, #FDF8F3) !important;
+            padding: clamp(60px, 7vw, 100px) 0;
             position: relative;
+            overflow: hidden;
         }
 
         .hf-video-filter-bar {
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            margin-bottom: clamp(30px, 4vw, 45px);
+            gap: 10px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
         }
 
         .hf-vtab-btn {
@@ -1795,120 +1797,171 @@
             border-radius: 999px;
             font-size: 13px;
             font-weight: 600;
-            letter-spacing: 0.03em;
+            color: #5C4A3A;
             background: #FFFFFF;
-            color: #4B2B20;
             border: 1px solid rgba(196, 146, 74, 0.28);
-            box-shadow: 0 4px 14px rgba(43, 26, 18, 0.04);
             cursor: pointer;
-            user-select: none;
-            position: relative;
-            z-index: 2;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .hf-vtab-btn * {
-            pointer-events: none;
+            box-shadow: 0 2px 8px rgba(43, 26, 18, 0.04);
         }
 
         .hf-vtab-btn:hover {
-            transform: translateY(-2px);
             border-color: #C4924A;
-            box-shadow: 0 8px 22px rgba(43, 26, 18, 0.08);
             color: #2B1A12;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(43, 26, 18, 0.08);
         }
 
         .hf-vtab-btn.active {
             background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%);
             color: #FFFFFF !important;
             border-color: #E8C99A;
-            box-shadow: 0 8px 25px rgba(75, 43, 32, 0.25);
+            box-shadow: 0 6px 20px rgba(43, 26, 18, 0.22);
         }
 
         .hf-vtab-btn.active svg {
-            filter: brightness(1.2);
+            color: #E8C99A !important;
         }
 
         .hf-vtab-count {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 11px;
-            padding: 2px 7px;
+            min-width: 20px;
+            height: 20px;
+            padding: 0 6px;
             border-radius: 999px;
+            font-size: 11px;
+            font-weight: 700;
             background: rgba(196, 146, 74, 0.15);
             color: #8B5E2A;
+            transition: background 0.3s, color 0.3s;
         }
 
         .hf-vtab-btn.active .hf-vtab-count {
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.22);
             color: #FFFFFF;
         }
 
+        #video-showcase .hf-video-grid,
         .hf-video-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-            margin-bottom: 45px;
+            display: grid !important;
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            gap: 28px !important;
+            row-gap: 32px !important;
+            column-gap: 28px !important;
+            width: 100% !important;
+            margin-bottom: 40px !important;
         }
 
         @media (max-width: 991px) {
+
+            #video-showcase .hf-video-grid,
             .hf-video-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+                gap: 22px !important;
             }
         }
 
         @media (max-width: 600px) {
+
+            #video-showcase .hf-video-grid,
             .hf-video-grid {
-                grid-template-columns: 1fr;
-                gap: 22px;
+                grid-template-columns: 1fr !important;
+                gap: 24px !important;
+            }
+
+            #video-showcase .hf-vcard,
+            .hf-vcard {
+                max-width: 360px !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                min-height: 420px !important;
+            }
+
+            #video-showcase .hf-vcard[data-type="youtube"],
+            #video-showcase .hf-vcard--youtube,
+            .hf-vcard[data-type="youtube"],
+            .hf-vcard--youtube {
+                max-width: 100% !important;
+                min-height: 200px !important;
             }
         }
 
+        #video-showcase .hf-vcard,
         .hf-vcard {
-            position: relative;
-            border-radius: 28px 28px 16px 16px;
-            overflow: hidden;
-            aspect-ratio: 9 / 15;
-            background: #2B1A12;
-            box-shadow: 0 14px 36px rgba(43, 26, 18, 0.1);
-            border: 1px solid rgba(196, 146, 74, 0.28);
-            cursor: pointer;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+            position: relative !important;
+            width: 100% !important;
+            min-width: 0 !important;
+            background: #140B07 !important;
+            border-radius: 20px !important;
+            overflow: hidden !important;
+            border: 1.5px solid rgba(196, 146, 74, 0.35) !important;
+            box-shadow: 0 12px 35px rgba(43, 26, 18, 0.1) !important;
+            cursor: pointer !important;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease !important;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            aspect-ratio: 9 / 14 !important;
+            min-height: 360px !important;
+            isolation: isolate !important;
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
+        }
+
+        #video-showcase .hf-vcard[data-type="youtube"],
+        #video-showcase .hf-vcard--youtube,
+        .hf-vcard[data-type="youtube"],
+        .hf-vcard--youtube {
+            aspect-ratio: 16 / 9 !important;
+            min-height: 220px !important;
+            border-radius: 20px !important;
+        }
+
+        .hf-vcard[data-type="youtube"] .hf-vcard__play,
+        .hf-vcard--youtube .hf-vcard__play {
+            width: 58px;
+            height: 40px;
+            border-radius: 12px;
+            background: rgba(255, 0, 0, 0.92);
+            color: #FFFFFF;
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .hf-vcard[data-type="youtube"]:hover .hf-vcard__play,
+        .hf-vcard--youtube:hover .hf-vcard__play {
+            background: #FF0000;
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.5);
         }
 
         .hf-vcard:hover {
-            transform: translateY(-8px);
-            border-color: rgba(196, 146, 74, 0.7);
-            box-shadow: 0 24px 50px rgba(43, 26, 18, 0.22);
+            transform: translateY(-6px);
+            border-color: #E8C99A;
+            box-shadow: 0 20px 50px rgba(43, 26, 18, 0.18);
         }
 
-        .hf-vcard.is-hidden {
-            display: none !important;
-        }
-
+        #video-showcase .hf-vcard__poster,
         .hf-vcard__poster {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            position: absolute !important;
+            inset: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            border-radius: 20px !important;
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
         }
 
         .hf-vcard:hover .hf-vcard__poster {
-            transform: scale(1.08);
+            transform: scale(1.06);
         }
 
         .hf-vcard::after {
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(20, 11, 7, 0.4) 0%, rgba(20, 11, 7, 0.05) 35%, rgba(20, 11, 7, 0.88) 100%);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, transparent 50%, rgba(0, 0, 0, 0.2) 100%);
             pointer-events: none;
             z-index: 1;
         }
@@ -1916,10 +1969,10 @@
         .hf-vcard__top {
             position: relative;
             z-index: 2;
-            padding: 16px 18px;
+            padding: 14px 16px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-end;
         }
 
         .hf-vbadge {
@@ -3117,7 +3170,8 @@
         <!-- ═══════════════════════════════════════════════════════════
              10. VIDEO SHOWCASE & INSTAGRAM REELS
              ═══════════════════════════════════════════════════════════ -->
-        <section class="hf-video-section" id="video-showcase">
+        <section class="hf-video-section" id="video-showcase"
+            style="background: linear-gradient(to top, #F4EFE8, #FDF8F3) !important;">
             <div class="container">
                 <div class="text-center max-w-3xl mx-auto mb-4 mb-lg-5">
                     <span class="hf-eyebrow mb-2">LIVE EXPERIENCES &amp; REELS</span>
@@ -3135,14 +3189,9 @@
                     </p>
                 </div>
 
-                <!-- Video Filter Tabs -->
+                <!-- Video Filter Tabs: Instagram & YouTube Only -->
                 <div class="hf-video-filter-bar">
-                    <button type="button" class="hf-vtab-btn active" data-vfilter="all"
-                        onclick="filterVideos('all', this)">
-                        <span>All Videos</span>
-                        <span class="hf-vtab-count">6</span>
-                    </button>
-                    <button type="button" class="hf-vtab-btn" data-vfilter="insta"
+                    <button type="button" class="hf-vtab-btn active" data-vfilter="insta"
                         onclick="filterVideos('insta', this)">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #E1306C;">
@@ -3159,12 +3208,12 @@
                             <path
                                 d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                         </svg>
-                        <span>YouTube Clinical</span>
+                        <span>YouTube Videos</span>
                         <span class="hf-vtab-count">3</span>
                     </button>
                 </div>
 
-                <!-- 6 Curated Video & Reel Cards Grid -->
+                <!-- 6 Curated Video Cards: Row 1 Instagram Reels (9:14), Row 2 YouTube Videos (16:9) -->
                 <div class="hf-video-grid">
                     <!-- Video 1: Instagram Reel -->
                     <article class="hf-vcard" data-type="insta" data-title="Painless Vortex Extraction Close-Up"
@@ -3173,15 +3222,6 @@
                         <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop"
                             alt="Painless Vortex Extraction Close-Up" class="hf-vcard__poster" loading="lazy" />
                         <div class="hf-vcard__top">
-                            <span class="hf-vbadge hf-vbadge--insta">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                                </svg>
-                                Instagram Reel
-                            </span>
                             <span class="hf-vcard__duration">0:45</span>
                         </div>
                         <div class="hf-vcard__play-wrap">
@@ -3191,52 +3231,9 @@
                                 </svg>
                             </span>
                         </div>
-                        <div class="hf-vcard__bottom">
-                            <h3 class="hf-vcard__title">Painless Vortex Extraction Close-Up</h3>
-                            <div class="hf-vcard__meta">
-                                <span>@dzenderma</span>
-                                <span>•</span>
-                                <span>124K Views</span>
-                            </div>
-                        </div>
                     </article>
 
-                    <!-- Video 2: YouTube Video -->
-                    <article class="hf-vcard" data-type="youtube"
-                        data-title="Dermatologist Guide: Why Medical Hydrafacial Works"
-                        data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                        data-external="https://www.youtube.com/@dzenderma">
-                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"
-                            alt="Dermatologist Guide: Why Medical Hydrafacial Works" class="hf-vcard__poster"
-                            loading="lazy" />
-                        <div class="hf-vcard__top">
-                            <span class="hf-vbadge hf-vbadge--yt">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                                </svg>
-                                YouTube Clinical
-                            </span>
-                            <span class="hf-vcard__duration">4:12</span>
-                        </div>
-                        <div class="hf-vcard__play-wrap">
-                            <span class="hf-vcard__play" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <polygon points="8 5 20 12 8 19 8 5" />
-                                </svg>
-                            </span>
-                        </div>
-                        <div class="hf-vcard__bottom">
-                            <h3 class="hf-vcard__title">Dermatologist Guide: Why Hydrafacial Works</h3>
-                            <div class="hf-vcard__meta">
-                                <span>Dr. Jyoti Passi</span>
-                                <span>•</span>
-                                <span>Clinical Walkthrough</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Video 3: Instagram Reel -->
+                    <!-- Video 2: Instagram Reel -->
                     <article class="hf-vcard" data-type="insta"
                         data-title="Instant Glass Skin Glow Reveal — Post 1st Session"
                         data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -3245,15 +3242,6 @@
                             alt="Instant Glass Skin Glow Reveal — Post 1st Session" class="hf-vcard__poster"
                             loading="lazy" />
                         <div class="hf-vcard__top">
-                            <span class="hf-vbadge hf-vbadge--insta">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                                </svg>
-                                Instagram Reel
-                            </span>
                             <span class="hf-vcard__duration">0:30</span>
                         </div>
                         <div class="hf-vcard__play-wrap">
@@ -3263,65 +3251,15 @@
                                 </svg>
                             </span>
                         </div>
-                        <div class="hf-vcard__bottom">
-                            <h3 class="hf-vcard__title">Instant Glass Skin Glow Reveal — Session 1</h3>
-                            <div class="hf-vcard__meta">
-                                <span>@dzenderma</span>
-                                <span>•</span>
-                                <span>Client Journey</span>
-                            </div>
-                        </div>
                     </article>
 
-                    <!-- Video 4: YouTube Video -->
-                    <article class="hf-vcard" data-type="youtube" data-title="4-Step D'Zen Vortex Protocol Explained"
-                        data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                        data-external="https://www.youtube.com/@dzenderma">
-                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop"
-                            alt="4-Step D'Zen Vortex Protocol Explained" class="hf-vcard__poster" loading="lazy" />
-                        <div class="hf-vcard__top">
-                            <span class="hf-vbadge hf-vbadge--yt">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                                </svg>
-                                YouTube Clinical
-                            </span>
-                            <span class="hf-vcard__duration">3:45</span>
-                        </div>
-                        <div class="hf-vcard__play-wrap">
-                            <span class="hf-vcard__play" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <polygon points="8 5 20 12 8 19 8 5" />
-                                </svg>
-                            </span>
-                        </div>
-                        <div class="hf-vcard__bottom">
-                            <h3 class="hf-vcard__title">4-Step D'Zen Vortex Protocol Explained</h3>
-                            <div class="hf-vcard__meta">
-                                <span>D'Zen Clinical Protocol</span>
-                                <span>•</span>
-                                <span>Procedure Deep Dive</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Video 5: Instagram Reel -->
+                    <!-- Video 3: Instagram Reel -->
                     <article class="hf-vcard" data-type="insta" data-title="Pre-Bridal Hydrafacial Treatment Routine"
                         data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"
                         data-external="https://www.instagram.com/dzenderma/">
                         <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop"
                             alt="Pre-Bridal Hydrafacial Treatment Routine" class="hf-vcard__poster" loading="lazy" />
                         <div class="hf-vcard__top">
-                            <span class="hf-vbadge hf-vbadge--insta">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                                </svg>
-                                Instagram Reel
-                            </span>
                             <span class="hf-vcard__duration">0:55</span>
                         </div>
                         <div class="hf-vcard__play-wrap">
@@ -3331,33 +3269,18 @@
                                 </svg>
                             </span>
                         </div>
-                        <div class="hf-vcard__bottom">
-                            <h3 class="hf-vcard__title">Pre-Bridal Hydrafacial Treatment Routine</h3>
-                            <div class="hf-vcard__meta">
-                                <span>@dzenderma</span>
-                                <span>•</span>
-                                <span>Pre-Event Glow</span>
-                            </div>
-                        </div>
                     </article>
 
-                    <!-- Video 6: YouTube Video -->
-                    <article class="hf-vcard" data-type="youtube"
-                        data-title="Hydrafacial vs Regular Salon Facials: The Truth"
+                    <!-- Video 4: YouTube Video (16:9 Landscape) -->
+                    <article class="hf-vcard hf-vcard--youtube is-hidden" data-type="youtube" style="display: none;"
+                        data-title="Dermatologist Guide: Why Medical Hydrafacial Works"
                         data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"
                         data-external="https://www.youtube.com/@dzenderma">
-                        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=800&auto=format&fit=crop"
-                            alt="Hydrafacial vs Regular Salon Facials: The Truth" class="hf-vcard__poster"
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1200&auto=format&fit=crop"
+                            alt="Dermatologist Guide: Why Medical Hydrafacial Works" class="hf-vcard__poster"
                             loading="lazy" />
                         <div class="hf-vcard__top">
-                            <span class="hf-vbadge hf-vbadge--yt">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                                </svg>
-                                YouTube Clinical
-                            </span>
-                            <span class="hf-vcard__duration">5:20</span>
+                            <span class="hf-vcard__duration">4:12</span>
                         </div>
                         <div class="hf-vcard__play-wrap">
                             <span class="hf-vcard__play" aria-hidden="true">
@@ -3366,13 +3289,44 @@
                                 </svg>
                             </span>
                         </div>
-                        <div class="hf-vcard__bottom">
-                            <h3 class="hf-vcard__title">Hydrafacial vs Regular Salon Facials</h3>
-                            <div class="hf-vcard__meta">
-                                <span>Dr. Aarushi Passi</span>
-                                <span>•</span>
-                                <span>Medical Insights</span>
-                            </div>
+                    </article>
+
+                    <!-- Video 5: YouTube Video (16:9 Landscape) -->
+                    <article class="hf-vcard hf-vcard--youtube is-hidden" data-type="youtube" style="display: none;"
+                        data-title="4-Step D'Zen Vortex Protocol Explained"
+                        data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        data-external="https://www.youtube.com/@dzenderma">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&q=80"
+                            alt="4-Step D'Zen Vortex Protocol Explained" class="hf-vcard__poster" loading="lazy" />
+                        <div class="hf-vcard__top">
+                            <span class="hf-vcard__duration">3:45</span>
+                        </div>
+                        <div class="hf-vcard__play-wrap">
+                            <span class="hf-vcard__play" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="8 5 20 12 8 19 8 5" />
+                                </svg>
+                            </span>
+                        </div>
+                    </article>
+
+                    <!-- Video 6: YouTube Video (16:9 Landscape) -->
+                    <article class="hf-vcard hf-vcard--youtube is-hidden" data-type="youtube" style="display: none;"
+                        data-title="Hydrafacial vs Regular Salon Facials: The Truth"
+                        data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        data-external="https://www.youtube.com/@dzenderma">
+                        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=1200&auto=format&fit=crop"
+                            alt="Hydrafacial vs Regular Salon Facials: The Truth" class="hf-vcard__poster"
+                            loading="lazy" />
+                        <div class="hf-vcard__top">
+                            <span class="hf-vcard__duration">5:20</span>
+                        </div>
+                        <div class="hf-vcard__play-wrap">
+                            <span class="hf-vcard__play" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="8 5 20 12 8 19 8 5" />
+                                </svg>
+                            </span>
                         </div>
                     </article>
                 </div>
