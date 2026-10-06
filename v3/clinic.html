@@ -625,48 +625,6 @@
            live in about-clinic.html's own <style>, which loads after every
            linked sheet, so they apply on this page and nowhere else.
            ═══════════════════════════════════════════════════════════════ */
-        .embossed-brand-section {
-            background-color: #FDF8F3 !important;
-        }
-
-        /* Grain has to switch blend mode: overlay on a light field lifts
-           rather than darkens, so it washes out instead of texturing. */
-        .embossed-brand-section .embossed-texture {
-            opacity: .5;
-            mix-blend-mode: multiply;
-        }
-
-        /* text-shadow removed throughout — the deboss pair only reads on a
-           dark field and just muddies solid type on cream. */
-        html body .embossed-brand-section .embossed-eyebrow {
-            color: #8B5E2A !important;
-            -webkit-text-fill-color: #8B5E2A !important;
-            text-shadow: none !important;
-        }
-
-        html body .embossed-brand-section .embossed-title {
-            color: #4b2b20 !important;
-            -webkit-text-fill-color: #4b2b20 !important;
-            text-shadow: none !important;
-        }
-
-        html body .embossed-brand-section .embossed-tagline {
-            color: #5C4A3A !important;
-            -webkit-text-fill-color: #5C4A3A !important;
-            text-shadow: none !important;
-        }
-
-        /* The button was white-on-brown; on cream it needs inverting or it
-           disappears into the field. */
-        .embossed-brand-section .embossed-book-btn {
-            background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%);
-            color: #ffffff !important;
-            box-shadow: 0 10px 26px -10px rgba(43, 26, 18, .5);
-        }
-
-        .embossed-brand-section .embossed-book-btn .btn-icon {
-            filter: brightness(0) invert(1);
-        }
     </style>
 
 </head>
@@ -678,7 +636,7 @@
         <div class="pnav__left">
             <a href="../newthree.html#book" class="pnav__cta">
                 Book
-                <img src="nemonic.png" class="btn-icon" style="width: 12px; height: 12px; object-fit: contain;"
+                <img src="nemonic1.png" class="btn-icon" style="width: 12px; height: 12px; object-fit: contain;"
                     alt="icon" />
             </a>
         </div>
@@ -722,7 +680,7 @@
                     CLINIC</span>
                 <div class="nemonic-separator mt-2 mb-4">
                     <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
-                    <img src="nemonic.png" alt="nemonic" class="nemonic-icon"
+                    <img src="logo-header.png" alt="nemonic" class="nemonic-icon"
                         style="filter: brightness(0) invert(1);" />
                     <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
                 </div>
@@ -750,7 +708,7 @@
                     <span class="section-subtitle" style="letter-spacing: 3px;">THE SPACE</span>
                     <div class="nemonic-separator mt-2">
                         <div class="nemonic-line"></div>
-                        <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                        <img src="logo-header.png" alt="" aria-hidden="true" class="nemonic-icon" />
                         <div class="nemonic-line"></div>
                     </div>
                     <h2 class="section-title">A Clinic Built Around Calm</h2>
@@ -805,7 +763,7 @@
                     <span class="section-subtitle" style="letter-spacing: 3px;">SPACE &amp; TECHNOLOGY</span>
                     <div class="nemonic-separator mt-2">
                         <div class="nemonic-line"></div>
-                        <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                        <img src="logo-header.png" alt="" aria-hidden="true" class="nemonic-icon" />
                         <div class="nemonic-line"></div>
                     </div>
                     <h2 class="section-title">Equipment Chosen for Outcomes, Not Optics</h2>
@@ -855,7 +813,7 @@
                          that were already dimmer at .2. -->
                     <div class="nemonic-separator mt-2 mb-4">
                         <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
-                        <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon"
+                        <img src="logo-header.png" alt="" aria-hidden="true" class="nemonic-icon"
                             style="filter: brightness(0) invert(1);" />
                         <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
                     </div>
@@ -935,7 +893,7 @@
                     <span class="section-subtitle" style="letter-spacing: 3px;">FIND US</span>
                     <div class="nemonic-separator mt-2">
                         <div class="nemonic-line"></div>
-                        <img src="nemonic.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                        <img src="logo-header.png" alt="" aria-hidden="true" class="nemonic-icon" />
                         <div class="nemonic-line"></div>
                     </div>
                     <h2 class="section-title">Two Clinics, One Standard</h2>
@@ -989,7 +947,7 @@
                                 </ul>
                                 <a href="index.html#locations" class="dz-cta">
                                     Book at Delhi
-                                    <img src="nemonic.png" alt="" aria-hidden="true" class="btn-icon"
+                                    <img src="nemonic1.png" alt="" aria-hidden="true" class="btn-icon"
                                         style="width: 12px; height: 12px; object-fit: contain;" />
                                 </a>
                             </div>
@@ -1034,7 +992,7 @@
                                 </ul>
                                 <a href="index.html#locations" class="dz-cta">
                                     Book at Gurgaon
-                                    <img src="nemonic.png" alt="" aria-hidden="true" class="btn-icon"
+                                    <img src="nemonic1.png" alt="" aria-hidden="true" class="btn-icon"
                                         style="width: 12px; height: 12px; object-fit: contain;" />
                                 </a>
                             </div>
@@ -1137,16 +1095,21 @@
     </main>
 
     <!-- Embossed Brand Section -->
-    <section class="embossed-brand-section" style="padding: 50px 0px;">
-        <div class="embossed-texture"></div>
-        <a href="../newthree.html#book" class="embossed-book-btn">
+    <section class="embossed-section" id="brandSection">
+        <div class="embossed-grain"></div>
+        <div class="embossed-lighting"></div>
+
+        <!-- Book Now Pill Button -->
+        <a href="../newthree.html#book" class="book-pill-btn" aria-label="Book appointment">
             BOOK NOW
-            <img src="nemonic.png" alt="icon" class="btn-icon">
+            <img src="nemonic1.png" alt="icon" class="btn-icon">
         </a>
-        <div class="embossed-content">
-            <h3 class="embossed-eyebrow">AESTHETICS & WELLNESS</h3>
-            <h1 class="embossed-title">D'ZEN DERMA</h1>
-            <p class="embossed-tagline">Elevating You Inside Out</p>
+
+        <!-- Debossed Typography Block -->
+        <div class="typography-stage">
+            <span class="deboss-eyebrow">AESTHETICS &amp; WELLNESS</span>
+            <h1 class="deboss-wordmark" id="wordmark">D'ZEN DERMA</h1>
+            <p class="deboss-tagline">Elevating You Inside Out</p>
         </div>
     </section>
 

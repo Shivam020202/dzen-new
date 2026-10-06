@@ -198,6 +198,26 @@
                 1px 4px 6px var(--carve-ambient);
         }
 
+        .deboss-tagline {
+            display: block;
+            font-family: var(--serif);
+            font-style: normal;
+            font-weight: 400;
+            font-size: clamp(24px, 4.2vw, 56px);
+            line-height: 1.25;
+            letter-spacing: 0.08em;
+            margin-top: clamp(16px, 2.2vw, 36px);
+            color: var(--font-copper-deep);
+            -webkit-text-fill-color: var(--font-copper-deep);
+            text-shadow:
+                -1.2px -2px 0.8px rgba(92, 42, 8, 0.95),
+                -0.8px -0.8px 0px rgba(60, 24, 4, 1),
+                1.2px 1.8px 0.5px var(--carve-highlight),
+                0 2.5px 4px var(--carve-ambient);
+            user-select: none;
+            text-align: center;
+        }
+
         /* Mobile adjustments */
         @media (max-width: 768px) {
             .embossed-section {
@@ -231,13 +251,14 @@
         <!-- Book Now Pill Button -->
         <a href="../newthree.html#book" class="book-pill-btn" aria-label="Book appointment">
             BOOK NOW
-            <img src="nemonic.png" alt="icon" class="btn-icon">
+            <img src="nemonic1.png" alt="icon" class="btn-icon">
         </a>
 
         <!-- Debossed Typography Block -->
         <div class="typography-stage">
             <span class="deboss-eyebrow">AESTHETICS &amp; WELLNESS</span>
             <h1 class="deboss-wordmark" id="wordmark">D'ZEN DERMA</h1>
+            <p class="deboss-tagline">Elevating You Inside Out</p>
         </div>
     </main>
 
