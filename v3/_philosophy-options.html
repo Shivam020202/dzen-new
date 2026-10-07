@@ -2514,7 +2514,7 @@
         }
 
         /* =========================================================
-           OPTION 12: DYNAMIC EQUILIBRIUM SCALES (HORIZONTAL SLIDER)
+           OPTION 12: DYNAMIC EQUILIBRIUM SCALES (Exact Index.html Theme)
            ========================================================= */
         .opt12-section {
             background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%);
@@ -2568,10 +2568,12 @@
         .opt12-selector-pill {
             flex: 1 1 0;
             min-width: 0;
-            background: rgba(0, 0, 0, 0.35);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(232, 201, 154, 0.25);
-            color: rgba(255, 255, 255, 0.85);
-            padding: 12px 18px;
+            color: #ffffff;
+            padding: 13px 20px;
             border-radius: 999px;
             font-size: 13.5px;
             font-weight: 500;
@@ -2583,37 +2585,37 @@
             justify-content: center;
             gap: 8px;
             text-align: center;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
         }
 
         .opt12-selector-pill .pill-idx {
             font-size: 11.5px;
             color: #E8C99A;
             font-weight: 700;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             flex-shrink: 0;
+            transition: color 0.3s ease;
         }
 
         .opt12-selector-pill:hover {
             color: #FAF7F2;
-            background: rgba(0, 0, 0, 0.55);
-            border-color: rgba(232, 201, 154, 0.5);
+            background: rgba(255, 255, 255, 0.16);
+            border-color: rgba(232, 201, 154, 0.55);
             transform: translateY(-2px);
-            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
         }
 
         .opt12-selector-pill.is-active {
-            background: linear-gradient(135deg, #E8C99A 0%, #C58E45 100%);
-            color: #200F0A;
-            border-color: #FAF7F2;
+            background: #FAF7F2;
+            color: #2B1A12;
+            border-color: #E8C99A;
             font-weight: 700;
-            box-shadow: 0 8px 25px rgba(232, 201, 154, 0.45);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(232, 201, 154, 0.4);
             transform: translateY(-2px);
         }
 
         .opt12-selector-pill.is-active .pill-idx {
-            opacity: 1;
-            color: #200F0A;
+            color: #A86B24;
         }
 
         /* Slider Track Viewport */
@@ -2655,54 +2657,89 @@
         }
 
         .opt12-scale-wing {
-            background: rgba(255, 255, 255, 0.035);
-            border: 1px solid rgba(232, 201, 154, 0.2);
-            border-radius: 28px;
-            padding: 34px 28px;
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            text-align: center;
+            background: rgba(253, 248, 243, 0.88);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.85);
+            border-left: 4px solid #C58E45;
+            border-radius: 24px;
+            padding: 30px 26px;
+            text-align: left;
             transition: all 0.4s ease;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+            color: #2B1A12;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .opt12-scale-wing:hover {
-            background: rgba(255, 255, 255, 0.07);
             border-color: #E8C99A;
-            transform: translateY(-6px);
-            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5);
-        }
-
-        .opt12-wing-icon {
-            font-size: 28px;
-            color: #E8C99A;
-            margin-bottom: 14px;
-            line-height: 1;
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), inset 0 1px 1px #ffffff;
         }
 
         .opt12-wing-force {
             font-size: 10.5px;
             font-weight: 700;
-            letter-spacing: 0.18em;
+            letter-spacing: 0.16em;
             text-transform: uppercase;
-            color: #E8C99A;
+            color: #A86B24;
             margin-bottom: 8px;
         }
 
         .opt12-wing-title {
-            font-family: var(--serif);
-            font-size: 25px;
+            font-family: var(--serif, "Playfair Display", Georgia, serif);
+            font-size: 22px;
             font-weight: 600;
-            color: #FAF7F2;
-            margin-bottom: 12px;
+            color: #2B1A12;
+            margin-bottom: 10px;
             line-height: 1.25;
         }
 
         .opt12-wing-desc {
             font-size: 13.5px;
-            line-height: 1.65;
-            color: rgba(255, 255, 255, 0.82);
+            line-height: 1.6;
+            color: #4A382F;
             margin-bottom: 0;
+        }
+
+        /* Unified Card Divider & Manifesto */
+        .opt12-unified-divider {
+            height: 1px;
+            background: linear-gradient(90deg, rgba(168, 107, 36, 0.35) 0%, rgba(232, 201, 154, 0.55) 50%, rgba(168, 107, 36, 0.1) 100%);
+            margin: 14px 0 12px 0;
+        }
+
+        .opt12-wing--unified .opt12-manifesto-quote {
+            font-family: var(--serif, "Playfair Display", Georgia, serif);
+            font-style: italic;
+            font-size: 14.5px;
+            color: #2B1A12;
+            margin: 0 0 10px 0;
+            line-height: 1.5;
+        }
+
+        .opt12-wing--unified .opt12-manifesto-quote span {
+            color: #A86B24;
+            font-weight: 600;
+        }
+
+        .opt12-wing--unified .opt3-pills {
+            gap: 6px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .opt12-wing--unified .opt3-pill {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 11px;
+            border-radius: 999px;
+            background: rgba(168, 107, 36, 0.09);
+            border: 1px solid rgba(168, 107, 36, 0.25);
+            color: #8A551E;
         }
 
         /* Center Fulcrum Medallion */
@@ -2719,11 +2756,11 @@
             height: 88px;
             border-radius: 50%;
             background: radial-gradient(circle, #FAF7F2 0%, #F5ECE1 70%, #EBDDCF 100%);
-            border: 2.5px solid rgba(232, 201, 154, 0.85);
+            border: 2.5px solid rgba(232, 201, 154, 0.9);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 35px rgba(232, 201, 154, 0.55), 0 8px 25px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 0 35px rgba(232, 201, 154, 0.6), 0 8px 25px rgba(0, 0, 0, 0.35);
             position: relative;
             padding: 8px;
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
@@ -2732,7 +2769,7 @@
 
         .opt12-fulcrum-disc:hover {
             transform: scale(1.08);
-            box-shadow: 0 0 45px rgba(232, 201, 154, 0.8), 0 12px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 45px rgba(232, 201, 154, 0.85), 0 12px 30px rgba(0, 0, 0, 0.45);
         }
 
         .opt12-fulcrum-disc .opt12-fulcrum-logo {
@@ -2742,7 +2779,7 @@
             object-fit: contain;
             display: block;
             animation: opt12LogoOscillate 5s ease-in-out infinite;
-            filter: drop-shadow(0 2px 8px rgba(75, 43, 32, 0.16));
+            filter: drop-shadow(0 2px 8px rgba(75, 43, 32, 0.2));
             transform-origin: center center;
         }
 
@@ -2778,32 +2815,50 @@
         }
 
         .opt12-manifesto-bar {
-            margin-top: 28px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(232, 201, 154, 0.25);
-            border-radius: 24px;
+            margin-top: 26px;
+            background: #FAF7F2;
+            border: 1px solid rgba(232, 201, 154, 0.45);
+            border-radius: 22px;
             padding: 22px 30px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 20px;
             flex-wrap: wrap;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
         }
 
         .opt12-manifesto-quote {
-            font-family: var(--serif);
+            font-family: var(--serif, "Playfair Display", Georgia, serif);
             font-style: italic;
-            font-size: 17px;
-            color: #FAF7F2;
+            font-size: 16.5px;
+            color: #2B1A12;
             margin: 0;
-            line-height: 1.45;
+            line-height: 1.5;
             flex: 1;
             min-width: 280px;
         }
 
         .opt12-manifesto-quote span {
-            color: #E8C99A;
+            color: #A86B24;
             font-weight: 600;
+        }
+
+        .opt12-manifesto-bar .opt3-pills {
+            gap: 8px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .opt12-manifesto-bar .opt3-pill {
+            font-size: 11.5px;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: rgba(168, 107, 36, 0.08);
+            border: 1px solid rgba(168, 107, 36, 0.25);
+            color: #8A551E;
         }
 
         .opt2-section>*,
@@ -2995,43 +3050,250 @@
                 pointer-events: auto;
             }
 
-            .opt12-scales-stage {
-                grid-template-columns: 1fr;
-                gap: 18px;
+            /* Option 12 Single-Screen Mobile Layout - Spacious Luxury Equilibrium */
+            .opt12-section {
+                padding: clamp(24px, 5vw, 36px) clamp(14px, 3.5vw, 20px) !important;
+                border-radius: 28px !important;
+                background: linear-gradient(145deg, #3d2116 0%, #68341a 55%, #422317 100%) !important;
+                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6) !important;
             }
 
-            .opt12-fulcrum {
-                padding: 10px 0;
+            .opt12-section .sec-eyebrow {
+                font-size: 11px !important;
+                letter-spacing: 2.5px !important;
+                color: #E8C99A !important;
+                margin-bottom: 4px !important;
+            }
+
+            .opt12-section .sec-title {
+                font-size: clamp(22px, 5.8vw, 26px) !important;
+                margin-bottom: 4px !important;
+                line-height: 1.2 !important;
+            }
+
+            .opt12-section .sec-desc {
+                font-size: 13px !important;
+                line-height: 1.45 !important;
+                max-width: 96% !important;
+                margin: 0 auto 14px !important;
+                color: rgba(255, 255, 255, 0.9) !important;
             }
 
             .opt12-principles-selector {
                 width: 100%;
                 max-width: 100%;
-                overflow: visible;
-                justify-content: center;
-                flex-wrap: nowrap;
-                padding: 0;
-                background: transparent;
-                border: none;
-                gap: 8px;
-                margin: 20px auto 24px;
+                overflow-x: auto !important;
+                overflow-y: hidden !important;
+                -webkit-overflow-scrolling: touch !important;
+                scrollbar-width: none !important;
+                display: flex !important;
+                justify-content: flex-start !important;
+                align-items: center !important;
+                flex-wrap: nowrap !important;
+                gap: 8px !important;
+                padding: 4px 12px 10px 12px !important;
+                margin: 0 auto 12px !important;
+                box-sizing: border-box !important;
+                scroll-snap-type: x mandatory;
+            }
+
+            .opt12-principles-selector::-webkit-scrollbar {
+                display: none;
             }
 
             .opt12-selector-pill {
-                flex: 1 1 0;
-                min-width: 0;
-                padding: 10px 8px;
-                font-size: clamp(10px, 2.6vw, 12px);
-                gap: 5px;
-                text-align: center;
-                justify-content: center;
-                white-space: normal;
-                line-height: 1.15;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                flex: 0 0 auto !important;
+                min-width: max-content !important;
+                padding: 8px 16px !important;
+                font-size: 12px !important;
+                font-weight: 600 !important;
+                border-radius: 999px !important;
+                background: rgba(255, 255, 255, 0.08) !important;
+                backdrop-filter: blur(12px) !important;
+                -webkit-backdrop-filter: blur(12px) !important;
+                border: 1px solid rgba(232, 201, 154, 0.25) !important;
+                color: #ffffff !important;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                gap: 6px !important;
+                white-space: nowrap !important;
+                scroll-snap-align: center !important;
+                cursor: pointer !important;
+                touch-action: pan-x !important;
+            }
+
+            .opt12-selector-pill.is-active {
+                background: #FAF7F2 !important;
+                color: #2B1A12 !important;
+                font-weight: 700 !important;
+                border-color: #E8C99A !important;
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(232, 201, 154, 0.4) !important;
             }
 
             .opt12-selector-pill .pill-idx {
-                font-size: 10px;
+                font-size: 10.5px !important;
+                color: #E8C99A !important;
+            }
+
+            .opt12-selector-pill.is-active .pill-idx {
+                color: #A86B24 !important;
+            }
+
+            .opt12-slider-viewport {
+                border-radius: 20px !important;
+            }
+
+            .opt12-slide {
+                padding: 2px !important;
+            }
+
+            .opt12-scales-stage {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 10px !important;
+                position: relative !important;
+                align-items: stretch !important;
+                margin-top: 0 !important;
+            }
+
+            .opt12-scale-wing {
+                width: 100% !important;
+                padding: 14px 16px !important;
+                border-radius: 18px !important;
+                background: rgba(253, 248, 243, 0.88) !important;
+                backdrop-filter: blur(20px) saturate(180%) !important;
+                -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+                border: 1px solid rgba(255, 255, 255, 0.85) !important;
+                border-left: 4px solid #C58E45 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                text-align: left !important;
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22), inset 0 1px 1px rgba(255, 255, 255, 0.95) !important;
+            }
+
+            .opt12-wing-force {
+                font-size: 10px !important;
+                letter-spacing: 0.15em !important;
+                margin-bottom: 4px !important;
+                font-weight: 700 !important;
+                color: #A86B24 !important;
+                text-transform: uppercase !important;
+            }
+
+            .opt12-wing-title {
+                font-size: 17.5px !important;
+                font-weight: 600 !important;
+                color: #2B1A12 !important;
+                margin-bottom: 5px !important;
+                line-height: 1.25 !important;
+                font-family: var(--serif, "Playfair Display", Georgia, serif) !important;
+            }
+
+            .opt12-wing-desc {
+                font-size: 13.5px !important;
+                line-height: 1.5 !important;
+                color: #4A382F !important;
+                margin-bottom: 0 !important;
+            }
+
+            .opt12-unified-divider {
+                height: 1px !important;
+                background: linear-gradient(90deg, rgba(168, 107, 36, 0.35) 0%, rgba(232, 201, 154, 0.55) 50%, rgba(168, 107, 36, 0.1) 100%) !important;
+                margin: 12px 0 10px 0 !important;
+            }
+
+            .opt12-wing--unified .opt12-manifesto-quote {
+                font-size: 13px !important;
+                line-height: 1.45 !important;
+                min-width: unset !important;
+                color: #2B1A12 !important;
+                font-family: var(--serif, "Playfair Display", Georgia, serif) !important;
+                font-style: italic !important;
+                margin: 0 0 8px 0 !important;
+            }
+
+            .opt12-wing--unified .opt12-manifesto-quote span {
+                color: #A86B24 !important;
+                font-weight: 600 !important;
+            }
+
+            .opt12-wing--unified .opt3-pills {
+                gap: 5px !important;
+                display: flex !important;
+                flex-wrap: wrap !important;
+            }
+
+            .opt12-wing--unified .opt3-pill {
+                font-size: 10.5px !important;
+                font-weight: 600 !important;
+                padding: 3px 9px !important;
+                border-radius: 999px !important;
+                background: rgba(168, 107, 36, 0.08) !important;
+                border: 1px solid rgba(168, 107, 36, 0.25) !important;
+                color: #8A551E !important;
+            }
+
+            .opt12-fulcrum {
+                position: relative !important;
+                left: auto !important;
+                top: auto !important;
+                transform: none !important;
+                padding: 0 !important;
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 10px !important;
+                margin: -2px 0 !important;
+                z-index: 5 !important;
+            }
+
+            .opt12-fulcrum::before,
+            .opt12-fulcrum::after {
+                content: "";
+                flex: 1;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, rgba(232, 201, 154, 0.6), transparent);
+            }
+
+            .opt12-fulcrum-disc {
+                width: 38px !important;
+                height: 38px !important;
+                padding: 4px !important;
+                border-width: 1.5px !important;
+                border-radius: 50% !important;
+                background: radial-gradient(circle, #FAF7F2 0%, #F5ECE1 70%, #EBDDCF 100%) !important;
+                border: 2px solid rgba(232, 201, 154, 0.9) !important;
+                box-shadow: 0 0 20px rgba(232, 201, 154, 0.65), 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            .opt12-fulcrum-disc .opt12-fulcrum-logo {
+                max-width: 24px !important;
+            }
+
+            .opt12-fulcrum-label {
+                display: inline-block !important;
+                font-size: 9.5px !important;
+                font-weight: 700 !important;
+                letter-spacing: 0.16em !important;
+                color: #E8C99A !important;
+                text-transform: uppercase !important;
+                margin-top: 0 !important;
+            }
+
+            .opt12-section .dz-cta-wrap {
+                margin-top: 16px !important;
+            }
+
+            .opt12-section .dz-cta {
+                padding: 10px 22px !important;
+                font-size: 13px !important;
+                border-radius: 999px !important;
             }
         }
     </style>
@@ -3853,7 +4115,7 @@
          ========================================================= -->
     <div class="option-header-badge" id="option-12">
         <span class="option-tag-pill">Option 12 · Dynamic Equilibrium Scales</span>
-        <h2 class="option-title">The Scales of Balance (Dualistic Yin-Yang Equilibrium)</h2>
+        <h2 class="option-title">The Principles of Balance (Dynamic Equilibrium)</h2>
         <p class="option-desc">
             A philosophical dual-wing layout exploring the opposing clinical forces of each principle. A central golden
             nemonic fulcrum balances both dimensions into effortless harmony.
@@ -3862,31 +4124,31 @@
 
     <div class="section-wrapper">
         <section class="opt12-section">
-            <img class="opt-watermark-bg" src="../images/logo-header.png" alt="" aria-hidden="true" />
+            <img class="opt-watermark-bg" src="logo-header.png" alt="" aria-hidden="true" />
             <div class="text-center mb-2">
-                <span class="sec-eyebrow sec-eyebrow--dark">DYNAMIC HARMONY</span>
+                <span class="sec-eyebrow sec-eyebrow--dark">CORE IDEOLOGY</span>
                 <div class="nemonic-separator">
                     <div class="nemonic-line nemonic-line--dark"></div>
                     <img src="logo-header.png" alt="nemonic" class="nemonic-icon nemonic-icon--dark" />
                     <div class="nemonic-line nemonic-line--dark"></div>
                 </div>
-                <h2 class="sec-title sec-title--dark">The Scales of <span
-                        class="scribble scribble--dark">Equilibrium</span></h2>
+                <h2 class="sec-title sec-title--dark">The Principles of <span
+                        class="scribble scribble--dark">Balance</span></h2>
                 <p class="sec-desc sec-desc--dark">
-                    True balance is never choosing one side — it is the deliberate mastery of both.
+                    Balance is our working principle — an intentional harmony between clinical science, inner health, and aesthetic restraint.
                 </p>
             </div>
 
             <!-- Top Principle Tabs -->
             <div class="opt12-principles-selector">
                 <button class="opt12-selector-pill is-active" onclick="switchOpt12(0)">
-                    Science &amp; Serenity
+                    <span class="pill-idx">01</span> Science &amp; Serenity
                 </button>
                 <button class="opt12-selector-pill" onclick="switchOpt12(1)">
-                    Inner &amp; Outer
+                    <span class="pill-idx">02</span> Inner &amp; Outer
                 </button>
                 <button class="opt12-selector-pill" onclick="switchOpt12(2)">
-                    Enhancement &amp; Restraint
+                    <span class="pill-idx">03</span> Enhancement &amp; Restraint
                 </button>
             </div>
 
@@ -3897,46 +4159,41 @@
                     <!-- Slide 01 -->
                     <div class="opt12-slide">
                         <div class="opt12-scales-stage">
-                            <!-- Wing A: Left Force -->
+                            <!-- Wing A: Top Force -->
                             <div class="opt12-scale-wing">
-                                <div class="opt12-wing-force">THE CLINICAL FORCE</div>
-                                <h3 class="opt12-wing-title">Rigorous Science</h3>
+                                <div class="opt12-wing-force">01 · HOW WE CARE</div>
+                                <h3 class="opt12-wing-title">Evidence-Led Precision</h3>
                                 <p class="opt12-wing-desc">
-                                    Evidence-led diagnostics, board-certified clinical accuracy, and advanced skin
-                                    biometrics.
+                                    Every recommendation backed by diagnostic evidence — thoughtful decisions guided by science, never urgency.
                                 </p>
                             </div>
 
                             <!-- Center Fulcrum -->
                             <div class="opt12-fulcrum">
                                 <div class="opt12-fulcrum-disc">
-                                    <img src="../images/logo-header.png" alt="D'Zen Derma Logo"
+                                    <img src="logo-header.png" alt="D'Zen Derma Logo"
                                         class="opt12-fulcrum-logo" />
                                 </div>
                                 <span class="opt12-fulcrum-label">EQUILIBRIUM · 01</span>
                             </div>
 
-                            <!-- Wing B: Right Force -->
-                            <div class="opt12-scale-wing">
+                            <!-- Wing B: Unified Bottom Card -->
+                            <div class="opt12-scale-wing opt12-wing--unified">
                                 <div class="opt12-wing-force">THE PATIENT EXPERIENCE</div>
-                                <h3 class="opt12-wing-title">Unhurried Serenity</h3>
+                                <h3 class="opt12-wing-title">Delivered Without Haste</h3>
                                 <p class="opt12-wing-desc">
-                                    Patience, calm consultation spaces, zero pressure, and the time to think without
-                                    haste.
+                                    No scare tactics, pressure, or limited slots. Just the facts, and unhurried time to decide.
                                 </p>
-                            </div>
-                        </div>
 
-                        <!-- Harmonized Manifesto Bar -->
-                        <div class="opt12-manifesto-bar">
-                            <div class="opt12-manifesto-quote">
-                                "We believe good aesthetics needs both <span>precision and patience</span> — the right
-                                science and a calm experience from consultation to treatment."
-                            </div>
-                            <div class="opt3-pills">
-                                <span class="opt3-pill">✦ Precision</span>
-                                <span class="opt3-pill">✦ Patience</span>
-                                <span class="opt3-pill">✦ Evidence-Backed</span>
+                                <div class="opt12-unified-divider"></div>
+
+                                <div class="opt12-manifesto-quote">
+                                    "Aesthetics needs both <span>precision &amp; patience</span> — right science and a calm experience."
+                                </div>
+                                <div class="opt3-pills">
+                                    <span class="opt3-pill">✦ Evidence-Backed</span>
+                                    <span class="opt3-pill">✦ Unhurried Care</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -3944,46 +4201,41 @@
                     <!-- Slide 02 -->
                     <div class="opt12-slide">
                         <div class="opt12-scales-stage">
-                            <!-- Wing A: Left Force -->
+                            <!-- Wing A: Top Force -->
                             <div class="opt12-scale-wing">
-                                <div class="opt12-wing-force">THE BIOLOGICAL FOUNDATION</div>
-                                <h3 class="opt12-wing-title">Inner Cellular Health</h3>
+                                <div class="opt12-wing-force">02 · HOW WE UNDERSTAND BEAUTY</div>
+                                <h3 class="opt12-wing-title">Inner Health</h3>
                                 <p class="opt12-wing-desc">
-                                    Root-cause medicine, cellular nourishment, skin barrier integrity, and metabolic
-                                    vitality.
+                                    We look beyond the surface to treat the biological and cellular root cause from within.
                                 </p>
                             </div>
 
                             <!-- Center Fulcrum -->
                             <div class="opt12-fulcrum">
                                 <div class="opt12-fulcrum-disc">
-                                    <img src="../images/logo-header.png" alt="D'Zen Derma Logo"
+                                    <img src="logo-header.png" alt="D'Zen Derma Logo"
                                         class="opt12-fulcrum-logo" />
                                 </div>
                                 <span class="opt12-fulcrum-label">EQUILIBRIUM · 02</span>
                             </div>
 
-                            <!-- Wing B: Right Force -->
-                            <div class="opt12-scale-wing">
+                            <!-- Wing B: Unified Bottom Card -->
+                            <div class="opt12-scale-wing opt12-wing--unified">
                                 <div class="opt12-wing-force">THE VISIBLE OUTCOME</div>
                                 <h3 class="opt12-wing-title">Outer Radiance</h3>
                                 <p class="opt12-wing-desc">
-                                    Luminous skin tone, balanced texture, and healthy natural glow that lasts
-                                    organically.
+                                    A healthy glow that lasts starts on the inside. Bringing inner health and outer beauty together — treat the cause, and lasting radiance follows.
                                 </p>
-                            </div>
-                        </div>
 
-                        <!-- Harmonized Manifesto Bar -->
-                        <div class="opt12-manifesto-bar">
-                            <div class="opt12-manifesto-quote">
-                                "Radiance follows health, <span>not the reverse</span>. When you treat the biological
-                                root cause, lasting beauty takes care of itself."
-                            </div>
-                            <div class="opt3-pills">
-                                <span class="opt3-pill">✦ Cellular Vitality</span>
-                                <span class="opt3-pill">✦ Root-Cause Care</span>
-                                <span class="opt3-pill">✦ Lasting Radiance</span>
+                                <div class="opt12-unified-divider"></div>
+
+                                <div class="opt12-manifesto-quote">
+                                    "Radiance follows health, <span>not the reverse</span>."
+                                </div>
+                                <div class="opt3-pills">
+                                    <span class="opt3-pill">✦ Root-Cause Care</span>
+                                    <span class="opt3-pill">✦ Lasting Radiance</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -3991,46 +4243,41 @@
                     <!-- Slide 03 -->
                     <div class="opt12-slide">
                         <div class="opt12-scales-stage">
-                            <!-- Wing A: Left Force -->
+                            <!-- Wing A: Top Force -->
                             <div class="opt12-scale-wing">
-                                <div class="opt12-wing-force">THE REFINEMENT</div>
-                                <h3 class="opt12-wing-title">Subtle Enhancement</h3>
+                                <div class="opt12-wing-force">03 · HOW WE TRANSFORM</div>
+                                <h3 class="opt12-wing-title">Enhancing You</h3>
                                 <p class="opt12-wing-desc">
-                                    Precision artistry that highlights your best features while preserving your innate
-                                    facial architecture.
+                                    Results that look like the best version of your own face, protecting your innate character.
                                 </p>
                             </div>
 
                             <!-- Center Fulcrum -->
                             <div class="opt12-fulcrum">
                                 <div class="opt12-fulcrum-disc">
-                                    <img src="../images/logo-header.png" alt="D'Zen Derma Logo"
+                                    <img src="logo-header.png" alt="D'Zen Derma Logo"
                                         class="opt12-fulcrum-logo" />
                                 </div>
                                 <span class="opt12-fulcrum-label">EQUILIBRIUM · 03</span>
                             </div>
 
-                            <!-- Wing B: Right Force -->
-                            <div class="opt12-scale-wing">
-                                <div class="opt12-wing-force">THE ETHOS</div>
-                                <h3 class="opt12-wing-title">Clinical Restraint</h3>
+                            <!-- Wing B: Unified Bottom Card -->
+                            <div class="opt12-scale-wing opt12-wing--unified">
+                                <div class="opt12-wing-force">CLINICAL RESTRAINT</div>
+                                <h3 class="opt12-wing-title">Never Replacing You</h3>
                                 <p class="opt12-wing-desc">
-                                    Knowing when less is the better answer, protecting identity, and never overtreating
-                                    to fill slots.
+                                    Restraint is central to mastery — knowing when less is better. We treat only when genuinely right for you, never to fill a slot.
                                 </p>
-                            </div>
-                        </div>
 
-                        <!-- Harmonized Manifesto Bar -->
-                        <div class="opt12-manifesto-bar">
-                            <div class="opt12-manifesto-quote">
-                                "Enhancing you, <span>never replacing you</span>. We believe restraint is as much a part
-                                of aesthetic mastery as capability."
-                            </div>
-                            <div class="opt3-pills">
-                                <span class="opt3-pill">✦ Natural Harmony</span>
-                                <span class="opt3-pill">✦ Clinical Restraint</span>
-                                <span class="opt3-pill">✦ Identity Protection</span>
+                                <div class="opt12-unified-divider"></div>
+
+                                <div class="opt12-manifesto-quote">
+                                    "Enhancing you, <span>never replacing you</span>."
+                                </div>
+                                <div class="opt3-pills">
+                                    <span class="opt3-pill">✦ Individual Character</span>
+                                    <span class="opt3-pill">✦ Clinical Restraint</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -4156,9 +4403,19 @@
 
             // Update tabs
             const pills = document.querySelectorAll('.opt12-selector-pill');
+            const pillsContainer = document.querySelector('.opt12-principles-selector');
+
             pills.forEach((p, i) => {
                 if (i === currentOpt12Slide) {
                     p.classList.add('is-active');
+                    // Smoothly auto-center active pill within its container ONLY without scrolling the window
+                    if (pillsContainer) {
+                        const targetScroll = p.offsetLeft - (pillsContainer.clientWidth / 2) + (p.clientWidth / 2);
+                        pillsContainer.scrollTo({
+                            left: Math.max(0, targetScroll),
+                            behavior: 'smooth'
+                        });
+                    }
                 } else {
                     p.classList.remove('is-active');
                 }
@@ -4171,36 +4428,58 @@
             }
         }
 
-        // Add touch / drag swipe support for Option 12 slider
+        // Add touch / drag swipe support for Option 12 slider & selector
         (function () {
             const viewport = document.getElementById('opt12-viewport');
-            if (!viewport) return;
-            let startX = 0;
-            let isDown = false;
+            if (viewport) {
+                let startX = 0;
+                let isDown = false;
 
-            viewport.addEventListener('mousedown', (e) => {
-                isDown = true;
-                startX = e.pageX;
-            });
-            window.addEventListener('mouseup', (e) => {
-                if (!isDown) return;
-                isDown = false;
-                const endX = e.pageX;
-                const diff = endX - startX;
-                if (diff > 50) switchOpt12(currentOpt12Slide - 1);
-                else if (diff < -50) switchOpt12(currentOpt12Slide + 1);
-            });
+                viewport.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    startX = e.pageX;
+                });
+                window.addEventListener('mouseup', (e) => {
+                    if (!isDown) return;
+                    isDown = false;
+                    const endX = e.pageX;
+                    const diff = endX - startX;
+                    if (diff > 50) switchOpt12(currentOpt12Slide - 1);
+                    else if (diff < -50) switchOpt12(currentOpt12Slide + 1);
+                });
 
-            viewport.addEventListener('touchstart', (e) => {
-                startX = e.touches[0].clientX;
-            }, { passive: true });
+                viewport.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                }, { passive: true });
 
-            viewport.addEventListener('touchend', (e) => {
-                const endX = e.changedTouches[0].clientX;
-                const diff = endX - startX;
-                if (diff > 45) switchOpt12(currentOpt12Slide - 1);
-                else if (diff < -45) switchOpt12(currentOpt12Slide + 1);
-            }, { passive: true });
+                viewport.addEventListener('touchend', (e) => {
+                    const endX = e.changedTouches[0].clientX;
+                    const diff = endX - startX;
+                    if (diff > 45) switchOpt12(currentOpt12Slide - 1);
+                    else if (diff < -45) switchOpt12(currentOpt12Slide + 1);
+                }, { passive: true });
+            }
+
+            // Drag scroll for pills on desktop simulation
+            const selector = document.querySelector('.opt12-principles-selector');
+            if (selector) {
+                let isDown = false;
+                let startX, scrollLeft;
+                selector.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    startX = e.pageX - selector.offsetLeft;
+                    scrollLeft = selector.scrollLeft;
+                });
+                window.addEventListener('mouseup', () => { isDown = false; });
+                selector.addEventListener('mouseleave', () => { isDown = false; });
+                selector.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - selector.offsetLeft;
+                    const walk = (x - startX) * 1.5;
+                    selector.scrollLeft = scrollLeft - walk;
+                });
+            }
         })();
 
         // Option 2 Accordion handler

@@ -271,6 +271,36 @@
     }
 
     /* =========================================================
+       CLINIC LOCATION TABS — Delhi / Gurgaon Switcher
+       ========================================================= */
+    const clinicTabs = document.querySelectorAll('.clinic-tab');
+    const clinicCols = document.querySelectorAll('.clinic-locations-grid .clinic-loc-col');
+
+    if (clinicTabs.length > 0 && clinicCols.length > 0) {
+        clinicTabs.forEach(function (tab) {
+            tab.addEventListener('click', function () {
+                const targetClinic = parseInt(this.dataset.clinic || this.getAttribute('data-clinic'), 10);
+
+                clinicTabs.forEach(function (t) {
+                    t.classList.remove('active');
+                    t.setAttribute('aria-selected', 'false');
+                });
+                clinicCols.forEach(function (c) {
+                    c.classList.remove('active');
+                });
+
+                if (clinicTabs[targetClinic]) {
+                    clinicTabs[targetClinic].classList.add('active');
+                    clinicTabs[targetClinic].setAttribute('aria-selected', 'true');
+                }
+                if (clinicCols[targetClinic]) {
+                    clinicCols[targetClinic].classList.add('active');
+                }
+            });
+        });
+    }
+
+    /* =========================================================
        OUR EXPERTISE (SERVICE ARCH) CAROUSEL — Scroll controls
        ========================================================= */
     const track = document.getElementById('service-arch-track');
@@ -817,33 +847,99 @@
     }
 
     /* =========================================================
-       PHILOSOPHY SECTION - STRIP TAB LOGIC
+       PHILOSOPHY SECTION - DYNAMIC EQUILIBRIUM SCALES (OPTION 12)
        ========================================================= */
-    (function () {
-        const tabBtns = document.querySelectorAll('.philosophy-tab-btn');
-        const contentPanels = document.querySelectorAll('.philosophy-content-panel');
-        
-        if (tabBtns.length > 0 && contentPanels.length > 0) {
-            tabBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Remove active from all buttons
-                    tabBtns.forEach(b => b.classList.remove('is-active'));
-                    // Add active to clicked
-                    btn.classList.add('is-active');
-                    
-                    const index = btn.getAttribute('data-index');
-                    
-                    // Hide all panels
-                    contentPanels.forEach(panel => {
-                        panel.classList.remove('is-active');
+    let currentOpt12Slide = 0;
+    const totalOpt12Slides = 3;
+
+    function switchOpt12(idx) {
+        currentOpt12Slide = (idx + totalOpt12Slides) % totalOpt12Slides;
+
+        // Update tabs
+        const pills = document.querySelectorAll('.opt12-selector-pill');
+        const pillsContainer = document.querySelector('.opt12-principles-selector');
+
+        pills.forEach((p, i) => {
+            if (i === currentOpt12Slide) {
+                p.classList.add('is-active');
+                p.setAttribute('aria-selected', 'true');
+                
+                // Smoothly auto-center active pill within its container ONLY without scrolling the window
+                if (pillsContainer) {
+                    const targetScroll = p.offsetLeft - (pillsContainer.clientWidth / 2) + (p.clientWidth / 2);
+                    pillsContainer.scrollTo({
+                        left: Math.max(0, targetScroll),
+                        behavior: 'smooth'
                     });
-                    
-                    // Show target panel
-                    const targetPanel = document.getElementById('phil-panel-' + index);
-                    if (targetPanel) {
-                        targetPanel.classList.add('is-active');
-                    }
-                });
+                }
+            } else {
+                p.classList.remove('is-active');
+                p.setAttribute('aria-selected', 'false');
+            }
+        });
+
+        // Slide the track
+        const track = document.getElementById('opt12-track');
+        if (track) {
+            track.style.transform = `translateX(-${currentOpt12Slide * 33.333333}%)`;
+        }
+    }
+    window.switchOpt12 = switchOpt12;
+
+    // Add touch / drag swipe support for Option 12 slider & selector
+    (function () {
+        const viewport = document.getElementById('opt12-viewport');
+        if (viewport) {
+            let startX = 0;
+            let isDown = false;
+
+            viewport.addEventListener('mousedown', (e) => {
+                isDown = true;
+                startX = e.pageX;
+            });
+            window.addEventListener('mouseup', (e) => {
+                if (!isDown) return;
+                isDown = false;
+                const endX = e.pageX;
+                const diff = endX - startX;
+                if (diff > 50) switchOpt12(currentOpt12Slide - 1);
+                else if (diff < -50) switchOpt12(currentOpt12Slide + 1);
+            });
+
+            // Touch events
+            viewport.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+            }, { passive: true });
+
+            viewport.addEventListener('touchend', (e) => {
+                const endX = e.changedTouches[0].clientX;
+                const diff = endX - startX;
+                if (diff > 45) switchOpt12(currentOpt12Slide - 1);
+                else if (diff < -45) switchOpt12(currentOpt12Slide + 1);
+            }, { passive: true });
+        }
+
+        // Horizontal drag-to-scroll for principles selector pills
+        const pillsContainer = document.querySelector('.opt12-principles-selector');
+        if (pillsContainer) {
+            let isPillsDown = false;
+            let startPillsX = 0;
+            let scrollLeft = 0;
+
+            pillsContainer.addEventListener('mousedown', (e) => {
+                isPillsDown = true;
+                startPillsX = e.pageX - pillsContainer.offsetLeft;
+                scrollLeft = pillsContainer.scrollLeft;
+            });
+            window.addEventListener('mouseup', () => {
+                isPillsDown = false;
+            });
+            pillsContainer.addEventListener('mousemove', (e) => {
+                if (!isPillsDown) return;
+                e.preventDefault();
+                const x = e.pageX - pillsContainer.offsetLeft;
+                const walk = (x - startPillsX) * 1.5;
+                pillsContainer.scrollLeft = scrollLeft - walk;
             });
         }
     })();

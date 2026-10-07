@@ -278,19 +278,20 @@
             </div>
         </section>
 
-        <!-- Brand Philosophy Strip Section -->
+        <!-- Brand Philosophy Strip Section (Dynamic Equilibrium Scales) -->
         <section class="brand-philosophy-strip-section" id="brand-philosophy">
             <div class="philosophy-strip-container">
-                <div class="philosophy-strip-inner">
-                    <div class="section-header text-center mb-4 mb-lg-5">
-                        <span class="section-subtitle" style="color: #E8C99A !important;">CORE IDEOLOGY</span>
+                <img class="opt-watermark-bg" src="logo-header.png" alt="" aria-hidden="true" />
+                <div class="philosophy-strip-inner opt12-container">
+                    <div class="section-header text-center mb-2">
+                        <span class="section-subtitle" style="color: #8B4513 !important;">CORE IDEOLOGY</span>
                         <div class="nemonic-separator">
                             <div class="nemonic-line" style="background: rgba(232, 201, 154, 0.45);"></div>
                             <img src="logo-header.png" alt="nemonic" class="nemonic-icon"
                                 style="filter: brightness(0) invert(1);" />
                             <div class="nemonic-line" style="background: rgba(232, 201, 154, 0.45);"></div>
                         </div>
-                        <h2 id="philosophy-section-title" class="section-title" style="color: #ffffff !important;">
+                        <h2 id="philosophy-section-title" class="section-title" style="color: #FAF9F6 !important;">
                             The Principles of <span class="scribble"
                                 style="color: #E8C99A !important; -webkit-text-fill-color: #E8C99A !important;">Balance</span>
                         </h2>
@@ -301,106 +302,154 @@
                         </p>
                     </div>
 
-                    <!-- 3 Trinity Principle Navigation -->
-                    <div class="philosophy-trinity-nav" role="tablist" aria-label="The 3 Principles of Balance">
-                        <button class="philosophy-tab-btn is-active" data-index="0" role="tab" aria-selected="true">
-                            <span class="phil-tab-role">01 · HOW WE CARE</span>
-                            <span class="phil-tab-title">Science &amp; Serenity</span>
-                            <img src="logo-header.png" class="tab-icon" alt="" />
+                    <!-- Top Principle Tabs -->
+                    <div class="opt12-principles-selector" role="tablist" aria-label="The 3 Principles of Balance">
+                        <button class="opt12-selector-pill is-active" onclick="switchOpt12(0)" role="tab"
+                            aria-selected="true">
+                            <span class="pill-idx">01</span> Science &amp; Serenity
                         </button>
-                        <button class="philosophy-tab-btn" data-index="1" role="tab" aria-selected="false">
-                            <span class="phil-tab-role">02 · HOW WE UNDERSTAND BEAUTY</span>
-                            <span class="phil-tab-title">Inner &amp; Outer</span>
-                            <img src="logo-header.png" class="tab-icon" alt="" />
+                        <button class="opt12-selector-pill" onclick="switchOpt12(1)" role="tab" aria-selected="false">
+                            <span class="pill-idx">02</span> Inner &amp; Outer
                         </button>
-                        <button class="philosophy-tab-btn" data-index="2" role="tab" aria-selected="false">
-                            <span class="phil-tab-role">03 · HOW WE TRANSFORM</span>
-                            <span class="phil-tab-title">Enhancement &amp; Restraint</span>
-                            <img src="logo-header.png" class="tab-icon" alt="" />
+                        <button class="opt12-selector-pill" onclick="switchOpt12(2)" role="tab" aria-selected="false">
+                            <span class="pill-idx">03</span> Enhancement &amp; Restraint
                         </button>
                     </div>
 
-                    <!-- Content Display Area -->
-                    <div class="philosophy-display-area">
-                        <!-- Panel 0: Science & Serenity -->
-                        <div class="philosophy-content-panel is-active" id="phil-panel-0" role="tabpanel">
-                            <div class="panel-image">
-                                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80&auto=format&fit=crop"
-                                    alt="Science & Serenity at D'Zen Derma" />
+                    <!-- Horizontal Slider Viewport -->
+                    <div class="opt12-slider-viewport" id="opt12-viewport">
+                        <div class="opt12-slides-track" id="opt12-track">
 
-                            </div>
-                            <div class="panel-text">
+                            <!-- Slide 01 -->
+                            <div class="opt12-slide">
+                                <div class="opt12-scales-stage">
+                                    <!-- Wing A: Top Force -->
+                                    <div class="opt12-scale-wing">
+                                        <div class="opt12-wing-force">01 · HOW WE CARE</div>
+                                        <h3 class="opt12-wing-title">Evidence-Led Precision</h3>
+                                        <p class="opt12-wing-desc">
+                                            Every recommendation backed by diagnostic evidence — thoughtful decisions
+                                            guided by science, never urgency.
+                                        </p>
+                                    </div>
 
-                                <h3 class="panel-principle-heading">Evidence-led care, delivered without haste.</h3>
-                                <p class="panel-desc">
-                                    We believe good aesthetics needs both precision and patience — the right science,
-                                    thoughtful decisions and a calm experience from consultation to treatment. Every
-                                    recommendation is backed by evidence — not urgency.
-                                </p>
-                                <p class="panel-desc panel-desc--sub">
-                                    We'll tell you exactly what's happening with your skin and why, but we'll never make
-                                    you feel like you need to decide today. No pressure, no scare tactics, no "limited
-                                    slots." Just the facts, and the time to think about them.
-                                </p>
-                                <div class="panel-tags-row">
-                                    <span class="panel-pill">✦ Evidence-Backed</span>
-                                    <span class="panel-pill">✦ Thoughtful Decisions</span>
-                                    <span class="panel-pill">✦ Unhurried Consultations</span>
+                                    <!-- Center Fulcrum -->
+                                    <div class="opt12-fulcrum">
+                                        <div class="opt12-fulcrum-disc">
+                                            <img src="logo-header.png" alt="D'Zen Derma Logo"
+                                                class="opt12-fulcrum-logo" />
+                                        </div>
+                                    </div>
+
+                                    <!-- Wing B: Unified Bottom Card -->
+                                    <div class="opt12-scale-wing opt12-wing--unified">
+                                        <div class="opt12-wing-force">THE PATIENT EXPERIENCE</div>
+                                        <h3 class="opt12-wing-title">Delivered Without Haste</h3>
+                                        <p class="opt12-wing-desc">
+                                            No scare tactics, pressure, or limited slots. Just the facts, and unhurried
+                                            time to decide.
+                                        </p>
+
+                                        <div class="opt12-unified-divider"></div>
+
+                                        <div class="opt12-manifesto-quote">
+                                            "Aesthetics needs both <span>precision &amp; patience</span> — right science
+                                            and a calm experience."
+                                        </div>
+                                        <div class="opt3-pills">
+                                            <span class="opt3-pill">✦ Evidence-Backed</span>
+                                            <span class="opt3-pill">✦ Unhurried Care</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Panel 1: Inner & Outer -->
-                        <div class="philosophy-content-panel" id="phil-panel-1" role="tabpanel">
-                            <div class="panel-image">
-                                <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop"
-                                    alt="Inner & Outer Beauty at D'Zen Derma" />
+                            <!-- Slide 02 -->
+                            <div class="opt12-slide">
+                                <div class="opt12-scales-stage">
+                                    <!-- Wing A: Top Force -->
+                                    <div class="opt12-scale-wing">
+                                        <div class="opt12-wing-force">02 · HOW WE UNDERSTAND BEAUTY</div>
+                                        <h3 class="opt12-wing-title">Inner Health</h3>
+                                        <p class="opt12-wing-desc">
+                                            We look beyond the surface to treat the biological and cellular root cause
+                                            from within.
+                                        </p>
+                                    </div>
 
-                            </div>
-                            <div class="panel-text">
+                                    <!-- Center Fulcrum -->
+                                    <div class="opt12-fulcrum">
+                                        <div class="opt12-fulcrum-disc">
+                                            <img src="logo-header.png" alt="D'Zen Derma Logo"
+                                                class="opt12-fulcrum-logo" />
+                                        </div>
+                                    </div>
 
-                                <h3 class="panel-principle-heading">Radiance follows health, not the reverse.</h3>
-                                <p class="panel-desc">
-                                    We look beyond the surface, bringing inner health and outer beauty together to
-                                    create results that are not just visible, but feel right for you.
-                                </p>
-                                <p class="panel-desc panel-desc--sub">
-                                    Because a healthy glow that lasts starts on the inside. When you treat the root
-                                    cellular and biological cause, the lasting aesthetic result takes care of itself.
-                                </p>
-                                <div class="panel-tags-row">
-                                    <span class="panel-pill">✦ Cellular Vitality</span>
-                                    <span class="panel-pill">✦ Root-Cause Care</span>
-                                    <span class="panel-pill">✦ Lasting Radiance</span>
+                                    <!-- Wing B: Unified Bottom Card -->
+                                    <div class="opt12-scale-wing opt12-wing--unified">
+                                        <div class="opt12-wing-force">THE VISIBLE OUTCOME</div>
+                                        <h3 class="opt12-wing-title">Outer Radiance</h3>
+                                        <p class="opt12-wing-desc">
+                                            A healthy glow that lasts starts on the inside. Bringing inner health and
+                                            outer beauty together — treat the cause, and lasting radiance follows.
+                                        </p>
+
+                                        <div class="opt12-unified-divider"></div>
+
+                                        <div class="opt12-manifesto-quote">
+                                            "Radiance follows health, <span>not the reverse</span>."
+                                        </div>
+                                        <div class="opt3-pills">
+                                            <span class="opt3-pill">✦ Root-Cause Care</span>
+                                            <span class="opt3-pill">✦ Lasting Radiance</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Panel 2: Enhancement & Restraint -->
-                        <div class="philosophy-content-panel" id="phil-panel-2" role="tabpanel">
-                            <div class="panel-image">
-                                <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop"
-                                    alt="Enhancement & Restraint at D'Zen Derma" />
+                            <!-- Slide 03 -->
+                            <div class="opt12-slide">
+                                <div class="opt12-scales-stage">
+                                    <!-- Wing A: Top Force -->
+                                    <div class="opt12-scale-wing">
+                                        <div class="opt12-wing-force">03 · HOW WE TRANSFORM</div>
+                                        <h3 class="opt12-wing-title">Enhancing You</h3>
+                                        <p class="opt12-wing-desc">
+                                            Results that look like the best version of your own face, protecting your
+                                            innate character.
+                                        </p>
+                                    </div>
 
-                            </div>
-                            <div class="panel-text">
+                                    <!-- Center Fulcrum -->
+                                    <div class="opt12-fulcrum">
+                                        <div class="opt12-fulcrum-disc">
+                                            <img src="logo-header.png" alt="D'Zen Derma Logo"
+                                                class="opt12-fulcrum-logo" />
+                                        </div>
+                                    </div>
 
-                                <h3 class="panel-principle-heading">Enhancing you, never replacing you.</h3>
-                                <p class="panel-desc">
-                                    We'll always aim for results that look like a better version of your own face, not
-                                    someone else's. We believe restraint is as much a part of aesthetic practice as
-                                    capability — and we'll tell you when less is the better answer.
-                                </p>
-                                <p class="panel-desc panel-desc--sub">
-                                    We treat only when it's genuinely right for you — not to fill a slot. Subtle,
-                                    intentional preservation that respects your individual character.
-                                </p>
-                                <div class="panel-tags-row">
-                                    <span class="panel-pill">✦ Individual Character</span>
-                                    <span class="panel-pill">✦ Clinical Restraint</span>
-                                    <span class="panel-pill">✦ Natural Harmony</span>
+                                    <!-- Wing B: Unified Bottom Card -->
+                                    <div class="opt12-scale-wing opt12-wing--unified">
+                                        <div class="opt12-wing-force">CLINICAL RESTRAINT</div>
+                                        <h3 class="opt12-wing-title">Never Replacing You</h3>
+                                        <p class="opt12-wing-desc">
+                                            Restraint is central to mastery — knowing when less is better. We treat only
+                                            when genuinely right for you, never to fill a slot.
+                                        </p>
+
+                                        <div class="opt12-unified-divider"></div>
+
+                                        <div class="opt12-manifesto-quote">
+                                            "Enhancing you, <span>never replacing you</span>."
+                                        </div>
+                                        <div class="opt3-pills">
+                                            <span class="opt3-pill">✦ Individual Character</span>
+                                            <span class="opt3-pill">✦ Clinical Restraint</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
 
@@ -1029,7 +1078,7 @@
             <!-- Scrollable Services Content -->
             <div class="sig-services-scroll" id="sigServicesScroll">
                 <!-- Intro Panel -->
-                <div class="sig-panel sig-panel--intro" id="sigPanel0">
+                <div class="sig-panel sig-panel--intro" id="sigPanel0" style="padding:50px 0px 0px !important">
                     <div class="sig-panel-inner">
                         <span class="section-subtitle">OUR CRAFT</span>
                         <div class="nemonic-separator">
@@ -1059,11 +1108,6 @@
                             <p class="sig-service-desc">Precision filler artistry to sculpt natural-looking lips with
                                 defined contour, optimal volume, and effortless symmetry — no over-filled results.
                                 Enhance your facial harmony and experience a subtle yet profound transformation.</p>
-                            <div class="sig-service-tags">
-                                <span>Hyaluronic Acid</span>
-                                <span>Natural Results</span>
-                                <span>30 min</span>
-                            </div>
                             <a href="#" class="sig-service-link">Explore</a>
                         </div>
                     </div>
@@ -1079,11 +1123,6 @@
                             <p class="sig-service-desc">Advanced skin renewal protocols combining bio-stimulators,
                                 collagen induction, and targeted therapies to restore youthful radiance from within.
                                 Achieve a flawless, glowing complexion that truly reflects your inner vitality.</p>
-                            <div class="sig-service-tags">
-                                <span>Collagen Boost</span>
-                                <span>Skin Glow</span>
-                                <span>60 min</span>
-                            </div>
                             <a href="#" class="sig-service-link">Explore</a>
                         </div>
                         <div class="sig-service-visual">
@@ -1111,11 +1150,6 @@
                             <p class="sig-service-desc">Sculpt and define your natural bone structure with expert dermal
                                 filler placement along cheekbones, jawline, and chin for a harmonious profile. Elevate
                                 your features with bespoke contouring tailored to your unique anatomy.</p>
-                            <div class="sig-service-tags">
-                                <span>3D Sculpting</span>
-                                <span>Non-Surgical</span>
-                                <span>45 min</span>
-                            </div>
                             <a href="#" class="sig-service-link">Explore</a>
                         </div>
                     </div>
@@ -1131,11 +1165,6 @@
                             <p class="sig-service-desc">Targeted Botulinum toxin and bio-revitalisation protocols to
                                 soften dynamic lines, lift brows, and restore a refreshed, rested appearance. Preserve
                                 your natural expressions while gently erasing the signs of time.</p>
-                            <div class="sig-service-tags">
-                                <span>Botulinum Toxin</span>
-                                <span>Preventative</span>
-                                <span>20 min</span>
-                            </div>
                             <a href="#" class="sig-service-link">Explore</a>
                         </div>
                         <div class="sig-service-visual">
@@ -1154,7 +1183,7 @@
                 style="position: absolute; bottom: clamp(75px, 7vw, 100px); left: 0; right: 0; z-index: 20; pointer-events: auto;">
                 <a href="../aesthetics.html" class="dz-cta"
                     style="margin: 0 auto; display: inline-flex; border-color: rgba(255,255,255,0.5);">
-                    <span style="color: #ffffff !important;">Explore Signature Treatments</span>
+                    <span style="color: #FAF9F6 !important;">Explore Signature Treatments</span>
                     <img src="nemonic1.png" class="btn-icon"
                         style="width: 14px; height: 14px; object-fit: contain; filter: brightness(0) invert(1);"
                         alt="icon" />
@@ -1245,96 +1274,68 @@
                 <!-- 4 Curated Visual Posts Grid (Click to Play Reel) -->
                 <div class="insta-grid">
                     <!-- Post 1 -->
-                    <article class="insta-card" role="button" tabindex="0"
-                        data-video-src="../images/hero-video.mp4"
-                        data-video-title="The Art of Subtle Balance"
-                        data-video-tag="AESTHETIC PROTOCOLS"
+                    <article class="insta-card" role="button" tabindex="0" data-video-src="../images/hero-video.mp4"
+                        data-video-title="The Art of Subtle Balance" data-video-tag="AESTHETIC PROTOCOLS"
                         data-video-caption="Why restraint and anatomical precision create the most striking, harmonious natural outcome."
                         data-insta-url="https://www.instagram.com/dzenderma/">
                         <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80"
                             alt="Aesthetic Protocols" class="insta-card__img" loading="lazy" />
-                        
+
                         <span class="insta-card__play" aria-label="Play Reel">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <polygon points="8 5 20 12 8 19 8 5" />
                             </svg>
                         </span>
-
-                        <div class="insta-card__meta">
-                            <h3 class="insta-card__title">The Art of Subtle Balance</h3>
-                            <span class="insta-card__tag">Aesthetic Protocols</span>
-                        </div>
                     </article>
 
                     <!-- Post 2 -->
-                    <article class="insta-card" role="button" tabindex="0"
-                        data-video-src="../images/hero-video.mp4"
-                        data-video-title="Inside the D'Zen Sanctuary"
-                        data-video-tag="SANCTUARY ARCHITECTURE"
+                    <article class="insta-card" role="button" tabindex="0" data-video-src="../images/hero-video.mp4"
+                        data-video-title="Inside the D'Zen Sanctuary" data-video-tag="SANCTUARY ARCHITECTURE"
                         data-video-caption="A space where medical rigor meets serene architectural stillness on Golf Course Road, Gurgaon."
                         data-insta-url="https://www.instagram.com/dzenderma/">
                         <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&q=80"
                             alt="Sanctuary Architecture" class="insta-card__img" loading="lazy" />
-                        
+
                         <span class="insta-card__play" aria-label="Play Reel">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <polygon points="8 5 20 12 8 19 8 5" />
                             </svg>
                         </span>
-
-                        <div class="insta-card__meta">
-                            <h3 class="insta-card__title">Inside the D'Zen Sanctuary</h3>
-                            <span class="insta-card__tag">Sanctuary Architecture</span>
-                        </div>
                     </article>
 
                     <!-- Post 3 -->
-                    <article class="insta-card" role="button" tabindex="0"
-                        data-video-src="../images/hero-video.mp4"
-                        data-video-title="Doctor's Philosophy & Balance"
-                        data-video-tag="DOCTOR'S JOURNAL"
+                    <article class="insta-card" role="button" tabindex="0" data-video-src="../images/hero-video.mp4"
+                        data-video-title="Doctor's Philosophy & Balance" data-video-tag="DOCTOR'S JOURNAL"
                         data-video-caption="“Every facial anatomy holds its own equilibrium. Our purpose is to reveal it without distortion.” — Dr. Aarushi"
                         data-insta-url="https://www.instagram.com/dzenderma/">
                         <img src="../images/dr-arushi-1.webp" alt="Dr. Aarushi Passi Bhandari" class="insta-card__img"
                             loading="lazy" />
-                        
+
                         <span class="insta-card__play" aria-label="Play Reel">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <polygon points="8 5 20 12 8 19 8 5" />
                             </svg>
                         </span>
-
-                        <div class="insta-card__meta">
-                            <h3 class="insta-card__title">Doctor's Philosophy &amp; Balance</h3>
-                            <span class="insta-card__tag">Doctor's Journal</span>
-                        </div>
                     </article>
 
                     <!-- Post 4 -->
-                    <article class="insta-card" role="button" tabindex="0"
-                        data-video-src="../images/hero-video.mp4"
-                        data-video-title="HydraFacial Vortex Infusion"
-                        data-video-tag="CLINICAL CARE"
+                    <article class="insta-card" role="button" tabindex="0" data-video-src="../images/hero-video.mp4"
+                        data-video-title="HydraFacial Vortex Infusion" data-video-tag="CLINICAL CARE"
                         data-video-caption="Behind the scenes of our 4-stage medical Hydrafacial protocol. Zero downtime, radiant glow."
                         data-insta-url="https://www.instagram.com/dzenderma/">
                         <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&q=80"
                             alt="Hydrafacial Treatment" class="insta-card__img" loading="lazy" />
-                        
+
                         <span class="insta-card__play" aria-label="Play Reel">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <polygon points="8 5 20 12 8 19 8 5" />
                             </svg>
                         </span>
-
-                        <div class="insta-card__meta">
-                            <h3 class="insta-card__title">HydraFacial Vortex Infusion</h3>
-                            <span class="insta-card__tag">Clinical Care</span>
-                        </div>
                     </article>
                 </div>
 
                 <!-- Instagram CTA Button -->
-                <div class="text-center mt-4 mt-lg-5" style="position: relative; z-index: 5;">
+                <div class="text-center mt-2 mt-lg-5" style="position: relative; z-index: 5;">
                     <a href="https://www.instagram.com/dzenderma/" target="_blank" rel="noopener" class="dz-cta"
                         style="margin: 0 auto; display: inline-flex;">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink: 0;">
@@ -1455,7 +1456,7 @@
             <!-- Curvy separator: Featured In / Partners → Testimonials -->
             <div class="section-separator" aria-hidden="true" style="z-index: 10;">
                 <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path fill="#FAF9F6" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z">
+                    <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z">
                     </path>
                 </svg>
             </div>
@@ -1831,7 +1832,7 @@
                     </div>
                 </div>
 
-                <div class="headlines-footer text-center mt-5">
+                <div class="headlines-footer text-center mt-2">
                     <a href="#" class="view-all-articles dz-cta">
                         <span>View All Articles</span>
                         <img src="nemonic1.png" class="btn-icon" style="width: 14px; height: 14px; object-fit: contain;"
@@ -1859,9 +1860,33 @@
                     </p>
                 </div>
 
-                <div class="row g-4 justify-content-center">
+                <!-- Tab Pills for Mobile View -->
+                <div class="clinic-tabs" role="tablist" aria-label="Select Clinic Location">
+                    <div class="clinic-tabs__pill">
+                        <button class="clinic-tab active" role="tab" aria-selected="true" data-clinic="0">
+                            <img class="clinic-tab__img"
+                                src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=200&auto=format&fit=crop"
+                                alt="Delhi Clinic" />
+                            <span class="clinic-tab__info">
+                                <span class="clinic-tab__name">New Delhi</span>
+                                <span class="clinic-tab__role">Lajpat Nagar</span>
+                            </span>
+                        </button>
+                        <button class="clinic-tab" role="tab" aria-selected="false" data-clinic="1">
+                            <img class="clinic-tab__img"
+                                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=200&auto=format&fit=crop"
+                                alt="Gurgaon Clinic" />
+                            <span class="clinic-tab__info">
+                                <span class="clinic-tab__name">Gurgaon</span>
+                                <span class="clinic-tab__role">Golf Course Rd</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row g-4 justify-content-center clinic-locations-grid">
                     <!-- Delhi Clinic -->
-                    <div class="col-lg-6 col-md-6">
+                    <div class="col-lg-6 col-md-6 clinic-loc-col active" data-clinic-index="0">
                         <article class="clinic-loc-card">
                             <div class="clinic-loc-card__media">
                                 <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=800&auto=format&fit=crop"
@@ -1909,7 +1934,7 @@
                     </div>
 
                     <!-- Gurgaon Clinic -->
-                    <div class="col-lg-6 col-md-6">
+                    <div class="col-lg-6 col-md-6 clinic-loc-col" data-clinic-index="1">
                         <article class="clinic-loc-card">
                             <div class="clinic-loc-card__media">
                                 <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop"
@@ -1967,22 +1992,22 @@
             <div class="footer-cta-card-wrapper">
                 <div class="footer-cta-card">
                     <div class="section-header text-center mb-4">
-                        <span class="section-subtitle" style="color: #ffffff !important;">BEGIN YOUR JOURNEY</span>
+                        <span class="section-subtitle" style="color: #FAF9F6 !important;">BEGIN YOUR JOURNEY</span>
                         <div class="nemonic-separator">
-                            <div class="nemonic-line" style="background-color: #ffffff;"></div>
+                            <div class="nemonic-line" style="background-color: #FAF9F6;"></div>
                             <img src="logo-header.png" alt="nemonic" class="nemonic-icon"
                                 style="filter: brightness(0) invert(1);" />
-                            <div class="nemonic-line" style="background-color: #ffffff;"></div>
+                            <div class="nemonic-line" style="background-color: #FAF9F6;"></div>
                         </div>
                     </div>
                     <h2 class="footer-cta-heading">Ready to reveal your<br>most <span class="scribble"
-                            style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important;">radiant
+                            style="color: #FAF9F6 !important; -webkit-text-fill-color: #FAF9F6 !important;">radiant
                             self?</span></h2>
                     <p class="footer-cta-sub">Join thousands who've discovered the art of effortless confidence —
                         crafted for your skin, your story.</p>
                     <a href="../newthree.html#book" class="dz-cta"
                         style="margin: 0 auto; display: inline-flex; border-color: rgba(255,255,255,0.5);">
-                        <span style="color: #ffffff !important;">Book a Consultation</span>
+                        <span style="color: #FAF9F6 !important;">Book a Consultation</span>
                         <img src="nemonic1.png" class="btn-icon"
                             style="width: 14px; height: 14px; object-fit: contain; filter: brightness(0) invert(1);"
                             alt="icon" />
@@ -2135,7 +2160,7 @@
     <div class="insta-modal" id="instaVideoModal" role="dialog" aria-modal="true" aria-label="Instagram Video Reel">
         <div class="insta-modal__dialog">
             <button class="insta-modal__close" id="instaModalClose" aria-label="Close Reel">&times;</button>
-            
+
             <div class="insta-modal__video-wrap">
                 <video id="instaModalVideo" class="insta-modal__video" playsinline loop></video>
                 <div class="insta-modal__video-controls">
@@ -2155,13 +2180,16 @@
                 </div>
                 <p class="insta-modal__caption" id="instaModalCaption"></p>
                 <div class="insta-modal__actions">
-                    <a href="https://www.instagram.com/dzenderma/" target="_blank" rel="noopener" class="insta-modal__insta-btn" id="instaModalLink">
+                    <a href="https://www.instagram.com/dzenderma/" target="_blank" rel="noopener"
+                        class="insta-modal__insta-btn" id="instaModalLink">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                         </svg>
                         <span>Watch on Instagram</span>
                     </a>
-                    <a href="../newthree.html#book" class="dz-cta" style="padding: 6px 16px !important; font-size: 11px !important;">
+                    <a href="../newthree.html#book" class="dz-cta"
+                        style="padding: 6px 16px !important; font-size: 11px !important;">
                         <span>Book Visit</span>
                     </a>
                 </div>

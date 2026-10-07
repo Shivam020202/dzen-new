@@ -2314,45 +2314,26 @@
              1. BREADCRUMB HERO HEADER (Signature Dark Elegance)
              ═══════════════════════════════════════════════════════════ -->
         <section class="breadcrumb-header position-relative d-flex align-items-center justify-content-center"
-            style="background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%), url('../images/contour-texture.webp') repeat; background-blend-mode: multiply; padding-top: 115px; padding-bottom: 75px; border-bottom: none; overflow: hidden;">
+            style="background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%), url('../images/contour-texture.webp') repeat; background-blend-mode: multiply; padding-top: 103px; padding-bottom: 60px; border-bottom: none; overflow: hidden;">
 
             <div class="container position-relative text-center" style="z-index: 2;">
-                <!-- Breadcrumb trail -->
-                <nav class="mp-crumb" aria-label="Breadcrumb">
-                    <a href="index.html">Home</a>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round" aria-hidden="true">
-                        <path d="M9 6l6 6-6 6" />
-                    </svg>
-                    <a href="../treatments.html">Treatments</a>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round" aria-hidden="true">
-                        <path d="M9 6l6 6-6 6" />
-                    </svg>
-                    <span aria-current="page">Hydrafacial</span>
-                </nav>
-
+                <span class="section-subtitle" style="font-family: 'Inter', system-ui, sans-serif !important; font-size: 11px !important; font-weight: 600 !important; letter-spacing: 3.4px !important; text-transform: uppercase !important; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; opacity: 0.85 !important; display: block; margin-bottom: 0;">TREATMENTS</span>
                 <div class="nemonic-separator mt-2 mb-4">
                     <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
                     <img src="logo-header.png" alt="nemonic" class="nemonic-icon"
                         style="filter: brightness(0) invert(1);" />
                     <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
                 </div>
-
                 <h1 class="page-title mb-3"
-                    style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(2rem, 3.8vw, 3.2rem); font-weight: 400; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; margin: 0; line-height: 1.2;">
+                    style="font-family: 'Playfair Display', Georgia, serif !important; font-style: italic !important; font-weight: 400 !important; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; font-size: clamp(28px, 4vw, 50px) !important; margin: 0; line-height: 1.2; text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);">
                     Hydrafacial
                 </h1>
-                <p class="mx-auto mt-3"
-                    style="max-width: 680px; color: rgba(255, 255, 255, 0.88); font-size: clamp(0.98rem, 1.2vw, 1.12rem); line-height: 1.65;">
-                    A deeper cleanse. Smoother skin. A fresher glow. Doctor-administered, multi-stage vortex infusion
-                    designed for your skin's unique equilibrium.
-                </p>
             </div>
 
             <!-- Curvy Bottom Separator -->
-            <div class="section-separator" aria-hidden="true">
-                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <div class="position-absolute w-100" style="bottom: -1px; left: 0; z-index: 2;">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                    style="display: block; width: 100%; height: clamp(36px, 4.2vw, 56px);">
                     <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
                 </svg>
             </div>
@@ -3594,9 +3575,29 @@
                     </p>
                 </div>
 
-                <div class="row g-4 justify-content-center">
+                <!-- Tab Pills for Mobile View -->
+                <div class="clinic-tabs" role="tablist" aria-label="Select Clinic Location">
+                    <div class="clinic-tabs__pill">
+                        <button class="clinic-tab active" role="tab" aria-selected="true" data-clinic="0">
+                            <img class="clinic-tab__img" src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=200&auto=format&fit=crop" alt="Delhi Clinic" />
+                            <span class="clinic-tab__info">
+                                <span class="clinic-tab__name">New Delhi</span>
+                                <span class="clinic-tab__role">Lajpat Nagar</span>
+                            </span>
+                        </button>
+                        <button class="clinic-tab" role="tab" aria-selected="false" data-clinic="1">
+                            <img class="clinic-tab__img" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=200&auto=format&fit=crop" alt="Gurgaon Clinic" />
+                            <span class="clinic-tab__info">
+                                <span class="clinic-tab__name">Gurgaon</span>
+                                <span class="clinic-tab__role">Golf Course Rd</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row g-4 justify-content-center clinic-locations-grid">
                     <!-- Delhi Clinic -->
-                    <div class="col-lg-6 col-md-6">
+                    <div class="col-lg-6 col-md-6 clinic-loc-col active" data-clinic-index="0">
                         <article class="clinic-loc-card">
                             <div class="clinic-loc-card__media">
                                 <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=800&auto=format&fit=crop"
@@ -3643,7 +3644,7 @@
                     </div>
 
                     <!-- Gurgaon Clinic -->
-                    <div class="col-lg-6 col-md-6">
+                    <div class="col-lg-6 col-md-6 clinic-loc-col" data-clinic-index="1">
                         <article class="clinic-loc-card">
                             <div class="clinic-loc-card__media">
                                 <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop"
