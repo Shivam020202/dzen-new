@@ -164,7 +164,7 @@
             --hf-gold-soft: rgba(196, 146, 74, 0.12);
             --hf-cream: #FDF8F3;
             --hf-cream-alt: #FAF7F2;
-            --hf-card-bg: #FFFFFF;
+            --hf-card-bg: #FAF9F6;
             --hf-border: rgba(196, 146, 74, 0.22);
             --hf-shadow: 0 18px 45px rgba(43, 26, 18, 0.06);
             --hf-radius: 20px;
@@ -196,7 +196,7 @@
 
         /* ── Opaque Navbar for Clean Readability ── */
         .pnav {
-            background: #ffffff !important;
+            background: #FAF9F6 !important;
             border-bottom: 1px solid rgba(180, 140, 90, 0.14) !important;
             box-shadow: 0 2px 18px rgba(0, 0, 0, 0.06) !important;
         }
@@ -216,7 +216,7 @@
         /* ── Section Wrapper & Typography ── */
         .hf-section {
             position: relative;
-            padding: clamp(60px, 6.5vw, 96px) 0;
+            padding: 50px 0px;
             max-width: 100%;
         }
 
@@ -257,7 +257,7 @@
         }
 
         .hf-section--dark .hf-heading {
-            color: #FFFFFF;
+            color: #FAF9F6;
         }
 
         .hf-lead {
@@ -292,7 +292,7 @@
         }
 
         .mp-crumb a:hover {
-            color: #ffffff;
+            color: #FAF9F6;
         }
 
         .mp-crumb span[aria-current] {
@@ -316,7 +316,7 @@
             border-bottom: none !important;
             isolation: isolate;
             overflow: hidden;
-            color: #FFFFFF !important;
+            color: #FAF9F6 !important;
         }
 
         .hf-hero::before {
@@ -359,7 +359,7 @@
             padding: 13px 28px !important;
             border-radius: 999px !important;
             background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%) !important;
-            color: #ffffff !important;
+            color: #FAF9F6 !important;
             text-decoration: none !important;
             font-family: var(--sans, 'Inter', system-ui, sans-serif) !important;
             font-weight: 500 !important;
@@ -372,7 +372,7 @@
         }
 
         .dz-cta:hover {
-            color: #ffffff !important;
+            color: #FAF9F6 !important;
             background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%) !important;
             border-color: rgba(232, 201, 154, 0.7) !important;
             transform: translateY(-2px) !important;
@@ -398,7 +398,7 @@
             backdrop-filter: blur(10px) !important;
             -webkit-backdrop-filter: blur(10px) !important;
             border: 1px solid rgba(232, 201, 154, 0.45) !important;
-            color: #ffffff !important;
+            color: #FAF9F6 !important;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15) !important;
         }
 
@@ -406,7 +406,7 @@
         .dz-cta--glass:hover {
             background: rgba(255, 255, 255, 0.22) !important;
             border-color: #E8C99A !important;
-            color: #ffffff !important;
+            color: #FAF9F6 !important;
             transform: translateY(-2px) !important;
             filter: brightness(1.1) !important;
         }
@@ -439,7 +439,7 @@
             overflow: hidden;
             border: 1px solid rgba(196, 146, 74, 0.35);
             box-shadow: 0 20px 50px rgba(43, 26, 18, 0.14);
-            background: #ffffff;
+            background: #FAF9F6;
         }
 
         .sig-oval-frame--tall {
@@ -473,7 +473,7 @@
             border: 1px solid rgba(232, 201, 154, 0.4);
             border-radius: 999px;
             padding: 10px 24px;
-            color: #FFFFFF;
+            color: #FAF9F6;
             font-size: 12.5px;
             font-weight: 600;
             letter-spacing: 0.05em;
@@ -489,159 +489,121 @@
             color: #E8C99A;
         }
 
-        /* ── Service Arch Cards Grid (.service-arch-grid) ── */
-        .service-arch-grid {
+        /* ── Minimal Editorial Steps Grid (Clean 4-Column Layout with Dividers & Mobile Horizontal Scroll) ── */
+        .hf-minimal-steps-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: clamp(16px, 2vw, 24px);
-            margin-top: 36px;
-            max-width: 1200px;
+            gap: clamp(24px, 3vw, 40px);
+            margin-top: 48px;
+            max-width: 1240px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .service-arch-card {
-            background: #FFFFFF;
-            border: 1px solid rgba(196, 146, 74, 0.28);
-            border-radius: 180px 180px 24px 24px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(43, 26, 18, 0.05);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+        .hf-minimal-step-item {
             display: flex;
             flex-direction: column;
+            text-align: center;
         }
 
-        .service-arch-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(196, 146, 74, 0.55);
-            box-shadow: 0 20px 48px rgba(43, 26, 18, 0.12);
-        }
-
-        .service-arch-card__media {
-            position: relative;
-            width: 100%;
-            height: 250px;
-            overflow: hidden;
-            border-radius: 0 !important;
-            margin: 0;
-            padding: 0;
-        }
-
-        .service-arch-card__media img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            border-radius: 0 !important;
-            transition: transform 0.6s ease;
-        }
-
-        .service-arch-card:hover .service-arch-card__media img {
-            transform: scale(1.08);
-        }
-
-        .service-arch-card__media::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(43, 26, 18, 0.4) 100%);
-        }
-
-        .service-arch-card__step-num {
-            position: absolute;
-            top: 22px;
-            right: 32px;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: rgba(253, 248, 243, 0.96);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1.5px solid #C4924A;
-            color: #8B5E2A;
-            font-family: 'Playfair Display', Georgia, serif;
-            font-weight: 700;
-            font-size: 1rem;
+        .hf-minimal-step-title {
+            font-family: var(--serif, 'Playfair Display', Georgia, serif);
+            font-style: italic;
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: #4b2b20;
+            letter-spacing: 0.01em;
+            margin: 0 0 16px 0;
+            min-height: 44px;
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             justify-content: center;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
-            z-index: 2;
         }
 
-        .service-arch-card__body {
-            padding: 24px 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            justify-content: space-between;
+        .hf-minimal-step-divider {
+            width: 100%;
+            height: 1px;
+            background: rgba(75, 43, 32, 0.35);
+            margin-bottom: 18px;
         }
 
-        .service-arch-card__eyebrow {
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            color: #A86B24;
-            margin-bottom: 6px;
-        }
-
-        .service-arch-card h3 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.22rem;
-            font-weight: 600;
-            color: #2B1A12;
-            margin-bottom: 10px;
-            line-height: 1.3;
-        }
-
-        .service-arch-card p {
+        .hf-minimal-step-desc {
+            font-family: var(--sans, 'Inter', system-ui, sans-serif);
             font-size: 0.88rem;
-            line-height: 1.62;
+            line-height: 1.68;
             color: #5C4A3A;
-            margin-bottom: 16px;
+            margin: 0;
         }
 
-        .service-arch-card__tag {
-            font-size: 11px;
-            font-weight: 600;
-            color: #8B5E2A;
-            background: rgba(196, 146, 74, 0.1);
-            border: 1px solid rgba(196, 146, 74, 0.24);
-            padding: 4px 12px;
-            border-radius: 999px;
-            display: inline-block;
-            align-self: flex-start;
-        }
-
-        @media (max-width: 1199px) {
-            .service-arch-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 767px) {
-            .service-arch-grid {
-                grid-template-columns: 1fr;
+        @media (max-width: 991.98px) {
+            .hf-minimal-steps-grid {
+                display: flex;
+                overflow-x: auto;
+                overflow-y: hidden;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
                 gap: 24px;
-                max-width: 440px;
-                margin-left: auto;
-                margin-right: auto;
+                padding: 10px 24px 20px;
+                margin-top: 20px;
+                margin-left: -16px;
+                margin-right: -16px;
             }
 
-            .service-arch-card {
-                border-radius: 160px 160px 22px 22px;
+            .hf-minimal-steps-grid::-webkit-scrollbar {
+                display: none;
             }
 
-            .service-arch-card__media {
-                height: 250px;
-                border-radius: 0 !important;
+            .hf-minimal-step-item {
+                flex: 0 0 clamp(260px, 78vw, 320px);
+                scroll-snap-align: center;
+                text-align: center;
+                padding: 4px 10px;
             }
 
-            .service-arch-card__step-num {
-                top: 22px;
-                right: 34px;
+            .hf-minimal-step-title {
+                min-height: auto;
+                margin-bottom: 14px;
             }
+
+            .hf-minimal-step-divider {
+                margin-bottom: 14px;
+            }
+        }
+
+        /* ── Customised Skin Care (Clean Open Editorial, No Card) ── */
+        .hf-customised-editorial {
+            margin-top: 10px;
+            padding: 0 16px;
+            position: relative;
+        }
+
+        .hf-customised-divider {
+            width: 100%;
+            max-width: 720px;
+            height: 1px;
+            background: rgba(75, 43, 32, 0.35);
+            margin: 0 auto clamp(24px, 3.5vw, 36px) auto;
+        }
+
+        .hf-customised-title {
+            font-family: var(--serif, 'Playfair Display', Georgia, serif);
+            font-style: italic;
+            font-size: clamp(1.4rem, 2.8vw, 1.85rem);
+            font-weight: 500;
+            color: #4b2b20;
+            margin: 0 0 16px;
+            letter-spacing: 0.01em;
+        }
+
+        .hf-customised-text {
+            font-family: var(--sans, 'Inter', system-ui, sans-serif);
+            font-size: clamp(0.92rem, 1.25vw, 1rem);
+            line-height: 1.78;
+            color: #5C4A3A;
+            max-width: 820px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* ── Partners Marquee (Directly from index.html) ── */
@@ -736,7 +698,7 @@
             background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%) !important;
             isolation: isolate;
             overflow: hidden;
-            color: #FFFFFF !important;
+            color: #FAF9F6 !important;
         }
 
         .hf-why-section::before {
@@ -768,13 +730,13 @@
 
         .hf-why-section .hf-eyebrow,
         html body .hf-why-section .hf-eyebrow {
-            color: #E8C99A !important;
-            -webkit-text-fill-color: #E8C99A !important;
+            color: #FAF9F6 !important;
+            -webkit-text-fill-color: #FAF9F6 !important;
         }
 
         .hf-why-section .hf-heading {
-            color: #ffffff !important;
-            -webkit-text-fill-color: #ffffff !important;
+            color: #FAF9F6 !important;
+            -webkit-text-fill-color: #FAF9F6 !important;
             text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
         }
 
@@ -784,7 +746,7 @@
         }
 
         .hf-why-section .hf-lead {
-            color: rgba(255, 255, 255, 0.88) !important;
+            color: #FAF9F6 !important;
             text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
         }
 
@@ -799,11 +761,13 @@
         /* ── Doctor Arch Showcase Card (Why D'Zen Section) ── */
         .doctor-arch-card {
             position: relative;
-            background: #FFFFFF;
-            border: 1px solid rgba(196, 146, 74, 0.3);
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(232, 201, 154, 0.25);
             border-radius: 200px 200px 24px 24px;
             overflow: hidden;
-            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12);
             text-align: center;
             padding-bottom: 24px;
         }
@@ -837,7 +801,7 @@
             font-family: 'Playfair Display', Georgia, serif;
             font-size: 1.35rem;
             font-weight: 600;
-            color: #2B1A12;
+            color: #FAF9F6;
             margin-bottom: 4px;
         }
 
@@ -846,7 +810,7 @@
             font-weight: 600;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: #8B5E2A;
+            color: #E8C99A;
             margin-bottom: 12px;
         }
 
@@ -855,92 +819,110 @@
             font-style: italic;
             font-size: 0.96rem;
             line-height: 1.55;
-            color: #5C4A3A;
+            color: rgba(255, 255, 255, 0.88);
             margin: 0 auto;
             max-width: 320px;
         }
 
-        /* ── 2x2 Why D'Zen Cards Grid ── */
-        .hf-why-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+        .doctor-arch-card .dz-cta {
+            background: #FAF7F2;
+            color: #4b2b20 !important;
+            border: 1px solid rgba(232, 201, 154, 0.6);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
         }
 
-        .hf-why-card {
-            background: #FFFFFF;
-            border: 1px solid rgba(196, 146, 74, 0.22);
-            border-radius: 20px;
-            padding: 26px 22px;
-            box-shadow: 0 8px 25px rgba(43, 26, 18, 0.04);
-            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
-            position: relative;
+        .doctor-arch-card .dz-cta:hover {
+            background: #E8C99A;
+            color: #2B1A12 !important;
+            border-color: #E8C99A;
+            transform: translateY(-2px);
+        }
+
+        /* ── Minimal Editorial Pillars for Why D'Zen (Open, No Card, Crystal-Clear Readability) ── */
+        .hf-why-minimal-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+            max-width: 1240px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hf-why-minimal-item {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            text-align: center;
+            position: relative;
         }
 
-        .hf-why-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(196, 146, 74, 0.55);
-            box-shadow: 0 16px 40px rgba(43, 26, 18, 0.08);
+        .hf-why-minimal-num {
+            font-family: var(--serif, 'Playfair Display', Georgia, serif);
+            font-style: italic;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #E8C99A !important;
+            -webkit-text-fill-color: #E8C99A !important;
+            margin-bottom: 8px;
+            letter-spacing: 0.05em;
         }
 
-        .hf-why-card-top {
+        .hf-why-minimal-title {
+            font-family: var(--serif, 'Playfair Display', Georgia, serif);
+            font-style: italic;
+            font-size: 1.18rem;
+            font-weight: 500;
+            color: #FAF9F6 !important;
+            -webkit-text-fill-color: #FAF9F6 !important;
+            letter-spacing: 0.01em;
+            margin: 0 0 16px 0;
+            min-height: auto;
             display: flex;
             align-items: center;
-            justify-content: flex-end;
-            margin-bottom: 12px;
+            justify-content: center;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
         }
 
-        .hf-why-card-num {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: rgba(196, 146, 74, 0.45);
+        .hf-why-minimal-divider {
+            width: 100%;
+            height: 1px;
+            background: rgba(232, 201, 154, 0.45);
+            margin-bottom: 18px;
         }
 
-        .hf-why-card-title {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.18rem;
-            font-weight: 600;
-            color: #2B1A12;
-            margin-bottom: 8px;
-            line-height: 1.3;
+        .hf-why-minimal-desc {
+            font-family: var(--sans, 'Inter', system-ui, sans-serif);
+            font-size: 0.9rem;
+            line-height: 1.72;
+            color: #FAF9F6 !important;
+            -webkit-text-fill-color: #FAF9F6 !important;
+            margin: 0;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
         }
 
-        .hf-why-card-desc {
-            font-size: 0.88rem;
-            line-height: 1.62;
-            color: #5C4A3A;
-            margin-bottom: 14px;
-        }
-
-        @media (max-width: 767px) {
-            .hf-why-grid {
+        @media (max-width: 991.98px) {
+            .hf-why-minimal-grid {
+                display: grid;
                 grid-template-columns: 1fr;
+                gap: 25px;
+                margin-top: 20px;
+                padding: 0 16px;
+                max-width: 640px;
             }
 
-            .doctor-arch-card {
-                border-radius: 160px 160px 20px 20px;
-                max-width: 380px;
-                margin: 0 auto;
+            .hf-why-minimal-item {
+                width: 100%;
+                text-align: center;
             }
 
-            .doctor-arch-card__imgwrap {
-                height: 320px;
-                border-radius: 0 !important;
+            .hf-why-minimal-title {
+                min-height: auto;
+                margin-bottom: 12px;
             }
 
-            .hf-concerns-visual {
-                border-radius: 160px 160px 20px 20px;
-                max-width: 380px;
-                margin: 0 auto;
-            }
-
-            .hf-concerns-visual__imgwrap {
-                height: 320px;
-                border-radius: 0 !important;
+            .hf-why-minimal-divider {
+                max-width: 420px;
+                margin: 0 auto 14px auto;
             }
         }
 
@@ -961,7 +943,7 @@
         /* Left Editorial Visual Card */
         .hf-concerns-visual {
             position: relative;
-            background: #FFFFFF;
+            background: #FAF9F6;
             border: 1px solid rgba(196, 146, 74, 0.28);
             border-radius: 200px 200px 24px 24px;
             overflow: hidden;
@@ -1040,193 +1022,116 @@
             border-radius: 999px;
         }
 
-        /* Right Editorial List */
-        .hf-concerns-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .hf-concern-row {
-            position: relative;
-            background: rgba(255, 255, 255, 0.6);
-            border: 1px solid rgba(196, 146, 74, 0.2);
-            border-radius: 18px;
-            padding: 18px 22px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 18px;
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            cursor: default;
-        }
-
-        .hf-concern-row:hover {
-            background: #FFFFFF;
-            border-color: rgba(196, 146, 74, 0.55);
-            transform: translateX(6px);
-            box-shadow: 0 12px 32px rgba(43, 26, 18, 0.08);
-        }
-
-        .hf-concern-row__left {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            flex-grow: 1;
-        }
-
-        .hf-concern-row__num {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #C4924A;
-            opacity: 0.65;
-            min-width: 26px;
-            transition: opacity 0.3s ease, color 0.3s ease;
-        }
-
-        .hf-concern-row:hover .hf-concern-row__num {
-            opacity: 1;
-            color: #8B5E2A;
-        }
-
-        .hf-concern-row__icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            background: rgba(196, 146, 74, 0.1);
-            border: 1px solid rgba(196, 146, 74, 0.25);
-            color: #8B5E2A;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            transition: all 0.35s ease;
-        }
-
-        .hf-concern-row__icon svg {
-            width: 20px;
-            height: 20px;
-            stroke: currentColor;
-        }
-
-        .hf-concern-row:hover .hf-concern-row__icon {
-            background: linear-gradient(135deg, #4b2b20 0%, #8b4513 100%);
-            color: #FFFFFF;
-            border-color: #E8C99A;
-            transform: scale(1.06) rotate(4deg);
-            box-shadow: 0 6px 18px rgba(139, 94, 42, 0.25);
-        }
-
-        .hf-concern-row__text {
-            flex-grow: 1;
-        }
-
-        .hf-concern-row__title {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.18rem;
-            font-weight: 600;
-            color: #2B1A12;
-            margin-bottom: 4px;
-            line-height: 1.3;
-            transition: color 0.3s ease;
-        }
-
-        .hf-concern-row:hover .hf-concern-row__title {
-            color: #8B5E2A;
-        }
-
-        .hf-concern-row__desc {
-            font-size: 0.88rem;
-            line-height: 1.55;
-            color: #5C4A3A;
-            margin-bottom: 0;
-        }
-
-        .hf-concern-row__right {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-shrink: 0;
-        }
-
-        .hf-concern-row__tag {
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.03em;
-            color: #8B5E2A;
-            background: rgba(196, 146, 74, 0.08);
-            border: 1px solid rgba(196, 146, 74, 0.22);
-            padding: 5px 12px;
-            border-radius: 999px;
-            white-space: nowrap;
-            transition: all 0.3s ease;
-        }
-
-        .hf-concern-row:hover .hf-concern-row__tag {
-            background: rgba(196, 146, 74, 0.16);
-            border-color: rgba(196, 146, 74, 0.45);
-            color: #4B2B20;
-        }
-
-        .hf-concern-row__arrow {
-            color: rgba(196, 146, 74, 0.45);
-            font-size: 1.1rem;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-
-        .hf-concern-row:hover .hf-concern-row__arrow {
-            color: #8B5E2A;
-            transform: translateX(4px);
-        }
-
-        @media (max-width: 767px) {
-            .hf-concern-row {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 14px;
-                padding: 18px 16px;
-            }
-
-            .hf-concern-row__right {
-                width: 100%;
-                justify-content: space-between;
-            }
-        }
-
-        /* Maintenance & Longevity Banner */
-        .hf-maintenance-banner {
-            position: relative;
-            background: #FFFFFF;
-            border: 1px solid rgba(196, 146, 74, 0.32);
-            border-radius: 24px;
-            padding: clamp(30px, 3.8vw, 44px);
-            box-shadow: 0 16px 40px rgba(43, 26, 18, 0.05);
+        /* ── Minimal Open Editorial Concerns (No Cards) ── */
+        .hf-concerns-minimal-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: clamp(16px, 2.2vw, 28px);
             margin-top: 36px;
-            max-width: 1200px;
+            max-width: 1280px;
             margin-left: auto;
             margin-right: auto;
-            overflow: hidden;
-            z-index: 1;
         }
 
-        .hf-maintenance-banner::before {
-            content: "";
-            position: absolute;
-            top: -40%;
-            right: -8%;
-            width: 320px;
-            height: 320px;
-            background: radial-gradient(circle, rgba(196, 146, 74, 0.12) 0%, transparent 70%);
-            pointer-events: none;
+        .hf-concern-minimal-item {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            position: relative;
+        }
+
+        .hf-concern-minimal-title {
+            font-family: var(--serif, 'Playfair Display', Georgia, serif);
+            font-style: italic;
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: #4b2b20;
+            letter-spacing: 0.01em;
+            margin: 0 0 14px 0;
+            min-height: 44px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .hf-concern-minimal-divider {
+            width: 100%;
+            height: 1px;
+            background: rgba(75, 43, 32, 0.35);
+            margin-bottom: 16px;
+        }
+
+        .hf-concern-minimal-desc {
+            font-family: var(--sans, 'Inter', system-ui, sans-serif);
+            font-size: 0.88rem;
+            line-height: 1.68;
+            color: #5C4A3A;
+            margin: 0 0 16px 0;
+            flex-grow: 1;
+        }
+
+        .hf-concern-minimal-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: #8B5E2A;
+            background: rgba(196, 146, 74, 0.1);
+            border: 1px solid rgba(196, 146, 74, 0.25);
+            padding: 4px 12px;
+            border-radius: 999px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 991.98px) {
+            .hf-concerns-minimal-grid {
+                display: flex;
+                overflow-x: auto;
+                overflow-y: hidden;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                gap: 20px;
+                padding: 10px 24px 20px;
+                margin-top: 24px;
+                margin-left: -16px;
+                margin-right: -16px;
+            }
+
+            .hf-concerns-minimal-grid::-webkit-scrollbar {
+                display: none;
+            }
+
+            .hf-concern-minimal-item {
+                flex: 0 0 clamp(250px, 75vw, 300px);
+                scroll-snap-align: center;
+                text-align: center;
+                padding: 4px 8px;
+            }
+
+            .hf-concern-minimal-title {
+                min-height: auto;
+                margin-bottom: 12px;
+            }
+        }
+
+        /* ── Open Editorial Skin Maintenance (No Card) ── */
+        .hf-maintenance-editorial {
+            position: relative;
+            margin-top: 10px;
+            padding-top: clamp(32px, 4vw, 48px);
+            border-top: 1px solid rgba(75, 43, 32, 0.25);
+            max-width: 960px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hf-maintenance-badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: rgba(196, 146, 74, 0.12);
-            border: 1px solid rgba(196, 146, 74, 0.3);
+            background: rgba(196, 146, 74, 0.1);
+            border: 1px solid rgba(196, 146, 74, 0.25);
             border-radius: 999px;
             padding: 5px 14px;
             font-size: 11px;
@@ -1238,17 +1143,19 @@
         }
 
         .hf-maintenance-title {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: clamp(1.4rem, 2.2vw, 1.85rem);
-            font-weight: 600;
-            color: #2B1A12;
+            font-family: var(--serif, 'Playfair Display', Georgia, serif);
+            font-style: italic;
+            font-size: clamp(1.4rem, 2.5vw, 1.95rem);
+            font-weight: 500;
+            color: #4b2b20;
             margin-bottom: 10px;
             line-height: 1.25;
         }
 
         .hf-maintenance-desc {
+            font-family: var(--sans, 'Inter', system-ui, sans-serif);
             font-size: 0.95rem;
-            line-height: 1.7;
+            line-height: 1.75;
             color: #5C4A3A;
             margin-bottom: 0;
         }
@@ -1261,7 +1168,7 @@
             background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%) !important;
             isolation: isolate;
             overflow: hidden;
-            color: #FFFFFF !important;
+            color: #FAF9F6 !important;
         }
 
         .hf-protocol-section::before {
@@ -1296,13 +1203,13 @@
         }
 
         .hf-protocol-section .hf-heading {
-            color: #FFFFFF !important;
-            -webkit-text-fill-color: #FFFFFF !important;
+            color: #FAF9F6 !important;
+            -webkit-text-fill-color: #FAF9F6 !important;
             text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
         }
 
         .hf-protocol-section .hf-lead {
-            color: rgba(255, 255, 255, 0.92) !important;
+            color: #FAF9F6;
             text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
         }
 
@@ -1323,7 +1230,7 @@
             height: 44px;
             border-radius: 50%;
             background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%);
-            color: #FFFFFF;
+            color: #FAF9F6;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1355,8 +1262,8 @@
             font-family: 'Playfair Display', Georgia, serif;
             font-size: 1.2rem;
             font-weight: 600;
-            color: #FFFFFF !important;
-            -webkit-text-fill-color: #FFFFFF !important;
+            color: #FAF9F6 !important;
+            -webkit-text-fill-color: #FAF9F6 !important;
             margin-bottom: 6px;
         }
 
@@ -1367,45 +1274,76 @@
             margin-bottom: 0;
         }
 
-        /* ── Results Badges ── */
-        .hf-result-badge {
-            background: #FFFFFF;
-            border: 1px solid var(--hf-border);
-            border-radius: 14px;
-            padding: 16px 20px;
+        /* ── Open Editorial Results Checklist (No Boxes, Compact & Space-Efficient) ── */
+        .hf-results-editorial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px 28px;
+            max-width: 820px;
+            margin: 0 auto clamp(24px, 3.5vw, 36px) auto;
+            padding: 0 12px;
+        }
+
+        .hf-result-editorial-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 0.95rem;
+            gap: 10px;
+            font-size: 1rem;
             font-weight: 500;
-            color: var(--hf-ink);
-            box-shadow: 0 4px 14px rgba(43, 26, 18, 0.03);
-            transition: transform 0.25s ease, border-color 0.25s ease;
+            color: #2B2B2B;
+            line-height: 1.4;
+            padding: 6px 0;
+            transition: transform 0.2s ease, color 0.2s ease;
         }
 
-        .hf-result-badge:hover {
-            transform: translateY(-2px);
-            border-color: #C4924A;
+        .hf-result-editorial-item:hover {
+            color: #8B5E2A;
+            transform: translateX(3px);
         }
 
-        .hf-result-badge svg {
+        .hf-result-editorial-item svg {
             color: #8B5E2A;
             flex-shrink: 0;
+            width: 20px;
+            height: 20px;
         }
 
-        /* ── Full-Width Pre-Event Section (Matching index.html Philosophy Style) ── */
-        .hf-event-section {
+        @media (max-width: 767px) {
+            .hf-results-editorial-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px 14px;
+                max-width: 100%;
+                padding: 0 6px;
+            }
+
+            .hf-result-editorial-item {
+                font-size: 0.92rem;
+                gap: 8px;
+            }
+
+            .hf-result-editorial-item svg {
+                width: 18px;
+                height: 18px;
+            }
+
+            .hf-results-editorial-grid .hf-result-editorial-item:last-child {
+                grid-column: 1 / -1;
+                justify-content: center;
+            }
+        }
+
+        /* ── Related Services Section (Why D'Zen Philosophy Style & Horizontal Scroll) ── */
+        html body #related-services.hf-related-section {
             position: relative;
             background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%) !important;
             isolation: isolate;
             overflow: hidden;
-            color: #FFFFFF !important;
-            padding: clamp(75px, 8vw, 110px) 0;
-            width: 100%;
+            color: #FAF9F6 !important;
+            padding: 50px 0 70px;
         }
 
-        .hf-event-section::before {
-            content: '';
+        html body #related-services.hf-related-section::before {
+            content: "";
             position: absolute;
             inset: 0;
             background:
@@ -1415,7 +1353,7 @@
             z-index: 0;
         }
 
-        .hf-event-section::after {
+        html body #related-services.hf-related-section::after {
             content: "";
             position: absolute;
             inset: 0;
@@ -1426,67 +1364,218 @@
             mix-blend-mode: overlay;
         }
 
-        .hf-event-section .container {
+        html body #related-services .container {
             position: relative;
             z-index: 2;
         }
 
-        .hf-event-card {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(232, 201, 154, 0.35);
-            border-radius: 22px;
-            padding: 28px 24px;
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
-            position: relative;
-            z-index: 1;
+        html body #related-services .hf-eyebrow {
+            color: #FAF9F6 !important;
+            -webkit-text-fill-color: #FAF9F6 !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.12em !important;
+            display: inline-block;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
         }
 
-        .hf-event-timing-badge {
+        html body #related-services .hf-heading {
+            color: #FAF9F6 !important;
+            -webkit-text-fill-color: #FAF9F6 !important;
+            text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+        }
+
+        html body #related-services .hf-heading .scribble,
+        html body #related-services h2 .scribble,
+        html body #related-services .scribble {
+            color: #E8C99A !important;
+            -webkit-text-fill-color: #E8C99A !important;
+            background: none !important;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+        }
+
+        html body #related-services .hf-lead,
+        html body #related-services p.hf-lead {
+            color: #FAF9F6;
+            -webkit-text-fill-color: #FAF9F6;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        html body #related-services .nemonic-line {
+            background: rgba(232, 201, 154, 0.6) !important;
+        }
+
+        html body #related-services .nemonic-icon {
+            filter: brightness(0) invert(1) !important;
+        }
+
+        html body #related-services .hf-related-scroll-container {
+            position: relative;
+            margin-top: 15px;
+        }
+
+        html body #related-services .hf-related-track {
+            display: flex;
+            gap: 22px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            padding: 12px 4px 10px 4px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        html body #related-services .hf-related-track::-webkit-scrollbar {
+            display: none !important;
+            height: 0 !important;
+            width: 0 !important;
+        }
+
+        html body #related-services .hf-related-card {
+            flex: 0 0 310px;
+            max-width: 310px;
+            scroll-snap-align: start;
+            background: rgba(255, 255, 255, 0.08) !important;
+            border: 1px solid rgba(232, 201, 154, 0.35) !important;
+            border-radius: 20px;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            padding: 26px 22px 24px 22px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: none !important;
+            transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease, border-color 0.3s ease;
+            text-decoration: none !important;
+        }
+
+        html body #related-services .hf-related-card:hover {
+            transform: translateY(-6px);
+            background: rgba(255, 255, 255, 0.14) !important;
+            border-color: #E8C99A !important;
+            box-shadow: none !important;
+        }
+
+        html body #related-services .hf-related-card__tag {
+            font-size: 11px !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.1em !important;
+            text-transform: uppercase !important;
+            color: #E8C99A !important;
+            -webkit-text-fill-color: #E8C99A !important;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        html body #related-services .hf-related-card__title,
+        html body #related-services .hf-related-card h3 {
+            font-family: var(--serif, 'Playfair Display', Georgia, serif) !important;
+            font-style: italic !important;
+            font-size: 1.1rem !important;
+            font-weight: 500 !important;
+            color: #FAF9F6 !important;
+            -webkit-text-fill-color: #FAF9F6 !important;
+            margin-bottom: 0 !important;
+            line-height: 1.25 !important;
+            display: flex;
+            align-items: flex-start;
+            transition: color 0.25s ease;
+        }
+
+        html body #related-services .hf-related-card:hover .hf-related-card__title {
+            color: #F8E2C8 !important;
+            -webkit-text-fill-color: #F8E2C8 !important;
+        }
+
+        html body #related-services .hf-related-card__divider {
+            width: 100%;
+            height: 1px;
+            background: rgba(232, 201, 154, 0.4) !important;
+            margin: 14px 0 16px 0;
+        }
+
+        html body #related-services .hf-related-card__desc,
+        html body #related-services .hf-related-card p,
+        html body #related-services a.hf-related-card p {
+            font-family: var(--sans, 'Inter', system-ui, sans-serif) !important;
+            font-size: 0.93rem !important;
+            line-height: 1.7 !important;
+            color: #FAF9F6 !important;
+            -webkit-text-fill-color: #FAF9F6 !important;
+            opacity: 0.92 !important;
+            margin-bottom: 20px !important;
+            min-height: 4.8em;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex-grow: 1;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        html body #related-services .hf-related-card__action,
+        html body #related-services .hf-related-card span.hf-related-card__action {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: rgba(232, 201, 154, 0.18);
-            border: 1px solid rgba(232, 201, 154, 0.45);
-            border-radius: 999px;
-            padding: 5px 14px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: #F8E2C8;
-            margin-bottom: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #FAF9F6 !important;
+            -webkit-text-fill-color: #FAF9F6 !important;
+            letter-spacing: 0.02em;
+            transition: gap 0.25s ease, color 0.25s ease;
         }
 
-        .hf-event-checklist {
-            display: flex;
-            flex-direction: column;
+        html body #related-services .hf-related-card:hover .hf-related-card__action {
             gap: 10px;
-            margin-top: 18px;
-            padding-top: 16px;
-            border-top: 1px solid rgba(232, 201, 154, 0.2);
-            text-align: left;
+            color: #FAF9F6 !important;
+            -webkit-text-fill-color: #FAF9F6 !important;
         }
 
-        .hf-event-check-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.88rem;
-            color: #FFFFFF !important;
-            -webkit-text-fill-color: #FFFFFF !important;
+        html body #related-services .hf-related-card__action svg {
+            stroke: #FAF9F6 !important;
+            transition: stroke 0.25s ease;
         }
 
-        .hf-event-check-icon {
-            color: #E8C99A !important;
-            font-size: 12px;
-            flex-shrink: 0;
+        html body #related-services .hf-related-card:hover .hf-related-card__action svg {
+            stroke: #FAF9F6 !important;
+        }
+
+        @media (max-width: 767px) {
+            html body #related-services .hf-related-track {
+                gap: 16px;
+                padding-left: 16px;
+                padding-right: 16px;
+                padding-bottom: 8px;
+                margin-left: -12px;
+                margin-right: -12px;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+
+            html body #related-services .hf-related-track::-webkit-scrollbar {
+                display: none !important;
+                height: 0 !important;
+                width: 0 !important;
+            }
+
+            html body #related-services .hf-related-card {
+                flex: 0 0 270px;
+                max-width: 270px;
+                padding: 22px 18px;
+            }
+
+            html body #related-services .hf-related-card__title {
+                font-size: 1.22rem !important;
+            }
+
+            html body #related-services .hf-related-card__desc {
+                font-size: 0.88rem !important;
+            }
         }
 
         /* ── FAQ Accordion ── */
         .hf-faq-item {
-            background: #FFFFFF;
+            background: #FAF9F6;
             border: 1px solid var(--hf-border);
             border-radius: 16px;
             margin-bottom: 14px;
@@ -1535,7 +1624,7 @@
         details[open] .hf-faq-icon {
             transform: rotate(45deg);
             background: #8B5E2A;
-            color: #FFFFFF;
+            color: #FAF9F6;
         }
 
         .hf-faq-body {
@@ -1561,7 +1650,7 @@
             }
         }
 
-        /* ── Before / After Interactive Reveal Sliders ── */
+        /* ── Before / After Results Gallery ── */
         .rg-item.is-filtered {
             display: none !important;
         }
@@ -1584,126 +1673,83 @@
 
         .rg-ba {
             position: relative;
-            aspect-ratio: 4 / 5;
+            width: 100%;
+            aspect-ratio: 16 / 10;
             overflow: hidden;
-            border-radius: 20px;
-            background: rgba(196, 146, 74, .06);
-            border: 1px solid rgba(196, 146, 74, 0.28);
-            box-shadow: 0 12px 35px rgba(43, 26, 18, 0.08);
-            --pos: 50%;
+            border-radius: 20px !important;
+            border: 1.5px solid rgba(196, 146, 74, 0.32);
+            background: #140B07;
+            box-shadow: none !important;
             margin: 0;
+            cursor: default !important;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+        }
+
+        .rg-ba:hover {
+            transform: translateY(-5px);
+            border-color: #C4924A;
+            box-shadow: none !important;
         }
 
         .rg-ba img {
-            position: absolute;
-            inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
-        }
-
-        .rg-ba__before {
-            position: absolute;
-            inset: 0;
-            clip-path: inset(0 calc(100% - var(--pos)) 0 0);
-        }
-
-        .rg-ba__divider {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: var(--pos);
-            width: 2px;
-            margin-left: -1px;
-            background: rgba(255, 255, 255, .95);
-            box-shadow: 0 0 12px rgba(43, 26, 18, .35);
+            border-radius: 20px !important;
             pointer-events: none;
-        }
-
-        .rg-ba__knob {
-            position: absolute;
-            top: 50%;
-            left: var(--pos);
-            width: 38px;
-            height: 38px;
-            margin: -19px 0 0 -19px;
-            border-radius: 50%;
-            background: #ffffff;
-            box-shadow: 0 4px 16px rgba(43, 26, 18, .35);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--hf-ink);
-            pointer-events: none;
-        }
-
-        .rg-ba__knob svg {
-            width: 18px;
-            height: 18px;
-        }
-
-        .rg-ba__range {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            opacity: 0;
-            cursor: ew-resize;
-            -webkit-appearance: none;
-            appearance: none;
-            background: none;
-            z-index: 5;
-        }
-
-        .rg-ba__tag {
-            position: absolute;
-            top: 14px;
-            padding: 5px 14px;
-            border-radius: 999px;
-            background: rgba(43, 26, 18, .75);
-            -webkit-backdrop-filter: blur(6px);
-            backdrop-filter: blur(6px);
-            font-family: 'Inter', system-ui, sans-serif;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 1.4px;
-            text-transform: uppercase;
-            color: #ffffff;
-            pointer-events: none;
-            z-index: 4;
-        }
-
-        .rg-ba__tag--before {
-            left: 14px;
-        }
-
-        .rg-ba__tag--after {
-            right: 14px;
         }
 
         .rg-item__meta {
-            padding-top: 16px;
-            text-align: center;
+            display: none !important;
         }
 
-        .rg-item__title {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.18rem;
-            font-weight: 600;
-            color: var(--hf-ink);
-            margin: 0 0 4px;
-        }
+        @media (max-width: 991.98px) {
 
-        .rg-item__note {
-            font-family: 'Inter', system-ui, sans-serif;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-            color: var(--hf-gold);
-            margin: 0;
+            #before-after .rg-gallery-grid,
+            .rg-gallery .rg-gallery-grid,
+            #before-after [data-grid] {
+                display: flex !important;
+                flex-direction: row !important;
+                flex-wrap: nowrap !important;
+                justify-content: flex-start !important;
+                align-items: stretch !important;
+                overflow-x: auto !important;
+                overflow-y: hidden !important;
+                scroll-snap-type: x mandatory !important;
+                scroll-padding-left: 20px !important;
+                scroll-padding-right: 20px !important;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                gap: 16px !important;
+                padding: 25px 20px 24px !important;
+                margin-left: -16px !important;
+                margin-right: -16px !important;
+                width: calc(100% + 32px) !important;
+                margin-bottom: 14px !important;
+            }
+
+            #before-after .rg-gallery-grid::-webkit-scrollbar,
+            .rg-gallery .rg-gallery-grid::-webkit-scrollbar,
+            #before-after [data-grid]::-webkit-scrollbar {
+                display: none !important;
+            }
+
+            #before-after .rg-item,
+            .rg-gallery .rg-item {
+                flex: 0 0 clamp(280px, 84vw, 360px) !important;
+                scroll-snap-align: start !important;
+                max-width: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            #before-after .rg-ba,
+            .rg-gallery .rg-ba {
+                aspect-ratio: 16 / 10 !important;
+                min-height: auto !important;
+                border-radius: 20px !important;
+            }
         }
 
         .rg-filters-wrap {
@@ -1723,7 +1769,7 @@
             letter-spacing: 0.04em;
             text-transform: uppercase;
             border: 1px solid rgba(196, 146, 74, 0.25);
-            background: #FFFFFF;
+            background: #FAF9F6;
             color: #5C4A3A;
             cursor: pointer;
             transition: all 0.25s ease;
@@ -1732,7 +1778,7 @@
         .rg-tab-btn.active,
         .rg-tab-btn:hover {
             background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%);
-            color: #FFFFFF;
+            color: #FAF9F6;
             border-color: #E8C99A;
         }
 
@@ -1775,72 +1821,130 @@
         .hf-video-section,
         #video-showcase {
             background: linear-gradient(to top, #F4EFE8, #FDF8F3) !important;
-            padding: clamp(60px, 7vw, 100px) 0;
+            padding: 50px 0;
             position: relative;
             overflow: hidden;
         }
 
         .hf-video-filter-bar {
             display: flex;
-            align-items: center;
             justify-content: center;
-            gap: 10px;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
+            margin-bottom: clamp(24px, 3.5vw, 36px);
+        }
+
+        .hf-video-filter-bar__pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #FAF9F6;
+            border: 1px solid #E8DAC2;
+            border-radius: 999px;
+            padding: 5px;
+            box-shadow: 0 4px 16px -4px rgba(31, 26, 20, 0.08);
+            max-width: 100%;
         }
 
         .hf-vtab-btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 10px 22px;
+            gap: 10px;
+            padding: 8px 18px 8px 8px;
+            border: none;
+            background: transparent;
             border-radius: 999px;
-            font-size: 13px;
-            font-weight: 600;
-            color: #5C4A3A;
-            background: #FFFFFF;
-            border: 1px solid rgba(196, 146, 74, 0.28);
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 2px 8px rgba(43, 26, 18, 0.04);
+            transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
         }
 
         .hf-vtab-btn:hover {
-            border-color: #C4924A;
-            color: #2B1A12;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(43, 26, 18, 0.08);
+            background: #FBF7F1;
         }
 
         .hf-vtab-btn.active {
-            background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%);
-            color: #FFFFFF !important;
-            border-color: #E8C99A;
-            box-shadow: 0 6px 20px rgba(43, 26, 18, 0.22);
+            background: #F4ECDF !important;
+            box-shadow: 0 2px 8px -2px rgba(31, 26, 20, 0.1) !important;
         }
 
-        .hf-vtab-btn.active svg {
-            color: #E8C99A !important;
-        }
-
-        .hf-vtab-count {
-            display: inline-flex;
+        .hf-vtab-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
             align-items: center;
             justify-content: center;
-            min-width: 20px;
-            height: 20px;
-            padding: 0 6px;
-            border-radius: 999px;
-            font-size: 11px;
-            font-weight: 700;
-            background: rgba(196, 146, 74, 0.15);
-            color: #8B5E2A;
-            transition: background 0.3s, color 0.3s;
+            flex-shrink: 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .hf-vtab-btn.active .hf-vtab-count {
-            background: rgba(255, 255, 255, 0.22);
-            color: #FFFFFF;
+        .hf-vtab-icon--insta {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            color: #ffffff;
+            box-shadow: 0 3px 10px rgba(214, 36, 159, 0.35);
+        }
+
+        .hf-vtab-icon--youtube {
+            background: #FF0000;
+            color: #ffffff;
+            box-shadow: 0 3px 10px rgba(255, 0, 0, 0.35);
+        }
+
+        .hf-vtab-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: #ffffff;
+        }
+
+        .hf-vtab-btn.active .hf-vtab-icon {
+            transform: scale(1.08);
+        }
+
+        .hf-vtab-info {
+            text-align: left;
+            line-height: 1.25;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hf-vtab-name {
+            font-family: var(--serif, "Playfair Display", Georgia, serif);
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #1F1A14;
+            display: block;
+        }
+
+        .hf-vtab-role {
+            font-family: var(--sans, "Inter", system-ui, sans-serif);
+            font-size: 10.5px;
+            font-weight: 500;
+            color: #8E7858;
+            display: block;
+            letter-spacing: 0.02em;
+        }
+
+        @media (max-width: 767.98px) {
+            .hf-vtab-btn {
+                padding: 6px 14px 6px 6px;
+                gap: 8px;
+            }
+
+            .hf-vtab-icon {
+                width: 32px;
+                height: 32px;
+            }
+
+            .hf-vtab-icon svg {
+                width: 16px;
+                height: 16px;
+            }
+
+            .hf-vtab-name {
+                font-size: 12.5px;
+            }
+
+            .hf-vtab-role {
+                font-size: 9.5px;
+            }
         }
 
         #video-showcase .hf-video-grid,
@@ -1854,37 +1958,54 @@
             margin-bottom: 40px !important;
         }
 
-        @media (max-width: 991px) {
+        @media (max-width: 991.98px) {
 
             #video-showcase .hf-video-grid,
             .hf-video-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-                gap: 22px !important;
+                display: flex !important;
+                flex-direction: row !important;
+                flex-wrap: nowrap !important;
+                justify-content: flex-start !important;
+                align-items: stretch !important;
+                overflow-x: auto !important;
+                overflow-y: hidden !important;
+                scroll-snap-type: x mandatory !important;
+                scroll-padding-left: 20px !important;
+                scroll-padding-right: 20px !important;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                gap: 16px !important;
+                padding: 10px 20px 10px !important;
+                margin-left: -16px !important;
+                margin-right: -16px !important;
+                width: calc(100% + 32px) !important;
+                margin-bottom: 0px !important;
             }
-        }
 
-        @media (max-width: 600px) {
-
-            #video-showcase .hf-video-grid,
-            .hf-video-grid {
-                grid-template-columns: 1fr !important;
-                gap: 24px !important;
+            #video-showcase .hf-video-grid::-webkit-scrollbar,
+            .hf-video-grid::-webkit-scrollbar {
+                display: none !important;
             }
 
             #video-showcase .hf-vcard,
             .hf-vcard {
-                max-width: 360px !important;
-                margin-left: auto !important;
-                margin-right: auto !important;
-                min-height: 420px !important;
+                flex: 0 0 clamp(230px, 70vw, 285px) !important;
+                scroll-snap-align: start !important;
+                max-width: none !important;
+                margin: 0 !important;
+                aspect-ratio: 9 / 14 !important;
+                min-height: 360px !important;
+                border-radius: 200px 200px 18px 18px !important;
             }
 
             #video-showcase .hf-vcard[data-type="youtube"],
             #video-showcase .hf-vcard--youtube,
             .hf-vcard[data-type="youtube"],
             .hf-vcard--youtube {
-                max-width: 100% !important;
-                min-height: 200px !important;
+                flex: 0 0 clamp(280px, 85vw, 360px) !important;
+                aspect-ratio: 16 / 9 !important;
+                min-height: 195px !important;
+                border-radius: 20px !important;
             }
         }
 
@@ -1894,19 +2015,25 @@
             width: 100% !important;
             min-width: 0 !important;
             background: #140B07 !important;
-            border-radius: 20px !important;
+            border-radius: 200px 200px 18px 18px !important;
             overflow: hidden !important;
-            border: 1.5px solid rgba(196, 146, 74, 0.35) !important;
-            box-shadow: 0 12px 35px rgba(43, 26, 18, 0.1) !important;
+            border: 1.5px solid #24140D !important;
+            box-shadow: 0 10px 30px rgba(43, 26, 18, 0.12) !important;
             cursor: pointer !important;
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease !important;
             display: flex;
             flex-direction: column !important;
-            justify-content: space-between !important;
+            justify-content: center !important;
+            align-items: center !important;
             aspect-ratio: 9 / 14 !important;
             min-height: 360px !important;
             isolation: isolate !important;
             -webkit-mask-image: -webkit-radial-gradient(white, black);
+        }
+
+        #video-showcase .hf-vcard.is-hidden,
+        .hf-vcard.is-hidden {
+            display: none !important;
         }
 
         #video-showcase .hf-vcard[data-type="youtube"],
@@ -1918,28 +2045,10 @@
             border-radius: 20px !important;
         }
 
-        .hf-vcard[data-type="youtube"] .hf-vcard__play,
-        .hf-vcard--youtube .hf-vcard__play {
-            width: 58px;
-            height: 40px;
-            border-radius: 12px;
-            background: rgba(255, 0, 0, 0.92);
-            color: #FFFFFF;
-            border: 1.5px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        .hf-vcard[data-type="youtube"]:hover .hf-vcard__play,
-        .hf-vcard--youtube:hover .hf-vcard__play {
-            background: #FF0000;
-            transform: scale(1.1);
-            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.5);
-        }
-
         .hf-vcard:hover {
             transform: translateY(-6px);
-            border-color: #E8C99A;
-            box-shadow: 0 20px 50px rgba(43, 26, 18, 0.18);
+            border-color: #C4924A !important;
+            box-shadow: 0 20px 50px rgba(43, 26, 18, 0.2) !important;
         }
 
         #video-showcase .hf-vcard__poster,
@@ -1949,132 +2058,64 @@
             width: 100% !important;
             height: 100% !important;
             object-fit: cover !important;
-            border-radius: 20px !important;
+            border-radius: inherit !important;
             transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
         }
 
         .hf-vcard:hover .hf-vcard__poster {
-            transform: scale(1.06);
+            transform: scale(1.05);
         }
 
         .hf-vcard::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, transparent 50%, rgba(0, 0, 0, 0.2) 100%);
-            pointer-events: none;
-            z-index: 1;
+            display: none !important;
         }
 
         .hf-vcard__top {
-            position: relative;
-            z-index: 2;
-            padding: 14px 16px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-        }
-
-        .hf-vbadge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 12px;
-            border-radius: 999px;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            color: #FFFFFF;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-        }
-
-        .hf-vbadge--insta {
-            background: linear-gradient(45deg, rgba(240, 148, 51, 0.9), rgba(230, 104, 60, 0.9), rgba(220, 39, 67, 0.9), rgba(204, 35, 102, 0.9), rgba(188, 24, 136, 0.9));
-        }
-
-        .hf-vbadge--yt {
-            background: rgba(255, 0, 0, 0.88);
-        }
-
-        .hf-vcard__duration {
-            font-size: 11px;
-            font-weight: 600;
-            color: #FFFFFF;
-            background: rgba(0, 0, 0, 0.55);
-            padding: 4px 9px;
-            border-radius: 6px;
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            display: none !important;
         }
 
         .hf-vcard__play-wrap {
-            position: absolute;
-            top: 48%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
-            pointer-events: none;
+            position: absolute !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            z-index: 3 !important;
+            pointer-events: none !important;
         }
 
         .hf-vcard__play {
-            width: 62px;
-            height: 62px;
-            border-radius: 50%;
-            background: rgba(253, 248, 243, 0.95);
-            color: #4B2B20;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
-            border: 2px solid rgba(232, 201, 154, 0.85);
-            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, box-shadow 0.3s ease;
+            width: 58px !important;
+            height: 58px !important;
+            border-radius: 50% !important;
+            background: #FAF9F6 !important;
+            color: #24140D !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+            border: none !important;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease !important;
         }
 
         .hf-vcard__play svg {
-            width: 24px;
-            height: 24px;
-            margin-left: 3px;
+            width: 18px !important;
+            height: 18px !important;
+            margin-left: 3px !important;
+            fill: #24140D !important;
         }
 
         .hf-vcard:hover .hf-vcard__play {
-            transform: scale(1.14);
-            background: #FFFFFF;
-            box-shadow: 0 0 28px rgba(232, 201, 154, 0.85);
+            transform: scale(1.1) !important;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3) !important;
         }
 
         .hf-vcard__bottom {
-            position: relative;
-            z-index: 2;
-            padding: 20px;
-        }
-
-        .hf-vcard__title {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: #FFFFFF;
-            line-height: 1.35;
-            margin-bottom: 6px;
-            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-        }
-
-        .hf-vcard__meta {
-            font-size: 12px;
-            font-weight: 500;
-            color: rgba(253, 248, 243, 0.82);
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            display: none !important;
         }
 
         /* ── Social Hub Connect Banner ── */
         .hf-social-hub {
-            background: #FFFFFF;
+            background: #FAF9F6;
             border: 1px solid rgba(196, 146, 74, 0.3);
             border-radius: 22px;
             padding: clamp(26px, 4vw, 34px) clamp(22px, 4vw, 38px);
@@ -2122,7 +2163,7 @@
 
         .hf-social-btn--insta {
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            color: #FFFFFF !important;
+            color: #FAF9F6 !important;
             box-shadow: 0 4px 15px rgba(220, 39, 67, 0.28);
         }
 
@@ -2133,7 +2174,7 @@
 
         .hf-social-btn--yt {
             background: #FF0000;
-            color: #FFFFFF !important;
+            color: #FAF9F6 !important;
             box-shadow: 0 4px 15px rgba(255, 0, 0, 0.25);
         }
 
@@ -2197,7 +2238,7 @@
         .hf-vmodal__header-title {
             font-family: 'Playfair Display', Georgia, serif;
             font-size: 1.15rem;
-            color: #FFFFFF;
+            color: #FAF9F6;
             margin: 0;
             white-space: nowrap;
             overflow: hidden;
@@ -2214,7 +2255,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #FFFFFF;
+            color: #FAF9F6;
             cursor: pointer;
             transition: all 0.2s ease;
             flex-shrink: 0;
@@ -2258,6 +2299,273 @@
             flex-wrap: wrap;
             gap: 12px;
         }
+
+        .hf-vmodal__title-wrap {
+            overflow: hidden;
+        }
+
+        .hf-vmodal__cta {
+            padding: 9px 20px !important;
+            font-size: 13px !important;
+        }
+
+        .hf-vmodal__cta .btn-icon {
+            filter: brightness(0) invert(1) !important;
+        }
+
+        .hf-vmodal__social-btn {
+            padding: 8px 18px !important;
+            font-size: 12px !important;
+        }
+
+        /* ── Breadcrumb Hero Header Classes ── */
+        .hf-hero-header {
+            background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%), url('../images/contour-texture.webp') repeat;
+            background-blend-mode: multiply;
+            padding-top: 103px;
+            padding-bottom: 60px;
+            border-bottom: none;
+            overflow: hidden;
+        }
+
+        .hf-hero-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hf-hero-subtitle {
+            font-family: 'Inter', system-ui, sans-serif !important;
+            font-size: 11px !important;
+            font-weight: 600 !important;
+            letter-spacing: 3.4px !important;
+            text-transform: uppercase !important;
+            color: #FAF9F6 !important;
+            -webkit-text-fill-color: #FAF9F6 !important;
+            opacity: 0.85 !important;
+            display: block;
+            margin-bottom: 0;
+        }
+
+        .hf-hero-line {
+            background-color: rgba(255, 255, 255, 0.4) !important;
+        }
+
+        .hf-hero-icon {
+            filter: brightness(0) invert(1) !important;
+        }
+
+        .hf-hero-title {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-style: italic !important;
+            font-weight: 400 !important;
+            color: #FAF9F6 !important;
+            -webkit-text-fill-color: #FAF9F6 !important;
+            font-size: clamp(28px, 4vw, 50px) !important;
+            margin: 0;
+            line-height: 1.2;
+            text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+        }
+
+        .hf-hero-curve {
+            position: absolute;
+            width: 100%;
+            bottom: -1px;
+            left: 0;
+            z-index: 2;
+        }
+
+        .hf-hero-curve-svg {
+            display: block;
+            width: 100%;
+            height: clamp(36px, 4.2vw, 56px);
+        }
+
+        /* ── Editorial & Section Specific Classes ── */
+        .hf-section-desc {
+            max-width: 720px;
+            color: #5C4A3A;
+        }
+
+        .hf-section-desc--wide {
+            max-width: 760px;
+            color: #5C4A3A;
+        }
+
+        .hf-body-p {
+            color: var(--hf-body);
+            font-size: 0.98rem;
+            line-height: 1.72;
+        }
+
+        .hf-understanding-lead {
+            color: #4A3B32;
+        }
+
+        #understanding {
+            background: linear-gradient(to top, #F4EFE8, #FDF8F3);
+            padding: 50px 0px 70px;
+        }
+
+        #how-it-works {
+            background: #FAF7F2;
+            padding: 50px 0px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hf-why-section {
+            padding: 50px 0;
+            position: relative;
+            background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%), url('../images/contour-texture.webp') repeat;
+            background-blend-mode: multiply;
+        }
+
+        .hf-why-section .hf-eyebrow {
+            color: #E8C99A !important;
+            -webkit-text-fill-color: #E8C99A !important;
+        }
+
+        .hf-why-section .nemonic-line {
+            background: rgba(232, 201, 154, 0.45) !important;
+        }
+
+        .hf-why-section .nemonic-icon {
+            filter: brightness(0) invert(1) !important;
+        }
+
+        .hf-why-section .hf-heading {
+            color: #FAF9F6 !important;
+            -webkit-text-fill-color: #FAF9F6 !important;
+        }
+
+        .hf-why-section .scribble {
+            color: #E8C99A !important;
+            -webkit-text-fill-color: #E8C99A !important;
+        }
+
+        .hf-why-section .hf-lead {
+            color: #FAF9F6 !important;
+            -webkit-text-fill-color: #FAF9F6 !important;
+        }
+
+        .hf-concerns-section {
+            padding: 50px 0px !important;
+            background: #FDF8F3 !important;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hf-concerns-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        #results {
+            background: #FAF7F2;
+            padding: 0px 0px 70px;
+            position: relative;
+        }
+
+        .hf-results-notice-label {
+            font-weight: 500;
+            color: #4b2b20;
+        }
+
+        .hf-results-closing-text {
+            color: var(--hf-body);
+            font-size: 0.98rem;
+            line-height: 1.75;
+            margin-bottom: 0;
+        }
+
+        .hf-event-tagline {
+            font-size: 1.05rem;
+            font-style: italic;
+            color: #8B5E2A;
+            margin-bottom: 8px;
+        }
+
+        #before-after {
+            background: linear-gradient(to top, #F4EFE8, #FDF8F3);
+            padding: 40px 0px 50px;
+            position: relative;
+        }
+
+        .hf-results-cta-center {
+            margin: 0 auto;
+            display: inline-flex;
+        }
+
+        #video-showcase {
+            background: linear-gradient(to top, #F4EFE8, #FDF8F3) !important;
+        }
+
+        #faq {
+            background: #FAF7F2;
+            padding-top: 50px;
+        }
+
+        #locations {
+            background: #FAF7F2;
+            padding-top: 40px;
+        }
+
+        /* ── Nav & CTA Overrides ── */
+        .pnav__cta .btn-icon {
+            width: 12px;
+            height: 12px;
+            object-fit: contain;
+        }
+
+        html body .breadcrumb-header .section-subtitle,
+        html body .hf-hero-header .section-subtitle,
+        html body .hf-hero-subtitle,
+        html body .footer-cta-card .section-subtitle {
+            color: #FAF9F6 !important;
+            -webkit-text-fill-color: #FAF9F6 !important;
+            opacity: 0.95 !important;
+            letter-spacing: 3.4px !important;
+        }
+
+        html body .breadcrumb-header .nemonic-line,
+        html body .hf-hero-header .nemonic-line,
+        html body .footer-cta-card .nemonic-line {
+            background-color: #FAF9F6 !important;
+        }
+
+        html body .breadcrumb-header .nemonic-icon,
+        html body .hf-hero-header .nemonic-icon,
+        html body .footer-cta-card .nemonic-icon {
+            filter: brightness(0) invert(1) !important;
+        }
+
+        html body .footer-cta-card .scribble {
+            color: #FAF9F6 !important;
+            -webkit-text-fill-color: #FAF9F6 !important;
+        }
+
+        .footer-cta-btn {
+            margin: 0 auto;
+            display: inline-flex;
+            border-color: rgba(255, 255, 255, 0.5) !important;
+        }
+
+        .footer-cta-btn span {
+            color: #FAF9F6 !important;
+            -webkit-text-fill-color: #FAF9F6 !important;
+        }
+
+        .footer-cta-btn .btn-icon {
+            width: 14px;
+            height: 14px;
+            object-fit: contain;
+            filter: brightness(0) invert(1) !important;
+        }
+
+        .footer-contact-link {
+            text-decoration: none;
+            color: inherit;
+        }
     </style>
 </head>
 
@@ -2269,8 +2577,7 @@
         <div class="pnav__left">
             <a href="../newthree.html#book" class="pnav__cta">
                 Book
-                <img src="nemonic1.png" class="btn-icon" style="width: 12px; height: 12px; object-fit: contain;"
-                    alt="icon" />
+                <img src="nemonic1.png" class="btn-icon" alt="icon" />
             </a>
         </div>
 
@@ -2313,27 +2620,25 @@
         <!-- ═══════════════════════════════════════════════════════════
              1. BREADCRUMB HERO HEADER (Signature Dark Elegance)
              ═══════════════════════════════════════════════════════════ -->
-        <section class="breadcrumb-header position-relative d-flex align-items-center justify-content-center"
-            style="background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%), url('../images/contour-texture.webp') repeat; background-blend-mode: multiply; padding-top: 103px; padding-bottom: 60px; border-bottom: none; overflow: hidden;">
+        <section
+            class="breadcrumb-header hf-hero-header position-relative d-flex align-items-center justify-content-center">
 
-            <div class="container position-relative text-center" style="z-index: 2;">
-                <span class="section-subtitle" style="font-family: 'Inter', system-ui, sans-serif !important; font-size: 11px !important; font-weight: 600 !important; letter-spacing: 3.4px !important; text-transform: uppercase !important; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; opacity: 0.85 !important; display: block; margin-bottom: 0;">TREATMENTS</span>
+            <div class="container hf-hero-container">
+                <span class="section-subtitle hf-hero-subtitle" style="color:#FAF9F6 !important">TREATMENTS</span>
                 <div class="nemonic-separator mt-2 mb-4">
-                    <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
-                    <img src="logo-header.png" alt="nemonic" class="nemonic-icon"
-                        style="filter: brightness(0) invert(1);" />
-                    <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
+                    <div class="nemonic-line hf-hero-line"></div>
+                    <img src="logo-header.png" alt="nemonic" class="nemonic-icon hf-hero-icon" />
+                    <div class="nemonic-line hf-hero-line"></div>
                 </div>
-                <h1 class="page-title mb-3"
-                    style="font-family: 'Playfair Display', Georgia, serif !important; font-style: italic !important; font-weight: 400 !important; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; font-size: clamp(28px, 4vw, 50px) !important; margin: 0; line-height: 1.2; text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);">
+                <h1 class="page-title mb-3 hf-hero-title">
                     Hydrafacial
                 </h1>
             </div>
 
             <!-- Curvy Bottom Separator -->
-            <div class="position-absolute w-100" style="bottom: -1px; left: 0; z-index: 2;">
+            <div class="hf-hero-curve">
                 <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
-                    style="display: block; width: 100%; height: clamp(36px, 4.2vw, 56px);">
+                    class="hf-hero-curve-svg">
                     <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
                 </svg>
             </div>
@@ -2342,8 +2647,7 @@
         <!-- ═══════════════════════════════════════════════════════════
              2. UNDERSTANDING HYDRAFACIAL (With Roman Arch Frame)
              ═══════════════════════════════════════════════════════════ -->
-        <section class="hf-section" id="understanding"
-            style="background: linear-gradient(to top, #F4EFE8, #FDF8F3); padding-top: 40px;">
+        <section class="hf-section" id="understanding">
             <div class="container">
                 <div class="text-center max-w-3xl mx-auto mb-4 mb-lg-5">
                     <span class="hf-eyebrow mb-2">CLINICAL OVERVIEW</span>
@@ -2355,7 +2659,7 @@
                     <h2 class="hf-heading mb-3">
                         Understanding <span class="scribble">Hydrafacial</span>
                     </h2>
-                    <p class="section-desc mx-auto" style="max-width: 720px; color: #5C4A3A;">
+                    <p class="section-desc hf-section-desc mx-auto">
                         Precision-led skin resurfacing and vortex hydration crafted to restore radiance from within.
                     </p>
                 </div>
@@ -2375,41 +2679,20 @@
 
                     <!-- Right: Editorial Content, 3 Pillars & CTA -->
                     <div class="col-lg-6">
-                        <p class="hf-lead mb-3" style="color: #4A3B32;">
-                            Hydrafacial is a non-invasive medical skin treatment designed to cleanse, exfoliate,
-                            extract, and hydrate the skin in a single, deeply calming session.
+                        <p class="hf-lead hf-understanding-lead mb-3">
+                            Hydrafacial is a non-invasive skin treatment designed to cleanse, exfoliate and hydrate the
+                            skin in a single session. It combines multiple skincare steps to help remove surface
+                            impurities while supporting hydration and a smoother, fresher-looking complexion.
                         </p>
-                        <p class="mb-3" style="color: var(--hf-body); font-size: 0.98rem; line-height: 1.72;">
-                            It combines multi-action vortex suction with medical-grade AHA-BHA peels and antioxidant
-                            infusions to remove congested sebum, dead surface cells, and environmental pollutants —
-                            while flooding the dermal barrier with deep cellular moisture.
+                        <p class="hf-body-p mb-3">
+                            At D’Zen Derma, Hydrafacial can be customised according to your skin type and concerns. It
+                            can be considered for dull-looking skin, uneven texture, dehydration, congested pores and
+                            lack of radiance.
                         </p>
-                        <p class="mb-4" style="color: var(--hf-body); font-size: 0.98rem; line-height: 1.72;">
-                            At D’Zen Derma in Gurgaon, every Hydrafacial protocol is calibrated to your skin's baseline
-                            barrier health, texture, and individual goals for radiant longevity.
+                        <p class="hf-body-p mb-4">
+                            If you are looking for Hydrafacial in Gurgaon, a consultation can help determine the
+                            treatment approach best suited to your skin.
                         </p>
-
-                        <!-- 3 Luxury Feature Badges -->
-                        <div class="d-flex flex-column gap-2 mb-4">
-                            <div class="d-flex align-items-center gap-3 p-3 rounded-3 bg-white border"
-                                style="border-color: rgba(196,146,74,0.2) !important;">
-                                <span style="color: #8B5E2A; font-weight: 700; font-size: 1.1rem;">01</span>
-                                <span style="color: #2B1A12; font-size: 0.92rem; font-weight: 500;">Zero Downtime ·
-                                    Immediate Dewy Radiance</span>
-                            </div>
-                            <div class="d-flex align-items-center gap-3 p-3 rounded-3 bg-white border"
-                                style="border-color: rgba(196,146,74,0.2) !important;">
-                                <span style="color: #8B5E2A; font-weight: 700; font-size: 1.1rem;">02</span>
-                                <span style="color: #2B1A12; font-size: 0.92rem; font-weight: 500;">Painless Vortex
-                                    Suction for Congested Pores</span>
-                            </div>
-                            <div class="d-flex align-items-center gap-3 p-3 rounded-3 bg-white border"
-                                style="border-color: rgba(196,146,74,0.2) !important;">
-                                <span style="color: #8B5E2A; font-weight: 700; font-size: 1.1rem;">03</span>
-                                <span style="color: #2B1A12; font-size: 0.92rem; font-weight: 500;">Custom Antioxidant,
-                                    Peptide &amp; HA Infusion</span>
-                            </div>
-                        </div>
 
                         <div class="mt-4">
                             <a href="../newthree.html#book" class="dz-cta">
@@ -2432,8 +2715,7 @@
         <!-- ═══════════════════════════════════════════════════════════
              3. HOW DOES HYDRAFACIAL WORK? (4 Arch Cards Grid)
              ═══════════════════════════════════════════════════════════ -->
-        <section class="hf-section hf-section--alt" id="how-it-works"
-            style="background: #FAF7F2; padding-top: 20px; padding-bottom: clamp(75px, 8vw, 110px); position: relative; overflow: hidden;">
+        <section class="hf-section hf-section--alt" id="how-it-works">
             <div class="container">
                 <!-- Section Header -->
                 <div class="text-center max-w-3xl mx-auto mb-4">
@@ -2447,111 +2729,67 @@
                         How Does <span class="scribble">Hydrafacial</span> Work?
                     </h2>
                     <p class="hf-lead">
-                        A multi-step vortex protocol engineered to cleanse, exfoliate, extract, and nourish without
-                        irritation.
+                        A Hydrafacial treatment follows a multi-step approach to refresh and revitalise the skin.
                     </p>
                 </div>
 
-                <!-- 4 Roman Arch Service Cards Grid (Matching index.html) -->
-                <div class="service-arch-grid">
+                <!-- 4 Minimal Editorial Steps Grid (Matching Provided Reference) -->
+                <div class="hf-minimal-steps-grid">
                     <!-- Step 01 -->
-                    <article class="service-arch-card">
-                        <div class="service-arch-card__media">
-                            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80"
-                                alt="Cleansing and Exfoliation" loading="lazy" />
-                        </div>
-                        <div class="service-arch-card__body">
-                            <div>
-                                <span class="service-arch-card__eyebrow">STEP 01 · PURIFICATION</span>
-                                <h3>Cleansing &amp; Exfoliation</h3>
-                                <p>
-                                    The specialized HydraFacial tip moves across the skin, removing dead cells, surface
-                                    impurities and sebum through gentle, controlled exfoliation.
-                                </p>
-                            </div>
-                            <span class="service-arch-card__tag">✦ Dermal Priming</span>
-                        </div>
-                    </article>
+                    <div class="hf-minimal-step-item">
+                        <h3 class="hf-minimal-step-title">Cleansing &amp; Exfoliation</h3>
+                        <div class="hf-minimal-step-divider"></div>
+                        <p class="hf-minimal-step-desc">
+                            The HydraFacial tip moves across the skin, removing dead cells, surface impurities and
+                            excess oil through a gentle, controlled exfoliation. The skin is cleared and primed for the
+                            steps that follow.
+                        </p>
+                    </div>
 
                     <!-- Step 02 -->
-                    <article class="service-arch-card">
-                        <div class="service-arch-card__media">
-                            <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=600&q=80"
-                                alt="Gentle Acid Peel" loading="lazy" />
-                        </div>
-                        <div class="service-arch-card__body">
-                            <div>
-                                <span class="service-arch-card__eyebrow">STEP 02 · RESURFACING</span>
-                                <h3>Gentle Acid Peel</h3>
-                                <p>
-                                    A calibrated AHA-BHA complex loosens deep-seated debris from congested pores without
-                                    triggering irritation, flaking, or redness.
-                                </p>
-                            </div>
-                            <span class="service-arch-card__tag">✦ Salicylic &amp; Glycolic</span>
-                        </div>
-                    </article>
+                    <div class="hf-minimal-step-item">
+                        <h3 class="hf-minimal-step-title">Acid Peel</h3>
+                        <div class="hf-minimal-step-divider"></div>
+                        <p class="hf-minimal-step-desc">
+                            A gentle AHA-BHA complex is applied to loosen the contents of congested pores. The formula
+                            is calibrated not to cause irritation or visible peeling.
+                        </p>
+                    </div>
 
                     <!-- Step 03 -->
-                    <article class="service-arch-card">
-                        <div class="service-arch-card__media">
-                            <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80"
-                                alt="Painless Vortex Extraction" loading="lazy" />
-                        </div>
-                        <div class="service-arch-card__body">
-                            <div>
-                                <span class="service-arch-card__eyebrow">STEP 03 · DECONGESTION</span>
-                                <h3>Vortex Extraction</h3>
-                                <p>
-                                    Automated vortex suction pulls out blackheads, stubborn sebum, and impurities
-                                    painlessly, leaving pores clear and visibly refined.
-                                </p>
-                            </div>
-                            <span class="service-arch-card__tag">✦ Painless Vacuum</span>
-                        </div>
-                    </article>
+                    <div class="hf-minimal-step-item">
+                        <h3 class="hf-minimal-step-title">Extraction</h3>
+                        <div class="hf-minimal-step-divider"></div>
+                        <p class="hf-minimal-step-desc">
+                            The suction removes blackheads and impurities from pores painlessly. Clients typically
+                            describe a mild pulling sensation rather than any discomfort.
+                        </p>
+                    </div>
 
                     <!-- Step 04 -->
-                    <article class="service-arch-card">
-                        <div class="service-arch-card__media">
-                            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80"
-                                alt="Antioxidant & Hyaluronic Serum Infusion" loading="lazy" />
-                        </div>
-                        <div class="service-arch-card__body">
-                            <div>
-                                <span class="service-arch-card__eyebrow">STEP 04 · NOURISHMENT</span>
-                                <h3>Serum Infusion</h3>
-                                <p>
-                                    Potent antioxidants, peptides, and cross-linked hyaluronic acid are infused directly
-                                    into the freshly cleared skin for peak moisture absorption.
-                                </p>
-                            </div>
-                            <span class="service-arch-card__tag">✦ Hyaluronic &amp; Peptides</span>
-                        </div>
-                    </article>
+                    <div class="hf-minimal-step-item">
+                        <h3 class="hf-minimal-step-title">Serum Infusion</h3>
+                        <div class="hf-minimal-step-divider"></div>
+                        <p class="hf-minimal-step-desc">
+                            Antioxidants, hyaluronic acid, and any targeted boosters selected for your skin are infused
+                            into the skin. Absorption at this point is significantly enhanced because the skin has been
+                            thoroughly cleared.
+                        </p>
+                    </div>
                 </div>
 
-                <!-- Tailored Experience Ribbon -->
-                <div class="p-4 p-md-5 rounded-4 mt-5 bg-white border"
-                    style="border-color: rgba(196, 146, 74, 0.3) !important; box-shadow: 0 10px 30px rgba(43,26,18,0.04);">
-                    <div class="row align-items-center g-4">
-                        <div class="col-lg-4 text-center text-lg-start">
-                            <span class="hf-eyebrow mb-1">TAILORED EXPERIENCE</span>
-                            <h3 class="hf-heading mb-0" style="color: #2B1A12; font-size: 1.5rem;">
-                                Customised Skin Ritual
-                            </h3>
-                        </div>
-                        <div class="col-lg-8">
-                            <p class="mb-2" style="color: #4A3B32; font-size: 0.96rem; line-height: 1.7;">
-                                Depending on your skin's immediate needs, we tailor serum concentrations and booster
-                                vials for anti-ageing elasticity, acne management, or barrier soothing.
-                            </p>
-                            <p class="mb-0" style="color: #4A3B32; font-size: 0.96rem; line-height: 1.7;">
-                                Experience the seamless harmony of four clinical stages united in one restorative
-                                procedure.
-                            </p>
-                        </div>
-                    </div>
+                <!-- Customised Skin Care Editorial Block (No Card) -->
+                <div class="hf-customised-editorial text-center max-w-3xl mx-auto">
+                    <div class="hf-customised-divider"></div>
+                    <h3 class="hf-customised-title">Customised Skin Care</h3>
+                    <p class="hf-customised-text mb-3">
+                        Depending on your skin requirements, the treatment can be tailored to focus on hydration,
+                        radiance, texture or other specific concerns.
+                    </p>
+                    <p class="hf-customised-text mb-0">
+                        The result is a treatment that combines cleansing, exfoliation, extraction and hydration in one
+                        streamlined facial procedure.
+                    </p>
                 </div>
             </div>
         </section>
@@ -2559,103 +2797,62 @@
         <!-- ═══════════════════════════════════════════════════════════
              5. WHY D'ZEN FOR HYDRAFACIAL? (Doctor Arch Showcase)
              ═══════════════════════════════════════════════════════════ -->
-        <section class="hf-section hf-why-section" id="why-dzen"
-            style="padding: clamp(65px, 7vw, 95px) 0; position: relative;">
+        <section class="hf-section hf-why-section" id="why-dzen">
             <div class="container">
                 <div class="text-center max-w-3xl mx-auto mb-4 mb-lg-5">
-                    <span class="hf-eyebrow mb-2"
-                        style="color: #E8C99A !important; -webkit-text-fill-color: #E8C99A !important;">THE D'ZEN
-                        ETHOS</span>
+                    <span class="hf-eyebrow mb-2">THE D'ZEN ETHOS</span>
                     <div class="nemonic-separator mx-auto mb-3">
-                        <div class="nemonic-line" style="background: rgba(232, 201, 154, 0.45);"></div>
-                        <img src="logo-header.png" alt="nemonic" class="nemonic-icon"
-                            style="filter: brightness(0) invert(1);" />
-                        <div class="nemonic-line" style="background: rgba(232, 201, 154, 0.45);"></div>
+                        <div class="nemonic-line"></div>
+                        <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
                     </div>
-                    <h2 class="hf-heading mb-3" style="color: #ffffff !important;">
-                        Why D’Zen for <span class="scribble"
-                            style="color: #E8C99A !important; -webkit-text-fill-color: #E8C99A !important;">Hydrafacial</span>?
+                    <h2 class="hf-heading mb-3">
+                        Why D’Zen for Hydrafacial?
                     </h2>
-                    <p class="hf-lead" style="color: rgba(255, 255, 255, 0.88) !important;">
-                        Because your skin doesn't need a standard facial. It needs medical intent.
+                    <p class="hf-lead">
+                        Because your skin doesn't need a standard facial.
                     </p>
                 </div>
 
-                <div class="row align-items-center g-4 g-lg-5">
-                    <!-- Doctor Roman Arch Showcase (Below on mobile, Left on desktop) -->
-                    <div class="col-lg-5 order-2 order-lg-1">
-                        <div class="doctor-arch-card">
-                            <div class="doctor-arch-card__imgwrap">
-                                <img src="../images/dr-arushi-1.webp" alt="Dr. Aarushi Passi Bhandari" loading="lazy" />
-                            </div>
-                            <div class="doctor-arch-card__body">
-                                <h3 class="doctor-arch-card__name">Dr. Aarushi Passi Bhandari</h3>
-                                <p class="doctor-arch-card__role">Aesthetic Physician &middot; Medical Director</p>
-                                <blockquote class="doctor-arch-card__quote">
-                                    “Your skin changes with every season, stress, and lifestyle shift. Your treatment
-                                    should adapt too.”
-                                </blockquote>
-                                <div class="mt-4">
-                                    <a href="../newthree.html#book" class="dz-cta">
-                                        <span>Consult Dr. Aarushi</span>
-                                        <img src="nemonic1.png" class="btn-icon" alt="icon" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                <!-- 4 Minimal Editorial Pillars (Open Design, No Cards) -->
+                <div class="hf-why-minimal-grid">
+                    <!-- Pillar 01 -->
+                    <div class="hf-why-minimal-item">
+                        <h3 class="hf-why-minimal-title">Skin First</h3>
+                        <div class="hf-why-minimal-divider"></div>
+                        <p class="hf-why-minimal-desc">
+                            We begin by understanding your skin's current condition, concerns and requirements — rather
+                            than simply following a standard routine.
+                        </p>
                     </div>
 
-                    <!-- 2x2 Luxury Pillars Grid (Above on mobile, Right on desktop) -->
-                    <div class="col-lg-7 order-1 order-lg-2">
-                        <div class="hf-why-grid">
-                            <!-- Pillar 1 -->
-                            <div class="hf-why-card">
-                                <div class="hf-why-card-top">
-                                    <span class="hf-why-card-num">01</span>
-                                </div>
-                                <h3 class="hf-why-card-title">Skin-First Diagnostic</h3>
-                                <p class="hf-why-card-desc mb-0">
-                                    We assess barrier integrity, sebum balance, and sensitivity before calibrating
-                                    suction power or peel strength.
-                                </p>
-                            </div>
+                    <!-- Pillar 02 -->
+                    <div class="hf-why-minimal-item">
+                        <h3 class="hf-why-minimal-title">Personalised Treatment</h3>
+                        <div class="hf-why-minimal-divider"></div>
+                        <p class="hf-why-minimal-desc">
+                            Your treatment can be adapted around what your skin needs most — whether that's hydration,
+                            radiance, texture or decongestion.
+                        </p>
+                    </div>
 
-                            <!-- Pillar 2 -->
-                            <div class="hf-why-card">
-                                <div class="hf-why-card-top">
-                                    <span class="hf-why-card-num">02</span>
-                                </div>
-                                <h3 class="hf-why-card-title">Doctor-Supervised</h3>
-                                <p class="hf-why-card-desc mb-0">
-                                    Every protocol is medically governed to prevent barrier stripping, ensuring
-                                    safety for acne and sensitive skin.
-                                </p>
-                            </div>
+                    <!-- Pillar 03 -->
+                    <div class="hf-why-minimal-item">
+                        <h3 class="hf-why-minimal-title">More Than a Quick Glow</h3>
+                        <div class="hf-why-minimal-divider"></div>
+                        <p class="hf-why-minimal-desc">
+                            Cleansing, exfoliation, extraction and hydration come together in one considered treatment
+                            to refresh the skin from the surface down.
+                        </p>
+                    </div>
 
-                            <!-- Pillar 3 -->
-                            <div class="hf-why-card">
-                                <div class="hf-why-card-top">
-                                    <span class="hf-why-card-num">03</span>
-                                </div>
-                                <h3 class="hf-why-card-title">Beyond Surface Glow</h3>
-                                <p class="hf-why-card-desc mb-0">
-                                    Cleansing, extraction, and targeted booster infusions combine to support skin
-                                    longevity and long-term cell renewal.
-                                </p>
-                            </div>
-
-                            <!-- Pillar 4 -->
-                            <div class="hf-why-card">
-                                <div class="hf-why-card-top">
-                                    <span class="hf-why-card-num">04</span>
-                                </div>
-                                <h3 class="hf-why-card-title">Science &amp; Serenity</h3>
-                                <p class="hf-why-card-desc mb-0">
-                                    Delivered inside a serene luxury sanctuary on Golf Course Road, designed for
-                                    pause and deep restoration.
-                                </p>
-                            </div>
-                        </div>
+                    <!-- Pillar 04 -->
+                    <div class="hf-why-minimal-item">
+                        <h3 class="hf-why-minimal-title">Science &amp; Serenity</h3>
+                        <div class="hf-why-minimal-divider"></div>
+                        <p class="hf-why-minimal-desc">
+                            Professional skin care delivered with precision, comfort and without unnecessary intensity.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -2664,9 +2861,8 @@
         <!-- ═══════════════════════════════════════════════════════════
              6. WHAT SKIN CONCERNS CAN HYDRAFACIAL ADDRESS?
              ═══════════════════════════════════════════════════════════ -->
-        <section class="hf-section hf-concerns-section" id="concerns-addressed"
-            style="padding-bottom: clamp(65px, 7vw, 95px) !important; padding-top: 20px; background: #FDF8F3 !important; position: relative; overflow: hidden;">
-            <div class="container position-relative" style="z-index: 1;">
+        <section class="hf-section hf-concerns-section" id="concerns-addressed">
+            <div class="container position-relative hf-concerns-container">
                 <div class="text-center max-w-3xl mx-auto mb-4 mb-lg-5">
                     <span class="hf-eyebrow mb-2">TARGETED DERMAL SOLUTIONS</span>
                     <div class="nemonic-separator mx-auto mb-3">
@@ -2682,133 +2878,68 @@
                     </p>
                 </div>
 
-                <div class="hf-concerns-showcase">
-                    <div class="row g-4 g-lg-5 align-items-center">
-                        <!-- Left Column: Roman Arch Visual Sanctuary (Below on mobile, Left on desktop) -->
-                        <div class="col-lg-5 order-2 order-lg-1">
-                            <div class="hf-concerns-visual">
-                                <div class="hf-concerns-visual__imgwrap">
-                                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80"
-                                        alt="Targeted Dermal Resolution at D'Zen Derma" loading="lazy" />
-                                    <div class="hf-concerns-visual__badge">✦ Dermal Equilibrium</div>
-                                </div>
-                                <div class="hf-concerns-visual__body">
-                                    <blockquote class="hf-concerns-visual__quote">
-                                        “From stubborn congestion to urban dryness, our vortex protocols adapt to your
-                                        dermal barrier.”
-                                    </blockquote>
-                                    <div class="hf-concerns-visual__features">
-                                        <span class="hf-concerns-visual__feature">✓ Bespoke Vortex Power</span>
-                                        <span class="hf-concerns-visual__feature">✓ Zero Downtime</span>
-                                        <span class="hf-concerns-visual__feature">✓ Instant Dewy Glow</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <!-- 5 Minimal Open Editorial Concerns (No Cards) -->
+                <div class="hf-concerns-minimal-grid">
+                    <!-- Concern 01 -->
+                    <div class="hf-concern-minimal-item">
+                        <h3 class="hf-concern-minimal-title">Dull-Looking Skin</h3>
+                        <div class="hf-concern-minimal-divider"></div>
+                        <p class="hf-concern-minimal-desc">
+                            Hydrafacial helps refresh the skin and remove surface buildup, supporting a brighter and
+                            more revitalised appearance.
+                        </p>
+                    </div>
 
-                        <!-- Right Column: 5 Interactive Editorial Concern Rows (Above on mobile, Right on desktop) -->
-                        <div class="col-lg-7 order-1 order-lg-2">
-                            <div class="hf-concerns-list">
-                                <!-- Row 1: Dull-Looking Skin -->
-                                <div class="hf-concern-row">
-                                    <div class="hf-concern-row__left">
-                                        <div class="hf-concern-row__text">
-                                            <h3 class="hf-concern-row__title">Dull-Looking Skin</h3>
-                                            <p class="hf-concern-row__desc">
-                                                Exfoliates dead cellular debris and environmental film, unlocking
-                                                instant luminosity and refreshed clarity.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="hf-concern-row__right">
-                                        <span class="hf-concern-row__tag">✦ Radiance Boost</span>
-                                        <span class="hf-concern-row__arrow">→</span>
-                                    </div>
-                                </div>
+                    <!-- Concern 02 -->
+                    <div class="hf-concern-minimal-item">
+                        <h3 class="hf-concern-minimal-title">Dehydrated Skin</h3>
+                        <div class="hf-concern-minimal-divider"></div>
+                        <p class="hf-concern-minimal-desc">
+                            The hydration-focused steps help replenish moisture and leave the skin feeling soft and
+                            refreshed.
+                        </p>
+                    </div>
 
-                                <!-- Row 2: Dehydrated Skin -->
-                                <div class="hf-concern-row">
-                                    <div class="hf-concern-row__left">
-                                        <div class="hf-concern-row__text">
-                                            <h3 class="hf-concern-row__title">Dehydrated Skin</h3>
-                                            <p class="hf-concern-row__desc">
-                                                Infuses multi-weight hyaluronic acid deep into the epidermis to
-                                                replenish lost water reserves and plump the skin.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="hf-concern-row__right">
-                                        <span class="hf-concern-row__tag">✦ Deep Hydration</span>
-                                        <span class="hf-concern-row__arrow">→</span>
-                                    </div>
-                                </div>
+                    <!-- Concern 03 -->
+                    <div class="hf-concern-minimal-item">
+                        <h3 class="hf-concern-minimal-title">Congested Pores</h3>
+                        <div class="hf-concern-minimal-divider"></div>
+                        <p class="hf-concern-minimal-desc">
+                            Cleansing, exfoliation and extraction help remove impurities that can contribute to a
+                            congested appearance.
+                        </p>
+                    </div>
 
-                                <!-- Row 3: Congested Pores -->
-                                <div class="hf-concern-row">
-                                    <div class="hf-concern-row__left">
-                                        <div class="hf-concern-row__text">
-                                            <h3 class="hf-concern-row__title">Congested Pores</h3>
-                                            <p class="hf-concern-row__desc">
-                                                Painless suction clears hardened blackheads, trapped dirt, and
-                                                micro-comedones from the T-zone and cheeks.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="hf-concern-row__right">
-                                        <span class="hf-concern-row__tag">✦ Blackhead Relief</span>
-                                        <span class="hf-concern-row__arrow">→</span>
-                                    </div>
-                                </div>
+                    <!-- Concern 04 -->
+                    <div class="hf-concern-minimal-item">
+                        <h3 class="hf-concern-minimal-title">Uneven Texture</h3>
+                        <div class="hf-concern-minimal-divider"></div>
+                        <p class="hf-concern-minimal-desc">
+                            Exfoliation helps remove dead surface cells and can leave the skin feeling smoother.
+                        </p>
+                    </div>
 
-                                <!-- Row 4: Uneven Texture -->
-                                <div class="hf-concern-row">
-                                    <div class="hf-concern-row__left">
-                                        <div class="hf-concern-row__text">
-                                            <h3 class="hf-concern-row__title">Uneven Texture</h3>
-                                            <p class="hf-concern-row__desc">
-                                                Smooths rough micro-ridges, clears dry flaking patches, and creates a
-                                                soft, velvety canvas for makeup.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="hf-concern-row__right">
-                                        <span class="hf-concern-row__tag">✦ Velvety Finish</span>
-                                        <span class="hf-concern-row__arrow">→</span>
-                                    </div>
-                                </div>
-
-                                <!-- Row 5: Excess Surface Oil -->
-                                <div class="hf-concern-row">
-                                    <div class="hf-concern-row__left">
-                                        <div class="hf-concern-row__text">
-                                            <h3 class="hf-concern-row__title">Excess Surface Oil</h3>
-                                            <p class="hf-concern-row__desc">
-                                                Purifies sebum reservoirs, calms surface shine, and helps rebalance the
-                                                natural lipid barrier without dryness.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="hf-concern-row__right">
-                                        <span class="hf-concern-row__tag">✦ Sebum Balance</span>
-                                        <span class="hf-concern-row__arrow">→</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- Concern 05 -->
+                    <div class="hf-concern-minimal-item">
+                        <h3 class="hf-concern-minimal-title">Excess Surface Oil</h3>
+                        <div class="hf-concern-minimal-divider"></div>
+                        <p class="hf-concern-minimal-desc">
+                            The cleansing and extraction process can help remove excess oil and impurities from the
+                            skin.
+                        </p>
                     </div>
                 </div>
 
-                <!-- Feature Highlight: Skin Maintenance -->
-                <div class="hf-maintenance-banner mt-5">
+                <!-- Open Editorial Skin Maintenance (No Card) -->
+                <div class="hf-maintenance-editorial">
                     <div class="row align-items-center g-4">
-                        <div class="col-lg-8">
-                            <span class="hf-maintenance-badge">✦ SKIN HEALTH RITUAL</span>
+                        <div class="col-lg-8 text-center text-lg-start">
                             <h3 class="hf-maintenance-title">
-                                Monthly Skin Maintenance
+                                Skin Maintenance
                             </h3>
                             <p class="hf-maintenance-desc mb-0">
-                                Regular HydraFacials act as a vital reset for urban skin exposed to pollution, sun, and
-                                screen fatigue — supporting long-term collagen and elasticity.
+                                Professional facials can complement an existing skincare routine and help maintain
+                                clean, hydrated and refreshed-looking skin.
                             </p>
                         </div>
                         <div class="col-lg-4 text-center text-lg-end">
@@ -2823,118 +2954,9 @@
         </section>
 
         <!-- ═══════════════════════════════════════════════════════════
-             7. D'ZEN PROTOCOL SECTION (Signature Dark Elegance)
-             ═══════════════════════════════════════════════════════════ -->
-        <section class="hf-protocol-section" id="dzen-protocol"
-            style="padding-top: clamp(65px, 7vw, 100px); padding-bottom: clamp(65px, 7vw, 95px); position: relative;">
-            <!-- Top Curvy separator: Upper Soft Cream (#FDF8F3) seamlessly cuts into Protocol -->
-            <div class="section-separator-top"
-                style="position: absolute; top: 0; left: 0; width: 100%; overflow: hidden; line-height: 0; z-index: 1;"
-                aria-hidden="true">
-                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
-                    style="position: relative; display: block; width: 100%; height: clamp(35px, 4vw, 65px);">
-                    <path fill="#FDF8F3" d="M0,0 L1440,0 L1440,50 C1040,-10 400,110 0,50 Z"></path>
-                </svg>
-            </div>
-            <div class="container">
-                <div class="text-center max-w-3xl mx-auto mb-4 mb-lg-5">
-                    <span class="hf-eyebrow" style="color: #E8C99A !important;">THE CLINICAL METHOD</span>
-                    <div class="nemonic-separator mx-auto mb-3">
-                        <div class="nemonic-line" style="background: rgba(232, 201, 154, 0.45);"></div>
-                        <img src="logo-header.png" alt="nemonic" class="nemonic-icon"
-                            style="filter: brightness(0) invert(1);" />
-                        <div class="nemonic-line" style="background: rgba(232, 201, 154, 0.45);"></div>
-                    </div>
-                    <h2 class="hf-heading" style="color: #ffffff !important;">
-                        Evidence-Led <span class="scribble"
-                            style="color: #E8C99A !important; -webkit-text-fill-color: #E8C99A !important;">Precision</span>
-                    </h2>
-                    <p class="hf-lead" style="color: rgba(255, 255, 255, 0.88) !important;">
-                        How our aesthetic physicians combine medical rigorousness with comforting luxury.
-                    </p>
-                </div>
-
-                <div class="row g-4 align-items-center">
-                    <div class="col-lg-6">
-                        <!-- Protocol Steps -->
-                        <div class="hf-protocol-step">
-                            <div class="hf-protocol-badge">01</div>
-                            <div class="hf-protocol-card">
-                                <h3 class="hf-protocol-title">Pre-Procedure Skin Mapping</h3>
-                                <p class="hf-protocol-text">
-                                    Digital barrier and hydration assessment to determine custom vortex suction levels
-                                    and tailored peel acids.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="hf-protocol-step">
-                            <div class="hf-protocol-badge">02</div>
-                            <div class="hf-protocol-card">
-                                <h3 class="hf-protocol-title">4-Stage Vortex Infusion</h3>
-                                <p class="hf-protocol-text">
-                                    Thorough decongestion, chemical exfoliation, painless extraction, and nutrient
-                                    saturation.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="hf-protocol-step">
-                            <div class="hf-protocol-badge">03</div>
-                            <div class="hf-protocol-card">
-                                <h3 class="hf-protocol-title">Targeted Booster Application</h3>
-                                <p class="hf-protocol-text">
-                                    Optional clinical boosters (e.g. Brightening Vitamin C, Britenol, or Growth Factors)
-                                    for bespoke enhancement.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="hf-protocol-step">
-                            <div class="hf-protocol-badge">04</div>
-                            <div class="hf-protocol-card">
-                                <h3 class="hf-protocol-title">Barrier Lock &amp; SPF Shield</h3>
-                                <p class="hf-protocol-text">
-                                    Application of calming botanical barrier creams and broad-spectrum mineral
-                                    protection to lock in glow.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <!-- Roman Arch Frame with Dark Ambient Glow -->
-                        <div class="sig-arch-wrap">
-                            <div class="sig-arch-glow"
-                                style="background: radial-gradient(circle at center, rgba(232, 201, 154, 0.35) 0%, transparent 70%);">
-                            </div>
-                            <div class="sig-oval-frame sig-oval-frame--tall"
-                                style="border-color: rgba(232, 201, 154, 0.45); box-shadow: 0 25px 55px rgba(0,0,0,0.4);">
-                                <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&q=80"
-                                    alt="Medical Hydrafacial Care" class="sig-oval-img" loading="lazy" />
-                                <div class="sig-arch-badge" style="background: rgba(31, 21, 17, 0.92);">
-                                    <span class="dot">✦</span> Doctor Supervised Protocol
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center mt-5">
-                    <a href="../newthree.html#book" class="dz-cta"
-                        style="margin: 0 auto; display: inline-flex; border-color: rgba(255,255,255,0.5);">
-                        <span style="color: #ffffff !important;">Begin Your Skin Transformation</span>
-                        <img src="nemonic1.png" class="btn-icon" alt="icon" style="filter: brightness(0) invert(1);" />
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════════════════════════════════════════
              8. WHAT RESULTS CAN YOU EXPECT?
              ═══════════════════════════════════════════════════════════ -->
-        <section class="hf-section hf-section--alt" id="results"
-            style="background: #FAF7F2; padding: clamp(65px, 7vw, 95px) 0; position: relative;">
+        <section class="hf-section hf-section--alt" id="results">
             <div class="container">
                 <div class="text-center max-w-3xl mx-auto mb-4 mb-lg-5">
                     <span class="hf-eyebrow mb-2">OUTCOMES &amp; BENEFITS</span>
@@ -2944,80 +2966,87 @@
                         <div class="nemonic-line"></div>
                     </div>
                     <h2 class="hf-heading mb-3">What Results Can You <span class="scribble">Expect</span>?</h2>
-                    <p class="hf-lead">
-                        Hydrafacial is designed to provide visible refinement immediately after your single session.
+                    <p class="hf-lead mb-2">
+                        Hydrafacial is designed to provide a refreshed appearance after treatment.
+                    </p>
+                    <p class="hf-lead hf-results-notice-label">
+                        You may notice:
                     </p>
                 </div>
 
-                <div class="row g-4 justify-content-center mb-5">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="hf-result-badge">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                <polyline points="22 4 12 14.01 9 11.01" />
-                            </svg>
-                            <span>Smoother-feeling, refined skin texture</span>
-                        </div>
+                <!-- Open Editorial Results Grid (No Boxes, Space-Efficient) -->
+                <div class="hf-results-editorial-grid">
+                    <div class="hf-result-editorial-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        <span>Smoother-feeling skin</span>
                     </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="hf-result-badge">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                <polyline points="22 4 12 14.01 9 11.01" />
-                            </svg>
-                            <span>Deep cellular hydration &amp; plumpness</span>
-                        </div>
+                    <div class="hf-result-editorial-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        <span>Better hydration</span>
                     </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="hf-result-badge">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                <polyline points="22 4 12 14.01 9 11.01" />
-                            </svg>
-                            <span>Fresher, decongested pore appearance</span>
-                        </div>
+                    <div class="hf-result-editorial-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        <span>A fresher complexion</span>
                     </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="hf-result-badge">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                <polyline points="22 4 12 14.01 9 11.01" />
-                            </svg>
-                            <span>Instant luminous glow without redness</span>
-                        </div>
+                    <div class="hf-result-editorial-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        <span>Improved radiance</span>
                     </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="hf-result-badge">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                <polyline points="22 4 12 14.01 9 11.01" />
-                            </svg>
-                            <span>Flawless canvas for makeup &amp; photography</span>
-                        </div>
+                    <div class="hf-result-editorial-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        <span>A softer skin texture</span>
                     </div>
                 </div>
 
-                <div class="p-4 p-md-5 rounded-4 bg-white border"
-                    style="border-color: var(--hf-border) !important; box-shadow: var(--hf-shadow);">
+                <div class="text-center max-w-3xl mx-auto mb-4">
+                    <p class="hf-results-closing-text">
+                        The treatment can be particularly useful when your skin looks dull, feels dehydrated or appears
+                        congested. Results can vary depending on your skin condition, concerns and skincare routine.
+                    </p>
+                </div>
+
+                <!-- Open Editorial Banner (No Card) -->
+                <div class="hf-maintenance-editorial">
                     <div class="row g-4 align-items-center">
-                        <div class="col-lg-8">
-                            <h3
-                                style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.35rem; color: #2B1A12; margin-bottom: 6px;">
-                                Consistent Radiance with Every Session
+                        <div class="col-lg-8 text-center text-lg-start">
+                            <h3 class="hf-maintenance-title mb-1">
+                                Hydrafacial Before an Event
                             </h3>
-                            <p style="color: var(--hf-body); font-size: 0.96rem; line-height: 1.7; margin-bottom: 0;">
-                                Results are visible from session one, and cumulative sessions help maintain clean pores
-                                and sustained moisture barrier strength.
+                            <p class="hf-event-tagline">
+                                When you want your skin to look fresh — not overdone.
+                            </p>
+                            <p class="hf-maintenance-desc mb-2">
+                                Hydrafacial can be considered before an event when you want your skin to look cleaner,
+                                smoother, hydrated and more radiant.
+                            </p>
+                            <p class="hf-maintenance-desc mb-0">
+                                The ideal timing depends on your skin sensitivity and individual requirements, so we'll
+                                help you plan it appropriately.
                             </p>
                         </div>
                         <div class="col-lg-4 text-center text-lg-end">
                             <a href="../newthree.html#book" class="dz-cta">
-                                <span>Book Your Session</span>
+                                <span>Book Consultation</span>
                                 <img src="nemonic1.png" class="btn-icon" alt="icon" />
                             </a>
                         </div>
@@ -3036,8 +3065,7 @@
         <!-- ═══════════════════════════════════════════════════════════
              9. BEFORE & AFTER RESULTS GALLERY (Interactive Sliders)
              ═══════════════════════════════════════════════════════════ -->
-        <section class="hf-section rg-gallery" id="before-after" data-filter="concern"
-            style="background: linear-gradient(to top, #F4EFE8, #FDF8F3); padding-top: 20px; padding-bottom: clamp(70px, 7vw, 100px); position: relative;">
+        <section class="hf-section rg-gallery" id="before-after" data-filter="concern">
             <div class="container">
                 <div class="text-center max-w-3xl mx-auto mb-4 mb-lg-5">
                     <span class="hf-eyebrow mb-2">CLINICAL RESULTS</span>
@@ -3050,98 +3078,40 @@
                         Real Results, <span class="scribble">Unretouched</span>
                     </h2>
                     <p class="hf-lead">
-                        Same lighting, same angle, authentic clinical transformations. Drag the slider to reveal the
-                        before &amp; after results.
+                        Same lighting, same angle, authentic clinical transformations.
                     </p>
                 </div>
 
-                <!-- 3 Interactive Before & After Cards Grid -->
-                <div class="row g-4 justify-content-center" data-grid>
-                    <!-- Case 1: Pores & Congestion -->
+                <!-- 3 Results Showcase Cards Grid -->
+                <div class="row g-4 rg-gallery-grid justify-content-lg-center" data-grid>
+                    <!-- Case 1 -->
                     <div class="col-md-6 col-lg-4 rg-item" data-concern="pores">
-                        <figure class="rg-ba">
+                        <div class="rg-ba">
                             <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=700&auto=format&fit=crop"
-                                alt="Hydrafacial After - Decongested Pores" loading="lazy">
-                            <div class="rg-ba__before">
-                                <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?q=80&w=700&auto=format&fit=crop"
-                                    alt="Hydrafacial Before - Congested Pores" loading="lazy">
-                            </div>
-                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
-                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
-                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
-                                aria-label="Reveal before and after for Decongested T-Zone & Clear Pores">
-                            <span class="rg-ba__divider" aria-hidden="true"></span>
-                            <span class="rg-ba__knob" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
-                                </svg>
-                            </span>
-                        </figure>
-                        <div class="rg-item__meta">
-                            <h3 class="rg-item__title">Pore Decongestion &amp; Clarity</h3>
-                            <p class="rg-item__note">1 Session · Medical Vortex Extraction</p>
+                                alt="Hydrafacial Clinical Transformation" loading="lazy">
                         </div>
                     </div>
 
-                    <!-- Case 2: Dewy Radiance -->
+                    <!-- Case 2 -->
                     <div class="col-md-6 col-lg-4 rg-item" data-concern="glow">
-                        <figure class="rg-ba">
+                        <div class="rg-ba">
                             <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=700&auto=format&fit=crop"
-                                alt="Hydrafacial After - Radiant Glass Skin" loading="lazy">
-                            <div class="rg-ba__before">
-                                <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=700&auto=format&fit=crop"
-                                    alt="Hydrafacial Before - Dull Complexion" loading="lazy">
-                            </div>
-                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
-                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
-                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
-                                aria-label="Reveal before and after for Dull Complexion to Dewy Radiance">
-                            <span class="rg-ba__divider" aria-hidden="true"></span>
-                            <span class="rg-ba__knob" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
-                                </svg>
-                            </span>
-                        </figure>
-                        <div class="rg-item__meta">
-                            <h3 class="rg-item__title">Dull Skin to Dewy Radiance</h3>
-                            <p class="rg-item__note">1 Session · Antioxidant &amp; Hyaluronic Infusion</p>
+                                alt="Hydrafacial Clinical Transformation" loading="lazy">
                         </div>
                     </div>
 
-                    <!-- Case 3: Texture & Smoothing -->
+                    <!-- Case 3 -->
                     <div class="col-md-6 col-lg-4 rg-item" data-concern="texture">
-                        <figure class="rg-ba">
+                        <div class="rg-ba">
                             <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=700&auto=format&fit=crop"
-                                alt="Hydrafacial After - Smooth Texture" loading="lazy">
-                            <div class="rg-ba__before">
-                                <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=700&auto=format&fit=crop"
-                                    alt="Hydrafacial Before - Rough Flaking Texture" loading="lazy">
-                            </div>
-                            <span class="rg-ba__tag rg-ba__tag--before">Before</span>
-                            <span class="rg-ba__tag rg-ba__tag--after">After</span>
-                            <input type="range" class="rg-ba__range" min="0" max="100" value="50" step="1"
-                                aria-label="Reveal before and after for Rough Texture to Smooth Barrier">
-                            <span class="rg-ba__divider" aria-hidden="true"></span>
-                            <span class="rg-ba__knob" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M9 6l-5 6 5 6M15 6l5 6-5 6" />
-                                </svg>
-                            </span>
-                        </figure>
-                        <div class="rg-item__meta">
-                            <h3 class="rg-item__title">Refined Texture &amp; Softness</h3>
-                            <p class="rg-item__note">1 Session · Gentle AHA-BHA Resurfacing</p>
+                                alt="Hydrafacial Clinical Transformation" loading="lazy">
                         </div>
                     </div>
                 </div>
 
                 <!-- Results CTA Strip -->
-                <div class="text-center mt-5">
-                    <a href="../newthree.html#book" class="dz-cta" style="margin: 0 auto; display: inline-flex;">
+                <div class="text-center mt-2">
+                    <a href="../newthree.html#book" class="dz-cta hf-results-cta-center">
                         <span>Experience Your Glow Transformation</span>
                         <img src="nemonic1.png" class="btn-icon" alt="icon" />
                     </a>
@@ -3152,8 +3122,7 @@
         <!-- ═══════════════════════════════════════════════════════════
              10. VIDEO SHOWCASE & INSTAGRAM REELS
              ═══════════════════════════════════════════════════════════ -->
-        <section class="hf-video-section" id="video-showcase"
-            style="background: linear-gradient(to top, #F4EFE8, #FDF8F3) !important;">
+        <section class="hf-video-section" id="video-showcase">
             <div class="container">
                 <div class="text-center max-w-3xl mx-auto mb-4 mb-lg-5">
                     <span class="hf-eyebrow mb-2">LIVE EXPERIENCES &amp; REELS</span>
@@ -3171,28 +3140,36 @@
                     </p>
                 </div>
 
-                <!-- Video Filter Tabs: Instagram & YouTube Only -->
-                <div class="hf-video-filter-bar">
-                    <button type="button" class="hf-vtab-btn active" data-vfilter="insta"
-                        onclick="filterVideos('insta', this)">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #E1306C;">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                        </svg>
-                        <span>Instagram Reels</span>
-                        <span class="hf-vtab-count">3</span>
-                    </button>
-                    <button type="button" class="hf-vtab-btn" data-vfilter="youtube"
-                        onclick="filterVideos('youtube', this)">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="color: #FF0000;">
-                            <path
-                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                        </svg>
-                        <span>YouTube Videos</span>
-                        <span class="hf-vtab-count">3</span>
-                    </button>
+                <!-- Video Filter Tabs: Instagram & YouTube -->
+                <div class="hf-video-filter-bar" role="tablist" aria-label="Filter Video Showcase">
+                    <div class="hf-video-filter-bar__pill">
+                        <button type="button" class="hf-vtab-btn active" data-vfilter="insta" role="tab"
+                            aria-selected="true" onclick="filterVideos('insta', this)">
+                            <span class="hf-vtab-icon hf-vtab-icon--insta" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                </svg>
+                            </span>
+                            <span class="hf-vtab-info">
+                                <span class="hf-vtab-name">Instagram</span>
+                                <span class="hf-vtab-role">Trending Reels</span>
+                            </span>
+                        </button>
+                        <button type="button" class="hf-vtab-btn" data-vfilter="youtube" role="tab"
+                            aria-selected="false" onclick="filterVideos('youtube', this)">
+                            <span class="hf-vtab-icon hf-vtab-icon--youtube" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                                </svg>
+                            </span>
+                            <span class="hf-vtab-info">
+                                <span class="hf-vtab-name">YouTube</span>
+                                <span class="hf-vtab-role">Clinical Guides</span>
+                            </span>
+                        </button>
+                    </div>
                 </div>
 
                 <!-- 6 Curated Video Cards: Row 1 Instagram Reels (9:14), Row 2 YouTube Videos (16:9) -->
@@ -3254,7 +3231,7 @@
                     </article>
 
                     <!-- Video 4: YouTube Video (16:9 Landscape) -->
-                    <article class="hf-vcard hf-vcard--youtube is-hidden" data-type="youtube" style="display: none;"
+                    <article class="hf-vcard hf-vcard--youtube is-hidden" data-type="youtube"
                         data-title="Dermatologist Guide: Why Medical Hydrafacial Works"
                         data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"
                         data-external="https://www.youtube.com/@dzenderma">
@@ -3274,7 +3251,7 @@
                     </article>
 
                     <!-- Video 5: YouTube Video (16:9 Landscape) -->
-                    <article class="hf-vcard hf-vcard--youtube is-hidden" data-type="youtube" style="display: none;"
+                    <article class="hf-vcard hf-vcard--youtube is-hidden" data-type="youtube"
                         data-title="4-Step D'Zen Vortex Protocol Explained"
                         data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"
                         data-external="https://www.youtube.com/@dzenderma">
@@ -3293,7 +3270,7 @@
                     </article>
 
                     <!-- Video 6: YouTube Video (16:9 Landscape) -->
-                    <article class="hf-vcard hf-vcard--youtube is-hidden" data-type="youtube" style="display: none;"
+                    <article class="hf-vcard hf-vcard--youtube is-hidden" data-type="youtube"
                         data-title="Hydrafacial vs Regular Salon Facials: The Truth"
                         data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"
                         data-external="https://www.youtube.com/@dzenderma">
@@ -3312,136 +3289,15 @@
                         </div>
                     </article>
                 </div>
-
-                <!-- Social Connect Hub Banner -->
-                <div class="hf-social-hub">
-                    <div class="hf-social-hub__text">
-                        <h3>Join 15,000+ Skin Enthusiasts on Social</h3>
-                        <p>Follow @dzenderma on Instagram for real-time before/after reels, and subscribe on YouTube for
-                            dermatologist-led skin health guides.</p>
-                    </div>
-                    <div class="hf-social-hub__actions">
-                        <a href="https://www.instagram.com/dzenderma/" target="_blank" rel="noopener"
-                            class="hf-social-btn hf-social-btn--insta">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                            </svg>
-                            <span>Follow on Instagram</span>
-                        </a>
-                        <a href="https://www.youtube.com/@dzenderma" target="_blank" rel="noopener"
-                            class="hf-social-btn hf-social-btn--yt">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                            </svg>
-                            <span>Subscribe on YouTube</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════════════════════════════════════════
-             11. HYDRAFACIAL BEFORE AN EVENT / WEDDING (Full-Width Strip)
-             ═══════════════════════════════════════════════════════════ -->
-        <section class="hf-event-section" id="event-preparation">
-            <!-- Top Curvy separator: Upper Cream (#F4EFE8) seamlessly cuts into Pre-Event -->
-            <!-- <div class="section-separator-top" style="position: absolute; top: 0; left: 0; width: 100%; overflow: hidden; line-height: 0; z-index: 1;" aria-hidden="true">
-                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="position: relative; display: block; width: 100%; height: clamp(35px, 4vw, 65px);">
-                    <path fill="#F4EFE8" d="M0,0 L1440,0 L1440,50 C1040,-10 400,110 0,50 Z"></path>
-                </svg>
-            </div> -->
-
-            <div class="container">
-                <div class="row align-items-center g-4 g-lg-5">
-                    <div class="col-lg-7">
-                        <span class="hf-eyebrow mb-2"
-                            style="color: #E8C99A !important; -webkit-text-fill-color: #E8C99A !important; margin-bottom: 12px;">EVENT
-                            &amp; WEDDING READINESS</span>
-                        <h2 class="hf-heading"
-                            style="color: #FFFFFF !important; -webkit-text-fill-color: #FFFFFF !important; font-size: clamp(26px, 3.2vw, 38px) !important; margin-bottom: 16px; line-height: 1.25;">
-                            Hydrafacial Before an Event
-                        </h2>
-                        <div class="hf-event-lead"
-                            style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; font-style: italic; color: #F8E2C8; margin-bottom: 16px;">
-                            “When you want your skin to look fresh — not overdone.”
-                        </div>
-                        <p class="mb-3"
-                            style="color: rgba(255, 255, 255, 0.92) !important; -webkit-text-fill-color: rgba(255, 255, 255, 0.92) !important; font-size: 1rem !important; line-height: 1.75 !important;">
-                            Hydrafacial is the premier pre-event ritual for weddings, red carpets, and special
-                            occasions where instant dewy radiance without downtime is required.
-                        </p>
-                        <p class="mb-4"
-                            style="color: rgba(255, 255, 255, 0.85) !important; -webkit-text-fill-color: rgba(255, 255, 255, 0.85) !important; font-size: 0.96rem !important; line-height: 1.72 !important;">
-                            We recommend scheduling 2 to 3 days prior so active infusions fully settle into peak
-                            dewy glow.
-                        </p>
-                        <div class="d-flex flex-wrap gap-3 align-items-center">
-                            <a href="../newthree.html#book" class="dz-cta">
-                                <span>Plan Pre-Event Facial</span>
-                                <img src="nemonic1.png" class="btn-icon" alt="icon"
-                                    style="width: 14px; height: 14px; object-fit: contain; filter: brightness(0) invert(1);" />
-                            </a>
-                            <a href="https://wa.me/919878885046?text=Hi%20D%27Zen%20Derma%2C%20I%20want%20to%20schedule%20a%20Hydrafacial%20before%20an%20event."
-                                class="dz-cta dz-cta--glass" target="_blank" rel="noopener">
-                                <span>Consult via WhatsApp</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366" style="flex-shrink: 0;">
-                                    <path
-                                        d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-1.127-.061-.599-.193-1.374-.53-2.361-1.385-1.258-1.089-2.062-2.73-2.125-2.813-.062-.083-.508-.675-.508-1.288 0-.613.322-.914.437-1.038.114-.124.25-.156.333-.156.083 0 .167.001.24.005.078.003.182-.03.285.217.104.248.354.862.385.925.031.062.052.135.01.218-.041.083-.062.135-.125.208-.062.073-.131.162-.187.218-.063.062-.128.13-.055.255.073.125.325.536.697.867.48.427.884.559 1.009.622.125.062.198.052.271-.031.073-.083.312-.364.395-.489.083-.125.167-.104.281-.062.115.041.729.344.854.406.125.062.208.094.24.146.031.052.031.302-.113.707z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="hf-event-card text-center">
-                            <div class="hf-event-timing-badge">
-                                <span>✦ RECOMMENDED PROTOCOL</span>
-                            </div>
-                            <div
-                                style="font-family: 'Playfair Display', Georgia, serif; font-size: 2rem; color: #FFFFFF; font-weight: 600; line-height: 1.15; margin-bottom: 6px;">
-                                2–3 Days Before
-                            </div>
-                            <div
-                                style="font-size: 0.88rem; color: #F8E2C8; line-height: 1.55; max-width: 320px; margin: 0 auto;">
-                                Allows active serums to fully settle, delivering peak dewy radiance and a silky
-                                canvas for makeup.
-                            </div>
-                            <div class="hf-event-checklist">
-                                <div class="hf-event-check-item">
-                                    <span class="hf-event-check-icon">✦</span>
-                                    <span>Zero downtime &amp; no visible peeling</span>
-                                </div>
-                                <div class="hf-event-check-item">
-                                    <span class="hf-event-check-icon">✦</span>
-                                    <span>Pores deeply cleared &amp; refined</span>
-                                </div>
-                                <div class="hf-event-check-item">
-                                    <span class="hf-event-check-icon">✦</span>
-                                    <span>Photo-ready, naturally hydrated luminous glow</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Curvy separator: Pre-Event (#4b2b20) → Warm Cream (#FAF7F2) -->
-            <div class="section-separator" aria-hidden="true">
-                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path fill="#FAF7F2" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
-                </svg>
             </div>
         </section>
 
         <!-- ═══════════════════════════════════════════════════════════
              10. FREQUENTLY ASKED QUESTIONS (FAQ)
              ═══════════════════════════════════════════════════════════ -->
-        <section class="hf-section hf-section--alt" id="faq" style="background: #FAF7F2; padding-top: 20px;">
+        <section class="hf-section hf-section--alt" id="faq">
             <div class="container">
-                <div class="text-center max-w-3xl mx-auto mb-5">
+                <div class="text-center max-w-3xl mx-auto mb-3">
                     <span class="hf-eyebrow mb-2">CLEAR ANSWERS</span>
                     <div class="nemonic-separator mx-auto mb-3">
                         <div class="nemonic-line"></div>
@@ -3456,7 +3312,7 @@
 
                 <div class="max-w-4xl mx-auto">
                     <!-- Q1 -->
-                    <details class="hf-faq-item" open>
+                    <details class="hf-faq-item" name="hydrafacial-faq" open>
                         <summary class="hf-faq-summary">
                             <span>Is Hydrafacial suitable for all skin types?</span>
                             <div class="hf-faq-icon">+</div>
@@ -3470,7 +3326,7 @@
                     </details>
 
                     <!-- Q2 -->
-                    <details class="hf-faq-item">
+                    <details class="hf-faq-item" name="hydrafacial-faq">
                         <summary class="hf-faq-summary">
                             <span>Is Hydrafacial painful?</span>
                             <div class="hf-faq-icon">+</div>
@@ -3483,7 +3339,7 @@
                     </details>
 
                     <!-- Q3 -->
-                    <details class="hf-faq-item">
+                    <details class="hf-faq-item" name="hydrafacial-faq">
                         <summary class="hf-faq-summary">
                             <span>Is there downtime after Hydrafacial?</span>
                             <div class="hf-faq-icon">+</div>
@@ -3495,7 +3351,7 @@
                     </details>
 
                     <!-- Q4 -->
-                    <details class="hf-faq-item">
+                    <details class="hf-faq-item" name="hydrafacial-faq">
                         <summary class="hf-faq-summary">
                             <span>Can Hydrafacial help with dull skin?</span>
                             <div class="hf-faq-icon">+</div>
@@ -3507,7 +3363,7 @@
                     </details>
 
                     <!-- Q5 -->
-                    <details class="hf-faq-item">
+                    <details class="hf-faq-item" name="hydrafacial-faq">
                         <summary class="hf-faq-summary">
                             <span>Can I get a Hydrafacial before an event or Marriage?</span>
                             <div class="hf-faq-icon">+</div>
@@ -3520,7 +3376,7 @@
                     </details>
 
                     <!-- Q6 -->
-                    <details class="hf-faq-item">
+                    <details class="hf-faq-item" name="hydrafacial-faq">
                         <summary class="hf-faq-summary">
                             <span>How often should I get a Hydrafacial?</span>
                             <div class="hf-faq-icon">+</div>
@@ -3533,7 +3389,7 @@
                     </details>
 
                     <!-- Q7 -->
-                    <details class="hf-faq-item">
+                    <details class="hf-faq-item" name="hydrafacial-faq">
                         <summary class="hf-faq-summary">
                             <span>What skin concerns does HydraFacial address?</span>
                             <div class="hf-faq-icon">+</div>
@@ -3545,8 +3401,126 @@
                     </details>
                 </div>
             </div>
+        </section>
 
-            <!-- Curvy separator: Warm Cream (#FAF7F2) → Soft Cream (#FDF8F3) -->
+        <!-- ═══════════════════════════════════════════════════════════
+             11. RELATED & COMPLEMENTARY SERVICES (Horizontal Scrollable)
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="hf-section hf-related-section" id="related-services">
+            <div class="container">
+                <div class="text-center max-w-3xl mx-auto mb-lg-5">
+                    <span class="hf-eyebrow mb-2">COMPLEMENTARY TREATMENTS</span>
+                    <div class="nemonic-separator mx-auto mb-3">
+                        <div class="nemonic-line"></div>
+                        <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="hf-heading mb-3">
+                        Explore Related Treatments
+                    </h2>
+                    <p class="hf-lead">
+                        Enhance and prolong your radiant glow with our doctor-led aesthetic protocols tailored to your
+                        unique skin profile.
+                    </p>
+                </div>
+
+                <!-- Horizontal Scrollable Track of 5 Services (No Images, Dark Philosophy Style) -->
+                <div class="hf-related-scroll-container">
+                    <div class="hf-related-track">
+                        <!-- Service 1: Clinical Medipeels -->
+                        <a href="../treatments/face/medipeels.html" class="hf-related-card">
+                            <h3 class="hf-related-card__title">Clinical Medipeels</h3>
+                            <div class="hf-related-card__divider"></div>
+                            <p class="hf-related-card__desc">
+                                Bespoke chemical resurfacing to accelerate cell turnover, clear stubborn pigmentation,
+                                and restore luminous complexion...
+                            </p>
+                            <span class="hf-related-card__action">
+                                <span>Explore Treatment</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14" />
+                                    <path d="m12 5 7 7-7 7" />
+                                </svg>
+                            </span>
+                        </a>
+
+                        <!-- Service 2: Oxy-Facial Glow -->
+                        <a href="../treatments/face/oxy-facial.html" class="hf-related-card">
+                            <h3 class="hf-related-card__title">Oxy-Facial Glow</h3>
+                            <div class="hf-related-card__divider"></div>
+                            <p class="hf-related-card__desc">
+                                High-pressurized oxygen and concentrated botanical infusions to recharge tired, fatigued
+                                skin and boost microcirculation...
+                            </p>
+                            <span class="hf-related-card__action">
+                                <span>Explore Treatment</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14" />
+                                    <path d="m12 5 7 7-7 7" />
+                                </svg>
+                            </span>
+                        </a>
+
+                        <!-- Service 3: RF Microneedling (MNRF) -->
+                        <a href="../treatments/face/mnrf.html" class="hf-related-card">
+                            <h3 class="hf-related-card__title">RF Microneedling</h3>
+                            <div class="hf-related-card__divider"></div>
+                            <p class="hf-related-card__desc">
+                                Dual radiofrequency and microneedling to remodel the deep dermal matrix, minimize pores,
+                                and smooth texture...
+                            </p>
+                            <span class="hf-related-card__action">
+                                <span>Explore Treatment</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14" />
+                                    <path d="m12 5 7 7-7 7" />
+                                </svg>
+                            </span>
+                        </a>
+
+                        <!-- Service 4: Clinical Dermablading -->
+                        <a href="../treatments/face/dermablading.html" class="hf-related-card">
+                            <h3 class="hf-related-card__title">Clinical Dermablading</h3>
+                            <div class="hf-related-card__divider"></div>
+                            <p class="hf-related-card__desc">
+                                Surgical-grade epidermal exfoliation eliminating micro-peach fuzz and dead skin for
+                                supreme radiant luminous clarity...
+                            </p>
+                            <span class="hf-related-card__action">
+                                <span>Explore Treatment</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14" />
+                                    <path d="m12 5 7 7-7 7" />
+                                </svg>
+                            </span>
+                        </a>
+
+                        <!-- Service 5: HIFU & RF Skin Tightening -->
+                        <a href="../treatments/face/hifu-rf.html" class="hf-related-card">
+                            <h3 class="hf-related-card__title">HIFU &amp; RF Lifting</h3>
+                            <div class="hf-related-card__divider"></div>
+                            <p class="hf-related-card__desc">
+                                Focused ultrasound energy restoring jawline sharpness, collagen density, and youthful
+                                elasticity for deep lifting...
+                            </p>
+                            <span class="hf-related-card__action">
+                                <span>Explore Treatment</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14" />
+                                    <path d="m12 5 7 7-7 7" />
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curvy separator: Related Dark (#4b2b20) → Locations Soft Cream (#FDF8F3) -->
             <div class="section-separator" aria-hidden="true">
                 <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                     <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
@@ -3555,10 +3529,9 @@
         </section>
 
         <!-- ═══════════════════════════════════════════════════════════
-             13. CLINIC LOCATIONS (Directly from index.html)
+             12. CLINIC LOCATIONS (Directly from index.html)
              ═══════════════════════════════════════════════════════════ -->
-        <section class="clinic-locations-section" id="locations" style="background: #FDF8F3; padding-top: 20px;"
-            aria-labelledby="locations-heading">
+        <section class="clinic-locations-section" id="locations" aria-labelledby="locations-heading">
             <div class="container">
                 <div class="section-header text-center mb-4 mb-lg-5">
                     <span class="hf-eyebrow">OUR CLINICS</span>
@@ -3569,7 +3542,7 @@
                     </div>
                     <h2 id="locations-heading" class="hf-heading">Two Sanctuaries, One <span
                             class="scribble">Standard</span></h2>
-                    <p class="section-desc mx-auto" style="max-width: 760px; color: #5C4A3A;">
+                    <p class="section-desc hf-section-desc--wide mx-auto">
                         Visit our state-of-the-art aesthetic clinics in South Delhi and Gurgaon. Experience personalized
                         medical care, advanced regenerative technologies, and serene luxury.
                     </p>
@@ -3579,14 +3552,18 @@
                 <div class="clinic-tabs" role="tablist" aria-label="Select Clinic Location">
                     <div class="clinic-tabs__pill">
                         <button class="clinic-tab active" role="tab" aria-selected="true" data-clinic="0">
-                            <img class="clinic-tab__img" src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=200&auto=format&fit=crop" alt="Delhi Clinic" />
+                            <img class="clinic-tab__img"
+                                src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=200&auto=format&fit=crop"
+                                alt="Delhi Clinic" />
                             <span class="clinic-tab__info">
                                 <span class="clinic-tab__name">New Delhi</span>
                                 <span class="clinic-tab__role">Lajpat Nagar</span>
                             </span>
                         </button>
                         <button class="clinic-tab" role="tab" aria-selected="false" data-clinic="1">
-                            <img class="clinic-tab__img" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=200&auto=format&fit=crop" alt="Gurgaon Clinic" />
+                            <img class="clinic-tab__img"
+                                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=200&auto=format&fit=crop"
+                                alt="Gurgaon Clinic" />
                             <span class="clinic-tab__info">
                                 <span class="clinic-tab__name">Gurgaon</span>
                                 <span class="clinic-tab__role">Golf Course Rd</span>
@@ -3609,7 +3586,7 @@
                                 <ul class="clinic-loc-card__info">
                                     <li>
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            aria-hidden="true">
                                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                                             <circle cx="12" cy="10" r="3" />
                                         </svg>
@@ -3617,7 +3594,7 @@
                                     </li>
                                     <li>
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            aria-hidden="true">
                                             <circle cx="12" cy="12" r="9" />
                                             <path d="M12 7v5l3 2" />
                                         </svg>
@@ -3625,7 +3602,7 @@
                                     </li>
                                     <li>
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            aria-hidden="true">
                                             <path
                                                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
                                         </svg>
@@ -3656,7 +3633,7 @@
                                 <ul class="clinic-loc-card__info">
                                     <li>
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            aria-hidden="true">
                                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                                             <circle cx="12" cy="10" r="3" />
                                         </svg>
@@ -3664,7 +3641,7 @@
                                     </li>
                                     <li>
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            aria-hidden="true">
                                             <circle cx="12" cy="12" r="9" />
                                             <path d="M12 7v5l3 2" />
                                         </svg>
@@ -3672,7 +3649,7 @@
                                     </li>
                                     <li>
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            aria-hidden="true">
                                             <path
                                                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
                                         </svg>
@@ -3701,25 +3678,20 @@
             <div class="footer-cta-card-wrapper">
                 <div class="footer-cta-card">
                     <div class="section-header text-center mb-4">
-                        <span class="section-subtitle" style="color: #ffffff !important;">BEGIN YOUR JOURNEY</span>
+                        <span class="section-subtitle">BEGIN YOUR JOURNEY</span>
                         <div class="nemonic-separator mx-auto mb-3">
-                            <div class="nemonic-line" style="background-color: #ffffff;"></div>
-                            <img src="logo-header.png" alt="nemonic" class="nemonic-icon"
-                                style="filter: brightness(0) invert(1);" />
-                            <div class="nemonic-line" style="background-color: #ffffff;"></div>
+                            <div class="nemonic-line"></div>
+                            <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
+                            <div class="nemonic-line"></div>
                         </div>
                     </div>
-                    <h2 class="footer-cta-heading">Ready to reveal your<br>most <span class="scribble"
-                            style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important;">radiant
+                    <h2 class="footer-cta-heading">Ready to reveal your<br>most <span class="scribble">radiant
                             self?</span></h2>
                     <p class="footer-cta-sub">Join thousands who've discovered the art of effortless confidence —
                         crafted for your skin, your story.</p>
-                    <a href="../newthree.html#book" class="dz-cta"
-                        style="margin: 0 auto; display: inline-flex; border-color: rgba(255,255,255,0.5);">
-                        <span style="color: #ffffff !important;">Book a Consultation</span>
-                        <img src="nemonic1.png" class="btn-icon"
-                            style="width: 14px; height: 14px; object-fit: contain; filter: brightness(0) invert(1);"
-                            alt="icon" />
+                    <a href="../newthree.html#book" class="dz-cta footer-cta-btn">
+                        <span>Book a Consultation</span>
+                        <img src="nemonic1.png" class="btn-icon" alt="icon" />
                     </a>
                 </div>
             </div>
@@ -3781,13 +3753,13 @@
                                 </div>
                                 <div class="footer-contact-item">
                                     <span class="footer-contact-label">Phone &amp; WhatsApp</span>
-                                    <a href="tel:+919878885046" class="footer-contact-value"
-                                        style="text-decoration: none; color: inherit;">+91-9878885046</a>
+                                    <a href="tel:+919878885046"
+                                        class="footer-contact-value footer-contact-link">+91-9878885046</a>
                                 </div>
                                 <div class="footer-contact-item">
                                     <span class="footer-contact-label">Email</span>
-                                    <a href="mailto:rahul@dzenderma.com" class="footer-contact-value"
-                                        style="text-decoration: none; color: inherit;">rahul@dzenderma.com</a>
+                                    <a href="mailto:rahul@dzenderma.com"
+                                        class="footer-contact-value footer-contact-link">rahul@dzenderma.com</a>
                                 </div>
                             </div>
                         </div>
@@ -3873,7 +3845,7 @@
     <div id="hfVideoModal" class="hf-vmodal" aria-hidden="true" role="dialog" aria-modal="true">
         <div class="hf-vmodal__dialog" id="hfModalDialog">
             <div class="hf-vmodal__header">
-                <div class="d-flex align-items-center gap-2" style="overflow: hidden;">
+                <div class="d-flex align-items-center gap-2 hf-vmodal__title-wrap">
                     <span id="hfModalBadge" class="hf-vbadge hf-vbadge--insta">Instagram</span>
                     <h3 class="hf-vmodal__header-title" id="hfModalTitle">Video Title</h3>
                 </div>
@@ -3891,12 +3863,12 @@
                     allowfullscreen></iframe>
             </div>
             <div class="hf-vmodal__footer">
-                <a href="../newthree.html#book" class="dz-cta" style="padding: 9px 20px; font-size: 13px;">
+                <a href="../newthree.html#book" class="dz-cta hf-vmodal__cta">
                     <span>Book Consultation</span>
-                    <img src="nemonic1.png" class="btn-icon" alt="icon" style="filter: brightness(0) invert(1);" />
+                    <img src="nemonic1.png" class="btn-icon" alt="icon" />
                 </a>
                 <a href="https://instagram.com/dzenderma" target="_blank" rel="noopener" id="hfModalExternalBtn"
-                    class="hf-social-btn hf-social-btn--insta" style="padding: 8px 18px; font-size: 12px;">
+                    class="hf-social-btn hf-social-btn--insta hf-vmodal__social-btn">
                     <span>Open in Instagram</span>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
@@ -3919,12 +3891,19 @@
                 var vtabs = document.querySelectorAll('.hf-vtab-btn');
                 var vcards = document.querySelectorAll('.hf-vcard');
 
-                vtabs.forEach(function (b) { b.classList.remove('active'); });
+                vtabs.forEach(function (b) {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
+                });
                 if (btn) {
                     btn.classList.add('active');
+                    btn.setAttribute('aria-selected', 'true');
                 } else {
                     var targetBtn = document.querySelector('.hf-vtab-btn[data-vfilter="' + filter + '"]');
-                    if (targetBtn) targetBtn.classList.add('active');
+                    if (targetBtn) {
+                        targetBtn.classList.add('active');
+                        targetBtn.setAttribute('aria-selected', 'true');
+                    }
                 }
 
                 vcards.forEach(function (card) {
@@ -3937,6 +3916,11 @@
                         card.classList.add('is-hidden');
                     }
                 });
+
+                var vgrid = document.querySelector('.hf-video-grid');
+                if (vgrid) {
+                    vgrid.scrollTo({ left: 0, behavior: 'smooth' });
+                }
             } catch (err) {
                 console.error('Video filter error:', err);
             }
@@ -4077,6 +4061,20 @@
                 if (e.key === 'Escape' && vmodal && vmodal.classList.contains('is-open')) {
                     window.closeVideoModal();
                 }
+            });
+
+            // FAQ Accordion (Only one FAQ open at a time)
+            var faqDetails = document.querySelectorAll('.hf-faq-item');
+            faqDetails.forEach(function (detail) {
+                detail.addEventListener('toggle', function () {
+                    if (detail.open) {
+                        faqDetails.forEach(function (other) {
+                            if (other !== detail && other.open) {
+                                other.open = false;
+                            }
+                        });
+                    }
+                });
             });
         }
 
