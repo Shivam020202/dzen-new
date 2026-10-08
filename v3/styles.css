@@ -5292,8 +5292,8 @@ html body .footer-cta-card .footer-cta-eyebrow {
 }
 
 html body .footer-cta-card .footer-cta-sub {
-    color: rgba(255, 255, 255, 0.8) !important;
-    -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
+    color: #FAF9F6;
+    -webkit-text-fill-color: #FAF9F6;
 }
 
 
@@ -5886,8 +5886,8 @@ html body .embossed-tagline {
 
     .embossed-book-btn,
     .book-pill-btn {
-        padding: 10px 28px !important;
-        font-size: 11px !important;
+        padding: 10px 45px !important;
+        font-size: 14px !important;
         margin-bottom: 38px !important;
     }
 
@@ -6939,12 +6939,12 @@ html body .tm-card__quote {
 .hB,
 .breadcrumb-header {
     position: relative;
-    min-height: clamp(340px, 40vw, 520px);
+    min-height: 350px;
     display: flex !important;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: clamp(100px, 12vw, 140px) 24px clamp(80px, 9vw, 110px) !important;
+    padding: 100px 24px 80px !important;
     background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%) !important;
     background-blend-mode: multiply, normal !important;
     border-bottom: none !important;

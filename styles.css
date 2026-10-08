@@ -88,7 +88,7 @@ button {
 
 ::selection {
   background: var(--accent);
-  color: white;
+  color: #FAF9F6;
 }
 
 /* =========================================================
@@ -378,7 +378,7 @@ h3,
 .header-btn {
   padding: 12px 32px;
   background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%);
-  color: white;
+  color: #FAF9F6;
   font-family: var(--sans);
   font-size: 11px;
   font-weight: 600;
@@ -610,7 +610,7 @@ h3,
   gap: 12px;
   padding: 16px 40px;
   background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%);
-  color: white;
+  color: #FAF9F6;
   font-family: var(--sans);
   font-size: 12px;
   font-weight: 600;
@@ -743,7 +743,7 @@ h3,
   flex-direction: column;
   align-items: center;
   text-align: center;
-  color: white;
+  color: #FAF9F6;
   padding: 0 48px;
   max-width: 1000px;
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
@@ -777,7 +777,7 @@ h3,
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  color: white;
+  color: #FAF9F6;
   backdrop-filter: blur(8px);
 }
 
@@ -936,7 +936,7 @@ h3,
   font-size: clamp(48px, 7vw, 80px);
   font-weight: 500;
   font-style: italic;
-  color: white;
+  color: #FAF9F6;
   margin-bottom: 40px;
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -948,7 +948,7 @@ h3,
   gap: 12px;
   padding: 16px 40px;
   background: transparent;
-  color: white;
+  color: #FAF9F6;
   font-family: var(--sans);
   font-size: 13px;
   font-weight: 600;
@@ -985,7 +985,7 @@ h3,
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  color: white;
+  color: #FAF9F6;
   opacity: 0.6;
   font-family: var(--sans);
   font-size: 10px;
@@ -1253,7 +1253,7 @@ h3,
 }
 
 .about-accordion {
-  background: white;
+  background: #FAF9F6;
   border-radius: 12px;
   border: 1px solid rgba(139, 69, 19, 0.08);
   overflow: hidden;
@@ -1357,7 +1357,7 @@ h3,
   width: 100%;
   aspect-ratio: 3/4;
   max-height: 520px;
-  background: white;
+  background: FAF9F6;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(139, 69, 19, 0.15);
   border-radius: 0 80px 0 0;
@@ -1636,7 +1636,7 @@ h3,
 }
 
 .why-card {
-  background: white;
+  background: FAF9F6;
   border-radius: 16px;
   padding: 40px 32px;
   text-align: center;
@@ -1796,7 +1796,7 @@ h3,
 .service-card {
   flex: 0 0 320px;
   scroll-snap-align: start;
-  background: white;
+  background: FAF9F6;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(139, 69, 19, 0.08);
@@ -1891,7 +1891,7 @@ h3,
 
 .services-nav-btn:hover {
   background: var(--copper-brown);
-  color: white;
+  color: FAF9F6;
   border-color: var(--copper-brown);
 }
 
@@ -2049,7 +2049,7 @@ h3,
 .treatments-nav-btn:hover {
   background: var(--mid-brown);
   border-color: var(--mid-brown);
-  color: white;
+  color: FAF9F6;
 }
 
 .treatments-nav-btn svg {
@@ -2119,7 +2119,7 @@ h3,
   overflow: hidden;
   animation: blob-morph-alt 9s ease-in-out infinite alternate-reverse;
   z-index: 2;
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  -webkit-mask-image: -webkit-radial-gradient(#FAF9F6, black);
   mask-image: radial-gradient(white, black);
   transform: translateZ(0);
 }
@@ -2164,7 +2164,7 @@ h3,
   font-size: 18px;
   font-weight: 500;
   font-style: italic;
-  color: white;
+  color: #FAF9F6;
   line-height: 1.2;
   margin: 0;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
@@ -2178,7 +2178,7 @@ h3,
   font-size: 24px;
   font-style: italic;
   font-weight: 400;
-  color: white;
+  color: #FAF9F6;
   z-index: 7;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
@@ -2520,7 +2520,7 @@ h3,
   font-family: var(--sans);
   font-size: 11px;
   font-weight: 500;
-  color: white;
+  color: #FAF9F6;
   background: rgba(0, 0, 0, 0.6);
   padding: 4px 10px;
   border-radius: 20px;
@@ -2533,7 +2533,7 @@ h3,
 }
 
 .testimonial-slide:hover .video-play-btn svg {
-  color: white;
+  color: #FAF9F6;
 }
 
 .slider-controls {
@@ -2567,11 +2567,11 @@ h3,
 }
 
 .slider-btn:hover svg {
-  color: white;
+  color: #FAF9F6;
 }
 
 .testimonial-video-card:hover .video-play-btn svg {
-  color: white;
+  color: #FAF9F6;
 }
 
 .video-info {
@@ -2613,7 +2613,7 @@ h3,
 
 .view-all-testimonials:hover {
   background: var(--copper-brown);
-  color: white;
+  color: #FAF9F6;
 }
 
 /* Media Coverage Section */
@@ -2973,7 +2973,7 @@ h3,
   display: inline-block;
   padding: 14px 32px;
   background: var(--mid-brown);
-  color: white;
+  color: #FAF9F6;
   font-family: var(--sans);
   font-size: 11px;
   font-weight: 600;
@@ -3186,7 +3186,7 @@ h3,
   flex: 1 1 50%;
   padding: var(--space-4xl) var(--space-3xl);
   background: var(--deep-brown);
-  color: white;
+  color: #FAF9F6;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3352,7 +3352,7 @@ h3,
   flex: 1 1 50%;
   padding: var(--space-4xl) var(--space-3xl);
   background: var(--charcoal);
-  color: white;
+  color: #FAF9F6;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3909,7 +3909,7 @@ h3,
 .book-form button {
   padding: 16px 32px;
   background: var(--copper-brown);
-  color: white;
+  color: #FAF9F6;
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -3964,7 +3964,7 @@ h3,
 .site-footer {
   padding: var(--space-4xl) 40px var(--space-xl);
   background: var(--charcoal);
-  color: white;
+  color: #FAF9F6;
   text-align: center;
 }
 
@@ -4192,7 +4192,7 @@ h3,
   font-family: var(--sans);
   font-size: 13px;
   font-weight: 600;
-  color: white !important;
+  color: #FAF9F6 !important;
   background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%);
   padding: 16px 40px;
   border-radius: 50px;
@@ -4216,7 +4216,7 @@ h3,
   transform: translateY(-3px);
   box-shadow: 0 15px 35px rgba(75, 43, 32, 0.3);
   background: linear-gradient(135deg, #5d3628 0%, #a0522d 100%);
-  color: white !important;
+  color: #FAF9F6 !important;
 }
 
 .view-all-articles:hover svg,
@@ -4319,7 +4319,7 @@ h3,
   border-radius: 50%;
   display: grid;
   place-items: center;
-  color: white;
+  color: #FAF9F6;
   box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
   transition:
     transform 0.3s,
@@ -4578,7 +4578,7 @@ h3,
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: white;
+  color: #FAF9F6;
   background: var(--deep-brown);
   padding: 18px 40px;
   text-decoration: none;
@@ -4593,7 +4593,7 @@ h3,
 
 .sig-explore-btn:hover {
   background: var(--copper-brown);
-  color: white;
+  color: #FAF9F6;
 }
 
 .sig-explore-btn:hover svg {
@@ -5011,7 +5011,7 @@ h3,
 
 .sig-nav-btn:hover {
   background: var(--copper-brown);
-  color: white;
+  color: #FAF9F6;
 }
 
 .sig-nav-btn svg {
@@ -7246,7 +7246,7 @@ img.footer-logo:hover {
 .footer-social:hover {
   background: rgba(139, 69, 19, 0.15);
   border-color: var(--copper-brown);
-  color: white;
+  color: #FAF9F6;
   transform: translateY(-4px) scale(1.05);
   box-shadow:
     0 10px 30px rgba(139, 69, 19, 0.3),
@@ -7314,7 +7314,7 @@ img.footer-logo:hover {
 }
 
 .footer-nav-list a:hover {
-  color: white;
+  color: #FAF9F6;
 }
 
 .footer-nav-list a:hover::after {
@@ -7456,7 +7456,7 @@ a.contact-value:hover {
   font-size: 28px;
   font-weight: 500;
   font-style: italic;
-  color: white;
+  color: #FAF9F6;
   margin-bottom: 12px;
 }
 
@@ -7486,7 +7486,7 @@ a.contact-value:hover {
   border: 1px solid rgba(218, 165, 32, 0.3);
   border-right: none;
   border-radius: 50px 0 0 50px;
-  color: white;
+  color: #FAF9F6;
   font-family: var(--sans);
   font-size: 14px;
   outline: none;
@@ -7511,7 +7511,7 @@ a.contact-value:hover {
   background: linear-gradient(135deg, var(--copper-brown) 0%, #6b3410 100%);
   border: 1px solid var(--copper-brown);
   border-radius: 0 50px 50px 0;
-  color: white;
+  color: #FAF9F6;
   font-family: var(--sans);
   font-size: 12px;
   font-weight: 600;
@@ -7981,7 +7981,7 @@ a.contact-value:hover {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: white;
+  color: #FAF9F6;
   background: rgba(26, 20, 16, 0.65);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -8046,7 +8046,7 @@ a.contact-value:hover {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
+  color: #FAF9F6;
   cursor: pointer;
   display: flex;
   align-items: center;
