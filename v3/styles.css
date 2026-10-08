@@ -5104,7 +5104,16 @@ h2:not(#brand-philosophy h2):not(.brand-philosophy-strip-section h2) .scribble {
 
 
 .dz-cta img.btn-icon,
-.pnav__cta img.btn-icon {
+.dz-cta .btn-icon,
+.pnav__cta img.btn-icon,
+.pnav__cta .btn-icon {
+    width: 12px;
+    height: 12px;
+    max-width: 12px;
+    max-height: 12px;
+    object-fit: contain;
+    flex-shrink: 0;
+    display: inline-block;
     filter: brightness(0) invert(1);
 }
 
