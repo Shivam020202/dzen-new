@@ -102,18 +102,18 @@
         },
         {
           "@type": "Question",
-          "name": "Is Laser Hair Reduction safe for darker Indian skin tones?",
+          "name": "Can Laser Hair Reduction be done on darker skin?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Our Quad-Wavelength diode technology incorporates 1064nm Nd:YAG depth, which bypasses superficial epidermal melanin to target the follicle safely, preventing hyperpigmentation and thermal injury."
+            "text": "The Quad-Wavelength technology at D’Zen Derma is designed for different skin types, including darker skin. Treatment parameters are selected according to individual skin and hair characteristics."
           }
         },
         {
           "@type": "Question",
-          "name": "What aftercare should I follow after Laser Hair Reduction?",
+          "name": "What should I avoid after treatment?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Avoid direct sun exposure, saunas, steam, hot showers, and vigorous exercise for 24–48 hours. Apply broad-spectrum sunscreen and soothing moisturizers, avoiding active chemical exfoliants or retinoids for 3–5 days."
+            "text": "Follow the aftercare instructions provided by your doctor. Generally, prolonged sun exposure, aggressive scrubbing, massages, steam and sauna should be avoided for the recommended period. Strong skin actives such as retinol, AHA and BHA products may also need to be paused temporarily."
           }
         },
         {
@@ -129,7 +129,7 @@
           "name": "Is Laser Hair Reduction Effective for All Hair types and all skin tones?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Darker/coarser hair generally responds better. Very fine hair can be more challenging. Blonde/grey/white hair may respond poorly because of lower pigment. Hormonal hair growth may require additional/maintenance sessions."
+            "text": "darker/coarser hair generally responds better; very fine hair can be more challenging; blonde/grey/white hair may respond poorly because of lower pigment; hormonal hair growth may require additional/maintenance sessions."
           }
         },
         {
@@ -145,7 +145,7 @@
           "name": "Who should avoid Laser Hair Reduction?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Pregnant and lactating women, individuals with active skin infections, and those with active inflammatory skin conditions on the treatment area should avoid or postpone treatment until cleared by their doctor."
+            "text": "Pregnant & Lactating women, Active skin infections, Inflammatory skin conditions."
           }
         }
       ]
@@ -807,7 +807,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: clamp(24px, 3.5vw, 44px);
-            margin-top: 48px;
+            margin-top: 20px;
             position: relative;
             z-index: 2;
         }
@@ -854,7 +854,7 @@
         }
 
         .lhr-step-name {
-            font-weight: 600;
+            font-weight: 400;
             font-size: 1rem;
             color: #FAF9F6 !important;
             margin-bottom: 6px;
@@ -1282,7 +1282,7 @@
 
         #before-after {
             background: linear-gradient(to top, #F4EFE8, #FDF8F3);
-            padding: 40px 0px 50px;
+            padding: 40px 0px 0px;
             position: relative;
         }
 
@@ -1297,7 +1297,7 @@
         .hf-video-section,
         #video-showcase {
             background: linear-gradient(to top, #F4EFE8, #FDF8F3) !important;
-            padding: 50px 0;
+            padding: 50px 0 0px;
             position: relative;
             overflow: hidden;
         }
@@ -1749,7 +1749,7 @@
         /* ── FAQ Section (#faq) ── */
         #faq {
             background: #FAF7F2;
-            padding: 50px 0 70px;
+            padding: 50px 0px;
         }
 
         .hf-faq-item {
@@ -1772,7 +1772,7 @@
             font-size: 1.05rem;
             font-weight: 400;
             line-height: 1.4;
-            color: var(--hf-ink);
+            color: #4b2b20 !important;
             cursor: pointer;
             list-style: none;
             display: flex;
@@ -1809,7 +1809,7 @@
             padding: 0 24px 22px 24px;
             font-size: 0.94rem;
             line-height: 1.75;
-            color: var(--hf-body);
+            color: #2b2b2b !important;
             border-top: 1px solid rgba(196, 146, 74, 0.12);
             margin-top: 2px;
             padding-top: 16px;
@@ -1835,7 +1835,7 @@
             isolation: isolate;
             overflow: hidden;
             color: #FAF9F6 !important;
-            padding: 50px 0 70px;
+            padding: 50px 0px 0px;
         }
 
         html body #related-services.hf-related-section::before {
@@ -2178,6 +2178,70 @@
             color: #FAF9F6 !important;
             -webkit-text-fill-color: #FAF9F6 !important;
         }
+
+        /* ── Breadcrumb Hero Header & Bottom Wavy Curve ── */
+        .hf-hero-header {
+            background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%), url('../images/contour-texture.webp') repeat;
+            background-blend-mode: multiply;
+            padding-top: 103px;
+            padding-bottom: 60px;
+            border-bottom: none;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hf-hero-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hf-hero-subtitle {
+            font-family: 'Inter', system-ui, sans-serif !important;
+            font-size: 11px !important;
+            font-weight: 600 !important;
+            letter-spacing: 3.4px !important;
+            text-transform: uppercase !important;
+            color: #FAF9F6 !important;
+            -webkit-text-fill-color: #FAF9F6 !important;
+            opacity: 0.85 !important;
+            display: block;
+            margin-bottom: 0;
+        }
+
+        .hf-hero-line {
+            background-color: rgba(255, 255, 255, 0.4) !important;
+        }
+
+        .hf-hero-icon {
+            filter: brightness(0) invert(1) !important;
+        }
+
+        .hf-hero-title {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-style: italic !important;
+            font-weight: 400 !important;
+            color: #FAF9F6 !important;
+            -webkit-text-fill-color: #FAF9F6 !important;
+            font-size: clamp(28px, 4vw, 50px) !important;
+            margin: 0;
+            line-height: 1.2;
+            text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+        }
+
+        .hf-hero-curve {
+            position: absolute;
+            width: 100%;
+            bottom: -1px;
+            left: 0;
+            z-index: 2;
+            line-height: 0;
+        }
+
+        .hf-hero-curve-svg {
+            display: block;
+            width: 100%;
+            height: clamp(36px, 4.2vw, 56px);
+        }
     </style>
 </head>
 
@@ -2501,11 +2565,11 @@
                         <div class="nemonic-line" style="background: rgba(250, 249, 246, 0.45) !important;"></div>
                     </div>
                     <h2 class="hf-heading mb-3" style="color: #FAF9F6 !important;">
-                        The D'Zen <span class="scribble" style="color: #FAF9F6 !important;">3-Phase Protocol</span>
+                        The D'Zen 3-Phase Protocol
                     </h2>
                     <p class="hf-lead" style="color: #FAF9F6 !important; opacity: 0.92;">
-                        A structured, doctor-supervised journey designed to ensure maximum comfort, precision, and
-                        clinical safety at every stage.
+                        At D’Zen Derma, Laser Hair Reduction follows a personalised treatment process based on your
+                        skin, hair and treatment goals.
                     </p>
                 </div>
 
@@ -2518,19 +2582,19 @@
                             <h3 class="lhr-phase-title">Pre-Treatment</h3>
                         </div>
                         <div class="lhr-step-item">
-                            <div class="lhr-step-name">Step 1: Clinical Assessment</div>
-                            <p class="lhr-step-desc">Dermatologist evaluation of skin type, hair density, thickness, and
-                                medical history.</p>
+                            <div class="lhr-step-name">Step 1: Consultation &amp; Assessment</div>
+                            <p class="lhr-step-desc">The doctor evaluates your hair growth, treatment area, skin
+                                characteristics and individual requirements to develop a suitable treatment plan.</p>
                         </div>
                         <div class="lhr-step-item">
                             <div class="lhr-step-name">Step 2: Area Preparation</div>
-                            <p class="lhr-step-desc">Gentle shaving of the area 24 hours prior to leave the hair root
-                                intact inside the follicle.</p>
+                            <p class="lhr-step-desc">The selected area is prepared for treatment. Shaving may be
+                                recommended before the session depending on the treatment area.</p>
                         </div>
                         <div class="lhr-step-item">
-                            <div class="lhr-step-name">Step 3: Patch Test &amp; Calibration</div>
-                            <p class="lhr-step-desc">Customized calibration of wavelength, fluence, and pulse width for
-                                your skin profile.</p>
+                            <div class="lhr-step-name">Step 3: Target Area Marking</div>
+                            <p class="lhr-step-desc">The treatment area may be identified and marked where required to
+                                ensure systematic coverage.</p>
                         </div>
                     </div>
 
@@ -2541,19 +2605,19 @@
                             <h3 class="lhr-phase-title">During Treatment</h3>
                         </div>
                         <div class="lhr-step-item">
-                            <div class="lhr-step-name">Step 4: Protective Eyewear</div>
-                            <p class="lhr-step-desc">Thorough skin sanitization and placement of specialized
-                                laser-blocking optical shields.</p>
+                            <div class="lhr-step-name">Step 4: Cooling Gel Application</div>
+                            <p class="lhr-step-desc">Cold gel is applied to the treatment area to support comfort during
+                                the procedure.</p>
                         </div>
                         <div class="lhr-step-item">
-                            <div class="lhr-step-name">Step 5: Conductive Cooling Gel</div>
-                            <p class="lhr-step-desc">Application of clear cooling gel to ensure smooth handpiece glide
-                                and thermal protection.</p>
+                            <div class="lhr-step-name">Step 5: Laser Application</div>
+                            <p class="lhr-step-desc">The Quad-Wavelength Diode Laser handpiece is moved systematically
+                                over the selected area, delivering controlled energy to the targeted hair follicles.</p>
                         </div>
                         <div class="lhr-step-item">
-                            <div class="lhr-step-name">Step 6: Quad-Wavelength Delivery</div>
-                            <p class="lhr-step-desc">Systematic gliding passes delivering calibrated laser energy
-                                alongside active sapphire cooling.</p>
+                            <div class="lhr-step-name">Step 6: Gel Removal</div>
+                            <p class="lhr-step-desc">After the laser application is completed, the cooling gel is
+                                removed from the treated area.</p>
                         </div>
                     </div>
 
@@ -2564,21 +2628,23 @@
                             <h3 class="lhr-phase-title">Post-Treatment</h3>
                         </div>
                         <div class="lhr-step-item">
-                            <div class="lhr-step-name">Step 7: Calming Application</div>
-                            <p class="lhr-step-desc">Application of soothing thermal post-laser lotion and cool
-                                compresses to calm the skin.</p>
+                            <div class="lhr-step-name">Step 7: Follow-Up Sessions</div>
+                            <p class="lhr-step-desc">Multiple sessions are required because hair follicles grow through
+                                different stages. For Indian skin types, an average of 6–8 sessions may be recommended,
+                                generally spaced 3–6 weeks apart, depending on the treatment area, hair thickness and
+                                individual characteristics.</p>
                         </div>
                         <div class="lhr-step-item">
-                            <div class="lhr-step-name">Step 8: Aftercare &amp; SPF Guidance</div>
-                            <p class="lhr-step-desc">Personalized aftercare advice, strict broad-spectrum SPF 50+
-                                application, and maintenance schedule.</p>
+                            <div class="lhr-step-name">Step 8: Maintenance</div>
+                            <p class="lhr-step-desc">Some patients may require maintenance sessions depending on their
+                                individual hair-growth pattern and hormonal factors.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Curvy separator: Dark Gradient (#8b4513) → White (#FFFFFF) -->
-            <div class="section-separator" aria-hidden="true" style="margin-top: 30px;">
+            <div class="section-separator" aria-hidden="true" style="margin-top: 15px;">
                 <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                     <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
                 </svg>
@@ -2604,11 +2670,6 @@
                         A clear comparison between medical-grade laser hair reduction and temporary hair removal
                         methods.
                     </p>
-                    <div class="text-center d-md-none mb-2">
-                        <span class="lhr-table-scroll-hint"><i class="fas fa-arrows-left-right"></i> Swipe sideways to
-                            compare all methods</span>
-                    </div>
-
                     <div class="lhr-table-wrapper">
                         <table class="lhr-comparison-table">
                             <thead>
@@ -3012,7 +3073,7 @@
             </div>
 
             <!-- Curvy Wavy Bottom Separator -->
-            <div class="section-separator" aria-hidden="true">
+            <div class="section-separator" aria-hidden="true" style="margin-top: 30px;">
                 <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                     <path fill="#FAF7F2" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
                 </svg>
@@ -3048,7 +3109,7 @@
                         </summary>
                         <div class="hf-faq-body">
                             Many patients may require approximately 6–8 sessions. The number can vary depending on the
-                            treatment area, hair thickness, skin and hair characteristics and individual response. Our
+                            treatment area, hair thickness, skin and hair characteristics and individual response. our
                             Gold standard Quad Wavelength technology machine ensures maximum results in lesser number of
                             sessions.
                         </div>
@@ -3120,26 +3181,27 @@
                     <!-- FAQ 7 -->
                     <details class="hf-faq-item">
                         <summary class="hf-faq-summary">
-                            <span>Is Laser Hair Reduction safe for darker Indian skin tones?</span>
+                            <span>Can Laser Hair Reduction be done on darker skin?</span>
                             <div class="hf-faq-icon">+</div>
                         </summary>
                         <div class="hf-faq-body">
-                            Yes. Our Quad-Wavelength diode technology incorporates 1064nm Nd:YAG depth, which bypasses
-                            superficial epidermal melanin to target the follicle safely, preventing hyperpigmentation
-                            and thermal injury.
+                            The Quad-Wavelength technology at D’Zen Derma is designed for different skin types,
+                            including darker skin. Treatment parameters are selected according to individual skin and
+                            hair characteristics.
                         </div>
                     </details>
 
                     <!-- FAQ 8 -->
                     <details class="hf-faq-item">
                         <summary class="hf-faq-summary">
-                            <span>What aftercare should I follow after Laser Hair Reduction?</span>
+                            <span>What should I avoid after treatment?</span>
                             <div class="hf-faq-icon">+</div>
                         </summary>
                         <div class="hf-faq-body">
-                            Avoid direct sun exposure, saunas, steam, hot showers, and vigorous exercise for 24–48
-                            hours. Apply broad-spectrum sunscreen and soothing moisturizers, avoiding active chemical
-                            exfoliants or retinoids for 3–5 days.
+                            Follow the aftercare instructions provided by your doctor. Generally, prolonged sun
+                            exposure, aggressive scrubbing, massages, steam and sauna should be avoided for the
+                            recommended period. Strong skin actives such as retinol, AHA and BHA products may also need
+                            to be paused temporarily.
                         </div>
                     </details>
 
@@ -3163,9 +3225,12 @@
                             <div class="hf-faq-icon">+</div>
                         </summary>
                         <div class="hf-faq-body">
-                            Darker/coarser hair generally responds better. Very fine hair can be more challenging.
-                            Blonde/grey/white hair may respond poorly because of lower pigment. Hormonal hair growth may
-                            require additional/maintenance sessions.
+                            <ul class="mb-0" style="padding-left: 20px; line-height: 1.8; margin-top: 2px;">
+                                <li>darker/coarser hair generally responds better</li>
+                                <li>very fine hair can be more challenging</li>
+                                <li>blonde/grey/white hair may respond poorly because of lower pigment</li>
+                                <li>hormonal hair growth may require additional/maintenance sessions</li>
+                            </ul>
                         </div>
                     </details>
 
@@ -3190,20 +3255,17 @@
                             <div class="hf-faq-icon">+</div>
                         </summary>
                         <div class="hf-faq-body">
-                            Pregnant and lactating women, individuals with active skin infections, and those with active
-                            inflammatory skin conditions on the treatment area should avoid or postpone treatment until
-                            cleared by their doctor.
+                            <ul class="mb-0" style="padding-left: 20px; line-height: 1.8; margin-top: 2px;">
+                                <li>Pregnant &amp; Lactating women</li>
+                                <li>Active skin infections</li>
+                                <li>Inflammatory skin conditions</li>
+                            </ul>
                         </div>
                     </details>
                 </div>
             </div>
 
-            <!-- Curvy separator: Warm (#FAF7F2) → Cream (#FDF8F3) -->
-            <div class="section-separator" aria-hidden="true">
-                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
-                </svg>
-            </div>
+
         </section>
 
         <!-- ═══════════════════════════════════════════════════════════
@@ -3324,7 +3386,7 @@
             </div>
 
             <!-- Curvy separator: Related Dark (#4b2b20) → Locations Soft Cream (#FDF8F3) -->
-            <div class="section-separator" aria-hidden="true">
+            <div class="section-separator" aria-hidden="true" style="margin-top:40px">
                 <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                     <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
                 </svg>
