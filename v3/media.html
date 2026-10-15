@@ -523,7 +523,18 @@
                 animation: none;
             }
         }
-    </style>
+    
+        /* Press section: the section reserves bottom padding for its wave, so the wave must
+           be pinned to the section's bottom edge. A later rule in styles.css sets
+           .section-separator to position: relative, which left a flat band below it. */
+        #press > .section-separator {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -1px;
+            margin: 0;
+        }
+</style>
 </head>
 
 <body class="md-page" style="background-color: #FDF8F3; color: #2B1A12;">

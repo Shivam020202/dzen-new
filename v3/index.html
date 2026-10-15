@@ -40,6 +40,72 @@
             }
         }
     </script>
+    <style>
+        /* Wellness Tailored to You: tabs hold 5 concerns (Hair holds 3), so on desktop
+           the blobs shrink slightly and sit in one centred row instead of a 4-column grid */
+        @media (min-width: 992px) {
+            .concerns-section .concerns-grid {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+                max-width: 1140px;
+            }
+
+            .concerns-section .concern-item {
+                width: auto;
+                flex: 0 0 auto;
+            }
+
+            .concerns-section .concern-blob-wrapper {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        @media (min-width: 992px) and (max-width: 1199.98px) {
+            .concerns-section .concern-blob-wrapper {
+                width: 168px;
+                height: 168px;
+            }
+
+            .concerns-section .concerns-grid {
+                gap: 14px;
+            }
+        }
+
+        /* Tablet 2-column grid: centre the odd last blob */
+        @media (min-width: 576px) and (max-width: 991.98px) {
+            .concerns-section .concern-item:last-child:nth-child(odd) {
+                grid-column: 1 / -1;
+            }
+        }
+        /* Philosophy → team wave: pinned to the bottom of the brown container */
+        #brand-philosophy .philosophy-wave {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -1px;
+            width: 100%;
+            margin: 0;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        /* Sections that end in a wavy separator: no bottom padding, so the section
+           finishes exactly on the wave instead of showing a flat band below it */
+        html body .partners-section,
+        html body .service-arch-section,
+        html body .media-coverage {
+            padding-bottom: 0 !important;
+        }
+
+    
+        /* Concerns section ends on its brown wave: no bottom padding below it */
+        html body .concerns-section {
+            padding-bottom: 0 !important;
+        }
+</style>
 </head>
 
 <body style="background-color: #FDF8F3; color: #2B1A12;">
@@ -212,17 +278,16 @@
                         <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
                         <div class="nemonic-line"></div>
                     </div>
-                    <h2 class="about-v2__title">Beauty is in the <em class="scribble">Balance</em></h2>
+                    <h2 class="about-v2__title">Beauty Is in the <em class="scribble">Balance</em></h2>
                     <p class="about-v2__lead">
-                        D'Zen Derma is inspired by harmony, balance, and science-led beauty care. We provide
-                        personalized aesthetic and wellness treatments designed to enhance natural beauty and
-                        confidence.
+                        At D’Zen Derma, we believe aesthetic care should enhance what makes you unique. Our approach
+                        combines modern treatment techniques, individual assessment and a considered understanding of
+                        skin and wellbeing.
                     </p>
                     <p class="about-v2__lead about-v2__lead--light">
-                        Our expert team of aesthetic physicians combines advanced medical technology with holistic
-                        approaches,
-                        ensuring every treatment is tailored to your unique skin journey. Step into our sanctuary and
-                        experience the perfect blend of luxury, science, and care.
+                        Every treatment journey begins with listening, understanding your concerns and exploring
+                        suitable options. We prioritise realistic expectations, thoughtful recommendations and results
+                        that complement your natural features.
                     </p>
 
                 </div>
@@ -423,14 +488,17 @@
                         </a>
                     </div>
                 </div>
+
+                <!-- Curvy separator: philosophy → cream doctors. Lives inside the brown
+                     container (pinned to its bottom) so the brown shows above the wave. -->
+                <div class="section-separator philosophy-wave" aria-hidden="true">
+                    <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="none">
+                        <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
+                    </svg>
+                </div>
             </div>
 
-            <!-- Curvy separator: philosophy → cream doctors -->
-            <div class="section-separator" aria-hidden="true">
-                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
-                </svg>
-            </div>
         </section>
 
         <!-- Doctors / Team Section -->
@@ -443,10 +511,11 @@
                         <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
                         <div class="nemonic-line"></div>
                     </div>
-                    <h2 class="doctors-v2__title">The minds <em class="scribble">behind</em> the method</h2>
+                    <h2 class="doctors-v2__title">The People <em class="scribble">Behind</em> the Philosophy</h2>
                     <p class="doctors-v2__subtitle">
-                        Two visionaries united by a shared philosophy: a sanctuary where science, art, and
-                        intentional care redefine what aesthetic medicine can be.
+                        D’Zen Derma brings together clinical expertise and a considered approach to the patient
+                        experience. Our team is committed to creating a space where scientific understanding, aesthetic
+                        judgement and personalised attention work together.
                     </p>
                 </div>
 
@@ -478,9 +547,10 @@
                             <span class="tm-card__meta">Founder &middot; Brand &amp; Experience</span>
                             <h3 class="tm-card__name">Rahul Bhandari</h3>
                             <p class="tm-card__role">Brand Strategy &middot; Experience Design</p>
-                            <blockquote class="tm-card__quote">
-                                "D'Zen is not a clinic. It is a philosophy that happens to operate one."
-                            </blockquote>
+                            <p class="tm-card__quote">
+                                Focused on brand strategy and experience design, Rahul helps shape the thoughtful
+                                environment and patient experience that define D’Zen Derma.
+                            </p>
                         </div>
                         <div class="tm-card__imagewrap">
                             <img class="tm-card__image" src="../images/Rahul-Bhandari.png" alt="Rahul Bhandari"
@@ -492,10 +562,11 @@
                         <div class="tm-card__content">
                             <span class="tm-card__meta">Founder &middot; Medical Direction</span>
                             <h3 class="tm-card__name">Dr. Aarushi Passi Bhandari</h3>
-                            <p class="tm-card__role">Aesthetic Physician</p>
-                            <blockquote class="tm-card__quote">
-                                "The most ambitious thing a doctor can do is to leave a patient with less, not more."
-                            </blockquote>
+                            <p class="tm-card__role">Medical Direction &middot; Aesthetic Physician</p>
+                            <p class="tm-card__quote">
+                                Dr. Aarushi brings a patient-focused approach to aesthetic medicine, emphasising careful
+                                assessment, appropriate treatment selection and natural-looking outcomes.
+                            </p>
                         </div>
                         <div class="tm-card__imagewrap">
                             <img class="tm-card__image" src="../images/dr-arushi-1.webp"
@@ -724,62 +795,62 @@
                     <div class="concerns-tabs">
                         <button class="concern-tab-btn active" data-target="tab-1">FACE</button>
                         <button class="concern-tab-btn" data-target="tab-2">BODY</button>
-                        <button class="concern-tab-btn" data-target="tab-3">AGEING</button>
-                        <button class="concern-tab-btn" data-target="tab-4">HAIR</button>
+                        <button class="concern-tab-btn" data-target="tab-3">HAIR</button>
+                        <button class="concern-tab-btn" data-target="tab-4">AGEING</button>
                         <button class="concern-tab-btn" data-target="tab-5">WELLNESS</button>
                     </div>
                 </div>
 
                 <div class="concern-tab-content active" id="tab-1">
+                    <!-- FACE -->
                     <div class="concerns-grid">
-                        <!-- Item 2 -->
                         <div class="concern-item">
                             <div class="concern-blob-wrapper">
                                 <div class="concern-blob-bg" style="animation-delay: -2s;"></div>
                                 <div class="concern-image" style="animation-delay: -1.5s;">
-                                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80"
-                                        alt="Body">
+                                    <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80" alt="Pigmentation" loading="lazy">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Pigmentation</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg" style="animation-delay: -4s;"></div>
+                                <div class="concern-image" style="animation-delay: -3s;">
+                                    <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80" alt="Acne Scars" loading="lazy">
                                     <div class="concern-overlay"></div>
                                     <h3 class="concern-title">Acne Scars</h3>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Item 3 -->
-                        <div class="concern-item">
-                            <div class="concern-blob-wrapper">
-                                <div class="concern-blob-bg" style="animation-delay: -4s;"></div>
-                                <div class="concern-image" style="animation-delay: -3s;">
-                                    <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80"
-                                        alt="Face">
-                                    <div class="concern-overlay"></div>
-                                    <h3 class="concern-title">Double Chin</h3>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 4 -->
                         <div class="concern-item">
                             <div class="concern-blob-wrapper">
                                 <div class="concern-blob-bg" style="animation-delay: -6s;"></div>
                                 <div class="concern-image" style="animation-delay: -4.5s;">
-                                    <img src="https://images.unsplash.com/photo-1528319725582-ddc096101511?w=600&q=80"
-                                        alt="Mind">
+                                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Sagging Skin" loading="lazy">
                                     <div class="concern-overlay"></div>
-                                    <h3 class="concern-title">Dark lips</h3>
+                                    <h3 class="concern-title">Sagging Skin</h3>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Item 1 -->
                         <div class="concern-item">
                             <div class="concern-blob-wrapper">
                                 <div class="concern-blob-bg"></div>
                                 <div class="concern-image">
-                                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80"
-                                        alt="Recovery">
+                                    <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80" alt="Under-eye Hollowness" loading="lazy">
                                     <div class="concern-overlay"></div>
-                                    <h3 class="concern-title">Facial Hair</h3>
+                                    <h3 class="concern-title">Under-eye Hollowness</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg" style="animation-delay: -8s;"></div>
+                                <div class="concern-image" style="animation-delay: -6s;">
+                                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80" alt="Uneven Texture" loading="lazy">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Uneven Texture</h3>
                                 </div>
                             </div>
                         </div>
@@ -787,25 +858,43 @@
                 </div>
 
                 <div class="concern-tab-content" id="tab-2">
+                    <!-- BODY -->
                     <div class="concerns-grid">
-                        <!-- Duplicated for demonstration -->
                         <div class="concern-item">
                             <div class="concern-blob-wrapper">
                                 <div class="concern-blob-bg" style="animation-delay: -2s;"></div>
-                                <div class="concern-image" style="animation-delay: -1.5s;"><img
-                                        src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&q=80"
-                                        alt="Face">
+                                <div class="concern-image" style="animation-delay: -1.5s;">
+                                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&q=80" alt="Skin Laxity" loading="lazy">
                                     <div class="concern-overlay"></div>
-                                    <h3 class="concern-title">Tatoo Removal</h3>
+                                    <h3 class="concern-title">Skin Laxity</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="concern-item">
                             <div class="concern-blob-wrapper">
                                 <div class="concern-blob-bg" style="animation-delay: -4s;"></div>
-                                <div class="concern-image" style="animation-delay: -3s;"><img
-                                        src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80"
-                                        alt="Body">
+                                <div class="concern-image" style="animation-delay: -3s;">
+                                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80" alt="Stubborn Fat" loading="lazy">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Stubborn Fat</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg" style="animation-delay: -6s;"></div>
+                                <div class="concern-image" style="animation-delay: -4.5s;">
+                                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80" alt="Unwanted Hair" loading="lazy">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Unwanted Hair</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg"></div>
+                                <div class="concern-image">
+                                    <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=600&q=80" alt="Stretch Marks" loading="lazy">
                                     <div class="concern-overlay"></div>
                                     <h3 class="concern-title">Stretch Marks</h3>
                                 </div>
@@ -813,23 +902,11 @@
                         </div>
                         <div class="concern-item">
                             <div class="concern-blob-wrapper">
-                                <div class="concern-blob-bg" style="animation-delay: -6s;"></div>
-                                <div class="concern-image" style="animation-delay: -4.5s;"><img
-                                        src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80"
-                                        alt="Ageing">
+                                <div class="concern-blob-bg" style="animation-delay: -8s;"></div>
+                                <div class="concern-image" style="animation-delay: -6s;">
+                                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80" alt="Cellulite" loading="lazy">
                                     <div class="concern-overlay"></div>
-                                    <h3 class="concern-title">Earlobe Repair</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="concern-item">
-                            <div class="concern-blob-wrapper">
-                                <div class="concern-blob-bg"></div>
-                                <div class="concern-image"><img
-                                        src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80"
-                                        alt="Wellness">
-                                    <div class="concern-overlay"></div>
-                                    <h3 class="concern-title">Tanned Skin</h3>
+                                    <h3 class="concern-title">Cellulite</h3>
                                 </div>
                             </div>
                         </div>
@@ -837,49 +914,35 @@
                 </div>
 
                 <div class="concern-tab-content" id="tab-3">
+                    <!-- HAIR -->
                     <div class="concerns-grid">
                         <div class="concern-item">
                             <div class="concern-blob-wrapper">
                                 <div class="concern-blob-bg" style="animation-delay: -2s;"></div>
-                                <div class="concern-image" style="animation-delay: -1.5s;"><img
-                                        src="https://images.unsplash.com/photo-1528319725582-ddc096101511?w=600&q=80"
-                                        alt="Face">
+                                <div class="concern-image" style="animation-delay: -1.5s;">
+                                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Hair Fall" loading="lazy">
                                     <div class="concern-overlay"></div>
-                                    <h3 class="concern-title">Un-defined Jawline
-                                    </h3>
+                                    <h3 class="concern-title">Hair Fall</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="concern-item">
                             <div class="concern-blob-wrapper">
                                 <div class="concern-blob-bg" style="animation-delay: -4s;"></div>
-                                <div class="concern-image" style="animation-delay: -3s;"><img
-                                        src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80"
-                                        alt="Body">
+                                <div class="concern-image" style="animation-delay: -3s;">
+                                    <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80" alt="Receding Hairline" loading="lazy">
                                     <div class="concern-overlay"></div>
-                                    <h3 class="concern-title">Wrinkled & Ageing Hands</h3>
+                                    <h3 class="concern-title">Receding Hairline</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="concern-item">
                             <div class="concern-blob-wrapper">
                                 <div class="concern-blob-bg" style="animation-delay: -6s;"></div>
-                                <div class="concern-image" style="animation-delay: -4.5s;"><img
-                                        src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80"
-                                        alt="Ageing">
+                                <div class="concern-image" style="animation-delay: -4.5s;">
+                                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Reduced Density" loading="lazy">
                                     <div class="concern-overlay"></div>
-                                    <h3 class="concern-title">Fine Lines & Wrinkles</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="concern-item">
-                            <div class="concern-blob-wrapper">
-                                <div class="concern-blob-bg"></div>
-                                <div class="concern-image"><img
-                                        src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80"
-                                        alt="Wellness">
-                                    <div class="concern-overlay"></div>
-                                    <h3 class="concern-title">Sagging Facial Skin</h3>
+                                    <h3 class="concern-title">Reduced Density</h3>
                                 </div>
                             </div>
                         </div>
@@ -887,48 +950,55 @@
                 </div>
 
                 <div class="concern-tab-content" id="tab-4">
+                    <!-- AGEING -->
                     <div class="concerns-grid">
                         <div class="concern-item">
                             <div class="concern-blob-wrapper">
                                 <div class="concern-blob-bg" style="animation-delay: -2s;"></div>
-                                <div class="concern-image" style="animation-delay: -1.5s;"><img
-                                        src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&q=80"
-                                        alt="Face">
+                                <div class="concern-image" style="animation-delay: -1.5s;">
+                                    <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80" alt="Fine Lines & Wrinkles" loading="lazy">
                                     <div class="concern-overlay"></div>
-                                    <h3 class="concern-title">Alopecia Areata</h3>
+                                    <h3 class="concern-title">Fine Lines &amp; Wrinkles</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="concern-item">
                             <div class="concern-blob-wrapper">
                                 <div class="concern-blob-bg" style="animation-delay: -4s;"></div>
-                                <div class="concern-image" style="animation-delay: -3s;"><img
-                                        src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80"
-                                        alt="Body">
+                                <div class="concern-image" style="animation-delay: -3s;">
+                                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Facial Sagging" loading="lazy">
                                     <div class="concern-overlay"></div>
-                                    <h3 class="concern-title">Beard Shaping</h3>
+                                    <h3 class="concern-title">Facial Sagging</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="concern-item">
                             <div class="concern-blob-wrapper">
                                 <div class="concern-blob-bg" style="animation-delay: -6s;"></div>
-                                <div class="concern-image" style="animation-delay: -4.5s;"><img
-                                        src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80"
-                                        alt="Ageing">
+                                <div class="concern-image" style="animation-delay: -4.5s;">
+                                    <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80" alt="Dull Skin" loading="lazy">
                                     <div class="concern-overlay"></div>
-                                    <h3 class="concern-title">Persistent Dandruff</h3>
+                                    <h3 class="concern-title">Dull Skin</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="concern-item">
                             <div class="concern-blob-wrapper">
                                 <div class="concern-blob-bg"></div>
-                                <div class="concern-image"><img
-                                        src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80"
-                                        alt="Wellness">
+                                <div class="concern-image">
+                                    <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80" alt="Volume Loss" loading="lazy">
                                     <div class="concern-overlay"></div>
-                                    <h3 class="concern-title">Receding Hairline</h3>
+                                    <h3 class="concern-title">Volume Loss</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg" style="animation-delay: -8s;"></div>
+                                <div class="concern-image" style="animation-delay: -6s;">
+                                    <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80" alt="Bulky Face" loading="lazy">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Bulky Face</h3>
                                 </div>
                             </div>
                         </div>
@@ -936,48 +1006,55 @@
                 </div>
 
                 <div class="concern-tab-content" id="tab-5">
+                    <!-- WELLNESS -->
                     <div class="concerns-grid">
                         <div class="concern-item">
                             <div class="concern-blob-wrapper">
                                 <div class="concern-blob-bg" style="animation-delay: -2s;"></div>
-                                <div class="concern-image" style="animation-delay: -1.5s;"><img
-                                        src="https://images.unsplash.com/photo-1528319725582-ddc096101511?w=600&q=80"
-                                        alt="Face">
+                                <div class="concern-image" style="animation-delay: -1.5s;">
+                                    <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=600&q=80" alt="Gut Health" loading="lazy">
                                     <div class="concern-overlay"></div>
-                                    <h3 class="concern-title">Anxiety & Depression</h3>
+                                    <h3 class="concern-title">Gut Health</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="concern-item">
                             <div class="concern-blob-wrapper">
                                 <div class="concern-blob-bg" style="animation-delay: -4s;"></div>
-                                <div class="concern-image" style="animation-delay: -3s;"><img
-                                        src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80"
-                                        alt="Body">
+                                <div class="concern-image" style="animation-delay: -3s;">
+                                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80" alt="Hormonal Health" loading="lazy">
                                     <div class="concern-overlay"></div>
-                                    <h3 class="concern-title">Insomnia</h3>
+                                    <h3 class="concern-title">Hormonal Health</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="concern-item">
                             <div class="concern-blob-wrapper">
                                 <div class="concern-blob-bg" style="animation-delay: -6s;"></div>
-                                <div class="concern-image" style="animation-delay: -4.5s;"><img
-                                        src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80"
-                                        alt="Ageing">
+                                <div class="concern-image" style="animation-delay: -4.5s;">
+                                    <img src="https://images.unsplash.com/photo-1528319725582-ddc096101511?w=600&q=80" alt="Longevity" loading="lazy">
                                     <div class="concern-overlay"></div>
-                                    <h3 class="concern-title">Menopause</h3>
+                                    <h3 class="concern-title">Longevity</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="concern-item">
                             <div class="concern-blob-wrapper">
                                 <div class="concern-blob-bg"></div>
-                                <div class="concern-image"><img
-                                        src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80"
-                                        alt="Wellness">
+                                <div class="concern-image">
+                                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80" alt="Energy & Vitality" loading="lazy">
                                     <div class="concern-overlay"></div>
-                                    <h3 class="concern-title">Thyroid Disorders</h3>
+                                    <h3 class="concern-title">Energy &amp; Vitality</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="concern-item">
+                            <div class="concern-blob-wrapper">
+                                <div class="concern-blob-bg" style="animation-delay: -8s;"></div>
+                                <div class="concern-image" style="animation-delay: -6s;">
+                                    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80" alt="Metabolic Health" loading="lazy">
+                                    <div class="concern-overlay"></div>
+                                    <h3 class="concern-title">Metabolic Health</h3>
                                 </div>
                             </div>
                         </div>
@@ -1165,18 +1242,22 @@
                 <!-- Left Column: Text, Quote & Enquire Button -->
                 <div class="trainer-v3-content">
                     <div class="section-header text-start mb-4">
-                        <span class="section-subtitle">FELLOW-DOCTORS &amp; TRAINING</span>
+                        <span class="section-subtitle">CLINICAL EDUCATION</span>
                         <div class="nemonic-separator justify-content-start">
                             <div class="nemonic-line"></div>
                             <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
                             <div class="nemonic-line"></div>
                         </div>
-                        <h2 class="section-title">A senior trainer the industry <span class="scribble">learns</span>
-                            from.</h2>
+                        <h2 class="section-title">Fellow Doctors &amp; <span class="scribble">Training</span></h2>
                         <p class="section-desc" style="max-width: 100%; color: #5C4A3A;">
-                            Dr. Aarushi is one of India's leading medical educators in aesthetic and regenerative
-                            medicine — invited as a faculty member, masterclass host and senior trainer at industry
-                            workshops and fellowship programmes across the country.
+                            Clinical learning is an essential part of responsible aesthetic practice. Through
+                            professional education and training, Dr. Aarushi shares knowledge and practical insights
+                            with clinicians seeking to strengthen their understanding of aesthetic and regenerative
+                            treatments.
+                        </p>
+                        <p class="section-desc mb-0" style="max-width: 100%; color: #5C4A3A;">
+                            The emphasis is on sound clinical judgement, patient safety, appropriate treatment
+                            selection and continued professional development.
                         </p>
                     </div>
 

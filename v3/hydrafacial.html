@@ -1596,7 +1596,19 @@
                 font-size: 0.88rem;
             }
         }
-    </style>
+    
+        /* How-it-works and concerns sections: the section reserves bottom padding for its wave, so the wave must
+           be pinned to the section's bottom edge. A later rule in styles.css sets
+           .section-separator to position: relative, which left a flat band below it. */
+        #how-it-works > .section-separator,
+        #concerns-addressed > .section-separator {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -1px;
+            margin: 0;
+        }
+</style>
 </head>
 
 <body class="hf-page">
