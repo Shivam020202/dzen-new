@@ -260,9 +260,13 @@
             max-width: 100%;
         }
 
-        #understanding,
-        #how-it-works {
+        #understanding {
             padding-bottom: 0 !important;
+        }
+
+        /* Ends on a straight edge into the dark "Why Choose D'Zen" section */
+        #how-it-works {
+            padding-bottom: 60px !important;
         }
 
         #understanding {
@@ -702,6 +706,175 @@
             }
         }
 
+        /* ── Why Choose D'Zen (compact): content left, machine right (Protocol dark background) ──
+           Uses .lhr-protocol-section for the background; #why-dzen selectors are needed
+           to beat that section's `* { color: #FAF9F6 !important }` for gold accents. */
+        #why-dzen {
+            padding: 44px 0 0;
+        }
+
+        .lhr-why-row {
+            max-width: 1080px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ID selector outranks the site-wide .hf-eyebrow colour rule in styles.css */
+        #why-dzen .hf-eyebrow {
+            color: #E8C99A !important;
+            -webkit-text-fill-color: #E8C99A !important;
+            opacity: 1 !important;
+        }
+
+        #why-dzen .hf-heading {
+            font-size: clamp(26px, 3vw, 36px);
+        }
+
+        /* 1. Doctor point: the one framed element */
+        .lhr-why-doc {
+            padding: 16px 20px;
+            margin-bottom: 22px;
+            border: 1px solid rgba(232, 201, 154, 0.45);
+            border-left: 3px solid #E8C99A;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .lhr-why-doc__title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+            line-height: 1.25;
+            margin: 0 0 4px;
+        }
+
+        .lhr-why-doc__text {
+            font-size: 0.92rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        /* 2. Technology */
+        .lhr-why-sub {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-style: normal;
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            margin: 0 0 10px;
+        }
+
+        .lhr-why-waves {
+            list-style: none;
+            margin: 0 0 18px;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .lhr-why-waves li {
+            padding-top: 8px;
+            border-top: 1px solid rgba(232, 201, 154, 0.45);
+        }
+
+        .lhr-why-waves b {
+            display: block;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.35rem, 2vw, 1.65rem);
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        #why-dzen .lhr-why-waves b small {
+            margin-left: 3px;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #E8C99A !important;
+            -webkit-text-fill-color: #E8C99A !important;
+        }
+
+        .lhr-why-waves span {
+            display: block;
+            margin-top: 4px;
+            font-size: 0.8rem;
+            opacity: 0.85;
+        }
+
+        /* 3. Benefits: single-line ticks */
+        .lhr-why-benefits {
+            list-style: none;
+            margin: 0 0 22px;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 8px 12px;
+        }
+
+        .lhr-why-benefits li {
+            position: relative;
+            padding-left: 20px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .lhr-why-benefits li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 3px;
+            width: 14px;
+            height: 14px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E8C99A' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center / contain no-repeat;
+        }
+
+        /* Machine: light arch frame (photo has a white background, so it is
+           blended onto the frame, not onto the dark section) */
+        .lhr-machine {
+            position: relative;
+            isolation: isolate;
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 24px 20px 0;
+            aspect-ratio: 4 / 5.4;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            border-radius: 200px 200px 20px 20px;
+            background: radial-gradient(ellipse at 50% 35%, #FFFFFF 0%, #F4EAE0 70%, #EFE2D4 100%);
+            border: 1px solid rgba(232, 201, 154, 0.6);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+            overflow: hidden;
+        }
+
+        .lhr-machine img {
+            display: block;
+            height: 100%;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+        }
+
+        @media (max-width: 991.98px) {
+            .lhr-machine {
+                max-width: 240px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .lhr-why-waves,
+            .lhr-why-benefits {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px 14px;
+            }
+        }
+
         /* ── Ice Cooling Feature Banner ── */
         .lhr-cooling-banner {
             background: #FAF7F2;
@@ -822,6 +995,46 @@
             position: relative;
             padding: 50px 0 0px;
             overflow: hidden;
+        }
+
+        /* Same glow + grain texture as the Explore Related Treatments section */
+        .lhr-protocol-section {
+            isolation: isolate;
+        }
+
+        .lhr-protocol-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 65% 60% at 50% -8%, rgba(198, 119, 119, 0.16) 0%, transparent 68%),
+                radial-gradient(ellipse 40% 40% at 80% 110%, rgba(143, 113, 74, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .lhr-protocol-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.25;
+            mix-blend-mode: overlay;
+        }
+
+        .lhr-protocol-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* The grain SVG has no fixed size, so by default it stretches to the section's
+           height and blurs on taller sections. A fixed tile (≈ the Related section's
+           desktop height) keeps the grain identical on all three dark sections. */
+        .lhr-protocol-section::after,
+        html body #related-services.hf-related-section::after {
+            background-size: 560px 560px;
         }
 
         .lhr-protocol-section * {
@@ -2444,53 +2657,66 @@
                         </p>
                     </div>
                 </div>
+            </div>
 
-                <!-- Quad-Wavelength Diode Laser Technology (Open Editorial, No Box Card) -->
-                <div class="pt-3">
-                    <div
-                        style="width: 100%; max-width: 480px; height: 1px; background: rgba(75, 43, 32, 0.15); margin: 0 auto clamp(24px, 3.5vw, 36px);">
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             3B. WHY CHOOSE D'ZEN? (Compact: content left, machine right — Protocol dark background)
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="lhr-protocol-section" id="why-dzen" aria-labelledby="why-dzen-title">
+            <div class="container">
+                <div class="row align-items-center g-4 g-lg-5 lhr-why-row">
+                    <!-- Left: Content -->
+                    <div class="col-lg-8 lhr-why-copy">
+                        <span class="hf-eyebrow mb-2">THE D'ZEN DIFFERENCE</span>
+                        <h2 class="hf-heading mb-3" id="why-dzen-title">Why Choose D’Zen?</h2>
+
+                        <!-- 1. Doctor-administered (primary differentiator) -->
+                        <div class="lhr-why-doc">
+                            <h3 class="lhr-why-doc__title">Every Session Is Doctor-Administered</h3>
+                            <p class="lhr-why-doc__text">
+                                Never handed over to a technician — a doctor assesses your skin and hair, sets the
+                                parameters and performs every session.
+                            </p>
+                        </div>
+
+                        <!-- 2. Technology -->
+                        <h3 class="lhr-why-sub">Gold-Standard Quad-Wavelength Diode Laser</h3>
+                        <ul class="lhr-why-waves">
+                            <li><b>755<small>nm</small></b><span>Fine, light hair</span></li>
+                            <li><b>808<small>nm</small></b><span>Gold standard</span></li>
+                            <li><b>940<small>nm</small></b><span>Thick, dense hair</span></li>
+                            <li><b>1064<small>nm</small></b><span>Darker skin</span></li>
+                        </ul>
+
+                        <!-- 3. Benefits -->
+                        <ul class="lhr-why-benefits">
+                            <li>Safe for Indian skin</li>
+                            <li>All hair types</li>
+                            <li>Cooled, comfortable sessions</li>
+                            <li>Long-lasting reduction</li>
+                        </ul>
+
+                        <a href="../newthree.html#book" class="dz-cta dz-cta--glass">
+                            <span>Book a Doctor Consultation</span>
+                            <img src="nemonic1.png" class="btn-icon" alt="icon" />
+                        </a>
                     </div>
 
-                    <h3
-                        style="font-family: var(--serif, 'Playfair Display', Georgia, serif); font-size: clamp(1.45rem, 2.6vw, 1.95rem); font-weight: 400; color: #4b2b20; margin-bottom: 8px;">
-                        Quad-Wavelength Diode Laser Technology
-                    </h3>
-                    <p style="font-size: 1.02rem; color: #8B5E2A; font-weight: 400; margin-bottom: 20px;">
-                        D’Zen Derma uses a combination of four wavelengths:
-                    </p>
-
-                    <!-- Horizontal Scrollable Track for 4 Wavelengths -->
-                    <div class="lhr-waves-scroll-track">
-                        <div class="lhr-wave-scroll-item">
-                            <div class="lhr-wave-scroll-num">755<span>nm</span></div>
-                            <div class="lhr-wave-scroll-divider"></div>
-                        </div>
-                        <div class="lhr-wave-scroll-item">
-                            <div class="lhr-wave-scroll-num">808<span>nm</span></div>
-                            <div class="lhr-wave-scroll-divider"></div>
-                        </div>
-                        <div class="lhr-wave-scroll-item">
-                            <div class="lhr-wave-scroll-num">940<span>nm</span></div>
-                            <div class="lhr-wave-scroll-divider"></div>
-                        </div>
-                        <div class="lhr-wave-scroll-item">
-                            <div class="lhr-wave-scroll-num">1064<span>nm</span></div>
-                            <div class="lhr-wave-scroll-divider"></div>
-                        </div>
+                    <!-- Right: Machine only -->
+                    <div class="col-lg-4">
+                        <figure class="lhr-machine mb-0">
+                            <img src="images/lhr-machine.webp"
+                                alt="Quad-wavelength diode laser hair reduction machine at D'Zen Derma" loading="lazy"
+                                decoding="async" />
+                        </figure>
                     </div>
-
-                    <!-- Concluding Paragraph (Open Text) -->
-                    <p class="mx-auto mt-4 mb-0"
-                        style="max-width: 820px; font-size: 1.02rem; line-height: 1.8; color: var(--hf-body); text-align: center;">
-                        The combination allows the treatment approach to be adjusted according to individual skin and
-                        hair characteristics. Cooling technology is also incorporated to help make the procedure more
-                        comfortable.
-                    </p>
                 </div>
             </div>
 
-            <!-- Curvy separator: Warm (#FAF7F2) → Cream (#FDF8F3) -->
-            <div class="section-separator" aria-hidden="true" style="margin-top:35px">
+            <!-- Curvy separator: Dark Gradient → Cream (#FDF8F3), same as the Protocol section -->
+            <div class="section-separator" aria-hidden="true">
                 <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                     <path fill="#FDF8F3" d="M0,60 C380,150 1060,-30 1440,60 L1440,120 L0,120 Z"></path>
                 </svg>

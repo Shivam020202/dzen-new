@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>About The Clinic — D'Zen Derma, Delhi &amp; Gurgaon</title>
+    <meta name="description"
+        content="Inside D'Zen Derma — our serene treatment suites, medical-grade technology, unwavering clinical commitments, and our Delhi &amp; Gurgaon clinic locations." />
+    <link rel="canonical" href="https://dzenderma.com/about-clinic" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dr. Aarushi Passi Bhandari" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="D'Zen Derma" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:url" content="https://dzenderma.com/about-clinic" />
+    <meta property="og:title" content="About The Clinic — D'Zen Derma, Delhi &amp; Gurgaon" />
+    <meta property="og:description"
+        content="Inside D'Zen Derma — medical precision in a space designed for calm. Discover our treatment suites, clinical technologies, core commitments, and Delhi and Gurgaon locations." />
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" />
+
+    <!-- Schema.org MedicalClinic Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "D'Zen Derma",
+      "description": "Medical-grade aesthetic dermatology and regenerative wellness clinic in South Delhi and Gurgaon.",
+      "url": "https://dzenderma.com/about-clinic",
+      "telephone": "+91-9878885046",
+      "medicalSpecialty": ["Dermatology", "Aesthetic Medicine"],
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "18A, Ring Rd, Near Havells, Vikram Vihar, Lajpat Nagar 4",
+          "addressLocality": "New Delhi",
+          "addressRegion": "Delhi",
+          "postalCode": "110024",
+          "addressCountry": "IN"
+        },
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "Golf Course Road, Near DLF Phase 1, Sector 28",
+          "addressLocality": "Gurugram",
+          "addressRegion": "Haryana",
+          "postalCode": "122002",
+          "addressCountry": "IN"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Base variable sheet, shared styles -->
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="styles.css?v=7.8" />
+
+    <!-- Tailwind CSS (without preflight resets) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: { preflight: false },
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4B2B20',
+                        accent: '#e0a65a',
+                        'accent-light': '#daa520',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Scoped About Clinic Styles -->
+    <style>
+        .ac {
+            --ac-ink: #2B1A12;
+            --ac-body: #5C4A3A;
+            --ac-gold: #C4924A;
+            --ac-cream: #FDF8F3;
+        }
+
+        /* ── Hero imagery slider ── */
+        .ac-hero-media {
+            position: relative;
+            width: 100%;
+            height: clamp(320px, 40vw, 520px);
+            margin: 0 0 24px;
+            border-radius: 24px;
+            overflow: hidden;
+            background: rgba(196, 146, 74, .06);
+            box-shadow: 0 32px 80px -28px rgba(43, 26, 18, .28);
+            border: 1px solid rgba(196, 146, 74, 0.2);
+        }
+
+        .ac-hero-track {
+            display: flex;
+            height: 100%;
+            transition: transform .75s cubic-bezier(.4, 0, .2, 1);
+            will-change: transform;
+        }
+
+        .ac-hero-slide {
+            flex: 0 0 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        .ac-hero-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 50%;
+            display: block;
+        }
+
+        /* Glassmorphic Arrows */
+        .ac-hero-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 5;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, .5);
+            border-radius: 50%;
+            background: rgba(43, 26, 18, .38);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            color: #FAF9F6;
+            cursor: pointer;
+            transition: background .3s ease, border-color .3s ease, transform .2s ease;
+        }
+
+        .ac-hero-nav:hover {
+            background: rgba(196, 146, 74, .9);
+            border-color: transparent;
+            transform: translateY(-50%) scale(1.05);
+            color: #FAF9F6;
+        }
+
+        .ac-hero-nav:focus-visible {
+            outline: 2px solid #C4924A;
+            outline-offset: 3px;
+        }
+
+        .ac-hero-nav svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .ac-hero-nav--prev {
+            left: 20px;
+        }
+
+        .ac-hero-nav--next {
+            right: 20px;
+        }
+
+        .ac-hero-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 22px 0 14px;
+        }
+
+        .ac-hero-dot {
+            width: 9px;
+            height: 9px;
+            padding: 0;
+            border: 0;
+            border-radius: 50%;
+            background: rgba(196, 146, 74, .32);
+            cursor: pointer;
+            transition: background .3s ease, width .3s ease, border-radius .3s ease;
+        }
+
+        .ac-hero-dot[aria-selected="true"] {
+            width: 30px;
+            border-radius: 5px;
+            background: #C4924A;
+        }
+
+        .ac-hero-dot:focus-visible {
+            outline: 2px solid #C4924A;
+            outline-offset: 3px;
+        }
+
+        .ac-hero-strip {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2.8px;
+            text-transform: uppercase;
+            color: var(--ac-gold);
+            text-align: center;
+        }
+
+        @media (max-width: 767.98px) {
+            .ac-hero-media {
+                height: clamp(260px, 58vw, 360px);
+                border-radius: 18px;
+            }
+
+            .ac-hero-nav {
+                width: 38px;
+                height: 38px;
+            }
+
+            .ac-hero-nav--prev {
+                left: 12px;
+            }
+
+            .ac-hero-nav--next {
+                right: 12px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .ac-hero-track {
+                transition: none;
+            }
+        }
+
+        /* ── Section 2: Our Space + Technology ── */
+        #clinic-space {
+            position: relative;
+            padding: clamp(60px, 8vw, 100px) 0;
+            background: linear-gradient(to bottom, #FDF8F3 0%, #F5ECE0 100%);
+            overflow: hidden;
+        }
+
+        .ac-split {
+            display: grid;
+            grid-template-columns: minmax(0, 46%) minmax(0, 1fr);
+            align-items: center;
+            gap: clamp(40px, 6vw, 84px);
+            padding-right: max(20px, calc((100% - 1140px) / 2));
+        }
+
+        .ac-split figure {
+            position: relative;
+            margin: 0;
+        }
+
+        .ac-split figure img {
+            display: block;
+            width: 100%;
+            height: clamp(420px, 52vw, 580px);
+            object-fit: cover;
+            border-radius: 0 320px 320px 0;
+            box-shadow: 0 28px 70px -20px rgba(43, 26, 18, 0.22);
+            border-top: 1px solid rgba(196, 146, 74, 0.25);
+            border-right: 1px solid rgba(196, 146, 74, 0.25);
+            border-bottom: 1px solid rgba(196, 146, 74, 0.25);
+        }
+
+        .ac-split .ac-copy .nemonic-separator {
+            justify-content: flex-start;
+            margin-bottom: 18px;
+        }
+
+        /* Spec list */
+        .ac-list {
+            list-style: none;
+            padding: 0;
+            margin: 32px 0 0;
+            border-top: 1px solid rgba(196, 146, 74, .25);
+            max-width: 52ch;
+        }
+
+        .ac-list li {
+            display: flex;
+            align-items: baseline;
+            gap: 18px;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(196, 146, 74, .18);
+        }
+
+        .ac-list b {
+            flex: none;
+            width: 28px;
+            font-family: 'Inter', sans-serif;
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: var(--ac-gold);
+        }
+
+        .ac-list span {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.65;
+            color: var(--ac-body);
+        }
+
+        /* ── Section 3: Our Commitment (Rich Bronze Atmosphere) ── */
+        #clinic-commitment {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%);
+            padding-top: clamp(80px, 11vw, 130px);
+            padding-bottom: clamp(90px, 12vw, 140px);
+        }
+
+        #clinic-commitment::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 65% 60% at 50% -8%, rgba(198, 119, 119, .18) 0%, transparent 68%),
+                radial-gradient(ellipse 40% 40% at 85% 105%, rgba(143, 113, 74, .18) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        #clinic-commitment::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='acNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23acNoise)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+            opacity: .22;
+            mix-blend-mode: overlay;
+        }
+
+        .ac-wave-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            line-height: 0;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .ac-wave-top svg {
+            display: block;
+            width: 100%;
+            height: clamp(48px, 6vw, 90px);
+        }
+
+        #clinic-commitment .container {
+            position: relative;
+            z-index: 3;
+        }
+
+        .ac-vows {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .ac-vow {
+            padding: 4px clamp(16px, 2.2vw, 32px);
+            border-left: 1px solid rgba(255, 255, 255, .16);
+        }
+
+        .ac-vow:first-child {
+            border-left: 0;
+            padding-left: 0;
+        }
+
+        .ac-vow:last-child {
+            padding-right: 0;
+        }
+
+        .ac-vow__icon {
+            display: block;
+            width: 32px;
+            height: 32px;
+            color: #E8C99A;
+            margin-bottom: 20px;
+        }
+
+        .ac-vow__rule {
+            width: 28px;
+            height: 1px;
+            background: #E8C99A;
+            margin-bottom: 20px;
+        }
+
+        .ac-vow h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            line-height: 1.35;
+            margin: 0 0 14px;
+        }
+
+        /* ── ENFORCE #FAF9F6 TEXT ON ALL COMMITMENT ELEMENTS ── */
+        html body #clinic-commitment,
+        html body #clinic-commitment .section-subtitle,
+        html body #clinic-commitment h2,
+        html body #clinic-commitment .ac-title,
+        html body #clinic-commitment .ac-lead,
+        html body #clinic-commitment .ac-vow h3,
+        html body #clinic-commitment .ac-vow p {
+            color: #FAF9F6 !important;
+            -webkit-text-fill-color: #FAF9F6 !important;
+        }
+
+        html body #clinic-commitment .ac-lead {
+            opacity: 0.9 !important;
+        }
+
+        html body #clinic-commitment .ac-vow p {
+            opacity: 0.88 !important;
+            font-family: 'Inter', system-ui, sans-serif !important;
+            font-size: 14.5px !important;
+            line-height: 1.75 !important;
+            font-weight: 300 !important;
+        }
+
+        /* ── Responsive Refinements ── */
+        @media (max-width: 991.98px) {
+            .ac-split {
+                grid-template-columns: 1fr;
+                gap: 48px;
+                padding-right: 0;
+            }
+
+            .ac-split .ac-copy {
+                order: 1;
+                padding: 0 24px;
+                text-align: center;
+            }
+
+            .ac-split .ac-copy .nemonic-separator {
+                justify-content: center;
+            }
+
+            .ac-split figure {
+                order: 2;
+                margin: 0 24px;
+            }
+
+            .ac-split figure img {
+                height: clamp(320px, 66vw, 460px);
+                border-radius: 240px 240px 24px 24px;
+            }
+
+            .ac-list {
+                margin-left: auto;
+                margin-right: auto;
+                text-align: left;
+            }
+
+            .ac-vows {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px clamp(24px, 4vw, 44px);
+                max-width: 720px;
+            }
+
+            .ac-vow {
+                padding: 30px 0 0;
+                border-left: 0;
+                border-top: 1px solid rgba(255, 255, 255, .16);
+            }
+
+            .ac-vow:nth-child(-n+2) {
+                border-top: 0;
+                padding-top: 0;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .ac-vows {
+                grid-template-columns: 1fr;
+                max-width: 420px;
+                gap: 36px 0;
+            }
+
+            .ac-vow {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .ac-vow:nth-child(n+2) {
+                border-top: 1px solid rgba(255, 255, 255, .16);
+                padding-top: 36px;
+            }
+        }
+
+        /* Hard typography overrides matching brand standards */
+        html body .ac .ac-lead {
+            font-family: 'Inter', system-ui, sans-serif !important;
+            font-size: 16.5px !important;
+            line-height: 1.82 !important;
+            font-weight: 300 !important;
+            color: var(--ac-ink) !important;
+        }
+
+        html body .ac .ac-body {
+            font-family: 'Inter', system-ui, sans-serif !important;
+            font-size: 15px !important;
+            line-height: 1.85 !important;
+            font-weight: 300 !important;
+            color: var(--ac-body) !important;
+        }
+
+        /* Floating Pill navbar styling */
+        .pnav {
+            background: #ffffff !important;
+            border-bottom: 1px solid rgba(180, 140, 90, 0.14) !important;
+            box-shadow: 0 2px 18px rgba(0, 0, 0, 0.06) !important;
+        }
+
+        .pnav .pnav__logo img {
+            filter: none !important;
+        }
+
+        .pnav .pnav__burger {
+            background: rgba(75, 43, 32, 0.06) !important;
+        }
+
+        .pnav .pnav__burger span {
+            background: #3A2418 !important;
+        }
+    </style>
+</head>
+
+<body class="ab-page" style="background-color: #FDF8F3; color: #2B1A12;">
+
+    <!-- Floating Pill Navbar injected via include/include.js -->
+    <div id="site-header"></div>
+
+    <main class="page-content" style="background-color: #FDF8F3;">
+
+        <!-- ═══════════════════════════════════════════════════════════
+             BREADCRUMB HERO HEADER (Signature Dark Elegance)
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="breadcrumb-header hf-hero-header position-relative d-flex align-items-center justify-content-center text-center"
+            style="background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%), url('../images/contour-texture.webp') repeat; background-blend-mode: multiply; padding-top: 110px; padding-bottom: 68px; border-bottom: none; overflow: hidden;">
+
+            <div class="container hf-hero-container position-relative" style="z-index: 2;">
+                <span class="section-subtitle hf-hero-subtitle"
+                    style="font-family: 'Inter', system-ui, sans-serif !important; font-size: 11px !important; font-weight: 600 !important; letter-spacing: 3.4px !important; text-transform: uppercase !important; color: #FAF9F6 !important; -webkit-text-fill-color: #FAF9F6 !important; display: block; margin-bottom: 0;">ABOUT
+                    THE CLINIC</span>
+                <div class="nemonic-separator mt-2 mb-3">
+                    <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
+                    <img src="logo-header.png" alt="nemonic" class="nemonic-icon"
+                        style="filter: brightness(0) invert(1);" />
+                    <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
+                </div>
+                <h1 class="page-title mb-0 hf-hero-title"
+                    style="font-family: 'Playfair Display', Georgia, serif !important; font-style: italic !important; font-weight: 400 !important; color: #FAF9F6 !important; -webkit-text-fill-color: #FAF9F6 !important; font-size: clamp(30px, 4.2vw, 52px) !important; margin: 0; line-height: 1.22; text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);">
+                    Welcome to D'Zen Derma
+                </h1>
+            </div>
+
+            <!-- Curvy Bottom Separator -->
+            <div class="position-absolute w-100" style="bottom: -1px; left: 0; z-index: 2;">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                    style="display: block; width: 100%; height: clamp(38px, 4.5vw, 60px);">
+                    <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             1. CLINIC IMAGERY HERO
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="ac position-relative" id="clinic-hero" style="padding: clamp(48px, 6vw, 76px) 0;">
+            <div class="container">
+
+                <div class="section-header text-center mb-5" style="max-width: 800px; margin-inline: auto;">
+                    <span class="section-subtitle" style="letter-spacing: 3px;">THE SPACE</span>
+                    <div class="nemonic-separator mt-2 mb-3">
+                        <div class="nemonic-line"></div>
+                        <img src="logo-header.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="section-title">A Clinic Built Around Calm</h2>
+                    <p class="ac-lead mx-auto" style="max-width: 62ch;">
+                        Medical precision rarely feels restful. We designed D'Zen Derma so that it does — clinical
+                        standards held without compromise, inside a space that lowers your shoulders the moment you
+                        step in.
+                    </p>
+                </div>
+
+                <!-- Hero imagery slider with luxury controls -->
+                <div class="ac-hero-media" id="clinicSlider" role="region" aria-roledescription="carousel"
+                    aria-label="Clinic imagery">
+
+                    <!-- Prev button -->
+                    <button type="button" class="ac-hero-nav ac-hero-nav--prev" data-slider-prev aria-label="Previous image">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+
+                    <!-- Slider track -->
+                    <div class="ac-hero-track" data-slider-track>
+                        <figure class="ac-hero-slide">
+                            <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?q=80&w=1800&auto=format&fit=crop"
+                                alt="The D'Zen Derma reception and waiting lounge" loading="eager" />
+                        </figure>
+                        <figure class="ac-hero-slide">
+                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1800&auto=format&fit=crop"
+                                alt="A private luxury treatment suite prepared for a procedure" loading="eager" />
+                        </figure>
+                        <figure class="ac-hero-slide">
+                            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1800&auto=format&fit=crop"
+                                alt="Medical-grade aesthetic laser technology on the treatment floor" loading="eager" />
+                        </figure>
+                        <figure class="ac-hero-slide">
+                            <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1800&auto=format&fit=crop"
+                                alt="A private aesthetic consultation room" loading="eager" />
+                        </figure>
+                    </div>
+
+                    <!-- Next button -->
+                    <button type="button" class="ac-hero-nav ac-hero-nav--next" data-slider-next aria-label="Next image">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="ac-hero-dots" role="tablist" aria-label="Choose image" data-slider-dots></div>
+                <div class="ac-hero-strip">D'Zen Derma &middot; Delhi &amp; Gurgaon</div>
+
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             2. OUR SPACE + TECHNOLOGY
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="ac position-relative" id="clinic-space">
+            <div class="ac-split">
+
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1200&auto=format&fit=crop"
+                        alt="Medical-grade aesthetic technology in a D'Zen Derma treatment suite" loading="eager" />
+                </figure>
+
+                <div class="ac-copy">
+                    <span class="section-subtitle" style="letter-spacing: 3px;">SPACE &amp; TECHNOLOGY</span>
+                    <div class="nemonic-separator mt-2 mb-3">
+                        <div class="nemonic-line"></div>
+                        <img src="logo-header.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="section-title">Equipment Chosen for Outcomes, Not Optics</h2>
+                    <p class="ac-lead">
+                        A device is only as good as the hands that calibrate it. We invest in medical-grade platforms
+                        because they give our dermatologists finer control — over depth, over energy, over how much
+                        downtime you actually need.
+                    </p>
+                    <p class="ac-body">
+                        Every suite is a sealed, single-use environment. Nothing is shared between clients, and every
+                        protocol is set up, delivered and closed out by the same clinician who assessed you.
+                    </p>
+
+                    <ul class="ac-list">
+                        <li><b>01</b><span>Medical-grade laser and light platforms for resurfacing, toning and hair
+                                reduction</span></li>
+                        <li><b>02</b><span>Regenerative and injectable suite — bio-remodelling, collagen stimulation,
+                                PRP and GFC</span></li>
+                        <li><b>03</b><span>Diagnostic skin analysis and imaging, so progress is measured rather than
+                                guessed</span></li>
+                        <li><b>04</b><span>Dedicated sterile procedure rooms with single-use consumables
+                                throughout</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             3. OUR COMMITMENT
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="ac position-relative" id="clinic-commitment">
+
+            <!-- Cream wave cutting the top edge of the warm field -->
+            <div class="ac-wave-top" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#F5ECE0" d="M0,50 C400,110 1040,-10 1440,50 L1440,0 L0,0 Z"></path>
+                </svg>
+            </div>
+
+            <div class="container">
+                <div class="section-header text-center mb-5" style="max-width: 780px; margin-inline: auto;">
+                    <span class="section-subtitle" style="color: #FAF9F6 !important; -webkit-text-fill-color: #FAF9F6 !important; letter-spacing: 3px;">OUR
+                        COMMITMENT</span>
+                    <div class="nemonic-separator mt-2 mb-4">
+                        <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.45);"></div>
+                        <img src="logo-header.png" alt="" aria-hidden="true" class="nemonic-icon"
+                            style="filter: brightness(0) invert(1);" />
+                        <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.45);"></div>
+                    </div>
+                    <h2 class="section-title ac-title" style="color: #FAF9F6 !important; -webkit-text-fill-color: #FAF9F6 !important;">What We Hold Ourselves To</h2>
+                    <p class="ac-lead mx-auto" style="max-width: 60ch; color: #FAF9F6 !important; -webkit-text-fill-color: #FAF9F6 !important;">
+                        Four standards that do not move, whichever clinic you visit and whichever treatment you book.
+                    </p>
+                </div>
+
+                <div class="ac-vows">
+
+                    <!-- Vow 1 -->
+                    <article class="ac-vow">
+                        <svg class="ac-vow__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            <path d="M12 8.5v6M9 11.5h6" />
+                        </svg>
+                        <div class="ac-vow__rule"></div>
+                        <h3>Sterility, Without Exception</h3>
+                        <p>Single-use consumables, sealed procedure rooms and documented protocols on every treatment —
+                            including the quick ones.</p>
+                    </article>
+
+                    <!-- Vow 2 -->
+                    <article class="ac-vow">
+                        <svg class="ac-vow__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M6 3.5v5.5a5 5 0 0 0 10 0V3.5" />
+                            <circle cx="6" cy="2.6" r="1.3" />
+                            <circle cx="16" cy="2.6" r="1.3" />
+                            <path d="M11 14v2.5a4.5 4.5 0 0 0 9 0V15" />
+                            <circle cx="20" cy="12.6" r="2.5" />
+                        </svg>
+                        <div class="ac-vow__rule"></div>
+                        <h3>Doctor-Led, Start to Finish</h3>
+                        <p>Your assessment, your protocol and your treatment are handled by a qualified dermatologist —
+                            never delegated once you're through the door.</p>
+                    </article>
+
+                    <!-- Vow 3 -->
+                    <article class="ac-vow">
+                        <svg class="ac-vow__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M20 4H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3v4l5-4h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Z" />
+                            <path d="m8.5 10.7 2 2 4.5-4.5" />
+                        </svg>
+                        <div class="ac-vow__rule"></div>
+                        <h3>Honest Counsel</h3>
+                        <p>If a treatment won't serve you, we say so. We would rather lose the booking than deliver a
+                            result you didn't need.</p>
+                    </article>
+
+                    <!-- Vow 4 -->
+                    <article class="ac-vow">
+                        <svg class="ac-vow__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 10 8 10 8a18.5 18.5 0 0 1-2.16 3.19" />
+                            <path d="M6.61 6.61A18.15 18.15 0 0 0 2 12s3 8 10 8a9.12 9.12 0 0 0 5.39-1.61" />
+                            <path d="M14.12 14.12a3 3 0 1 1-4.24-4.24" />
+                            <path d="m2 2 20 20" />
+                        </svg>
+                        <div class="ac-vow__rule"></div>
+                        <h3>Discretion by Default</h3>
+                        <p>Private entry and exit routes, no shared waiting areas during procedures, and records held in
+                            strict confidence.</p>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Curvy Bottom Separator into Section 4 -->
+            <div class="position-absolute w-100" style="bottom: -1px; left: 0; z-index: 2; pointer-events: none;">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                    style="display: block; width: 100%; height: clamp(40px, 5vw, 70px);">
+                    <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             4. DELHI + GURGAON LOCATION CARDS
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="clinic-locations-section" id="locations" aria-labelledby="locations-heading">
+            <div class="container">
+                <div class="text-center max-w-3xl mx-auto mb-4 mb-lg-5">
+                    <span class="section-subtitle" style="letter-spacing: 3px;">TWO LOCATIONS</span>
+                    <div class="nemonic-separator mt-2 mb-3">
+                        <div class="nemonic-line"></div>
+                        <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 id="locations-heading" class="section-title">
+                        Two Sanctuaries, One <span class="scribble">Standard</span>
+                    </h2>
+                    <p class="mx-auto"
+                        style="max-width: 720px; color: var(--ac-body, #5C4A3A); font-size: 1.02rem; line-height: 1.75;">
+                        Visit our aesthetic sanctuaries in South Delhi and Gurgaon. Experience personalized
+                        protocol consultation, advanced regenerative technologies, and serene luxury.
+                    </p>
+                </div>
+
+                <!-- Tab Pills for Mobile View -->
+                <div class="clinic-tabs" role="tablist" aria-label="Select Clinic Location">
+                    <div class="clinic-tabs__pill">
+                        <button class="clinic-tab active" role="tab" aria-selected="true" data-clinic="0">
+                            <img class="clinic-tab__img"
+                                src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&amp;w=200&amp;auto=format&amp;fit=crop"
+                                alt="Delhi Clinic" />
+                            <span class="clinic-tab__info">
+                                <span class="clinic-tab__name">New Delhi</span>
+                                <span class="clinic-tab__role">Lajpat Nagar</span>
+                            </span>
+                        </button>
+                        <button class="clinic-tab" role="tab" aria-selected="false" data-clinic="1">
+                            <img class="clinic-tab__img"
+                                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&amp;w=200&amp;auto=format&amp;fit=crop"
+                                alt="Gurgaon Clinic" />
+                            <span class="clinic-tab__info">
+                                <span class="clinic-tab__name">Gurgaon</span>
+                                <span class="clinic-tab__role">Golf Course Rd</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row g-4 justify-content-center clinic-locations-grid">
+                    <!-- Delhi Clinic Card -->
+                    <div class="col-lg-6 col-md-6 clinic-loc-col active" data-clinic-index="0">
+                        <article class="clinic-loc-card">
+                            <div class="clinic-loc-card__media">
+                                <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=800&auto=format&fit=crop"
+                                    alt="D'Zen Derma Clinic, Lajpat Nagar, New Delhi" class="clinic-loc-card__img"
+                                    loading="eager" />
+                                <span class="clinic-loc-card__badge">South Delhi</span>
+                            </div>
+                            <div class="clinic-loc-card__body">
+                                <span class="clinic-loc-card__eyebrow">NEW DELHI</span>
+                                <h3 class="clinic-loc-card__title">D'Zen Derma, Lajpat Nagar</h3>
+                                <ul class="clinic-loc-card__info">
+                                    <li>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                            <circle cx="12" cy="10" r="3" />
+                                        </svg>
+                                        <span>18A, Ring Rd, Near Havells, Vikram Vihar, Lajpat Nagar 4, New Delhi</span>
+                                    </li>
+                                    <li>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                            aria-hidden="true">
+                                            <path
+                                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                        </svg>
+                                        <span>+91-9878885046</span>
+                                    </li>
+                                </ul>
+                                <div class="clinic-loc-card__actions mt-auto">
+                                    <a href="https://maps.google.com/?q=18A+Ring+Rd+Near+Havells+Vikram+Vihar+Lajpat+Nagar+4+New+Delhi"
+                                        target="_blank" rel="noopener" class="dz-cta w-100">
+                                        <span>Get Directions</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="icon" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Gurgaon Clinic Card -->
+                    <div class="col-lg-6 col-md-6 clinic-loc-col" data-clinic-index="1">
+                        <article class="clinic-loc-card">
+                            <div class="clinic-loc-card__media">
+                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop"
+                                    alt="D'Zen Derma Clinic, Golf Course Road, Gurgaon" class="clinic-loc-card__img"
+                                    loading="eager" />
+                                <span class="clinic-loc-card__badge">Golf Course Rd</span>
+                            </div>
+                            <div class="clinic-loc-card__body">
+                                <span class="clinic-loc-card__eyebrow">GURUGRAM</span>
+                                <h3 class="clinic-loc-card__title">D'Zen Derma, Golf Course Road</h3>
+                                <ul class="clinic-loc-card__info">
+                                    <li>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                            <circle cx="12" cy="10" r="3" />
+                                        </svg>
+                                        <span>Golf Course Road, Near DLF Phase 1, Sector 28, Gurugram, Haryana</span>
+                                    </li>
+                                    <li>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                            aria-hidden="true">
+                                            <path
+                                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                        </svg>
+                                        <span>+91-9878885046</span>
+                                    </li>
+                                </ul>
+                                <div class="clinic-loc-card__actions mt-auto">
+                                    <a href="https://maps.google.com/?q=Golf+Course+Road+Near+DLF+Phase+1+Sector+28+Gurugram+Haryana"
+                                        target="_blank" rel="noopener" class="dz-cta w-100">
+                                        <span>Get Directions</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="icon" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SITE FOOTER (DYNAMIC INCLUDE VIA include.js) -->
+    <div id="site-footer"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="include/include.js"></script>
+
+    <!-- Clinic Imagery Slider Controller -->
+    <script>
+        (function () {
+            var root = document.getElementById('clinicSlider');
+            if (!root) return;
+
+            var track = root.querySelector('[data-slider-track]');
+            var slides = Array.prototype.slice.call(track.children);
+            var dotsBox = document.querySelector('[data-slider-dots]');
+            var count = slides.length;
+            if (count < 2) return;
+
+            var index = 0;
+            var timer = null;
+            var DELAY = 5500;
+            var calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+            // Build indicator dots
+            dotsBox.innerHTML = '';
+            var dots = slides.map(function (_, i) {
+                var b = document.createElement('button');
+                b.type = 'button';
+                b.className = 'ac-hero-dot';
+                b.setAttribute('role', 'tab');
+                b.setAttribute('aria-label', 'Image ' + (i + 1) + ' of ' + count);
+                b.addEventListener('click', function () { go(i); restart(); });
+                dotsBox.appendChild(b);
+                return b;
+            });
+
+            function go(i) {
+                index = (i + count) % count;
+                track.style.transform = 'translateX(' + (-index * 100) + '%)';
+                slides.forEach(function (s, n) { s.setAttribute('aria-hidden', n !== index); });
+                dots.forEach(function (d, n) { d.setAttribute('aria-selected', n === index); });
+            }
+
+            function start() {
+                if (calm.matches) return;
+                timer = setInterval(function () { go(index + 1); }, DELAY);
+            }
+            function stop() { clearInterval(timer); timer = null; }
+            function restart() { stop(); start(); }
+
+            var prevBtn = root.querySelector('[data-slider-prev]');
+            var nextBtn = root.querySelector('[data-slider-next]');
+            if (prevBtn) prevBtn.addEventListener('click', function () { go(index - 1); restart(); });
+            if (nextBtn) nextBtn.addEventListener('click', function () { go(index + 1); restart(); });
+
+            root.addEventListener('mouseenter', stop);
+            root.addEventListener('mouseleave', start);
+            root.addEventListener('focusin', stop);
+            root.addEventListener('focusout', start);
+
+            // Touch Swipe Support
+            var x0 = null;
+            root.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; stop(); }, { passive: true });
+            root.addEventListener('touchend', function (e) {
+                if (x0 === null) return;
+                var dx = e.changedTouches[0].clientX - x0;
+                if (Math.abs(dx) > 40) go(index + (dx < 0 ? 1 : -1));
+                x0 = null;
+                start();
+            }, { passive: true });
+
+            go(0);
+            start();
+        })();
+    </script>
+
+    <!-- Global Site Scripts -->
+    <script src="script.js?v=3.0"></script>
+
+    <!-- Logo Fixer for Pill Navigation -->
+    <script>
+        (function () {
+            function ensurePillLogo() {
+                var logoImg = document.querySelector('.pnav__logo img');
+                if (logoImg) {
+                    if (logoImg.getAttribute('src') !== 'logo1.png' && (!logoImg.complete || logoImg.naturalWidth === 0)) {
+                        logoImg.src = 'logo1.png';
+                    }
+                }
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', ensurePillLogo);
+            } else {
+                ensurePillLogo();
+            }
+            setTimeout(ensurePillLogo, 300);
+            setTimeout(ensurePillLogo, 1000);
+        })();
+    </script>
+</body>
+
+</html>
