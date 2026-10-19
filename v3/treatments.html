@@ -88,6 +88,46 @@
             background: linear-gradient(to top, #F4EFE8, #FDF8F3);
         }
 
+        /* ── Wave separator: Body section colour flowing into Anti-Ageing ── */
+        #cat-body,
+        #cat-hair {
+            background: linear-gradient(to top, #F4EFE8, #FDF8F3);
+        }
+
+        #cat-anti-ageing,
+        #cat-wellness {
+            background: #FDF8F3;
+            padding-top: 110px;
+        }
+
+        .dz-wave-divider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 90px;
+            z-index: 1;
+            pointer-events: none;
+            line-height: 0;
+        }
+
+        .dz-wave-divider svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .dz-wave-divider {
+                height: 50px;
+            }
+
+            #cat-anti-ageing,
+            #cat-wellness {
+                padding-top: 70px;
+            }
+        }
+
         /* ── Homepage Heading Standards (Identical to index.html) ── */
         .section-header {
             position: relative;
@@ -299,7 +339,7 @@
         .dz-card-footer {
             display: flex;
             align-items: center;
-            padding-top: 9px;
+            padding: 14px 0px 5px 0px;
             margin-top: auto;
             border-top: 1px solid rgba(139, 69, 19, 0.12);
         }
@@ -310,15 +350,14 @@
             justify-content: center;
             gap: 8px;
             width: 100%;
-            padding: 7px 14px;
+            padding: 10px 14px;
             border-radius: 999px;
             background: linear-gradient(35deg, #4B2B20 0%, #8B4513 100%);
             color: #FAF9F6 !important;
             font-family: 'Inter', system-ui, sans-serif;
-            font-size: 11px;
+            font-size: 13px;
             font-weight: 500;
             letter-spacing: 0.05em;
-            text-transform: uppercase;
             text-decoration: none !important;
             border: 1px solid rgba(232, 201, 154, 0.35);
             box-shadow: 0 3px 10px rgba(75, 43, 32, 0.14);
@@ -361,10 +400,22 @@
         }
 
         @media (max-width: 767.98px) {
+            .dz-carousel-track-wrapper {
+                margin: 0 -12px;
+                padding: 0;
+            }
+
+            .dz-carousel-track {
+                gap: 14px;
+                padding: 8px 16px 20px 16px;
+                scroll-padding-left: 16px;
+            }
+
             .dz-treatment-card {
-                flex: 0 0 85vw;
-                width: 85vw;
-                min-width: 280px;
+                flex: 0 0 78vw;
+                width: 78vw;
+                min-width: 260px;
+                max-width: 310px;
                 height: auto;
                 min-height: auto;
                 max-height: none;
@@ -372,13 +423,13 @@
             }
 
             .dz-card-media {
-                flex: 0 0 160px;
+                flex: 0 0 150px;
                 width: 100%;
-                height: 160px;
+                height: 150px;
             }
 
             .dz-card-body {
-                padding: 16px 18px;
+                padding: 14px 16px 16px;
             }
         }
     </style>
@@ -1089,6 +1140,12 @@
              Heading matches index.html exactly
              ═══════════════════════════════════════════════════════════ -->
         <section class="dz-treatment-section" id="cat-anti-ageing" aria-labelledby="cat-anti-ageing-title">
+            <div class="dz-wave-divider" aria-hidden="true">
+                <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+                    <path d="M0 0 H1440 V52 C1300 38 1150 32 950 38 C700 46 450 62 250 63 C140 64 60 58 0 52 Z"
+                        fill="#F4EFE8" />
+                </svg>
+            </div>
             <div class="container">
                 <div class="section-header text-center mb-3">
                     <span class="section-subtitle">BIO-REGENERATION</span>
@@ -1379,6 +1436,12 @@
              Heading matches index.html exactly
              ═══════════════════════════════════════════════════════════ -->
         <section class="dz-treatment-section" id="cat-wellness" aria-labelledby="cat-wellness-title">
+            <div class="dz-wave-divider" aria-hidden="true">
+                <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+                    <path d="M0 0 H1440 V52 C1300 38 1150 32 950 38 C700 46 450 62 250 63 C140 64 60 58 0 52 Z"
+                        fill="#F4EFE8" />
+                </svg>
+            </div>
             <div class="container">
                 <div class="section-header text-center mb-3">
                     <span class="section-subtitle">CELLULAR LONGEVITY</span>

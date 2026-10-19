@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>About D'Zen Derma — Our Story, Clinic &amp; Founders</title>
+    <meta name="description"
+        content="The story behind D'Zen Derma — our core values, our Delhi &amp; Gurgaon clinics, and the founders Dr. Aarushi Passi Bhandari and Rahul Bhandari." />
+    <link rel="canonical" href="https://dzenderma.com/about-dzen" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dr. Aarushi Passi Bhandari" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="D'Zen Derma" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:url" content="https://dzenderma.com/about-dzen" />
+    <meta property="og:title" content="About D'Zen Derma — Our Story, Clinic &amp; Founders" />
+    <meta property="og:description"
+        content="Beauty is in the balance. Discover the story, values and people behind D'Zen Derma in Delhi and Gurgaon." />
+
+    <!-- Schema.org MedicalClinic Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "D'Zen Derma",
+      "description": "Medical-grade aesthetic dermatology and regenerative wellness clinic in South Delhi and Gurgaon.",
+      "url": "https://dzenderma.com/about-dzen",
+      "telephone": "+91-9878885046",
+      "medicalSpecialty": ["Dermatology", "Aesthetic Medicine"],
+      "founder": [
+        {
+          "@type": "Person",
+          "name": "Dr. Aarushi Passi Bhandari",
+          "jobTitle": "Aesthetic Physician, Medical Director"
+        },
+        {
+          "@type": "Person",
+          "name": "Rahul Bhandari",
+          "jobTitle": "Founder, Brand & Experience"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Base variable sheet, shared styles -->
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="styles.css?v=6.4" />
+
+    <!-- Tailwind CSS (without preflight resets) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: { preflight: false },
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4B2B20',
+                        accent: '#e0a65a',
+                        'accent-light': '#daa520',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Scoped About D'Zen Styles -->
+    <style>
+        .adz {
+            --adz-ink: #2B1A12;
+            --adz-body: #5C4A3A;
+            --adz-gold: #C4924A;
+            --adz-cream: #FDF8F3;
+            --adz-sand: #F4EFE8;
+            position: relative;
+        }
+
+        /* ── Filled wave separator (darker field flowing into the next section) ── */
+        .adz-wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 90px;
+            z-index: 1;
+            pointer-events: none;
+            line-height: 0;
+        }
+
+        .adz-wave svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .adz .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ── Shared split layout: arched image + copy ── */
+        .adz-split {
+            display: grid;
+            grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+            align-items: center;
+            gap: clamp(40px, 6vw, 84px);
+        }
+
+        .adz-split--flip {
+            grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+        }
+
+        .adz-split--flip figure {
+            order: 2;
+        }
+
+        .adz-split figure {
+            position: relative;
+            margin: 0;
+        }
+
+        .adz-split figure img {
+            display: block;
+            width: 100%;
+            height: clamp(420px, 48vw, 560px);
+            object-fit: cover;
+            border-radius: 280px 280px 24px 24px;
+            border: 1px solid rgba(196, 146, 74, 0.25);
+            box-shadow: 0 28px 70px -20px rgba(43, 26, 18, 0.22);
+        }
+
+        .adz-split figure figcaption {
+            position: absolute;
+            left: 50%;
+            bottom: -18px;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            padding: 10px 22px;
+            border-radius: 999px;
+            background: #FFFFFF;
+            border: 1px solid rgba(196, 146, 74, 0.3);
+            box-shadow: 0 10px 30px -12px rgba(43, 26, 18, 0.25);
+            font-family: 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            font-size: 15px;
+            color: var(--adz-ink);
+        }
+
+        .adz-copy .nemonic-separator {
+            justify-content: flex-start;
+        }
+
+        /* Spec list */
+        .adz-list {
+            list-style: none;
+            padding: 0;
+            margin: 28px 0 0;
+            border-top: 1px solid rgba(196, 146, 74, .25);
+            max-width: 54ch;
+        }
+
+        .adz-list li {
+            display: flex;
+            align-items: baseline;
+            gap: 18px;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(196, 146, 74, .18);
+        }
+
+        .adz-list b {
+            flex: none;
+            width: 28px;
+            font-family: 'Inter', sans-serif;
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: var(--adz-gold);
+        }
+
+        .adz-list span {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.65;
+            color: var(--adz-body);
+        }
+
+        .adz-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 32px;
+        }
+
+        html body .adz .dz-cta.dz-cta--ghost {
+            background: transparent !important;
+            color: #4B2B20 !important;
+            -webkit-text-fill-color: #4B2B20 !important;
+            border: 1px solid rgba(75, 43, 32, 0.35) !important;
+            box-shadow: none !important;
+        }
+
+        html body .adz .dz-cta.dz-cta--ghost:hover {
+            background: rgba(196, 146, 74, 0.1) !important;
+            border-color: #C4924A !important;
+        }
+
+        /* ── 1. Brand Story ── */
+        #brand-story {
+            padding: clamp(56px, 7vw, 90px) 0 clamp(60px, 8vw, 100px);
+            background: var(--adz-cream);
+        }
+
+        /* ── 1b. Core Values (bronze field) ── */
+        #core-values {
+            isolation: isolate;
+            overflow: hidden;
+            background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%);
+            padding-top: clamp(110px, 12vw, 150px);
+            padding-bottom: clamp(110px, 12vw, 150px);
+        }
+
+        #core-values::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 65% 60% at 50% -8%, rgba(198, 119, 119, .18) 0%, transparent 68%),
+                radial-gradient(ellipse 40% 40% at 85% 105%, rgba(143, 113, 74, .18) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        #core-values .adz-wave--bottom {
+            top: auto;
+            bottom: -1px;
+        }
+
+        .adz-values {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .adz-value {
+            padding: 4px clamp(16px, 2.2vw, 32px);
+            border-left: 1px solid rgba(255, 255, 255, .16);
+        }
+
+        .adz-value:first-child {
+            border-left: 0;
+            padding-left: 0;
+        }
+
+        .adz-value:last-child {
+            padding-right: 0;
+        }
+
+        .adz-value__num {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2.4px;
+            color: #E8C99A;
+            margin: 22px 0 10px;
+        }
+
+        /* ── Icon badge (shared by story pillars and values) ── */
+        .adz-icon {
+            flex: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: rgba(196, 146, 74, .12);
+            border: 1px solid rgba(196, 146, 74, .3);
+            color: #4B2B20;
+            transition: background .3s ease, color .3s ease, transform .3s ease;
+        }
+
+        .adz-icon svg {
+            width: 26px;
+            height: 26px;
+        }
+
+        .adz-icon--light {
+            width: 64px;
+            height: 64px;
+            background: rgba(250, 249, 246, .08);
+            border-color: rgba(232, 201, 154, .45);
+            color: #E8C99A;
+        }
+
+        .adz-value:hover .adz-icon--light {
+            background: #E8C99A;
+            color: #4B2B20;
+            transform: translateY(-3px);
+        }
+
+        /* ── Brand story: copy + icon pillars ── */
+        .adz-story {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: clamp(36px, 4.5vw, 56px);
+            width: 100%;
+        }
+
+        .adz-story .adz-copy {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .adz-story .adz-copy .section-subtitle {
+            display: block;
+            text-align: center;
+            color: #8B4513 !important;
+            font-family: 'Inter', system-ui, sans-serif !important;
+            font-size: 11px !important;
+            font-weight: 600 !important;
+            letter-spacing: 3.2px !important;
+            text-transform: uppercase !important;
+        }
+
+        .adz-story .adz-copy .nemonic-separator {
+            justify-content: center;
+            margin: 8px auto 14px;
+        }
+
+        .adz-story .adz-copy .section-title {
+            text-align: center;
+            color: #4B2B20 !important;
+            margin-bottom: 18px;
+        }
+
+        .adz-story .adz-lead {
+            text-align: center;
+            max-width: 820px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Inter', system-ui, sans-serif !important;
+            font-size: 16px !important;
+            line-height: 1.8 !important;
+            font-weight: 300 !important;
+            color: #2B1A12 !important;
+            margin-bottom: 14px;
+        }
+
+        .adz-story .adz-body {
+            text-align: center;
+            max-width: 760px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Inter', system-ui, sans-serif !important;
+            font-size: 14.5px !important;
+            line-height: 1.8 !important;
+            font-weight: 300 !important;
+            color: #5C4A3A !important;
+            margin-bottom: 0;
+        }
+
+        /* ── Minimal Editorial Steps Grid (Clean 4-Column Layout with Dividers, No Boxes) ── */
+        .hf-minimal-steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: clamp(24px, 3vw, 40px);
+            margin-top: 44px;
+            max-width: 1240px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        .hf-minimal-step-item {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            background: transparent;
+            border: none;
+            padding: 0;
+            box-shadow: none;
+        }
+
+        .hf-minimal-step-title {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-style: italic !important;
+            font-size: 1.18rem !important;
+            font-weight: 500 !important;
+            color: #4B2B20 !important;
+            letter-spacing: 0.01em;
+            margin: 0 0 14px 0 !important;
+            min-height: 48px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hf-minimal-step-divider {
+            width: 100%;
+            height: 1px;
+            background: rgba(75, 43, 32, 0.28);
+            margin-bottom: 18px;
+        }
+
+        .hf-minimal-step-desc {
+            font-family: 'Inter', system-ui, sans-serif !important;
+            font-size: 0.88rem !important;
+            line-height: 1.72 !important;
+            color: #5C4A3A !important;
+            font-weight: 300 !important;
+            margin: 0;
+            text-align: center;
+        }
+
+        @media (max-width: 991.98px) {
+            .hf-minimal-steps-grid {
+                display: flex;
+                overflow-x: auto;
+                overflow-y: hidden;
+                scroll-snap-type: x mandatory;
+                scroll-padding: 0 20px;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                gap: 20px;
+                padding: 10px 20px 24px;
+                margin-top: 28px;
+                margin-left: -16px;
+                margin-right: -16px;
+            }
+
+            .hf-minimal-steps-grid::-webkit-scrollbar {
+                display: none;
+            }
+
+            .hf-minimal-step-item {
+                flex: 0 0 clamp(220px, 68vw, 290px);
+                scroll-snap-align: start;
+                text-align: center;
+                padding: 4px 10px;
+            }
+
+            .hf-minimal-step-title {
+                min-height: auto;
+                margin-bottom: 12px !important;
+            }
+
+            .hf-minimal-step-divider {
+                margin-bottom: 14px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .hf-minimal-steps-grid {
+                gap: 14px;
+                padding: 10px 16px 24px;
+                scroll-padding: 0 16px;
+            }
+
+            .hf-minimal-step-item {
+                flex: 0 0 clamp(190px, 65vw, 250px);
+                padding: 2px 6px;
+            }
+        }
+
+        .adz-value h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            line-height: 1.35;
+            margin: 0 0 14px;
+        }
+
+        html body #core-values,
+        html body #core-values .section-subtitle,
+        html body #core-values .section-title,
+        html body #core-values .adz-lead,
+        html body #core-values .adz-value h3,
+        html body #core-values .adz-value p {
+            color: #FAF9F6 !important;
+            -webkit-text-fill-color: #FAF9F6 !important;
+        }
+
+        html body #core-values .adz-value p {
+            opacity: 0.88 !important;
+            font-family: 'Inter', system-ui, sans-serif !important;
+            font-size: 14.5px !important;
+            line-height: 1.75 !important;
+            font-weight: 300 !important;
+        }
+
+        /* ── 2. About Clinic ── */
+        #about-clinic {
+            padding: clamp(40px, 6vw, 70px) 0 clamp(70px, 8vw, 100px);
+            background: linear-gradient(to top, var(--adz-sand), var(--adz-cream));
+        }
+
+        .adz-clinic-media {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 16px;
+        }
+
+        .adz-clinic-media img {
+            display: block;
+            width: 100%;
+            height: clamp(260px, 30vw, 380px);
+            object-fit: cover;
+            border-radius: 22px;
+            border: 1px solid rgba(196, 146, 74, 0.2);
+            box-shadow: 0 24px 60px -24px rgba(43, 26, 18, 0.28);
+        }
+
+        .adz-clinic-media img:last-child {
+            margin-top: 48px;
+        }
+
+        .adz-locs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 28px;
+        }
+
+        .adz-loc {
+            padding: 18px 20px;
+            border-radius: 18px;
+            background: #FFFFFF;
+            border: 1px solid rgba(196, 146, 74, 0.22);
+        }
+
+        .adz-loc__eyebrow {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 10.5px;
+            font-weight: 700;
+            letter-spacing: 2.4px;
+            text-transform: uppercase;
+            color: var(--adz-gold);
+            margin-bottom: 6px;
+        }
+
+        .adz-loc p {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--adz-body);
+        }
+
+        /* ── 3 & 4. Founders ── */
+        .adz-founder {
+            padding: clamp(110px, 11vw, 140px) 0 clamp(70px, 8vw, 100px);
+        }
+
+        #dr-aarushi {
+            background: var(--adz-cream);
+        }
+
+        #rahul-bhandari {
+            background: linear-gradient(to bottom, var(--adz-cream), var(--adz-sand));
+        }
+
+        .adz-founder__meta {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2.6px;
+            text-transform: uppercase;
+            color: var(--adz-gold);
+        }
+
+        .adz-founder__role {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: var(--adz-body);
+            margin: 6px 0 22px;
+        }
+
+        .adz-quote {
+            position: relative;
+            margin: 28px 0 0;
+            padding: 4px 0 4px 26px;
+            border-left: 2px solid var(--adz-gold);
+            font-family: 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            font-size: clamp(18px, 1.8vw, 21px);
+            line-height: 1.55;
+            color: var(--adz-ink);
+        }
+
+        .adz-split figure.adz-portrait img {
+            object-position: center 15%;
+            background: linear-gradient(to bottom, #EADBC8, #F4EFE8);
+        }
+
+        /* ── Typography overrides matching brand standards ── */
+        html body .adz .adz-lead {
+            font-family: 'Inter', system-ui, sans-serif !important;
+            font-size: 16.5px !important;
+            line-height: 1.82 !important;
+            font-weight: 300 !important;
+            color: var(--adz-ink);
+        }
+
+        html body .adz .adz-body {
+            font-family: 'Inter', system-ui, sans-serif !important;
+            font-size: 15px !important;
+            line-height: 1.85 !important;
+            font-weight: 300 !important;
+            color: var(--adz-body) !important;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 991.98px) {
+
+            .adz-split,
+            .adz-split--flip {
+                grid-template-columns: 1fr;
+                gap: 56px;
+            }
+
+            .adz-split .adz-copy {
+                order: 1;
+                text-align: center;
+            }
+
+            .adz-balance-bar {
+                max-width: 640px;
+                padding: 20px 24px;
+                gap: 20px;
+            }
+
+            .adz-pillars {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                max-width: 720px;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .adz-split figure,
+            .adz-split--flip figure {
+                order: 2;
+                max-width: 520px;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .adz-split figure img {
+                height: clamp(340px, 80vw, 480px);
+            }
+
+            .adz-copy .nemonic-separator {
+                justify-content: center;
+            }
+
+            .adz-list {
+                margin-left: auto;
+                margin-right: auto;
+                text-align: left;
+            }
+
+            .adz-actions {
+                justify-content: center;
+            }
+
+            .adz-quote {
+                text-align: left;
+                max-width: 54ch;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .adz-values {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px clamp(24px, 4vw, 44px);
+                max-width: 720px;
+            }
+
+            .adz-value {
+                padding: 30px 0 0;
+                border-left: 0;
+                border-top: 1px solid rgba(255, 255, 255, .16);
+            }
+
+            .adz-value:nth-child(-n+2) {
+                border-top: 0;
+                padding-top: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .adz-wave {
+                height: 50px;
+            }
+
+            .adz-founder {
+                padding-top: 80px;
+            }
+
+            #core-values {
+                padding-top: 80px;
+                padding-bottom: 90px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .adz-values {
+                grid-template-columns: 1fr;
+                max-width: 420px;
+                gap: 36px 0;
+                text-align: center;
+            }
+
+
+            .adz-value:nth-child(n+2) {
+                border-top: 1px solid rgba(255, 255, 255, .16);
+                padding-top: 36px;
+            }
+
+            .adz-locs {
+                grid-template-columns: 1fr;
+                text-align: left;
+            }
+
+            .adz-clinic-media {
+                grid-template-columns: 1fr;
+            }
+
+            .adz-clinic-media img:last-child {
+                display: none;
+            }
+
+            .adz-split figure figcaption {
+                font-size: 13px;
+                padding: 8px 18px;
+            }
+        }
+
+        /* Floating Pill navbar styling */
+        .pnav {
+            background: #ffffff !important;
+            border-bottom: 1px solid rgba(180, 140, 90, 0.14) !important;
+            box-shadow: 0 2px 18px rgba(0, 0, 0, 0.06) !important;
+        }
+
+        .pnav .pnav__logo img {
+            filter: none !important;
+        }
+
+        .pnav .pnav__burger {
+            background: rgba(75, 43, 32, 0.06) !important;
+        }
+
+        .pnav .pnav__burger span {
+            background: #3A2418 !important;
+        }
+    </style>
+</head>
+
+<body class="ab-page" style="background-color: #FDF8F3; color: #2B1A12;">
+
+    <!-- Floating Pill Navbar injected via include/include.js -->
+    <div id="site-header"></div>
+
+    <main class="page-content" style="background-color: #FDF8F3;">
+
+        <!-- ═══════════════════════════════════════════════════════════
+             BREADCRUMB HERO HEADER (Signature Dark Elegance)
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="breadcrumb-header hf-hero-header position-relative d-flex align-items-center justify-content-center text-center"
+            style="background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%), url('../images/contour-texture.webp') repeat; background-blend-mode: multiply; padding-top: 110px; padding-bottom: 68px; border-bottom: none; overflow: hidden;">
+
+            <div class="container hf-hero-container position-relative" style="z-index: 2;">
+                <span class="section-subtitle hf-hero-subtitle"
+                    style="font-family: 'Inter', system-ui, sans-serif !important; font-size: 11px !important; font-weight: 600 !important; letter-spacing: 3.4px !important; text-transform: uppercase !important; color: #FAF9F6 !important; -webkit-text-fill-color: #FAF9F6 !important; display: block; margin-bottom: 0;">ABOUT
+                    D'ZEN DERMA</span>
+                <div class="nemonic-separator mt-2 mb-3">
+                    <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
+                    <img src="logo-header.png" alt="nemonic" class="nemonic-icon"
+                        style="filter: brightness(0) invert(1);" />
+                    <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
+                </div>
+                <h1 class="page-title mb-0 hf-hero-title"
+                    style="font-family: 'Playfair Display', Georgia, serif !important; font-style: italic !important; font-weight: 400 !important; color: #FAF9F6 !important; -webkit-text-fill-color: #FAF9F6 !important; font-size: clamp(30px, 4.2vw, 52px) !important; margin: 0; line-height: 1.22; text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);">
+                    Beauty Is in the Balance
+                </h1>
+            </div>
+
+            <!-- Curvy Bottom Separator -->
+            <div class="position-absolute w-100" style="bottom: -1px; left: 0; z-index: 2;">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                    style="display: block; width: 100%; height: clamp(38px, 4.5vw, 60px);">
+                    <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             1. BRAND STORY
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="adz" id="brand-story" aria-labelledby="brand-story-title">
+            <div class="container">
+                <div class="adz-story">
+
+                    <div class="adz-copy">
+                        <span class="section-subtitle" style="letter-spacing: 3px;">OUR STORY</span>
+                        <div class="nemonic-separator mt-2 mb-3">
+                            <div class="nemonic-line"></div>
+                            <img src="logo-header.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                            <div class="nemonic-line"></div>
+                        </div>
+                        <h2 class="section-title" id="brand-story-title">A Sanctuary for <span
+                                class="scribble">Science-Led</span> Beauty</h2>
+                        <p class="adz-lead">
+                            D'Zen Derma was built on a single, uncompromising conviction: that true aesthetic beauty is found in balance. In a world of transient trends and rushed procedures, we created an unhurried clinical sanctuary for individuals who seek deliberate, physician-guided care — an experience that is calm, respectful, and unmistakably their own.
+                        </p>
+                        <p class="adz-body">
+                            We believe radiant skin is the natural outward expression of cellular health, structural integrity, and inner vitality. Intelligent aesthetic dermatology should never seek to alter who you are or mask your facial expressions behind artificial uniformity. Instead, our role is to protect, restore, and gently elevate your innate beauty through evidence-based medicine, millimeter precision, and profound anatomical respect.
+                        </p>
+                        <p class="adz-body mt-3">
+                            Our philosophy bridges two foundational pillars: <em>Derma</em>, the rigorous clinical discipline of evidence-based medical dermatology, FDA-cleared technologies, and physician-led safety; and <em>Zen</em>, the restorative art of unhurried presence, mindful listening, and calm aesthetic restraint. Together, they shape an elevated standard of care where clinical excellence feels tranquil, deeply personalized, and enduring.
+                        </p>
+                    </div>
+
+                    <!-- 4 Minimal Editorial Pillars (Matching Reference Section Example) -->
+                    <div class="hf-minimal-steps-grid" role="region" aria-label="Our Clinical Pillars">
+                        <!-- Pillar 01 -->
+                        <div class="hf-minimal-step-item">
+                            <h3 class="hf-minimal-step-title">Careful Assessment First</h3>
+                            <div class="hf-minimal-step-divider"></div>
+                            <p class="hf-minimal-step-desc">
+                                Every clinical journey begins with an unhurried, doctor-led consultation. We evaluate your unique facial architecture, cellular skin barrier, and personal goals, ensuring every recommendation is guided by medical necessity and your authentic aesthetic vision.
+                            </p>
+                        </div>
+
+                        <!-- Pillar 02 -->
+                        <div class="hf-minimal-step-item">
+                            <h3 class="hf-minimal-step-title">Medical-Grade Technology</h3>
+                            <div class="hf-minimal-step-divider"></div>
+                            <p class="hf-minimal-step-desc">
+                                We exclusively employ gold-standard, FDA-cleared platforms selected strictly for proven clinical outcomes. Each platform affords our physicians calibrated control over depth, thermal energy, and recovery timelines for predictable, superior results.
+                            </p>
+                        </div>
+
+                        <!-- Pillar 03 -->
+                        <div class="hf-minimal-step-item">
+                            <h3 class="hf-minimal-step-title">Restraint-First Safety</h3>
+                            <div class="hf-minimal-step-divider"></div>
+                            <p class="hf-minimal-step-desc">
+                                True aesthetic mastery lies in knowing when not to treat. Our doctor-led protocols prioritize conservative refinement and tissue longevity, guarding against over-correction and preserving the natural dynamism of your expressions.
+                            </p>
+                        </div>
+
+                        <!-- Pillar 04 -->
+                        <div class="hf-minimal-step-item">
+                            <h3 class="hf-minimal-step-title">Plans Made for You</h3>
+                            <div class="hf-minimal-step-divider"></div>
+                            <p class="hf-minimal-step-desc">
+                                No two skins share the same biology, lifestyle, or healing timeline. We reject standardized packages in favor of individualized care protocols that evolve alongside your skin, ensuring subtle, graceful refinement at every stage of life.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             1b. CORE VALUES
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="adz" id="core-values" aria-labelledby="core-values-title">
+
+            <!-- Cream wave cutting the top edge of the bronze field -->
+            <div class="adz-wave" aria-hidden="true">
+                <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+                    <path d="M0 0 H1440 V52 C1300 38 1150 32 950 38 C700 46 450 62 250 63 C140 64 60 58 0 52 Z"
+                        fill="#FDF8F3" />
+                </svg>
+            </div>
+
+            <div class="container">
+                <div class="section-header text-center mb-5" style="max-width: 780px; margin-inline: auto;">
+                    <span class="section-subtitle"
+                        style="letter-spacing: 3px; color: #E8C99A !important; -webkit-text-fill-color: #E8C99A !important; opacity: 1 !important;">CORE
+                        VALUES</span>
+                    <div class="nemonic-separator mt-2 mb-4">
+                        <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.45);"></div>
+                        <img src="logo-header.png" alt="" aria-hidden="true" class="nemonic-icon"
+                            style="filter: brightness(0) invert(1);" />
+                        <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.45);"></div>
+                    </div>
+                    <h2 class="section-title" id="core-values-title">What Guides Every Decision</h2>
+                    <p class="adz-lead mx-auto" style="max-width: 60ch; opacity: .9;">
+                        Four principles that shape every consultation, every protocol and every result.
+                    </p>
+                </div>
+
+                <div class="adz-values">
+                    <article class="adz-value">
+                        <span class="adz-icon adz-icon--light" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 3h6M10 3v6.5L4.5 19a1.5 1.5 0 0 0 1.3 2.2h12.4a1.5 1.5 0 0 0 1.3-2.2L14 9.5V3" />
+                                <path d="M7.5 15h9" />
+                            </svg>
+                        </span>
+                        <span class="adz-value__num">01</span>
+                        <h3>Science Before Trends</h3>
+                        <p>Every protocol is evidence-led and doctor-designed. If a treatment is fashionable but not
+                            proven, it does not make it onto our menu.</p>
+                    </article>
+                    <article class="adz-value">
+                        <span class="adz-icon adz-icon--light" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 3v18M5 7h14M3 14l2-7 2 7a2 2 0 0 1-4 0zM17 14l2-7 2 7a2 2 0 0 1-4 0zM8 21h8" />
+                            </svg>
+                        </span>
+                        <span class="adz-value__num">02</span>
+                        <h3>Safety &amp; Restraint, Always</h3>
+                        <p>We know when not to treat. Subtle, natural outcomes take priority over doing more — and we
+                            will tell you honestly when less is right.</p>
+                    </article>
+                    <article class="adz-value">
+                        <span class="adz-icon adz-icon--light" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 3l1.9 5.6H20l-4.9 3.6 1.9 5.8L12 14.4 7 18l1.9-5.8L4 8.6h6.1z" />
+                            </svg>
+                        </span>
+                        <span class="adz-value__num">03</span>
+                        <h3>Natural, Personal Results</h3>
+                        <p>No two skins are alike. Plans are built around your concerns, your biology and how you want
+                            to look and feel — still recognisably you.</p>
+                    </article>
+                    <article class="adz-value">
+                        <span class="adz-icon adz-icon--light" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21.2l7.8-7.7 1-1.1a5.5 5.5 0 0 0 0-7.8z" />
+                            </svg>
+                        </span>
+                        <span class="adz-value__num">04</span>
+                        <h3>Whole-Person Care</h3>
+                        <p>Skin is part of the whole. We look at lifestyle, recovery and wellbeing alongside aesthetics,
+                            for results that last.</p>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Sand wave flowing into About Clinic -->
+            <div class="adz-wave adz-wave--bottom" aria-hidden="true">
+                <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+                    <path d="M0 90 H1440 V38 C1300 52 1150 58 950 52 C700 44 450 28 250 27 C140 26 60 32 0 38 Z"
+                        fill="#FDF8F3" />
+                </svg>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             2. ABOUT CLINIC
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="adz" id="about-clinic" aria-labelledby="about-clinic-title">
+            <div class="container">
+                <div class="adz-split adz-split--flip">
+
+                    <div class="adz-copy">
+                        <span class="section-subtitle" style="letter-spacing: 3px;">ABOUT THE CLINIC</span>
+                        <div class="nemonic-separator mt-2 mb-3">
+                            <div class="nemonic-line"></div>
+                            <img src="logo-header.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                            <div class="nemonic-line"></div>
+                        </div>
+                        <h2 class="section-title" id="about-clinic-title">A Clinic Built Around <span
+                                class="scribble">Calm</span></h2>
+                        <p class="adz-lead">
+                            Medical precision rarely feels restful. We designed D'Zen Derma so that it does — clinical
+                            standards held without compromise, inside a space that lowers your shoulders the moment you
+                            step in.
+                        </p>
+
+                        <ul class="adz-list">
+                            <li><b>01</b><span>Medical-grade laser, light and regenerative platforms, chosen for
+                                    outcomes rather than optics</span></li>
+                            <li><b>02</b><span>Doctor-led from assessment to aftercare — never delegated once you're
+                                    through the door</span></li>
+                            <li><b>03</b><span>Sterile procedure rooms with single-use consumables throughout</span>
+                            </li>
+                            <li><b>04</b><span>Private entry and exit, and records held in strict confidence</span></li>
+                        </ul>
+
+                        <div class="adz-locs">
+                            <div class="adz-loc">
+                                <span class="adz-loc__eyebrow">New Delhi</span>
+                                <p>18A, Ring Rd, Lajpat Nagar 4</p>
+                            </div>
+                            <div class="adz-loc">
+                                <span class="adz-loc__eyebrow">Gurugram</span>
+                                <p>Golf Course Road, Sector 28</p>
+                            </div>
+                        </div>
+
+                        <div class="adz-actions">
+                            <a href="about-clinic.html" class="dz-cta">
+                                <span>Explore the Clinic</span>
+                                <img src="nemonic1.png" class="btn-icon" alt="" />
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="adz-clinic-media">
+                        <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?q=80&w=1000&auto=format&fit=crop"
+                            alt="The D'Zen Derma reception and waiting lounge" loading="lazy" />
+                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop"
+                            alt="A private treatment suite at D'Zen Derma" loading="lazy" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             3. DR. AARUSHI PASSI BHANDARI
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="adz adz-founder" id="dr-aarushi" aria-labelledby="dr-aarushi-title">
+
+            <!-- Wave: About Clinic sand flowing into the founder section -->
+            <div class="adz-wave" aria-hidden="true">
+                <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+                    <path d="M0 0 H1440 V52 C1300 38 1150 32 950 38 C700 46 450 62 250 63 C140 64 60 58 0 52 Z"
+                        fill="#F4EFE8" />
+                </svg>
+            </div>
+
+            <div class="container">
+                <div class="adz-split">
+
+                    <figure class="adz-portrait">
+                        <img src="../images/Aarushi-Passi.webp" alt="Dr. Aarushi Passi Bhandari, founder and medical director of D'Zen Derma"
+                            loading="lazy" />
+                        <figcaption>Founder &middot; Medical Direction</figcaption>
+                    </figure>
+
+                    <div class="adz-copy">
+                        <span class="adz-founder__meta">Meet the Founder</span>
+                        <div class="nemonic-separator mt-2 mb-3">
+                            <div class="nemonic-line"></div>
+                            <img src="logo-header.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                            <div class="nemonic-line"></div>
+                        </div>
+                        <h2 class="section-title mb-0" id="dr-aarushi-title">Dr. Aarushi Passi <span
+                                class="scribble">Bhandari</span></h2>
+                        <p class="adz-founder__role">Aesthetic Physician &middot; Medical Director</p>
+                        <p class="adz-lead">
+                            Dr. Aarushi brings a patient-focused approach to aesthetic medicine, emphasising careful
+                            assessment, appropriate treatment selection and natural-looking outcomes.
+                        </p>
+                        <p class="adz-body">
+                            She leads every protocol at D'Zen Derma with precision and a science-first approach to
+                            safety — and is just as likely to advise against a treatment as to recommend one. Alongside
+                            her clinical practice, she trains fellow doctors through small-group workshops and live
+                            supervised cases built on assessment, restraint and safety.
+                        </p>
+
+                        <blockquote class="adz-quote">
+                            &ldquo;The most ambitious thing a doctor can do is leave a patient with less, not
+                            more.&rdquo;
+                        </blockquote>
+
+                        <div class="adz-actions">
+                            <a href="../newthree.html#book" class="dz-cta">
+                                <span>Book a Consultation</span>
+                                <img src="nemonic1.png" class="btn-icon" alt="" />
+                            </a>
+                            <a href="workshops-training.html" class="dz-cta dz-cta--ghost">
+                                <span>Workshops &amp; Training</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             4. RAHUL BHANDARI
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="adz adz-founder" id="rahul-bhandari" aria-labelledby="rahul-bhandari-title">
+            <div class="container">
+                <div class="adz-split adz-split--flip">
+
+                    <figure class="adz-portrait">
+                        <img src="../images/Rahul-Bhandari.png" alt="Rahul Bhandari, founder of D'Zen Derma leading brand and experience"
+                            loading="lazy" />
+                        <figcaption>Founder &middot; Brand &amp; Experience</figcaption>
+                    </figure>
+
+                    <div class="adz-copy">
+                        <span class="adz-founder__meta">Meet the Founder</span>
+                        <div class="nemonic-separator mt-2 mb-3">
+                            <div class="nemonic-line"></div>
+                            <img src="logo-header.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                            <div class="nemonic-line"></div>
+                        </div>
+                        <h2 class="section-title mb-0" id="rahul-bhandari-title">Rahul <span
+                                class="scribble">Bhandari</span></h2>
+                        <p class="adz-founder__role">Brand Strategy &middot; Experience Design</p>
+                        <p class="adz-lead">
+                            Focused on brand strategy and experience design, Rahul helps shape the thoughtful
+                            environment and patient experience that define D'Zen Derma.
+                        </p>
+                        <p class="adz-body">
+                            Concept-driven and quietly bold, he shapes the emotional architecture behind D'Zen — the
+                            narrative, the spaces and the unhurried rhythm of every visit — so that clinical care feels
+                            calm, considered and deeply personal rather than transactional.
+                        </p>
+
+                        <blockquote class="adz-quote">
+                            &ldquo;D'Zen is not a clinic. It is a philosophy that happens to operate one.&rdquo;
+                        </blockquote>
+
+                        <div class="adz-actions">
+                            <a href="our-philosophy.html" class="dz-cta">
+                                <span>Our Philosophy</span>
+                                <img src="nemonic1.png" class="btn-icon" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SITE FOOTER (DYNAMIC INCLUDE VIA include.js) -->
+    <div id="site-footer"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="include/include.js"></script>
+
+    <!-- Global Site Scripts -->
+    <script src="script.js?v=3.1"></script>
+
+    <!-- Logo Fixer for Pill Navigation -->
+    <script>
+        (function () {
+            function ensurePillLogo() {
+                var logoImg = document.querySelector('.pnav__logo img');
+                if (logoImg) {
+                    if (logoImg.getAttribute('src') !== 'logo1.png' && (!logoImg.complete || logoImg.naturalWidth === 0)) {
+                        logoImg.src = 'logo1.png';
+                    }
+                }
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', ensurePillLogo);
+            } else {
+                ensurePillLogo();
+            }
+            setTimeout(ensurePillLogo, 300);
+            setTimeout(ensurePillLogo, 1000);
+        })();
+    </script>
+</body>
+
+</html>

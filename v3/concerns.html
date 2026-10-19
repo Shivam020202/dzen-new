@@ -1,0 +1,1964 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Clinical Concerns Directory — D'Zen Derma</title>
+    <meta name="description"
+        content="Explore the complete clinical concerns directory at D'Zen Derma. Categorized aesthetic and medical concerns for Face, Body, Ageing, Hair, and Restorative Wellness." />
+    <link rel="canonical" href="https://dzenderma.com/concerns" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dr. Aarushi Passi Bhandari" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="D'Zen Derma" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:url" content="https://dzenderma.com/concerns" />
+    <meta property="og:title" content="Clinical Concerns Directory — D'Zen Derma" />
+    <meta property="og:description"
+        content="Advanced medical-grade dermatology, contouring, and cellular wellness protocols categorized for your unique concern journey." />
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80&auto=format&fit=crop" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Base variable sheet, shared styles -->
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="styles.css?v=6.4" />
+
+    <!-- Tailwind CSS (without preflight resets) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: { preflight: false },
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4B2B20',
+                        accent: '#e0a65a',
+                        'accent-light': '#daa520',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* ═══════════════════════════════════════════════════════════
+           HOMEPAGE COLOR TOKENS & ALIGNED TYPOGRAPHY
+           Strictly matched to index.html & styles.css
+           ═══════════════════════════════════════════════════════════ */
+        body.dz-treatments-page {
+            background-color: #FDF8F3 !important;
+            color: #2B1A12 !important;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+            overflow-x: hidden;
+        }
+
+        /* ── Category Sections ───────────────────────────────────── */
+        .dz-treatment-section {
+            position: relative;
+            padding: 50px 0;
+            background: #FDF8F3;
+        }
+
+        .dz-treatment-section:nth-child(even) {
+            background: linear-gradient(to top, #F4EFE8, #FDF8F3);
+        }
+
+        /* ── Wave separator: Body section colour flowing into Ageing ── */
+        #cat-body,
+        #cat-hair {
+            background: linear-gradient(to top, #F4EFE8, #FDF8F3);
+        }
+
+        #cat-ageing,
+        #cat-wellness {
+            background: #FDF8F3;
+            padding-top: 110px;
+        }
+
+        .dz-wave-divider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 90px;
+            z-index: 1;
+            pointer-events: none;
+            line-height: 0;
+        }
+
+        .dz-wave-divider svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .dz-wave-divider {
+                height: 50px;
+            }
+
+            #cat-ageing,
+            #cat-wellness {
+                padding-top: 70px;
+            }
+        }
+
+        /* ── Homepage Heading Standards (Identical to index.html) ── */
+        .section-header {
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-subtitle {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #8B4513 !important;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(26px, 3.2vw, 36px) !important;
+            color: #4B2B20 !important;
+            line-height: 1.25;
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+
+        .section-title .scribble {
+            font-style: italic !important;
+            font-weight: 400;
+            color: #8B4513 !important;
+            -webkit-text-fill-color: #8B4513 !important;
+        }
+
+        .section-desc {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 15px !important;
+            line-height: 1.65;
+            color: #2b2b2b !important;
+        }
+
+        /* ── Carousel Track (Grab / Drag / Smooth Scroll) ────────── */
+        .dz-carousel-track-wrapper {
+            position: relative;
+            margin: 0 -1.5rem;
+            padding: 0 1.5rem;
+        }
+
+        .dz-carousel-track {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 12px 4px 4px 4px;
+            cursor: grab;
+            cursor: -webkit-grab;
+            user-select: none;
+            -webkit-user-select: none;
+            scroll-behavior: smooth;
+        }
+
+        .dz-carousel-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .dz-carousel-track.is-dragging {
+            cursor: grabbing !important;
+            cursor: -webkit-grabbing !important;
+            scroll-behavior: auto;
+            scroll-snap-type: none;
+        }
+
+        /* ── Carousel Card: Compact Height, 2 Full + 1 Partial ────
+           - No badge over image
+           - Title font-weight: 500
+           - No category, timing, or tag pills
+           - Explore treatment with subtext
+           - Divider
+           - Book consultation button with rotating nemonic
+        ────────────────────────────────────────────────────────── */
+        .dz-treatment-card {
+            flex: 0 0 calc((100% - 48px) / 2.35);
+            width: calc((100% - 48px) / 2.35);
+            min-width: 380px;
+            height: 230px;
+            min-height: 230px;
+            max-height: 230px;
+            scroll-snap-align: start;
+            background: #FFFFFF;
+            border: 1px solid rgba(139, 69, 19, 0.15);
+            border-radius: 14px;
+            box-shadow: none;
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease;
+        }
+
+        .dz-treatment-card:hover {
+            transform: translateY(-4px);
+            box-shadow: none;
+            border-color: rgba(139, 69, 19, 0.35);
+        }
+
+        /* Left Side: Image (clean, no badge) */
+        .dz-card-media {
+            flex: 0 0 36%;
+            width: 36%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            background: #F4EFE8;
+        }
+
+        .dz-card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .dz-treatment-card:hover .dz-card-img {
+            transform: scale(1.05);
+        }
+
+        /* Right Side: Body */
+        .dz-card-body {
+            flex: 1;
+            min-width: 0;
+            padding: 14px 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: #FDF8F3;
+        }
+
+        .dz-card-main {
+            min-width: 0;
+        }
+
+        .dz-card-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(17px, 1.3vw, 20px);
+            font-weight: 500 !important;
+            color: #4B2B20 !important;
+            line-height: 1.25;
+            margin: 0 0 6px 0;
+        }
+
+        .dz-card-text {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 12px !important;
+            line-height: 1.45;
+            color: #2b2b2b !important;
+            margin: 0 0 6px 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Explore Treatment Link right with subtext */
+        .dz-card-explore-wrap {
+            display: block;
+            margin-top: 2px;
+        }
+
+        .dz-card-link {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 10.5px !important;
+            font-weight: 600 !important;
+            color: #8B4513 !important;
+            letter-spacing: 0.08em !important;
+            text-transform: uppercase;
+            text-decoration: none !important;
+            display: inline-flex !important;
+            align-items: center;
+            gap: 4px;
+            position: relative;
+            padding-bottom: 2px;
+            transition: color 0.25s ease;
+        }
+
+        .dz-card-link::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 22px;
+            height: 1px;
+            background-color: #8B4513;
+            transition: width 0.3s ease;
+        }
+
+        .dz-treatment-card:hover .dz-card-link::after {
+            width: 100%;
+        }
+
+        .dz-card-link:hover {
+            color: #4B2B20 !important;
+        }
+
+        /* Divider then Book Consultation with Nemonic */
+        .dz-card-footer {
+            display: flex;
+            align-items: center;
+            padding: 14px 0px 5px 0px;
+            margin-top: auto;
+            border-top: 1px solid rgba(139, 69, 19, 0.12);
+        }
+
+        .dz-card-book-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: linear-gradient(35deg, #4B2B20 0%, #8B4513 100%);
+            color: #FAF9F6 !important;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-decoration: none !important;
+            border: 1px solid rgba(232, 201, 154, 0.35);
+            box-shadow: 0 3px 10px rgba(75, 43, 32, 0.14);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+        }
+
+        .dz-card-book-btn .btn-icon {
+            width: 12px;
+            height: 12px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            transition: transform 0.35s ease;
+        }
+
+        .dz-treatment-card:hover .dz-card-book-btn,
+        .dz-card-book-btn:hover {
+            color: #FAF9F6 !important;
+            box-shadow: 0 5px 14px rgba(75, 43, 32, 0.24);
+            filter: brightness(1.08);
+        }
+
+        .dz-card-book-btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .dz-card-book-btn:hover .btn-icon {
+            transform: rotate(45deg);
+        }
+
+        /* ── Responsive ─────────────────────────────────────────── */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .dz-treatment-card {
+                flex: 0 0 calc((100% - 32px) / 1.8);
+                width: calc((100% - 32px) / 1.8);
+                min-width: 340px;
+                height: 230px;
+                min-height: 230px;
+                max-height: 230px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .dz-carousel-track-wrapper {
+                margin: 0 -12px;
+                padding: 0;
+            }
+
+            .dz-carousel-track {
+                gap: 14px;
+                padding: 8px 16px 20px 16px;
+                scroll-padding-left: 16px;
+            }
+
+            .dz-treatment-card {
+                flex: 0 0 78vw;
+                width: 78vw;
+                min-width: 260px;
+                max-width: 310px;
+                height: auto;
+                min-height: auto;
+                max-height: none;
+                flex-direction: column;
+            }
+
+            .dz-card-media {
+                flex: 0 0 150px;
+                width: 100%;
+                height: 150px;
+            }
+
+            .dz-card-body {
+                padding: 14px 16px 16px;
+            }
+        }
+    </style>
+</head>
+
+<body class="hf-page dz-hf-layout dz-treatments-page">
+
+    <!-- ═══════ Site Header ═══════ -->
+    <div id="site-header"></div>
+
+    <main id="main-content">
+
+        <!-- ═══════════════════════════════════════════════════════════
+             1. BREADCRUMB HERO HEADER (Signature Dark Elegance)
+             ═══════════════════════════════════════════════════════════ -->
+        <section
+            class="breadcrumb-header hf-hero-header position-relative d-flex align-items-center justify-content-center text-center">
+            <div class="container hf-hero-container">
+                <span class="section-subtitle hf-hero-subtitle" style="color:#FAF9F6 !important">CLINICAL
+                    DIRECTORY</span>
+                <div class="nemonic-separator mt-2 mb-4 mx-auto">
+                    <div class="nemonic-line hf-hero-line"></div>
+                    <img src="logo-header.png" alt="nemonic" class="nemonic-icon hf-hero-icon" />
+                    <div class="nemonic-line hf-hero-line"></div>
+                </div>
+                <h1 class="page-title mb-3 hf-hero-title">
+                    Aesthetic <span class="scribble">Concerns</span>
+                </h1>
+                <p class="hf-hero-lead mx-auto"
+                    style="color: rgba(250, 249, 246, 0.88); max-width: 720px; font-size: clamp(15px, 1.3vw, 17px); line-height: 1.65;">
+                    A comprehensive clinical taxonomy of skin conditions, volumetric loss, anatomical concerns, and
+                    cellular imbalances — paired with physician-led evidence-based protocols.
+                </p>
+            </div>
+
+            <!-- Curvy Bottom Separator -->
+            <div class="hf-hero-curve">
+                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                    class="hf-hero-curve-svg">
+                    <path fill="#FDF8F3" d="M0,60 C380,150 1060,-30 1440,60 L1440,120 L0,120 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════════════════════
+             SECTION: FACE AESTHETICS (15 Concerns)
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="dz-treatment-section" id="cat-face" aria-labelledby="cat-face-title">
+            <div class="container">
+                <div class="section-header text-center mb-3">
+                    <span class="section-subtitle">FACE AESTHETICS</span>
+                    <div class="nemonic-separator">
+                        <div class="nemonic-line"></div>
+                        <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="section-title" id="cat-face-title">Face <span class="scribble">Concerns</span></h2>
+                    <p class="section-desc mx-auto" style="max-width: 760px; color: #2b2b2b;">
+                        Evidence-led diagnostic analysis and physician protocols formulated for facial contouring,
+                        periorbital hollowing, pigmentary disorders, and structural symmetry.
+                    </p>
+                </div>
+
+                <div class="dz-carousel-track-wrapper">
+                    <div class="dz-carousel-track" role="region" aria-label="FACE AESTHETICS Carousel">
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80"
+                                    alt="Under Eye Darkness, Bags & Hollowness" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Under Eye Darkness, Bags & Hollowness</h3>
+                                    <p class="dz-card-text">
+                                        Micro-vascular pooling and periorbital fat pad attenuation restored via targeted
+                                        polynucleotides, tear trough micro-fillers, and collagen bio-stimulators.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-face" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&q=80"
+                                    alt="Laugh Lines (Nasolabial Folds)" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Laugh Lines (Nasolabial Folds)</h3>
+                                    <p class="dz-card-text">
+                                        Midface structural descent softening with structural hyaluronic acid vectoring
+                                        and deep cheek apex volumetric restoration.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-anti-ageing" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1588516903720-8ceb67f9ef84?w=800&q=80"
+                                    alt="Thin Lips" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Thin Lips</h3>
+                                    <p class="dz-card-text">
+                                        Precision vermilion border definition and mucosal hydration using micro-droplet
+                                        viscoelastic hyaluronic acid for natural volume.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-anti-ageing" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80"
+                                    alt="Neck Lines (Tech Neck)" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Neck Lines (Tech Neck)</h3>
+                                    <p class="dz-card-text">
+                                        Horizontal cervical band smoothing and skin tightening combining micro-botox,
+                                        superficial polynucleotide boosters, and skin redensification.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-anti-ageing" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80"
+                                    alt="Uneven & Dull Skin" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Uneven & Dull Skin</h3>
+                                    <p class="dz-card-text">
+                                        Cellular turnover enhancement and photic dullness renewal through medical
+                                        vortex-fusion, hyperbaric oxygen, and gentle chemical resurfacing.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-face" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1576426863848-c21f53c60b19?w=800&q=80"
+                                    alt="Acne Scars" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Acne Scars</h3>
+                                    <p class="dz-card-text">
+                                        Subcision of fibrotic tethering and collagen remodeling via fractional
+                                        radiofrequency microneedling and non-ablative laser toning.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-face" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80"
+                                    alt="Feature Correction" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Feature Correction</h3>
+                                    <p class="dz-card-text">
+                                        Anatomical balance refinement through ultrasound-guided volumetric
+                                        micro-contouring and neuromuscular modulation.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-anti-ageing" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&q=80"
+                                    alt="Double Chin" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Double Chin</h3>
+                                    <p class="dz-card-text">
+                                        Targeted submental adipocyte cytolysis and tissue retraction utilizing
+                                        deoxycholic micro-infusions combined with focal ultrasound.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-face" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80"
+                                    alt="Facial Hair" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Facial Hair</h3>
+                                    <p class="dz-card-text">
+                                        Medical diode laser photothermolysis destroying targeted follicular papillae for
+                                        permanently smooth, hair-free facial skin.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-face" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=800&q=80"
+                                    alt="Freckles" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Freckles</h3>
+                                    <p class="dz-card-text">
+                                        Selective melanin fragmentation through targeted Q-switched picosecond lasers
+                                        and medically prescribed pigment inhibitors.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-face" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=800&q=80"
+                                    alt="Dark Lips" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Dark Lips</h3>
+                                    <p class="dz-card-text">
+                                        Lip redensification and gentle pigment clearance via fractional gentle laser
+                                        toning and glutathione antioxidant mesotherapy.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-face" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80"
+                                    alt="Crows Feet" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Crows Feet</h3>
+                                    <p class="dz-card-text">
+                                        Hyperkinetic orbicularis oculi relaxation with micro-dosed botulinum
+                                        neuromodulators to soften lateral periorbital creasing.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-anti-ageing" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?w=800&q=80"
+                                    alt="Droopy Eye Lids" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Droopy Eye Lids</h3>
+                                    <p class="dz-card-text">
+                                        Non-surgical periorbital lifting combining high-intensity focused ultrasound and
+                                        micro-vector thread lifting along the temporal crest.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-face" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80"
+                                    alt="Bulky Face" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Bulky Face</h3>
+                                    <p class="dz-card-text">
+                                        Lower facial slimming via targeted masseter motor endplate modulation to contour
+                                        the angular jawline and relieve bruxism.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-face" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80"
+                                    alt="Forehead & Frown Lines" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Forehead & Frown Lines</h3>
+                                    <p class="dz-card-text">
+                                        Precision smoothing of dynamic glabella frown creases and horizontal frontal
+                                        rhytids while preserving natural facial expressions.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-anti-ageing" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             SECTION: BODY ARCHITECTURE (17 Concerns)
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="dz-treatment-section" id="cat-body" aria-labelledby="cat-body-title">
+            <div class="container">
+                <div class="section-header text-center mb-3">
+                    <span class="section-subtitle">BODY ARCHITECTURE</span>
+                    <div class="nemonic-separator">
+                        <div class="nemonic-line"></div>
+                        <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="section-title" id="cat-body-title">Body <span class="scribble">Concerns</span></h2>
+                    <p class="section-desc mx-auto" style="max-width: 760px; color: #2b2b2b;">
+                        Targeted medical dermatology and contouring therapies addressing stretch marks, localized
+                        adiposity, hyperhidrosis, vascular lesions, and textural irregularities.
+                    </p>
+                </div>
+
+                <div class="dz-carousel-track-wrapper">
+                    <div class="dz-carousel-track" role="region" aria-label="BODY ARCHITECTURE Carousel">
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80"
+                                    alt="Rosacea, Milias" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Rosacea, Milias</h3>
+                                    <p class="dz-card-text">
+                                        Vascular reactivity calming and epidermal keratin cyst extraction using medical
+                                        electrocautery and gentle restorative therapies.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-body" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&q=80"
+                                    alt="Stretch Marks" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Stretch Marks</h3>
+                                    <p class="dz-card-text">
+                                        Dermal elastin restoration and striae remodeling utilizing fractional CO2
+                                        resurfacing and collagen-inducing micro-boosters.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-body" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&q=80"
+                                    alt="Moles and Birthmarks" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Moles and Birthmarks</h3>
+                                    <p class="dz-card-text">
+                                        Advanced dermatoscopic lesion evaluation followed by radiofrequency
+                                        micro-ablation with minimal scarring.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-body" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80"
+                                    alt="Burns, Scars" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Burns, Scars</h3>
+                                    <p class="dz-card-text">
+                                        Hypertrophic tissue softening and functional pliability restoration via steroid
+                                        micro-dosing and fractional laser remodeling.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-body" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=800&q=80"
+                                    alt="Tatoo Removal" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Tatoo Removal</h3>
+                                    <p class="dz-card-text">
+                                        Multi-wavelength ultra-short picosecond photomechanical ink fragmentation for
+                                        clean, scar-free dermal tattoo clearance.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-body" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?w=800&q=80"
+                                    alt="Warts, Skin Tags & Moles" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Warts, Skin Tags & Moles</h3>
+                                    <p class="dz-card-text">
+                                        Pinpoint precision radiocautery vaporization eliminating benign viral warts and
+                                        seborrheic keratoses cleanly in a single visit.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-body" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=800&q=80"
+                                    alt="Skin Psoriasis" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Skin Psoriasis</h3>
+                                    <p class="dz-card-text">
+                                        Plaque inflammation suppression and epidermal turnover stabilization through
+                                        targeted biologics and restorative barrier therapy.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-body" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80"
+                                    alt="Tanned Skin" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Tanned Skin</h3>
+                                    <p class="dz-card-text">
+                                        Melanin-rich superficial epidermal peeling combined with laser
+                                        photo-rejuvenation to reverse stubborn UV hyperpigmentation.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-body" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80"
+                                    alt="Open Pores & Rough Textures" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Open Pores & Rough Textures</h3>
+                                    <p class="dz-card-text">
+                                        Follicular wall contraction and epidermal resurfacing through glycolic-salicylic
+                                        medipeels and micro-needling stimulation.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-body" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80"
+                                    alt="Unwanted Body Hair" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Unwanted Body Hair</h3>
+                                    <p class="dz-card-text">
+                                        Triple-wavelength chilled laser epilation safely targeting deep follicular
+                                        melanin across legs, arms, chest, and back.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-body" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=800&q=80"
+                                    alt="Excessive Sweating (Underarms, Palm, Feet)" class="dz-card-img"
+                                    loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Excessive Sweating (Underarms, Palm, Feet)</h3>
+                                    <p class="dz-card-text">
+                                        Hyperhidrosis resolution through neuro-glandular signaling blockade and
+                                        non-invasive microwave sweat gland thermolysis.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-body" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1515688594390-b649af70d282?w=800&q=80"
+                                    alt="Dark Underarms, Neck, Back" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Dark Underarms, Neck, Back</h3>
+                                    <p class="dz-card-text">
+                                        Keratolytic medical peeling, pigment-specific laser toning, and insulin
+                                        sensitivity counseling to reverse velvety hyperpigmentation.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-body" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&q=80"
+                                    alt="Corns, Callus & Cracked Feet" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Corns, Callus & Cracked Feet</h3>
+                                    <p class="dz-card-text">
+                                        Medical hyperkeratosis podiatric debridement and urea-infused lipid barrier
+                                        restoration for pain-free, smooth feet.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-body" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=800&q=80"
+                                    alt="Chronic Allergies, Eczema" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Chronic Allergies, Eczema</h3>
+                                    <p class="dz-card-text">
+                                        Atopic dermatitis barrier repair therapy, non-steroidal immunomodulation, and
+                                        systemic gut-skin axis stabilization.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-body" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&q=80"
+                                    alt="Fungal Infections" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Fungal Infections</h3>
+                                    <p class="dz-card-text">
+                                        Deep nail-plate thermal laser penetration destroying stubborn dermatophyte
+                                        colonies without systemic hepatic burden.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-body" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=800&q=80"
+                                    alt="Earlobe Repair" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Earlobe Repair</h3>
+                                    <p class="dz-card-text">
+                                        In-office cosmetic lobuloplasty and radiofrequency margin deepithelialization
+                                        reconstructing torn piercing channels seamlessly.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-body" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=800&q=80"
+                                    alt="Stubborn Fat Reduction" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Stubborn Fat Reduction</h3>
+                                    <p class="dz-card-text">
+                                        Injection adipolysis targeting resistant lipid deposits along love handles, bra
+                                        bulges, and lower abdominal rolls.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-body" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             SECTION: BIO-REGENERATION (6 Concerns)
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="dz-treatment-section" id="cat-ageing" aria-labelledby="cat-ageing-title">
+            <div class="dz-wave-divider" aria-hidden="true">
+                <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+                    <path d="M0 0 H1440 V52 C1300 38 1150 32 950 38 C700 46 450 62 250 63 C140 64 60 58 0 52 Z"
+                        fill="#F4EFE8" />
+                </svg>
+            </div>
+            <div class="container">
+                <div class="section-header text-center mb-3">
+                    <span class="section-subtitle">BIO-REGENERATION</span>
+                    <div class="nemonic-separator">
+                        <div class="nemonic-line"></div>
+                        <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="section-title" id="cat-ageing-title">Ageing <span class="scribble">Concerns</span></h2>
+                    <p class="section-desc mx-auto" style="max-width: 760px; color: #2b2b2b;">
+                        Advanced restorative and cellular longevity protocols designed to restore volumetric structural
+                        support, soften dynamic expression lines, and counter tissue laxity.
+                    </p>
+                </div>
+
+                <div class="dz-carousel-track-wrapper">
+                    <div class="dz-carousel-track" role="region" aria-label="BIO-REGENERATION Carousel">
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80"
+                                    alt="Sagging Facial Skin" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Sagging Facial Skin</h3>
+                                    <p class="dz-card-text">
+                                        Deep SMAS fascial layer contraction and neo-collagenesis using focused
+                                        ultrasound and biocompatible structural vectors.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-anti-ageing" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80"
+                                    alt="Un-defined Jawline" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Un-defined Jawline</h3>
+                                    <p class="dz-card-text">
+                                        Mandibular angle augmentation and pre-jowl sulcus contouring with
+                                        high-elasticity structural dermal fillers.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-anti-ageing" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&q=80"
+                                    alt="Fine Lines & Wrinkles" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Fine Lines & Wrinkles</h3>
+                                    <p class="dz-card-text">
+                                        Multi-plane skin redensification through micro-botulinum smoothing and
+                                        non-crosslinked hyaluronic acid boosters.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-anti-ageing" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1515688594390-b649af70d282?w=800&q=80"
+                                    alt="Wrinkled & Ageing Hands" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Wrinkled & Ageing Hands</h3>
+                                    <p class="dz-card-text">
+                                        Dorsal hand volume restoration and photo-aged solar lentigines clearance using
+                                        calcium hydroxylapatite and laser toning.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-anti-ageing" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1588516903720-8ceb67f9ef84?w=800&q=80"
+                                    alt="Loss of Volume (Thin Face)" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Loss of Volume (Thin Face)</h3>
+                                    <p class="dz-card-text">
+                                        Deep medial and lateral fat compartment replenishment restoring youthful
+                                        mid-face projection and natural structural curvature.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-anti-ageing" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80"
+                                    alt="Sagging Breast, Arms" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Sagging Breast, Arms</h3>
+                                    <p class="dz-card-text">
+                                        Bipolar radiofrequency and focused ultrasound protocols tightening collagen
+                                        fibers in the upper arms and décolletage.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-body" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             SECTION: FOLLICULAR RESTORATION (5 Concerns)
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="dz-treatment-section" id="cat-hair" aria-labelledby="cat-hair-title">
+            <div class="container">
+                <div class="section-header text-center mb-3">
+                    <span class="section-subtitle">FOLLICULAR RESTORATION</span>
+                    <div class="nemonic-separator">
+                        <div class="nemonic-line"></div>
+                        <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="section-title" id="cat-hair-title">Hair <span class="scribble">Concerns</span></h2>
+                    <p class="section-desc mx-auto" style="max-width: 760px; color: #2b2b2b;">
+                        Trichological diagnostics and autologous regenerative bio-therapies engineered to stimulate
+                        dormant dermal papilla cells, halt thinning, and fortify hair density.
+                    </p>
+                </div>
+
+                <div class="dz-carousel-track-wrapper">
+                    <div class="dz-carousel-track" role="region" aria-label="FOLLICULAR RESTORATION Carousel">
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80"
+                                    alt="Receding Hairline" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Receding Hairline</h3>
+                                    <p class="dz-card-text">
+                                        Frontal hairline follicle awakening through concentrated growth factor
+                                        concentrates (GFC) and micro-needling stimulation.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-hair" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&q=80"
+                                    alt="Hair Loss / Thinning" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Hair Loss / Thinning</h3>
+                                    <p class="dz-card-text">
+                                        Dual-action autologous platelet plasma and exosome signaling to reverse
+                                        miniaturization and fortify follicle shaft caliber.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-hair" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=800&q=80"
+                                    alt="Persistent Dandruff" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Persistent Dandruff</h3>
+                                    <p class="dz-card-text">
+                                        Medical trichological scalp detox dissolving stubborn seborrheic scaling,
+                                        eradicating malassezia, and balancing scalp microbiome.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-hair" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1576426863848-c21f53c60b19?w=800&q=80"
+                                    alt="Alopecia Areata (Scalp & Beard)" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Alopecia Areata (Scalp & Beard)</h3>
+                                    <p class="dz-card-text">
+                                        Targeted intralesional immunomodulatory therapy halting autoimmune follicle
+                                        attack and triggering rapid patchy regrowth.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-hair" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80"
+                                    alt="Beard Shaping Through Laser" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Beard Shaping Through Laser</h3>
+                                    <p class="dz-card-text">
+                                        Permanent precision beard border contouring eliminating neck razor bumps,
+                                        folliculitis, and defining sharp cheek lines.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-face" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             SECTION: CELLULAR LONGEVITY (6 Concerns)
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="dz-treatment-section" id="cat-wellness" aria-labelledby="cat-wellness-title">
+            <div class="dz-wave-divider" aria-hidden="true">
+                <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+                    <path d="M0 0 H1440 V52 C1300 38 1150 32 950 38 C700 46 450 62 250 63 C140 64 60 58 0 52 Z"
+                        fill="#F4EFE8" />
+                </svg>
+            </div>
+            <div class="container">
+                <div class="section-header text-center mb-3">
+                    <span class="section-subtitle">CELLULAR LONGEVITY</span>
+                    <div class="nemonic-separator">
+                        <div class="nemonic-line"></div>
+                        <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="section-title" id="cat-wellness-title">Wellness <span class="scribble">Concerns</span>
+                    </h2>
+                    <p class="section-desc mx-auto" style="max-width: 760px; color: #2b2b2b;">
+                        Integrative functional medicine protocols, endocrine balancing, and cellular nutrient therapies
+                        tailored to optimize hormonal harmony, sleep architecture, and metabolic vitality.
+                    </p>
+                </div>
+
+                <div class="dz-carousel-track-wrapper">
+                    <div class="dz-carousel-track" role="region" aria-label="CELLULAR LONGEVITY Carousel">
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=800&q=80"
+                                    alt="PCOS" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">PCOS</h3>
+                                    <p class="dz-card-text">
+                                        Integrative endocrinological protocols managing androgen excess, metabolic
+                                        dysregulation, adult hormonal acne, and hirsutism.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-wellness" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80"
+                                    alt="Thyroid Disorders" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Thyroid Disorders</h3>
+                                    <p class="dz-card-text">
+                                        Functional thyroid optimization addressing dry skin, metabolic sluggishness, and
+                                        diffuse telogen effluvium hair shedding.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-wellness" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80"
+                                    alt="Menopause" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Menopause</h3>
+                                    <p class="dz-card-text">
+                                        Bio-identical hormone modulation and dermal collagen preservation countering
+                                        estrogen-deficiency skin thinning and dryness.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-wellness" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=800&q=80"
+                                    alt="Insomnia" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Insomnia</h3>
+                                    <p class="dz-card-text">
+                                        Intravenous neurotransmitter co-factors and cellular magnesium infusions
+                                        restoring deep delta-wave sleep and nighttime cellular repair.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-wellness" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80"
+                                    alt="Testosterone Replacement" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Testosterone Replacement</h3>
+                                    <p class="dz-card-text">
+                                        Physician-supervised bio-identical testosterone therapy restoring lean muscle
+                                        mass, cognitive drive, and male metabolic energy.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-wellness" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="dz-treatment-card">
+                            <div class="dz-card-media">
+                                <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&q=80"
+                                    alt="Anxiety & Depression" class="dz-card-img" loading="lazy" />
+                            </div>
+                            <div class="dz-card-body">
+                                <div class="dz-card-main">
+                                    <h3 class="dz-card-title">Anxiety & Depression</h3>
+                                    <p class="dz-card-text">
+                                        Systemic cortisol balancing, vagal nerve support, and intravenous nutrient
+                                        therapy mitigating stress-induced inflammatory flare-ups.
+                                    </p>
+                                    <div class="dz-card-explore-wrap">
+                                        <a href="treatments.html#cat-wellness" class="dz-card-link">
+                                            <span>Explore Treatments →</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dz-card-footer">
+                                    <a href="../newthree.html#book" class="dz-card-book-btn">
+                                        <span>Book Consultation</span>
+                                        <img src="nemonic1.png" class="btn-icon" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+
+    <!-- ═══════ Site Footer ═══════ -->
+    <div id="site-footer"></div>
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="include/include.js"></script>
+    <script src="script.js?v=3.1"></script>
+
+    <script>
+            (function () {
+                'use strict';
+
+                var tracks = document.querySelectorAll('.dz-carousel-track');
+
+                // Initialize mouse cursor scroll for each category track
+                tracks.forEach(function (track) {
+                    var isDown = false;
+                    var startX = 0;
+                    var scrollStart = 0;
+                    var hasDragged = false;
+
+                    track.addEventListener('mousedown', function (e) {
+                        isDown = true;
+                        hasDragged = false;
+                        track.classList.add('is-dragging');
+                        startX = e.pageX - track.offsetLeft;
+                        scrollStart = track.scrollLeft;
+                    });
+
+                    track.addEventListener('mouseleave', function () {
+                        if (isDown) {
+                            isDown = false;
+                            track.classList.remove('is-dragging');
+                        }
+                    });
+
+                    track.addEventListener('mouseup', function () {
+                        if (isDown) {
+                            isDown = false;
+                            track.classList.remove('is-dragging');
+                        }
+                    });
+
+                    track.addEventListener('mousemove', function (e) {
+                        if (!isDown) return;
+                        e.preventDefault();
+                        var x = e.pageX - track.offsetLeft;
+                        var walk = (x - startX) * 1.6;
+                        if (Math.abs(walk) > 4) {
+                            hasDragged = true;
+                        }
+                        track.scrollLeft = scrollStart - walk;
+                    });
+
+                    // Prevent accidental link clicks when dragging with cursor
+                    track.addEventListener('click', function (e) {
+                        if (hasDragged) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            hasDragged = false;
+                        }
+                    }, true);
+
+                    // Smooth horizontal wheel scroll support
+                    track.addEventListener('wheel', function (e) {
+                        if (Math.abs(e.deltaX) < Math.abs(e.deltaY)) {
+                            // User is scrolling vertically with wheel, assist horizontal scrolling gracefully
+                            track.scrollLeft += e.deltaY * 0.9;
+                        }
+                    }, { passive: true });
+                });
+            })();
+    </script>
+</body>
+
+</html>
