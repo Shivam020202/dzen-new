@@ -40,14 +40,15 @@
         </svg>
     </button>
     <ul class="pnav-drawer__list">
-        <li><a href="../aesthetics.html">Pillars <span>→</span></a></li>
+        <li><a href="our-philosophy.html">Who we are <span>→</span></a></li>
+        <li><a href="treatments.html">Treatments <span>→</span></a></li>
         <li><a href="../concerns.html">Concerns <span>→</span></a></li>
-        <li><a href="../treatments.html">Treatments <span>→</span></a></li>
-        <li><a href="about.html">Who We Are <span>→</span></a></li>
-        <li><a href="../signatures.html">D'Zen Experience <span>→</span></a></li>
-        <li><a href="../journal.html">Journal <span>→</span></a></li>
+        <li><a href="treatments.html#cat-wellness">Medicine &amp; Wellness Programmes <span>→</span></a></li>
+        <li><a href="dzen-signatures.html">Signature Treatments <span>→</span></a></li>
+        <li><a href="pre-bridal.html">Bridal Programs <span>→</span></a></li>
+        <li><a href="men.html">Men's Aesthetics <span>→</span></a></li>
+        <li><a href="workshops-training.html">Workshops &amp; Training <span>→</span></a></li>
         <li><a href="media.html">Press &amp; Media <span>→</span></a></li>
-        <li><a href="contact.html">Contact Us <span>→</span></a></li>
     </ul>
 </aside>`;
 
@@ -101,7 +102,7 @@
                     <ul class="footer-nav-list">
                         <li><a href="index.html">HOME</a></li>
                         <li><a href="about.html">ABOUT US</a></li>
-                        <li><a href="../treatments.html">TREATMENTS</a></li>
+                        <li><a href="treatments.html">TREATMENTS</a></li>
                         <li><a href="#">WELLNESS PROGRAMS</a></li>
                         <li><a href="../concerns.html">CONCERN</a></li>
                     </ul>
@@ -197,12 +198,9 @@
     <div class="bottom-action-divider"></div>
     <a href="https://wa.me/919878885046" class="bottom-action-btn" target="_blank" rel="noopener"
         aria-label="Chat on WhatsApp">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-            stroke-linejoin="round" width="22" height="22">
-            <path
-                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-            <path
-                d="M9.5 9.5a.6.6 0 0 1 1-.4l1.2 1.6a.6.6 0 0 1-.2.8l-.6.5a6.5 6.5 0 0 0 2.2 2.2l.5-.6a.6.6 0 0 1 .8-.2l1.6 1.2a.6.6 0 0 1-.4 1c-1.6.2-3.3-.7-4.4-1.8C9.5 12.7 8.6 11 9.5 9.5z" />
+        <svg class="bottom-action-wa" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path fill="#25D366"
+                d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.47 9.47 0 0 1-4.83-1.32l-.35-.21-3.59.94.96-3.5-.23-.36a9.43 9.43 0 0 1-1.45-5.03C2.54 6.79 6.8 2.53 12.05 2.53c2.54 0 4.93.99 6.72 2.79a9.43 9.43 0 0 1 2.78 6.72c0 5.24-4.27 9.46-9.51 9.46zm8.09-17.55A11.36 11.36 0 0 0 12.04.6C5.74.6.61 5.72.61 12.02c0 2.01.53 3.98 1.53 5.71L.52 23.4l5.8-1.52a11.4 11.4 0 0 0 5.72 1.46h.01c6.3 0 11.42-5.13 11.43-11.43a11.36 11.36 0 0 0-3.35-8.07z" />
         </svg>
         <span class="btn-label">WhatsApp</span>
     </a>

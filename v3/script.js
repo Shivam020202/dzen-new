@@ -748,10 +748,18 @@
     /* =========================================================
        FLOATING BOTTOM ACTION BAR — Scroll Controller
        ========================================================= */
-    (function () {
-        const bar = document.getElementById('bottomActionBar');
-        if (!bar) return;
-
+    // The bar lives in the shared footer, which include.js fetches asynchronously
+    // on http(s). Wait for it to be inserted instead of giving up straight away,
+    // otherwise it stays hidden off-screen on the live site.
+    (function waitForBar(init) {
+        const existing = document.getElementById('bottomActionBar');
+        if (existing) { init(existing); return; }
+        const observer = new MutationObserver(function () {
+            const bar = document.getElementById('bottomActionBar');
+            if (bar) { observer.disconnect(); init(bar); }
+        });
+        observer.observe(document.documentElement, { childList: true, subtree: true });
+    })(function (bar) {
         const MOBILE_BREAKPOINT = 768;
         const HIDE_THRESHOLD = 200; // pixels scrolled before we even consider showing
         let isVisible = false;
@@ -819,7 +827,7 @@
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(applyMobileState, 120);
         });
-    })();
+    });
 
     /* =========================================================
        GENERAL SCROLL REVEAL OBSERVER

@@ -414,10 +414,10 @@ body {
     align-items: center;
     justify-content: space-between;
     font-family: var(--serif, 'Playfair Display', Georgia, serif);
-    font-size: 26px;
+    font-size: clamp(21px, 2.2vw, 24px);
     color: #4b2b20 !important;
     text-decoration: none;
-    padding: 20px 0;
+    padding: clamp(12px, 1.6vh, 16px) 0;
     transition: color 0.25s ease, padding-left 0.25s ease;
 }
 
@@ -4328,6 +4328,13 @@ html body #brand-philosophy .nemonic-icon {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
+/* Bottom action bar: official WhatsApp logo in brand green (filled, no stroke) */
+.bottom-action-btn svg.bottom-action-wa {
+    stroke: none;
+    color: #25D366;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
 /* Vertical divider between CTA items */
 .bottom-action-divider {
     display: block !important;
@@ -4343,15 +4350,20 @@ html body #brand-philosophy .nemonic-icon {
     .bottom-action-bar {
         position: fixed;
         bottom: 5px;
-        left: 50%;
-        right: auto;
-        width: auto !important;
+        /* Centred with left/right + auto margins (not left: 50% + translateX), so the
+           pill can use the full screen width. With left: 50% it was capped at half the
+           screen, and Call Now / WhatsApp spilled outside it, invisible on the cream page. */
+        left: 16px;
+        right: 16px;
+        margin: 0 auto;
+        width: max-content !important;
         max-width: calc(100vw - 32px);
-        transform: translateX(-50%) translateY(120%);
+        transform: translateY(120%);
         border-radius: 9999px;
         padding: 6px 12px;
         display: inline-flex !important;
         flex-direction: row !important;
+        flex-wrap: nowrap !important;
         align-items: center !important;
         justify-content: center !important;
         background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%);
@@ -4361,7 +4373,7 @@ html body #brand-philosophy .nemonic-icon {
     }
 
     .bottom-action-bar.is-visible {
-        transform: translateX(-50%) translateY(0) !important;
+        transform: translateY(0) !important;
     }
 
     .bottom-action-btn {
@@ -4370,7 +4382,10 @@ html body #brand-philosophy .nemonic-icon {
         align-items: center !important;
         justify-content: center !important;
         padding: 4px 10px;
-        flex: initial;
+        /* Never shrink: some mobile browsers (notably Safari) squeezed the bar so
+           Call Now / WhatsApp were pushed out and hidden */
+        flex: 0 0 auto !important;
+        min-width: max-content;
         max-width: none;
         gap: 3px;
     }
@@ -5146,7 +5161,7 @@ h2:not(#brand-philosophy h2):not(.brand-philosophy-strip-section h2) .scribble {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
 }
 
 .nemonic-separator .nemonic-line {
@@ -7310,7 +7325,7 @@ body.hf-page .pnav .pnav__burger span {
     align-items: center;
     justify-content: center;
     gap: 16px;
-    margin-bottom: 18px;
+    margin-bottom: 6px;
 }
 
 .nemonic-line {
@@ -11563,7 +11578,7 @@ html body:where(.dz-hf-layout) .footer-cta-card .scribble {
     color: #8B5A1A;
 }
 
-:where(.dz-page-workshops) .wt-edu-roles li + li::before {
+:where(.dz-page-workshops) .wt-edu-roles li+li::before {
     content: "✦";
     margin-right: 12px;
     font-size: 9px;
@@ -11584,7 +11599,7 @@ html body:where(.dz-hf-layout) .footer-cta-card .scribble {
     padding-left: 0;
 }
 
-:where(.dz-page-workshops) .wt-edu-stat + .wt-edu-stat {
+:where(.dz-page-workshops) .wt-edu-stat+.wt-edu-stat {
     border-left: 1px solid rgba(75, 43, 32, 0.18);
 }
 
@@ -11845,7 +11860,7 @@ html body:where(.dz-hf-layout) .footer-cta-card .scribble {
     color: #8B5E2A;
 }
 
-:where(.dz-page-workshops) .wt-course__meta li + li::before {
+:where(.dz-page-workshops) .wt-course__meta li+li::before {
     content: "·";
     margin-right: 10px;
     color: rgba(139, 94, 42, 0.6);
@@ -12119,7 +12134,7 @@ html body:where(.dz-page-workshops) .wt-reg__aside-title {
     border-bottom: 1px solid rgba(75, 43, 32, 0.1);
 }
 
-:where(.dz-page-workshops) .wt-fs + .wt-fs {
+:where(.dz-page-workshops) .wt-fs+.wt-fs {
     margin-top: 26px;
 }
 
@@ -12223,7 +12238,7 @@ html body:where(.dz-page-workshops) .wt-reg__aside-title {
     height: 1px;
 }
 
-:where(.dz-page-workshops) .wt-seg input:focus-visible + span {
+:where(.dz-page-workshops) .wt-seg input:focus-visible+span {
     outline: 2px solid var(--hf-gold);
     outline-offset: 2px;
 }
@@ -12257,7 +12272,7 @@ html body:where(.dz-page-workshops) .wt-reg__aside-title {
     border-color: rgba(196, 146, 74, 0.6);
 }
 
-:where(.dz-page-workshops) .wt-seg input:checked + span {
+:where(.dz-page-workshops) .wt-seg input:checked+span {
     background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%);
     border-color: #4b2b20;
     color: #FAF9F6;
@@ -12477,7 +12492,7 @@ html body:where(.dz-page-journal) .jr-featured__title {
     color: rgba(92, 74, 58, 0.85);
 }
 
-:where(.dz-page-journal) .jr-meta span + span::before {
+:where(.dz-page-journal) .jr-meta span+span::before {
     content: "·";
     margin-right: 10px;
 }
@@ -13124,6 +13139,7 @@ html body:where(.dz-page-prebridal) .pb-plan--dark .pb-plan__best b {
 }
 
 @media (max-width: 991.98px) {
+
     :where(.dz-page-prebridal) .pb-plans,
     :where(.dz-page-prebridal) .pb-quotes {
         grid-template-columns: minmax(0, 1fr);
