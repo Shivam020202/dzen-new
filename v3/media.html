@@ -21,7 +21,7 @@
     <!-- Base styles and variable sheets -->
     <link rel="stylesheet" href="main.css" />
     <!-- Section Specific styles -->
-    <link rel="stylesheet" href="styles.css?v=6.8" />
+    <link rel="stylesheet" href="styles.css?v=7.7" />
 
     <!-- Tailwind CSS (without preflight resets) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
@@ -105,12 +105,26 @@
            common baseline instead of drifting with the column split. */
         .md-logo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            /* Fixed column counts that divide the 12 logos evenly (6/4/3), so no
+               row is left half-filled with an empty block. */
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 1px;
             background: var(--md-hairline);
             border: 1px solid var(--md-hairline);
             border-radius: var(--md-radius);
             overflow: hidden;
+        }
+
+        @media (min-width: 576px) {
+            .md-logo-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 992px) {
+            .md-logo-grid {
+                grid-template-columns: repeat(6, minmax(0, 1fr));
+            }
         }
 
         .md-logo-cell {
@@ -274,6 +288,37 @@
             height: 13px;
         }
 
+        /* Phones: coverage cards become a horizontal swipe row, the same
+           pattern the service pages use for their step cards, instead of a
+           long single-column stack. */
+        @media (max-width: 767.98px) {
+            #coverage .row.g-4 {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                margin-left: -16px;
+                margin-right: -16px;
+                padding: 4px 16px 24px;
+                --bs-gutter-x: 16px;
+            }
+
+            #coverage .row.g-4::-webkit-scrollbar {
+                display: none;
+            }
+
+            #coverage .md-item {
+                flex: 0 0 82%;
+                max-width: 82%;
+                scroll-snap-align: center;
+            }
+
+            #coverage .md-card:hover {
+                transform: none;
+            }
+        }
+
         /* ── 3. PODCAST / VIDEO FEATURES ──────────────────────────── */
         .md-features {
             background: #2B1A12;
@@ -305,6 +350,21 @@
             z-index: 1;
             opacity: 0.25;
             mix-blend-mode: overlay;
+        }
+
+        /* The wave closes the band, so the section itself needs no bottom padding */
+        .md-features {
+            padding-bottom: 0;
+        }
+
+        .md-features>.section-separator {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Cream breathing room between the wave and the full-width footer CTA band */
+        html body.md-page .footer-cta-card-wrapper {
+            padding-top: clamp(30px, 4vw, 50px) !important;
         }
 
         .md-features>.container {
@@ -497,8 +557,17 @@
 
         /* Cards filtered out. A class, not [hidden] — Bootstrap's column
            display utilities would otherwise win over the attribute. */
-        .md-item.is-filtered {
+        .md-item.is-filtered,
+        .md-item.is-collapsed {
             display: none !important;
+        }
+
+        .md-more {
+            margin-top: clamp(32px, 4vw, 48px);
+        }
+
+        .md-more.is-hidden {
+            display: none;
         }
 
         /* Cards entering the grid fade rather than snapping in */
@@ -875,7 +944,7 @@
                     <div class="col-md-6 col-lg-4 md-item" data-year="2024">
                         <article class="md-card">
                             <div class="md-card__media">
-                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=800&auto=format&fit=crop"
+                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop"
                                     alt="" aria-hidden="true" loading="lazy" decoding="async">
                                 <span class="md-card__tag">Print &middot; Cond&eacute; Nast Traveler</span>
                             </div>
@@ -898,7 +967,7 @@
                     <div class="col-md-6 col-lg-4 md-item" data-year="2024">
                         <article class="md-card">
                             <div class="md-card__media">
-                                <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop"
+                                <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop"
                                     alt="" aria-hidden="true" loading="lazy" decoding="async">
                                 <span class="md-card__tag">Television &middot; ET Retail</span>
                             </div>
@@ -988,6 +1057,12 @@
                     </div>
 
                 </div>
+                <div class="text-center md-more">
+                    <button type="button" class="dz-cta md-more-btn" aria-controls="coverage">
+                        <span>View All Coverage</span>
+                        <img src="nemonic1.png" class="btn-icon" alt="" aria-hidden="true" />
+                    </button>
+                </div>
             </div>
         </section>
 
@@ -996,16 +1071,17 @@
             <div class="container">
 
                 <div class="section-header text-center mb-5">
-                    <span class="section-subtitle" style="color: #E8C99A !important; letter-spacing: 3px;">LISTEN &amp;
-                        WATCH</span>
+                    <span class="section-subtitle"
+                        style="color: #E8C99A !important; -webkit-text-fill-color: #E8C99A !important; opacity: 1 !important; letter-spacing: 3px;">LISTEN
+                        &amp; WATCH</span>
                     <div class="nemonic-separator mt-2">
                         <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
                         <img src="logo-header.png" alt="" aria-hidden="true" class="nemonic-icon"
                             style="filter: brightness(0) invert(1);" />
                         <div class="nemonic-line" style="background-color: rgba(255, 255, 255, 0.4);"></div>
                     </div>
-                    <h2 class="section-title" id="features-title">Podcast &amp; Video <span
-                            class="scribble">Features</span></h2>
+                    <h2 class="section-title" id="features-title">Podcast &amp; Video <span class="scribble"
+                            style="color: #E8C99A !important; -webkit-text-fill-color: #E8C99A !important;">Features</span></h2>
                     <p class="mx-auto"
                         style="max-width: 62ch; color: rgba(255, 255, 255, 0.72) !important; font-size: 1.05rem; line-height: 1.7;">
                         The longer form, where there is room to explain the reasoning rather than just the result.
@@ -1107,6 +1183,13 @@
 
                 </div>
             </div>
+
+            <!-- Curvy separator: Dark → Cream (#FAF9F6, the footer stack's background) -->
+            <div class="section-separator" aria-hidden="true" style="margin-top: 30px;">
+                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#FAF9F6" d="M0,60 C380,150 1060,-30 1440,60 L1440,120 L0,120 Z"></path>
+                </svg>
+            </div>
         </section>
 
     <div id="site-footer"></div>
@@ -1124,10 +1207,21 @@
                 var items = section.querySelectorAll('.md-item');
                 if (!tabs.length || !items.length) return;
 
+                // "All" starts with two full rows; the button reveals the rest.
+                // A year tab always shows every card for that year.
+                var INITIAL = 6;
+                var expanded = false;
+                var more = section.querySelector('.md-more');
+                var moreBtn = section.querySelector('.md-more-btn');
+
                 function apply(year) {
+                    var shown = 0;
                     items.forEach(function (item) {
                         var show = year === 'all' || item.getAttribute('data-year') === year;
                         item.classList.toggle('is-filtered', !show);
+                        var collapse = show && year === 'all' && !expanded && shown >= INITIAL;
+                        item.classList.toggle('is-collapsed', collapse);
+                        if (show) shown++;
                         if (show) {
                             // Restart the fade so re-entering cards animate again
                             item.style.animation = 'none';
@@ -1135,7 +1229,20 @@
                             item.style.animation = '';
                         }
                     });
+
+                    if (more) {
+                        more.classList.toggle('is-hidden', year !== 'all' || expanded || shown <= INITIAL);
+                    }
                 }
+
+                if (moreBtn) {
+                    moreBtn.addEventListener('click', function () {
+                        expanded = true;
+                        apply('all');
+                    });
+                }
+
+                apply('all');
 
                 tabs.forEach(function (tab) {
                     tab.addEventListener('click', function () {
