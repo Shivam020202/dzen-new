@@ -760,6 +760,13 @@
         });
         observer.observe(document.documentElement, { childList: true, subtree: true });
     })(function (bar) {
+        // The shared footer injects the bar deep inside the page (e.g. within <main>),
+        // where a transformed or clipped ancestor can cut it down to just "Book Now".
+        // Move it to <body> so it is positioned against the screen on every page.
+        if (bar.parentElement !== document.body) {
+            document.body.appendChild(bar);
+        }
+
         const MOBILE_BREAKPOINT = 768;
         const HIDE_THRESHOLD = 200; // pixels scrolled before we even consider showing
         let isVisible = false;

@@ -4350,14 +4350,15 @@ html body #brand-philosophy .nemonic-icon {
     .bottom-action-bar {
         position: fixed;
         bottom: 5px;
-        /* Centred with left/right + auto margins (not left: 50% + translateX), so the
-           pill can use the full screen width. With left: 50% it was capped at half the
-           screen, and Call Now / WhatsApp spilled outside it, invisible on the cream page. */
-        left: 16px;
-        right: 16px;
+        /* Fixed geometry, no content-based sizing: left/right + a capped width, centred
+           with auto margins, and the three buttons share it equally (flex: 1 below).
+           Content-sized versions (max-content / shrink-to-fit) collapsed to just
+           "Book Now" in some mobile browsers, hiding Call Now / WhatsApp. */
+        left: 12px;
+        right: 12px;
         margin: 0 auto;
-        width: max-content !important;
-        max-width: calc(100vw - 32px);
+        width: auto !important;
+        max-width: 360px;
         transform: translateY(120%);
         border-radius: 9999px;
         padding: 6px 12px;
@@ -4381,11 +4382,10 @@ html body #brand-philosophy .nemonic-icon {
         flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
-        padding: 4px 10px;
-        /* Never shrink: some mobile browsers (notably Safari) squeezed the bar so
-           Call Now / WhatsApp were pushed out and hidden */
-        flex: 0 0 auto !important;
-        min-width: max-content;
+        padding: 4px 6px;
+        /* Equal share of the bar's fixed width */
+        flex: 1 1 0 !important;
+        min-width: 0;
         max-width: none;
         gap: 3px;
     }
