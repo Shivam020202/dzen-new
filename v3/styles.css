@@ -13323,13 +13323,13 @@ html body:where(.dz-page-oxy-facial) #process .hf-minimal-step-desc {
 }
 
 :where(.dz-page-oxy-facial) #benefits {
-    background: #FAF7F2;
+    background: linear-gradient(to top, #F4EFE8, #FDF8F3);
     padding: 35px 0 60px;
     position: relative;
 }
 
 :where(.dz-page-oxy-facial) #results {
-    background: #FDF8F3;
+    background: linear-gradient(to top, #F4EFE8, #FDF8F3);
     padding: 35px 0 0;
     position: relative;
 }
