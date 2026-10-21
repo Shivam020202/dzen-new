@@ -21,7 +21,7 @@
     <!-- Base styles and variable sheets -->
     <link rel="stylesheet" href="main.css" />
     <!-- Section Specific styles -->
-    <link rel="stylesheet" href="styles.css?v=6.6" />
+    <link rel="stylesheet" href="styles.css?v=6.8" />
 
     <!-- Tailwind CSS (without preflight resets) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
@@ -89,6 +89,14 @@
             position: relative;
             aspect-ratio: 16 / 10;
             background: #EFE7DE;
+        }
+
+        /* Desktop: a short, fixed-height map strip instead of a tall 16:10 box */
+        @media (min-width: 992px) {
+            .ct-loc__map {
+                aspect-ratio: auto;
+                height: 220px;
+            }
         }
 
         .ct-loc__map iframe {
@@ -260,7 +268,7 @@
 
     <div id="site-header"></div>
 
-<main>
+    <main>
 
         <!-- Inner Page Header -->
         <section class="breadcrumb-header position-relative d-flex align-items-center justify-content-center"
@@ -285,110 +293,15 @@
             <!-- Curvy Bottom Separator -->
             <div class="position-absolute w-100" style="bottom: -1px; left: 0; z-index: 2;">
                 <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
-                    style="display: block; width: 100%; height: clamp(36px, 4.2vw, 56px);">
+                    style="display: block; width: 100%; height: clamp(55px, 6vw, 95px) !important">
                     <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z"></path>
                 </svg>
             </div>
         </section>
 
-        <!-- ═══════ LOCATIONS — Delhi + Gurgaon, card + map each ═══════ -->
-        <section class="ct-locations" id="locations" aria-labelledby="locations-title">
-            <div class="container">
-
-                <div class="section-header text-center mb-3">
-                    <span class="section-subtitle" style="letter-spacing: 3px;">OUR CLINICS</span>
-                    <div class="nemonic-separator mt-2">
-                        <div class="nemonic-line"></div>
-                        <img src="logo-header.png" alt="" aria-hidden="true" class="nemonic-icon" />
-                        <div class="nemonic-line"></div>
-                    </div>
-                    <h2 class="section-title" id="locations-title">Two Clinics, One Standard</h2>
-                    <p class="mx-auto"
-                        style="max-width: 58ch; color: rgba(43, 26, 18, 0.7); font-size: 1.05rem; line-height: 1.7;">
-                        Delhi and Gurgaon run the same protocols, the same technology and the same team
-                        standards. Choose whichever is closer to you.
-                    </p>
-                </div>
-
-                <!-- No mt-* on the row: a margin-top utility overrides .row's own
-                     negative top margin and leaves a full g-4 gutter of dead space
-                     above the cards. Spacing above belongs on the header's mb-*. -->
-                <div class="row g-4 justify-content-center">
-
-                    <!-- ─────────── Delhi ─────────── -->
-                    <div class="col-md-6">
-                        <article class="ct-loc">
-                            <div class="ct-loc__map">
-                                <!-- ?output=embed is the keyless Google Maps embed; a
-                                     Maps JavaScript API key is not required for it. -->
-                                <iframe
-                                    src="https://www.google.com/maps?q=18A%20Ring%20Rd%2C%20Near%20Havells%2C%20Vikram%20Vihar%2C%20Lajpat%20Nagar%204%2C%20New%20Delhi&output=embed"
-                                    title="Map showing D'Zen Derma, Lajpat Nagar, New Delhi" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-                            </div>
-                            <div class="ct-loc__body">
-                                <span class="ct-loc__city">Delhi</span>
-                                <h3>D'Zen Derma, Lajpat Nagar</h3>
-                                <ul class="ct-loc__meta">
-                                    <li>
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                                            <circle cx="12" cy="10" r="3" />
-                                        </svg>
-                                        <span>18A, Ring Rd, Near Havells, Vikram Vihar, Lajpat Nagar 4, New Delhi</span>
-                                    </li>
-                                </ul>
-                                <div class="ct-loc__actions">
-                                    <a href="#contactForm" class="dz-cta">
-                                        <span>Book at Delhi</span>
-                                        <img src="nemonic1.png" alt="" aria-hidden="true" class="btn-icon"
-                                            style="width: 12px; height: 12px; object-fit: contain;" />
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- ─────────── Gurgaon ─────────── -->
-                    <div class="col-md-6">
-                        <article class="ct-loc">
-                            <div class="ct-loc__map">
-                                <iframe
-                                    src="https://www.google.com/maps?q=Golf%20Course%20Road%2C%20Near%20DLF%20Phase%201%2C%20Sector%2028%2C%20Gurugram%20Haryana&output=embed"
-                                    title="Map showing D'Zen Derma, Golf Course Road, Gurugram" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-                            </div>
-                            <div class="ct-loc__body">
-                                <span class="ct-loc__city">Gurgaon</span>
-                                <h3>D'Zen Derma, Golf Course Road</h3>
-                                <ul class="ct-loc__meta">
-                                    <li>
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                                            <circle cx="12" cy="10" r="3" />
-                                        </svg>
-                                        <span>Golf Course Road, Near DLF Phase 1, Sector 28, Gurugram, Haryana</span>
-                                    </li>
-                                </ul>
-                                <div class="ct-loc__actions">
-                                    <a href="#contactForm" class="dz-cta">
-                                        <span>Book at Gurgaon</span>
-                                        <img src="nemonic1.png" alt="" aria-hidden="true" class="btn-icon"
-                                            style="width: 12px; height: 12px; object-fit: contain;" />
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
         <!-- Contact Section -->
-        <section class="contact-section" style="background-color: #FDF8F3; padding: 50px 0px;">
+        <section class="contact-section"
+            style="background: linear-gradient(to top, #F4EFE8, #FDF8F3); padding: 50px 0px;">
             <div class="container">
                 <div class="row g-5 align-items-start">
                     <!-- Contact Info Cards -->
@@ -439,7 +352,7 @@
                             </div>
 
                             <!-- Addresses deliberately not repeated here — both live in
-                                 the #locations cards above, each next to its own map. -->
+                                 the #locations cards below, each next to its own map. -->
                             <div class="contact-info-card d-flex align-items-start gap-4">
                                 <div class="icon-box"
                                     style="width: 54px; height: 54px; background: #E8C99A; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #2B1A12;">
@@ -454,7 +367,7 @@
                                         style="font-weight: 400; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; color: #2B1A12;">
                                         Clinic Locations</h5>
                                     <p class="mb-0" style="font-size: 1rem; color: #2B1A12; line-height: 1.5;">
-                                        Lajpat Nagar, New Delhi &middot; Golf Course Road, Gurgaon<br>
+                                        Lajpat Nagar, New Delhi <br>Golf Course Road, Gurgaon<br>
                                         <a href="#locations"
                                             style="color: #A9762F; text-decoration: none; border-bottom: 1px solid rgba(196,146,74,.4);">See
                                             both on the map</a>
@@ -462,36 +375,7 @@
                                 </div>
                             </div>
 
-                            <!-- WhatsApp — the fastest channel, so it gets its own panel
-                                 rather than being a line item in the list above. -->
-                            <div class="ct-whatsapp">
-                                <div class="ct-whatsapp__head">
-                                    <div class="ct-whatsapp__icon">
-                                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                            <path
-                                                d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.13-.42-2.15-1.33-.8-.71-1.33-1.59-1.48-1.89-.15-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.62-.93-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.03 1-1.03 2.45 0 1.44 1.05 2.84 1.2 3.04.15.2 2.06 3.15 4.99 4.3.7.3 1.24.48 1.67.61.7.23 1.34.19 1.84.12.56-.08 1.73-.71 1.97-1.39.25-.68.25-1.26.17-1.39-.07-.12-.27-.2-.57-.35z" />
-                                            <path
-                                                d="M12.04 2C6.6 2 2.18 6.42 2.18 11.86c0 1.74.46 3.44 1.32 4.93L2 22l5.34-1.4a9.83 9.83 0 0 0 4.7 1.2h.01c5.43 0 9.85-4.42 9.85-9.86A9.8 9.8 0 0 0 19 4.87 9.8 9.8 0 0 0 12.04 2zm0 18.05h-.01a8.2 8.2 0 0 1-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.25-4.35c0-4.52 3.68-8.2 8.2-8.2a8.15 8.15 0 0 1 5.8 2.4 8.15 8.15 0 0 1 2.4 5.8c0 4.53-3.68 8.2-8.2 8.2z" />
-                                        </svg>
-                                    </div>
-                                    <h5>Chat on WhatsApp</h5>
-                                </div>
-                                <p>
-                                    The quickest way to reach us. Send a message and our front desk will help you
-                                    pick a slot at either clinic &mdash; usually within a few minutes during
-                                    working hours.
-                                </p>
-                                <a class="ct-whatsapp__btn" target="_blank" rel="noopener"
-                                    href="https://wa.me/919878885046?text=Hi%20D'Zen%20Derma%2C%20I'd%20like%20to%20book%20a%20consultation.">
-                                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                        <path
-                                            d="M12.04 2C6.6 2 2.18 6.42 2.18 11.86c0 1.74.46 3.44 1.32 4.93L2 22l5.34-1.4a9.83 9.83 0 0 0 4.7 1.2h.01c5.43 0 9.85-4.42 9.85-9.86A9.8 9.8 0 0 0 19 4.87 9.8 9.8 0 0 0 12.04 2zm0 18.05h-.01a8.2 8.2 0 0 1-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.25-4.35c0-4.52 3.68-8.2 8.2-8.2a8.15 8.15 0 0 1 5.8 2.4 8.15 8.15 0 0 1 2.4 5.8c0 4.53-3.68 8.2-8.2 8.2z" />
-                                        <path
-                                            d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.13-.42-2.15-1.33-.8-.71-1.33-1.59-1.48-1.89-.15-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.62-.93-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.03 1-1.03 2.45 0 1.44 1.05 2.84 1.2 3.04.15.2 2.06 3.15 4.99 4.3.7.3 1.24.48 1.67.61.7.23 1.34.19 1.84.12.56-.08 1.73-.71 1.97-1.39.25-.68.25-1.26.17-1.39-.07-.12-.27-.2-.57-.35z" />
-                                    </svg>
-                                    Message us on WhatsApp
-                                </a>
-                            </div>
+
                         </div>
                     </div>
 
@@ -565,46 +449,168 @@
             </div>
         </section>
 
+        <!-- ═══════ LOCATIONS — Delhi + Gurgaon, card + map each ═══════ -->
+        <section class="ct-locations" id="locations" aria-labelledby="locations-title">
+            <div class="container">
+
+                <div class="section-header text-center mb-3">
+                    <span class="section-subtitle" style="letter-spacing: 3px;">OUR CLINICS</span>
+                    <div class="nemonic-separator mt-2">
+                        <div class="nemonic-line"></div>
+                        <img src="logo-header.png" alt="" aria-hidden="true" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 class="section-title" id="locations-title">Two Clinics, One Standard</h2>
+                    <p class="mx-auto"
+                        style="max-width: 58ch; color: rgba(43, 26, 18, 0.7); font-size: 1.05rem; line-height: 1.7;">
+                        Delhi and Gurgaon run the same protocols, the same technology and the same team
+                        standards. Choose whichever is closer to you.
+                    </p>
+                </div>
 
 
-    <div id="site-footer"></div>
+                <!-- Tab Pills for Mobile View (same switcher as the service pages; script.js) -->
+                <div class="clinic-tabs" role="tablist" aria-label="Select Clinic Location">
+                    <div class="clinic-tabs__pill">
+                        <button class="clinic-tab active" role="tab" aria-selected="true" data-clinic="0">
+                            <img class="clinic-tab__img"
+                                src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=200&auto=format&fit=crop"
+                                alt="Delhi Clinic" />
+                            <span class="clinic-tab__info">
+                                <span class="clinic-tab__name">New Delhi</span>
+                                <span class="clinic-tab__role">Lajpat Nagar</span>
+                            </span>
+                        </button>
+                        <button class="clinic-tab" role="tab" aria-selected="false" data-clinic="1">
+                            <img class="clinic-tab__img"
+                                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=200&auto=format&fit=crop"
+                                alt="Gurgaon Clinic" />
+                            <span class="clinic-tab__info">
+                                <span class="clinic-tab__name">Gurgaon</span>
+                                <span class="clinic-tab__role">Golf Course Rd</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
 
-<!-- Project script controller -->
+                <!-- No mt-* on the row: a margin-top utility overrides .row's own
+                     negative top margin and leaves a full g-4 gutter of dead space
+                     above the cards. Spacing above belongs on the header's mb-*. -->
+                <div class="row g-4 justify-content-center clinic-locations-grid">
+
+                    <!-- ─────────── Delhi ─────────── -->
+                    <div class="col-md-6 clinic-loc-col active" data-clinic-index="0">
+                        <article class="ct-loc">
+                            <div class="ct-loc__map">
+                                <!-- ?output=embed is the keyless Google Maps embed; a
+                                     Maps JavaScript API key is not required for it. -->
+                                <iframe
+                                    src="https://www.google.com/maps?q=18A%20Ring%20Rd%2C%20Near%20Havells%2C%20Vikram%20Vihar%2C%20Lajpat%20Nagar%204%2C%20New%20Delhi&output=embed"
+                                    title="Map showing D'Zen Derma, Lajpat Nagar, New Delhi" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                            </div>
+                            <div class="ct-loc__body">
+                                <span class="ct-loc__city">Delhi</span>
+                                <h3>D'Zen Derma, Lajpat Nagar</h3>
+                                <ul class="ct-loc__meta">
+                                    <li>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                            <circle cx="12" cy="10" r="3" />
+                                        </svg>
+                                        <span>18A, Ring Rd, Near Havells, Vikram Vihar, Lajpat Nagar 4, New Delhi</span>
+                                    </li>
+                                </ul>
+                                <div class="ct-loc__actions">
+                                    <a href="#contactForm" class="dz-cta">
+                                        <span>Book at Delhi</span>
+                                        <img src="nemonic1.png" alt="" aria-hidden="true" class="btn-icon"
+                                            style="width: 12px; height: 12px; object-fit: contain;" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- ─────────── Gurgaon ─────────── -->
+                    <div class="col-md-6 clinic-loc-col" data-clinic-index="1">
+                        <article class="ct-loc">
+                            <div class="ct-loc__map">
+                                <iframe
+                                    src="https://www.google.com/maps?q=Golf%20Course%20Road%2C%20Near%20DLF%20Phase%201%2C%20Sector%2028%2C%20Gurugram%20Haryana&output=embed"
+                                    title="Map showing D'Zen Derma, Golf Course Road, Gurugram" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                            </div>
+                            <div class="ct-loc__body">
+                                <span class="ct-loc__city">Gurgaon</span>
+                                <h3>D'Zen Derma, Golf Course Road</h3>
+                                <ul class="ct-loc__meta">
+                                    <li>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                            <circle cx="12" cy="10" r="3" />
+                                        </svg>
+                                        <span>Golf Course Road, Near DLF Phase 1, Sector 28, Gurugram, Haryana</span>
+                                    </li>
+                                </ul>
+                                <div class="ct-loc__actions">
+                                    <a href="#contactForm" class="dz-cta">
+                                        <span>Book at Gurgaon</span>
+                                        <img src="nemonic1.png" alt="" aria-hidden="true" class="btn-icon"
+                                            style="width: 12px; height: 12px; object-fit: contain;" />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <div id="site-footer"></div>
+
+        <!-- Project script controller -->
         <script src="include/include.js?v=2"></script>
-<script src="script.js?v=3.2"></script>
+        <script src="script.js?v=3.2"></script>
 
-    <!-- Floating Bottom Action Bar -->
-    <div class="bottom-action-bar" id="bottomActionBar" aria-label="Quick actions">
-        <a href="../newthree.html#book" class="bottom-action-btn" aria-label="Book appointment">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                stroke-linejoin="round" width="22" height="22">
-                <rect x="3" y="4" width="18" height="18" rx="4" ry="4" />
-                <line x1="16" y1="2" x2="16" y2="6" />
-                <line x1="8" y1="2" x2="8" y2="6" />
-                <line x1="3" y1="10" x2="21" y2="10" />
-                <path d="M9 15.5l2 2 4-4" />
-            </svg>
-            <span class="btn-label">Book Now</span>
-        </a>
-        <div class="bottom-action-divider"></div>
-        <a href="tel:+919878885046" class="bottom-action-btn" aria-label="Call us">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                stroke-linejoin="round" width="22" height="22">
-                <path
-                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-            </svg>
-            <span class="btn-label">Call Now</span>
-        </a>
-        <div class="bottom-action-divider"></div>
-        <a href="https://wa.me/919878885046" class="bottom-action-btn" target="_blank" rel="noopener"
-            aria-label="Chat on WhatsApp">
-            <svg class="bottom-action-wa" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-                <path fill="#25D366"
-                    d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.47 9.47 0 0 1-4.83-1.32l-.35-.21-3.59.94.96-3.5-.23-.36a9.43 9.43 0 0 1-1.45-5.03C2.54 6.79 6.8 2.53 12.05 2.53c2.54 0 4.93.99 6.72 2.79a9.43 9.43 0 0 1 2.78 6.72c0 5.24-4.27 9.46-9.51 9.46zm8.09-17.55A11.36 11.36 0 0 0 12.04.6C5.74.6.61 5.72.61 12.02c0 2.01.53 3.98 1.53 5.71L.52 23.4l5.8-1.52a11.4 11.4 0 0 0 5.72 1.46h.01c6.3 0 11.42-5.13 11.43-11.43a11.36 11.36 0 0 0-3.35-8.07z" />
-            </svg>
-            <span class="btn-label">WhatsApp</span>
-        </a>
-    </div>
+        <!-- Floating Bottom Action Bar -->
+        <div class="bottom-action-bar" id="bottomActionBar" aria-label="Quick actions">
+            <a href="../newthree.html#book" class="bottom-action-btn" aria-label="Book appointment">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round" width="22" height="22">
+                    <rect x="3" y="4" width="18" height="18" rx="4" ry="4" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" />
+                    <path d="M9 15.5l2 2 4-4" />
+                </svg>
+                <span class="btn-label">Book Now</span>
+            </a>
+            <div class="bottom-action-divider"></div>
+            <a href="tel:+919878885046" class="bottom-action-btn" aria-label="Call us">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round" width="22" height="22">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <span class="btn-label">Call Now</span>
+            </a>
+            <div class="bottom-action-divider"></div>
+            <a href="https://wa.me/919878885046" class="bottom-action-btn" target="_blank" rel="noopener"
+                aria-label="Chat on WhatsApp">
+                <svg class="bottom-action-wa" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                    <path fill="#25D366"
+                        d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.47 9.47 0 0 1-4.83-1.32l-.35-.21-3.59.94.96-3.5-.23-.36a9.43 9.43 0 0 1-1.45-5.03C2.54 6.79 6.8 2.53 12.05 2.53c2.54 0 4.93.99 6.72 2.79a9.43 9.43 0 0 1 2.78 6.72c0 5.24-4.27 9.46-9.51 9.46zm8.09-17.55A11.36 11.36 0 0 0 12.04.6C5.74.6.61 5.72.61 12.02c0 2.01.53 3.98 1.53 5.71L.52 23.4l5.8-1.52a11.4 11.4 0 0 0 5.72 1.46h.01c6.3 0 11.42-5.13 11.43-11.43a11.36 11.36 0 0 0-3.35-8.07z" />
+                </svg>
+                <span class="btn-label">WhatsApp</span>
+            </a>
+        </div>
 
 </body>
 

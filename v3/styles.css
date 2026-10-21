@@ -10560,24 +10560,6 @@ html body:where(.dz-hf-layout) #related-services .hf-related-card:hover .hf-rela
     margin-right: auto !important;
 }
 
-:where(.dz-hf-layout) .footer-cta-card-wrapper {
-    max-width: 100% !important;
-    width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-:where(.dz-hf-layout) .footer-cta-card {
-    border-radius: 0 !important;
-    border-left: none !important;
-    border-right: none !important;
-    border-top: 1px solid rgba(232, 201, 154, 0.35) !important;
-    border-bottom: 1px solid rgba(232, 201, 154, 0.25) !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: clamp(80px, 8vw, 130px) 24px !important;
-    box-shadow: none !important;
-}
 
 /* ═══════════════════════════════════════════════════════════
    VIDEO SHOWCASE & INSTAGRAM REELS
@@ -14568,4 +14550,66 @@ html body:where(.dz-page-mesolipolysis) #process .hf-minimal-step-desc {
     :where(.dz-page-mesolipolysis) .bx-checks .hf-result-editorial-item {
         flex: 0 0 100%;
     }
+}
+/* ═══════════════════════════════════════════════════════════
+   FOOTER CTA ("Ready to reveal your most radiant self?") — ALL PAGES
+   Full-width flat band with a white eyebrow + nemonic, the design the
+   service pages already used. Applied site-wide (not only .dz-hf-layout)
+   so every page renders the same band.
+   ═══════════════════════════════════════════════════════════ */
+html body .footer-cta-card-wrapper {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+html body .footer-cta-card {
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: 1px solid rgba(232, 201, 154, 0.35) !important;
+    border-bottom: 1px solid rgba(232, 201, 154, 0.25) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: clamp(80px, 8vw, 130px) 24px !important;
+    box-shadow: none !important;
+}
+
+html body .footer-cta-card .section-subtitle {
+    color: #FAF9F6 !important;
+    -webkit-text-fill-color: #FAF9F6 !important;
+    opacity: 0.95 !important;
+    letter-spacing: 3.4px !important;
+}
+
+html body .footer-cta-card .nemonic-line {
+    background-color: #FAF9F6 !important;
+}
+
+html body .footer-cta-card .nemonic-icon {
+    filter: brightness(0) invert(1) !important;
+}
+
+html body .footer-cta-card .scribble {
+    color: #FAF9F6 !important;
+    -webkit-text-fill-color: #FAF9F6 !important;
+}
+
+html body .footer-cta-btn {
+    margin: 0 auto;
+    display: inline-flex;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+html body .footer-cta-btn span {
+    color: #FAF9F6 !important;
+    -webkit-text-fill-color: #FAF9F6 !important;
+}
+
+html body .footer-cta-btn .btn-icon {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    filter: brightness(0) invert(1) !important;
 }
