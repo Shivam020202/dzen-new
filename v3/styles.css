@@ -13200,7 +13200,7 @@ html body:where(.dz-page-acne-scars) #process .hf-minimal-step-desc {
 }
 
 :where(.dz-page-acne-scars) #benefits {
-    background: #FAF7F2;
+    background: linear-gradient(to top, #F4EFE8, #FDF8F3);
     padding: 35px 0 60px;
     position: relative;
 }
@@ -13539,13 +13539,13 @@ html body:where(.dz-page-botox) #process .hf-minimal-step-desc {
 }
 
 :where(.dz-page-botox) #benefits {
-    background: #FAF7F2;
+    background: linear-gradient(to top, #F4EFE8, #FDF8F3);
     padding: 35px 0 60px;
     position: relative;
 }
 
 :where(.dz-page-botox) #results {
-    background: #FDF8F3;
+    background: linear-gradient(to top, #F4EFE8, #FDF8F3);
     padding: 35px 0 0;
     position: relative;
 }
@@ -13755,13 +13755,13 @@ html body:where(.dz-page-microneedling) #process .hf-minimal-step-desc {
 }
 
 :where(.dz-page-microneedling) #benefits {
-    background: #FAF7F2;
+    background: linear-gradient(to top, #F4EFE8, #FDF8F3);
     padding: 35px 0 60px;
     position: relative;
 }
 
 :where(.dz-page-microneedling) #results {
-    background: #FDF8F3;
+    background: linear-gradient(to top, #F4EFE8, #FDF8F3);
     padding: 35px 0 0;
     position: relative;
 }
@@ -13971,13 +13971,13 @@ html body:where(.dz-page-dermablading) #process .hf-minimal-step-desc {
 }
 
 :where(.dz-page-dermablading) #benefits {
-    background: #FAF7F2;
+    background: linear-gradient(to top, #F4EFE8, #FDF8F3);
     padding: 35px 0 60px;
     position: relative;
 }
 
 :where(.dz-page-dermablading) #results {
-    background: #FDF8F3;
+    background: linear-gradient(to top, #F4EFE8, #FDF8F3);
     padding: 35px 0 0;
     position: relative;
 }
@@ -14187,13 +14187,13 @@ html body:where(.dz-page-medipeels) #process .hf-minimal-step-desc {
 }
 
 :where(.dz-page-medipeels) #benefits {
-    background: #FAF7F2;
+    background: linear-gradient(to top, #F4EFE8, #FDF8F3);
     padding: 35px 0 60px;
     position: relative;
 }
 
 :where(.dz-page-medipeels) #results {
-    background: #FDF8F3;
+    background: linear-gradient(to top, #F4EFE8, #FDF8F3);
     padding: 35px 0 0;
     position: relative;
 }
@@ -14403,13 +14403,13 @@ html body:where(.dz-page-mesolipolysis) #process .hf-minimal-step-desc {
 }
 
 :where(.dz-page-mesolipolysis) #benefits {
-    background: #FAF7F2;
+    background: linear-gradient(to top, #F4EFE8, #FDF8F3);
     padding: 35px 0 60px;
     position: relative;
 }
 
 :where(.dz-page-mesolipolysis) #results {
-    background: #FDF8F3;
+    background: linear-gradient(to top, #F4EFE8, #FDF8F3);
     padding: 35px 0 0;
     position: relative;
 }
