@@ -862,7 +862,7 @@ body {
 .philosophy-strip-container {
     position: relative;
     width: 100%;
-    padding: clamp(50px, 5.5vw, 80px) 0 clamp(70px, 10vw, 140px);
+    padding: 50px 0px 110px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1238,7 +1238,12 @@ html body #brand-philosophy .nemonic-icon {
    ========================================================= */
 @media (max-width: 991px) {
     .philosophy-strip-container {
-        padding: clamp(50px, 5vw, 46px) 0 clamp(60px, 8vw, 100px) !important;
+        padding: 50px 0 80px !important;
+    }
+
+    .doctors-v2 {
+        padding-top: 32px !important;
+        padding-bottom: 67px !important;
     }
 
     .opt12-principles-selector {
@@ -1455,7 +1460,7 @@ html body #brand-philosophy .nemonic-icon {
    ========================================================= */
 .doctors-v2 {
     position: relative;
-    padding: clamp(36px, 4vw, 54px) 0 clamp(75px, 8vw, 105px) 0;
+    padding: 32px 0 clamp(75px, 8vw, 105px) 0;
     background: linear-gradient(to top, #F4EFE8, #FDF8F3) !important;
 }
 
@@ -1866,7 +1871,7 @@ html body #brand-philosophy .nemonic-icon {
 
 .service-arch-section {
     position: relative;
-    padding: clamp(32px, 3.5vw, 50px) 0;
+    padding: 37px 0px clamp(32px, 3.5vw, 50px);
     background: #FAF9F6;
     color: #2B1A12;
 }
@@ -1927,7 +1932,7 @@ html body #brand-philosophy .nemonic-icon {
     gap: 2.5rem;
     overflow-x: auto;
     overflow-y: visible;
-    padding: 0.5rem 0 2rem;
+    padding: 0.5rem 0 0.5rem;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
 }
@@ -2050,7 +2055,6 @@ html body #brand-philosophy .nemonic-icon {
     .service-arch-track {
         grid-auto-columns: minmax(min(82vw, 260px), 82vw);
         gap: 1.4rem;
-        padding: 0.5rem 1.5rem 1.5rem;
     }
 
     .service-arch-card {}
@@ -3792,7 +3796,6 @@ html body #brand-philosophy .nemonic-icon {
     width: 100%;
     z-index: 10;
     pointer-events: none;
-    padding-bottom: 140px;
     /* space for CTA */
 }
 
@@ -4119,7 +4122,7 @@ html body #brand-philosophy .nemonic-icon {
         width: 100%;
         z-index: 10;
         pointer-events: none;
-        padding-bottom: 140px;
+        padding-bottom: 84px;
     }
 
     .sig-panel {
@@ -4778,10 +4781,10 @@ html body #brand-philosophy .nemonic-icon {
 .footer-contact-label {
     font-family: var(--serif, "Playfair Display", Georgia, serif);
     font-style: italic;
-    font-size: 1.05rem;
-    color: #B48C5A !important;
+    font-size: 1.25rem;
+    color: #4b2b20 !important;
     letter-spacing: 0.02em;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .footer-contact-value,
@@ -4800,7 +4803,7 @@ span.footer-contact-value {
 
 .footer-contact-value:hover,
 a.footer-contact-value:hover {
-    color: #C58E45 !important;
+    color: #4b2b20 !important;
 }
 
 .footer-contact-item--address {
@@ -6648,7 +6651,7 @@ html body .tm-card__quote {
 .instagram-section {
     position: relative;
     padding: clamp(50px, 5vw, 80px) 0;
-    background: #FAF7F2;
+    background: linear-gradient(to top, #F4EFE8, #FDF8F3);
     overflow: hidden;
     font-family: 'Inter', sans-serif;
 }
@@ -13142,7 +13145,7 @@ html body:where(.dz-page-prebridal) .pb-plan--dark .pb-plan__best b {
 
 :where(.dz-concern-page) #overview {
     background: linear-gradient(to top, #F4EFE8, #FDF8F3);
-    padding: 50px 0 0;
+    padding: 30px 0 0 !important;
     position: relative;
 }
 
@@ -14510,7 +14513,7 @@ html body:where(.dz-page-medipeels) #process .hf-minimal-step-desc {
 /* Each section ends on its own wave (or a straight edge into a dark band) */
 :where(.dz-page-mesolipolysis) #overview {
     background: linear-gradient(to top, #F4EFE8, #FDF8F3);
-    padding: 50px 0 0;
+    padding: 30px 0 0 !important;
     position: relative;
 }
 

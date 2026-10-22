@@ -28,7 +28,9 @@
             <div class="footer-top">
                 <!-- Brand column -->
                 <div class="footer-brand">
-                    <h2 class="footer-logo-text">D'ZEN DERMA</h2>
+                    <a href="index.html" class="footer-logo" aria-label="D'Zen Derma home">
+                        <img src="../images/logo1.png" alt="D'Zen Derma" style="display: block; height: 64px; width: auto; margin: 0 0 18px;" />
+                    </a>
                     <p class="footer-tagline">
                         Where the finest techniques in aesthetic medicine reveal your most luminous, confident self. Crafted for your skin, your story.
                     </p>
@@ -40,25 +42,36 @@
                                 <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"></circle>
                             </svg>
                         </a>
+                        <a href="https://www.facebook.com/DZenDerma/" class="footer-social-icon" aria-label="Facebook" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@DZenDerma" class="footer-social-icon" aria-label="YouTube" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                            </svg>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Nav columns -->
                 <div class="footer-nav-col">
                     <ul class="footer-nav-list">
-                        <li><a href="index.html">HOME</a></li>
-                        <li><a href="about.html">ABOUT US</a></li>
+                        <li><a href="our-philosophy.html">WHO WE ARE</a></li>
                         <li><a href="treatments.html">TREATMENTS</a></li>
-                        <li><a href="#">WELLNESS PROGRAMS</a></li>
-                        <li><a href="../concerns.html">CONCERN</a></li>
+                        <li><a href="concerns.html">CONCERNS</a></li>
+                        <li><a href="treatments.html#cat-wellness">MEDICINE &amp; WELLNESS PROGRAMMES</a></li>
+                        <li><a href="dzen-signatures.html">SIGNATURE TREATMENTS</a></li>
                     </ul>
                 </div>
                 <div class="footer-nav-col">
                     <ul class="footer-nav-list">
-                        <li><a href="#">MEMBERSHIPS</a></li>
-                        <li><a href="#">GIFT CARD</a></li>
-                        <li><a href="#">CAREERS</a></li>
-                        <li><a href="contact.html">CONTACT</a></li>
+                        <li><a href="pre-bridal.html">BRIDAL PROGRAMS</a></li>
+                        <li><a href="men.html">MEN'S AESTHETICS</a></li>
+                        <li><a href="workshops-training.html">WORKSHOPS &amp; TRAINING</a></li>
+                        <li><a href="media.html">PRESS &amp; MEDIA</a></li>
                     </ul>
                 </div>
 
@@ -119,3 +132,8 @@
     </div>
 </section>
 
+<!-- Injection point for VS Code Live Server: without a closing body tag here,
+     Live Server injects its reload script before every closing svg tag instead,
+     inside the icons, which breaks the layout. Browsers ignore this stray tag
+     when the partial is inserted into the page. -->
+</body>

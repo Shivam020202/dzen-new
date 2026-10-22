@@ -106,6 +106,54 @@
         html body .concerns-section {
             padding-bottom: 0 !important;
         }
+
+        /* ── Section spacing, matched to hydrafacial-new.html ──
+           Reference rhythm: first content ~63px below a section's top edge,
+           ~40px between the last content and a closing wave, and 50px of bottom
+           padding where a section has no wave. Values account for each section's
+           own inner offsets (e.g. About Us content sits 35px inside its padding). */
+        html body #about-us {
+            padding-top: 50px !important;
+            padding-bottom: 50px !important;
+        }
+
+        html body #partners {
+            padding-top: 56px !important;
+        }
+
+        html body #partners>.section-separator {
+            margin-top: 20px !important;
+        }
+
+        html body .concerns-section {
+            padding-top: 32px !important;
+        }
+
+        html body .concerns-section>.section-separator {
+            margin-top: 40px !important;
+        }
+
+        html body #training {
+            padding-top: 37px !important;
+            padding-bottom: 50px !important;
+        }
+
+        html body #instagram {
+            padding-top: 50px !important;
+            padding-bottom: 50px !important;
+        }
+
+        html body .media-coverage {
+            padding-top: 50px !important;
+        }
+
+        html body .media-coverage>.section-separator {
+            margin-top: 10px !important;
+        }
+
+        html body .headlines-section {
+            padding-top: 37px !important;
+        }
     </style>
 </head>
 
@@ -1402,7 +1450,7 @@
                 </div>
 
                 <!-- Instagram CTA Button -->
-                <div class="text-center mt-2 mt-lg-5" style="position: relative; z-index: 5;">
+                <div class="text-center mt-2" style="position: relative; z-index: 5;">
                     <a href="https://www.instagram.com/dzenderma/" target="_blank" rel="noopener" class="dz-cta"
                         style="margin: 0 auto; display: inline-flex;">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink: 0;">
@@ -1899,7 +1947,7 @@
                     </div>
                 </div>
 
-                <div class="headlines-footer text-center mt-2">
+                <div class="headlines-footer text-center mt-lg-4 mt-2">
                     <a href="#" class="view-all-articles dz-cta">
                         <span>View All Articles</span>
                         <img src="nemonic1.png" class="btn-icon" style="width: 14px; height: 14px; object-fit: contain;"
@@ -1912,7 +1960,7 @@
         <!-- ═══════ Clinic Locations Section ═══════ -->
         <section class="clinic-locations-section" id="locations" aria-labelledby="locations-heading">
             <div class="container">
-                <div class="section-header text-center mb-4 mb-lg-5">
+                <div class="section-header text-center mb-4 mb-lg-4">
                     <span class="section-subtitle">OUR CLINICS</span>
                     <div class="nemonic-separator">
                         <div class="nemonic-line"></div>
@@ -2066,38 +2114,38 @@
         <script src="include/include.js?v=2"></script>
         <script src="script.js?v=3.2"></script>
 
-    <!-- Floating Bottom Action Bar -->
-    <div class="bottom-action-bar" id="bottomActionBar" aria-label="Quick actions">
-        <a href="../newthree.html#book" class="bottom-action-btn" aria-label="Book appointment">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                stroke-linejoin="round" width="22" height="22">
-                <rect x="3" y="4" width="18" height="18" rx="4" ry="4" />
-                <line x1="16" y1="2" x2="16" y2="6" />
-                <line x1="8" y1="2" x2="8" y2="6" />
-                <line x1="3" y1="10" x2="21" y2="10" />
-                <path d="M9 15.5l2 2 4-4" />
-            </svg>
-            <span class="btn-label">Book Now</span>
-        </a>
-        <div class="bottom-action-divider"></div>
-        <a href="tel:+919878885046" class="bottom-action-btn" aria-label="Call us">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                stroke-linejoin="round" width="22" height="22">
-                <path
-                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-            </svg>
-            <span class="btn-label">Call Now</span>
-        </a>
-        <div class="bottom-action-divider"></div>
-        <a href="https://wa.me/919878885046" class="bottom-action-btn" target="_blank" rel="noopener"
-            aria-label="Chat on WhatsApp">
-            <svg class="bottom-action-wa" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-                <path fill="#25D366"
-                    d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.47 9.47 0 0 1-4.83-1.32l-.35-.21-3.59.94.96-3.5-.23-.36a9.43 9.43 0 0 1-1.45-5.03C2.54 6.79 6.8 2.53 12.05 2.53c2.54 0 4.93.99 6.72 2.79a9.43 9.43 0 0 1 2.78 6.72c0 5.24-4.27 9.46-9.51 9.46zm8.09-17.55A11.36 11.36 0 0 0 12.04.6C5.74.6.61 5.72.61 12.02c0 2.01.53 3.98 1.53 5.71L.52 23.4l5.8-1.52a11.4 11.4 0 0 0 5.72 1.46h.01c6.3 0 11.42-5.13 11.43-11.43a11.36 11.36 0 0 0-3.35-8.07z" />
-            </svg>
-            <span class="btn-label">WhatsApp</span>
-        </a>
-    </div>
+        <!-- Floating Bottom Action Bar -->
+        <div class="bottom-action-bar" id="bottomActionBar" aria-label="Quick actions">
+            <a href="../newthree.html#book" class="bottom-action-btn" aria-label="Book appointment">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round" width="22" height="22">
+                    <rect x="3" y="4" width="18" height="18" rx="4" ry="4" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" />
+                    <path d="M9 15.5l2 2 4-4" />
+                </svg>
+                <span class="btn-label">Book Now</span>
+            </a>
+            <div class="bottom-action-divider"></div>
+            <a href="tel:+919878885046" class="bottom-action-btn" aria-label="Call us">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round" width="22" height="22">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <span class="btn-label">Call Now</span>
+            </a>
+            <div class="bottom-action-divider"></div>
+            <a href="https://wa.me/919878885046" class="bottom-action-btn" target="_blank" rel="noopener"
+                aria-label="Chat on WhatsApp">
+                <svg class="bottom-action-wa" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                    <path fill="#25D366"
+                        d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.47 9.47 0 0 1-4.83-1.32l-.35-.21-3.59.94.96-3.5-.23-.36a9.43 9.43 0 0 1-1.45-5.03C2.54 6.79 6.8 2.53 12.05 2.53c2.54 0 4.93.99 6.72 2.79a9.43 9.43 0 0 1 2.78 6.72c0 5.24-4.27 9.46-9.51 9.46zm8.09-17.55A11.36 11.36 0 0 0 12.04.6C5.74.6.61 5.72.61 12.02c0 2.01.53 3.98 1.53 5.71L.52 23.4l5.8-1.52a11.4 11.4 0 0 0 5.72 1.46h.01c6.3 0 11.42-5.13 11.43-11.43a11.36 11.36 0 0 0-3.35-8.07z" />
+                </svg>
+                <span class="btn-label">WhatsApp</span>
+            </a>
+        </div>
 
 </body>
 
