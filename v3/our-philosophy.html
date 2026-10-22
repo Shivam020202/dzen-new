@@ -59,7 +59,7 @@
 
     <!-- Base styles and variable sheets -->
     <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="styles.css?v=8.8" />
+    <link rel="stylesheet" href="styles.css?v=9.2" />
 
     <!-- Tailwind CSS (without preflight resets) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
@@ -91,7 +91,7 @@
     </script>
 </head>
 
-<body class="hf-page">
+<body class="hf-page dz-page-philosophy">
 
     <!-- Floating Pill Navbar injected via include/include.js -->
     <div id="site-header"></div>
@@ -127,9 +127,9 @@
         <!-- ═══════════════════════════════════════════════════════════
              2. BRAND MANIFESTO HERO (Signature Roman Arch Frame)
              ═══════════════════════════════════════════════════════════ -->
-        <section class="hf-section" id="manifesto">
+        <section style="padding:37px 0 50px;background:linear-gradient(to top, #F4EFE8, #FDF8F3) !important;">
             <div class="container">
-                <div class="text-center max-w-3xl mx-auto mb-3 mb-lg-4">
+                <div class="text-center max-w-3xl mx-auto mb-3 mb-lg-3">
                     <span class="hf-eyebrow mb-2">CORE IDEOLOGY · BALANCE</span>
                     <div class="nemonic-separator mx-auto mb-2">
                         <div class="nemonic-line"></div>
@@ -145,20 +145,8 @@
                 </div>
 
                 <div class="row align-items-center g-4 g-lg-5 justify-content-center hf-understanding-row">
-                    <!-- Left: Signature Roman Arch Frame -->
-                    <div class="col-lg-5">
-                        <div class="sig-arch-wrap">
-                            <div class="sig-arch-glow"></div>
-                            <div class="sig-oval-frame sig-oval-frame--tall">
-                                <img src="https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
-                                    alt="D'Zen Sanctuary Care &amp; Holistic Dermatology" class="sig-oval-img"
-                                    loading="lazy" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right: Editorial Content & Philosophy Voice -->
-                    <div class="col-lg-7 hf-understanding-body">
+                    <!-- Editorial content, full width (image removed) -->
+                    <div class="col-12 hf-understanding-body text-center mx-auto" style="max-width: 1100px;">
                         <p class="hf-lead hf-understanding-lead mb-3">
                             We believe that aesthetics should never be loud or disconnected. It must be deliberate,
                             rooted in profound medical science, and intrinsically tied to your internal well-being.
@@ -174,7 +162,7 @@
                             dermatology with the patience and serenity you deserve.
                         </p>
 
-                        <div class="mt-4">
+                        <div class="mt-4 d-flex justify-content-center">
                             <a href="#balances" class="dz-cta">
                                 <span>Discover The Balances</span>
                                 <img src="nemonic1.png" class="btn-icon" alt="icon" />
@@ -182,13 +170,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Curvy Separator: Cream (#FDF8F3) → Warm Textured Cream (#FAF7F2) -->
-            <div class="section-separator" aria-hidden="true">
-                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path fill="#FAF7F2" d="M0,60 C380,150 1060,-30 1440,60 L1440,120 L0,120 Z"></path>
-                </svg>
             </div>
         </section>
 
@@ -217,65 +198,61 @@
                 <div class="hf-minimal-steps-grid">
                     <!-- Balance 01 -->
                     <div class="hf-minimal-step-item">
+                        <div class="dz-balance-img">
+                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=700&auto=format&fit=crop"
+                                alt="Doctor-led skin assessment" loading="lazy" />
+                        </div>
                         <h3 class="hf-minimal-step-title">Science &amp; Serenity</h3>
                         <div class="hf-minimal-step-divider"></div>
-                        <p class="hf-minimal-step-subtitle">
-                            Evidence-led care, delivered without haste.
-                        </p>
+                        <p class="hf-minimal-step-subtitle">Evidence-led care, delivered without haste.</p>
                         <p class="hf-minimal-step-desc">
-                            We believe good aesthetics requires both precision and patience. Every recommendation is
-                            backed
-                            by clinical evidence — not commercial urgency. We explain exactly what your skin needs, free
-                            from scare tactics or artificial deadlines. Just transparent facts, thoughtful clinical
-                            decisions, and the unhurried time you need to make them.
+                            Every recommendation is backed by clinical evidence, not commercial urgency. We explain what
+                            your skin needs, without scare tactics or deadlines, and give you time to decide.
                         </p>
                     </div>
 
                     <!-- Balance 02 -->
                     <div class="hf-minimal-step-item">
+                        <div class="dz-balance-img">
+                            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=700&auto=format&fit=crop"
+                                alt="Nutrition and inner wellness" loading="lazy" />
+                        </div>
                         <h3 class="hf-minimal-step-title">Inner &amp; Outer</h3>
                         <div class="hf-minimal-step-divider"></div>
-                        <p class="hf-minimal-step-subtitle">
-                            Radiance follows health, not the reverse.
-                        </p>
+                        <p class="hf-minimal-step-subtitle">Radiance follows health, not the reverse.</p>
                         <p class="hf-minimal-step-desc">
-                            We look beyond the surface, uniting internal wellness with outer dermatology for enduring
-                            results. Because a lasting glow begins at the cellular level, treating the root cause allows
-                            natural radiance to follow. We actively address cellular inflammation, metabolic balance,
-                            and
-                            nutritional harmony alongside clinical treatments.
+                            A lasting glow begins at the cellular level. We pair clinical treatments with care for
+                            inflammation, metabolic balance and nutrition, so radiance follows health.
                         </p>
                     </div>
 
                     <!-- Balance 03 -->
                     <div class="hf-minimal-step-item">
+                        <div class="dz-balance-img">
+                            <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=700&auto=format&fit=crop"
+                                alt="Natural, refreshed-looking skin" loading="lazy" />
+                        </div>
                         <h3 class="hf-minimal-step-title">Enhancement &amp; Restraint</h3>
                         <div class="hf-minimal-step-divider"></div>
-                        <p class="hf-minimal-step-subtitle">
-                            Enhancing your features, never replacing them.
-                        </p>
+                        <p class="hf-minimal-step-subtitle">Enhancing your features, never replacing them.</p>
                         <p class="hf-minimal-step-desc">
-                            We aim for results that reveal a refreshed version of your own face, never someone else's.
-                            Restraint is as vital to aesthetic mastery as capability — we will always tell you when less
-                            is
-                            the better answer. We treat only with thoughtful intention, keeping personal identity
-                            preservation our highest clinical commitment.
+                            We aim for a refreshed version of your own face, never someone else's. Restraint matters as
+                            much as skill, and we will tell you when less is the better answer.
                         </p>
                     </div>
 
                     <!-- Balance 04 -->
                     <div class="hf-minimal-step-item">
+                        <div class="dz-balance-img">
+                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=700&auto=format&fit=crop"
+                                alt="The calm clinic lounge" loading="lazy" />
+                        </div>
                         <h3 class="hf-minimal-step-title">Efficacy &amp; Calm</h3>
                         <div class="hf-minimal-step-divider"></div>
-                        <p class="hf-minimal-step-subtitle">
-                            Clinical mastery within a peaceful retreat.
-                        </p>
+                        <p class="hf-minimal-step-subtitle">Clinical mastery within a peaceful retreat.</p>
                         <p class="hf-minimal-step-desc">
-                            Clinical excellence should never feel sterile, hurried, or intimidating. Advanced lasers,
-                            biostimulators, and regenerative therapies are performed within a soothing, sensory
-                            sanctuary.
-                            By lowering stress and cortisol, our calming environment directly supports biological tissue
-                            recovery, cellular repair, and deep restoration.
+                            Advanced lasers and regenerative therapies, delivered in a calm, soothing space. A relaxed
+                            body recovers better, so the environment is part of the treatment.
                         </p>
                     </div>
                 </div>
@@ -304,7 +281,7 @@
         <!-- ═══════════════════════════════════════════════════════════
              4. WHY INSIDE-OUT ELEVATION MATTERS (Doctor Arch Split Layout)
              ═══════════════════════════════════════════════════════════ -->
-        <section class="hf-section" id="inside-out">
+        <section id="inside-out">
             <div class="container">
                 <div class="text-center max-w-3xl mx-auto mb-3 mb-lg-4">
                     <span class="hf-eyebrow mb-2">BIOLOGICAL ARCHITECTURE</span>
@@ -331,11 +308,6 @@
                                 <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
                                     alt="Cellular Health and Inside-Out Skin Elevation" class="sig-oval-img"
                                     loading="lazy" />
-                                <div class="sig-arch-badge">
-                                    <span class="dot">✦</span>
-                                    <span>The Cellular Dimension</span>
-                                    <span class="dot">✦</span>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -343,28 +315,27 @@
                     <!-- Right: Editorial Narrative -->
                     <div class="col-lg-7 hf-understanding-body">
                         <p class="hf-lead hf-understanding-lead mb-3">
-                            The skin is the largest organ of your body and a direct reflection of your internal
-                            biochemistry. To treat pigmentation, premature aging, or persistent acne purely with
-                            surface-level creams is attempting to resolve the symptom while ignoring the catalyst.
+                            Your skin is the largest organ of your body and a direct reflection of what happens
+                            inside it. Treating pigmentation, early ageing or persistent acne with surface creams
+                            alone addresses the symptom while ignoring the cause.
                         </p>
-                        <p class="hf-body-p mb-3">
-                            Cortisol levels, gut microbiome imbalances, hormonal fluctuations, and systemic inflammation
-                            continually shape skin barrier integrity and collagen synthesis. By evaluating and
-                            supporting these internal markers alongside clinical dermatology, treatments perform with
-                            vastly superior efficacy, downtime is minimized, and results endure for years.
+                        <p class="hf-body-p mb-0">
+                            Alongside clinical dermatology, we look at the internal factors that shape your skin:
                         </p>
 
-                        <!-- Doctor Quote Highlight Box -->
-                        <div class="p-4 rounded-2xl mb-4"
-                            style="background: rgba(196, 146, 74, 0.08); border-left: 3px solid #C4924A;">
-                            <p class="font-serif italic mb-1"
-                                style="font-size: 1.05rem; color: #4B2B20; line-height: 1.55;">
-                                "We don't simply clear the skin; we restore the internal biological environment that
-                                allows radiant, resilient skin to flourish on its own."
-                            </p>
-                            <span class="text-xs font-semibold tracking-wider uppercase" style="color: #8B5A1A;">— Dr.
-                                Aarushi Passi Bhandari</span>
-                        </div>
+                        <ul class="dz-markers">
+                            <li><b>Stress &amp; Cortisol</b><span>Affects barrier strength, breakouts and healing</span>
+                            </li>
+                            <li><b>Gut Health</b><span>Linked to inflammation, sensitivity and dullness</span></li>
+                            <li><b>Hormones</b><span>Influence oil, pigmentation and collagen</span></li>
+                            <li><b>Inflammation</b><span>Accelerates ageing and slows recovery</span></li>
+                        </ul>
+
+                        <blockquote class="dz-quote">
+                            <p>&ldquo;We don&rsquo;t simply clear the skin; we restore the internal environment that
+                                allows radiant, resilient skin to flourish on its own.&rdquo;</p>
+                            <cite>Dr. Aarushi Passi Bhandari</cite>
+                        </blockquote>
 
                         <div class="mt-4">
                             <a href="../newthree.html#book" class="dz-cta">
@@ -382,7 +353,7 @@
              ═══════════════════════════════════════════════════════════ -->
         <section class="hf-section hf-why-section" id="isolated-treatments">
             <div class="container">
-                <div class="text-center max-w-3xl mx-auto mb-4 mb-lg-5">
+                <div class="text-center max-w-3xl mx-auto mb-3">
                     <span class="hf-eyebrow mb-2">A PARADIGM SHIFT</span>
                     <div class="nemonic-separator mx-auto mb-3">
                         <div class="nemonic-line"></div>
@@ -390,8 +361,7 @@
                         <div class="nemonic-line"></div>
                     </div>
                     <h2 class="hf-heading mb-3">
-                        Why Isolated Treatments Are <span class="scribble"
-                            style="color: #E8C99A !important; -webkit-text-fill-color: #E8C99A !important;">Outdated.</span>
+                        Why Isolated Treatments Are Outdated
                     </h2>
                     <p class="hf-lead">
                         The future of aesthetic dermatology lies in synergistic multi-modal protocols, not transactional
@@ -441,6 +411,9 @@
                         </ul>
                     </div>
 
+
+                    <!-- Divider between the two approaches -->
+                    <div class="outdated-vs" aria-hidden="true"><span>vs</span></div>
                     <!-- The D'Zen Model -->
                     <div class="outdated-card outdated-card--dzen">
                         <span class="outdated-badge outdated-badge--dzen">The D'Zen Standard</span>
@@ -481,7 +454,7 @@
             </div>
 
             <!-- Curvy Separator: Dark Section (#4b2b20) → Warm Textured Cream (#FAF7F2) -->
-            <div class="section-separator" aria-hidden="true">
+            <div class="section-separator" aria-hidden="true" style="margin-top: 15px !important;">
                 <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                     <path fill="#FAF7F2" d="M0,60 C380,150 1060,-30 1440,60 L1440,120 L0,120 Z"></path>
                 </svg>
@@ -491,7 +464,7 @@
         <!-- ═══════════════════════════════════════════════════════════
              6. THE D'ZEN INTEGRATED JOURNEY (4 Minimal Editorial Pillars)
              ═══════════════════════════════════════════════════════════ -->
-        <section class="hf-section hf-section--alt" id="journey">
+        <section class="hf-section--alt" id="journey" style="padding-top:37px">
             <div class="container">
                 <div class="text-center max-w-3xl mx-auto mb-4">
                     <span class="hf-eyebrow mb-2">THE PATIENT PATHWAY</span>
@@ -575,7 +548,7 @@
                     </div>
                 </div>
 
-                <div class="text-center mt-5">
+                <div class="text-center mt-2">
                     <a href="../newthree.html#book" class="dz-cta">
                         <span>Begin Your Journey</span>
                         <img src="nemonic1.png" class="btn-icon" alt="icon" />
@@ -584,7 +557,7 @@
             </div>
 
             <!-- Curvy Separator: Warm Textured Cream (#FAF7F2) → Cream (#FDF8F3) -->
-            <div class="section-separator" aria-hidden="true">
+            <div class="section-separator" aria-hidden="true" style="margin-top: 15px;">
                 <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                     <path fill="#FDF8F3" d="M0,60 C380,150 1060,-30 1440,60 L1440,120 L0,120 Z"></path>
                 </svg>
@@ -594,55 +567,75 @@
         <!-- ═══════════════════════════════════════════════════════════
              7. TWO SANCTUARIES, ONE PHILOSOPHY (Clinic Locations)
              ═══════════════════════════════════════════════════════════ -->
-        <section class="hf-section" id="locations">
+        <section class="clinic-locations-section" id="locations" aria-labelledby="locations-heading"
+            style="padding-top: 37px !important;">
             <div class="container">
-                <div class="text-center max-w-3xl mx-auto mb-4 mb-lg-5">
-                    <span class="hf-eyebrow mb-2">EXPERIENCE THE SANCTUARY</span>
-                    <div class="nemonic-separator mx-auto mb-3">
+                <div class="text-center max-w-3xl mx-auto mb-4 mb-lg-4">
+                    <span class="section-subtitle">TWO LOCATIONS</span>
+                    <div class="nemonic-separator mt-2 mb-3">
                         <div class="nemonic-line"></div>
                         <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
                         <div class="nemonic-line"></div>
                     </div>
-                    <h2 class="hf-heading mb-3">
+                    <h2 id="locations-heading" class="section-title">
                         Two Sanctuaries, One <span class="scribble">Philosophy</span>
                     </h2>
-                    <p class="hf-lead">
+                    <p class="mx-auto"
+                        style="max-width: 720px; color: var(--ac-body, #5C4A3A); font-size: 1.02rem; line-height: 1.75;">
                         Designed as quiet retreats where clinical precision meets unhurried tranquility in Gurgaon and
                         Delhi.
                     </p>
                 </div>
 
-                <div class="row g-4 justify-content-center">
-                    <!-- Gurgaon Clinic -->
-                    <div class="col-md-6 col-lg-5">
+                <!-- Tab Pills for Mobile View -->
+                <div class="clinic-tabs" role="tablist" aria-label="Select Clinic Location">
+                    <div class="clinic-tabs__pill">
+                        <button class="clinic-tab active" role="tab" aria-selected="true" data-clinic="0">
+                            <img class="clinic-tab__img"
+                                src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&amp;w=200&amp;auto=format&amp;fit=crop"
+                                alt="Delhi Clinic" />
+                            <span class="clinic-tab__info">
+                                <span class="clinic-tab__name">New Delhi</span>
+                                <span class="clinic-tab__role">Lajpat Nagar</span>
+                            </span>
+                        </button>
+                        <button class="clinic-tab" role="tab" aria-selected="false" data-clinic="1">
+                            <img class="clinic-tab__img"
+                                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&amp;w=200&amp;auto=format&amp;fit=crop"
+                                alt="Gurgaon Clinic" />
+                            <span class="clinic-tab__info">
+                                <span class="clinic-tab__name">Gurgaon</span>
+                                <span class="clinic-tab__role">Golf Course Rd</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row g-4 justify-content-center clinic-locations-grid">
+                    <!-- Delhi Clinic Card -->
+                    <div class="col-lg-6 col-md-6 clinic-loc-col active" data-clinic-index="0">
                         <article class="clinic-loc-card">
                             <div class="clinic-loc-card__media">
-                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
-                                    alt="D'Zen Derma Clinic, Golf Course Road, Gurugram" class="clinic-loc-card__img" />
+                                <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=800&auto=format&fit=crop"
+                                    alt="D'Zen Derma Clinic, Lajpat Nagar, New Delhi" class="clinic-loc-card__img"
+                                    loading="eager" />
+
                             </div>
                             <div class="clinic-loc-card__body">
-                                <span class="clinic-loc-card__eyebrow">GURUGRAM</span>
-                                <h3 class="clinic-loc-card__title">D'Zen Derma, Golf Course Road</h3>
+                                <span class="clinic-loc-card__eyebrow">NEW DELHI</span>
+                                <h3 class="clinic-loc-card__title">D'Zen Derma, Lajpat Nagar</h3>
                                 <ul class="clinic-loc-card__info">
                                     <li>
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                            aria-hidden="true">
+                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                                             <circle cx="12" cy="10" r="3" />
                                         </svg>
-                                        <span>Golf Course Road, Near DLF Phase 1, Sector 28, Gurugram, Haryana</span>
-                                    </li>
-                                    <li>
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                            aria-hidden="true">
-                                            <path
-                                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                                        </svg>
-                                        <span>+91-9878885046</span>
+                                        <span>18A, Ring Rd, Near Havells, Vikram Vihar, Lajpat Nagar 4, New Delhi</span>
                                     </li>
                                 </ul>
                                 <div class="clinic-loc-card__actions mt-auto">
-                                    <a href="https://maps.google.com/?q=Golf+Course+Road+Near+DLF+Phase+1+Sector+28+Gurugram+Haryana"
+                                    <a href="https://maps.google.com/?q=18A+Ring+Rd+Near+Havells+Vikram+Vihar+Lajpat+Nagar+4+New+Delhi"
                                         target="_blank" rel="noopener" class="dz-cta w-100">
                                         <span>Get Directions</span>
                                         <img src="nemonic1.png" class="btn-icon" alt="icon" />
@@ -652,37 +645,31 @@
                         </article>
                     </div>
 
-                    <!-- Delhi Clinic -->
-                    <div class="col-md-6 col-lg-5">
+                    <!-- Gurgaon Clinic Card -->
+                    <div class="col-lg-6 col-md-6 clinic-loc-col" data-clinic-index="1">
                         <article class="clinic-loc-card">
                             <div class="clinic-loc-card__media">
-                                <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
-                                    alt="D'Zen Derma Clinic, Lajpat Nagar, New Delhi" class="clinic-loc-card__img" />
+                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop"
+                                    alt="D'Zen Derma Clinic, Golf Course Road, Gurgaon" class="clinic-loc-card__img"
+                                    loading="eager" />
                             </div>
                             <div class="clinic-loc-card__body">
-                                <span class="clinic-loc-card__eyebrow">NEW DELHI</span>
-                                <h3 class="clinic-loc-card__title">D'Zen Derma, South Delhi</h3>
+                                <span class="clinic-loc-card__eyebrow">GURUGRAM</span>
+                                <h3 class="clinic-loc-card__title">D'Zen Derma, Golf Course Road</h3>
                                 <ul class="clinic-loc-card__info">
                                     <li>
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                            aria-hidden="true">
+                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                                             <circle cx="12" cy="10" r="3" />
                                         </svg>
-                                        <span>18A, Ring Rd, Near Havells, Vikram Vihar, Lajpat Nagar 4, New Delhi</span>
-                                    </li>
-                                    <li>
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                            aria-hidden="true">
-                                            <path
-                                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                                        </svg>
-                                        <span>+91-9878885046</span>
+                                        <span>Golf Course Road, Near DLF Phase 1, Sector 28, Gurugram, Haryana</span>
                                     </li>
                                 </ul>
                                 <div class="clinic-loc-card__actions mt-auto">
-                                    <a href="../newthree.html#book" class="dz-cta w-100">
-                                        <span>Book Consultation</span>
+                                    <a href="https://maps.google.com/?q=Golf+Course+Road+Near+DLF+Phase+1+Sector+28+Gurugram+Haryana"
+                                        target="_blank" rel="noopener" class="dz-cta w-100">
+                                        <span>Get Directions</span>
                                         <img src="nemonic1.png" class="btn-icon" alt="icon" />
                                     </a>
                                 </div>

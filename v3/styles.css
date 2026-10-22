@@ -7670,7 +7670,7 @@ body.hf-page .sig-arch-badge span.dot {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: clamp(24px, 3vw, 40px);
-    margin-top: 40px;
+    margin-top: 5px !important;
     max-width: 1240px;
     margin-left: auto;
     margin-right: auto;
@@ -7746,7 +7746,7 @@ body.hf-page .sig-arch-badge span.dot {
         scrollbar-width: none;
         gap: 18px;
         padding: 10px 20px 24px;
-        margin-top: 24px;
+        margin-top: 10px;
         margin-left: -16px;
         margin-right: -16px;
     }
@@ -7912,7 +7912,7 @@ body.hf-page .sig-arch-badge span.dot {
 
 /* ── Customised Skin Care (Clean Open Editorial, No Card) ── */
 .hf-customised-editorial {
-    margin-top: 36px;
+    margin-top: 20px;
     padding: 0 16px;
     position: relative;
 }
@@ -7922,7 +7922,7 @@ body.hf-page .sig-arch-badge span.dot {
     max-width: 720px;
     height: 1px;
     background: rgba(75, 43, 32, 0.35);
-    margin: 0 auto clamp(24px, 3.5vw, 36px) auto;
+    margin: 0 auto clamp(19px, 3.5vw, 19px) auto;
 }
 
 .hf-customised-title {
@@ -8006,7 +8006,7 @@ body.hf-page .sig-arch-badge span.dot {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: clamp(24px, 3.5vw, 40px);
-    margin-top: clamp(32px, 4vw, 48px);
+    margin-top: clamp(32px, 4vw, 31px);
     max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
@@ -15517,4 +15517,214 @@ html body:where(.dz-page-about-clinic) #clinic-commitment {
 
 :where(.dz-page-about-clinic) .pnav .pnav__burger span {
     background: #3A2418 !important;
+}
+
+/* =====================================================================
+   OUR PHILOSOPHY (our-philosophy.html) — The Four Balances: arch image
+   above each principle (same arch frame as the service-page steps)
+   ===================================================================== */
+:where(.dz-page-philosophy) #balances .dz-balance-img {
+    width: 100%;
+    aspect-ratio: 4 / 4.2;
+    margin-bottom: 10px;
+    overflow: hidden;
+    border-radius: 120px 120px 14px 14px;
+    border: 1px solid rgba(196, 146, 74, 0.22);
+    background: #F4EFE8;
+    box-shadow: 0 6px 20px rgba(75, 43, 32, 0.08);
+}
+
+:where(.dz-page-philosophy) #balances .dz-balance-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1);
+}
+
+:where(.dz-page-philosophy) #balances .hf-minimal-step-item:hover .dz-balance-img img {
+    transform: scale(1.05);
+}
+
+/* Our Philosophy — Why Inside-Out: internal-factor grid, refined quote,
+   and bottom room so the button no longer touches the bronze band below */
+:where(.dz-page-philosophy) #inside-out {
+    padding: 37px 0 50px;
+}
+
+:where(.dz-page-philosophy) #inside-out .dz-markers {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 28px;
+    margin: 18px 0 26px;
+    padding: 0;
+}
+
+:where(.dz-page-philosophy) #inside-out .dz-markers li {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 0;
+    border-top: 1px solid rgba(196, 146, 74, 0.25);
+}
+
+:where(.dz-page-philosophy) #inside-out .dz-markers b {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: #4B2B20;
+}
+
+:where(.dz-page-philosophy) #inside-out .dz-markers span {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #2B2B2B;
+}
+
+:where(.dz-page-philosophy) #inside-out .dz-quote {
+    margin: 0 0 8px;
+    padding: 4px 0 4px 22px;
+    border-left: 2px solid #C4924A;
+}
+
+:where(.dz-page-philosophy) #inside-out .dz-quote p {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(17px, 1.6vw, 19px);
+    line-height: 1.55;
+    color: #4B2B20;
+    margin: 0 0 8px;
+}
+
+:where(.dz-page-philosophy) #inside-out .dz-quote cite {
+    font-style: normal;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: #8B4513;
+}
+
+@media (max-width: 991.98px) {
+    :where(.dz-page-philosophy) #inside-out .dz-markers {
+        text-align: left;
+    }
+
+
+
+    :where(.dz-page-philosophy) #inside-out .dz-quote {
+        text-align: left;
+    }
+}
+
+@media (max-width: 575.98px) {
+    :where(.dz-page-philosophy) #inside-out .dz-markers {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Our Philosophy — Why Isolated Treatments: open two-column comparison
+   (no cards), split by a gold "vs" divider; the legacy side is muted */
+:where(.dz-page-philosophy) #isolated-treatments .outdated-grid {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: clamp(28px, 4vw, 56px);
+    align-items: stretch;
+}
+
+:where(.dz-page-philosophy) #isolated-treatments .outdated-card {
+    padding: 0;
+    border-radius: 0;
+    background: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+:where(.dz-page-philosophy) #isolated-treatments .outdated-card--old {
+    opacity: 0.78;
+}
+
+:where(.dz-page-philosophy) #isolated-treatments .outdated-badge {
+    padding: 0;
+    border-radius: 0;
+    background: none !important;
+    border: 0 !important;
+    letter-spacing: 2.4px;
+    margin-bottom: 12px;
+    color: #FAF9F6 !important;
+    -webkit-text-fill-color: #FAF9F6 !important;
+}
+
+:where(.dz-page-philosophy) #isolated-treatments .outdated-title {
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(232, 201, 154, 0.35);
+    margin-bottom: 16px !important;
+}
+
+:where(.dz-page-philosophy) #isolated-treatments .outdated-vs {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+}
+
+:where(.dz-page-philosophy) #isolated-treatments .outdated-vs::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(232, 201, 154, 0.5) 20%, rgba(232, 201, 154, 0.5) 80%, transparent);
+}
+
+:where(.dz-page-philosophy) #isolated-treatments .outdated-vs span {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid rgba(232, 201, 154, 0.55);
+    background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: 18px;
+    color: #E8C99A !important;
+    -webkit-text-fill-color: #E8C99A !important;
+}
+
+@media (max-width: 991.98px) {
+    :where(.dz-page-philosophy) #isolated-treatments .outdated-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    :where(.dz-page-philosophy) #isolated-treatments .outdated-vs {
+        width: 100%;
+        height: 52px;
+    }
+
+    :where(.dz-page-philosophy) #isolated-treatments .outdated-vs::before {
+        top: 50%;
+        bottom: auto;
+        left: 0;
+        right: 0;
+        width: auto;
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(232, 201, 154, 0.5) 20%, rgba(232, 201, 154, 0.5) 80%, transparent);
+    }
+}
+
+/* Our Philosophy — Clinic locations: same container as about-clinic.html
+   (the hf-page layout otherwise caps containers at 1200px / 32px padding) */
+html body:where(.dz-page-philosophy) #locations>.container {
+    max-width: 1280px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
 }
