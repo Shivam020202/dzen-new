@@ -301,24 +301,67 @@
     }
 
     /* =========================================================
-       OUR EXPERTISE (SERVICE ARCH) CAROUSEL — Scroll controls
+       CARD ROWS (Our Expertise, Concerns) — Mouse drag to scroll
        ========================================================= */
-    const track = document.getElementById('service-arch-track');
-    const prevBtn = document.querySelector('.service-arch-btn-prev');
-    const nextBtn = document.querySelector('.service-arch-btn-next');
+    // Touch and trackpads scroll these rows natively; a mouse can't, so let it drag.
+    const enableDragScroll = (track, cardSelector) => {
+        let isDown = false;
+        let moved = false;
+        let startX = 0;
+        let startScroll = 0;
 
-    if (track && prevBtn && nextBtn) {
-        const scrollByCard = (direction) => {
-            const card = track.querySelector('.service-arch-card');
-            if (!card) return;
-            const gap = 18;
-            const cardWidth = card.getBoundingClientRect().width + gap;
-            track.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+        track.addEventListener('pointerdown', (e) => {
+            if (e.pointerType !== 'mouse' || e.button !== 0) return;
+            isDown = true;
+            moved = false;
+            startX = e.clientX;
+            startScroll = track.scrollLeft;
+            // Snapping fights the drag, so hold it off until release
+            track.style.scrollSnapType = 'none';
+            track.style.cursor = 'grabbing';
+        });
+
+        window.addEventListener('pointermove', (e) => {
+            if (!isDown) return;
+            const dx = e.clientX - startX;
+            if (Math.abs(dx) > 5) moved = true;
+            track.scrollLeft = startScroll - dx;
+        });
+
+        const endDrag = () => {
+            if (!isDown) return;
+            isDown = false;
+            track.style.cursor = '';
+            // Snap to the nearest card from where the drag ended
+            const cards = track.querySelectorAll(cardSelector);
+            const base = cards[0] ? cards[0].offsetLeft : 0;
+            let target = track.scrollLeft;
+            let best = Infinity;
+            cards.forEach((card) => {
+                const pos = card.offsetLeft - base;
+                const dist = Math.abs(pos - track.scrollLeft);
+                if (dist < best) { best = dist; target = pos; }
+            });
+            track.scrollTo({ left: target, behavior: 'smooth' });
+            setTimeout(() => { track.style.scrollSnapType = ''; }, 500);
         };
+        window.addEventListener('pointerup', endDrag);
+        window.addEventListener('pointercancel', endDrag);
 
-        prevBtn.addEventListener('click', () => scrollByCard(-1));
-        nextBtn.addEventListener('click', () => scrollByCard(1));
-    }
+        // A drag shouldn't count as a click on a link underneath
+        track.addEventListener('click', (e) => {
+            if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; }
+        }, true);
+
+        // Stop the browser's native image/link ghost-drag from hijacking the gesture
+        track.addEventListener('dragstart', (e) => e.preventDefault());
+    };
+
+    const archTrack = document.getElementById('service-arch-track');
+    if (archTrack) enableDragScroll(archTrack, '.service-arch-card');
+    document.querySelectorAll('.concerns-section .concerns-grid').forEach((grid) => {
+        enableDragScroll(grid, '.concern-item');
+    });
 
     /* =========================================================
        FELLOW DOCTORS TRAINING — Scroll Reveal Animation

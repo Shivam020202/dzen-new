@@ -21,7 +21,7 @@
     <!-- Base styles and variable sheets -->
     <link rel="stylesheet" href="main.css" />
     <!-- Section Specific styles -->
-    <link rel="stylesheet" href="styles.css?v=9.2" />
+    <link rel="stylesheet" href="styles.css?v=9.3" />
 
     <!-- Tailwind CSS (without preflight resets) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
@@ -41,43 +41,70 @@
         }
     </script>
     <style>
-        /* Wellness Tailored to You: tabs hold 5 concerns (Hair holds 3), so on desktop
-           the blobs shrink slightly and sit in one centred row instead of a 4-column grid */
+        /* Wellness Tailored to You: a draggable row sized to match the Advanced Care &
+           Wellness arches — 4 full cards plus 15% of the next, so the row reads as a slider */
+        .concerns-section .container {
+            max-width: 1280px;
+            padding: 0 24px;
+        }
+
+        .concerns-section .concerns-grid {
+            display: grid;
+            grid-auto-flow: column;
+            grid-template-columns: none;
+            grid-auto-columns: calc((100% - 4 * 2.5rem) / 4.15);
+            gap: 2.5rem;
+            overflow-x: auto;
+            padding: 0.5rem 0;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            cursor: grab;
+            user-select: none;
+        }
+
+        .concerns-section .concerns-grid::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hair has only 3 concerns — nothing to scroll, so centre them */
         @media (min-width: 992px) {
-            .concerns-section .concerns-grid {
-                display: flex;
-                flex-wrap: wrap;
+            .concerns-section .concerns-grid:not(:has(> .concern-item:nth-child(5))) {
                 justify-content: center;
-                gap: 20px;
-                max-width: 1140px;
-            }
-
-            .concerns-section .concern-item {
-                width: auto;
-                flex: 0 0 auto;
-            }
-
-            .concerns-section .concern-blob-wrapper {
-                width: 200px;
-                height: 200px;
             }
         }
 
-        @media (min-width: 992px) and (max-width: 1199.98px) {
-            .concerns-section .concern-blob-wrapper {
-                width: 168px;
-                height: 168px;
-            }
+        .concerns-section .concern-item {
+            flex: none;
+            scroll-snap-align: start;
+        }
 
+        .concerns-section .concern-blob-wrapper {
+            width: 100%;
+            height: 320px;
+            aspect-ratio: auto;
+        }
+
+        .concerns-section .concern-image,
+        .concerns-section .concern-image img {
+            border-radius: 500px 500px 10px 10px;
+        }
+
+        /* Tablet: 2 full cards plus 15% of the third */
+        @media (max-width: 991.98px) {
             .concerns-section .concerns-grid {
-                gap: 14px;
+                grid-auto-columns: calc((100% - 2 * 2rem) / 2.15);
+                gap: 2rem;
             }
         }
 
-        /* Tablet 2-column grid: centre the odd last blob */
-        @media (min-width: 576px) and (max-width: 991.98px) {
-            .concerns-section .concern-item:last-child:nth-child(odd) {
-                grid-column: 1 / -1;
+        @media (max-width: 767.98px) {
+            .concerns-section .concerns-grid {
+                grid-auto-columns: minmax(min(82vw, 260px), 82vw);
+                gap: 1.4rem;
+            }
+
+            .concerns-section .concern-blob-wrapper {
+                height: 260px;
             }
         }
 
@@ -186,7 +213,17 @@
                         </div>
                         <div class="hero-overlay"></div>
                         <div class="hero-content">
-                            <h2 class="hero-title">Elevating You, Inside Out</h2>
+                            <h2 class="hero-title">Science & Serenity</h2>
+                        </div>
+                    </div>
+                    <div class="hero-slide">
+                        <div class="hero-bg">
+                            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1600&auto=format&fit=crop"
+                                alt="Facial Treatment at D'Zen Derma">
+                        </div>
+                        <div class="hero-overlay"></div>
+                        <div class="hero-content">
+                            <h2 class="hero-title">Inner & Outer</h2>
                         </div>
                     </div>
                     <div class="hero-slide">
@@ -196,7 +233,7 @@
                         </div>
                         <div class="hero-overlay"></div>
                         <div class="hero-content">
-                            <h2 class="hero-title">Begin Your Journey</h2>
+                            <h2 class="hero-title">D’Zen Experience</h2>
                         </div>
                     </div>
                 </div>
@@ -205,6 +242,7 @@
                         <button class="hero-dot active" aria-label="Slide 1"></button>
                         <button class="hero-dot" aria-label="Slide 2"></button>
                         <button class="hero-dot" aria-label="Slide 3"></button>
+                        <button class="hero-dot" aria-label="Slide 4"></button>
                     </div>
                 </div>
             </section>
@@ -213,30 +251,38 @@
             <div class="hero-cta-strip">
                 <div class="hero-marquee">
                     <div class="hero-marquee__track">
-                        <span class="hero-marquee__item">HydraFacial <span class="hero-marquee__dot">•</span></span>
-                        <span class="hero-marquee__item">PRP & GFC <span class="hero-marquee__dot">•</span></span>
-                        <span class="hero-marquee__item">Laser Hair Reduction <span
+                        <span class="hero-marquee__item">Medical Aesthetics <span
                                 class="hero-marquee__dot">•</span></span>
-                        <span class="hero-marquee__item">Acne Scar Treatment <span
+                        <span class="hero-marquee__item">Functional Medicine <span
                                 class="hero-marquee__dot">•</span></span>
-                        <span class="hero-marquee__item">Skin Rejuvenation <span
+                        <span class="hero-marquee__item">Integrative Programmes <span
                                 class="hero-marquee__dot">•</span></span>
-                        <span class="hero-marquee__item">Botox & Fillers <span class="hero-marquee__dot">•</span></span>
-                        <span class="hero-marquee__item">Body Sculpting <span class="hero-marquee__dot">•</span></span>
+                        <span class="hero-marquee__item">Regenerative Aesthetics <span
+                                class="hero-marquee__dot">•</span></span>
+                        <span class="hero-marquee__item" aria-hidden="true">Medical Aesthetics <span
+                                class="hero-marquee__dot">•</span></span>
+                        <span class="hero-marquee__item" aria-hidden="true">Functional Medicine <span
+                                class="hero-marquee__dot">•</span></span>
+                        <span class="hero-marquee__item" aria-hidden="true">Integrative Programmes <span
+                                class="hero-marquee__dot">•</span></span>
+                        <span class="hero-marquee__item" aria-hidden="true">Regenerative Aesthetics <span
+                                class="hero-marquee__dot">•</span></span>
                         <!-- Duplicate for seamless scroll -->
-                        <span class="hero-marquee__item" aria-hidden="true">HydraFacial <span
+                        <span class="hero-marquee__item" aria-hidden="true">Medical Aesthetics <span
                                 class="hero-marquee__dot">•</span></span>
-                        <span class="hero-marquee__item" aria-hidden="true">PRP & GFC <span
+                        <span class="hero-marquee__item" aria-hidden="true">Functional Medicine <span
                                 class="hero-marquee__dot">•</span></span>
-                        <span class="hero-marquee__item" aria-hidden="true">Laser Hair Reduction <span
+                        <span class="hero-marquee__item" aria-hidden="true">Integrative Programmes <span
                                 class="hero-marquee__dot">•</span></span>
-                        <span class="hero-marquee__item" aria-hidden="true">Acne Scar Treatment <span
+                        <span class="hero-marquee__item" aria-hidden="true">Regenerative Aesthetics <span
                                 class="hero-marquee__dot">•</span></span>
-                        <span class="hero-marquee__item" aria-hidden="true">Skin Rejuvenation <span
+                        <span class="hero-marquee__item" aria-hidden="true">Medical Aesthetics <span
                                 class="hero-marquee__dot">•</span></span>
-                        <span class="hero-marquee__item" aria-hidden="true">Botox & Fillers <span
+                        <span class="hero-marquee__item" aria-hidden="true">Functional Medicine <span
                                 class="hero-marquee__dot">•</span></span>
-                        <span class="hero-marquee__item" aria-hidden="true">Body Sculpting <span
+                        <span class="hero-marquee__item" aria-hidden="true">Integrative Programmes <span
+                                class="hero-marquee__dot">•</span></span>
+                        <span class="hero-marquee__item" aria-hidden="true">Regenerative Aesthetics <span
                                 class="hero-marquee__dot">•</span></span>
                     </div>
                 </div>
@@ -732,21 +778,6 @@
                         Precision-led aesthetic care and restorative wellness experiences designed to elevate skin,
                         energy, and confidence.
                     </p>
-                </div>
-
-                <div class="service-arch-controls" aria-label="Carousel navigation" style="">
-                    <button class="service-arch-btn service-arch-btn-prev" type="button" aria-label="Scroll left">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"
-                            height="18">
-                            <path d="M15 18L9 12L15 6" />
-                        </svg>
-                    </button>
-                    <button class="service-arch-btn service-arch-btn-next" type="button" aria-label="Scroll right">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"
-                            height="18">
-                            <path d="M9 18L15 12L9 6" />
-                        </svg>
-                    </button>
                 </div>
 
                 <div class="service-arch-track" id="service-arch-track">
@@ -1290,7 +1321,7 @@
             </div>
 
             <!-- Floating CTA Button for Signature Section -->
-            <div class="text-center"
+            <!-- <div class="text-center"
                 style="position: absolute; bottom: clamp(75px, 7vw, 100px); left: 0; right: 0; z-index: 20; pointer-events: auto;">
                 <a href="#" class="dz-cta"
                     style="margin: 0 auto; display: inline-flex; border-color: rgba(255,255,255,0.5);">
@@ -1299,7 +1330,7 @@
                         style="width: 14px; height: 14px; object-fit: contain; filter: brightness(0) invert(1);"
                         alt="icon" />
                 </a>
-            </div>
+            </div> -->
 
             <!-- Curvy separator: signature services → cream trainer section -->
             <div class="section-separator" aria-hidden="true" style="z-index: 10;">
@@ -1477,31 +1508,95 @@
                     <p class="section-desc">We are creating a space where luxury meets healing, and science meets
                         spirituality.</p>
                 </div>
+            </div>
 
-                <div class="row g-4 justify-content-center align-items-center">
-                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
-                        <div class="media-logo">
+            <!-- Continuous Logo Marquee Track — same as the Partners strip -->
+            <div class="partners-marquee-container">
+                <div class="partners-marquee-mask partners-marquee-mask--left" aria-hidden="true"></div>
+                <div class="partners-marquee-mask partners-marquee-mask--right" aria-hidden="true"></div>
+
+                <div class="partners-marquee" tabindex="0" aria-label="Publications that have featured us">
+                    <div class="partners-marquee__track">
+                        <!-- Primary Set -->
+                        <div class="partner-logo-item media-logo" title="Vogue India">
+                            <svg role="img" aria-label="Vogue India" viewBox="0 0 120 50" class="logo-svg"><text x="10" y="32" font-family="Georgia, serif"
+                                    font-size="22" font-weight="bold">VOGUE</text><text x="18" y="46"
+                                    font-family="Arial, sans-serif" font-size="11">INDIA</text></svg>
+                        </div>
+                        <div class="partner-logo-item media-logo" title="Condé Nast Traveler">
+                            <svg role="img" aria-label="Condé Nast Traveler" viewBox="0 0 150 55" class="logo-svg"><text x="10" y="22"
+                                    font-family="Arial, sans-serif" font-size="10">Condé Nast</text><text x="10" y="44"
+                                    font-family="Georgia, serif" font-size="18" font-weight="bold">Traveler</text></svg>
+                        </div>
+                        <div class="partner-logo-item media-logo" title="The Nod">
+                            <svg role="img" aria-label="The Nod" viewBox="0 0 80 50" class="logo-svg"><text x="8" y="22" font-family="Georgia, serif"
+                                    font-size="12" font-style="italic">the</text><text x="8" y="42"
+                                    font-family="Georgia, serif" font-size="22" font-weight="bold">nod</text></svg>
+                        </div>
+                        <div class="partner-logo-item media-logo" title="CNBC TV18">
+                            <svg role="img" aria-label="CNBC TV18" viewBox="0 0 130 50" class="logo-svg">
+                                <circle cx="18" cy="25" r="10" fill="none" stroke="currentColor" stroke-width="2" />
+                                <path d="M18 15 L28 25 L18 35 L8 25 Z" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" /><text x="38" y="30" font-family="Arial, sans-serif"
+                                    font-size="14" font-weight="bold">CNBC TV18</text>
+                            </svg>
+                        </div>
+                        <div class="partner-logo-item media-logo" title="Travel + Leisure">
+                            <svg role="img" aria-label="Travel + Leisure" viewBox="0 0 140 50" class="logo-svg"><text x="10" y="24"
+                                    font-family="Arial, sans-serif" font-size="10"
+                                    letter-spacing="1">TRAVEL+</text><text x="10" y="44" font-family="Arial, sans-serif"
+                                    font-size="14" font-weight="bold">LEISURE</text></svg>
+                        </div>
+                        <div class="partner-logo-item media-logo" title="Hello!">
+                            <svg role="img" aria-label="Hello!" viewBox="0 0 100 50" class="logo-svg"><text x="10" y="34"
+                                    font-family="Arial Black, sans-serif" font-size="22"
+                                    font-weight="900">HELLO!</text></svg>
+                        </div>
+                        <div class="partner-logo-item media-logo" title="AD">
+                            <svg role="img" aria-label="AD" viewBox="0 0 70 55" class="logo-svg"><text x="5" y="42" font-family="Georgia, serif"
+                                    font-size="32" font-weight="bold">AD</text></svg>
+                        </div>
+                        <div class="partner-logo-item media-logo" title="Elle Decor">
+                            <svg role="img" aria-label="Elle Decor" viewBox="0 0 120 55" class="logo-svg"><text x="10" y="26" font-family="Georgia, serif"
+                                    font-size="18" font-weight="400">ELLE</text><text x="22" y="46"
+                                    font-family="Arial, sans-serif" font-size="10" letter-spacing="4">DECOR</text></svg>
+                        </div>
+                        <div class="partner-logo-item media-logo" title="ET Retail">
+                            <svg role="img" aria-label="ET Retail" viewBox="0 0 100 50" class="logo-svg">
+                                <rect x="8" y="12" width="18" height="14" fill="currentColor" /><text x="34" y="28"
+                                    font-family="Georgia, serif" font-size="14" font-weight="500">ET Retail</text>
+                            </svg>
+                        </div>
+                        <div class="partner-logo-item media-logo" title="Mint">
+                            <svg role="img" aria-label="Mint" viewBox="0 0 70 55" class="logo-svg"><text x="10" y="36" font-family="Georgia, serif"
+                                    font-size="26" font-weight="bold" font-style="italic">mint</text></svg>
+                        </div>
+                        <div class="partner-logo-item media-logo" title="Esquire">
+                            <svg role="img" aria-label="Esquire" viewBox="0 0 100 55" class="logo-svg"><text x="10" y="36" font-family="Georgia, serif"
+                                    font-size="22" font-style="italic">Esquire</text></svg>
+                        </div>
+                        <div class="partner-logo-item media-logo" title="Lifestyle Asia">
+                            <svg role="img" aria-label="Lifestyle Asia" viewBox="0 0 140 50" class="logo-svg"><text x="10" y="30"
+                                    font-family="Arial, sans-serif" font-size="12" letter-spacing="2">LIFESTYLE
+                                    ASIA</text></svg>
+                        </div>
+                        <!-- Duplicate Set for seamless loop -->
+                        <div class="partner-logo-item media-logo" aria-hidden="true">
                             <svg viewBox="0 0 120 50" class="logo-svg"><text x="10" y="32" font-family="Georgia, serif"
                                     font-size="22" font-weight="bold">VOGUE</text><text x="18" y="46"
                                     font-family="Arial, sans-serif" font-size="11">INDIA</text></svg>
                         </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
-                        <div class="media-logo">
+                        <div class="partner-logo-item media-logo" aria-hidden="true">
                             <svg viewBox="0 0 150 55" class="logo-svg"><text x="10" y="22"
                                     font-family="Arial, sans-serif" font-size="10">Condé Nast</text><text x="10" y="44"
                                     font-family="Georgia, serif" font-size="18" font-weight="bold">Traveler</text></svg>
                         </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
-                        <div class="media-logo">
+                        <div class="partner-logo-item media-logo" aria-hidden="true">
                             <svg viewBox="0 0 80 50" class="logo-svg"><text x="8" y="22" font-family="Georgia, serif"
                                     font-size="12" font-style="italic">the</text><text x="8" y="42"
                                     font-family="Georgia, serif" font-size="22" font-weight="bold">nod</text></svg>
                         </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
-                        <div class="media-logo">
+                        <div class="partner-logo-item media-logo" aria-hidden="true">
                             <svg viewBox="0 0 130 50" class="logo-svg">
                                 <circle cx="18" cy="25" r="10" fill="none" stroke="currentColor" stroke-width="2" />
                                 <path d="M18 15 L28 25 L18 35 L8 25 Z" fill="none" stroke="currentColor"
@@ -1509,57 +1604,41 @@
                                     font-size="14" font-weight="bold">CNBC TV18</text>
                             </svg>
                         </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
-                        <div class="media-logo">
+                        <div class="partner-logo-item media-logo" aria-hidden="true">
                             <svg viewBox="0 0 140 50" class="logo-svg"><text x="10" y="24"
                                     font-family="Arial, sans-serif" font-size="10"
                                     letter-spacing="1">TRAVEL+</text><text x="10" y="44" font-family="Arial, sans-serif"
                                     font-size="14" font-weight="bold">LEISURE</text></svg>
                         </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
-                        <div class="media-logo">
+                        <div class="partner-logo-item media-logo" aria-hidden="true">
                             <svg viewBox="0 0 100 50" class="logo-svg"><text x="10" y="34"
                                     font-family="Arial Black, sans-serif" font-size="22"
                                     font-weight="900">HELLO!</text></svg>
                         </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
-                        <div class="media-logo">
+                        <div class="partner-logo-item media-logo" aria-hidden="true">
                             <svg viewBox="0 0 70 55" class="logo-svg"><text x="5" y="42" font-family="Georgia, serif"
                                     font-size="32" font-weight="bold">AD</text></svg>
                         </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
-                        <div class="media-logo">
+                        <div class="partner-logo-item media-logo" aria-hidden="true">
                             <svg viewBox="0 0 120 55" class="logo-svg"><text x="10" y="26" font-family="Georgia, serif"
                                     font-size="18" font-weight="400">ELLE</text><text x="22" y="46"
                                     font-family="Arial, sans-serif" font-size="10" letter-spacing="4">DECOR</text></svg>
                         </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
-                        <div class="media-logo">
+                        <div class="partner-logo-item media-logo" aria-hidden="true">
                             <svg viewBox="0 0 100 50" class="logo-svg">
                                 <rect x="8" y="12" width="18" height="14" fill="currentColor" /><text x="34" y="28"
                                     font-family="Georgia, serif" font-size="14" font-weight="500">ET Retail</text>
                             </svg>
                         </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
-                        <div class="media-logo">
+                        <div class="partner-logo-item media-logo" aria-hidden="true">
                             <svg viewBox="0 0 70 55" class="logo-svg"><text x="10" y="36" font-family="Georgia, serif"
                                     font-size="26" font-weight="bold" font-style="italic">mint</text></svg>
                         </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
-                        <div class="media-logo">
+                        <div class="partner-logo-item media-logo" aria-hidden="true">
                             <svg viewBox="0 0 100 55" class="logo-svg"><text x="10" y="36" font-family="Georgia, serif"
                                     font-size="22" font-style="italic">Esquire</text></svg>
                         </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
-                        <div class="media-logo">
+                        <div class="partner-logo-item media-logo" aria-hidden="true">
                             <svg viewBox="0 0 140 50" class="logo-svg"><text x="10" y="30"
                                     font-family="Arial, sans-serif" font-size="12" letter-spacing="2">LIFESTYLE
                                     ASIA</text></svg>

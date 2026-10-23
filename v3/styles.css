@@ -1896,45 +1896,29 @@ html body #brand-philosophy .nemonic-icon {
     z-index: 2;
 }
 
-.service-arch-controls {
-    display: flex;
-    justify-content: center;
-    gap: 0.75rem;
-    margin-bottom: 2.25rem;
-    position: relative;
-    z-index: 2;
-}
-
-.service-arch-btn {
-    width: 46px;
-    height: 46px;
-    border-radius: 999px;
-    border: 1px solid rgba(139, 90, 26, 0.25);
-    background: rgba(255, 255, 255, 0.6);
-    color: #2B1A12;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.25s ease, background 0.25s ease;
-}
-
-.service-arch-btn:hover {
-    transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.85);
-}
-
+/* 4 full cards plus 15% of the next one, so the peek signals the row scrolls */
 .service-arch-track {
     position: relative;
     z-index: 2;
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: minmax(min(280px, 78vw), 300px);
+    grid-auto-columns: calc((100% - 4 * 2.5rem) / 4.15);
     gap: 2.5rem;
     overflow-x: auto;
     overflow-y: visible;
     padding: 0.5rem 0 0.5rem;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
+    cursor: grab;
+    user-select: none;
+}
+
+/* Tablet: 2 full cards plus 15% of the third */
+@media (max-width: 991.98px) {
+    .service-arch-track {
+        grid-auto-columns: calc((100% - 2 * 2rem) / 2.15);
+        gap: 2rem;
+    }
 }
 
 .service-arch-track::-webkit-scrollbar {
@@ -1943,7 +1927,7 @@ html body #brand-philosophy .nemonic-icon {
 
 .service-arch-card {
     position: relative;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     padding: 0;
 
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
@@ -2048,10 +2032,6 @@ html body #brand-philosophy .nemonic-icon {
 }
 
 @media (max-width: 767.98px) {
-    .service-arch-controls {
-        display: none !important;
-    }
-
     .service-arch-track {
         grid-auto-columns: minmax(min(82vw, 260px), 82vw);
         gap: 1.4rem;
@@ -3347,6 +3327,36 @@ html body #brand-philosophy .nemonic-icon {
     stroke: currentColor !important;
 }
 
+/* Featured In logos ride the Partners marquee; the SVGs have no intrinsic
+   size outside the old grid, so fix the height and let the viewBox set width */
+.media-coverage .partners-marquee .logo-svg {
+    display: block;
+    height: 48px;
+    width: auto;
+    transition: transform 0.35s ease;
+}
+
+/* The Partners fade overlays are a solid #F4EFE8, which shows up as a darker
+   band against this section's lighter gradient — fade the logos instead */
+.media-coverage .partners-marquee-mask {
+    display: none;
+}
+
+.media-coverage .partners-marquee {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+
+.media-coverage .partner-logo-item:hover .logo-svg {
+    transform: scale(1.08);
+}
+
+@media (max-width: 768px) {
+    .media-coverage .partners-marquee .logo-svg {
+        height: 36px;
+    }
+}
+
 .headlines-section {
     background: linear-gradient(to top, #F4EFE8, #FDF8F3);
     padding: 0px 0px 50px;
@@ -3807,7 +3817,7 @@ html body #brand-philosophy .nemonic-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15vh clamp(20px, 6vw, 100px);
+    padding: 3vh clamp(20px, 6vw, 100px);
     will-change: transform, opacity;
     pointer-events: none;
 }
@@ -4122,7 +4132,7 @@ html body #brand-philosophy .nemonic-icon {
         width: 100%;
         z-index: 10;
         pointer-events: none;
-        padding-bottom: 84px;
+        padding-bottom: 2px;
     }
 
     .sig-panel {

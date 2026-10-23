@@ -3280,7 +3280,6 @@ h3,
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-md);
-  max-width: 1000px;
   margin: 0 auto;
 }
 
