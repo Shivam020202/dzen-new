@@ -2173,6 +2173,29 @@
             border-radius: 20px !important;
         }
 
+        /* YouTube Shorts are vertical, so they keep the Reel arch rather than the 16:9 card.
+           Placed after the youtube rules above so it wins at equal specificity. */
+        #video-showcase .hf-vcard.hf-vcard--short {
+            aspect-ratio: 9 / 14 !important;
+            min-height: 360px !important;
+            border-radius: 200px 200px 18px 18px !important;
+        }
+
+        #video-showcase .hf-video-grid.is-single {
+            grid-template-columns: minmax(0, 360px) !important;
+            justify-content: center !important;
+        }
+
+        @media (max-width: 991.98px) {
+            #video-showcase .hf-vcard.hf-vcard--short {
+                flex: 0 0 clamp(230px, 70vw, 285px) !important;
+            }
+
+            #video-showcase .hf-video-grid.is-single {
+                justify-content: center !important;
+            }
+        }
+
         .hf-vcard:hover {
             transform: translateY(-6px);
             border-color: #C4924A !important;
@@ -3280,11 +3303,11 @@
                     </h2>
                     <p class="hf-lead">
                         Explore trending client glow journeys and clinical treatment highlights on
-                        Instagram Reels.
+                        Instagram Reels and YouTube.
                     </p>
                 </div>
 
-                <!-- Video Filter Tab: Instagram Reels Only -->
+                <!-- Video Filter Tabs: Instagram Reels / YouTube -->
                 <div class="hf-video-filter-bar" role="tablist" aria-label="Filter Video Showcase">
                     <div class="hf-video-filter-bar__pill">
                         <button type="button" class="hf-vtab-btn active" data-vfilter="insta" role="tab"
@@ -3298,6 +3321,19 @@
                             <span class="hf-vtab-info">
                                 <span class="hf-vtab-name">Instagram</span>
                                 <span class="hf-vtab-role">Trending Reels</span>
+                            </span>
+                        </button>
+                        <button type="button" class="hf-vtab-btn" data-vfilter="youtube" role="tab"
+                            aria-selected="false" onclick="filterVideos('youtube', this)">
+                            <span class="hf-vtab-icon hf-vtab-icon--youtube" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                                </svg>
+                            </span>
+                            <span class="hf-vtab-info">
+                                <span class="hf-vtab-name">YouTube</span>
+                                <span class="hf-vtab-role">Clinic Videos</span>
                             </span>
                         </button>
                     </div>
@@ -3352,6 +3388,24 @@
                         <div class="hf-vcard__top">
                             <span class="hf-vcard__duration">0:55</span>
                         </div>
+                        <div class="hf-vcard__play-wrap">
+                            <span class="hf-vcard__play" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="8 5 20 12 8 19 8 5" />
+                                </svg>
+                            </span>
+                        </div>
+                    </article>
+
+                    <!-- YouTube Short (vertical) — hidden until the YouTube tab is picked.
+                         data-format="short" keeps the arch card and opens the 9:16 player. -->
+                    <article class="hf-vcard hf-vcard--short is-hidden" data-type="youtube" data-format="short"
+                        data-title="Glow Through Summer with Science-Backed Skin Treatments"
+                        data-video="https://www.youtube-nocookie.com/embed/0UK4lztscRs"
+                        data-external="https://www.youtube.com/shorts/0UK4lztscRs">
+                        <img src="https://i.ytimg.com/vi/0UK4lztscRs/oardefault.jpg"
+                            alt="Glow Through Summer with Science-Backed Skin Treatments" class="hf-vcard__poster"
+                            loading="lazy" />
                         <div class="hf-vcard__play-wrap">
                             <span class="hf-vcard__play" aria-hidden="true">
                                 <svg viewBox="0 0 24 24" fill="currentColor">
@@ -3724,14 +3778,11 @@
         <!-- ═══════════════════════════════════════════════════════════
          VIDEO PLAYER LIGHTBOX MODAL
          ═══════════════════════════════════════════════════════════ -->
-        <div id="hfVideoModal" class="hf-vmodal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div id="hfVideoModal" class="hf-vmodal" aria-hidden="true" role="dialog" aria-modal="true"
+            aria-label="Video player">
             <div class="hf-vmodal__dialog" id="hfModalDialog">
                 <div class="hf-vmodal__header">
-                    <div class="d-flex align-items-center gap-2 hf-vmodal__title-wrap">
-                        <span id="hfModalBadge" class="hf-vbadge hf-vbadge--insta">Instagram</span>
-                        <h3 class="hf-vmodal__header-title" id="hfModalTitle">Video Title</h3>
-                    </div>
-                    <button type="button" class="hf-vmodal__close" id="hfModalClose" aria-label="Close video">
+                    <button type="button" class="hf-vmodal__close ms-auto" id="hfModalClose" aria-label="Close video">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -3748,16 +3799,6 @@
                     <a href="#" class="dz-cta hf-vmodal__cta">
                         <span>Book Consultation</span>
                         <img src="nemonic1.png" class="btn-icon" alt="icon" />
-                    </a>
-                    <a href="https://instagram.com/dzenderma" target="_blank" rel="noopener" id="hfModalExternalBtn"
-                        class="hf-social-btn hf-social-btn--insta hf-vmodal__social-btn">
-                        <span>Open in Instagram</span>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg>
                     </a>
                 </div>
             </div>
@@ -3802,6 +3843,9 @@
 
                     var vgrid = document.querySelector('.hf-video-grid');
                     if (vgrid) {
+                        // A tab with a single video centres it instead of leaving it in column one
+                        var visible = vgrid.querySelectorAll('.hf-vcard:not(.is-hidden)').length;
+                        vgrid.classList.toggle('is-single', visible === 1);
                         vgrid.scrollTo({ left: 0, behavior: 'smooth' });
                     }
                 } catch (err) {
@@ -3846,6 +3890,12 @@
                             vextBtn.className = 'hf-social-btn hf-social-btn--yt';
                             vextBtn.innerHTML = '<span>Watch on YouTube</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>';
                         }
+                    }
+                    // YouTube Shorts are vertical: Reel-shaped player, YouTube labels kept
+                    if (card.getAttribute('data-format') === 'short') {
+                        if (vdialog) vdialog.classList.add('hf-vmodal__dialog--reel');
+                        if (vplayerWrap) vplayerWrap.className = 'hf-vmodal__player hf-vmodal__player--9-16';
+                        if (vbadge) vbadge.textContent = 'YouTube Short';
                     }
                     if (vextBtn) vextBtn.setAttribute('href', extUrl);
 
