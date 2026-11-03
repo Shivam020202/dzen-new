@@ -19,7 +19,7 @@
 
     <!-- Center: logo -->
     <a href="index.html" class="pnav__logo" aria-label="Home">
-        <img src="../images/logo1.png" alt="D'Zen Derma" />
+        <img src="photos/logo1.png" alt="D'Zen Derma" />
     </a>
 
     <!-- Right: hamburger -->
@@ -83,7 +83,7 @@
                 <!-- Brand column -->
                 <div class="footer-brand">
                     <a href="index.html" class="footer-logo" aria-label="D'Zen Derma home">
-                        <img src="../images/logo1.png" alt="D'Zen Derma" style="display: block; height: 64px; width: auto; margin: 0 0 18px;" />
+                        <img src="photos/logo1.png" alt="D'Zen Derma" style="display: block; height: 64px; width: auto; margin: 0 0 18px;" />
                     </a>
                     <p class="footer-tagline">
                         Where the finest techniques in aesthetic medicine reveal your most luminous, confident self. Crafted for your skin, your story.

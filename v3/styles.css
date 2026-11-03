@@ -1468,7 +1468,7 @@ html body #brand-philosophy .nemonic-icon {
     content: "";
     position: absolute;
     inset: 0;
-    background: url("../images/contour-texture.webp") repeat;
+    background: url("photos/contour-texture.webp") repeat;
     opacity: 0.5;
     pointer-events: none;
 } */
@@ -3347,13 +3347,31 @@ html body #brand-philosophy .nemonic-icon {
     mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
 }
 
-.media-coverage .partner-logo-item:hover .logo-svg {
+.media-coverage .partner-logo-item:hover .logo-svg,
+.media-coverage .partner-logo-item:hover .media-logo-img {
     transform: scale(1.08);
 }
 
+/* Real publication logos (images/media) — same 48px height as the old SVGs;
+   max-width keeps very wide wordmarks (Times of India, Cosmopolitan) in line */
+.media-coverage .partners-marquee .media-logo-img {
+    display: block;
+    height: 48px;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    transition: transform 0.35s ease;
+}
+
 @media (max-width: 768px) {
-    .media-coverage .partners-marquee .logo-svg {
+    .media-coverage .partners-marquee .logo-svg,
+    .media-coverage .partners-marquee .media-logo-img {
         height: 36px;
+    }
+
+    .media-coverage .partners-marquee .media-logo-img {
+        max-width: 110px;
     }
 }
 
@@ -3604,7 +3622,7 @@ html body #brand-philosophy .nemonic-icon {
     height: 100%;
     overflow: hidden;
     z-index: 0;
-    background-image: url("../images/signature-bg1.jpg");
+    background-image: url("photos/signature-bg1.jpg");
     background-repeat: repeat;
     background-size: auto;
     background-position: top left;
@@ -11077,7 +11095,7 @@ html body:where(.dz-hf-layout) #related-services .hf-related-card:hover .hf-rela
 
 /* ── Breadcrumb Hero Header Classes ── */
 :where(.dz-hf-layout) .hf-hero-header {
-    background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%), url('../images/contour-texture.webp') repeat;
+    background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%), url('photos/contour-texture.webp') repeat;
     background-blend-mode: multiply;
     padding-top: 103px;
     padding-bottom: 60px;
@@ -11192,7 +11210,7 @@ html body:where(.dz-hf-layout) #related-services .hf-related-card:hover .hf-rela
 :where(.dz-hf-layout) .hf-why-section {
     padding: 50px 0 70px;
     position: relative;
-    background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%), url('../images/contour-texture.webp') repeat;
+    background: linear-gradient(35deg, #4b2b20 0%, #8b4513 100%), url('photos/contour-texture.webp') repeat;
     background-blend-mode: multiply;
 }
 
