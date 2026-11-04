@@ -4032,11 +4032,9 @@ html body #brand-philosophy .nemonic-icon {
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    margin: 8px auto 0;
     position: relative;
     width: fit-content;
     padding-bottom: 4px;
-    align-self: center;
 }
 
 .sig-service-link::after {
