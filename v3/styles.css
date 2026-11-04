@@ -310,6 +310,15 @@ body {
     .pnav__burger {
         display: inline-flex;
     }
+
+    .tm-card__imagewrap {
+        right: -4% !important;
+    }
+
+    .sig-service-link {
+        margin: 0 auto !important;
+        align-items: center !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -4941,6 +4950,12 @@ a.footer-contact-value:hover {
         align-items: center;
     }
 
+    /* The two nav columns stack into one list here — cancel the extra grid
+       gap (36px) between them so it matches the 16px gap between items */
+    .footer-nav-col + .footer-nav-col {
+        margin-top: -20px;
+    }
+
     .footer-contact-col {
         align-items: center;
         text-align: center;
@@ -5287,7 +5302,7 @@ html body .footer-cta-heading,
 html body .concerns-textblock h2,
 html body .hf-heading:not(.hf-hero .hf-heading),
 html body .lhr-heading:not(.lhr-hero .lhr-heading) {
-    font-size: 25px !important;
+    font-size: 23px !important;
 }
 
 html body .hf-section--alt,
@@ -6388,6 +6403,14 @@ html body .tm-card__quote {
 /* =========================================================
    OUR CLINICS (LOCATIONS) SECTION STYLES
    ========================================================= */
+/* Same content width as "The Visionaries Behind D’Zen Derma" (.doctors-v2__container) */
+.clinic-locations-section > .container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
 .clinic-locations-section {
     position: relative;
     padding-top: var(--hf-section-py) !important;
