@@ -3365,6 +3365,7 @@ html body #brand-philosophy .nemonic-icon {
 }
 
 @media (max-width: 768px) {
+
     .media-coverage .partners-marquee .logo-svg,
     .media-coverage .partners-marquee .media-logo-img {
         height: 36px;
@@ -3882,7 +3883,7 @@ html body #brand-philosophy .nemonic-icon {
     font-size: clamp(1rem, 1.8vw, 1.2rem);
     color: #4a3322;
     line-height: 1.75;
-    max-width: 540px;
+    max-width: 760px;
     margin: 0 auto 48px;
 }
 
@@ -6297,7 +6298,7 @@ html body .tm-card__quote {
 /* ── Portrait: absolute, so its position is exactly these three numbers ── */
 .tm-card__imagewrap {
     position: absolute;
-    right: 5%;
+    right: 0.5%;
     /* Negative bottom = hangs below the panel. No padding to fight. */
     bottom: -7%;
     height: 72%;
