@@ -1571,7 +1571,9 @@
 
             #before-after .rg-item,
             .rg-gallery .rg-item {
-                flex: 0 0 clamp(280px, 84vw, 360px) !important;
+                /* 1 full card + 20% of the next peeking
+                   (20px left padding + 16px gap inside the track) */
+                flex: 0 0 calc((100% + 4px) / 1.2) !important;
                 scroll-snap-align: start !important;
                 max-width: none !important;
                 padding: 0 !important;
@@ -1583,6 +1585,45 @@
                 aspect-ratio: 16 / 10 !important;
                 min-height: auto !important;
                 border-radius: 20px !important;
+            }
+        }
+
+        /* Before/After horizontal scroller (desktop: 3 visible + arrows;
+           mobile keeps the swipe rules above) */
+        #before-after .rg-scroller {
+            position: relative;
+        }
+
+        #before-after .rg-ba {
+            aspect-ratio: 1000 / 886 !important;
+            background: #4b2b20;
+        }
+
+        #before-after .rg-ba img {
+            object-fit: contain;
+        }
+
+        @media (min-width: 992px) {
+            #before-after .rg-gallery-grid {
+                display: flex;
+                flex-wrap: nowrap;
+                gap: 24px;
+                overflow-x: auto;
+                overflow-y: hidden;
+                scroll-snap-type: x mandatory;
+                scroll-behavior: smooth;
+                scrollbar-width: none;
+                padding: 10px 0 24px;
+            }
+
+            #before-after .rg-gallery-grid::-webkit-scrollbar {
+                display: none;
+            }
+
+            #before-after .rg-item {
+                /* 3 full cards + 20% of the 4th peeking (3 gaps of 24px) */
+                flex: 0 0 calc((100% - 72px) / 3.2);
+                scroll-snap-align: start;
             }
         }
 
@@ -3320,29 +3361,44 @@
                     </p>
                 </div>
 
-                <!-- 3 Results Showcase Cards Grid -->
-                <div class="row g-4 rg-gallery-grid justify-content-lg-center" data-grid>
-                    <!-- Case 1 -->
-                    <div class="col-md-6 col-lg-4 rg-item">
-                        <div class="rg-ba">
-                            <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=700&auto=format&fit=crop"
-                                alt="Laser Hair Reduction Clinical Result" loading="lazy">
+                <!-- Before / After Results — horizontal scroller -->
+                <div class="rg-scroller">
+                    <div class="rg-gallery-grid" data-grid tabindex="0" aria-label="Before and after results">
+                        <div class="rg-item">
+                            <div class="rg-ba">
+                                <img src="images/before-after/lhr/lhr-1.webp"
+                                    alt="Laser Hair Reduction before and after result 1" loading="lazy">
+                            </div>
                         </div>
-                    </div>
-
-                    <!-- Case 2 -->
-                    <div class="col-md-6 col-lg-4 rg-item">
-                        <div class="rg-ba">
-                            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=700&auto=format&fit=crop"
-                                alt="Laser Hair Reduction Clinical Result" loading="lazy">
+                        <div class="rg-item">
+                            <div class="rg-ba">
+                                <img src="images/before-after/lhr/lhr-2.webp"
+                                    alt="Laser Hair Reduction before and after result 2" loading="lazy">
+                            </div>
                         </div>
-                    </div>
-
-                    <!-- Case 3 -->
-                    <div class="col-md-6 col-lg-4 rg-item">
-                        <div class="rg-ba">
-                            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=700&auto=format&fit=crop"
-                                alt="Laser Hair Reduction Clinical Result" loading="lazy">
+                        <div class="rg-item">
+                            <div class="rg-ba">
+                                <img src="images/before-after/lhr/lhr-3.webp"
+                                    alt="Laser Hair Reduction before and after result 3" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="rg-item">
+                            <div class="rg-ba">
+                                <img src="images/before-after/lhr/lhr-4.webp"
+                                    alt="Laser Hair Reduction before and after result 4" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="rg-item">
+                            <div class="rg-ba">
+                                <img src="images/before-after/lhr/lhr-5.webp"
+                                    alt="Laser Hair Reduction before and after result 5" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="rg-item">
+                            <div class="rg-ba">
+                                <img src="images/before-after/lhr/lhr-6.webp"
+                                    alt="Laser Hair Reduction before and after result 6" loading="lazy">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -4291,6 +4347,7 @@
                 });
             })();
         </script>
+
 </body>
 
 </html>
