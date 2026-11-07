@@ -21,7 +21,7 @@
     <!-- Base styles and variable sheets -->
     <link rel="stylesheet" href="main.css" />
     <!-- Section Specific styles -->
-    <link rel="stylesheet" href="styles.css?v=10.0" />
+    <link rel="stylesheet" href="styles.css?v=10.4" />
 
     <!-- Tailwind CSS (without preflight resets) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
@@ -165,9 +165,16 @@
             padding-bottom: 50px !important;
         }
 
-        html body #instagram {
+        html body #instagram,
+        html body #social {
             padding-top: 50px !important;
             padding-bottom: 50px !important;
+        }
+
+        #social .social-feed-widget {
+            max-width: 1180px;
+            margin: 0 auto;
+            min-height: 200px;
         }
 
         html body .media-coverage {
@@ -1253,6 +1260,11 @@
                                 definition and proportions. Treatments are selected
                                 according to individual concerns, with a focus on natural-
                                 looking results and improved facial balance.</p>
+                            <div class="sig-service-tags">
+                                <span>Undefined Jawline</span>
+                                <span>Bulky Face</span>
+                                <span>Under-eye Hollowness</span>
+                            </div>
                             <a href="#" class="sig-service-link">Explore</a>
                         </div>
                     </div>
@@ -1269,6 +1281,11 @@
                                 factors, and relevant medical history. Personalised care may
                                 combine skin treatments with appropriate lifestyle guidance
                                 and other clinically indicated interventions.</p>
+                            <div class="sig-service-tags">
+                                <span>Dull Skin</span>
+                                <span>Wrinkles &amp; Fine Lines</span>
+                                <span>Pigmentation, Acne, Scars</span>
+                            </div>
                             <a href="#" class="sig-service-link">Explore</a>
                         </div>
                         <div class="sig-service-visual">
@@ -1296,6 +1313,11 @@
                                 red-ginseng infusion concepts. Treatments focus on improving
                                 skin hydration, smoothness, and radiance according to
                                 individual skin needs.</p>
+                            <div class="sig-service-tags">
+                                <span>Tired-looking Skin</span>
+                                <span>Dullness</span>
+                                <span>Uneven Skin Texture</span>
+                            </div>
                             <a href="#" class="sig-service-link">Explore</a>
                         </div>
                     </div>
@@ -1312,6 +1334,11 @@
                                 density. Depending on the diagnosis and suitability,
                                 treatment options may include regenerative modalities, laser
                                 technology, and selected formulations.</p>
+                            <div class="sig-service-tags">
+                                <span>Excessive Hair Fall</span>
+                                <span>Reduced Density</span>
+                                <span>Scalp Health</span>
+                            </div>
                             <a href="#" class="sig-service-link">Explore</a>
                         </div>
                         <div class="sig-service-visual">
@@ -1339,6 +1366,11 @@
                                 protocols are tailored to skin type and individual concerns,
                                 with separate assessments for pigmentation, acne scars, and
                                 texture irregularities.</p>
+                            <div class="sig-service-tags">
+                                <span>Uneven Skin Tone</span>
+                                <span>Acne Scars</span>
+                                <span>Uneven Skin Texture</span>
+                            </div>
                             <a href="#" class="sig-service-link">Explore</a>
                         </div>
                     </div>
@@ -1355,6 +1387,10 @@
                                 suitable candidates. Treatment recommendations are based on
                                 individual assessment and are intended for contouring rather
                                 than general weight loss.</p>
+                            <div class="sig-service-tags">
+                                <span>Localised Fat Pockets</span>
+                                <span>Abdominal Fat Pockets</span>
+                            </div>
                             <a href="#" class="sig-service-link">Explore</a>
                         </div>
                         <div class="sig-service-visual">
@@ -1417,7 +1453,8 @@
                     <div class="trainer-v3-quote">
                         <div class="trainer-v3-quote-text">
                             <span class="trainer-v3-quote-mark trainer-v3-quote-mark--open"
-                                aria-hidden="true">“</span>What I teach my fellow doctors is what I practise at D'Zen — the discipline of restraint,
+                                aria-hidden="true">“</span>What I teach my fellow doctors is what I practise at D'Zen —
+                            the discipline of restraint,
                             the priority of safety, and the courage to keep learning.<span
                                 class="trainer-v3-quote-mark trainer-v3-quote-mark--close" aria-hidden="true">”</span>
                         </div>
@@ -1445,6 +1482,29 @@
                 </a>
             </div>
 
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             LOVED BY YOU — SOCIAL FEED (Fouita Instagram widget)
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="instagram-section social-feed-section" id="social">
+            <div class="testimonials-content-box reveal">
+                <div class="section-header text-center" style="margin-bottom: 0px !important;">
+                    <span class="section-subtitle">LOVED BY YOU</span>
+                    <div class="nemonic-separator">
+                        <div class="nemonic-line"></div>
+                        <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
+                        <div class="nemonic-line"></div>
+                    </div>
+                    <h2 style="margin-bottom: 0px !important;" class="section-title">Let’s Get <span
+                            class="scribble">Social</span></h2>
+                </div>
+            </div>
+
+            <div class="social-feed-widget">
+                <div data-key="DZen Instagram" class="ft" id="fta34197x"></div>
+                <script src="https://wdg.fouita.com/widgets/0x48e214.js"></script>
+            </div>
         </section>
 
         <!-- ═══════════════════════════════════════════════════════════
@@ -2084,8 +2144,8 @@
                                         <span>18A, Ring Rd, Near Havells, Vikram Vihar, Lajpat Nagar 4, New Delhi</span>
                                 </ul>
                                 <div class="clinic-loc-card__actions">
-                                    <a href="https://share.google/K9x2AaLWSbOZRl0S7"
-                                        target="_blank" rel="noopener" class="dz-cta">
+                                    <a href="https://share.google/K9x2AaLWSbOZRl0S7" target="_blank" rel="noopener"
+                                        class="dz-cta">
                                         <span>Get Directions</span>
                                         <img src="nemonic1.png" class="btn-icon"
                                             style="width: 14px; height: 14px; object-fit: contain;" alt="icon" />
@@ -2116,8 +2176,8 @@
                                         <span>Golf Course Road, Near DLF Phase 1, Sector 28, Gurugram, Haryana</span>
                                 </ul>
                                 <div class="clinic-loc-card__actions">
-                                    <a href="https://share.google/gK7jIICnumBdVGITL"
-                                        target="_blank" rel="noopener" class="dz-cta">
+                                    <a href="https://share.google/gK7jIICnumBdVGITL" target="_blank" rel="noopener"
+                                        class="dz-cta">
                                         <span>Get Directions</span>
                                         <img src="nemonic1.png" class="btn-icon"
                                             style="width: 14px; height: 14px; object-fit: contain;" alt="icon" />
@@ -2174,7 +2234,7 @@
         </div>
 
         <!-- Project script controller -->
-        <script src="include/include.js?v=2"></script>
+        <script src="include/include.js?v=5"></script>
         <script src="script.js?v=3.2"></script>
 
         <!-- Floating Bottom Action Bar -->

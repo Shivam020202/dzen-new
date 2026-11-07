@@ -113,19 +113,20 @@
                 <!-- Nav columns -->
                 <div class="footer-nav-col">
                     <ul class="footer-nav-list">
-                        <li><a href="our-philosophy.html">WHO WE ARE</a></li>
-                        <li><a href="treatments.html">TREATMENTS</a></li>
-                        <li><a href="concerns.html">CONCERNS</a></li>
-                        <li><a href="treatments.html#cat-wellness">MEDICINE &amp; WELLNESS PROGRAMMES</a></li>
-                        <li><a href="dzen-signatures.html">SIGNATURE TREATMENTS</a></li>
+                        <li><a href="treatments.html">AESTHETICS</a></li>
+                        <li><a href="treatments.html#cat-wellness">FUNCTIONAL MEDICINE</a></li>
+                        <li><a href="treatments.html#cat-wellness">INTEGRATIVE WELLNESS &amp; LONGEVITY</a></li>
+                        <li><a href="treatments.html#cat-anti-ageing">REGENERATIVE AESTHETICS</a></li>
+                        <li><a href="workshops-training.html">DOCTOR EDUCATION &amp; WORKSHOPS</a></li>
                     </ul>
                 </div>
                 <div class="footer-nav-col">
                     <ul class="footer-nav-list">
-                        <li><a href="pre-bridal.html">BRIDAL PROGRAMS</a></li>
-                        <li><a href="men.html">MEN'S AESTHETICS</a></li>
-                        <li><a href="workshops-training.html">WORKSHOPS &amp; TRAINING</a></li>
-                        <li><a href="media.html">PRESS &amp; MEDIA</a></li>
+                        <li><a href="our-philosophy.html">WHO WE ARE</a></li>
+                        <li><a href="treatments.html">TREATMENTS</a></li>
+                        <li><a href="concerns.html">CONCERNS</a></li>
+                        <li><a href="#">TESTIMONIALS</a></li>
+                        <li><a href="contact.html">CONTACT US</a></li>
                     </ul>
                 </div>
 
@@ -153,6 +154,11 @@
             </div>
 
             <div class="footer-divider"></div>
+
+            <div class="footer-disclaimer">
+                <p class="footer-disclaimer-title">DISCLAIMER:</p>
+                <p class="footer-disclaimer-text">This website's information is exclusively intended to educate and raise awareness about dermatology. This is not to be considered a substitute for professional medical advice or a prescription. Since each individual and case is unique, the outcomes of any of the treatments indicated on the page may vary.</p>
+            </div>
 
             <div class="footer-bottom">
                 <p class="footer-copyright">© 2026, D'Zen Derma | All Rights Reserved | All prices are exclusive of tax</p>

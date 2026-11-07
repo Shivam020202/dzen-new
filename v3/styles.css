@@ -4014,6 +4014,7 @@ html body #brand-philosophy .nemonic-icon {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin: -8px 0 28px;
 }
 
 .sig-service-tags span {
@@ -4242,6 +4243,7 @@ html body #brand-philosophy .nemonic-icon {
     .sig-service-tags {
         justify-content: center;
         gap: 8px;
+        margin: -4px 0 20px;
     }
 
     .sig-oval-frame,
@@ -15912,5 +15914,61 @@ html body:where(.dz-page-philosophy) #locations>.container {
 @media (prefers-reduced-motion: reduce) {
     #sigServicesZone .sig-oval-frame {
         animation: none !important;
+    }
+}
+
+/* Signature treatments: shorter image frames on desktop */
+@media (min-width: 901px) {
+    #sigServicesZone .sig-oval-frame {
+        height: clamp(260px, 30vw, 420px);
+    }
+
+    #sigServicesZone .sig-oval-frame--tall {
+        height: clamp(280px, 32vw, 440px);
+    }
+
+    #sigServicesZone .sig-oval-frame--alt {
+        height: clamp(250px, 29vw, 410px);
+    }
+}
+
+/* Footer disclaimer */
+.footer-disclaimer {
+    max-width: 1220px;
+    margin: 0 auto 24px;
+    padding: 0 24px;
+}
+
+.footer-disclaimer-title {
+    font-family: var(--sans, "Inter", system-ui, sans-serif);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #4B2B20;
+    margin: 0 0 6px;
+}
+
+.footer-disclaimer-text {
+    font-family: var(--sans, "Inter", system-ui, sans-serif);
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: #7A6158;
+    margin: 0;
+}
+
+/* Footer: everything left-aligned on desktop */
+@media (min-width: 769px) {
+    .site-footer,
+    .site-footer .footer-contact-col,
+    .site-footer .footer-contact-row,
+    .site-footer .footer-contact-item,
+    .site-footer .footer-disclaimer {
+        text-align: left;
+    }
+
+    .site-footer .footer-contact-col,
+    .site-footer .footer-contact-row,
+    .site-footer .footer-contact-item {
+        align-items: flex-start;
     }
 }
