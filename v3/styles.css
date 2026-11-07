@@ -4252,7 +4252,6 @@ html body #brand-philosophy .nemonic-icon {
         height: clamp(260px, 68vw, 340px) !important;
         margin: 0 auto !important;
         position: relative !important;
-        border-radius: 500px 500px 10px 10px !important;
         overflow: hidden !important;
         flex-shrink: 0 !important;
         border: none !important;
@@ -4267,8 +4266,15 @@ html body #brand-philosophy .nemonic-icon {
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
-        border-radius: 500px 500px 10px 10px !important;
         display: block !important;
+    }
+
+    /* Arch shape on mobile for every page EXCEPT the home Signature section,
+       which morphs (see "Home Signature Services: morphing blob" below) —
+       an !important radius there would freeze the animation */
+    .sig-oval-frame:not(#sigServicesZone .sig-oval-frame),
+    .sig-oval-img:not(#sigServicesZone .sig-oval-img) {
+        border-radius: 500px 500px 10px 10px !important;
     }
 
     .sig-panel--intro {
@@ -6030,6 +6036,21 @@ html body .embossed-tagline {
     line-height: 1;
     display: block;
     margin-bottom: -6px;
+}
+
+/* Opening/closing marks sit inline with the first/last word */
+.trainer-v3-quote-mark--open,
+.trainer-v3-quote-mark--close {
+    display: inline-block;
+    font-size: 28px;
+    line-height: 0;
+    margin: 0 0 0 4px;
+    vertical-align: -0.12em;
+    font-style: normal;
+}
+
+.trainer-v3-quote-mark--open {
+    margin: 0 4px 0 0;
 }
 
 .trainer-v3-quote-text {
@@ -15814,5 +15835,82 @@ html body:where(.dz-page-philosophy) #locations>.container {
         font-size: 0.8rem;
         letter-spacing: 0.5px;
         text-align: center;
+    }
+}
+
+
+/* =========================================================
+   Home Signature Services: morphing blob image frames
+   (ported from v2/styles.css — blobMorph animations)
+   Scoped to #sigServicesZone so treatment pages keep the arch.
+   ========================================================= */
+#sigServicesZone .sig-oval-frame {
+    border-radius: 72% 28% 58% 42% / 40% 62% 38% 60%;
+    box-shadow: 0 24px 60px rgba(74, 51, 34, 0.18), 0 8px 24px rgba(74, 51, 34, 0.1);
+    animation: blobMorph 9s ease-in-out infinite alternate;
+}
+
+#sigServicesZone .sig-oval-frame--tall {
+    border-radius: 38% 62% 70% 30% / 55% 35% 65% 45%;
+    animation: blobMorphTall 11s ease-in-out infinite alternate;
+}
+
+#sigServicesZone .sig-oval-frame--wide {
+    border-radius: 48% 52% 34% 66% / 62% 44% 56% 38%;
+    animation: blobMorphWide 8s ease-in-out infinite alternate;
+}
+
+#sigServicesZone .sig-oval-frame--alt {
+    border-radius: 30% 70% 52% 48% / 68% 32% 68% 32%;
+    animation: blobMorphAlt 10s ease-in-out infinite alternate;
+}
+
+/* The frame does the clipping; the image is slightly oversized so the
+   moving edge never reveals a gap */
+#sigServicesZone .sig-oval-img {
+    inset: -5%;
+    width: 110%;
+    height: 110%;
+    border-radius: 0;
+}
+
+@media (max-width: 900px) {
+    #sigServicesZone .sig-oval-frame .sig-oval-img {
+        inset: -5% !important;
+        width: 110% !important;
+        height: 110% !important;
+    }
+}
+
+@keyframes blobMorph {
+    0% { border-radius: 72% 28% 58% 42% / 40% 62% 38% 60%; }
+    33% { border-radius: 55% 45% 72% 28% / 58% 42% 62% 38%; }
+    66% { border-radius: 40% 60% 45% 55% / 70% 30% 52% 48%; }
+    100% { border-radius: 62% 38% 36% 64% / 48% 66% 34% 52%; }
+}
+
+@keyframes blobMorphTall {
+    0% { border-radius: 38% 62% 70% 30% / 55% 35% 65% 45%; }
+    40% { border-radius: 64% 36% 44% 56% / 38% 62% 40% 60%; }
+    70% { border-radius: 52% 48% 30% 70% / 62% 38% 58% 42%; }
+    100% { border-radius: 30% 70% 58% 42% / 44% 56% 70% 30%; }
+}
+
+@keyframes blobMorphWide {
+    0% { border-radius: 48% 52% 34% 66% / 62% 44% 56% 38%; }
+    50% { border-radius: 66% 34% 52% 48% / 38% 58% 42% 62%; }
+    100% { border-radius: 38% 62% 64% 36% / 54% 46% 38% 62%; }
+}
+
+@keyframes blobMorphAlt {
+    0% { border-radius: 30% 70% 52% 48% / 68% 32% 68% 32%; }
+    35% { border-radius: 58% 42% 36% 64% / 42% 58% 52% 48%; }
+    65% { border-radius: 44% 56% 68% 32% / 56% 44% 36% 64%; }
+    100% { border-radius: 70% 30% 44% 56% / 38% 62% 56% 44%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #sigServicesZone .sig-oval-frame {
+        animation: none !important;
     }
 }
