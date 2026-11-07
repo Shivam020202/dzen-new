@@ -21,7 +21,7 @@
     <!-- Base styles and variable sheets -->
     <link rel="stylesheet" href="main.css" />
     <!-- Section Specific styles -->
-    <link rel="stylesheet" href="styles.css?v=9.5" />
+    <link rel="stylesheet" href="styles.css?v=9.7" />
 
     <!-- Tailwind CSS (without preflight resets) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
@@ -203,7 +203,7 @@
                         </div>
                         <div class="hero-overlay"></div>
                         <div class="hero-content">
-                            <h1 class="hero-title">Where Science Meets Beauty</h1>
+                            <h1 class="hero-title">True Beauty define by Balance</h1>
                         </div>
                     </div>
                     <div class="hero-slide">
@@ -385,8 +385,9 @@
                         skin — a renewed sense of confidence, harmony and balance.
                     </p>
                     <p class="about-v2__lead">
-                        <strong>Because beauty is not just an outcome. It is a feeling, one that looks beyond the
-                            surface to celebrate Intelligent Beauty, Elevating You Inside-Out.</strong>
+                        Because beauty is not just an outcome. It is a feeling, one that looks beyond the
+                        surface to celebrate Intelligent Beauty.
+                        <br> Elevating You Inside-Out
                     </p>
 
                 </div>
@@ -606,7 +607,7 @@
         <section class="doctors-v2 tm-section" id="doctorsNew" aria-label="Meet our team">
             <div class="doctors-v2__container">
                 <div class="doctors-v2__head">
-                    <span class="doctors-v2__eyebrow">Meet The Team</span>
+                    <span class="doctors-v2__eyebrow">Meet The Founders</span>
                     <div class="nemonic-separator">
                         <div class="nemonic-line"></div>
                         <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
@@ -665,7 +666,7 @@
                     <article class="tm-card">
                         <div class="tm-card__content">
                             <span class="tm-card__meta">Medical Director </span>
-                            <h3 class="tm-card__name">Dr. Aarushi Passi Bhandari</h3>
+                            <h3 class="tm-card__name">Dr. Aarushi Passi</h3>
                             <p class="tm-card__role">Aesthetic Physician, Clinical Experience, Medical Innovation</p>
                             <p class="tm-card__quote">
                                 Dr. Aarushi leads the medical vision of D’Zen Derma, bringing together years of clinical
@@ -1170,6 +1171,17 @@
                                 tab.classList.add('active');
                                 const targetId = tab.getAttribute('data-target');
                                 document.getElementById(targetId).classList.add('active');
+
+                                // Keep the tapped tab in view inside the scrolling pill (mobile)
+                                const pill = tab.parentElement;
+                                if (pill.scrollWidth > pill.clientWidth) {
+                                    const p = pill.getBoundingClientRect();
+                                    const t = tab.getBoundingClientRect();
+                                    pill.scrollBy({
+                                        left: (t.left + t.width / 2) - (p.left + p.width / 2),
+                                        behavior: 'smooth'
+                                    });
+                                }
                             });
                         });
                     });
@@ -1380,7 +1392,7 @@
                 <!-- Left Column: Text, Quote & Enquire Button -->
                 <div class="trainer-v3-content">
                     <div class="section-header text-start mb-4">
-                        <span class="section-subtitle">Doctor Education & Workshops</span>
+                        <span class="section-subtitle">Doctor Workshops</span>
                         <div class="nemonic-separator justify-content-start">
                             <div class="nemonic-line"></div>
                             <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
@@ -1927,16 +1939,15 @@
         <section class="headlines-section">
             <div class="container">
                 <div class="section-header text-center mb-4">
-                    <span class="section-subtitle">IN THE NEWS</span>
+                    <span class="section-subtitle">D'ZEN JOURNAL</span>
                     <div class="nemonic-separator">
                         <div class="nemonic-line"></div>
                         <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
                         <div class="nemonic-line"></div>
                     </div>
-                    <h2 class="section-title">Making <span class="scribble">Headlines</span> Worldwide</h2>
-                    <p class="section-desc">When healing happens, the world takes notice. Our commitment to excellence
-                        in aesthetic dermatology and integrative wellness has earned us consistent recognition from
-                        national and international media.</p>
+                    <h2 class="section-title">Blogs</h2>
+                    <p class="section-desc">Explore expert insights, evolving science and thoughtful perspectives on
+                        skin, beauty and wellness.</p>
                 </div>
 
                 <div class="blog-cards-grid">

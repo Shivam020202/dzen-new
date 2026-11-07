@@ -15778,3 +15778,41 @@ html body:where(.dz-page-philosophy) #locations>.container {
     padding-left: 12px !important;
     padding-right: 12px !important;
 }
+/* =========================================================
+   Wellness Tailored to You — mobile tab pill
+   The tabs scroll sideways; give each tab a fixed share of the
+   pill (3 full + ~40% of the 4th) so the next label is always
+   partly visible, hinting that the row can be swiped.
+   ========================================================= */
+@media (max-width: 575.98px) {
+    .concerns-tabs {
+        display: flex;
+        width: 100%;
+        padding: 5px 10px;
+    }
+
+    .concern-tab-btn {
+        flex: 0 0 calc(100% / 3.4);
+        padding: 6px 4px;
+        font-size: 0.78rem;
+        letter-spacing: 0.5px;
+        text-align: center;
+    }
+}
+
+/* 576–767px: all 5 tabs fit, so share the pill width evenly instead */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .concerns-tabs {
+        display: flex;
+        width: 100%;
+        padding: 5px 10px;
+    }
+
+    .concern-tab-btn {
+        flex: 1 1 0;
+        padding: 6px 4px;
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+        text-align: center;
+    }
+}
