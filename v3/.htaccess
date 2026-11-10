@@ -1,0 +1,49 @@
+# ============================================================
+# Speed settings for Apache / LiteSpeed (e.g. Hostinger shared hosting)
+# Every block is wrapped in <IfModule>, so a server without the
+# module simply ignores it instead of erroring.
+# ============================================================
+
+# ---- Compression: text files are sent gzip/brotli-compressed ----
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/css text/plain text/xml application/javascript text/javascript application/json image/svg+xml
+</IfModule>
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript text/javascript application/json image/svg+xml
+</IfModule>
+
+# ---- Browser caching: repeat visits reuse files already downloaded ----
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 week"
+
+    # Pages: always check for the latest version
+    ExpiresByType text/html "access plus 0 seconds"
+
+    # CSS / JS: pages load these with ?v=… so a new version is fetched after edits
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType text/javascript "access plus 1 week"
+
+    # Images, video, fonts
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 month"
+    ExpiresByType video/mp4 "access plus 1 month"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(html?)$">
+        Header set Cache-Control "no-cache"
+    </FilesMatch>
+</IfModule>
+
+# Correct type for .webp / .mp4 on older servers
+<IfModule mod_mime.c>
+    AddType image/webp .webp
+    AddType video/mp4 .mp4
+</IfModule>

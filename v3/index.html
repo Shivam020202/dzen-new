@@ -18,28 +18,15 @@
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
+    <!-- Show the hero still immediately while the video loads -->
+    <link rel="preload" as="image" href="photos/hero-poster.webp" fetchpriority="high" />
+
     <!-- Base styles and variable sheets -->
     <link rel="stylesheet" href="main.css" />
     <!-- Section Specific styles -->
     <link rel="stylesheet" href="styles.css?v=10.5" />
 
-    <!-- Tailwind CSS (without preflight resets) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            corePlugins: { preflight: false },
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#4B2B20',
-                        accent: '#e0a65a',
-                        'accent-light': '#daa520',
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Page-specific styles -->
     <style>
         /* Wellness Tailored to You: a draggable row sized to match the Advanced Care &
            Wellness arches — 4 full cards plus 15% of the next, so the row reads as a slider */
@@ -171,6 +158,17 @@
             padding-bottom: 20px !important;
         }
 
+        #testimonials {
+            background: linear-gradient(to top, #F4EFE8, #FDF8F3);
+        }
+
+        #testimonials .review-widget {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 clamp(20px, 4vw, 40px) 30px;
+            min-height: 200px;
+        }
+
         #social .social-feed-widget {
             max-width: 1180px;
             margin: 0 auto;
@@ -187,6 +185,11 @@
 
         html body .headlines-section {
             padding-top: 37px !important;
+            padding-bottom: 0 !important;
+        }
+
+        html body .headlines-section>.section-separator {
+            margin-top: 10px !important;
         }
     </style>
 </head>
@@ -205,8 +208,10 @@
                                  Chrome refuse to autoplay. The Unsplash still this replaced
                                  is now the poster, so the slide looks right before the first
                                  frame paints and if autoplay is blocked. -->
-                            <video src="photos/hero-video.mp4" autoplay muted loop playsinline
-                                preload="metadata"></video>
+                            <video autoplay muted loop playsinline preload="auto" poster="photos/hero-poster.webp">
+                                <source src="photos/hero-video-720.mp4" type="video/mp4" media="(max-width: 767px)">
+                                <source src="photos/hero-video-1080.mp4" type="video/mp4">
+                            </video>
                         </div>
                         <div class="hero-overlay"></div>
                         <div class="hero-content">
@@ -377,7 +382,7 @@
                     <span class="about-v2__eyebrow">Welcome to D'Zen Derma</span>
                     <div class="nemonic-separator">
                         <div class="nemonic-line"></div>
-                        <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
+                        <img loading="lazy" decoding="async" src="logo-header.png" alt="nemonic" class="nemonic-icon" />
                         <div class="nemonic-line"></div>
                     </div>
                     <h2 class="about-v2__title">Where Natural Beauty Finds Its <em class="scribble">Balance</em></h2>
@@ -406,8 +411,8 @@
                 <div class="dz-cta-wrap">
                     <a href="#" class="dz-cta">
                         <span>Know More About Us!</span>
-                        <img src="nemonic1.png" class="btn-icon" style="width: 14px; height: 14px; object-fit: contain;"
-                            alt="icon" />
+                        <img loading="lazy" decoding="async" src="nemonic1.png" class="btn-icon"
+                            style="width: 14px; height: 14px; object-fit: contain;" alt="icon" />
                     </a>
                 </div>
             </div>
@@ -424,8 +429,8 @@
                             IDEOLOGY</span>
                         <div class="nemonic-separator">
                             <div class="nemonic-line" style="background: rgba(250, 249, 246, 0.45) !important;"></div>
-                            <img src="logo-header.png" alt="nemonic" class="nemonic-icon"
-                                style="filter: brightness(0) invert(1) !important;" />
+                            <img loading="lazy" decoding="async" src="logo-header.png" alt="nemonic"
+                                class="nemonic-icon" style="filter: brightness(0) invert(1) !important;" />
                             <div class="nemonic-line" style="background: rgba(250, 249, 246, 0.45) !important;"></div>
                         </div>
                         <h2 id="philosophy-section-title" class="section-title"
@@ -475,8 +480,8 @@
                                     <!-- Center Fulcrum -->
                                     <div class="opt12-fulcrum">
                                         <div class="opt12-fulcrum-disc">
-                                            <img src="logo-header.png" alt="D'Zen Derma Logo"
-                                                class="opt12-fulcrum-logo" />
+                                            <img loading="lazy" decoding="async" src="logo-header.png"
+                                                alt="D'Zen Derma Logo" class="opt12-fulcrum-logo" />
                                         </div>
                                     </div>
 
@@ -519,8 +524,8 @@
                                     <!-- Center Fulcrum -->
                                     <div class="opt12-fulcrum">
                                         <div class="opt12-fulcrum-disc">
-                                            <img src="logo-header.png" alt="D'Zen Derma Logo"
-                                                class="opt12-fulcrum-logo" />
+                                            <img loading="lazy" decoding="async" src="logo-header.png"
+                                                alt="D'Zen Derma Logo" class="opt12-fulcrum-logo" />
                                         </div>
                                     </div>
 
@@ -562,8 +567,8 @@
                                     <!-- Center Fulcrum -->
                                     <div class="opt12-fulcrum">
                                         <div class="opt12-fulcrum-disc">
-                                            <img src="logo-header.png" alt="D'Zen Derma Logo"
-                                                class="opt12-fulcrum-logo" />
+                                            <img loading="lazy" decoding="async" src="logo-header.png"
+                                                alt="D'Zen Derma Logo" class="opt12-fulcrum-logo" />
                                         </div>
                                     </div>
 
@@ -595,7 +600,7 @@
                     <div class="dz-cta-wrap mt-4 mt-lg-5">
                         <a href="#" class="dz-cta">
                             <span>Discover Our Philosophy</span>
-                            <img src="nemonic1.png" class="btn-icon"
+                            <img loading="lazy" decoding="async" src="nemonic1.png" class="btn-icon"
                                 style="width: 14px; height: 14px; object-fit: contain;" alt="icon" />
                         </a>
                     </div>
@@ -620,7 +625,7 @@
                     <span class="doctors-v2__eyebrow">Meet The Founders</span>
                     <div class="nemonic-separator">
                         <div class="nemonic-line"></div>
-                        <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
+                        <img loading="lazy" decoding="async" src="logo-header.png" alt="nemonic" class="nemonic-icon" />
                         <div class="nemonic-line"></div>
                     </div>
                     <h2 class="doctors-v2__title">The Visionaries Behind D’Zen Derma</h2>
@@ -634,14 +639,16 @@
                 <div class="tm-tabs" role="tablist">
                     <div class="tm-tabs__pill">
                         <button class="tm-tab active" role="tab" aria-selected="true" data-tm-slide="0">
-                            <img class="tm-tab__img" src="photos/Rahul-Bhandari.png" alt="Rahul Bhandari">
+                            <img loading="lazy" decoding="async" class="tm-tab__img" src="photos/Rahul-Bhandari.webp"
+                                alt="Rahul Bhandari">
                             <span class="tm-tab__info">
                                 <span class="tm-tab__name">Rahul Bhandari</span>
                                 <span class="tm-tab__role">Founder</span>
                             </span>
                         </button>
                         <button class="tm-tab" role="tab" aria-selected="false" data-tm-slide="1">
-                            <img class="tm-tab__img" src="photos/Aarushi-Passi.webp" alt="Dr. Aarushi Passi Bhandari">
+                            <img loading="lazy" decoding="async" class="tm-tab__img" src="photos/Aarushi-Passi-opt.webp"
+                                alt="Dr. Aarushi Passi Bhandari">
                             <span class="tm-tab__info">
                                 <span class="tm-tab__name">Dr. Aarushi</span>
                                 <span class="tm-tab__role">Medical Director </span>
@@ -664,7 +671,7 @@
                             </p>
                         </div>
                         <div class="tm-card__imagewrap">
-                            <img class="tm-card__image" src="photos/Rahul-Bhandari.png" alt="Rahul Bhandari"
+                            <img class="tm-card__image" src="photos/Rahul-Bhandari.webp" alt="Rahul Bhandari"
                                 loading="lazy" decoding="async" width="700" height="800">
                         </div>
                     </article>
@@ -681,8 +688,9 @@
                             </p>
                         </div>
                         <div class="tm-card__imagewrap">
-                            <img class="tm-card__image" src="photos/dr-arushi-1.webp" alt="Dr. Aarushi Passi Bhandari"
-                                loading="lazy" decoding="async" width="700" height="800">
+                            <img class="tm-card__image" src="photos/dr-arushi-1-opt.webp"
+                                alt="Dr. Aarushi Passi Bhandari" loading="lazy" decoding="async" width="700"
+                                height="800">
                         </div>
                     </article>
 
@@ -700,7 +708,7 @@
                     <span class="section-subtitle">OUR PARTNERS</span>
                     <div class="nemonic-separator">
                         <div class="nemonic-line"></div>
-                        <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
+                        <img loading="lazy" decoding="async" src="logo-header.png" alt="nemonic" class="nemonic-icon" />
                         <div class="nemonic-line"></div>
                     </div>
                     <h2 id="partners-title" class="section-title">Clinical &amp; Technology <span
@@ -717,54 +725,64 @@
                     <div class="partners-marquee__track">
                         <!-- Primary Set -->
                         <div class="partner-logo-item" title="Advancexo">
-                            <img src="photos/partners/Advancexo-Logo-Unit-Approved.png" alt="Advancexo"
-                                class="partner-logo-img" />
+                            <img loading="lazy" decoding="async" src="photos/partners/Advancexo-Logo-Unit-Approved.webp"
+                                alt="Advancexo" class="partner-logo-img" />
                         </div>
                         <div class="partner-logo-item" title="Dermaren">
-                            <img src="photos/partners/DERMAREN.png" alt="Dermaren" class="partner-logo-img" />
+                            <img loading="lazy" decoding="async" src="photos/partners/DERMAREN.webp" alt="Dermaren"
+                                class="partner-logo-img" />
                         </div>
                         <div class="partner-logo-item" title="Infini">
-                            <img src="photos/partners/Infini_Logo.png" alt="Infini" class="partner-logo-img" />
+                            <img loading="lazy" decoding="async" src="photos/partners/Infini_Logo.webp" alt="Infini"
+                                class="partner-logo-img" />
                         </div>
                         <div class="partner-logo-item" title="Fillmed">
-                            <img src="photos/partners/LOGO_FILLMED-HORIZONTAL-CENTERED-BLACK.png" alt="Fillmed"
+                            <img loading="lazy" decoding="async"
+                                src="photos/partners/LOGO_FILLMED-HORIZONTAL-CENTERED-BLACK.webp" alt="Fillmed"
                                 class="partner-logo-img" />
                         </div>
                         <div class="partner-logo-item" title="Promoitalia">
-                            <img src="photos/partners/Promoitalia.png" alt="Promoitalia" class="partner-logo-img" />
+                            <img loading="lazy" decoding="async" src="photos/partners/Promoitalia.webp"
+                                alt="Promoitalia" class="partner-logo-img" />
                         </div>
                         <div class="partner-logo-item" title="Rich PL Advance">
-                            <img src="photos/partners/RICH_PL_ADVANCE_LOGO.png" alt="Rich PL Advance"
-                                class="partner-logo-img" />
+                            <img loading="lazy" decoding="async" src="photos/partners/RICH_PL_ADVANCE_LOGO.webp"
+                                alt="Rich PL Advance" class="partner-logo-img" />
                         </div>
                         <div class="partner-logo-item" title="Teoxane">
-                            <img src="photos/partners/texane.png" alt="Teoxane" class="partner-logo-img" />
+                            <img loading="lazy" decoding="async" src="photos/partners/texane.webp" alt="Teoxane"
+                                class="partner-logo-img" />
                         </div>
 
                         <!-- Duplicate Set for Seamless Infinite Loop -->
                         <div class="partner-logo-item" aria-hidden="true">
-                            <img src="photos/partners/Advancexo-Logo-Unit-Approved.png" alt="Advancexo"
+                            <img loading="lazy" decoding="async" src="photos/partners/Advancexo-Logo-Unit-Approved.webp"
+                                alt="Advancexo" class="partner-logo-img" />
+                        </div>
+                        <div class="partner-logo-item" aria-hidden="true">
+                            <img loading="lazy" decoding="async" src="photos/partners/DERMAREN.webp" alt="Dermaren"
                                 class="partner-logo-img" />
                         </div>
                         <div class="partner-logo-item" aria-hidden="true">
-                            <img src="photos/partners/DERMAREN.png" alt="Dermaren" class="partner-logo-img" />
-                        </div>
-                        <div class="partner-logo-item" aria-hidden="true">
-                            <img src="photos/partners/Infini_Logo.png" alt="Infini" class="partner-logo-img" />
-                        </div>
-                        <div class="partner-logo-item" aria-hidden="true">
-                            <img src="photos/partners/LOGO_FILLMED-HORIZONTAL-CENTERED-BLACK.png" alt="Fillmed"
+                            <img loading="lazy" decoding="async" src="photos/partners/Infini_Logo.webp" alt="Infini"
                                 class="partner-logo-img" />
                         </div>
                         <div class="partner-logo-item" aria-hidden="true">
-                            <img src="photos/partners/Promoitalia.png" alt="Promoitalia" class="partner-logo-img" />
-                        </div>
-                        <div class="partner-logo-item" aria-hidden="true">
-                            <img src="photos/partners/RICH_PL_ADVANCE_LOGO.png" alt="Rich PL Advance"
+                            <img loading="lazy" decoding="async"
+                                src="photos/partners/LOGO_FILLMED-HORIZONTAL-CENTERED-BLACK.webp" alt="Fillmed"
                                 class="partner-logo-img" />
                         </div>
                         <div class="partner-logo-item" aria-hidden="true">
-                            <img src="photos/partners/texane.png" alt="Teoxane" class="partner-logo-img" />
+                            <img loading="lazy" decoding="async" src="photos/partners/Promoitalia.webp"
+                                alt="Promoitalia" class="partner-logo-img" />
+                        </div>
+                        <div class="partner-logo-item" aria-hidden="true">
+                            <img loading="lazy" decoding="async" src="photos/partners/RICH_PL_ADVANCE_LOGO.webp"
+                                alt="Rich PL Advance" class="partner-logo-img" />
+                        </div>
+                        <div class="partner-logo-item" aria-hidden="true">
+                            <img loading="lazy" decoding="async" src="photos/partners/texane.webp" alt="Teoxane"
+                                class="partner-logo-img" />
                         </div>
                     </div>
                 </div>
@@ -785,7 +803,7 @@
                     <span class="section-subtitle">OUR EXPERTISE</span>
                     <div class="nemonic-separator">
                         <div class="nemonic-line"></div>
-                        <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
+                        <img loading="lazy" decoding="async" src="logo-header.png" alt="nemonic" class="nemonic-icon" />
                         <div class="nemonic-line"></div>
                     </div>
                     <h2 id="service-arch-title" class="section-title">The Five Pillars of <span
@@ -799,7 +817,7 @@
                 <div class="service-arch-track" id="service-arch-track">
                     <article class="service-arch-card">
                         <div class="service-arch-card__media">
-                            <img src="images/home/Aesthetics.webp" alt="Aesthetics" />
+                            <img loading="lazy" decoding="async" src="images/home/Aesthetics.webp" alt="Aesthetics" />
                         </div>
                         <div class="service-arch-card__body">
                             <h3>Aesthetics</h3>
@@ -810,7 +828,8 @@
 
                     <article class="service-arch-card">
                         <div class="service-arch-card__media">
-                            <img src="images/home/Functional-Medicine.webp" alt="Functional Medicine" />
+                            <img loading="lazy" decoding="async" src="images/home/Functional-Medicine.webp"
+                                alt="Functional Medicine" />
                         </div>
                         <div class="service-arch-card__body">
                             <h3>Functional Medicine</h3>
@@ -822,7 +841,7 @@
 
                     <article class="service-arch-card">
                         <div class="service-arch-card__media">
-                            <img src="images/home/Integrative-Programmes.webp"
+                            <img loading="lazy" decoding="async" src="images/home/Integrative-Programmes.webp"
                                 alt="Integrative Wellness &amp; Longevity" />
                         </div>
                         <div class="service-arch-card__body">
@@ -834,7 +853,8 @@
 
                     <article class="service-arch-card">
                         <div class="service-arch-card__media">
-                            <img src="images/home/Regenerative-Aesthetics.webp" alt="Regenerative Aesthetics" />
+                            <img loading="lazy" decoding="async" src="images/home/Regenerative-Aesthetics.webp"
+                                alt="Regenerative Aesthetics" />
                         </div>
                         <div class="service-arch-card__body">
                             <h3>Regenerative Aesthetics</h3>
@@ -845,7 +865,8 @@
 
                     <article class="service-arch-card">
                         <div class="service-arch-card__media">
-                            <img src="images/home/doctor-training.webp" alt="Doctor Education &amp; Workshops" />
+                            <img loading="lazy" decoding="async" src="images/home/doctor-training.webp"
+                                alt="Doctor Education &amp; Workshops" />
                         </div>
                         <div class="service-arch-card__body">
                             <h3>Doctor Education &amp; Workshops</h3>
@@ -875,7 +896,7 @@
                     <span class="section-subtitle">CONCERNS</span>
                     <div class="nemonic-separator">
                         <div class="nemonic-line"></div>
-                        <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
+                        <img loading="lazy" decoding="async" src="logo-header.png" alt="nemonic" class="nemonic-icon" />
                         <div class="nemonic-line"></div>
                     </div>
                     <h2 class="section-title">Wellness Tailored to You</h2>
@@ -1226,7 +1247,8 @@
                         <span class="section-subtitle">OUR CRAFT</span>
                         <div class="nemonic-separator">
                             <div class="nemonic-line"></div>
-                            <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
+                            <img loading="lazy" decoding="async" src="logo-header.png" alt="nemonic"
+                                class="nemonic-icon" />
                             <div class="nemonic-line"></div>
                         </div>
                         <h2 class="sig-intro-heading">Signature Services</h2>
@@ -1240,8 +1262,8 @@
                     <div class="sig-panel-inner sig-service-layout sig-service-layout--left">
                         <div class="sig-service-visual">
                             <div class="sig-oval-frame sig-oval-frame--tall">
-                                <img src="images/home/Facial-Sculpt.webp" alt="D’Zen Facial Sculpt"
-                                    class="sig-oval-img" />
+                                <img loading="lazy" decoding="async" src="images/home/Facial-Sculpt.webp"
+                                    alt="D’Zen Facial Sculpt" class="sig-oval-img" />
                             </div>
                         </div>
                         <div class="sig-service-text">
@@ -1277,8 +1299,8 @@
                         </div>
                         <div class="sig-service-visual">
                             <div class="sig-oval-frame sig-oval-frame--alt">
-                                <img src="images/home/Skin-Longevity.webp" alt="D’Zen Skin Longevity"
-                                    class="sig-oval-img" />
+                                <img loading="lazy" decoding="async" src="images/home/Skin-Longevity.webp"
+                                    alt="D’Zen Skin Longevity" class="sig-oval-img" />
                             </div>
                         </div>
                     </div>
@@ -1289,7 +1311,8 @@
                     <div class="sig-panel-inner sig-service-layout sig-service-layout--left">
                         <div class="sig-service-visual">
                             <div class="sig-oval-frame">
-                                <img src="images/home/Korean-Skin.webp" alt="D’Zen Korean Skin" class="sig-oval-img" />
+                                <img loading="lazy" decoding="async" src="images/home/Korean-Skin.webp"
+                                    alt="D’Zen Korean Skin" class="sig-oval-img" />
                             </div>
                         </div>
                         <div class="sig-service-text">
@@ -1325,7 +1348,8 @@
                         </div>
                         <div class="sig-service-visual">
                             <div class="sig-oval-frame sig-oval-frame--alt">
-                                <img src="images/home/Follicle+.webp" alt="D’Zen Follicle+" class="sig-oval-img" />
+                                <img loading="lazy" decoding="async" src="images/home/Follicle+.webp"
+                                    alt="D’Zen Follicle+" class="sig-oval-img" />
                             </div>
                         </div>
                     </div>
@@ -1336,8 +1360,8 @@
                     <div class="sig-panel-inner sig-service-layout sig-service-layout--left">
                         <div class="sig-service-visual">
                             <div class="sig-oval-frame sig-oval-frame--tall">
-                                <img src="images/home/Skin-Re-surface.webp" alt="D’Zen Skin Re-Surface"
-                                    class="sig-oval-img" />
+                                <img loading="lazy" decoding="async" src="images/home/Skin-Re-surface.webp"
+                                    alt="D’Zen Skin Re-Surface" class="sig-oval-img" />
                             </div>
                         </div>
                         <div class="sig-service-text">
@@ -1371,7 +1395,8 @@
                         </div>
                         <div class="sig-service-visual">
                             <div class="sig-oval-frame">
-                                <img src="images/home/Spot-Sculpt.webp" alt="D’Zen Spot Sculpt" class="sig-oval-img" />
+                                <img loading="lazy" decoding="async" src="images/home/Spot-Sculpt.webp"
+                                    alt="D’Zen Spot Sculpt" class="sig-oval-img" />
                             </div>
                         </div>
                     </div>
@@ -1385,7 +1410,7 @@
                 <a href="#" class="dz-cta"
                     style="margin: 0 auto; display: inline-flex; border-color: rgba(255,255,255,0.5);">
                     <span style="color: #FAF9F6 !important;">Explore Signature Treatments</span>
-                    <img src="nemonic1.png" class="btn-icon"
+                    <img loading="lazy" decoding="async" src="nemonic1.png" class="btn-icon"
                         style="width: 14px; height: 14px; object-fit: contain; filter: brightness(0) invert(1);"
                         alt="icon" />
                 </a>
@@ -1407,7 +1432,8 @@
                         <span class="section-subtitle">Doctor Workshops</span>
                         <div class="nemonic-separator justify-content-start">
                             <div class="nemonic-line"></div>
-                            <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
+                            <img loading="lazy" decoding="async" src="logo-header.png" alt="nemonic"
+                                class="nemonic-icon" />
                             <div class="nemonic-line"></div>
                         </div>
                         <h2 class="section-title">Elevating Aesthetic Practice Through <span class="scribble">Knowledge
@@ -1437,7 +1463,7 @@
                     <div class="trainer-v3-collage">
                         <img src="photos/training-1.webp" alt="Clinic Interior" loading="lazy" />
                         <img src="photos/training-2.webp" alt="Training Session" loading="lazy" />
-                        <img src="photos/training-5.webp" alt="Advanced Technology" loading="lazy" />
+                        <img src="photos/training-5-opt.webp" alt="Advanced Technology" loading="lazy" />
                         <img src="photos/training-4.webp" alt="Intentional Care" loading="lazy" />
                     </div>
                 </div>
@@ -1447,8 +1473,8 @@
             <div class="text-center mt-4 mt-lg-5" style="position: relative; z-index: 5;">
                 <a href="#" class="dz-cta" style="margin: 0 auto; display: inline-flex;">
                     <span>Enquire About Training</span>
-                    <img src="nemonic1.png" class="btn-icon" style="width: 14px; height: 14px; object-fit: contain;"
-                        alt="icon" />
+                    <img loading="lazy" decoding="async" src="nemonic1.png" class="btn-icon"
+                        style="width: 14px; height: 14px; object-fit: contain;" alt="icon" />
                 </a>
             </div>
 
@@ -1463,7 +1489,7 @@
                     <span class="section-subtitle">LOVED BY YOU</span>
                     <div class="nemonic-separator">
                         <div class="nemonic-line"></div>
-                        <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
+                        <img loading="lazy" decoding="async" src="logo-header.png" alt="nemonic" class="nemonic-icon" />
                         <div class="nemonic-line"></div>
                     </div>
                     <h2 style="margin-bottom: 0px !important;" class="section-title">Let’s Get <span
@@ -1473,20 +1499,38 @@
 
             <div class="social-feed-widget">
                 <div data-key="DZen Instagram" class="ft" id="fta34197x"></div>
-                <script src="https://wdg.fouita.com/widgets/0x48e214.js"></script>
+                <script>
+                    // Load the Instagram widget only when this section is about to scroll into view
+                    (function () {
+                        var box = document.currentScript.parentNode, done = false;
+                        function load() {
+                            if (done) return; done = true;
+                            var sc = document.createElement("script");
+                            sc.src = "https://wdg.fouita.com/widgets/0x48e214.js";
+                            sc.async = true;
+                            box.appendChild(sc);
+                        }
+                        if (!("IntersectionObserver" in window)) return load();
+                        var io = new IntersectionObserver(function (entries) {
+                            if (entries[0].isIntersecting) { io.disconnect(); load(); }
+                        }, { rootMargin: "800px 0px" });
+                        io.observe(box);
+                    })();
+                </script>
             </div>
         </section>
 
         <!-- ═══════════════════════════════════════════════════════════
              INSTAGRAM SHOWCASE SECTION
              ═══════════════════════════════════════════════════════════ -->
+        <!-- Hidden section: media uses data-hidden-src so nothing downloads while it is switched off. Rename data-hidden-src back to src if you show it again. -->
         <section class="instagram-section" id="instagram" style="display: none;">
             <div class="testimonials-content-box reveal">
                 <div class="section-header text-center mb-4">
                     <span class="section-subtitle">JOURNAL &amp; STORIES</span>
                     <div class="nemonic-separator">
                         <div class="nemonic-line"></div>
-                        <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
+                        <img data-hidden-src="logo-header.png" alt="nemonic" class="nemonic-icon" />
                         <div class="nemonic-line"></div>
                     </div>
                     <h2 class="section-title">Follow the <span class="scribble">D’Zen Experience</span></h2>
@@ -1503,11 +1547,11 @@
                 <!-- 4 Curated Visual Posts Grid (Click to Play Reel) -->
                 <div class="insta-grid">
                     <!-- Post 1 -->
-                    <article class="insta-card" role="button" tabindex="0" data-video-src="photos/hero-video.mp4"
+                    <article class="insta-card" role="button" tabindex="0" data-video-src="photos/hero-video-1080.mp4"
                         data-video-title="The Art of Subtle Balance" data-video-tag="AESTHETIC PROTOCOLS"
                         data-video-caption="Why restraint and anatomical precision create the most striking, harmonious natural outcome."
                         data-insta-url="https://www.instagram.com/dzenderma/">
-                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80"
+                        <img data-hidden-src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80"
                             alt="Aesthetic Protocols" class="insta-card__img" loading="lazy" />
 
                         <span class="insta-card__play" aria-label="Play Reel">
@@ -1518,11 +1562,11 @@
                     </article>
 
                     <!-- Post 2 -->
-                    <article class="insta-card" role="button" tabindex="0" data-video-src="photos/hero-video.mp4"
+                    <article class="insta-card" role="button" tabindex="0" data-video-src="photos/hero-video-1080.mp4"
                         data-video-title="Inside the D'Zen Sanctuary" data-video-tag="SANCTUARY ARCHITECTURE"
                         data-video-caption="A space where medical rigor meets serene architectural stillness on Golf Course Road, Gurgaon."
                         data-insta-url="https://www.instagram.com/dzenderma/">
-                        <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&q=80"
+                        <img data-hidden-src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&q=80"
                             alt="Sanctuary Architecture" class="insta-card__img" loading="lazy" />
 
                         <span class="insta-card__play" aria-label="Play Reel">
@@ -1533,12 +1577,12 @@
                     </article>
 
                     <!-- Post 3 -->
-                    <article class="insta-card" role="button" tabindex="0" data-video-src="photos/hero-video.mp4"
+                    <article class="insta-card" role="button" tabindex="0" data-video-src="photos/hero-video-1080.mp4"
                         data-video-title="Doctor's Philosophy & Balance" data-video-tag="DOCTOR'S JOURNAL"
                         data-video-caption="“Every facial anatomy holds its own equilibrium. Our purpose is to reveal it without distortion.” — Dr. Aarushi"
                         data-insta-url="https://www.instagram.com/dzenderma/">
-                        <img src="photos/dr-arushi-1.webp" alt="Dr. Aarushi Passi Bhandari" class="insta-card__img"
-                            loading="lazy" />
+                        <img data-hidden-src="photos/dr-arushi-1-opt.webp" alt="Dr. Aarushi Passi Bhandari"
+                            class="insta-card__img" loading="lazy" />
 
                         <span class="insta-card__play" aria-label="Play Reel">
                             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -1548,11 +1592,11 @@
                     </article>
 
                     <!-- Post 4 -->
-                    <article class="insta-card" role="button" tabindex="0" data-video-src="photos/hero-video.mp4"
+                    <article class="insta-card" role="button" tabindex="0" data-video-src="photos/hero-video-1080.mp4"
                         data-video-title="HydraFacial Vortex Infusion" data-video-tag="CLINICAL CARE"
                         data-video-caption="Behind the scenes of our 4-stage medical Hydrafacial protocol. Zero downtime, radiant glow."
                         data-insta-url="https://www.instagram.com/dzenderma/">
-                        <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&q=80"
+                        <img data-hidden-src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&q=80"
                             alt="Hydrafacial Treatment" class="insta-card__img" loading="lazy" />
 
                         <span class="insta-card__play" aria-label="Play Reel">
@@ -1584,7 +1628,7 @@
                     <span class="section-subtitle">RECOGNIZED EXCELLENCE</span>
                     <div class="nemonic-separator">
                         <div class="nemonic-line"></div>
-                        <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
+                        <img loading="lazy" decoding="async" src="logo-header.png" alt="nemonic" class="nemonic-icon" />
                         <div class="nemonic-line"></div>
                     </div>
                     <h2 class="section-title">Featured <span class="scribble">In</span></h2>
@@ -1671,14 +1715,14 @@
             </div>
         </section>
 
-        <section class="testimonials-modern-section" id="testimonials" style="display: none;">
+        <section class="testimonials-modern-section" id="testimonials" style="padding-top: 25px !important;">
             <!-- Section header -->
             <div class="testimonials-content-box reveal">
                 <div class="section-header text-center mb-4">
                     <span class="section-subtitle">TESTIMONIALS</span>
                     <div class="nemonic-separator">
                         <div class="nemonic-line"></div>
-                        <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
+                        <img src="logo-header.png" alt="nemonic" class="nemonic-icon" loading="lazy" decoding="async" />
                         <div class="nemonic-line"></div>
                     </div>
                 </div>
@@ -1690,279 +1734,296 @@
                 </p>
             </div>
 
-            <!-- Tab switcher -->
-            <div class="tst-tabs" role="tablist" aria-label="Testimonial format">
-                <span class="tst-tabs__thumb" aria-hidden="true"></span>
-                <button class="tst-tab is-active" role="tab" aria-selected="true" data-tab="video" id="tstTabVideo">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <polygon points="6 4 20 12 6 20 6 4" fill="currentColor" stroke="none" />
-                    </svg>
-                    <span>Video Stories</span>
-                </button>
-                <button class="tst-tab" role="tab" aria-selected="false" data-tab="reviews" id="tstTabReviews">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                    </svg>
-                    <span>Google Reviews</span>
-                </button>
+            <!-- Live reviews widget (ReviewMagnet) -->
+            <div class="review-widget">
+                <!-- Review Pixel -->
+                <script type="text/javascript">
+                    !function () { var e, t = document; e = function () { if (window.EMRPixel) return console.info("EMR: Pixel already loaded"); var e = t.createElement("script"); e.defer = !0, e.src = "https://cdn2.revw.me/js/pixel.js?t=" + 864e5 * Math.ceil(new Date / 864e5); var n = t.getElementsByTagName("script")[0]; n.charset = "utf-8", n.parentNode.insertBefore(e, n), e.onload = function () { EMRPixel.init("reviewmagnet.in", 98) } }, "interactive" === t.readyState || "complete" === t.readyState ? e() : t.addEventListener("DOMContentLoaded", e) }();
+                </script><emr-simple-slider widget-id="eb0eafea-f9b8-4fe9-ac65-0a679f38db8d"></emr-simple-slider>
+                <!-- Review Pixel End -->
             </div>
 
-            <!-- ── PANEL: Video Stories ── -->
-            <div class="tst-panel is-active" id="tstPanelVideo" role="tabpanel" aria-labelledby="tstTabVideo">
-                <div class="tst-video-grid">
-                    <!-- Each card: a vertical (9:16) short-form embed, click-to-play -->
-                    <article class="tst-video-card" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
-                        <img class="tst-video-card__poster"
-                            src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop"
-                            alt="Client story — glow-up journey" loading="lazy">
-                        <span class="tst-video-card__play" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <polygon points="8 5 20 12 8 19 8 5" />
-                            </svg>
-                        </span>
-                        <div class="tst-video-card__meta">
-                            <span class="tst-video-card__name">Priya Sharma</span>
-                            <span class="tst-video-card__tag">HydraFacial Glow</span>
-                        </div>
-                    </article>
-                    <article class="tst-video-card" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
-                        <img class="tst-video-card__poster"
-                            src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=800&auto=format&fit=crop"
-                            alt="Client story — acne scar treatment" loading="lazy">
-                        <span class="tst-video-card__play" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <polygon points="8 5 20 12 8 19 8 5" />
-                            </svg>
-                        </span>
-                        <div class="tst-video-card__meta">
-                            <span class="tst-video-card__name">Ananya Reddy</span>
-                            <span class="tst-video-card__tag">Acne Scar Revision</span>
-                        </div>
-                    </article>
-                    <article class="tst-video-card" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
-                        <img class="tst-video-card__poster"
-                            src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop"
-                            alt="Client story — skin rejuvenation" loading="lazy">
-                        <span class="tst-video-card__play" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <polygon points="8 5 20 12 8 19 8 5" />
-                            </svg>
-                        </span>
-                        <div class="tst-video-card__meta">
-                            <span class="tst-video-card__name">Kavya Iyer</span>
-                            <span class="tst-video-card__tag">Skin Rejuvenation</span>
-                        </div>
-                    </article>
-                    <article class="tst-video-card" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
-                        <img class="tst-video-card__poster"
-                            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"
-                            alt="Client story — laser hair reduction" loading="lazy">
-                        <span class="tst-video-card__play" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <polygon points="8 5 20 12 8 19 8 5" />
-                            </svg>
-                        </span>
-                        <div class="tst-video-card__meta">
-                            <span class="tst-video-card__name">Neha Sen</span>
-                            <span class="tst-video-card__tag">Laser Hair Reduction</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
-
-            <!-- ── PANEL: Google Reviews ── -->
-            <div class="tst-panel" id="tstPanelReviews" role="tabpanel" aria-labelledby="tstTabReviews" hidden>
-                <div class="tst-reviews-summary">
-                    <span class="tst-g-logo" aria-hidden="true">
-                        <svg viewBox="0 0 24 24">
-                            <path fill="#4285F4"
-                                d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
-                            <path fill="#34A853"
-                                d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
-                            <path fill="#FBBC05" d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
-                            <path fill="#EA4335"
-                                d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
+            <!-- Old sample tabs (placeholder videos and reviews): switched off, media does not download -->
+            <div style="display: none;">
+                <!-- Tab switcher -->
+                <div class="tst-tabs" role="tablist" aria-label="Testimonial format">
+                    <span class="tst-tabs__thumb" aria-hidden="true"></span>
+                    <button class="tst-tab is-active" role="tab" aria-selected="true" data-tab="video" id="tstTabVideo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="6 4 20 12 6 20 6 4" fill="currentColor" stroke="none" />
                         </svg>
-                    </span>
-                    <div class="tst-reviews-summary__text">
-                        <span class="tst-reviews-summary__score">4.9</span>
-                        <span class="tst-stars" aria-label="4.9 out of 5 stars">★★★★★</span>
-                        <span class="tst-reviews-summary__count">Based on 512 Google reviews</span>
+                        <span>Video Stories</span>
+                    </button>
+                    <button class="tst-tab" role="tab" aria-selected="false" data-tab="reviews" id="tstTabReviews">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                        </svg>
+                        <span>Google Reviews</span>
+                    </button>
+                </div>
+
+                <!-- ── PANEL: Video Stories ── -->
+                <div class="tst-panel is-active" id="tstPanelVideo" role="tabpanel" aria-labelledby="tstTabVideo">
+                    <div class="tst-video-grid">
+                        <!-- Each card: a vertical (9:16) short-form embed, click-to-play -->
+                        <article class="tst-video-card" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                            <img class="tst-video-card__poster"
+                                data-hidden-src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop"
+                                alt="Client story — glow-up journey" loading="lazy">
+                            <span class="tst-video-card__play" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="8 5 20 12 8 19 8 5" />
+                                </svg>
+                            </span>
+                            <div class="tst-video-card__meta">
+                                <span class="tst-video-card__name">Priya Sharma</span>
+                                <span class="tst-video-card__tag">HydraFacial Glow</span>
+                            </div>
+                        </article>
+                        <article class="tst-video-card" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                            <img class="tst-video-card__poster"
+                                data-hidden-src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=800&auto=format&fit=crop"
+                                alt="Client story — acne scar treatment" loading="lazy">
+                            <span class="tst-video-card__play" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="8 5 20 12 8 19 8 5" />
+                                </svg>
+                            </span>
+                            <div class="tst-video-card__meta">
+                                <span class="tst-video-card__name">Ananya Reddy</span>
+                                <span class="tst-video-card__tag">Acne Scar Revision</span>
+                            </div>
+                        </article>
+                        <article class="tst-video-card" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                            <img class="tst-video-card__poster"
+                                data-hidden-src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop"
+                                alt="Client story — skin rejuvenation" loading="lazy">
+                            <span class="tst-video-card__play" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="8 5 20 12 8 19 8 5" />
+                                </svg>
+                            </span>
+                            <div class="tst-video-card__meta">
+                                <span class="tst-video-card__name">Kavya Iyer</span>
+                                <span class="tst-video-card__tag">Skin Rejuvenation</span>
+                            </div>
+                        </article>
+                        <article class="tst-video-card" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                            <img class="tst-video-card__poster"
+                                data-hidden-src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"
+                                alt="Client story — laser hair reduction" loading="lazy">
+                            <span class="tst-video-card__play" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="8 5 20 12 8 19 8 5" />
+                                </svg>
+                            </span>
+                            <div class="tst-video-card__meta">
+                                <span class="tst-video-card__name">Neha Sen</span>
+                                <span class="tst-video-card__tag">Laser Hair Reduction</span>
+                            </div>
+                        </article>
                     </div>
                 </div>
 
-                <div class="tst-reviews-grid">
-                    <article class="tst-review-card">
-                        <header class="tst-review-card__head">
-                            <img class="tst-review-card__avatar"
-                                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&h=120&fit=crop&q=80"
-                                alt="Priya Sharma" loading="lazy">
-                            <div class="tst-review-card__id">
-                                <span class="tst-review-card__name">Priya Sharma</span>
-                                <span class="tst-review-card__date">2 weeks ago</span>
-                            </div>
-                            <span class="tst-review-card__g" aria-label="Posted on Google">
-                                <svg viewBox="0 0 24 24">
-                                    <path fill="#4285F4"
-                                        d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
-                                    <path fill="#34A853"
-                                        d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
-                                    <path fill="#FBBC05"
-                                        d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
-                                    <path fill="#EA4335"
-                                        d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
-                                </svg>
-                            </span>
-                        </header>
-                        <span class="tst-stars" aria-label="5 stars">★★★★★</span>
-                        <p class="tst-review-card__quote">Absolutely the best skin clinic I've been to. My HydraFacial
-                            results were visible from day one and the team is so warm and professional.</p>
-                    </article>
+                <!-- ── PANEL: Google Reviews ── -->
+                <div class="tst-panel" id="tstPanelReviews" role="tabpanel" aria-labelledby="tstTabReviews" hidden>
+                    <div class="tst-reviews-summary">
+                        <span class="tst-g-logo" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path fill="#4285F4"
+                                    d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
+                                <path fill="#34A853"
+                                    d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
+                                <path fill="#FBBC05"
+                                    d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
+                                <path fill="#EA4335"
+                                    d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
+                            </svg>
+                        </span>
+                        <div class="tst-reviews-summary__text">
+                            <span class="tst-reviews-summary__score">4.9</span>
+                            <span class="tst-stars" aria-label="4.9 out of 5 stars">★★★★★</span>
+                            <span class="tst-reviews-summary__count">Based on 512 Google reviews</span>
+                        </div>
+                    </div>
 
-                    <article class="tst-review-card">
-                        <header class="tst-review-card__head">
-                            <img class="tst-review-card__avatar"
-                                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=120&h=120&fit=crop&q=80"
-                                alt="Rohan Mehta" loading="lazy">
-                            <div class="tst-review-card__id">
-                                <span class="tst-review-card__name">Rohan Mehta</span>
-                                <span class="tst-review-card__date">1 month ago</span>
-                            </div>
-                            <span class="tst-review-card__g" aria-label="Posted on Google">
-                                <svg viewBox="0 0 24 24">
-                                    <path fill="#4285F4"
-                                        d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
-                                    <path fill="#34A853"
-                                        d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
-                                    <path fill="#FBBC05"
-                                        d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
-                                    <path fill="#EA4335"
-                                        d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
-                                </svg>
-                            </span>
-                        </header>
-                        <span class="tst-stars" aria-label="5 stars">★★★★★</span>
-                        <p class="tst-review-card__quote">My acne scars have faded dramatically after the revision
-                            treatment. Genuinely life-changing confidence boost. Highly recommend D'Zen Derma.</p>
-                    </article>
+                    <div class="tst-reviews-grid">
+                        <article class="tst-review-card">
+                            <header class="tst-review-card__head">
+                                <img class="tst-review-card__avatar"
+                                    data-hidden-src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&h=120&fit=crop&q=80"
+                                    alt="Priya Sharma" loading="lazy">
+                                <div class="tst-review-card__id">
+                                    <span class="tst-review-card__name">Priya Sharma</span>
+                                    <span class="tst-review-card__date">2 weeks ago</span>
+                                </div>
+                                <span class="tst-review-card__g" aria-label="Posted on Google">
+                                    <svg viewBox="0 0 24 24">
+                                        <path fill="#4285F4"
+                                            d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
+                                        <path fill="#34A853"
+                                            d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
+                                        <path fill="#FBBC05"
+                                            d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
+                                        <path fill="#EA4335"
+                                            d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
+                                    </svg>
+                                </span>
+                            </header>
+                            <span class="tst-stars" aria-label="5 stars">★★★★★</span>
+                            <p class="tst-review-card__quote">Absolutely the best skin clinic I've been to. My
+                                HydraFacial
+                                results were visible from day one and the team is so warm and professional.</p>
+                        </article>
 
-                    <article class="tst-review-card">
-                        <header class="tst-review-card__head">
-                            <img class="tst-review-card__avatar"
-                                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&h=120&fit=crop&q=80"
-                                alt="Ananya Reddy" loading="lazy">
-                            <div class="tst-review-card__id">
-                                <span class="tst-review-card__name">Ananya Reddy</span>
-                                <span class="tst-review-card__date">3 weeks ago</span>
-                            </div>
-                            <span class="tst-review-card__g" aria-label="Posted on Google">
-                                <svg viewBox="0 0 24 24">
-                                    <path fill="#4285F4"
-                                        d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
-                                    <path fill="#34A853"
-                                        d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
-                                    <path fill="#FBBC05"
-                                        d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
-                                    <path fill="#EA4335"
-                                        d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
-                                </svg>
-                            </span>
-                        </header>
-                        <span class="tst-stars" aria-label="5 stars">★★★★★</span>
-                        <p class="tst-review-card__quote">The calmest, most luxurious clinic experience. Every treatment
-                            feels tailored to me. My skin has never looked healthier.</p>
-                    </article>
+                        <article class="tst-review-card">
+                            <header class="tst-review-card__head">
+                                <img class="tst-review-card__avatar"
+                                    data-hidden-src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=120&h=120&fit=crop&q=80"
+                                    alt="Rohan Mehta" loading="lazy">
+                                <div class="tst-review-card__id">
+                                    <span class="tst-review-card__name">Rohan Mehta</span>
+                                    <span class="tst-review-card__date">1 month ago</span>
+                                </div>
+                                <span class="tst-review-card__g" aria-label="Posted on Google">
+                                    <svg viewBox="0 0 24 24">
+                                        <path fill="#4285F4"
+                                            d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
+                                        <path fill="#34A853"
+                                            d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
+                                        <path fill="#FBBC05"
+                                            d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
+                                        <path fill="#EA4335"
+                                            d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
+                                    </svg>
+                                </span>
+                            </header>
+                            <span class="tst-stars" aria-label="5 stars">★★★★★</span>
+                            <p class="tst-review-card__quote">My acne scars have faded dramatically after the revision
+                                treatment. Genuinely life-changing confidence boost. Highly recommend D'Zen Derma.</p>
+                        </article>
 
-                    <article class="tst-review-card">
-                        <header class="tst-review-card__head">
-                            <img class="tst-review-card__avatar"
-                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&h=120&fit=crop&q=80"
-                                alt="Vikram Malhotra" loading="lazy">
-                            <div class="tst-review-card__id">
-                                <span class="tst-review-card__name">Vikram Malhotra</span>
-                                <span class="tst-review-card__date">2 months ago</span>
-                            </div>
-                            <span class="tst-review-card__g" aria-label="Posted on Google">
-                                <svg viewBox="0 0 24 24">
-                                    <path fill="#4285F4"
-                                        d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
-                                    <path fill="#34A853"
-                                        d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
-                                    <path fill="#FBBC05"
-                                        d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
-                                    <path fill="#EA4335"
-                                        d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
-                                </svg>
-                            </span>
-                        </header>
-                        <span class="tst-stars" aria-label="5 stars">★★★★★</span>
-                        <p class="tst-review-card__quote">Booked a consultation on a whim and it was the best decision.
-                            Honest advice, no upselling, and stunning results.</p>
-                    </article>
+                        <article class="tst-review-card">
+                            <header class="tst-review-card__head">
+                                <img class="tst-review-card__avatar"
+                                    data-hidden-src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&h=120&fit=crop&q=80"
+                                    alt="Ananya Reddy" loading="lazy">
+                                <div class="tst-review-card__id">
+                                    <span class="tst-review-card__name">Ananya Reddy</span>
+                                    <span class="tst-review-card__date">3 weeks ago</span>
+                                </div>
+                                <span class="tst-review-card__g" aria-label="Posted on Google">
+                                    <svg viewBox="0 0 24 24">
+                                        <path fill="#4285F4"
+                                            d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
+                                        <path fill="#34A853"
+                                            d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
+                                        <path fill="#FBBC05"
+                                            d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
+                                        <path fill="#EA4335"
+                                            d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
+                                    </svg>
+                                </span>
+                            </header>
+                            <span class="tst-stars" aria-label="5 stars">★★★★★</span>
+                            <p class="tst-review-card__quote">The calmest, most luxurious clinic experience. Every
+                                treatment
+                                feels tailored to me. My skin has never looked healthier.</p>
+                        </article>
 
-                    <article class="tst-review-card">
-                        <header class="tst-review-card__head">
-                            <img class="tst-review-card__avatar"
-                                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop&q=80"
-                                alt="Meera Jasmine" loading="lazy">
-                            <div class="tst-review-card__id">
-                                <span class="tst-review-card__name">Meera Jasmine</span>
-                                <span class="tst-review-card__date">5 days ago</span>
-                            </div>
-                            <span class="tst-review-card__g" aria-label="Posted on Google">
-                                <svg viewBox="0 0 24 24">
-                                    <path fill="#4285F4"
-                                        d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
-                                    <path fill="#34A853"
-                                        d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
-                                    <path fill="#FBBC05"
-                                        d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
-                                    <path fill="#EA4335"
-                                        d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
-                                </svg>
-                            </span>
-                        </header>
-                        <span class="tst-stars" aria-label="5 stars">★★★★★</span>
-                        <p class="tst-review-card__quote">Brightening peel worked wonders on my pigmentation. Skin feels
-                            fresh and renewed. The staff make you feel completely at ease.</p>
-                    </article>
+                        <article class="tst-review-card">
+                            <header class="tst-review-card__head">
+                                <img class="tst-review-card__avatar"
+                                    data-hidden-src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&h=120&fit=crop&q=80"
+                                    alt="Vikram Malhotra" loading="lazy">
+                                <div class="tst-review-card__id">
+                                    <span class="tst-review-card__name">Vikram Malhotra</span>
+                                    <span class="tst-review-card__date">2 months ago</span>
+                                </div>
+                                <span class="tst-review-card__g" aria-label="Posted on Google">
+                                    <svg viewBox="0 0 24 24">
+                                        <path fill="#4285F4"
+                                            d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
+                                        <path fill="#34A853"
+                                            d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
+                                        <path fill="#FBBC05"
+                                            d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
+                                        <path fill="#EA4335"
+                                            d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
+                                    </svg>
+                                </span>
+                            </header>
+                            <span class="tst-stars" aria-label="5 stars">★★★★★</span>
+                            <p class="tst-review-card__quote">Booked a consultation on a whim and it was the best
+                                decision.
+                                Honest advice, no upselling, and stunning results.</p>
+                        </article>
 
-                    <article class="tst-review-card">
-                        <header class="tst-review-card__head">
-                            <img class="tst-review-card__avatar"
-                                src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=120&h=120&fit=crop&q=80"
-                                alt="Ritu Verma" loading="lazy">
-                            <div class="tst-review-card__id">
-                                <span class="tst-review-card__name">Ritu Verma</span>
-                                <span class="tst-review-card__date">1 week ago</span>
-                            </div>
-                            <span class="tst-review-card__g" aria-label="Posted on Google">
-                                <svg viewBox="0 0 24 24">
-                                    <path fill="#4285F4"
-                                        d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
-                                    <path fill="#34A853"
-                                        d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
-                                    <path fill="#FBBC05"
-                                        d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
-                                    <path fill="#EA4335"
-                                        d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
-                                </svg>
-                            </span>
-                        </header>
-                        <span class="tst-stars" aria-label="5 stars">★★★★★</span>
-                        <p class="tst-review-card__quote">Professional, spotless, and genuinely caring. My laser
-                            sessions were painless and the results speak for themselves. Five stars!</p>
-                    </article>
-                </div>
+                        <article class="tst-review-card">
+                            <header class="tst-review-card__head">
+                                <img class="tst-review-card__avatar"
+                                    data-hidden-src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop&q=80"
+                                    alt="Meera Jasmine" loading="lazy">
+                                <div class="tst-review-card__id">
+                                    <span class="tst-review-card__name">Meera Jasmine</span>
+                                    <span class="tst-review-card__date">5 days ago</span>
+                                </div>
+                                <span class="tst-review-card__g" aria-label="Posted on Google">
+                                    <svg viewBox="0 0 24 24">
+                                        <path fill="#4285F4"
+                                            d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
+                                        <path fill="#34A853"
+                                            d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
+                                        <path fill="#FBBC05"
+                                            d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
+                                        <path fill="#EA4335"
+                                            d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
+                                    </svg>
+                                </span>
+                            </header>
+                            <span class="tst-stars" aria-label="5 stars">★★★★★</span>
+                            <p class="tst-review-card__quote">Brightening peel worked wonders on my pigmentation. Skin
+                                feels
+                                fresh and renewed. The staff make you feel completely at ease.</p>
+                        </article>
 
-                <div class="dz-cta-wrap">
-                    <a href="https://www.google.com/maps" target="_blank" rel="noopener" class="dz-cta">
-                        <span>Read all Google reviews</span>
-                        <img src="nemonic1.png" class="btn-icon" style="width: 14px; height: 14px; object-fit: contain;"
-                            alt="icon" />
-                    </a>
+                        <article class="tst-review-card">
+                            <header class="tst-review-card__head">
+                                <img class="tst-review-card__avatar"
+                                    data-hidden-src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=120&h=120&fit=crop&q=80"
+                                    alt="Ritu Verma" loading="lazy">
+                                <div class="tst-review-card__id">
+                                    <span class="tst-review-card__name">Ritu Verma</span>
+                                    <span class="tst-review-card__date">1 week ago</span>
+                                </div>
+                                <span class="tst-review-card__g" aria-label="Posted on Google">
+                                    <svg viewBox="0 0 24 24">
+                                        <path fill="#4285F4"
+                                            d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z" />
+                                        <path fill="#34A853"
+                                            d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1 .7-2.4 1.1-4 1.1-3 0-5.6-2-6.5-4.8H1.5v3.1A12 12 0 0 0 12 24z" />
+                                        <path fill="#FBBC05"
+                                            d="M5.5 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.5a12 12 0 0 0 0 10.8l4-3.1z" />
+                                        <path fill="#EA4335"
+                                            d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.5 6.7l4 3.1C6.4 6.9 9 4.8 12 4.8z" />
+                                    </svg>
+                                </span>
+                            </header>
+                            <span class="tst-stars" aria-label="5 stars">★★★★★</span>
+                            <p class="tst-review-card__quote">Professional, spotless, and genuinely caring. My laser
+                                sessions were painless and the results speak for themselves. Five stars!</p>
+                        </article>
+                    </div>
+
+                    <div class="dz-cta-wrap">
+                        <a href="https://www.google.com/maps" target="_blank" rel="noopener" class="dz-cta">
+                            <span>Read all Google reviews</span>
+                            <img data-hidden-src="nemonic1.png" class="btn-icon"
+                                style="width: 14px; height: 14px; object-fit: contain;" alt="icon" />
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1973,7 +2034,7 @@
                     <span class="section-subtitle">D'ZEN JOURNAL</span>
                     <div class="nemonic-separator">
                         <div class="nemonic-line"></div>
-                        <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
+                        <img loading="lazy" decoding="async" src="logo-header.png" alt="nemonic" class="nemonic-icon" />
                         <div class="nemonic-line"></div>
                     </div>
                     <h2 class="section-title">Blogs</h2>
@@ -1986,7 +2047,8 @@
                     <div class="blog-card">
                         <div class="blog-card-image-wrapper">
 
-                            <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=700&q=80"
+                            <img loading="lazy" decoding="async"
+                                src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=700&q=80"
                                 alt="Wellness" class="blog-card-img">
                         </div>
                         <div class="blog-card-content">
@@ -2005,7 +2067,8 @@
                     <div class="blog-card">
                         <div class="blog-card-image-wrapper">
 
-                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&q=80"
+                            <img loading="lazy" decoding="async"
+                                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&q=80"
                                 alt="Aesthetics" class="blog-card-img">
                         </div>
                         <div class="blog-card-content">
@@ -2024,7 +2087,8 @@
                     <div class="blog-card">
                         <div class="blog-card-image-wrapper">
 
-                            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=700&q=80"
+                            <img loading="lazy" decoding="async"
+                                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=700&q=80"
                                 alt="Anti-Ageing" class="blog-card-img">
                         </div>
                         <div class="blog-card-content">
@@ -2043,21 +2107,30 @@
                 <div class="headlines-footer text-center mt-lg-4 mt-2">
                     <a href="#" class="view-all-articles dz-cta">
                         <span>View All Articles</span>
-                        <img src="nemonic1.png" class="btn-icon" style="width: 14px; height: 14px; object-fit: contain;"
-                            alt="icon" />
+                        <img loading="lazy" decoding="async" src="nemonic1.png" class="btn-icon"
+                            style="width: 14px; height: 14px; object-fit: contain;" alt="icon" />
                     </a>
                 </div>
+            </div>
+
+            <!-- Curvy separator: Blog → Clinic Locations -->
+            <div class="section-separator" aria-hidden="true" style="z-index: 10;">
+                <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#FDF8F3" d="M0,50 C400,110 1040,-10 1440,50 L1440,100 L0,100 Z">
+                    </path>
+                </svg>
             </div>
         </section>
 
         <!-- ═══════ Clinic Locations Section ═══════ -->
-        <section class="clinic-locations-section" id="locations" aria-labelledby="locations-heading">
+        <section class="clinic-locations-section" id="locations" aria-labelledby="locations-heading"
+            style="padding-top: 25px !important;">
             <div class="container">
                 <div class="section-header text-center mb-4 mb-lg-4">
                     <span class="section-subtitle">OUR CLINICS</span>
                     <div class="nemonic-separator">
                         <div class="nemonic-line"></div>
-                        <img src="logo-header.png" alt="nemonic" class="nemonic-icon" />
+                        <img loading="lazy" decoding="async" src="logo-header.png" alt="nemonic" class="nemonic-icon" />
                         <div class="nemonic-line"></div>
                     </div>
                     <h2 id="locations-heading" class="section-title">Two Locations. One Philosophy of Care</h2>
@@ -2071,7 +2144,7 @@
                 <div class="clinic-tabs" role="tablist" aria-label="Select Clinic Location">
                     <div class="clinic-tabs__pill">
                         <button class="clinic-tab active" role="tab" aria-selected="true" data-clinic="0">
-                            <img class="clinic-tab__img"
+                            <img loading="lazy" decoding="async" class="clinic-tab__img"
                                 src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=200&auto=format&fit=crop"
                                 alt="Delhi Clinic" />
                             <span class="clinic-tab__info">
@@ -2080,7 +2153,7 @@
                             </span>
                         </button>
                         <button class="clinic-tab" role="tab" aria-selected="false" data-clinic="1">
-                            <img class="clinic-tab__img"
+                            <img loading="lazy" decoding="async" class="clinic-tab__img"
                                 src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=200&auto=format&fit=crop"
                                 alt="Gurgaon Clinic" />
                             <span class="clinic-tab__info">
@@ -2096,7 +2169,8 @@
                     <div class="col-lg-6 col-md-6 clinic-loc-col active" data-clinic-index="0">
                         <article class="clinic-loc-card">
                             <div class="clinic-loc-card__media">
-                                <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=800&auto=format&fit=crop"
+                                <img loading="lazy" decoding="async"
+                                    src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=800&auto=format&fit=crop"
                                     alt="D'Zen Derma Clinic, Lajpat Nagar, New Delhi" class="clinic-loc-card__img" />
                             </div>
                             <div class="clinic-loc-card__body">
@@ -2115,7 +2189,7 @@
                                     <a href="https://share.google/K9x2AaLWSbOZRl0S7" target="_blank" rel="noopener"
                                         class="dz-cta">
                                         <span>Get Directions</span>
-                                        <img src="nemonic1.png" class="btn-icon"
+                                        <img loading="lazy" decoding="async" src="nemonic1.png" class="btn-icon"
                                             style="width: 14px; height: 14px; object-fit: contain;" alt="icon" />
                                     </a>
                                 </div>
@@ -2127,7 +2201,8 @@
                     <div class="col-lg-6 col-md-6 clinic-loc-col" data-clinic-index="1">
                         <article class="clinic-loc-card">
                             <div class="clinic-loc-card__media">
-                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop"
+                                <img loading="lazy" decoding="async"
+                                    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop"
                                     alt="D'Zen Derma Clinic, Golf Course Road, Gurgaon" class="clinic-loc-card__img" />
 
                             </div>
@@ -2147,7 +2222,7 @@
                                     <a href="https://share.google/gK7jIICnumBdVGITL" target="_blank" rel="noopener"
                                         class="dz-cta">
                                         <span>Get Directions</span>
-                                        <img src="nemonic1.png" class="btn-icon"
+                                        <img loading="lazy" decoding="async" src="nemonic1.png" class="btn-icon"
                                             style="width: 14px; height: 14px; object-fit: contain;" alt="icon" />
                                     </a>
                                 </div>
@@ -2176,7 +2251,8 @@
                 <div class="insta-modal__footer">
                     <div class="insta-modal__meta">
                         <div class="insta-modal__account">
-                            <img src="photos/dr-arushi-1.webp" alt="Dr. Aarushi" class="insta-modal__avatar" />
+                            <img loading="lazy" decoding="async" src="photos/dr-arushi-1-opt.webp" alt="Dr. Aarushi"
+                                class="insta-modal__avatar" />
                             <div>
                                 <div class="insta-modal__name" id="instaModalTitle">D'Zen Derma</div>
                                 <div class="insta-modal__tagline" id="instaModalTag">AESTHETIC PROTOCOLS</div>
