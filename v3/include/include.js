@@ -143,7 +143,7 @@
                         </div>
                         <div class="footer-contact-item">
                             <span class="footer-contact-label">Phone &amp; WhatsApp</span>
-                            <a href="tel:+919878885046" class="footer-contact-value footer-contact-link">+91-9878885046</a>
+                            <a href="tel:+919773771610" class="footer-contact-value footer-contact-link">+91-9773771610</a>
                         </div>
                         <div class="footer-contact-item">
                             <span class="footer-contact-label">Email</span>

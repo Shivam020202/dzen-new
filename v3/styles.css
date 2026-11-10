@@ -16088,3 +16088,25 @@ html body .site-footer .footer-tagline--quote {
     color: #C04A3B !important;
     -webkit-text-fill-color: #C04A3B !important;
 }
+
+/* Hero slides 2-4: supporting line under the title */
+html body .hero-content .hero-subline {
+    font-family: var(--sans, "Inter", system-ui, sans-serif) !important;
+    font-size: clamp(1rem, 1.7vw, 1.4rem) !important;
+    font-weight: 400;
+    line-height: 1.45;
+    color: #FAF9F6 !important;
+    -webkit-text-fill-color: #FAF9F6 !important;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+    margin: -6px 0 0;
+    text-wrap: balance;
+    max-width: 640px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.55s;
+}
+
+html body .hero-slide.active .hero-content .hero-subline {
+    opacity: 1;
+    transform: translateY(0);
+}
