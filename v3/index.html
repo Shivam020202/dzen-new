@@ -1502,20 +1502,23 @@
             </div>
 
             <div class="social-feed-widget">
-                <div key="DZen New Instagram" class="ft" id="fta34197x"></div>
-
+                <div key="DZen Instagram" class="ft" id="fta34197x"></div>
                 <script>
-                    if (!document.querySelector('#fta34197x')) {
-                        var newDiv = document.createElement('div');
-                        newDiv.setAttribute('key', 'DZen Instagram');
-                        newDiv.setAttribute('class', 'ft');
-                        newDiv.setAttribute('id', 'fta34197x');
-                        var newScript = document.createElement('script');
-                        newScript.setAttribute('src', 'https://wdg.fouita.com/widgets/0x48e214.js');
-                        newDiv.appendChild(newScript);
-
-                        document.body.appendChild(newDiv);
-                    }
+                    // Instagram reels widget: load only when this section is about to scroll into view
+                    (function () {
+                        var box = document.getElementById("fta34197x"), done = false;
+                        function load() {
+                            if (done) return; done = true;
+                            var sc = document.createElement("script");
+                            sc.src = "https://wdg.fouita.com/widgets/0x48e214.js";
+                            box.appendChild(sc);
+                        }
+                        if (!("IntersectionObserver" in window)) return load();
+                        var io = new IntersectionObserver(function (entries) {
+                            if (entries[0].isIntersecting) { io.disconnect(); load(); }
+                        }, { rootMargin: "800px 0px" });
+                        io.observe(box);
+                    })();
                 </script>
             </div>
         </section>
