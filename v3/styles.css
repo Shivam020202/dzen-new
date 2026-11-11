@@ -6315,7 +6315,7 @@ html body .tm-card__role {
     line-height: 1.4;
     letter-spacing: 0;
     text-transform: none;
-    color: #FAF9F6 !important;
+    color: #E0A65A !important;
     margin: 0 0 3cqw;
 }
 
@@ -6465,7 +6465,7 @@ html body .tm-card__quote {
 .clinic-loc-card__media {
     position: relative;
     width: 100%;
-    height: clamp(230px, 25vw, 310px);
+    /* height: clamp(230px, 25vw, 310px); */
     overflow: hidden;
     background: #EFE7DE;
 }
@@ -8215,7 +8215,7 @@ body.hf-page .sig-arch-badge span.dot {
 .clinic-loc-card__media {
     position: relative;
     width: 100%;
-    height: clamp(210px, 22vw, 270px);
+    /* height: clamp(210px, 22vw, 270px); */
     overflow: hidden;
     background: #EFE7DE;
 }
@@ -16060,6 +16060,7 @@ html body:where(.dz-page-philosophy) #locations>.container {
         margin: 0 0 8px;
     }
 }
+
 /* Mobile: subheadings keep the same 24px side margin as the other sections */
 @media (max-width: 900px) {
     #sigServicesZone .sig-intro-sub {
